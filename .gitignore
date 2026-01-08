@@ -41,5 +41,8 @@ Thumbs.db
 .env
 .env.local
 
-# HTML templates (optional - not needed for deployment)
-year-end-review-scorecard.html
+# Generated reports (personalized scorecards)
+reports/
+
+# Templates (optional - keep if you want to track template changes)
+# templates/

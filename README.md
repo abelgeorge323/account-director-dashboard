@@ -1,191 +1,173 @@
 # Account Director Performance Dashboard
 
-A modern, executive-facing performance review dashboard for year-end Account Director evaluations. Built with Streamlit and Python 3.11.9.
+A modern, executive-facing performance review dashboard for year-end Account Director evaluations.
 
-## Features
+## 🎯 Current Version: Vanilla JavaScript
 
-- **Rankings View**: Sortable table showing Account Directors ranked by performance scores
-- **Dynamic Filtering**: Filter by Account and Vertical (when data provided)
-- **Detail Drawer**: Click any Account Director to view individual reviews with section-by-section feedback
-- **Scoring Rubric**: Reference page documenting evaluation methodology and criteria
-- **Executive Design**: Clean, professional aesthetic optimized for leadership reviews
-- **Multi-Reviewer Support**: Aggregates scores when multiple reviewers evaluate the same AD
+The active dashboard is now built with **Vanilla JavaScript** for maximum customization and mobile-friendliness. See `vanilla-js-app/` for details.
 
-## Project Structure
+## 📂 Project Structure
 
 ```
-account-directors/
-├── app.py                          # Main Streamlit application
-├── data_processor.py               # CSV parsing and score aggregation
-├── components/
-│   ├── __init__.py
-│   ├── rankings_table.py           # Rankings table with filtering
-│   └── rubric_page.py              # Scoring rubric reference
-├── data/
-│   └── performance_reviews.csv     # Performance review data
-├── .streamlit/
-│   └── config.toml                 # Streamlit configuration
-├── requirements.txt                # Python dependencies
-├── Procfile                        # Heroku deployment config
-├── runtime.txt                     # Python version
-└── README.md                       # This file
+Account-Directors/
+├── README.md                          # This file
+├── .gitignore                         # Git ignore rules
+│
+├── vanilla-js-app/                    # ✨ ACTIVE APP
+│   ├── index.html                     # Single-page application
+│   ├── app.js                         # Frontend logic
+│   ├── data.json                      # Generated dashboard data
+│   ├── build_data.py                  # Data processor (CSV → JSON)
+│   └── README.md                      # Vanilla JS app documentation
+│
+├── streamlit-app/                     # Legacy Streamlit version
+│   ├── app.py                         # Main Streamlit app
+│   ├── data_processor.py              # CSV parsing
+│   ├── components/                    # UI components
+│   ├── requirements.txt               # Python dependencies
+│   ├── Procfile                       # Heroku config
+│   └── runtime.txt                    # Python version
+│
+├── data/                              # Source data
+│   ├── performance_reviews.csv        # Main CSV export
+│   ├── verticals.csv                  # Vertical mappings
+│   └── Year-End Review_...csv         # Original upload
+│
+├── templates/                         # Scorecard templates
+│   └── year-end-review-scorecard.html # Blank template for reviews
+│
+├── reports/                           # Generated reports (not tracked)
+│   └── benjamin-ehrenberg-scorecard.html
+│
+└── docs/                              # Documentation
+    ├── DEPLOYMENT.md                  # Heroku deployment guide
+    ├── VANILLA_JS_DEPLOYMENT.md       # Vanilla JS setup
+    ├── MIGRATION_SUMMARY.md           # Streamlit → Vanilla JS migration
+    └── ...other docs
 ```
 
-## Local Development
+## 🚀 Quick Start
 
-### Prerequisites
+### Running the Dashboard
 
-- Python 3.11.9
-- pip
-
-### Installation
-
-1. Clone or download this repository
-
-2. Install dependencies:
+**Option 1: Vanilla JS App (Recommended)**
 ```bash
+cd vanilla-js-app
+python -m http.server 8000
+# Open http://localhost:8000
+```
+
+**Option 2: Streamlit App (Legacy)**
+```bash
+cd streamlit-app
 pip install -r requirements.txt
-```
-
-3. Run the application:
-```bash
 streamlit run app.py
 ```
 
-4. Open your browser to `http://localhost:8501`
+### Updating Data
 
-## Data Format
-
-The dashboard expects a CSV file at `data/performance_reviews.csv` with the following structure:
-
-- **Account Director Name**: Name of the Account Director being reviewed
-- **Account Name**: Associated account
-- **Reviewer Name**: Name of the person conducting the review
-- **Reviewer Email**: Reviewer's email
-- **Score Columns**: 8 sections, each scored 1-5:
-  - Key Projects & Initiatives
-  - Value Adds & Cost Avoidance
-  - Cost Savings Delivered
-  - Innovation & Continuous Improvement
-  - Issues, Challenges & Accountability
-  - 2026 Forward Strategy & Vision
-  - Personal Goals & Role Maturity
-  - Executive Presence & Presentation Skills
-- **Feedback Columns**: Written feedback for each section
-
-## Deploying to Heroku
-
-### Prerequisites
-
-- [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli) installed
-- Heroku account
-
-### Deployment Steps
-
-1. **Login to Heroku**
+1. Export new performance reviews to CSV
+2. Place CSV in `data/` folder
+3. Update `data/performance_reviews.csv` (or modify `build_data.py` path)
+4. Regenerate JSON:
 ```bash
-heroku login
+cd vanilla-js-app
+python build_data.py
 ```
+5. Refresh browser
 
-2. **Create a new Heroku app**
-```bash
-heroku create your-app-name
-```
+## ✨ Features
 
-3. **Add Python buildpack**
-```bash
-heroku buildpacks:set heroku/python
-```
+### Vanilla JS Dashboard
+- **Card-Style Leaderboard**: Beautiful, scannable ranking cards with hover effects
+- **Mobile-Friendly**: Fully responsive with hamburger menu on mobile
+- **Dynamic Filtering**: Filter by vertical and account
+- **Expandable Rows**: Click to see 8 section scores with progress bars
+- **Individual Reviews**: Detailed view showing all feedback by reviewer
+- **Scoring Rubric**: Reference page with evaluation criteria
+- **No Dependencies**: Pure HTML/CSS/JS with Google Fonts
 
-4. **Initialize git repository (if not already done)**
-```bash
-git init
-git add .
-git commit -m "Initial commit"
-```
+### Streamlit Dashboard (Legacy)
+- Rankings table with sorting
+- Filter panel for vertical/account
+- Individual review detail view
+- Rubric reference page
 
-5. **Deploy to Heroku**
-```bash
-git push heroku main
-```
+## 📊 Data Format
 
-Or if your default branch is `master`:
-```bash
-git push heroku master
-```
+The dashboard expects performance review data with:
+- Account Director Name
+- Account Name
+- Reviewer Name & Email
+- 8 scoring sections (1-5 scale):
+  1. Key Projects & Initiatives
+  2. Value Adds & Cost Avoidance
+  3. Cost Savings Delivered
+  4. Innovation & Continuous Improvement
+  5. Issues, Challenges & Accountability
+  6. 2026 Forward Strategy & Vision
+  7. Personal Goals & Role Maturity
+  8. Executive Presence & Presentation Skills
+- Written feedback for each section
 
-6. **Open your deployed app**
-```bash
-heroku open
-```
+## 📝 Generating Personal Scorecards
 
-### Environment Configuration
+Use `templates/year-end-review-scorecard.html` to create personalized feedback documents:
+1. Run the dashboard to aggregate scores
+2. Use the template to fill in individual scorecards
+3. Export to PDF for distribution
 
-The app is configured to work with Heroku out of the box:
-- `Procfile` specifies the web process command
-- `runtime.txt` specifies Python 3.11.9
-- `requirements.txt` lists all dependencies
-- Streamlit will automatically use the `$PORT` environment variable set by Heroku
+Example: `reports/benjamin-ehrenberg-scorecard.html` (pre-filled example)
 
-### Updating Your Deployment
+## 🔧 Technologies
 
-After making changes:
-```bash
-git add .
-git commit -m "Your commit message"
-git push heroku main
-```
+### Vanilla JS App
+- HTML5 + CSS3 + Vanilla JavaScript
+- Google Fonts (Inter)
+- Python 3.11+ (for data processing only)
+- Pandas + NumPy (build script dependencies)
 
-## Adding Vertical Data
+### Streamlit App
+- Python 3.11.9
+- Streamlit
+- Pandas, NumPy
 
-To enable vertical filtering:
+## 📚 Documentation
 
-1. Create a CSV file `data/verticals.csv` with the format:
-```csv
-Account Director Name,Vertical
-John Doe,Technology
-Jane Smith,Healthcare
-```
+See `docs/` folder for detailed guides:
+- **VANILLA_JS_DEPLOYMENT.md**: How to deploy the JS app
+- **DEPLOYMENT.md**: Heroku deployment for Streamlit
+- **MIGRATION_SUMMARY.md**: Why we switched to Vanilla JS
 
-2. Update `data_processor.py` to load and merge vertical data:
-```python
-# In load_performance_data function
-verticals_df = pd.read_csv("data/verticals.csv")
-df = df.merge(verticals_df, on="Account Director Name", how="left")
-```
+## 🌐 Deployment
 
-3. Update `get_filter_options` to include verticals:
-```python
-"verticals": sorted(aggregated_df["Vertical"].dropna().unique().tolist())
-```
+**Vanilla JS**: Any static hosting (GitHub Pages, Netlify, Vercel, S3, etc.)
+**Streamlit**: Heroku, Streamlit Cloud
 
-## Scoring Methodology
+See deployment docs for details.
 
-- **Individual Sections**: 1-5 points each (5 = Exceptional, 1 = Needs Improvement)
-- **Total Score**: 8 sections × 5 points = 40 points maximum
-- **Aggregation**: When multiple reviewers evaluate the same AD, scores are averaged for rankings
-- **Detail View**: All individual reviews are preserved and displayed in the detail drawer
+## 📱 Mobile Support
 
-## Design Philosophy
+The Vanilla JS dashboard is fully mobile-optimized with:
+- Responsive layouts (1024px, 768px, 480px, 375px breakpoints)
+- Hamburger menu for filters
+- Touch-friendly buttons (44px minimum)
+- Optimized card layouts for small screens
 
-- **Scores First**: Numeric data is emphasized for quick scanning
-- **Rankings Second**: Dynamic ranking based on current filters and sort
-- **Feedback Last**: Qualitative feedback is secondary but accessible
-- **Executive Polish**: Modern, credible aesthetic suitable for leadership reviews
-- **No Judgment Colors**: Neutral color scheme avoids red/green traffic light semantics
+## 🎨 Design Philosophy
 
-## Technologies Used
+- **Scores First**: Numeric data emphasized for quick scanning
+- **Rankings Second**: Dynamic ranking with visual hierarchy
+- **Feedback Last**: Qualitative feedback accessible but secondary
+- **Executive Polish**: Modern, credible aesthetic
+- **No Judgment Colors**: Neutral colors avoid traffic-light semantics
 
-- **Streamlit**: Web application framework
-- **Pandas**: Data manipulation and analysis
-- **NumPy**: Numerical computing
-- **Python 3.11.9**: Programming language
-
-## Support
-
-For issues or questions about the dashboard, contact your development team.
-
-## License
+## 📄 License
 
 Internal use only.
 
+---
+
+**Current Version**: Vanilla JavaScript Dashboard  
+**Last Updated**: January 2026  
+**Status**: ✅ Production Ready

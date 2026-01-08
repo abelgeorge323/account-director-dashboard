@@ -1,0 +1,1439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <title>Account Director Performance Dashboard</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        /* ==================== GLOBAL STYLES ==================== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            /* Smooth scrolling */
+            scroll-behavior: smooth;
+            /* Better font rendering on mobile */
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        :root {
+            --primary-dark: #0f172a;
+            --primary-blue: #1e40af;
+            --primary-light: #3b82f6;
+            --bg-main: #f8fafc;
+            --bg-card: #ffffff;
+            --text-primary: #0f172a;
+            --text-secondary: #64748b;
+            --text-muted: #94a3b8;
+            --border-color: #e2e8f0;
+            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+            --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.12);
+            --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-smooth: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: var(--bg-main);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+            /* Better tap highlighting on mobile */
+            -webkit-tap-highlight-color: rgba(30, 64, 175, 0.1);
+        }
+        
+        /* ==================== LAYOUT ==================== */
+        .app-container {
+            display: flex;
+            height: 100vh;
+            overflow: hidden;
+        }
+        
+        /* ==================== SIDEBAR ==================== */
+        .sidebar {
+            width: 280px;
+            background: white;
+            box-shadow: 2px 0 12px rgba(0, 0, 0, 0.05);
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            z-index: 100;
+        }
+        
+        .sidebar-header {
+            padding: 24px 20px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .logo {
+            font-size: 1.5em;
+            font-weight: 800;
+            color: var(--primary-dark);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .logo-icon {
+            font-size: 1.2em;
+        }
+        
+        .app-subtitle {
+            font-size: 0.85em;
+            color: var(--text-secondary);
+            margin-top: 4px;
+            font-weight: 500;
+        }
+        
+        /* View Selector */
+        .view-selector {
+            padding: 20px 16px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .view-selector-title {
+            font-size: 0.75em;
+            font-weight: 700;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 12px;
+            padding: 0 8px;
+        }
+        
+        .view-btn {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            width: 100%;
+            padding: 12px 14px;
+            background: var(--bg-main);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            font-size: 0.9em;
+            font-weight: 500;
+            color: var(--text-primary);
+            cursor: pointer;
+            transition: var(--transition-fast);
+            margin-bottom: 8px;
+        }
+        
+        .view-btn:hover {
+            background: #f1f5f9;
+            border-color: #cbd5e1;
+        }
+        
+        .view-btn.active {
+            background: var(--primary-blue);
+            color: white;
+            border-color: var(--primary-blue);
+            font-weight: 600;
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .view-icon {
+            font-size: 1.1em;
+        }
+        
+        /* Filters */
+        .filters {
+            padding: 20px 16px;
+            flex: 1;
+            overflow-y: auto;
+        }
+        
+        .filter-title {
+            font-size: 0.75em;
+            font-weight: 700;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 12px;
+            padding: 0 8px;
+        }
+        
+        .filter-group {
+            margin-bottom: 24px;
+        }
+        
+        .filter-label {
+            font-size: 0.85em;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+            display: block;
+            padding: 0 8px;
+        }
+        
+        .filter-select {
+            width: 100%;
+            padding: 10px 12px;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            background: white;
+            font-family: inherit;
+            font-size: 0.9em;
+            color: var(--text-primary);
+            cursor: pointer;
+            transition: var(--transition-fast);
+        }
+        
+        .filter-select:hover {
+            border-color: #cbd5e1;
+        }
+        
+        .filter-select:focus {
+            outline: none;
+            border-color: var(--primary-blue);
+            box-shadow: 0 0 0 3px rgba(30, 64, 175, 0.1);
+        }
+        
+        .clear-filters-btn {
+            width: 100%;
+            padding: 10px;
+            background: white;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            font-family: inherit;
+            font-size: 0.85em;
+            font-weight: 600;
+            color: var(--text-secondary);
+            cursor: pointer;
+            transition: var(--transition-fast);
+            margin-top: 16px;
+        }
+        
+        .clear-filters-btn:hover {
+            background: var(--bg-main);
+            color: var(--text-primary);
+        }
+        
+        .sidebar-footer {
+            padding: 16px 20px;
+            border-top: 1px solid var(--border-color);
+            font-size: 0.75em;
+            color: var(--text-muted);
+            text-align: center;
+        }
+        
+        /* ==================== MAIN CONTENT ==================== */
+        .main-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+        
+        .content-header {
+            background: white;
+            padding: 24px 32px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .page-title {
+            font-size: 2em;
+            font-weight: 700;
+            color: var(--primary-dark);
+            margin-bottom: 4px;
+        }
+        
+        .page-subtitle {
+            font-size: 0.95em;
+            color: var(--text-secondary);
+        }
+        
+        .content-body {
+            flex: 1;
+            overflow-y: auto;
+            padding: 24px 32px;
+        }
+        
+        /* ==================== LOADING STATE ==================== */
+        .loading {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            color: var(--text-secondary);
+        }
+        
+        .spinner {
+            width: 40px;
+            height: 40px;
+            border: 3px solid var(--border-color);
+            border-top-color: var(--primary-blue);
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+            margin-bottom: 16px;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        /* ==================== RANKINGS VIEW ==================== */
+        .rankings-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+        }
+        
+        .rankings-title {
+            font-size: 1.5em;
+            font-weight: 700;
+            color: var(--primary-dark);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .rankings-subtitle {
+            font-size: 0.9em;
+            color: var(--text-secondary);
+            margin-top: 4px;
+        }
+        
+        .sort-controls {
+            display: flex;
+            gap: 12px;
+        }
+        
+        .sort-select {
+            padding: 8px 12px;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            background: white;
+            font-family: inherit;
+            font-size: 0.9em;
+            color: var(--text-primary);
+            cursor: pointer;
+            transition: var(--transition-fast);
+        }
+        
+        .sort-select:hover {
+            border-color: #cbd5e1;
+        }
+        
+        .sort-select:focus {
+            outline: none;
+            border-color: var(--primary-blue);
+        }
+        
+        /* Metrics */
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+        
+        .metric-card {
+            background: white;
+            padding: 16px 20px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .metric-label {
+            font-size: 0.8em;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 8px;
+        }
+        
+        .metric-value {
+            font-size: 1.8em;
+            font-weight: 800;
+            color: var(--primary-dark);
+            line-height: 1;
+        }
+        
+        /* Leaderboard - Enhanced Card Style */
+        .leaderboard {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+        
+        .leaderboard-row {
+            background: white;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 20px 24px;
+            display: grid;
+            grid-template-columns: 50px 1fr 180px 150px 40px;
+            align-items: center;
+            gap: 20px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+            position: relative;
+        }
+        
+        /* Hover effect - card lifts */
+        .leaderboard-row:hover {
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+            transform: translateY(-4px);
+            border-color: var(--primary-light);
+        }
+        
+        /* Top 3 get special styling */
+        .leaderboard-row.rank-top-3 {
+            border-width: 2px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+        }
+        
+        .leaderboard-row.rank-top-3:hover {
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+            transform: translateY(-6px);
+        }
+        
+        /* Rank 1 special glow */
+        .leaderboard-row.rank-1-card {
+            background: linear-gradient(135deg, #fffbeb 0%, #ffffff 100%);
+            border-color: #fbbf24;
+        }
+        
+        /* Rank 2 special styling */
+        .leaderboard-row.rank-2-card {
+            background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
+            border-color: #94a3b8;
+        }
+        
+        /* Rank 3 special styling */
+        .leaderboard-row.rank-3-card {
+            background: linear-gradient(135deg, #fef3c7 0%, #ffffff 100%);
+            border-color: #d97706;
+        }
+        
+        /* Expanded state */
+        .leaderboard-row.expanded {
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+        }
+        
+        /* Rank Badge - Enhanced */
+        .rank-badge {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 1.2em;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+            flex-shrink: 0;
+        }
+        
+        .rank-1 {
+            background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+            color: #78350f;
+            box-shadow: 0 4px 12px rgba(251, 191, 36, 0.4);
+        }
+        
+        .rank-2 {
+            background: linear-gradient(135deg, #cbd5e1 0%, #94a3b8 100%);
+            color: white;
+            box-shadow: 0 4px 12px rgba(148, 163, 184, 0.4);
+        }
+        
+        .rank-3 {
+            background: linear-gradient(135deg, #fbbf24 0%, #d97706 100%);
+            color: white;
+            box-shadow: 0 4px 12px rgba(217, 119, 6, 0.4);
+        }
+        
+        .rank-other {
+            background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+            color: #475569;
+            font-weight: 700;
+        }
+        
+        /* AD Info - Enhanced */
+        .ad-info {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+        
+        .ad-name {
+            font-size: 1.1em;
+            font-weight: 700;
+            color: var(--primary-dark);
+            letter-spacing: -0.01em;
+        }
+        
+        .ad-account {
+            font-size: 0.9em;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+        
+        /* Vertical Badge Style */
+        .ad-vertical {
+            font-size: 0.85em;
+            color: var(--text-secondary);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            background: var(--bg-main);
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-weight: 500;
+        }
+        
+        /* Score Container - Enhanced */
+        .ad-score-container {
+            text-align: right;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 6px;
+        }
+        
+        .ad-score {
+            font-size: 2.4em;
+            font-weight: 900;
+            color: var(--primary-dark);
+            line-height: 1;
+            letter-spacing: -0.02em;
+        }
+        
+        .ad-score-max {
+            font-size: 0.75em;
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+        
+        .perf-badge {
+            display: inline-block;
+            padding: 5px 12px;
+            border-radius: 14px;
+            font-size: 0.7em;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .perf-outstanding {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            color: white;
+        }
+        
+        .perf-strong {
+            background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+            color: white;
+        }
+        
+        .perf-solid {
+            background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+            color: white;
+        }
+        
+        .perf-developing {
+            background: linear-gradient(135deg, #64748b 0%, #475569 100%);
+            color: white;
+        }
+        
+        /* Expand Button - Enhanced */
+        .expand-btn {
+            width: 36px;
+            height: 36px;
+            border: 2px solid var(--border-color);
+            background: white;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-size: 1.1em;
+            color: var(--text-secondary);
+            font-weight: 700;
+        }
+        
+        .expand-btn:hover {
+            background: var(--primary-blue);
+            color: white;
+            border-color: var(--primary-blue);
+            transform: scale(1.1);
+        }
+        
+        .expand-btn.expanded {
+            background: var(--primary-blue);
+            color: white;
+            border-color: var(--primary-blue);
+        }
+        
+        /* Expanded Section - Enhanced */
+        .expanded-section {
+            display: none;
+            margin-top: 20px;
+            padding: 24px;
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+            border-radius: 10px;
+            border: 1px solid var(--border-color);
+            animation: expandDown 0.3s ease;
+        }
+        
+        .expanded-section.active {
+            display: block;
+        }
+        
+        @keyframes expandDown {
+            from {
+                opacity: 0;
+                max-height: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                max-height: 1000px;
+                transform: translateY(0);
+            }
+        }
+        
+        .section-scores-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            margin-bottom: 16px;
+        }
+        
+        .section-score-item {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            background: white;
+            padding: 12px;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        }
+        
+        .section-score-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85em;
+        }
+        
+        .section-name {
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+        
+        .section-value {
+            font-weight: 700;
+            color: var(--primary-dark);
+        }
+        
+        .progress-bar {
+            height: 6px;
+            background: #e2e8f0;
+            border-radius: 3px;
+            overflow: hidden;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            transition: width 0.5s ease;
+            border-radius: 3px;
+        }
+        
+        .view-details-btn {
+            width: 100%;
+            padding: 12px 20px;
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-dark) 100%);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 0.95em;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(30, 64, 175, 0.3);
+            letter-spacing: 0.02em;
+        }
+        
+        .view-details-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(30, 64, 175, 0.4);
+        }
+        
+        /* ==================== REVIEWS VIEW ==================== */
+        .reviews-selector {
+            margin-bottom: 24px;
+        }
+        
+        .reviews-select {
+            width: 100%;
+            max-width: 400px;
+            padding: 12px 16px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            background: white;
+            font-family: inherit;
+            font-size: 1em;
+            color: var(--text-primary);
+            cursor: pointer;
+            transition: var(--transition-fast);
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .reviews-select:focus {
+            outline: none;
+            border-color: var(--primary-blue);
+            box-shadow: 0 0 0 3px rgba(30, 64, 175, 0.1);
+        }
+        
+        .review-header {
+            background: white;
+            padding: 24px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            box-shadow: var(--shadow-sm);
+            margin-bottom: 24px;
+        }
+        
+        .review-ad-name {
+            font-size: 1.8em;
+            font-weight: 700;
+            color: var(--primary-dark);
+            margin-bottom: 8px;
+        }
+        
+        .review-meta {
+            display: flex;
+            gap: 24px;
+            margin-top: 16px;
+        }
+        
+        .review-meta-item {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .review-meta-label {
+            font-size: 0.75em;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 4px;
+        }
+        
+        .review-meta-value {
+            font-size: 1.2em;
+            font-weight: 700;
+            color: var(--primary-dark);
+        }
+        
+        .individual-review {
+            background: white;
+            padding: 24px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            box-shadow: var(--shadow-sm);
+            margin-bottom: 24px;
+        }
+        
+        .individual-review-header {
+            font-size: 1.2em;
+            font-weight: 600;
+            color: var(--primary-dark);
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid var(--border-color);
+        }
+        
+        .review-section {
+            margin-bottom: 20px;
+        }
+        
+        .review-section-title {
+            font-size: 1em;
+            font-weight: 600;
+            color: var(--primary-dark);
+            margin-bottom: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .review-section-score {
+            font-weight: 700;
+            color: var(--primary-blue);
+        }
+        
+        .review-feedback {
+            background: var(--bg-main);
+            padding: 12px 16px;
+            border-radius: 6px;
+            border-left: 3px solid var(--primary-blue);
+            font-size: 0.9em;
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+        
+        /* ==================== RUBRIC VIEW ==================== */
+        .rubric-intro {
+            background: white;
+            padding: 24px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            box-shadow: var(--shadow-sm);
+            margin-bottom: 24px;
+        }
+        
+        .rubric-section {
+            background: white;
+            padding: 24px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            box-shadow: var(--shadow-sm);
+            margin-bottom: 16px;
+        }
+        
+        .rubric-section-header {
+            font-size: 1.3em;
+            font-weight: 700;
+            color: var(--primary-dark);
+            margin-bottom: 12px;
+        }
+        
+        .rubric-definition {
+            font-style: italic;
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+            padding: 12px 16px;
+            background: var(--bg-main);
+            border-radius: 6px;
+        }
+        
+        .rubric-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 16px;
+        }
+        
+        .rubric-table thead {
+            background: var(--primary-dark);
+            color: white;
+        }
+        
+        .rubric-table th {
+            padding: 12px 16px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 0.9em;
+        }
+        
+        .rubric-table th:first-child {
+            text-align: center;
+            width: 80px;
+        }
+        
+        .rubric-table td {
+            padding: 12px 16px;
+            border-bottom: 1px solid var(--border-color);
+            font-size: 0.9em;
+            color: var(--text-primary);
+        }
+        
+        .rubric-table td:first-child {
+            text-align: center;
+            font-weight: 700;
+            font-size: 1.1em;
+            background: var(--bg-main);
+        }
+        
+        .rubric-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        /* ==================== MOBILE MENU ==================== */
+        .mobile-menu-btn {
+            display: none;
+            position: fixed;
+            top: 16px;
+            left: 16px;
+            z-index: 1001;
+            width: 48px;
+            height: 48px;
+            background: white;
+            border: 2px solid var(--border-color);
+            border-radius: 12px;
+            cursor: pointer;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            transition: all 0.3s ease;
+        }
+
+        .mobile-menu-btn:hover {
+            background: var(--primary-blue);
+            border-color: var(--primary-blue);
+        }
+
+        .mobile-menu-btn span {
+            display: block;
+            width: 24px;
+            height: 3px;
+            background: var(--primary-dark);
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+
+        .mobile-menu-btn:hover span {
+            background: white;
+        }
+
+        .mobile-menu-btn.active span:nth-child(1) {
+            transform: rotate(45deg) translate(7px, 7px);
+        }
+
+        .mobile-menu-btn.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .mobile-menu-btn.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -7px);
+        }
+
+        .mobile-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .mobile-overlay.active {
+            opacity: 1;
+        }
+
+        /* ==================== RESPONSIVE ==================== */
+        @media (max-width: 1024px) {
+            .sidebar {
+                width: 240px;
+            }
+            
+            .metrics-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .leaderboard-row {
+                grid-template-columns: 50px 1fr 150px 40px;
+                padding: 16px 20px;
+            }
+            
+            .ad-vertical {
+                display: none;
+            }
+
+            .nav-tabs {
+                gap: 12px;
+                flex-wrap: wrap;
+            }
+
+            .nav-tab {
+                font-size: 0.85em;
+                padding: 10px 18px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            /* Mobile Menu */
+            .mobile-menu-btn {
+                display: flex;
+            }
+
+            .mobile-overlay {
+                display: block;
+            }
+
+            /* App Layout */
+            .app-container {
+                flex-direction: column;
+            }
+            
+            /* Sidebar - Slide in from left */
+            .sidebar {
+                position: fixed;
+                top: 0;
+                left: -100%;
+                width: 280px;
+                max-width: 85vw;
+                height: 100vh;
+                max-height: 100vh;
+                z-index: 1000;
+                transition: left 0.3s ease;
+                box-shadow: 4px 0 12px rgba(0, 0, 0, 0.15);
+            }
+
+            .sidebar.mobile-open {
+                left: 0;
+            }
+
+            /* Main Content - Full width on mobile */
+            .main-content {
+                margin-left: 0;
+                width: 100%;
+                padding: 80px 16px 20px 16px;
+            }
+
+            /* Navigation Tabs - Stack on mobile */
+            .nav-tabs {
+                flex-wrap: wrap;
+                gap: 8px;
+                justify-content: center;
+            }
+
+            .nav-tab {
+                flex: 1 1 calc(50% - 4px);
+                min-width: 140px;
+                font-size: 0.8em;
+                padding: 10px 12px;
+                text-align: center;
+            }
+
+            /* Header */
+            .content-header {
+                margin-bottom: 20px;
+                padding: 0 4px;
+            }
+
+            .page-title {
+                font-size: 1.5em;
+            }
+
+            .page-subtitle {
+                font-size: 0.85em;
+            }
+
+            /* Metrics Grid */
+            .metrics-grid {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+
+            .metric-card {
+                padding: 14px 16px;
+            }
+
+            .metric-value {
+                font-size: 1.6em;
+            }
+
+            /* Rankings Header */
+            .rankings-header {
+                flex-direction: column;
+                gap: 16px;
+                align-items: stretch;
+            }
+
+            .rankings-title {
+                font-size: 1.3em;
+            }
+
+            .rankings-subtitle {
+                font-size: 0.8em;
+            }
+
+            .sort-controls {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .sort-select {
+                width: 100%;
+            }
+
+            /* Leaderboard Cards - Optimized for mobile */
+            .leaderboard-row {
+                grid-template-columns: 40px 1fr 100px 44px;
+                gap: 10px;
+                padding: 14px 12px;
+                border-radius: 10px;
+            }
+
+            .rank-badge {
+                width: 36px;
+                height: 36px;
+                font-size: 1em;
+            }
+
+            .ad-info {
+                min-width: 0;
+            }
+
+            .ad-name {
+                font-size: 0.95em;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+
+            .ad-account {
+                font-size: 0.8em;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+
+            .ad-vertical {
+                display: none;
+            }
+
+            .ad-score-container {
+                text-align: right;
+            }
+
+            .ad-score {
+                font-size: 1.8em;
+            }
+
+            .ad-score-max {
+                font-size: 0.65em;
+            }
+
+            .perf-badge {
+                font-size: 0.6em;
+                padding: 4px 8px;
+            }
+
+            /* Expand Button - Larger touch target */
+            .expand-btn {
+                width: 44px;
+                height: 44px;
+                font-size: 1em;
+            }
+
+            /* Expanded Section */
+            .expanded-section {
+                padding: 16px;
+                margin-top: 12px;
+            }
+
+            .section-scores-grid {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+
+            .section-score-item {
+                padding: 10px;
+            }
+
+            .section-name {
+                font-size: 0.8em;
+            }
+
+            .section-value {
+                font-size: 0.85em;
+            }
+
+            /* View Details Button - Larger touch target */
+            .view-details-btn {
+                padding: 14px 20px;
+                font-size: 0.9em;
+                margin-top: 12px;
+            }
+
+            /* Review Selector */
+            .reviews-selector {
+                padding: 16px;
+            }
+
+            .reviews-select {
+                font-size: 0.9em;
+                padding: 12px 16px;
+            }
+
+            /* Review Content */
+            .review-header {
+                padding: 16px;
+            }
+
+            .review-header h2 {
+                font-size: 1.3em;
+            }
+
+            .review-stat-value {
+                font-size: 1.8em;
+            }
+
+            /* Rubric */
+            .rubric-intro h2 {
+                font-size: 1.3em !important;
+            }
+
+            .rubric-section {
+                padding: 16px;
+            }
+
+            .rubric-section h3 {
+                font-size: 1em;
+            }
+
+            /* Sidebar Footer */
+            .sidebar-footer {
+                font-size: 0.75em;
+                padding: 12px 16px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            /* Extra small phones */
+            .main-content {
+                padding: 80px 12px 16px 12px;
+            }
+
+            .page-title {
+                font-size: 1.3em;
+            }
+
+            .leaderboard-row {
+                grid-template-columns: 36px 1fr 90px 40px;
+                gap: 8px;
+                padding: 12px 10px;
+            }
+
+            .rank-badge {
+                width: 32px;
+                height: 32px;
+                font-size: 0.9em;
+            }
+
+            .ad-name {
+                font-size: 0.9em;
+            }
+
+            .ad-account {
+                font-size: 0.75em;
+            }
+
+            .ad-score {
+                font-size: 1.6em;
+            }
+
+            .nav-tab {
+                flex: 1 1 100%;
+                min-width: unset;
+            }
+        }
+
+        @media (max-width: 375px) {
+            /* iPhone SE and smaller */
+            .ad-score {
+                font-size: 1.4em;
+            }
+
+            .expand-btn {
+                width: 40px;
+                height: 40px;
+            }
+        }
+        
+        /* ==================== UTILITIES ==================== */
+        .hidden {
+            display: none !important;
+        }
+        
+        /* Touch-friendly: Ensure minimum touch target size on mobile */
+        @media (hover: none) and (pointer: coarse) {
+            button, .expand-btn, .view-btn, select {
+                min-height: 44px;
+                min-width: 44px;
+            }
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.3s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Mobile Menu Button -->
+    <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <!-- Mobile Overlay -->
+    <div class="mobile-overlay" id="mobile-overlay"></div>
+
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <span class="logo-icon">📊</span>
+                    <span>AD Dashboard</span>
+                </div>
+                <div class="app-subtitle">Year-End Performance • 2025</div>
+            </div>
+            
+            <div class="view-selector">
+                <div class="view-selector-title">Dashboard Views</div>
+                <button class="view-btn active" data-view="rankings">
+                    <span class="view-icon">🏆</span>
+                    <span>Rankings & Performance</span>
+                </button>
+                <button class="view-btn" data-view="reviews">
+                    <span class="view-icon">📝</span>
+                    <span>Individual Reviews</span>
+                </button>
+                <button class="view-btn" data-view="rubric">
+                    <span class="view-icon">📚</span>
+                    <span>Scoring Rubric</span>
+                </button>
+            </div>
+            
+            <div class="filters">
+                <div class="filter-title">Filter Options</div>
+                
+                <div class="filter-group">
+                    <label class="filter-label" for="filter-vertical">Vertical</label>
+                    <select id="filter-vertical" class="filter-select">
+                        <option value="all">All Verticals</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <label class="filter-label" for="filter-account">Account</label>
+                    <select id="filter-account" class="filter-select">
+                        <option value="all">All Accounts</option>
+                    </select>
+                </div>
+                
+                <button class="clear-filters-btn" id="clear-filters">
+                    🔄 Clear All Filters
+                </button>
+            </div>
+            
+            <div class="sidebar-footer">
+                <div id="last-updated">Data Loading...</div>
+            </div>
+        </aside>
+        
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Content Header -->
+            <header class="content-header">
+                <h1 class="page-title" id="page-title">Account Director Performance Dashboard</h1>
+                <p class="page-subtitle" id="page-subtitle">Loading...</p>
+            </header>
+            
+            <!-- Content Body -->
+            <div class="content-body">
+                <!-- Loading State -->
+                <div id="loading-view" class="loading">
+                    <div class="spinner"></div>
+                    <p>Loading dashboard data...</p>
+                </div>
+                
+                <!-- Rankings View -->
+                <div id="rankings-view" class="hidden">
+                    <div class="rankings-header">
+                        <div>
+                            <div class="rankings-title">
+                                <span>🏆</span>
+                                <span>Account Director Leaderboard</span>
+                            </div>
+                            <p class="rankings-subtitle">Click ▶ to expand • Sorted by total score</p>
+                        </div>
+                        <div class="sort-controls">
+                            <select id="sort-by" class="sort-select">
+                                <option value="totalScore">Total Score</option>
+                                <option value="projects">Projects</option>
+                                <option value="valueAdds">Value Adds</option>
+                                <option value="costSavings">Cost Savings</option>
+                                <option value="innovation">Innovation</option>
+                                <option value="accountability">Accountability</option>
+                                <option value="strategy">Strategy</option>
+                                <option value="goals">Goals</option>
+                                <option value="execPresence">Exec Presence</option>
+                            </select>
+                            <select id="sort-order" class="sort-select">
+                                <option value="desc">Highest First</option>
+                                <option value="asc">Lowest First</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="metrics-grid" id="metrics-grid">
+                        <!-- Metrics will be inserted here -->
+                    </div>
+                    
+                    <div class="leaderboard" id="leaderboard">
+                        <!-- Leaderboard rows will be inserted here -->
+                    </div>
+                </div>
+                
+                <!-- Individual Reviews View -->
+                <div id="reviews-view" class="hidden">
+                    <div class="reviews-selector">
+                        <select id="ad-select" class="reviews-select">
+                            <option value="">Select Account Director</option>
+                        </select>
+                    </div>
+                    <div id="reviews-content">
+                        <!-- Review content will be inserted here -->
+                    </div>
+                </div>
+                
+                <!-- Rubric View -->
+                <div id="rubric-view" class="hidden">
+                    <div class="rubric-intro">
+                        <h2 style="font-size: 1.5em; font-weight: 700; margin-bottom: 12px;">Performance Evaluation Rubric</h2>
+                        <p style="color: var(--text-secondary); line-height: 1.6;">
+                            This rubric defines the scoring methodology used for Account Director performance evaluations. 
+                            Each section is scored on a scale of 1-5, with detailed criteria outlined below.
+                        </p>
+                    </div>
+                    <div id="rubric-content">
+                        <!-- Rubric content will be inserted here -->
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <script src="app.js"></script>
+</body>
+</html>
+
