@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Expand Test</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        h1 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+        .test-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .test-row {
+            background: white;
+            border: 2px solid #ddd;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        .test-row.expanded {
+            border-color: #3b82f6;
+        }
+        .row-main {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            align-items: center;
+            padding: 16px;
+            gap: 12px;
+        }
+        .row-info h3 {
+            margin: 0 0 4px 0;
+            color: #333;
+        }
+        .row-info p {
+            margin: 0;
+            color: #666;
+            font-size: 14px;
+        }
+        .expand-btn {
+            width: 44px;
+            height: 44px;
+            border: 2px solid #3b82f6;
+            background: white;
+            border-radius: 8px;
+            font-size: 18px;
+            cursor: pointer;
+            touch-action: manipulation;
+            -webkit-tap-highlight-color: transparent;
+            transition: all 0.2s ease;
+        }
+        .expand-btn:hover {
+            background: #eff6ff;
+        }
+        .expand-btn:active {
+            background: #dbeafe;
+            transform: scale(0.95);
+        }
+        .expanded-content {
+            display: none;
+            padding: 0 16px 16px 16px;
+            background: #f8fafc;
+            border-top: 1px solid #e5e7eb;
+        }
+        .expanded-content.active {
+            display: block;
+            animation: slideDown 0.3s ease;
+        }
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .content-inner {
+            padding: 16px;
+            background: white;
+            border-radius: 8px;
+            margin-top: 12px;
+        }
+        .status {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #10b981;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            display: none;
+        }
+        .status.show {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🧪 Simple Expand/Collapse Test</h1>
+        <p style="margin-bottom: 20px; color: #666;">
+            This tests the EXACT structure used in the fixed dashboard.
+            If this works, the main app should work too.
+        </p>
+
+        <div class="test-list">
+            <!-- Row 1 -->
+            <div class="test-row" data-id="1">
+                <div class="row-main">
+                    <div class="row-info">
+                        <h3>Test Row 1</h3>
+                        <p>Click the arrow to expand</p>
+                    </div>
+                    <button class="expand-btn" onclick="window.toggleTest('1'); return false;">
+                        ▶
+                    </button>
+                </div>
+                <div class="expanded-content">
+                    <div class="content-inner">
+                        <h4>Expanded Content for Row 1</h4>
+                        <p>This content is INSIDE the row, not a sibling.</p>
+                        <p>Structure: row > [row-main, expanded-content]</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Row 2 -->
+            <div class="test-row" data-id="2">
+                <div class="row-main">
+                    <div class="row-info">
+                        <h3>Test Row 2</h3>
+                        <p>Click the arrow to expand</p>
+                    </div>
+                    <button class="expand-btn" onclick="window.toggleTest('2'); return false;">
+                        ▶
+                    </button>
+                </div>
+                <div class="expanded-content">
+                    <div class="content-inner">
+                        <h4>Expanded Content for Row 2</h4>
+                        <p>Each row can expand independently.</p>
+                        <p>No page jumping, no re-rendering.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Row 3 -->
+            <div class="test-row" data-id="3">
+                <div class="row-main">
+                    <div class="row-info">
+                        <h3>Test Row 3</h3>
+                        <p>Click the arrow to expand</p>
+                    </div>
+                    <button class="expand-btn" onclick="window.toggleTest('3'); return false;">
+                        ▶
+                    </button>
+                </div>
+                <div class="expanded-content">
+                    <div class="content-inner">
+                        <h4>Expanded Content for Row 3</h4>
+                        <p>Works on mobile Chrome, mobile Safari, and desktop.</p>
+                        <p>Touch-optimized with proper CSS.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="status" id="status"></div>
+
+    <script>
+        // Global toggle function (same pattern as main app)
+        window.toggleTest = function(id) {
+            console.log('Toggle clicked:', id);
+            showStatus(`Toggling row ${id}`);
+
+            const row = document.querySelector(`.test-row[data-id="${id}"]`);
+            if (!row) {
+                console.error('Row not found:', id);
+                return;
+            }
+
+            const isExpanded = row.classList.contains('expanded');
+            const expandedContent = row.querySelector('.expanded-content');
+            const expandBtn = row.querySelector('.expand-btn');
+
+            // Toggle state
+            row.classList.toggle('expanded');
+            expandedContent.classList.toggle('active');
+            
+            // Update button
+            if (expandBtn) {
+                expandBtn.textContent = isExpanded ? '▶' : '▼';
+            }
+
+            console.log('Row', id, isExpanded ? 'collapsed' : 'expanded');
+            showStatus(`Row ${id} ${isExpanded ? 'collapsed' : 'expanded'} ✓`);
+        };
+
+        function showStatus(message) {
+            const status = document.getElementById('status');
+            status.textContent = message;
+            status.classList.add('show');
+            setTimeout(() => {
+                status.classList.remove('show');
+            }, 2000);
+        }
+
+        // Log page load
+        console.log('Simple test page loaded');
+        console.log('window.toggleTest:', typeof window.toggleTest);
+        showStatus('Test page ready ✓');
+    </script>
+</body>
+</html>
+

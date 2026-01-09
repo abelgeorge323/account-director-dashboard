@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debug Check</title>
+    <style>
+        body {
+            font-family: monospace;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .test-section {
+            background: white;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        button {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            margin: 10px 0;
+            font-size: 16px;
+            cursor: pointer;
+            touch-action: manipulation;
+        }
+        .result {
+            padding: 10px;
+            margin: 10px 0;
+            background: #e8f5e9;
+            border-left: 4px solid #4caf50;
+        }
+        .error {
+            background: #ffebee;
+            border-left: 4px solid #f44336;
+        }
+    </style>
+</head>
+<body>
+    <h1>🔍 Mobile Debug Diagnostics</h1>
+    
+    <div class="test-section">
+        <h2>Test 1: Is JavaScript Running?</h2>
+        <div id="js-test" style="color: red;">❌ JavaScript NOT running</div>
+    </div>
+
+    <div class="test-section">
+        <h2>Test 2: Can window functions be called?</h2>
+        <button onclick="window.testFunction()">Click Me (window.testFunction)</button>
+        <div id="window-test"></div>
+    </div>
+
+    <div class="test-section">
+        <h2>Test 3: Inline onclick with special characters</h2>
+        <button onclick="handleName('Benjamin Ehrenberg')">Test: Benjamin Ehrenberg</button>
+        <button onclick="handleName('John O\'Brien')">Test: John O'Brien (apostrophe)</button>
+        <button onclick="handleName('Mary &quot;Sue&quot; Smith')">Test: Mary "Sue" Smith (quotes)</button>
+        <div id="name-test"></div>
+    </div>
+
+    <div class="test-section">
+        <h2>Test 4: Template literal escaping simulation</h2>
+        <div id="template-test"></div>
+    </div>
+
+    <div class="test-section">
+        <h2>Test 5: Touch vs Click Events</h2>
+        <button id="touch-test-btn">Tap/Click Me</button>
+        <div id="touch-test"></div>
+    </div>
+
+    <div class="test-section">
+        <h2>Test 6: Load app.js and check functions</h2>
+        <button onclick="checkAppJS()">Check app.js Functions</button>
+        <div id="appjs-test"></div>
+    </div>
+
+    <script>
+        // Test 1: Confirm JS is running
+        document.getElementById('js-test').innerHTML = '✅ JavaScript IS running';
+        document.getElementById('js-test').style.color = 'green';
+
+        // Test 2: Window function
+        window.testFunction = function() {
+            document.getElementById('window-test').innerHTML = '<div class="result">✅ window.testFunction() works!</div>';
+        };
+
+        // Test 3: Handle names with special characters
+        function handleName(name) {
+            const output = document.getElementById('name-test');
+            output.innerHTML += `<div class="result">✅ Clicked: "${name}"</div>`;
+            console.log('Name clicked:', name);
+        }
+
+        // Test 4: Simulate template literal escaping
+        function testTemplateEscaping() {
+            const names = [
+                "Benjamin Ehrenberg",
+                "John O'Brien",
+                'Mary "Sue" Smith'
+            ];
+            
+            const output = document.getElementById('template-test');
+            names.forEach(name => {
+                // This simulates what happens in app.js
+                const escaped = name.replace(/'/g, "\\'");
+                const html = `<button onclick="handleName('${escaped}')">Generated: ${name}</button>`;
+                output.innerHTML += html;
+            });
+        }
+        testTemplateEscaping();
+
+        // Test 5: Touch events
+        const touchBtn = document.getElementById('touch-test-btn');
+        const touchOutput = document.getElementById('touch-test');
+        
+        touchBtn.addEventListener('touchstart', () => {
+            touchOutput.innerHTML += '<div class="result">✅ touchstart fired</div>';
+        });
+        
+        touchBtn.addEventListener('click', () => {
+            touchOutput.innerHTML += '<div class="result">✅ click fired</div>';
+        });
+
+        // Test 6: Check if app.js functions exist
+        function checkAppJS() {
+            const output = document.getElementById('appjs-test');
+            output.innerHTML = '<h3>Checking app.js functions:</h3>';
+            
+            const checks = [
+                { name: 'window.toggleRow', func: window.toggleRow },
+                { name: 'window.viewDetails', func: window.viewDetails }
+            ];
+            
+            checks.forEach(check => {
+                if (typeof check.func === 'function') {
+                    output.innerHTML += `<div class="result">✅ ${check.name} exists</div>`;
+                } else {
+                    output.innerHTML += `<div class="result error">❌ ${check.name} NOT FOUND (${typeof check.func})</div>`;
+                }
+            });
+        }
+
+        console.log('Debug page loaded');
+        console.log('window.testFunction:', typeof window.testFunction);
+    </script>
+
+    <!-- Try to load app.js to test if functions are defined -->
+    <script src="app.js"></script>
+</body>
+</html>
+

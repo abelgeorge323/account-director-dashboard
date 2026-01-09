@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile Click Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .test-btn {
+            display: block;
+            width: 100%;
+            padding: 20px;
+            margin: 10px 0;
+            font-size: 18px;
+            border: 2px solid #333;
+            background: white;
+            cursor: pointer;
+            touch-action: manipulation;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .test-btn:active {
+            background: #eee;
+        }
+        .log {
+            margin-top: 30px;
+            padding: 15px;
+            background: #f0f0f0;
+            border-radius: 8px;
+            min-height: 100px;
+        }
+        .log-entry {
+            padding: 5px;
+            border-bottom: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+    <h1>Mobile Click Test</h1>
+    <p>Testing different click methods on mobile:</p>
+
+    <!-- Test 1: Inline onclick -->
+    <button class="test-btn" onclick="logClick('Inline onclick')">
+        Test 1: Inline onclick
+    </button>
+
+    <!-- Test 2: Inline onclick with window function -->
+    <button class="test-btn" onclick="window.testClick('Window function')">
+        Test 2: Window function
+    </button>
+
+    <!-- Test 3: Event listener (will be added by JS) -->
+    <button class="test-btn" id="listener-btn">
+        Test 3: addEventListener
+    </button>
+
+    <!-- Test 4: Inline with return false -->
+    <button class="test-btn" onclick="logClick('With return false'); return false;">
+        Test 4: With return false
+    </button>
+
+    <div class="log">
+        <h3>Click Log:</h3>
+        <div id="log-output"></div>
+    </div>
+
+    <script>
+        // Global function for window.testClick
+        window.testClick = function(msg) {
+            logClick(msg);
+        };
+
+        // Logging function
+        function logClick(message) {
+            const output = document.getElementById('log-output');
+            const entry = document.createElement('div');
+            entry.className = 'log-entry';
+            entry.textContent = `${new Date().toLocaleTimeString()}: ${message} ✓`;
+            output.insertBefore(entry, output.firstChild);
+            console.log('Click:', message);
+        }
+
+        // Test 3: Add event listener
+        document.getElementById('listener-btn').addEventListener('click', function() {
+            logClick('addEventListener');
+        });
+
+        // Initial log
+        logClick('Page loaded successfully');
+        console.log('Test page initialized');
+    </script>
+</body>
+</html>
+

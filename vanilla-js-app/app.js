@@ -19,6 +19,25 @@ const AppState = {
     selectedAD: null
 };
 
+// ==================== GLOBAL MOBILE-FRIENDLY HANDLERS ====================
+// These global functions ensure mobile compatibility with inline onclick handlers
+window.toggleRow = function(adName) {
+    console.log('🎯 TOGGLE ROW CALLED:', adName);
+    toggleExpandedRow(adName);
+};
+
+window.viewDetails = function(adName) {
+    console.log('🎯 VIEW DETAILS CALLED:', adName);
+    AppState.selectedAD = adName;
+    showView('reviews');
+    document.getElementById('ad-select').value = adName;
+    renderReviewsForAD(adName);
+};
+
+// Test that functions are defined
+console.log('✅ window.toggleRow defined:', typeof window.toggleRow);
+console.log('✅ window.viewDetails defined:', typeof window.viewDetails);
+
 // ==================== DATA LOADING ====================
 async function loadData() {
     try {
@@ -238,7 +257,10 @@ function renderLeaderboard(data) {
         const isExpanded = AppState.expandedRows.has(ad.accountDirector);
         
         return `
-            <div class="leaderboard-row ${cardClass} ${rankCardClass} ${isExpanded ? 'expanded' : ''} fade-in" data-ad="${ad.accountDirector}">
+            <div class="leaderboard-row ${cardClass} ${rankCardClass} ${isExpanded ? 'expanded' : ''} fade-in" 
+                 data-ad="${ad.accountDirector}"
+                 onclick="window.toggleRow('${ad.accountDirector.replace(/'/g, "\\'")}');"
+                 style="cursor: pointer;">
                 <div class="rank-badge ${rankClass}">${rank}</div>
                 <div class="ad-info">
                     <div class="ad-name">${ad.accountDirector}</div>
@@ -252,30 +274,15 @@ function renderLeaderboard(data) {
                     <div class="ad-score-max">of ${AppState.data.metadata.totalMaxScore}</div>
                     <div class="perf-badge ${perfBadge.class}">${perfBadge.label}</div>
                 </div>
-                <button class="expand-btn ${isExpanded ? 'expanded' : ''}" data-ad="${ad.accountDirector}">
-                    ${isExpanded ? '▼' : '▶'}
-                </button>
+                <div class="expand-indicator">${isExpanded ? '▼' : '▶'}</div>
             </div>
             ${isExpanded ? renderExpandedSection(ad) : ''}
         `;
     }).join('');
     
-    // Attach event listeners
-    container.querySelectorAll('.expand-btn').forEach(btn => {
-        btn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            toggleExpandedRow(btn.dataset.ad);
-        });
-    });
-    
-    container.querySelectorAll('.view-details-btn').forEach(btn => {
-        btn.addEventListener('click', () => {
-            AppState.selectedAD = btn.dataset.ad;
-            showView('reviews');
-            document.getElementById('ad-select').value = btn.dataset.ad;
-            renderReviewsForAD(btn.dataset.ad);
-        });
-    });
+    // Note: Event handlers are inline (onclick) for maximum mobile compatibility
+    // The global window.toggleRow and window.viewDetails functions handle all clicks
+    // Initial render includes expanded sections; subsequent toggles are DOM-only (no re-render)
 }
 
 function renderExpandedSection(ad) {
@@ -305,12 +312,12 @@ function renderExpandedSection(ad) {
     const rightSections = sectionsHTML.slice(4, 8).join('');
     
     return `
-        <div class="expanded-section active">
+        <div class="expanded-section">
             <div class="section-scores-grid">
                 <div>${leftSections}</div>
                 <div>${rightSections}</div>
             </div>
-            <button class="view-details-btn" data-ad="${ad.accountDirector}">
+            <button class="view-details-btn" onclick="event.stopPropagation(); window.viewDetails('${ad.accountDirector.replace(/'/g, "\\'")}');">
                 View Full Reviews
             </button>
         </div>
@@ -318,12 +325,66 @@ function renderExpandedSection(ad) {
 }
 
 function toggleExpandedRow(adName) {
-    if (AppState.expandedRows.has(adName)) {
+    // Toggle state
+    const isExpanded = AppState.expandedRows.has(adName);
+    
+    if (isExpanded) {
         AppState.expandedRows.delete(adName);
     } else {
         AppState.expandedRows.add(adName);
     }
-    renderLeaderboard(getFilteredData());
+    
+    console.log('🔄 Toggle:', adName, 'Was:', isExpanded, 'Now:', !isExpanded);
+    
+    // Find the row in DOM
+    const row = document.querySelector(`.leaderboard-row[data-ad="${adName}"]`);
+    if (!row) {
+        console.error('❌ Row not found for:', adName);
+        return;
+    }
+    
+    console.log('✓ Row found');
+    
+    // Toggle expanded class on row
+    row.classList.toggle('expanded');
+    
+    // Update indicator
+    const indicator = row.querySelector('.expand-indicator');
+    if (indicator) {
+        indicator.textContent = isExpanded ? '▶' : '▼';
+        console.log('✓ Indicator:', indicator.textContent);
+    }
+    
+    // Find expanded section as SIBLING (not child)
+    let expandedSection = row.nextElementSibling;
+    
+    if (expandedSection && expandedSection.classList.contains('expanded-section')) {
+        console.log('✓ Found existing expanded section');
+        // Toggle visibility
+        if (isExpanded) {
+            expandedSection.style.display = 'none';
+            console.log('✓ Collapsed');
+        } else {
+            expandedSection.style.display = 'block';
+            console.log('✓ Expanded');
+        }
+    } else if (!isExpanded) {
+        // Need to create expanded section
+        console.log('📝 Creating new expanded section');
+        const ad = AppState.data.accountDirectors.find(a => a.accountDirector === adName);
+        if (ad) {
+            const expandedHTML = renderExpandedSection(ad);
+            row.insertAdjacentHTML('afterend', expandedHTML);
+            console.log('✅ Created and inserted');
+            
+            // Show it
+            expandedSection = row.nextElementSibling;
+            if (expandedSection) {
+                expandedSection.style.display = 'block';
+                console.log('✅ Shown');
+            }
+        }
+    }
 }
 
 function getPerformanceBadge(score) {
@@ -493,9 +554,9 @@ function setupEventListeners() {
     mobileMenuBtn.addEventListener('click', toggleMobileMenu);
     mobileOverlay.addEventListener('click', closeMobileMenu);
 
-    // Close mobile menu when clicking any filter or view button
+    // Close mobile menu when clicking view buttons only (NOT filters)
     sidebar.addEventListener('click', (e) => {
-        if (e.target.closest('.view-btn') || e.target.closest('.filter-select') || e.target.closest('.clear-filters-btn')) {
+        if (e.target.closest('.view-btn')) {
             // Small delay to allow action to complete
             setTimeout(closeMobileMenu, 300);
         }
@@ -551,6 +612,15 @@ function setupEventListeners() {
 
 // ==================== START APPLICATION ====================
 document.addEventListener('DOMContentLoaded', init);
+
+// DEBUG: Global click listener to see if clicks are registered
+document.addEventListener('click', function(e) {
+    const row = e.target.closest('.leaderboard-row');
+    if (row) {
+        console.log('🖱️ CLICK DETECTED on leaderboard row:', row.dataset.ad);
+        console.log('🖱️ Click target:', e.target.className);
+    }
+}, true);
 
 // Close mobile menu on window resize above mobile breakpoint
 window.addEventListener('resize', () => {

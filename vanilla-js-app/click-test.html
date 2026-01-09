@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Click Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .test-card {
+            background: white;
+            border: 2px solid #ddd;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 20px 0;
+            cursor: pointer;
+            display: grid;
+            grid-template-columns: 60px 1fr 100px 50px;
+            gap: 15px;
+            align-items: center;
+        }
+        .test-card:active {
+            background: #f0f0f0;
+        }
+        .badge {
+            width: 50px;
+            height: 50px;
+            background: #fbbf24;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+        .info {
+            display: flex;
+            flex-direction: column;
+        }
+        .score {
+            font-size: 2em;
+            font-weight: bold;
+        }
+        .arrow {
+            font-size: 1.5em;
+        }
+        #log {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            right: 20px;
+            background: #333;
+            color: #0f0;
+            padding: 15px;
+            border-radius: 8px;
+            font-family: monospace;
+            font-size: 12px;
+            max-height: 200px;
+            overflow-y: auto;
+        }
+        .log-entry {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Mobile Click Test</h1>
+    <p>Test if onclick works on this simpler card</p>
+
+    <!-- Test 1: Simple onclick -->
+    <div class="test-card" onclick="logClick('Test 1: Simple onclick');">
+        <div class="badge">1</div>
+        <div class="info">
+            <strong>Test 1</strong>
+            <span>Simple onclick handler</span>
+        </div>
+        <div class="score">34.7</div>
+        <div class="arrow">▶</div>
+    </div>
+
+    <!-- Test 2: onclick with function call -->
+    <div class="test-card" onclick="window.testToggle('Test 2');">
+        <div class="badge">2</div>
+        <div class="info">
+            <strong>Test 2</strong>
+            <span>window.testToggle()</span>
+        </div>
+        <div class="score">34.7</div>
+        <div class="arrow">▶</div>
+    </div>
+
+    <!-- Test 3: Grid children (like main app) -->
+    <div class="test-card" onclick="logClick('Test 3: Grid with children');">
+        <div class="badge">3</div>
+        <div class="info">
+            <div><strong>Test 3</strong></div>
+            <div><span>Grid with nested divs</span></div>
+        </div>
+        <div class="score">
+            <div>34.7</div>
+            <div style="font-size: 0.5em;">of 40</div>
+        </div>
+        <div class="arrow">▶</div>
+    </div>
+
+    <div id="log">
+        <div class="log-entry">Console log will appear here...</div>
+    </div>
+
+    <script>
+        // Define window function
+        window.testToggle = function(msg) {
+            console.log('🎯 testToggle called:', msg);
+            logClick(msg + ' - window.testToggle');
+        };
+
+        function logClick(message) {
+            const timestamp = new Date().toLocaleTimeString();
+            const logEntry = `[${timestamp}] ${message}`;
+            console.log(logEntry);
+            
+            const log = document.getElementById('log');
+            const entry = document.createElement('div');
+            entry.className = 'log-entry';
+            entry.textContent = logEntry;
+            log.insertBefore(entry, log.firstChild);
+        }
+
+        // Global click listener
+        document.addEventListener('click', function(e) {
+            console.log('Global click:', e.target.className);
+        }, true);
+
+        // Page load
+        console.log('✅ Page loaded');
+        console.log('✅ window.testToggle:', typeof window.testToggle);
+        logClick('Page loaded successfully');
+    </script>
+</body>
+</html>
+
