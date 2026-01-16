@@ -7,6 +7,18 @@ import pandas as pd
 import json
 from pathlib import Path
 
+def load_best_practices(bp_path="../data/best-practices.json"):
+    """Load best practices from JSON file."""
+    try:
+        with open(bp_path, "r", encoding="utf-8") as f:
+            return json.load(f)
+    except FileNotFoundError:
+        print(f"⚠️  Best practices file not found: {bp_path}")
+        return {}
+    except json.JSONDecodeError:
+        print(f"⚠️  Invalid JSON in best practices file: {bp_path}")
+        return {}
+
 # Define scoring sections
 SCORING_SECTIONS = [
     "Key Projects & Initiatives",
@@ -45,7 +57,7 @@ def load_csv_data(csv_path="../data/performance_reviews.csv"):
             column_mapping[col] = "Account"
         elif "Email" in col:
             column_mapping[col] = "Reviewer Email"
-        elif "Name" in col and "Account" not in col:
+        elif col == "Name":  # Exact match to avoid "Enter Your Name" conflict
             column_mapping[col] = "Reviewer Name"
     
     df = df.rename(columns=column_mapping)
@@ -55,25 +67,20 @@ def extract_scores_and_feedback(df):
     """Extract scores and feedback from the DataFrame."""
     cols_list = list(df.columns)
     
-    # Find where scoring starts
-    start_idx = None
-    for i, col in enumerate(cols_list):
-        if col == "Account Director":
-            start_idx = i + 1
-            break
-    
-    if start_idx is None:
-        start_idx = 7
+    # New structure: columns 0-7 are metadata, 8+ are feedback/score pairs
+    # Pattern: Feedback (col 8), Score (col 9), Feedback (col 10), Score (col 11), etc.
+    start_idx = 8  # Start after "Enter Your Name" column
     
     scoring_cols = cols_list[start_idx:]
     
     # Pair up feedback and score columns
+    # Pattern: [Feedback, Score, Feedback, Score, ...]
     score_columns = []
     feedback_columns = []
     
     for i in range(0, len(scoring_cols) - 1, 2):
-        feedback_col_raw = scoring_cols[i]
-        score_col_raw = scoring_cols[i + 1]
+        feedback_col_raw = scoring_cols[i]      # Even indices (0, 2, 4...) = Feedback
+        score_col_raw = scoring_cols[i + 1]      # Odd indices (1, 3, 5...) = Score
         
         section_name = score_col_raw.strip()
         
@@ -118,10 +125,24 @@ def extract_scores_and_feedback(df):
         
         for section, feedback_col in feedback_columns:
             feedback = str(row.get(feedback_col, "")).strip()
+            if not feedback or feedback.lower() == "nan":
+                feedback = "No feedback provided"
             review["feedback"][section] = feedback
         
         review["totalScore"] = total
-        reviews.append(review)
+        
+        # Handle joint reviews (e.g., "Brian Davis / Justin Homa")
+        if " / " in review["accountDirector"]:
+            # Split the names and create separate reviews for each
+            names = [name.strip() for name in review["accountDirector"].split(" / ")]
+            for name in names:
+                individual_review = review.copy()
+                individual_review["accountDirector"] = name
+                individual_review["scores"] = review["scores"].copy()
+                individual_review["feedback"] = review["feedback"].copy()
+                reviews.append(individual_review)
+        else:
+            reviews.append(review)
     
     return reviews
 
@@ -269,6 +290,11 @@ def main():
     print("📚 Building rubric data...")
     rubrics = build_rubric_data()
     
+    # Load best practices
+    print("Loading best practices...")
+    best_practices = load_best_practices()
+    print(f"   - Loaded best practices for {len(best_practices)} Account Directors")
+    
     # Build final data structure
     data = {
         "metadata": {
@@ -278,7 +304,8 @@ def main():
             "lastUpdated": pd.Timestamp.now().isoformat()
         },
         "accountDirectors": aggregated,
-        "rubrics": rubrics
+        "rubrics": rubrics,
+        "bestPractices": best_practices
     }
     
     # Write to JSON

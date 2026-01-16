@@ -830,6 +830,400 @@
             line-height: 1.6;
         }
         
+        /* ==================== BEST PRACTICES VIEW ==================== */
+        .best-practices-header {
+            margin-bottom: 2rem;
+        }
+        
+        .bp-filters {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .checkbox-filter {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            cursor: pointer;
+            font-weight: 500;
+            color: var(--text-primary);
+        }
+        
+        .checkbox-filter input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+        }
+        
+        #featured-practices {
+            margin-bottom: 3rem;
+        }
+        
+        .featured-section-header {
+            margin-bottom: 2rem;
+        }
+        
+        .featured-badge {
+            display: inline-block;
+            background: #10b981;
+            color: white;
+            padding: 0.5rem 1.25rem;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-radius: 2px;
+            margin-bottom: 0.5rem;
+        }
+        
+        .featured-subtitle {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            font-style: italic;
+        }
+        
+        .practice-card {
+            background: white;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+            transition: all 0.3s ease;
+        }
+        
+        .practice-card:hover {
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+            transform: translateY(-2px);
+            border-color: var(--primary-blue);
+        }
+        
+        .practice-card.featured {
+            background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
+            border: 2px solid #10b981;
+            box-shadow: 0 8px 32px rgba(16, 185, 129, 0.15);
+        }
+        
+        .practice-card.featured:hover {
+            box-shadow: 0 12px 40px rgba(16, 185, 129, 0.25);
+        }
+        
+        .practice-header {
+            margin-bottom: 1rem;
+        }
+        
+        .category-badge {
+            display: inline-block;
+            padding: 0.4rem 0.9rem;
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-radius: 3px;
+        }
+        
+        .category-badge.cat-innovation {
+            background: #eff6ff;
+            color: #1e40af;
+            border-left: 3px solid #3b82f6;
+        }
+        
+        .category-badge.cat-business {
+            background: #fffbeb;
+            color: #92400e;
+            border-left: 3px solid #f59e0b;
+        }
+        
+        .category-badge.cat-relations {
+            background: #ecfeff;
+            color: #164e63;
+            border-left: 3px solid #06b6d4;
+        }
+        
+        .category-badge.cat-savings {
+            background: #f0fdf4;
+            color: #166534;
+            border-left: 3px solid #10b981;
+        }
+        
+        .category-badge.cat-process {
+            background: #f5f3ff;
+            color: #5b21b6;
+            border-left: 3px solid #8b5cf6;
+        }
+        
+        .category-badge.cat-communication {
+            background: #fef2f2;
+            color: #991b1b;
+            border-left: 3px solid #ef4444;
+        }
+        
+        .card-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 0.75rem;
+        }
+        
+        .card-meta {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+        
+        .ad-name {
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+        
+        .separator {
+            color: var(--border-color);
+        }
+        
+        .account-name {
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+        
+        .card-description {
+            color: var(--text-primary);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+        
+        .card-details {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .detail-item {
+            display: grid;
+            grid-template-columns: 140px 1fr;
+            gap: 1rem;
+            padding: 0.875rem;
+            background: #f8fafc;
+            border-radius: 4px;
+            border-left: 3px solid #e5e7eb;
+        }
+        
+        .detail-label {
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: #64748b;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .detail-text {
+            color: var(--text-primary);
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        
+        .metrics-section {
+            margin-top: 1rem;
+            padding: 1rem;
+            background: #f1f5f9;
+            border-radius: 4px;
+        }
+        
+        .metrics-label {
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: #64748b;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.75rem;
+        }
+        
+        .metrics-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .metrics-list li {
+            padding-left: 1.5rem;
+            position: relative;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+            font-size: 0.9rem;
+        }
+        
+        .metrics-list li:before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: var(--primary-blue);
+            font-weight: bold;
+        }
+        
+        .practice-quote {
+            background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+            border-left: 4px solid var(--primary-blue);
+            padding: 1rem 1.25rem;
+            border-radius: 8px;
+            font-style: italic;
+            color: var(--text-primary);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+        
+        .view-details-btn {
+            background: var(--primary-blue);
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        
+        .view-details-btn:hover {
+            background: #2563eb;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+        }
+        
+        .all-practices-header {
+            margin-bottom: 2rem;
+        }
+        
+        .section-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.75rem;
+        }
+        
+        .section-divider {
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary-blue) 0%, transparent 100%);
+            margin-bottom: 1.5rem;
+        }
+        
+        .category-section {
+            margin-bottom: 2.5rem;
+        }
+        
+        .category-header {
+            padding: 0.75rem 1rem;
+            margin-bottom: 1rem;
+            border-radius: 4px;
+            border-left: 4px solid;
+        }
+        
+        .category-header.cat-innovation {
+            background: #eff6ff;
+            border-left-color: #3b82f6;
+        }
+        
+        .category-header.cat-business {
+            background: #fffbeb;
+            border-left-color: #f59e0b;
+        }
+        
+        .category-header.cat-relations {
+            background: #ecfeff;
+            border-left-color: #06b6d4;
+        }
+        
+        .category-header.cat-savings {
+            background: #f0fdf4;
+            border-left-color: #10b981;
+        }
+        
+        .category-title {
+            font-size: 1rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            color: #1e293b;
+        }
+        
+        .practice-card.compact {
+            padding: 1.5rem;
+        }
+        
+        .compact-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 0.75rem;
+        }
+        
+        .compact-title {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin: 0;
+            flex: 1;
+        }
+        
+        .featured-indicator {
+            background: #10b981;
+            color: white;
+            padding: 0.25rem 0.65rem;
+            border-radius: 2px;
+            font-size: 0.65rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .compact-meta {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+            font-size: 0.85rem;
+        }
+        
+        .meta-ad {
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+        
+        .meta-separator {
+            color: var(--border-color);
+        }
+        
+        .meta-account {
+            color: var(--text-secondary);
+        }
+        
+        .compact-details {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        
+        .compact-detail {
+            display: flex;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+        }
+        
+        .compact-label {
+            font-weight: 600;
+            color: #64748b;
+            min-width: 100px;
+        }
+        
+        .compact-value {
+            color: var(--text-primary);
+            flex: 1;
+        }
+        
         /* ==================== RUBRIC VIEW ==================== */
         .rubric-intro {
             background: white;
@@ -1376,6 +1770,10 @@
                     <span class="view-icon">📝</span>
                     <span>Individual Reviews</span>
                 </button>
+                <button class="view-btn" data-view="best-practices">
+                    <span class="view-icon">💡</span>
+                    <span>Best Practices</span>
+                </button>
                 <button class="view-btn" data-view="rubric">
                     <span class="view-icon">📚</span>
                     <span>Scoring Rubric</span>
@@ -1475,6 +1873,33 @@
                     </div>
                 </div>
                 
+                <!-- Rubric View -->
+                <!-- Best Practices View -->
+                <div id="best-practices-view" class="hidden">
+                    <div class="best-practices-header">
+                        <div class="bp-filters">
+                            <select id="bp-ad-filter" class="filter-select">
+                                <option value="all">All Account Directors</option>
+                            </select>
+                            <select id="bp-category-filter" class="filter-select">
+                                <option value="all">All Categories</option>
+                            </select>
+                            <label class="checkbox-filter">
+                                <input type="checkbox" id="bp-featured-only">
+                                Featured Only
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div id="featured-practices">
+                        <!-- Featured practices will be inserted here -->
+                    </div>
+                    
+                    <div id="all-practices">
+                        <!-- All practices will be inserted here -->
+                    </div>
+                </div>
+
                 <!-- Rubric View -->
                 <div id="rubric-view" class="hidden">
                     <div class="rubric-intro">

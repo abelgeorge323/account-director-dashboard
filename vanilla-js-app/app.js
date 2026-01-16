@@ -6,10 +6,16 @@
 // ==================== STATE MANAGEMENT ====================
 const AppState = {
     data: null,
+    bestPractices: null,
     currentView: 'rankings',
     filters: {
         vertical: 'all',
         account: 'all'
+    },
+    bestPracticesFilters: {
+        adName: 'all',
+        category: 'all',
+        featuredOnly: false
     },
     sort: {
         by: 'totalScore',
@@ -53,13 +59,78 @@ async function loadData() {
     }
 }
 
+async function loadBestPractices() {
+    try {
+        // Best practices are now in data.json under bestPractices key
+        if (!AppState.data || !AppState.data.bestPractices) {
+            console.warn('No best practices data found in data.json');
+            return false;
+        }
+        
+        // Transform from {AD_NAME: [...]} to {practices: [...], metadata: {...}}
+        const bestPracticesData = AppState.data.bestPractices;
+        const practices = [];
+        const categories = new Set();
+        
+        // Create AD to account mapping
+        const adAccountMap = {};
+        if (AppState.data.accountDirectors) {
+            AppState.data.accountDirectors.forEach(ad => {
+                adAccountMap[ad.accountDirector] = ad.account;
+            });
+        }
+        
+        // Flatten the structure and map fields
+        Object.keys(bestPracticesData).forEach(adName => {
+            const adPractices = bestPracticesData[adName];
+            if (Array.isArray(adPractices)) {
+                adPractices.forEach(practice => {
+                    practices.push({
+                        ...practice,
+                        adName: adName,
+                        account: adAccountMap[adName] || '',  // Get account from AD data
+                        replicable: practice.replicability || 'Medium',  // Map replicability to replicable
+                        replicableDetails: '',  // Not in new structure
+                        quote: practice.leadership_endorsement || '',  // Use endorsement as quote
+                        featured: practice.status === 'Proven & Active' || practice.status === 'Proven & Scalable',  // Auto-feature proven practices
+                        metrics: []  // Not in new structure
+                    });
+                    if (practice.category) {
+                        categories.add(practice.category);
+                    }
+                });
+            }
+        });
+        
+        // Build the expected structure
+        AppState.bestPractices = {
+            metadata: {
+                totalPractices: practices.length,
+                categories: Array.from(categories).sort(),
+                lastUpdated: AppState.data.metadata?.lastUpdated || new Date().toISOString()
+            },
+            practices: practices
+        };
+        
+        console.log('Best practices loaded:', AppState.bestPractices);
+        return true;
+    } catch (error) {
+        console.error('Error loading best practices:', error);
+        return false;
+    }
+}
+
 // ==================== INITIALIZATION ====================
 async function init() {
     const success = await loadData();
     if (!success) return;
     
+    // Load best practices (non-blocking)
+    await loadBestPractices();
+    
     // Initialize UI
     populateFilters();
+    populateBestPracticesFilters();
     setupEventListeners();
     updateLastUpdated();
     
@@ -88,7 +159,7 @@ function showView(viewName) {
     });
     
     // Hide all views
-    ['rankings-view', 'reviews-view', 'rubric-view'].forEach(id => {
+    ['rankings-view', 'reviews-view', 'best-practices-view', 'rubric-view'].forEach(id => {
         document.getElementById(id).classList.add('hidden');
     });
     
@@ -105,6 +176,10 @@ function showView(viewName) {
             title: 'Individual Performance Reviews',
             subtitle: 'Detailed breakdown of scores and feedback for each review'
         },
+        'best-practices': {
+            title: 'Best Practices & Innovation',
+            subtitle: 'Showcasing excellence and replicable strategies across our team'
+        },
         rubric: {
             title: 'Scoring Rubric & Methodology',
             subtitle: 'Understand how Account Director performance is evaluated'
@@ -117,6 +192,7 @@ function showView(viewName) {
     // Render view content
     if (viewName === 'rankings') renderRankings();
     else if (viewName === 'reviews') renderReviews();
+    else if (viewName === 'best-practices') renderBestPractices();
     else if (viewName === 'rubric') renderRubric();
 }
 
@@ -532,6 +608,197 @@ function renderRubric() {
     }).join('');
 }
 
+// ==================== BEST PRACTICES VIEW ====================
+function populateBestPracticesFilters() {
+    if (!AppState.bestPractices) return;
+    
+    // Populate AD filter
+    const adFilter = document.getElementById('bp-ad-filter');
+    const uniqueADs = [...new Set(AppState.bestPractices.practices.map(p => p.adName))];
+    uniqueADs.forEach(ad => {
+        const option = document.createElement('option');
+        option.value = ad;
+        option.textContent = ad;
+        adFilter.appendChild(option);
+    });
+    
+    // Populate category filter
+    const categoryFilter = document.getElementById('bp-category-filter');
+    AppState.bestPractices.metadata.categories.forEach(category => {
+        const option = document.createElement('option');
+        option.value = category;
+        option.textContent = category;
+        categoryFilter.appendChild(option);
+    });
+}
+
+function getCategoryClass(category) {
+    const classes = {
+        'Innovation & Technology': 'cat-innovation',
+        'Business Development & Strategy': 'cat-business',
+        'Client Relations & Advocacy': 'cat-relations',
+        'Cost Savings & Efficiency': 'cat-savings',
+        'Process Improvement': 'cat-process',
+        'Communication & Presentation': 'cat-communication'
+    };
+    return classes[category] || 'cat-default';
+}
+
+function getCategoryBadge(category) {
+    const categoryClass = getCategoryClass(category);
+    return `<span class="category-badge ${categoryClass}">${category.toUpperCase()}</span>`;
+}
+
+function getFilteredPractices() {
+    if (!AppState.bestPractices) return [];
+    
+    return AppState.bestPractices.practices.filter(practice => {
+        if (AppState.bestPracticesFilters.adName !== 'all' && 
+            practice.adName !== AppState.bestPracticesFilters.adName) {
+            return false;
+        }
+        if (AppState.bestPracticesFilters.category !== 'all' && 
+            practice.category !== AppState.bestPracticesFilters.category) {
+            return false;
+        }
+        if (AppState.bestPracticesFilters.featuredOnly && !practice.featured) {
+            return false;
+        }
+        return true;
+    });
+}
+
+function renderBestPractices() {
+    if (!AppState.bestPractices) {
+        document.getElementById('featured-practices').innerHTML = 
+            '<p style="text-align: center; color: var(--text-secondary); padding: 40px;">Best practices data not available.</p>';
+        return;
+    }
+    
+    const filtered = getFilteredPractices();
+    
+    // Render featured practices
+    const featured = filtered.filter(p => p.featured);
+    renderFeaturedPractices(featured);
+    
+    // Render all practices by category
+    renderAllPractices(filtered);
+}
+
+function renderFeaturedPractices(practices) {
+    const container = document.getElementById('featured-practices');
+    
+    if (practices.length === 0) {
+        container.innerHTML = '';
+        return;
+    }
+    
+    container.innerHTML = `
+        <div class="featured-section-header">
+            <div class="featured-badge">FEATURED HIGHLIGHTS</div>
+            <div class="featured-subtitle">Strategic initiatives with high impact and replicability</div>
+        </div>
+        ${practices.map(practice => `
+            <div class="practice-card featured fade-in">
+                <div class="practice-header">
+                    ${getCategoryBadge(practice.category)}
+                </div>
+                <h3 class="card-title">${practice.title}</h3>
+                <div class="card-meta">
+                    <span class="ad-name">${practice.adName}</span>
+                    <span class="separator">|</span>
+                    <span class="account-name">${practice.account}</span>
+                </div>
+                
+                <p class="card-description">${practice.description}</p>
+                
+                <div class="card-details">
+                    <div class="detail-item">
+                        <span class="detail-label">IMPACT</span>
+                        <span class="detail-text">${practice.impact}</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">REPLICABILITY</span>
+                        <span class="detail-text">${practice.replicable} — ${practice.replicableDetails}</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">STATUS</span>
+                        <span class="detail-text">${practice.status}</span>
+                    </div>
+                </div>
+                
+                <blockquote class="practice-quote">
+                    "${practice.quote}"
+                </blockquote>
+                
+                ${practice.metrics ? `
+                    <div class="metrics-section">
+                        <div class="metrics-label">KEY METRICS</div>
+                        <ul class="metrics-list">
+                            ${practice.metrics.map(m => `<li>${m}</li>`).join('')}
+                        </ul>
+                    </div>
+                ` : ''}
+            </div>
+        `).join('')}
+    `;
+}
+
+function renderAllPractices(practices) {
+    const container = document.getElementById('all-practices');
+    
+    if (practices.length === 0) {
+        container.innerHTML = '<p style="text-align: center; color: var(--text-secondary); padding: 40px;">No practices match the current filters.</p>';
+        return;
+    }
+    
+    // Group by category
+    const byCategory = {};
+    practices.forEach(practice => {
+        if (!byCategory[practice.category]) {
+            byCategory[practice.category] = [];
+        }
+        byCategory[practice.category].push(practice);
+    });
+    
+    container.innerHTML = `
+        <div class="all-practices-header">
+            <h2 class="section-title">ALL BEST PRACTICES</h2>
+            <div class="section-divider"></div>
+        </div>
+        ${Object.entries(byCategory).map(([category, categoryPractices]) => `
+            <div class="category-section fade-in">
+                <div class="category-header ${getCategoryClass(category)}">
+                    <span class="category-title">${category.toUpperCase()}</span>
+                </div>
+                ${categoryPractices.map(practice => `
+                    <div class="practice-card compact">
+                        <div class="compact-header">
+                            <h4 class="compact-title">${practice.title}</h4>
+                            ${practice.featured ? '<span class="featured-indicator">FEATURED</span>' : ''}
+                        </div>
+                        <div class="compact-meta">
+                            <span class="meta-ad">${practice.adName}</span>
+                            <span class="meta-separator">|</span>
+                            <span class="meta-account">${practice.account}</span>
+                        </div>
+                        <div class="compact-details">
+                            <div class="compact-detail">
+                                <span class="compact-label">Impact:</span>
+                                <span class="compact-value">${practice.impact}</span>
+                            </div>
+                            <div class="compact-detail">
+                                <span class="compact-label">Replicability:</span>
+                                <span class="compact-value">${practice.replicable}</span>
+                            </div>
+                        </div>
+                    </div>
+                `).join('')}
+            </div>
+        `).join('')}
+    `;
+}
+
 // ==================== EVENT LISTENERS ====================
 function setupEventListeners() {
     // Mobile menu
@@ -608,6 +875,32 @@ function setupEventListeners() {
             renderReviewsForAD(e.target.value);
         }
     });
+    
+    // Best Practices filters
+    const bpAdFilter = document.getElementById('bp-ad-filter');
+    const bpCategoryFilter = document.getElementById('bp-category-filter');
+    const bpFeaturedOnly = document.getElementById('bp-featured-only');
+    
+    if (bpAdFilter) {
+        bpAdFilter.addEventListener('change', (e) => {
+            AppState.bestPracticesFilters.adName = e.target.value;
+            if (AppState.currentView === 'best-practices') renderBestPractices();
+        });
+    }
+    
+    if (bpCategoryFilter) {
+        bpCategoryFilter.addEventListener('change', (e) => {
+            AppState.bestPracticesFilters.category = e.target.value;
+            if (AppState.currentView === 'best-practices') renderBestPractices();
+        });
+    }
+    
+    if (bpFeaturedOnly) {
+        bpFeaturedOnly.addEventListener('change', (e) => {
+            AppState.bestPracticesFilters.featuredOnly = e.target.checked;
+            if (AppState.currentView === 'best-practices') renderBestPractices();
+        });
+    }
 }
 
 // ==================== START APPLICATION ====================
