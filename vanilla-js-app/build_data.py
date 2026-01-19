@@ -147,12 +147,28 @@ def extract_scores_and_feedback(df):
     return reviews
 
 def load_verticals(vertical_path="../data/verticals.csv"):
-    """Load vertical mapping."""
+    """Load vertical and tier mapping."""
     try:
         vertical_df = pd.read_csv(vertical_path)
-        return vertical_df.set_index("Account Director")["Vertical"].to_dict()
+        # Return dict with both vertical and tier
+        result = {}
+        for idx, row in vertical_df.iterrows():
+            ad_name = row["Account Director"].strip() if pd.notna(row["Account Director"]) else ""
+            vertical = row["Vertical"].strip() if pd.notna(row["Vertical"]) else "N/A"
+            tier = row["Tier"].strip() if pd.notna(row["Tier"]) and str(row["Tier"]).strip() else ""
+            result[ad_name] = {"vertical": vertical, "tier": tier}
+        return result
     except FileNotFoundError:
         return {}
+    except KeyError:
+        # If Tier column doesn't exist, fall back to vertical only
+        vertical_df = pd.read_csv(vertical_path)
+        result = {}
+        for idx, row in vertical_df.iterrows():
+            ad_name = row["Account Director"].strip() if pd.notna(row["Account Director"]) else ""
+            vertical = row["Vertical"].strip() if pd.notna(row["Vertical"]) else "N/A"
+            result[ad_name] = {"vertical": vertical, "tier": ""}
+        return result
 
 def aggregate_reviews(reviews, verticals):
     """Aggregate reviews by Account Director."""
@@ -174,10 +190,14 @@ def aggregate_reviews(reviews, verticals):
         
         avg_total = sum(avg_scores.values())
         
+        # Get vertical and tier data
+        vertical_data = verticals.get(ad_name, {"vertical": "N/A", "tier": ""})
+        
         aggregated.append({
             "accountDirector": ad_name,
             "account": ad_review_list[0]["account"],
-            "vertical": verticals.get(ad_name, "N/A"),
+            "vertical": vertical_data.get("vertical", "N/A"),
+            "tier": vertical_data.get("tier", ""),
             "reviewCount": len(ad_review_list),
             "avgScores": avg_scores,
             "avgTotalScore": avg_total,

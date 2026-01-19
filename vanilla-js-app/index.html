@@ -315,6 +315,7 @@
         .sort-controls {
             display: flex;
             gap: 12px;
+            flex-wrap: wrap;
         }
         
         .sort-select {
@@ -1834,16 +1835,15 @@
                             <p class="rankings-subtitle">Click ▶ to expand • Sorted by total score</p>
                         </div>
                         <div class="sort-controls">
+                            <select id="vertical-filter" class="sort-select">
+                                <option value="all">All Verticals</option>
+                            </select>
+                            <select id="tier-filter" class="sort-select">
+                                <option value="all">All Tiers</option>
+                            </select>
                             <select id="sort-by" class="sort-select">
                                 <option value="totalScore">Total Score</option>
-                                <option value="projects">Projects</option>
-                                <option value="valueAdds">Value Adds</option>
-                                <option value="costSavings">Cost Savings</option>
-                                <option value="innovation">Innovation</option>
-                                <option value="accountability">Accountability</option>
-                                <option value="strategy">Strategy</option>
-                                <option value="goals">Goals</option>
-                                <option value="execPresence">Exec Presence</option>
+                                <option value="tier">Tier</option>
                             </select>
                             <select id="sort-order" class="sort-select">
                                 <option value="desc">Highest First</option>

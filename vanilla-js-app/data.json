@@ -21,13 +21,14 @@
       "Goals",
       "Exec Presence"
     ],
-    "lastUpdated": "2026-01-16T17:17:50.073548"
+    "lastUpdated": "2026-01-19T00:38:28.788089"
   },
   "accountDirectors": [
     {
       "accountDirector": "Benjamin Ehrenberg",
       "account": "Lockheed Martin",
       "vertical": "Manufacturing",
+      "tier": "Tier 5",
       "reviewCount": 4,
       "avgScores": {
         "Key Projects & Initiatives": 3.5,
@@ -44,7 +45,7 @@
         {
           "accountDirector": "Benjamin Ehrenberg",
           "account": "Lockheed Martin",
-          "reviewerName": "Abel George",
+          "reviewerName": "Valarie Barnett",
           "reviewerEmail": "ageorge1@sbmcorp.com",
           "scores": {
             "Key Projects & Initiatives": 4.0,
@@ -71,7 +72,7 @@
         {
           "accountDirector": "Benjamin Ehrenberg",
           "account": "Lockheed Martin",
-          "reviewerName": "Abel George",
+          "reviewerName": "Shane Follman",
           "reviewerEmail": "ageorge1@sbmcorp.com",
           "scores": {
             "Key Projects & Initiatives": 4.0,
@@ -98,7 +99,7 @@
         {
           "accountDirector": "Benjamin Ehrenberg",
           "account": "Lockheed Martin",
-          "reviewerName": "Abel George",
+          "reviewerName": "Ryan Blackwood",
           "reviewerEmail": "ageorge1@sbmcorp.com",
           "scores": {
             "Key Projects & Initiatives": 4.0,
@@ -155,6 +156,7 @@
       "accountDirector": "Brian Davis",
       "account": "Merck",
       "vertical": "Life Science",
+      "tier": "Tier 6",
       "reviewCount": 3,
       "avgScores": {
         "Key Projects & Initiatives": 3.0,
@@ -255,6 +257,7 @@
       "accountDirector": "Justin Homa",
       "account": "CBRE Merck",
       "vertical": "Life Science",
+      "tier": "Tier 5",
       "reviewCount": 2,
       "avgScores": {
         "Key Projects & Initiatives": 3.5,
@@ -328,6 +331,7 @@
       "accountDirector": "Mark Schlerf",
       "account": "HP LAM Xerox and others",
       "vertical": "Technology",
+      "tier": "Tier 5",
       "reviewCount": 4,
       "avgScores": {
         "Key Projects & Initiatives": 4.5,
@@ -455,6 +459,7 @@
       "accountDirector": "Grant Frazier",
       "account": "Meta",
       "vertical": "Technology",
+      "tier": "Tier 6",
       "reviewCount": 4,
       "avgScores": {
         "Key Projects & Initiatives": 4.25,
@@ -582,6 +587,7 @@
       "accountDirector": "Stuart Kelloff",
       "account": "Nvidia",
       "vertical": "Technology",
+      "tier": "Tier 6",
       "reviewCount": 4,
       "avgScores": {
         "Key Projects & Initiatives": 5.0,
@@ -709,6 +715,7 @@
       "accountDirector": "Jacqueline Maravilla",
       "account": "Lonza",
       "vertical": "Life Science",
+      "tier": "",
       "reviewCount": 3,
       "avgScores": {
         "Key Projects & Initiatives": 4.0,
@@ -809,6 +816,7 @@
       "accountDirector": "Paul Rhodes",
       "account": "Google",
       "vertical": "Technology",
+      "tier": "Tier 6",
       "reviewCount": 4,
       "avgScores": {
         "Key Projects & Initiatives": 3.5,
@@ -936,6 +944,7 @@
       "accountDirector": "Kimberly Wittekind",
       "account": "Nestle/GE Healthcare",
       "vertical": "Manufacturing",
+      "tier": "Tier 5",
       "reviewCount": 3,
       "avgScores": {
         "Key Projects & Initiatives": 4.333333333333333,
@@ -1036,6 +1045,7 @@
       "accountDirector": "Peggy Shum",
       "account": "Deutsche Bank",
       "vertical": "Finance",
+      "tier": "",
       "reviewCount": 1,
       "avgScores": {
         "Key Projects & Initiatives": 3.0,
@@ -1082,6 +1092,7 @@
       "accountDirector": "Ana Sabater",
       "account": "LinkedIn/Uber",
       "vertical": "Technology",
+      "tier": "",
       "reviewCount": 4,
       "avgScores": {
         "Key Projects & Initiatives": 4.75,
@@ -1209,6 +1220,7 @@
       "accountDirector": "Taylor Wattenberg",
       "account": "Microsoft",
       "vertical": "Technology",
+      "tier": "Tier 6",
       "reviewCount": 3,
       "avgScores": {
         "Key Projects & Initiatives": 4.333333333333333,
@@ -1309,6 +1321,7 @@
       "accountDirector": "Jack Thornton",
       "account": "Nike Distribution",
       "vertical": "Distribution",
+      "tier": "Tier 4",
       "reviewCount": 3,
       "avgScores": {
         "Key Projects & Initiatives": 3.6666666666666665,
@@ -1409,6 +1422,7 @@
       "accountDirector": "Isaac Calderon",
       "account": "Bayer/J&J/Kenvue/Millipore Sigma",
       "vertical": "Life Science",
+      "tier": "Tier 6",
       "reviewCount": 3,
       "avgScores": {
         "Key Projects & Initiatives": 3.6666666666666665,
@@ -1509,6 +1523,7 @@
       "accountDirector": "Patrick Murtha",
       "account": "Cardinal/IQVIA/McKesson",
       "vertical": "Life Science",
+      "tier": "",
       "reviewCount": 4,
       "avgScores": {
         "Key Projects & Initiatives": 3.75,
@@ -1636,6 +1651,7 @@
       "accountDirector": "Aaron Simpson",
       "account": "Mars/3M",
       "vertical": "Manufacturing",
+      "tier": "",
       "reviewCount": 1,
       "avgScores": {
         "Key Projects & Initiatives": 3.0,
@@ -1675,6 +1691,107 @@
             "Executive Presence & Presentation Skills": "Aaron led the discussion with clarity, confidence, and a structured narrative. He demonstrated strong command of the data and consistently tied operational details back to outcomes that matter to executive stakeholders. With continued refinement around concise storytelling and sharper framing of strategic decisions, Aaron’s executive presence will continue to strengthen."
           },
           "totalScore": 27.0
+        }
+      ]
+    },
+    {
+      "accountDirector": "Justin Dallavis",
+      "account": "Boeing",
+      "vertical": "Manufacturing",
+      "tier": "",
+      "reviewCount": 3,
+      "avgScores": {
+        "Key Projects & Initiatives": 4.0,
+        "Value Adds & Cost Avoidance": 4.0,
+        "Cost Savings Delivered": 4.0,
+        "Innovation & Continuous Improvement": 3.3333333333333335,
+        "Issues, Challenges & Accountability": 4.666666666666667,
+        "2026 Forward Strategy & Vision": 3.3333333333333335,
+        "Personal Goals & Role Maturity": 3.6666666666666665,
+        "Executive Presence & Presentation Skills": 4.333333333333333
+      },
+      "avgTotalScore": 31.333333333333332,
+      "reviews": [
+        {
+          "accountDirector": "Justin Dallavis",
+          "account": "Boeing",
+          "reviewerName": "nan",
+          "reviewerEmail": "anonymous",
+          "scores": {
+            "Key Projects & Initiatives": 4.0,
+            "Value Adds & Cost Avoidance": 4.0,
+            "Cost Savings Delivered": 4.0,
+            "Innovation & Continuous Improvement": 3.0,
+            "Issues, Challenges & Accountability": 5.0,
+            "2026 Forward Strategy & Vision": 3.0,
+            "Personal Goals & Role Maturity": 3.0,
+            "Executive Presence & Presentation Skills": 4.0
+          },
+          "feedback": {
+            "Key Projects & Initiatives": "Although you’re hitting the points required I’m concerned about you reading.",
+            "Value Adds & Cost Avoidance": "You’ve shown that you can articulate the value estimate the financial, operational and risk input but again I can totally tell you’re reading and I want you to be able to present to executives at all level based on what you know. In the future have notes not a script. You did well pivoting and answering questions which supports my theory you have all the knowledge needed to deliver a successful presentation!",
+            "Cost Savings Delivered": "No feedback provided",
+            "Innovation & Continuous Improvement": "Always demonstrate the value. Even if you cannot do tech you can innovate a process and be able to discuss the value.",
+            "Issues, Challenges & Accountability": "You provided clear explanation of the challenges and discussed your improvements and some actions. I would like to understand what success looks like and your timelines for correction / resolve. Weekly leadership meetings for alignment are great but more details on the actions taken would be better. Which you answered when asked so good job there!",
+            "2026 Forward Strategy & Vision": "Gap in timelines where critical for roll out. Not an actual plan. Reach out Melissa Hampton regarding JLL escalation. The path forward lacked the strategy to achieve the results you want and timelines.",
+            "Personal Goals & Role Maturity": "Great results. Like that you used some 4i. Your personal goals felt made up on the fly. Want you to use SMART goals. I would have to have heard the timelines roadmaps and strategy.",
+            "Executive Presence & Presentation Skills": "I cannot give you a 5.0 based on reading a script. Overall good presentation well thought out. When communicating why something is good for a customer always think how are we providing value to them and communicate that. I also gave you credit for being able to answer the question off script and really clearly."
+          },
+          "totalScore": 30.0
+        },
+        {
+          "accountDirector": "Justin Dallavis",
+          "account": "Boeing",
+          "reviewerName": "nan",
+          "reviewerEmail": "anonymous",
+          "scores": {
+            "Key Projects & Initiatives": 4.0,
+            "Value Adds & Cost Avoidance": 4.0,
+            "Cost Savings Delivered": 4.0,
+            "Innovation & Continuous Improvement": 3.0,
+            "Issues, Challenges & Accountability": 5.0,
+            "2026 Forward Strategy & Vision": 3.0,
+            "Personal Goals & Role Maturity": 4.0,
+            "Executive Presence & Presentation Skills": 5.0
+          },
+          "feedback": {
+            "Key Projects & Initiatives": "Great job articulating the 2025 initiatives; however, more desire for client impact.  Why were these initiatives important to the client and what feedback was received?",
+            "Value Adds & Cost Avoidance": "Exceptional explanation and itemization of cost savings related items/initiatives; however, lacked that WOW! moment with quantitative value - example: total portfolio cost savings $40k through A,B,C initiatives",
+            "Cost Savings Delivered": "Excellent job articulating initiatives and actions; however, lacking that client impact piece and potential mic-drop moment of quantified cost savings dollar i.e. $1M cost savings!",
+            "Innovation & Continuous Improvement": "Items in work, but still requiring development.  Strategy, implementation, and due dates still WIP",
+            "Issues, Challenges & Accountability": "Proactively owned shortcomings on management issues, even implementing an Internal CAP on Huntsville and OKC.",
+            "2026 Forward Strategy & Vision": "Time limited.",
+            "Personal Goals & Role Maturity": "Time limited - Clearly communicated measurable, tangible goals and expectations.",
+            "Executive Presence & Presentation Skills": "Justin articulates very well and has really immersed himself into an extremely challenging Boeing portfolio.  Clearly demonstrates his knowledge of KPIs, client connection, and Ops, but also has positioned SBM for future growth!"
+          },
+          "totalScore": 32.0
+        },
+        {
+          "accountDirector": "Justin Dallavis",
+          "account": "Boeing",
+          "reviewerName": "nan",
+          "reviewerEmail": "anonymous",
+          "scores": {
+            "Key Projects & Initiatives": 4.0,
+            "Value Adds & Cost Avoidance": 4.0,
+            "Cost Savings Delivered": 4.0,
+            "Innovation & Continuous Improvement": 4.0,
+            "Issues, Challenges & Accountability": 4.0,
+            "2026 Forward Strategy & Vision": 4.0,
+            "Personal Goals & Role Maturity": 4.0,
+            "Executive Presence & Presentation Skills": 4.0
+          },
+          "feedback": {
+            "Key Projects & Initiatives": "Justin clearly articulated several major 2025 initiatives across the Boeing portfolio, including significant site expansions, onboarding of new facilities, and stabilization of previously underperforming locations. The scope and complexity of these initiatives were evident, particularly in Mascoutah, Huntsville, Fort Walton Beach, and Swansea. Justin demonstrated strong ownership and execution. To reach a 5, future reviews should further tighten the narrative around why each initiative mattered most to Boeing and more explicitly connect each effort to measurable client outcomes.",
+            "Value Adds & Cost Avoidance": "Justin presented a strong set of value-add examples delivered beyond contract scope, including absorbed wage increases, expanded floor care, restroom deep cleaning, route restructuring, and in-housing of window washing. These efforts clearly reinforced SBM’s position as a proactive partner rather than a reactive vendor. To strengthen this section further, Justin should consistently translate these initiatives into estimated financial, operational, or risk-based impact to make the value more tangible at an executive level.",
+            "Cost Savings Delivered": "Justin effectively highlighted several credible cost savings and cost avoidance measures, including reduced reliance on third-party services, improved labor efficiency through equipment investments, and lifecycle extension of flooring and carpet assets. The examples were concrete and relevant to Boeing’s operating environment. Elevation to a 5 would require clearer quantification and documentation of savings over time and how these practices are sustained and replicated across sites.",
+            "Innovation & Continuous Improvement": "Justin demonstrated strong leadership in introducing new tools, equipment, and methods, including Kaivac systems, rideable equipment, in-house window washing, and Whittaker carpet spotters. These initiatives showed a willingness to test, adopt, and scale improvements that directly enhance efficiency and service quality. Continued focus on standardizing these innovations into formal playbooks and measuring outcomes consistently would further elevate this area.",
+            "Issues, Challenges & Accountability": "Justin was transparent and accountable in addressing challenges, particularly around leadership transitions and historically underperforming sites such as Huntsville. He clearly owned the turnaround efforts and highlighted the decisive actions taken, including leadership redeployment and internal talent development. This section was a strength. Further improvement would come from outlining clearer timelines and metrics used to determine when a site is fully stabilized.",
+            "2026 Forward Strategy & Vision": "Justin articulated a clear forward strategy focused on continued expansion, standardization of successful service models, and deepening trust with Boeing and JLL. The direction is sound and aligned with both retention and growth. To reach an exceptional rating, future articulation should include clearer prioritization, sequencing, and a sharper view of where differentiation will matter most in 2026.",
+            "Personal Goals & Role Maturity": "Justin demonstrated strong role maturity, particularly in managing complex portfolios, developing leaders, and making tough operational decisions. His emphasis on proactive service, talent development, and consistency reflects a growth mindset. Making personal development goals more explicit and measurable would further strengthen this section.",
+            "Executive Presence & Presentation Skills": "Justin communicated confidently and professionally, demonstrating strong command of both the portfolio and the details behind his initiatives. His storytelling was clear and engaging, though occasionally dense. Continued refinement toward more concise executive-level framing and sharper quantification of impact will further elevate his presence.\n\nJustin delivered a strong 2025 performance across a complex, high-visibility portfolio. His strengths lie in execution, leadership development, and proactive value creation. The opportunity ahead is to sharpen quantification, standardize innovations, and continue elevating executive storytelling. Justin is operating at a high level and is well positioned for continued growth and increased scope."
+          },
+          "totalScore": 32.0
         }
       ]
     }

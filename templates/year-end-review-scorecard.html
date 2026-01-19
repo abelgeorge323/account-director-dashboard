@@ -387,7 +387,7 @@
            ======================================== */
         @media print {
             body {
-                padding: 0.25in;
+                padding: 0;
                 max-width: 100%;
             }
 
@@ -396,8 +396,31 @@
                 -webkit-print-color-adjust: exact;
                 print-color-adjust: exact;
                 page-break-after: avoid;
-                padding: 1rem;
+                padding: 0.5rem 0.75rem;
                 margin-bottom: 0.5rem;
+            }
+
+            .header-section h1 {
+                font-size: 1.1rem;
+                margin-bottom: 0.5rem;
+            }
+
+            .header-metadata {
+                gap: 0.5rem;
+                margin-top: 0.5rem;
+            }
+
+            .metadata-item {
+                padding: 0.4rem 0.6rem;
+            }
+
+            .metadata-label {
+                font-size: 0.65rem;
+                margin-bottom: 0.15rem;
+            }
+
+            .metadata-value {
+                font-size: 0.85rem;
             }
 
             .score-summary-first-page {
@@ -406,21 +429,60 @@
                 margin-bottom: 0;
             }
 
-            .score-summary-first-page h2 {
-                font-size: 1rem;
+            .score-summary-first-page {
                 margin-bottom: 0.5rem;
             }
 
+            .score-summary-first-page h2 {
+                font-size: 0.9rem;
+                margin-bottom: 0.3rem;
+                margin-top: 0.3rem;
+            }
+
             .score-table {
-                font-size: 0.8rem;
+                font-size: 0.7rem;
+            }
+
+            .score-table th,
+            .score-table td {
+                padding: 0.3rem 0.5rem;
             }
 
             .scored-section {
-                page-break-after: always;
                 page-break-inside: avoid;
                 break-inside: avoid;
-                margin-bottom: 0;
-                padding: 0.75rem;
+                margin-bottom: 0.3rem;
+                padding: 0.5rem;
+                border: 1px solid #e2e8f0;
+            }
+
+            /* Hide rubric tables in print to save space */
+            .rubric-table {
+                display: none;
+            }
+
+            /* Hide score selection checkboxes in print */
+            .score-selection {
+                display: none;
+            }
+
+            .field-content {
+                font-size: 0.75rem;
+                padding: 0.5rem;
+                line-height: 1.4;
+            }
+
+            .field-content p {
+                margin-bottom: 0.3rem;
+            }
+
+            .field-content ul {
+                margin: 0.3rem 0;
+                padding-left: 1.2rem;
+            }
+
+            .field-content li {
+                margin-bottom: 0.2rem;
             }
 
             .final-assessment-section {

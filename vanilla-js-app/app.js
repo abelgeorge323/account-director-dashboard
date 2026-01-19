@@ -10,7 +10,8 @@ const AppState = {
     currentView: 'rankings',
     filters: {
         vertical: 'all',
-        account: 'all'
+        account: 'all',
+        tier: 'all'
     },
     bestPracticesFilters: {
         adName: 'all',
@@ -200,29 +201,50 @@ function showView(viewName) {
 function populateFilters() {
     const verticals = new Set();
     const accounts = new Set();
+    const tiers = new Set();
     
     AppState.data.accountDirectors.forEach(ad => {
         if (ad.vertical && ad.vertical !== 'N/A') verticals.add(ad.vertical);
         if (ad.account) accounts.add(ad.account);
+        if (ad.tier) {
+            tiers.add(ad.tier);
+        } else {
+            tiers.add('Unassigned');
+        }
     });
     
-    // Populate vertical filter
-    const verticalSelect = document.getElementById('filter-vertical');
-    Array.from(verticals).sort().forEach(vertical => {
-        const option = document.createElement('option');
-        option.value = vertical;
-        option.textContent = vertical;
-        verticalSelect.appendChild(option);
-    });
+    // Populate vertical filter (in rankings view)
+    const verticalFilterSelect = document.getElementById('vertical-filter');
+    if (verticalFilterSelect) {
+        Array.from(verticals).sort().forEach(vertical => {
+            const option = document.createElement('option');
+            option.value = vertical;
+            option.textContent = vertical;
+            verticalFilterSelect.appendChild(option);
+        });
+    }
     
-    // Populate account filter
+    // Populate tier filter (in rankings view)
+    const tierFilterSelect = document.getElementById('tier-filter');
+    if (tierFilterSelect) {
+        Array.from(tiers).sort().forEach(tier => {
+            const option = document.createElement('option');
+            option.value = tier;
+            option.textContent = tier;
+            tierFilterSelect.appendChild(option);
+        });
+    }
+    
+    // Populate account filter (for reviews view if it exists)
     const accountSelect = document.getElementById('filter-account');
-    Array.from(accounts).sort().forEach(account => {
-        const option = document.createElement('option');
-        option.value = account;
-        option.textContent = account;
-        accountSelect.appendChild(option);
-    });
+    if (accountSelect) {
+        Array.from(accounts).sort().forEach(account => {
+            const option = document.createElement('option');
+            option.value = account;
+            option.textContent = account;
+            accountSelect.appendChild(option);
+        });
+    }
 }
 
 function getFilteredData() {
@@ -232,6 +254,12 @@ function getFilteredData() {
         }
         if (AppState.filters.account !== 'all' && ad.account !== AppState.filters.account) {
             return false;
+        }
+        if (AppState.filters.tier !== 'all') {
+            const adTier = ad.tier || 'Unassigned';
+            if (adTier !== AppState.filters.tier) {
+                return false;
+            }
         }
         return true;
     });
@@ -246,6 +274,17 @@ function getFilteredData() {
         if (sortKey === 'totalScore') {
             aVal = a.avgTotalScore;
             bVal = b.avgTotalScore;
+            return sortOrder === 'desc' ? bVal - aVal : aVal - bVal;
+        } else if (sortKey === 'tier') {
+            // Sort by tier - handle empty tiers as "Unassigned" (sort to end)
+            const aTier = a.tier || 'Unassigned';
+            const bTier = b.tier || 'Unassigned';
+            
+            // Extract tier number for numeric sorting (e.g., "Tier 5" -> 5)
+            const aTierNum = aTier.match(/\d+/) ? parseInt(aTier.match(/\d+/)[0]) : 999;
+            const bTierNum = bTier.match(/\d+/) ? parseInt(bTier.match(/\d+/)[0]) : 999;
+            
+            return sortOrder === 'desc' ? bTierNum - aTierNum : aTierNum - bTierNum;
         } else {
             const sectionMap = {
                 projects: 'Key Projects & Initiatives',
@@ -260,9 +299,8 @@ function getFilteredData() {
             const sectionName = sectionMap[sortKey];
             aVal = a.avgScores[sectionName] || 0;
             bVal = b.avgScores[sectionName] || 0;
+            return sortOrder === 'desc' ? bVal - aVal : aVal - bVal;
         }
-        
-        return sortOrder === 'desc' ? bVal - aVal : aVal - bVal;
     });
     
     return filtered;
@@ -332,6 +370,32 @@ function renderLeaderboard(data) {
         const perfBadge = getPerformanceBadge(ad.avgTotalScore);
         const isExpanded = AppState.expandedRows.has(ad.accountDirector);
         
+        // Get tier badge with color coding
+        const getTierBadge = (tier) => {
+            if (!tier) return '';
+            
+            let bgColor, textColor;
+            switch(tier) {
+                case 'Tier 4':
+                    bgColor = '#f97316'; // Orange
+                    textColor = 'white';
+                    break;
+                case 'Tier 5':
+                    bgColor = '#6366f1'; // Indigo
+                    textColor = 'white';
+                    break;
+                case 'Tier 6':
+                    bgColor = '#10b981'; // Green
+                    textColor = 'white';
+                    break;
+                default: // Unassigned
+                    bgColor = '#94a3b8'; // Gray
+                    textColor = 'white';
+            }
+            
+            return `<span style="margin-left: 8px; padding: 3px 10px; background: ${bgColor}; color: ${textColor}; border-radius: 12px; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.5px;">${tier}</span>`;
+        };
+        
         return `
             <div class="leaderboard-row ${cardClass} ${rankCardClass} ${isExpanded ? 'expanded' : ''} fade-in" 
                  data-ad="${ad.accountDirector}"
@@ -344,6 +408,7 @@ function renderLeaderboard(data) {
                 </div>
                 <div class="ad-vertical">
                     📂 ${ad.vertical || 'N/A'}
+                    ${getTierBadge(ad.tier)}
                 </div>
                 <div class="ad-score-container">
                     <div class="ad-score">${ad.avgTotalScore.toFixed(1)}</div>
@@ -836,24 +901,55 @@ function setupEventListeners() {
         });
     });
     
-    // Filters
-    document.getElementById('filter-vertical').addEventListener('change', (e) => {
-        AppState.filters.vertical = e.target.value;
-        if (AppState.currentView === 'rankings') renderRankings();
-    });
+    // Vertical filter (in rankings view)
+    const verticalFilter = document.getElementById('vertical-filter');
+    if (verticalFilter) {
+        verticalFilter.addEventListener('change', (e) => {
+            AppState.filters.vertical = e.target.value;
+            if (AppState.currentView === 'rankings') renderRankings();
+        });
+    }
     
-    document.getElementById('filter-account').addEventListener('change', (e) => {
-        AppState.filters.account = e.target.value;
-        if (AppState.currentView === 'rankings') renderRankings();
-    });
+    // Tier filter (in rankings view)
+    const tierFilter = document.getElementById('tier-filter');
+    if (tierFilter) {
+        tierFilter.addEventListener('change', (e) => {
+            AppState.filters.tier = e.target.value;
+            if (AppState.currentView === 'rankings') renderRankings();
+        });
+    }
     
-    document.getElementById('clear-filters').addEventListener('click', () => {
-        AppState.filters.vertical = 'all';
-        AppState.filters.account = 'all';
-        document.getElementById('filter-vertical').value = 'all';
-        document.getElementById('filter-account').value = 'all';
-        if (AppState.currentView === 'rankings') renderRankings();
-    });
+    // Old filters for reviews view (if they exist)
+    const filterVertical = document.getElementById('filter-vertical');
+    const filterAccount = document.getElementById('filter-account');
+    const clearFiltersBtn = document.getElementById('clear-filters');
+    
+    if (filterVertical) {
+        filterVertical.addEventListener('change', (e) => {
+            AppState.filters.vertical = e.target.value;
+            if (AppState.currentView === 'rankings') renderRankings();
+        });
+    }
+    
+    if (filterAccount) {
+        filterAccount.addEventListener('change', (e) => {
+            AppState.filters.account = e.target.value;
+            if (AppState.currentView === 'rankings') renderRankings();
+        });
+    }
+    
+    if (clearFiltersBtn) {
+        clearFiltersBtn.addEventListener('click', () => {
+            AppState.filters.vertical = 'all';
+            AppState.filters.account = 'all';
+            AppState.filters.tier = 'all';
+            if (filterVertical) filterVertical.value = 'all';
+            if (filterAccount) filterAccount.value = 'all';
+            if (tierFilter) tierFilter.value = 'all';
+            if (verticalFilter) verticalFilter.value = 'all';
+            if (AppState.currentView === 'rankings') renderRankings();
+        });
+    }
     
     // Sort controls
     document.getElementById('sort-by').addEventListener('change', (e) => {
