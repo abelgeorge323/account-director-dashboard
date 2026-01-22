@@ -44,5 +44,15 @@ Thumbs.db
 # Generated reports (personalized scorecards)
 reports/
 
+# PDF files (generated locally, not for GitHub/Heroku)
+*.pdf
+reports/pdf/
+
+# Temporary comparison/check scripts
+compare_csvs.py
+compare_ad_counts.py
+ad_comparison_report.py
+check_dashboard_counts.py
+
 # Templates (optional - keep if you want to track template changes)
 # templates/
