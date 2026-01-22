@@ -21,7 +21,7 @@
       "Goals",
       "Exec Presence"
     ],
-    "lastUpdated": "2026-01-22T15:15:17.865981"
+    "lastUpdated": "2026-01-22T16:18:17.037170"
   },
   "accountDirectors": [
     {
@@ -45,7 +45,7 @@
         {
           "accountDirector": "Benjamin Ehrenberg",
           "account": "Lockheed Martin",
-          "reviewerName": "Valarie Barnett",
+          "reviewerName": "nan",
           "reviewerEmail": "ageorge1@sbmcorp.com",
           "scores": {
             "Key Projects & Initiatives": 4.0,
@@ -72,7 +72,7 @@
         {
           "accountDirector": "Benjamin Ehrenberg",
           "account": "Lockheed Martin",
-          "reviewerName": "Shane Follman",
+          "reviewerName": "nan",
           "reviewerEmail": "ageorge1@sbmcorp.com",
           "scores": {
             "Key Projects & Initiatives": 4.0,
@@ -99,7 +99,7 @@
         {
           "accountDirector": "Benjamin Ehrenberg",
           "account": "Lockheed Martin",
-          "reviewerName": "Ryan Blackwood",
+          "reviewerName": "nan",
           "reviewerEmail": "ageorge1@sbmcorp.com",
           "scores": {
             "Key Projects & Initiatives": 4.0,
@@ -173,7 +173,7 @@
         {
           "accountDirector": "Brian Davis",
           "account": "Merck",
-          "reviewerName": "Valarie Barnett",
+          "reviewerName": "nan",
           "reviewerEmail": "vbarnett@sbmcorp.com",
           "scores": {
             "Key Projects & Initiatives": 3.0,
@@ -200,7 +200,7 @@
         {
           "accountDirector": "Brian Davis",
           "account": "Merck",
-          "reviewerName": "Marvin Owens",
+          "reviewerName": "nan",
           "reviewerEmail": "Mowens@sbmcorp.com",
           "scores": {
             "Key Projects & Initiatives": 3.0,
@@ -274,7 +274,7 @@
         {
           "accountDirector": "Justin Homa",
           "account": "CBRE Merck",
-          "reviewerName": "Valarie Barnett",
+          "reviewerName": "nan",
           "reviewerEmail": "vbarnett@sbmcorp.com",
           "scores": {
             "Key Projects & Initiatives": 5.0,
@@ -348,7 +348,7 @@
         {
           "accountDirector": "Mark Schlerf",
           "account": "HP LAM Xerox and others",
-          "reviewerName": "Nicole Ouimet",
+          "reviewerName": "nan",
           "reviewerEmail": "NOuimet@sbmcorp.com",
           "scores": {
             "Key Projects & Initiatives": 5.0,
@@ -375,7 +375,7 @@
         {
           "accountDirector": "Mark Schlerf",
           "account": "HP/LAM/Xerox",
-          "reviewerName": "Valarie Barnett",
+          "reviewerName": "nan",
           "reviewerEmail": "vbarnett@sbmcorp.com",
           "scores": {
             "Key Projects & Initiatives": 5.0,
@@ -402,7 +402,7 @@
         {
           "accountDirector": "Mark Schlerf",
           "account": "HP/LAM/Xerox",
-          "reviewerName": "James Peate",
+          "reviewerName": "nan",
           "reviewerEmail": "jpeate@sbmcorp.com",
           "scores": {
             "Key Projects & Initiatives": 4.0,
@@ -715,7 +715,7 @@
       "accountDirector": "Jacqueline Maravilla",
       "account": "Lonza",
       "vertical": "Life Science",
-      "tier": "",
+      "tier": "Tier 5",
       "reviewCount": 3,
       "avgScores": {
         "Key Projects & Initiatives": 4.0,
@@ -1045,7 +1045,7 @@
       "accountDirector": "Peggy Shum",
       "account": "Deutsche Bank",
       "vertical": "Finance",
-      "tier": "",
+      "tier": "Tier 5",
       "reviewCount": 1,
       "avgScores": {
         "Key Projects & Initiatives": 3.0,
@@ -1092,7 +1092,7 @@
       "accountDirector": "Ana Sabater",
       "account": "LinkedIn/Uber",
       "vertical": "Technology",
-      "tier": "",
+      "tier": "Tier 5",
       "reviewCount": 4,
       "avgScores": {
         "Key Projects & Initiatives": 4.75,
@@ -1695,7 +1695,7 @@
         {
           "accountDirector": "Aaron Simpson",
           "account": "Mars, Ball, 3M",
-          "reviewerName": "nan",
+          "reviewerName": "Shane Follmann",
           "reviewerEmail": "anonymous",
           "scores": {
             "Key Projects & Initiatives": 4.0,
@@ -1722,7 +1722,7 @@
         {
           "accountDirector": "Aaron Simpson",
           "account": "3M",
-          "reviewerName": "nan",
+          "reviewerName": "Matthew Goodrich",
           "reviewerEmail": "anonymous",
           "scores": {
             "Key Projects & Initiatives": 4.0,
@@ -1752,7 +1752,7 @@
       "accountDirector": "Justin Dallavis",
       "account": "Boeing",
       "vertical": "Manufacturing",
-      "tier": "",
+      "tier": "Tier 5",
       "reviewCount": 4,
       "avgScores": {
         "Key Projects & Initiatives": 4.0,
@@ -1769,7 +1769,7 @@
         {
           "accountDirector": "Justin Dallavis",
           "account": "Boeing",
-          "reviewerName": "nan",
+          "reviewerName": "Valarie Barnett",
           "reviewerEmail": "anonymous",
           "scores": {
             "Key Projects & Initiatives": 4.0,
@@ -1796,7 +1796,7 @@
         {
           "accountDirector": "Justin Dallavis",
           "account": "Boeing",
-          "reviewerName": "nan",
+          "reviewerName": "Kyle Wallace",
           "reviewerEmail": "anonymous",
           "scores": {
             "Key Projects & Initiatives": 4.0,
@@ -1823,7 +1823,7 @@
         {
           "accountDirector": "Justin Dallavis",
           "account": "Boeing",
-          "reviewerName": "nan",
+          "reviewerName": "Nick Viskovich",
           "reviewerEmail": "anonymous",
           "scores": {
             "Key Projects & Initiatives": 4.0,
@@ -1850,7 +1850,7 @@
         {
           "accountDirector": "Justin Dallavis",
           "account": "Boeing",
-          "reviewerName": "nan",
+          "reviewerName": "James Peate",
           "reviewerEmail": "anonymous",
           "scores": {
             "Key Projects & Initiatives": 4.0,

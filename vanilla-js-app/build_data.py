@@ -57,7 +57,7 @@ def load_csv_data(csv_path="../data/performance_reviews.csv"):
             column_mapping[col] = "Account"
         elif "Email" in col:
             column_mapping[col] = "Reviewer Email"
-        elif col == "Name":  # Exact match to avoid "Enter Your Name" conflict
+        elif col == "Enter Your Name":  # This is the actual reviewer name column
             column_mapping[col] = "Reviewer Name"
     
     df = df.rename(columns=column_mapping)
