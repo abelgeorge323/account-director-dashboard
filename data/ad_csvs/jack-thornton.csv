@@ -1,0 +1,25 @@
+Account,Vertical,KPI,Dec-24,Jan-25,Feb-25,Mar-25,Apr-25,May-25,Jun-25,Jul-25,Aug-25,Sep-25,Oct-25,Nov-25,Dec-25
+Nike,DISTRIBUTION,Revenue ($),404,412,384,384,418,430,467,467,464,465,474,473,1635
+Nike,DISTRIBUTION,Growth (%),0.0,1.9,-5.1,-5.1,3.4,6.4,15.5,15.6,14.9,15.0,17.1,17.1,304.4
+Nike,DISTRIBUTION,Gap ($),,,,,,,,,,,,,-20
+Nike,DISTRIBUTION,Red Sites ($),,,,,,,,,,,-0,-27,-78
+Nike,DISTRIBUTION,Red Sites (#),,,,,,,,,,,1,1,1
+Nike,DISTRIBUTION,Headcount,66,70,71,72,70,73,75,72,79,75,78,271,272
+Nike,DISTRIBUTION,Separations,2,,1,2,3,2,3,4,1,2,,1,1
+Nike,DISTRIBUTION,Turnover (%),3.0,0.0,1.4,2.8,4.3,2.7,4.0,5.6,1.3,2.7,0.0,0.4,0.4
+Nike,DISTRIBUTION,CSAT,5.00,5.00,5.00,5.00,5.00,5.00,5.00,4.98,4.98,5.00,4.96,4.94,4.89
+Nike,DISTRIBUTION,YTD Claims,,,,,,,,,4,4,4,4,4
+Nike,DISTRIBUTION,YTD Recordables,,,,,,,,,,,,,
+Nike,DISTRIBUTION,TRIR,,,,,,,,,,,,,
+GXO Logistics,DISTRIBUTION,Revenue ($),,,,,,,,,3,10,10,10,10
+GXO Logistics,DISTRIBUTION,Growth (%),0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+GXO Logistics,DISTRIBUTION,Gap ($),,,,,,,,,,,-5,,
+GXO Logistics,DISTRIBUTION,Red Sites ($),,,,,,,,,,,-5,,
+GXO Logistics,DISTRIBUTION,Red Sites (#),,,,,,,,,,,1,,
+GXO Logistics,DISTRIBUTION,Headcount,,,,,,,,,,,,,
+GXO Logistics,DISTRIBUTION,Separations,,,,,,,,,,,,,
+GXO Logistics,DISTRIBUTION,Turnover (%),0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+GXO Logistics,DISTRIBUTION,CSAT,,,,,,,,,,,,,
+GXO Logistics,DISTRIBUTION,YTD Claims,,,,,,,,,,,,,
+GXO Logistics,DISTRIBUTION,YTD Recordables,,,,,,,,,,,,,
+GXO Logistics,DISTRIBUTION,TRIR,,,,,,,,,,,,,

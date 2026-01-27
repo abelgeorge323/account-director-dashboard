@@ -1,0 +1,73 @@
+Account,Vertical,KPI,Dec-24,Jan-25,Feb-25,Mar-25,Apr-25,May-25,Jun-25,Jul-25,Aug-25,Sep-25,Oct-25,Nov-25,Dec-25
+JP Morgan Chase,FINANCE,Revenue ($),331,359,25,8,17,,,,,,,,
+JP Morgan Chase,FINANCE,Growth (%),0.0,8.3,-92.3,-97.5,-94.9,-100.0,-100.0,-100.0,-100.0,-100.0,-100.0,-100.0,-100.0
+JP Morgan Chase,FINANCE,Gap ($),-5,,-1,-3,,-2,-1,-1,-1,,,,-0
+JP Morgan Chase,FINANCE,Red Sites ($),-5,,-1,-3,,-2,-1,-1,-1,,,,-0
+JP Morgan Chase,FINANCE,Red Sites (#),1,,1,1,,1,1,1,1,,,,1
+JP Morgan Chase,FINANCE,Headcount,66,61,1,1,,,,,,,,,
+JP Morgan Chase,FINANCE,Separations,1,3,1,,,,,,,,,,
+JP Morgan Chase,FINANCE,Turnover (%),1.5,4.9,100.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+JP Morgan Chase,FINANCE,CSAT,4.00,,,,,,,,,,,,
+JP Morgan Chase,FINANCE,YTD Claims,,,,,,,,,,,,,
+JP Morgan Chase,FINANCE,YTD Recordables,,,,,,,,,,,,,
+JP Morgan Chase,FINANCE,TRIR,,,,,,,,,,,,,
+Fidelity,FINANCE,Revenue ($),220,236,242,300,483,476,216,196,202,194,197,200,197
+Fidelity,FINANCE,Growth (%),0.0,7.2,9.9,36.4,119.1,115.9,-1.8,-11.0,-8.3,-12.1,-10.6,-9.3,-10.6
+Fidelity,FINANCE,Gap ($),-20,,-13,-8,-46,,-9,,-7,-8,-10,-5,-5
+Fidelity,FINANCE,Red Sites ($),-20,,-13,-8,-46,-20,-13,-1,-8,-8,-10,-5,-5
+Fidelity,FINANCE,Red Sites (#),1,,1,2,3,1,2,1,2,3,2,1,3
+Fidelity,FINANCE,Headcount,50,46,63,118,112,67,52,52,49,51,44,47,47
+Fidelity,FINANCE,Separations,1,4,1,2,3,8,1,1,1,1,1,,2
+Fidelity,FINANCE,Turnover (%),2.0,8.7,1.6,1.7,2.7,11.9,1.9,1.9,2.0,2.0,2.3,0.0,4.3
+Fidelity,FINANCE,CSAT,5.00,3.25,4.00,4.25,4.33,4.00,3.88,3.50,4.13,4.00,4.44,4.63,4.25
+Fidelity,FINANCE,YTD Claims,,,,,,,,,,,,2,2
+Fidelity,FINANCE,YTD Recordables,,,,,,,,,,,,2,2
+Fidelity,FINANCE,TRIR,,,,,,,,,,,,4.20,3.92
+State Farm Ins,FINANCE,Revenue ($),111,110,117,118,122,123,124,118,118,131,124,120,128
+State Farm Ins,FINANCE,Growth (%),0.0,-0.7,5.8,7.0,10.3,11.1,11.8,6.7,6.7,18.2,12.3,8.8,15.8
+State Farm Ins,FINANCE,Gap ($),-3,,,,,-1,,,,,,,
+State Farm Ins,FINANCE,Red Sites ($),-8,-6,-3,-3,-3,-4,-1,-3,-3,-4,-2,-1,-2
+State Farm Ins,FINANCE,Red Sites (#),9,7,6,7,7,7,4,6,5,8,5,1,3
+State Farm Ins,FINANCE,Headcount,27,25,24,25,24,24,23,23,23,22,24,24,23
+State Farm Ins,FINANCE,Separations,,2,,,,1,,,,,,,
+State Farm Ins,FINANCE,Turnover (%),0.0,8.0,0.0,0.0,0.0,4.2,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+State Farm Ins,FINANCE,CSAT,4.72,4.72,5.00,4.59,4.71,4.50,4.75,4.68,4.50,4.46,4.67,4.75,4.57
+State Farm Ins,FINANCE,YTD Claims,,,,,,,,,,,,,
+State Farm Ins,FINANCE,YTD Recordables,,,,,,,,,,,,,
+State Farm Ins,FINANCE,TRIR,,,,,,,,,,,,,
+Charles Schwab,FINANCE,Revenue ($),444,447,450,463,472,457,453,464,462,456,451,439,454
+Charles Schwab,FINANCE,Growth (%),0.0,0.8,1.5,4.3,6.3,3.0,2.0,4.5,4.0,2.7,1.6,-1.2,2.4
+Charles Schwab,FINANCE,Gap ($),,,,,-2,,,,,,-9,-17,-1
+Charles Schwab,FINANCE,Red Sites ($),-1,-5,-15,-14,-19,-11,-8,-8,-18,-12,-20,-35,-19
+Charles Schwab,FINANCE,Red Sites (#),4,7,6,6,6,6,5,6,7,4,11,8,5
+Charles Schwab,FINANCE,Headcount,61,63,65,65,64,67,61,63,64,66,66,65,65
+Charles Schwab,FINANCE,Separations,,,3,2,2,,4,,,2,2,1,1
+Charles Schwab,FINANCE,Turnover (%),0.0,0.0,4.6,3.1,3.1,0.0,6.6,0.0,0.0,3.0,3.0,1.5,1.5
+Charles Schwab,FINANCE,CSAT,4.19,4.22,4.13,4.58,3.83,4.31,4.48,4.38,4.46,4.03,4.63,4.34,4.45
+Charles Schwab,FINANCE,YTD Claims,,,,,,,,,,,,,
+Charles Schwab,FINANCE,YTD Recordables,,,,,,,,,,,,,
+Charles Schwab,FINANCE,TRIR,,,,,,,,,,,,,
+T Rowe Price,FINANCE,Revenue ($),163,163,163,234,160,167,164,166,168,175,176,173,175
+T Rowe Price,FINANCE,Growth (%),0.0,-0.1,0.0,43.5,-1.8,2.2,0.5,1.5,3.2,7.3,7.9,6.2,7.4
+T Rowe Price,FINANCE,Gap ($),,,-2,,-2,,-3,,-0,,,,
+T Rowe Price,FINANCE,Red Sites ($),,-1,-2,-1,-2,,-3,-0,-0,,-1,,
+T Rowe Price,FINANCE,Red Sites (#),,1,2,1,1,,1,1,1,,1,,
+T Rowe Price,FINANCE,Headcount,38,38,39,39,37,38,38,39,37,37,37,38,39
+T Rowe Price,FINANCE,Separations,,1,,2,1,,,,,,,,
+T Rowe Price,FINANCE,Turnover (%),0.0,2.6,0.0,5.1,2.7,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+T Rowe Price,FINANCE,CSAT,4.31,4.25,4.44,4.38,4.06,3.88,4.00,4.31,4.00,4.00,4.04,3.75,4.13
+T Rowe Price,FINANCE,YTD Claims,,,,,,,,,,,,,
+T Rowe Price,FINANCE,YTD Recordables,,,,,,,,,,,,,
+T Rowe Price,FINANCE,TRIR,,,,,,,,,,,,,
+Citibank,FINANCE,Revenue ($),68,67,85,67,124,232,246,241,251,246,246,261,238
+Citibank,FINANCE,Growth (%),0.0,-1.6,25.8,-1.6,82.8,241.9,262.8,256.2,269.8,262.4,262.6,285.4,251.0
+Citibank,FINANCE,Gap ($),-4,-8,-2,-1,-15,,,-5,-13,-4,,,-2
+Citibank,FINANCE,Red Sites ($),-4,-8,-2,-1,-17,-1,-9,-18,-28,-18,-17,-17,-11
+Citibank,FINANCE,Red Sites (#),1,1,1,2,2,2,1,1,1,1,1,1,2
+Citibank,FINANCE,Headcount,16,15,14,21,48,51,50,55,55,51,53,55,53
+Citibank,FINANCE,Separations,,1,1,,,15,6,5,3,5,1,1,2
+Citibank,FINANCE,Turnover (%),0.0,6.7,7.1,0.0,0.0,29.4,12.0,9.1,5.5,9.8,1.9,1.8,3.8
+Citibank,FINANCE,CSAT,4.00,4.25,4.25,4.00,3.50,4.56,3.75,3.47,4.00,3.75,3.63,4.17,
+Citibank,FINANCE,YTD Claims,,,,,,,,,,,,,
+Citibank,FINANCE,YTD Recordables,,,,,,,,,,,,,
+Citibank,FINANCE,TRIR,,,,,,,,,,,,,

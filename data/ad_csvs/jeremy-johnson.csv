@@ -1,0 +1,25 @@
+Account,Vertical,KPI,Dec-24,Jan-25,Feb-25,Mar-25,Apr-25,May-25,Jun-25,Jul-25,Aug-25,Sep-25,Oct-25,Nov-25,Dec-25
+Intel,MANUFACTURING,Revenue ($),3385,3347,3329,3369,3392,3435,3459,3692,3622,3597,3440,3464,3397
+Intel,MANUFACTURING,Growth (%),0.0,-1.1,-1.7,-0.5,0.2,1.5,2.2,9.1,7.0,6.3,1.6,2.3,0.4
+Intel,MANUFACTURING,Gap ($),,,,,-28,,,,,,,,
+Intel,MANUFACTURING,Red Sites ($),-77,-19,-12,-38,-111,-5,-2,-1,-0,-0,-1,-13,-0
+Intel,MANUFACTURING,Red Sites (#),7,7,3,7,8,4,3,2,3,1,2,3,1
+Intel,MANUFACTURING,Headcount,499,486,484,488,479,473,479,486,480,482,480,477,479
+Intel,MANUFACTURING,Separations,5,7,11,6,5,5,2,10,7,10,10,4,4
+Intel,MANUFACTURING,Turnover (%),1.0,1.4,2.3,1.2,1.0,1.1,0.4,2.1,1.5,2.1,2.1,0.8,0.8
+Intel,MANUFACTURING,CSAT,4.96,4.86,4.88,4.82,4.83,4.89,4.82,4.89,4.93,4.90,4.86,4.88,4.69
+Intel,MANUFACTURING,YTD Claims,5,,,,1,1,1,1,1,2,2,2,2
+Intel,MANUFACTURING,YTD Recordables,2,,,,1,1,1,1,1,2,2,2,2
+Intel,MANUFACTURING,TRIR,0.40,,,,0.65,0.52,0.44,0.37,0.32,0.58,0.52,0.48,0.44
+Altera,MANUFACTURING,Revenue ($),,86,86,88,84,88,107,109,105,114,124,107,107
+Altera,MANUFACTURING,Growth (%),0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+Altera,MANUFACTURING,Gap ($),,,,,,-0,,,,,,,
+Altera,MANUFACTURING,Red Sites ($),,,,,,-0,,,,,,,
+Altera,MANUFACTURING,Red Sites (#),,,,,,1,,,,,,,
+Altera,MANUFACTURING,Headcount,,8,8,8,8,7,8,9,9,11,9,10,11
+Altera,MANUFACTURING,Separations,,,,,,,,1,,,2,,
+Altera,MANUFACTURING,Turnover (%),0.0,0.0,0.0,0.0,0.0,0.0,0.0,11.1,0.0,0.0,22.2,0.0,0.0
+Altera,MANUFACTURING,CSAT,,4.50,4.50,4.50,3.50,4.50,4.25,4.25,4.25,4.25,4.25,3.75,4.25
+Altera,MANUFACTURING,YTD Claims,,,,,,,,,,,,,
+Altera,MANUFACTURING,YTD Recordables,,,,,,,,,,,,,
+Altera,MANUFACTURING,TRIR,,,,,,,,,,,,,

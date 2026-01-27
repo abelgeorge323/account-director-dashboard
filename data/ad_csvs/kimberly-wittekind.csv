@@ -1,0 +1,37 @@
+Account,Vertical,KPI,Dec-24,Jan-25,Feb-25,Mar-25,Apr-25,May-25,Jun-25,Jul-25,Aug-25,Sep-25,Oct-25,Nov-25,Dec-25
+Nestle,MANUFACTURING,Revenue ($),567,576,565,565,578,600,639,650,662,649,649,647,646
+Nestle,MANUFACTURING,Growth (%),0.0,1.6,-0.4,-0.4,2.0,5.8,12.8,14.6,16.7,14.5,14.5,14.1,13.9
+Nestle,MANUFACTURING,Gap ($),,,,-8,,,,,,,,,
+Nestle,MANUFACTURING,Red Sites ($),-7,-9,-9,-17,-7,-10,-15,-6,-7,-4,-12,-11,-5
+Nestle,MANUFACTURING,Red Sites (#),3,3,1,3,2,4,2,1,1,2,2,3,1
+Nestle,MANUFACTURING,Headcount,114,117,116,115,114,124,126,122,126,123,121,123,127
+Nestle,MANUFACTURING,Separations,2,4,4,5,3,4,7,9,5,5,7,1,1
+Nestle,MANUFACTURING,Turnover (%),1.8,3.4,3.4,4.3,2.6,3.2,5.6,7.4,4.0,4.1,5.8,0.8,0.8
+Nestle,MANUFACTURING,CSAT,4.25,4.06,4.20,4.31,4.31,4.55,4.08,4.03,4.00,3.83,4.00,4.56,4.13
+Nestle,MANUFACTURING,YTD Claims,,1,1,1,1,1,1,1,1,1,1,1,1
+Nestle,MANUFACTURING,YTD Recordables,,1,1,1,1,1,1,1,1,1,1,1,1
+Nestle,MANUFACTURING,TRIR,,11.46,6.01,3.95,2.96,2.35,1.95,1.65,1.43,1.26,1.12,1.02,0.94
+GE Healthcare,MANUFACTURING,Revenue ($),335,330,330,330,330,343,343,343,356,356,359,359,359
+GE Healthcare,MANUFACTURING,Growth (%),0.0,-1.6,-1.6,-1.6,-1.6,2.4,2.4,2.4,6.3,6.3,7.1,7.1,7.1
+GE Healthcare,MANUFACTURING,Gap ($),,,,,,,,,,,,,
+GE Healthcare,MANUFACTURING,Red Sites ($),-0,-0,-1,-4,-1,-2,-3,-1,-2,,-0,-5,-2
+GE Healthcare,MANUFACTURING,Red Sites (#),1,1,2,2,2,2,2,1,3,,1,3,2
+GE Healthcare,MANUFACTURING,Headcount,63,59,61,63,58,60,64,69,67,64,69,70,69
+GE Healthcare,MANUFACTURING,Separations,4,6,2,2,4,1,1,1,3,7,3,5,4
+GE Healthcare,MANUFACTURING,Turnover (%),6.3,10.2,3.3,3.2,6.9,1.7,1.6,1.4,4.5,10.9,4.3,7.1,5.8
+GE Healthcare,MANUFACTURING,CSAT,4.44,5.00,4.44,4.50,,,4.92,,,4.67,4.92,4.83,
+GE Healthcare,MANUFACTURING,YTD Claims,,1,1,1,1,1,1,1,1,1,2,2,2
+GE Healthcare,MANUFACTURING,YTD Recordables,,1,1,1,1,1,1,1,1,1,2,2,2
+GE Healthcare,MANUFACTURING,TRIR,,22.11,11.59,7.39,5.52,4.39,3.56,2.99,2.58,2.28,4.06,3.67,3.33
+Piper Aircraft,MANUFACTURING,Revenue ($),46,42,22,,-3,,,,,,,,
+Piper Aircraft,MANUFACTURING,Growth (%),0.0,-8.2,-51.4,-100.0,-106.3,-100.0,-100.0,-100.0,-100.0,-100.0,-100.0,-100.0,-100.0
+Piper Aircraft,MANUFACTURING,Gap ($),-1,-4,-6,-2,-3,-1,-1,,,,,,
+Piper Aircraft,MANUFACTURING,Red Sites ($),-1,-4,-6,-2,-3,-1,-1,,,,,,
+Piper Aircraft,MANUFACTURING,Red Sites (#),1,1,1,1,1,1,1,,,,,,
+Piper Aircraft,MANUFACTURING,Headcount,11,11,,,,,,,,,,,
+Piper Aircraft,MANUFACTURING,Separations,,,,,,,,,,,,,
+Piper Aircraft,MANUFACTURING,Turnover (%),0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+Piper Aircraft,MANUFACTURING,CSAT,,,,,,,,,,,,,
+Piper Aircraft,MANUFACTURING,YTD Claims,1,,,,,,,,,,,,
+Piper Aircraft,MANUFACTURING,YTD Recordables,,,,,,,,,,,,,
+Piper Aircraft,MANUFACTURING,TRIR,,,,,,,,,,,,,

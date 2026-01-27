@@ -1,0 +1,25 @@
+Account,Vertical,KPI,Dec-24,Jan-25,Feb-25,Mar-25,Apr-25,May-25,Jun-25,Jul-25,Aug-25,Sep-25,Oct-25,Nov-25,Dec-25
+Novartis,LIFE SCIENCE,Revenue ($),691,671,652,620,646,620,604,590,606,571,648,608,648
+Novartis,LIFE SCIENCE,Growth (%),0.0,-2.9,-5.7,-10.3,-6.5,-10.3,-12.7,-14.6,-12.4,-17.4,-6.3,-12.0,-6.3
+Novartis,LIFE SCIENCE,Gap ($),,,,,,,,,,,,,
+Novartis,LIFE SCIENCE,Red Sites ($),-1,-2,-1,-2,-4,-4,-6,-3,-2,-3,-8,-4,-4
+Novartis,LIFE SCIENCE,Red Sites (#),2,2,3,3,3,5,4,3,2,3,4,3,3
+Novartis,LIFE SCIENCE,Headcount,97,97,97,96,97,93,93,89,90,87,86,84,86
+Novartis,LIFE SCIENCE,Separations,,,,,,,,1,,3,,1,
+Novartis,LIFE SCIENCE,Turnover (%),0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.1,0.0,3.4,0.0,1.2,0.0
+Novartis,LIFE SCIENCE,CSAT,4.54,4.54,4.50,4.58,4.18,4.50,4.43,4.59,4.63,4.71,4.71,4.54,4.77
+Novartis,LIFE SCIENCE,YTD Claims,4,,,,,,,,,,,,
+Novartis,LIFE SCIENCE,YTD Recordables,1,,,,,,,,,,,,
+Novartis,LIFE SCIENCE,TRIR,1.22,,,,,,,,,,,,
+Bristol Myers Squibb,LIFE SCIENCE,Revenue ($),876,801,864,824,848,849,868,844,846,829,827,817,846
+Bristol Myers Squibb,LIFE SCIENCE,Growth (%),0.0,-8.6,-1.4,-6.0,-3.2,-3.1,-0.8,-3.7,-3.4,-5.4,-5.5,-6.7,-3.4
+Bristol Myers Squibb,LIFE SCIENCE,Gap ($),-8,-19,,-24,,,,-4,,-6,-12,-22,
+Bristol Myers Squibb,LIFE SCIENCE,Red Sites ($),-29,-25,-19,-27,-7,-9,-8,-15,-7,-18,-22,-29,-18
+Bristol Myers Squibb,LIFE SCIENCE,Red Sites (#),5,7,5,7,4,4,3,4,6,7,9,7,5
+Bristol Myers Squibb,LIFE SCIENCE,Headcount,122,119,117,116,117,117,114,126,127,127,124,124,126
+Bristol Myers Squibb,LIFE SCIENCE,Separations,1,1,1,,,,,,1,1,1,,
+Bristol Myers Squibb,LIFE SCIENCE,Turnover (%),0.8,0.8,0.9,0.0,0.0,0.0,0.0,0.0,0.8,0.8,0.8,0.0,0.0
+Bristol Myers Squibb,LIFE SCIENCE,CSAT,4.53,4.66,4.46,4.36,4.47,4.36,4.64,4.56,4.64,4.63,4.50,4.44,4.45
+Bristol Myers Squibb,LIFE SCIENCE,YTD Claims,,,,,,,,,,,,,
+Bristol Myers Squibb,LIFE SCIENCE,YTD Recordables,,,,,,,,,,,,,
+Bristol Myers Squibb,LIFE SCIENCE,TRIR,,,,,,,,,,,,,

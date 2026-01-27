@@ -1,0 +1,37 @@
+Account,Vertical,KPI,Dec-24,Jan-25,Feb-25,Mar-25,Apr-25,May-25,Jun-25,Jul-25,Aug-25,Sep-25,Oct-25,Nov-25,Dec-25
+IBM,TECHNOLOGY,Revenue ($),194,146,542,506,584,570,559,592,573,550,551,576,550
+IBM,TECHNOLOGY,Growth (%),0.0,-24.9,179.5,160.7,200.8,193.8,188.3,205.3,195.5,183.7,183.9,196.9,183.6
+IBM,TECHNOLOGY,Gap ($),-14,-29,-11,-79,-30,-48,-56,-32,-66,-75,-96,-54,-44
+IBM,TECHNOLOGY,Red Sites ($),-18,-32,-42,-92,-49,-53,-62,-40,-72,-77,-102,-59,-58
+IBM,TECHNOLOGY,Red Sites (#),5,7,8,5,6,6,5,5,5,8,5,8,8
+IBM,TECHNOLOGY,Headcount,20,84,89,89,91,91,91,92,93,91,92,92,92
+IBM,TECHNOLOGY,Separations,,,,,,,,,2,1,1,,
+IBM,TECHNOLOGY,Turnover (%),0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,2.2,1.1,1.1,0.0,0.0
+IBM,TECHNOLOGY,CSAT,4.73,4.53,4.81,4.05,4.49,4.66,4.46,4.52,4.69,4.61,4.66,4.68,4.50
+IBM,TECHNOLOGY,YTD Claims,,,,,,,,,1,1,1,1,2
+IBM,TECHNOLOGY,YTD Recordables,,,,,,,,,1,1,1,1,2
+IBM,TECHNOLOGY,TRIR,,,,,,,,,1.95,1.71,1.52,1.40,2.57
+IRG Realty Advisors,TECHNOLOGY,Revenue ($),78,81,82,83,88,79,78,81,74,83,81,73,82
+IRG Realty Advisors,TECHNOLOGY,Growth (%),0.0,4.0,5.5,7.3,13.5,1.8,0.3,4.0,-4.6,7.4,3.8,-5.5,6.2
+IRG Realty Advisors,TECHNOLOGY,Gap ($),,,,,,,,,,,,,
+IRG Realty Advisors,TECHNOLOGY,Red Sites ($),,,,,,,,,,,,,
+IRG Realty Advisors,TECHNOLOGY,Red Sites (#),,,,,,,,,,,,,
+IRG Realty Advisors,TECHNOLOGY,Headcount,14,14,15,15,13,13,14,14,13,13,14,12,13
+IRG Realty Advisors,TECHNOLOGY,Separations,,,,,1,,,,1,,,,
+IRG Realty Advisors,TECHNOLOGY,Turnover (%),0.0,0.0,0.0,0.0,7.7,0.0,0.0,0.0,7.7,0.0,0.0,0.0,0.0
+IRG Realty Advisors,TECHNOLOGY,CSAT,5.00,5.00,5.00,4.50,5.00,5.00,5.00,5.00,4.75,5.00,5.00,5.00,5.00
+IRG Realty Advisors,TECHNOLOGY,YTD Claims,,,,,,,,,,,,,
+IRG Realty Advisors,TECHNOLOGY,YTD Recordables,,,,,,,,,,,,,
+IRG Realty Advisors,TECHNOLOGY,TRIR,,,,,,,,,,,,,
+Computershare,TECHNOLOGY,Revenue ($),61,57,59,58,57,62,60,56,55,64,70,63,65
+Computershare,TECHNOLOGY,Growth (%),0.0,-5.4,-1.7,-3.6,-6.2,1.8,0.0,-7.6,-9.1,5.7,15.4,3.9,8.0
+Computershare,TECHNOLOGY,Gap ($),,,-1,,,,-1,-4,-8,-0,-7,-3,-8
+Computershare,TECHNOLOGY,Red Sites ($),-0,-0,-1,-0,-0,-0,-1,-4,-8,-5,-7,-4,-8
+Computershare,TECHNOLOGY,Red Sites (#),1,1,2,1,1,1,2,3,3,2,2,2,3
+Computershare,TECHNOLOGY,Headcount,6,6,6,6,6,6,7,7,7,8,8,8,8
+Computershare,TECHNOLOGY,Separations,,,,,,,,,,,,,
+Computershare,TECHNOLOGY,Turnover (%),0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+Computershare,TECHNOLOGY,CSAT,5.00,5.00,5.00,4.63,5.00,5.00,5.00,4.82,5.00,5.00,5.00,5.00,5.00
+Computershare,TECHNOLOGY,YTD Claims,,,,,,,,,,,,,
+Computershare,TECHNOLOGY,YTD Recordables,,,,,,,,,,,,,
+Computershare,TECHNOLOGY,TRIR,,,,,,,,,,,,,

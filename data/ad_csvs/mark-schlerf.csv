@@ -1,0 +1,85 @@
+Account,Vertical,KPI,Dec-24,Jan-25,Feb-25,Mar-25,Apr-25,May-25,Jun-25,Jul-25,Aug-25,Sep-25,Oct-25,Nov-25,Dec-25
+HPE,TECHNOLOGY,Revenue ($),161,177,177,165,164,173,177,196,193,241,168,180,156
+HPE,TECHNOLOGY,Growth (%),0.0,10.1,9.7,2.2,2.0,7.2,10.1,21.4,19.9,49.6,4.5,11.7,-3.3
+HPE,TECHNOLOGY,Gap ($),,,,,,,,,,,,,
+HPE,TECHNOLOGY,Red Sites ($),-5,,-6,-2,-3,,,,-2,,,,
+HPE,TECHNOLOGY,Red Sites (#),1,,1,1,1,,,,1,,,,
+HPE,TECHNOLOGY,Headcount,16,16,16,16,16,16,16,16,16,16,15,14,14
+HPE,TECHNOLOGY,Separations,,,,,,,,,,,,,
+HPE,TECHNOLOGY,Turnover (%),0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+HPE,TECHNOLOGY,CSAT,,,,,,,,,,,,,5.00
+HPE,TECHNOLOGY,YTD Claims,,,,,,,,,1,1,1,1,1
+HPE,TECHNOLOGY,YTD Recordables,,,,,,,,,,,,,
+HPE,TECHNOLOGY,TRIR,,,,,,,,,,,,,
+LAM Research,MANUFACTURING,Revenue ($),742,750,808,778,793,797,827,806,903,853,852,898,903
+LAM Research,MANUFACTURING,Growth (%),0.0,1.2,8.9,4.8,6.9,7.5,11.5,8.7,21.8,15.0,14.9,21.1,21.8
+LAM Research,MANUFACTURING,Gap ($),,,,,,,,,,,,,
+LAM Research,MANUFACTURING,Red Sites ($),,-21,-2,-3,-1,-1,-2,,,,,-1,
+LAM Research,MANUFACTURING,Red Sites (#),,2,1,1,1,1,1,,,,,1,
+LAM Research,MANUFACTURING,Headcount,86,85,84,85,87,86,86,87,86,90,92,91,92
+LAM Research,MANUFACTURING,Separations,1,2,,,,,,,,2,,1,
+LAM Research,MANUFACTURING,Turnover (%),1.2,2.4,0.0,0.0,0.0,0.0,0.0,0.0,0.0,2.2,0.0,1.1,0.0
+LAM Research,MANUFACTURING,CSAT,4.54,4.83,4.75,4.67,4.71,4.63,4.54,4.46,4.33,4.50,4.54,4.33,4.94
+LAM Research,MANUFACTURING,YTD Claims,,,,,,,,,,,,,
+LAM Research,MANUFACTURING,YTD Recordables,,,,,,,,,,,,,
+LAM Research,MANUFACTURING,TRIR,,,,,,,,,,,,,
+Hewlett-Packard,MANUFACTURING,Revenue ($),291,303,303,276,351,364,334,339,348,344,358,342,331
+Hewlett-Packard,MANUFACTURING,Growth (%),0.0,3.9,4.1,-5.3,20.5,25.0,14.6,16.4,19.6,18.1,22.9,17.4,13.7
+Hewlett-Packard,MANUFACTURING,Gap ($),,,,-5,-15,,,,-3,-3,,,
+Hewlett-Packard,MANUFACTURING,Red Sites ($),-1,,-6,-8,-16,-0,-5,-1,-3,-5,-0,-0,
+Hewlett-Packard,MANUFACTURING,Red Sites (#),1,,3,5,6,1,3,4,7,4,2,1,
+Hewlett-Packard,MANUFACTURING,Headcount,44,43,46,54,56,59,58,57,58,61,60,60,60
+Hewlett-Packard,MANUFACTURING,Separations,,,,,1,1,,1,2,,1,,
+Hewlett-Packard,MANUFACTURING,Turnover (%),0.0,0.0,0.0,0.0,1.8,1.7,0.0,1.8,3.4,0.0,1.7,0.0,0.0
+Hewlett-Packard,MANUFACTURING,CSAT,4.50,4.44,4.44,4.69,4.78,4.75,4.60,4.63,4.65,4.77,4.68,4.66,4.46
+Hewlett-Packard,MANUFACTURING,YTD Claims,1,,,,,,,,,,,,
+Hewlett-Packard,MANUFACTURING,YTD Recordables,,,,,,,,,,,,,
+Hewlett-Packard,MANUFACTURING,TRIR,,,,,,,,,,,,,
+Texas Instruments,MANUFACTURING,Revenue ($),,,,,,,,,,,,,
+Texas Instruments,MANUFACTURING,Growth (%),0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+Texas Instruments,MANUFACTURING,Gap ($),-0,-0,-0,-0,-0,-0,-0,-0,-0,,,,
+Texas Instruments,MANUFACTURING,Red Sites ($),-0,-0,-0,-0,-0,-0,-0,-0,-0,,,,
+Texas Instruments,MANUFACTURING,Red Sites (#),2,2,1,1,2,1,1,1,1,,,,
+Texas Instruments,MANUFACTURING,Headcount,,,,,,,,,,,,,
+Texas Instruments,MANUFACTURING,Separations,,,,,,,,,,,,,
+Texas Instruments,MANUFACTURING,Turnover (%),0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+Texas Instruments,MANUFACTURING,CSAT,,,,,,,,,,,,,
+Texas Instruments,MANUFACTURING,YTD Claims,,,,,,,,,,,,,
+Texas Instruments,MANUFACTURING,YTD Recordables,,,,,,,,,,,,,
+Texas Instruments,MANUFACTURING,TRIR,,,,,,,,,,,,,
+Conduent,MANUFACTURING,Revenue ($),88,89,88,76,74,77,72,67,68,67,67,67,72
+Conduent,MANUFACTURING,Growth (%),0.0,1.1,0.2,-13.9,-15.6,-12.3,-18.4,-23.6,-22.9,-24.1,-24.3,-24.3,-18.4
+Conduent,MANUFACTURING,Gap ($),,,,,,,,,,,,,
+Conduent,MANUFACTURING,Red Sites ($),-0,-0,-1,-1,-1,-0,-2,-2,-1,-1,-1,-1,-2
+Conduent,MANUFACTURING,Red Sites (#),2,2,1,1,2,2,2,2,2,2,2,2,2
+Conduent,MANUFACTURING,Headcount,11,10,11,12,12,12,13,11,10,11,11,11,11
+Conduent,MANUFACTURING,Separations,2,,,,,2,1,1,,,,1,
+Conduent,MANUFACTURING,Turnover (%),18.2,0.0,0.0,0.0,0.0,16.7,7.7,9.1,0.0,0.0,0.0,9.1,0.0
+Conduent,MANUFACTURING,CSAT,4.50,4.63,4.72,4.56,4.69,4.83,4.92,4.63,4.69,4.88,4.63,4.50,4.63
+Conduent,MANUFACTURING,YTD Claims,,,,,,,,,,,,,
+Conduent,MANUFACTURING,YTD Recordables,,,,,,,,,,,,,
+Conduent,MANUFACTURING,TRIR,,,,,,,,,,,,,
+Siltronic Corp,MANUFACTURING,Revenue ($),67,62,61,62,63,61,62,66,64,63,64,64,65
+Siltronic Corp,MANUFACTURING,Growth (%),0.0,-7.5,-8.7,-7.7,-4.9,-8.6,-7.1,-1.6,-4.1,-6.2,-4.3,-3.9,-3.2
+Siltronic Corp,MANUFACTURING,Gap ($),,-3,,,-2,-1,-0,-1,,,,-0,
+Siltronic Corp,MANUFACTURING,Red Sites ($),,-3,,,-2,-1,-0,-1,,,,-0,
+Siltronic Corp,MANUFACTURING,Red Sites (#),,1,,,1,1,1,1,,,,1,
+Siltronic Corp,MANUFACTURING,Headcount,8,8,8,8,9,9,9,9,9,8,9,9,8
+Siltronic Corp,MANUFACTURING,Separations,,1,1,,,,,,,,,,
+Siltronic Corp,MANUFACTURING,Turnover (%),0.0,12.5,12.5,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+Siltronic Corp,MANUFACTURING,CSAT,5.00,4.75,4.63,5.00,5.00,5.00,4.75,4.63,4.75,5.00,5.00,5.00,4.75
+Siltronic Corp,MANUFACTURING,YTD Claims,,,,,,1,1,1,1,1,1,1,1
+Siltronic Corp,MANUFACTURING,YTD Recordables,,,,,,,,,,,,,
+Siltronic Corp,MANUFACTURING,TRIR,,,,,,,,,,,,,
+Photronics,MANUFACTURING,Revenue ($),16,16,16,16,16,16,16,16,16,16,16,16,16
+Photronics,MANUFACTURING,Growth (%),0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+Photronics,MANUFACTURING,Gap ($),,,,,,,,,,,,,
+Photronics,MANUFACTURING,Red Sites ($),,,,,,,,,,,,,
+Photronics,MANUFACTURING,Red Sites (#),,,,,,,,,,,,,
+Photronics,MANUFACTURING,Headcount,3,3,3,3,3,3,3,3,3,1,1,1,1
+Photronics,MANUFACTURING,Separations,,,,,,,1,,,2,,1,
+Photronics,MANUFACTURING,Turnover (%),0.0,0.0,0.0,0.0,0.0,0.0,33.3,0.0,0.0,200.0,0.0,100.0,0.0
+Photronics,MANUFACTURING,CSAT,4.75,4.75,4.75,4.75,4.75,4.69,4.83,4.75,4.25,3.50,5.00,4.00,4.63
+Photronics,MANUFACTURING,YTD Claims,,,,,,,,,,,,,
+Photronics,MANUFACTURING,YTD Recordables,,,,,,,,,,,,,
+Photronics,MANUFACTURING,TRIR,,,,,,,,,,,,,

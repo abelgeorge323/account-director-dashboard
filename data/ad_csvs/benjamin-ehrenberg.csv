@@ -1,0 +1,25 @@
+Account,Vertical,KPI,Dec-24,Jan-25,Feb-25,Mar-25,Apr-25,May-25,Jun-25,Jul-25,Aug-25,Sep-25,Oct-25,Nov-25,Dec-25
+Lockheed Martin,MANUFACTURING,Revenue ($),928,955,951,948,940,942,944,999,1004,1004,988,968,968
+Lockheed Martin,MANUFACTURING,Growth (%),0.0,3.0,2.5,2.1,1.3,1.5,1.8,7.7,8.2,8.2,6.5,4.3,4.3
+Lockheed Martin,MANUFACTURING,Gap ($),,,,,,,,,,,,,
+Lockheed Martin,MANUFACTURING,Red Sites ($),-1,-2,-10,-13,-5,-23,-3,-26,-22,-8,-8,-13,-9
+Lockheed Martin,MANUFACTURING,Red Sites (#),3,3,2,2,2,3,3,3,3,2,4,4,2
+Lockheed Martin,MANUFACTURING,Headcount,132,132,130,130,132,133,140,141,141,143,140,141,140
+Lockheed Martin,MANUFACTURING,Separations,,1,3,2,,,5,2,1,,4,1,1
+Lockheed Martin,MANUFACTURING,Turnover (%),0.0,0.8,2.3,1.5,0.0,0.0,3.6,1.4,0.7,0.0,2.9,0.7,0.7
+Lockheed Martin,MANUFACTURING,CSAT,4.75,4.63,4.77,4.68,4.58,4.69,4.68,4.94,4.75,4.81,4.70,4.75,4.85
+Lockheed Martin,MANUFACTURING,YTD Claims,2,,,,,,1,1,2,2,2,2,2
+Lockheed Martin,MANUFACTURING,YTD Recordables,,,,,,,1,1,2,2,2,2,2
+Lockheed Martin,MANUFACTURING,TRIR,,,,,,,1.68,1.43,2.50,2.20,1.96,1.80,1.66
+Parsons Corporation,MANUFACTURING,Revenue ($),4,4,4,4,4,4,4,4,4,4,4,4,4
+Parsons Corporation,MANUFACTURING,Growth (%),0.0,7.7,7.7,7.7,7.7,7.7,7.7,7.7,7.7,7.7,7.7,7.7,7.7
+Parsons Corporation,MANUFACTURING,Gap ($),,,,,,,,,,,,,
+Parsons Corporation,MANUFACTURING,Red Sites ($),,,,,,,,,,,,,
+Parsons Corporation,MANUFACTURING,Red Sites (#),,,,,,,,,,,,,
+Parsons Corporation,MANUFACTURING,Headcount,,,,,,,,,,,,,
+Parsons Corporation,MANUFACTURING,Separations,,,,,,,,,,,,,
+Parsons Corporation,MANUFACTURING,Turnover (%),0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+Parsons Corporation,MANUFACTURING,CSAT,,,,,,,,,,,,,
+Parsons Corporation,MANUFACTURING,YTD Claims,,,,,,,,,,,,,
+Parsons Corporation,MANUFACTURING,YTD Recordables,,,,,,,,,,,,,
+Parsons Corporation,MANUFACTURING,TRIR,,,,,,,,,,,,,

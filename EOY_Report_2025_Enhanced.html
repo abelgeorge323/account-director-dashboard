@@ -1,0 +1,1365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025 Account Director Performance Review</title>
+    <style>
+        @page {
+            margin: 0.5in;
+            size: letter;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.5;
+            color: #1a1a1a;
+            max-width: 100%;
+            margin: 0 auto;
+            padding: 20px;
+            background: white;
+            font-size: 9pt;
+        }
+        
+        h1 {
+            color: #1a1a1a;
+            border-bottom: 3px solid #2563eb;
+            padding-bottom: 10px;
+            font-size: 26pt;
+            margin: 0 0 10px 0;
+            font-weight: 600;
+        }
+        
+        h2 {
+            color: #1a1a1a;
+            font-size: 14pt;
+            margin: 15px 0 6px 0;
+            page-break-after: avoid;
+            font-weight: 600;
+            border-bottom: 1px solid #e5e7eb;
+            padding-bottom: 5px;
+        }
+        
+        h2.first-section {
+            margin-top: 5px;
+        }
+        
+        h3 {
+            color: #4b5563;
+            font-size: 11pt;
+            margin: 15px 0 8px 0;
+            font-weight: 600;
+        }
+        
+        .subtitle {
+            font-size: 10pt;
+            color: #6b7280;
+            margin-bottom: 15px;
+        }
+        
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 8px 0 15px 0;
+            font-size: 7.5pt;
+            border: 1px solid #e5e7eb;
+        }
+        
+        th {
+            background: #1f2937;
+            color: white;
+            padding: 6px 4px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 7.5pt;
+            border-bottom: 2px solid #111827;
+        }
+        
+        td {
+            padding: 4px;
+            border-bottom: 1px solid #f3f4f6;
+        }
+        
+        tr:hover {
+            background: #fafafa;
+        }
+        
+        .rank-1 { 
+            border-left: 4px solid #10b981;
+            background: #f0fdf4;
+        }
+        .rank-2 { 
+            border-left: 4px solid #3b82f6;
+            background: #eff6ff;
+        }
+        .rank-3 { 
+            border-left: 4px solid #8b5cf6;
+            background: #faf5ff;
+        }
+        
+        .tier-badge {
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 3px;
+            font-size: 7pt;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+        }
+        
+        .tier-exceptional {
+            background: #10b981;
+            color: white;
+        }
+        
+        .tier-strong {
+            background: #3b82f6;
+            color: white;
+        }
+        
+        .tier-solid {
+            background: #f59e0b;
+            color: white;
+        }
+        
+        .tier-development {
+            background: #ef4444;
+            color: white;
+        }
+        
+        .section {
+            page-break-after: always;
+        }
+        
+        .accounts-list {
+            font-size: 6.5pt;
+            color: #6b7280;
+            line-height: 1.3;
+        }
+        
+        .section-summary {
+            font-size: 8.5pt;
+            color: #6b7280;
+            margin: -3px 0 8px 0;
+            font-style: italic;
+        }
+        
+        @media print {
+            .section { page-break-after: always; }
+            tr { page-break-inside: avoid; }
+            .password-overlay { display: none !important; }
+        }
+        
+        .password-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #1a1a1a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10000;
+        }
+        
+        .password-box {
+            background: white;
+            padding: 30px 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            max-width: 400px;
+            width: 90%;
+        }
+        
+        .password-box h2 {
+            margin: 0 0 20px 0;
+            font-size: 20pt;
+            border: none;
+            padding: 0;
+        }
+        
+        .password-input {
+            width: 100%;
+            padding: 12px;
+            font-size: 14pt;
+            border: 2px solid #e5e7eb;
+            border-radius: 4px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+        }
+        
+        .password-input:focus {
+            outline: none;
+            border-color: #2563eb;
+        }
+        
+        .password-btn {
+            width: 100%;
+            padding: 12px;
+            font-size: 12pt;
+            background: #2563eb;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+        
+        .password-btn:hover {
+            background: #1d4ed8;
+        }
+        
+        .password-error {
+            color: #ef4444;
+            font-size: 10pt;
+            margin-top: 10px;
+            display: none;
+        }
+        
+        .report-content {
+            display: none;
+        }
+        
+        .report-content.unlocked {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="password-overlay" id="passwordOverlay">
+        <div class="password-box">
+            <h2>Protected Report</h2>
+            <p style="margin: 0 0 15px 0; color: #6b7280; font-size: 10pt;">
+                Enter password to view the 2025 Account Director Performance Review
+            </p>
+            <input 
+                type="password" 
+                id="passwordInput" 
+                class="password-input" 
+                placeholder="Enter password"
+                autocomplete="off"
+            >
+            <button class="password-btn" onclick="checkPassword()">Unlock Report</button>
+            <p class="password-error" id="passwordError">Incorrect password. Please try again.</p>
+        </div>
+    </div>
+    
+    <div class="report-content" id="reportContent">
+    <h1>2025 Account Director Performance Review</h1>
+    <p class="subtitle">
+        Comprehensive performance analysis across 16 Account Directors | December 2025
+    </p>
+
+    <div class="section">
+        <h2 class="first-section">Overall Performance Rankings</h2>
+        <p class="section-summary">Comprehensive performance scores with financial metrics (December 2025)</p>
+        <table>
+        <thead>
+            <tr>
+                <th style="width: 30px;">Rank</th>
+                <th style="width: 120px;">Account Director</th>
+                <th style="width: 60px;">Score</th>
+                <th style="width: 80px;">Tier</th>
+                <th style="width: 200px;">Accounts Managed</th>
+                <th style="width: 80px;">Revenue</th>
+                <th style="width: 60px;">CSAT</th>
+                <th style="width: 60px;">Headcount</th>
+                <th style="width: 60px;">Red Sites</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            <tr class="rank-1">
+                <td><strong>#1</strong></td>
+                <td><strong>Stuart Kelloff</strong></td>
+                <td><strong>37.0</strong> / 40</td>
+                <td><span class="tier-badge tier-exceptional">EXCEPTIONAL</span></td>
+                <td class="accounts-list">NVIDIA</td>
+                <td>$1.38M</td>
+                <td>4.30</td>
+                <td>128</td>
+                <td>1</td>
+            </tr>
+
+            <tr class="rank-2">
+                <td><strong>#2</strong></td>
+                <td><strong>Jacqueline Maravilla</strong></td>
+                <td><strong>36.0</strong> / 40</td>
+                <td><span class="tier-badge tier-exceptional">EXCEPTIONAL</span></td>
+                <td class="accounts-list">Lonza Biologics, Genentech</td>
+                <td>$1.76M</td>
+                <td>4.97</td>
+                <td>113</td>
+                <td>2</td>
+            </tr>
+
+            <tr class="rank-3">
+                <td><strong>#3</strong></td>
+                <td><strong>Grant Frazier</strong></td>
+                <td><strong>35.0</strong> / 40</td>
+                <td><span class="tier-badge tier-strong">STRONG</span></td>
+                <td class="accounts-list">Meta</td>
+                <td>$4.18M</td>
+                <td>4.74</td>
+                <td>437</td>
+                <td>1</td>
+            </tr>
+
+            <tr class="">
+                <td><strong>#4</strong></td>
+                <td><strong>Ana Sabater</strong></td>
+                <td><strong>34.5</strong> / 40</td>
+                <td><span class="tier-badge tier-strong">STRONG</span></td>
+                <td class="accounts-list">Uber, LinkedIn, Scale AI</td>
+                <td>$1.28M</td>
+                <td>4.67</td>
+                <td>127</td>
+                <td>6</td>
+            </tr>
+
+            <tr class="">
+                <td><strong>#5</strong></td>
+                <td><strong>Mark Schlerf</strong></td>
+                <td><strong>34.0</strong> / 40</td>
+                <td><span class="tier-badge tier-strong">STRONG</span></td>
+                <td class="accounts-list">HPE, LAM Research, Hewlett-Packard +4 more</td>
+                <td>$1.54M</td>
+                <td>4.74</td>
+                <td>186</td>
+                <td>2</td>
+            </tr>
+
+            <tr class="">
+                <td><strong>#6</strong></td>
+                <td><strong>Taylor Wattenberg</strong></td>
+                <td><strong>34.0</strong> / 40</td>
+                <td><span class="tier-badge tier-strong">STRONG</span></td>
+                <td class="accounts-list">Microsoft</td>
+                <td>$5.38M</td>
+                <td>4.66</td>
+                <td>600</td>
+                <td>4</td>
+            </tr>
+
+            <tr class="">
+                <td><strong>#7</strong></td>
+                <td><strong>Kimberly Wittekind</strong></td>
+                <td><strong>33.7</strong> / 40</td>
+                <td><span class="tier-badge tier-strong">STRONG</span></td>
+                <td class="accounts-list">Nestle, GE Healthcare, Piper Aircraft</td>
+                <td>$1.00M</td>
+                <td>4.13</td>
+                <td>196</td>
+                <td>3</td>
+            </tr>
+
+            <tr class="">
+                <td><strong>#8</strong></td>
+                <td><strong>Justin Dallavis</strong></td>
+                <td><strong>30.5</strong> / 40</td>
+                <td><span class="tier-badge tier-solid">SOLID</span></td>
+                <td class="accounts-list">Boeing Company</td>
+                <td>$1.00M</td>
+                <td>4.62</td>
+                <td>152</td>
+                <td>7</td>
+            </tr>
+
+            <tr class="">
+                <td><strong>#9</strong></td>
+                <td><strong>Isaac Calderon</strong></td>
+                <td><strong>30.0</strong> / 40</td>
+                <td><span class="tier-badge tier-solid">SOLID</span></td>
+                <td class="accounts-list">Bayer, Kenvue, Johnson & Johnson +2 more</td>
+                <td>$787K</td>
+                <td>4.79</td>
+                <td>135</td>
+                <td>3</td>
+            </tr>
+
+            <tr class="">
+                <td><strong>#10</strong></td>
+                <td><strong>Benjamin Ehrenberg</strong></td>
+                <td><strong>30.0</strong> / 40</td>
+                <td><span class="tier-badge tier-solid">SOLID</span></td>
+                <td class="accounts-list">Lockheed Martin, Parsons Corporation</td>
+                <td>$972K</td>
+                <td>4.85</td>
+                <td>140</td>
+                <td>2</td>
+            </tr>
+
+            <tr class="">
+                <td><strong>#11</strong></td>
+                <td><strong>Aaron Simpson</strong></td>
+                <td><strong>29.7</strong> / 40</td>
+                <td><span class="tier-badge tier-solid">SOLID</span></td>
+                <td class="accounts-list">3M Corp, Mars, Ball Corporation</td>
+                <td>$989K</td>
+                <td>4.17</td>
+                <td>201</td>
+                <td>22</td>
+            </tr>
+
+            <tr class="">
+                <td><strong>#12</strong></td>
+                <td><strong>Justin Homa</strong></td>
+                <td><strong>29.5</strong> / 40</td>
+                <td><span class="tier-badge tier-solid">SOLID</span></td>
+                <td class="accounts-list">Organon</td>
+                <td>$7K</td>
+                <td>N/A</td>
+                <td>N/A</td>
+                <td>0</td>
+            </tr>
+
+            <tr class="">
+                <td><strong>#13</strong></td>
+                <td><strong>Paul Rhodes</strong></td>
+                <td><strong>29.5</strong> / 40</td>
+                <td><span class="tier-badge tier-solid">SOLID</span></td>
+                <td class="accounts-list">Google, DP World</td>
+                <td>$3.44M</td>
+                <td>4.58</td>
+                <td>348</td>
+                <td>17</td>
+            </tr>
+
+            <tr class="">
+                <td><strong>#14</strong></td>
+                <td><strong>Jack Thornton</strong></td>
+                <td><strong>28.7</strong> / 40</td>
+                <td><span class="tier-badge tier-solid">SOLID</span></td>
+                <td class="accounts-list">Nike, GXO Logistics</td>
+                <td>$1.65M</td>
+                <td>4.89</td>
+                <td>272</td>
+                <td>1</td>
+            </tr>
+
+            <tr class="">
+                <td><strong>#15</strong></td>
+                <td><strong>Patrick Murtha</strong></td>
+                <td><strong>26.8</strong> / 40</td>
+                <td><span class="tier-badge tier-development">DEVELOPMENT</span></td>
+                <td class="accounts-list">Cardinal Health, IQVIA Biotech, McKesson</td>
+                <td>$764K</td>
+                <td>4.63</td>
+                <td>122</td>
+                <td>10</td>
+            </tr>
+
+            <tr class="">
+                <td><strong>#16</strong></td>
+                <td><strong>Peggy Shum</strong></td>
+                <td><strong>23.0</strong> / 40</td>
+                <td><span class="tier-badge tier-development">DEVELOPMENT</span></td>
+                <td class="accounts-list">Deutsche Bank</td>
+                <td>$428K</td>
+                <td>4.00</td>
+                <td>41</td>
+                <td>1</td>
+            </tr>
+
+            <tr class="">
+                <td><strong>#17</strong></td>
+                <td><strong>Brian Davis</strong></td>
+                <td><strong>22.3</strong> / 40</td>
+                <td><span class="tier-badge tier-development">DEVELOPMENT</span></td>
+                <td class="accounts-list">Merck</td>
+                <td>$4.08M</td>
+                <td>4.75</td>
+                <td>345</td>
+                <td>7</td>
+            </tr>
+
+        </tbody>
+        </table>
+    </div>
+
+    <div class="section">
+        <h2>Revenue Performance Rankings</h2>
+        <p class="section-summary">Ranked by total portfolio revenue (December 2025). Top performers manage multi-million dollar accounts.</p>
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 40px;">Rank</th>
+                    <th>Account Director</th>
+                    <th style="width: 120px;">Total Revenue</th>
+                    <th style="width: 80px;">Accounts</th>
+                    <th style="width: 100px;">Perf Score</th>
+                    <th style="width: 100px;">Rev/Employee</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            <tr class="rank-1">
+                <td><strong>#1</strong></td>
+                <td>Taylor Wattenberg</td>
+                <td><strong>$5.38M</strong></td>
+                <td>1</td>
+                <td>34.0/40</td>
+                <td>$9.0K</td>
+            </tr>
+
+            <tr class="rank-2">
+                <td><strong>#2</strong></td>
+                <td>Grant Frazier</td>
+                <td><strong>$4.18M</strong></td>
+                <td>1</td>
+                <td>35.0/40</td>
+                <td>$9.6K</td>
+            </tr>
+
+            <tr class="rank-3">
+                <td><strong>#3</strong></td>
+                <td>Brian Davis</td>
+                <td><strong>$4.08M</strong></td>
+                <td>1</td>
+                <td>22.3/40</td>
+                <td>$11.8K</td>
+            </tr>
+
+            <tr class="">
+                <td><strong>#4</strong></td>
+                <td>Paul Rhodes</td>
+                <td><strong>$3.44M</strong></td>
+                <td>2</td>
+                <td>29.5/40</td>
+                <td>$9.9K</td>
+            </tr>
+
+            <tr class="">
+                <td><strong>#5</strong></td>
+                <td>Jacqueline Maravilla</td>
+                <td><strong>$1.76M</strong></td>
+                <td>2</td>
+                <td>36.0/40</td>
+                <td>$15.6K</td>
+            </tr>
+
+            <tr class="">
+                <td><strong>#6</strong></td>
+                <td>Jack Thornton</td>
+                <td><strong>$1.65M</strong></td>
+                <td>2</td>
+                <td>28.7/40</td>
+                <td>$6.0K</td>
+            </tr>
+
+            <tr class="">
+                <td><strong>#7</strong></td>
+                <td>Mark Schlerf</td>
+                <td><strong>$1.54M</strong></td>
+                <td>7</td>
+                <td>34.0/40</td>
+                <td>$8.3K</td>
+            </tr>
+
+            <tr class="">
+                <td><strong>#8</strong></td>
+                <td>Stuart Kelloff</td>
+                <td><strong>$1.38M</strong></td>
+                <td>1</td>
+                <td>37.0/40</td>
+                <td>$10.7K</td>
+            </tr>
+
+            <tr class="">
+                <td><strong>#9</strong></td>
+                <td>Ana Sabater</td>
+                <td><strong>$1.28M</strong></td>
+                <td>3</td>
+                <td>34.5/40</td>
+                <td>$10.1K</td>
+            </tr>
+
+            <tr class="">
+                <td><strong>#10</strong></td>
+                <td>Kimberly Wittekind</td>
+                <td><strong>$1.00M</strong></td>
+                <td>3</td>
+                <td>33.7/40</td>
+                <td>$5.1K</td>
+            </tr>
+
+            <tr class="">
+                <td><strong>#11</strong></td>
+                <td>Justin Dallavis</td>
+                <td><strong>$1.00M</strong></td>
+                <td>1</td>
+                <td>30.5/40</td>
+                <td>$6.6K</td>
+            </tr>
+
+            <tr class="">
+                <td><strong>#12</strong></td>
+                <td>Aaron Simpson</td>
+                <td><strong>$989K</strong></td>
+                <td>3</td>
+                <td>29.7/40</td>
+                <td>$4.9K</td>
+            </tr>
+
+            <tr class="">
+                <td><strong>#13</strong></td>
+                <td>Benjamin Ehrenberg</td>
+                <td><strong>$972K</strong></td>
+                <td>2</td>
+                <td>30.0/40</td>
+                <td>$6.9K</td>
+            </tr>
+
+            <tr class="">
+                <td><strong>#14</strong></td>
+                <td>Isaac Calderon</td>
+                <td><strong>$787K</strong></td>
+                <td>5</td>
+                <td>30.0/40</td>
+                <td>$5.8K</td>
+            </tr>
+
+            <tr class="">
+                <td><strong>#15</strong></td>
+                <td>Patrick Murtha</td>
+                <td><strong>$764K</strong></td>
+                <td>3</td>
+                <td>26.8/40</td>
+                <td>$6.3K</td>
+            </tr>
+
+            <tr class="">
+                <td><strong>#16</strong></td>
+                <td>Peggy Shum</td>
+                <td><strong>$428K</strong></td>
+                <td>1</td>
+                <td>23.0/40</td>
+                <td>$10.4K</td>
+            </tr>
+
+            <tr class="">
+                <td><strong>#17</strong></td>
+                <td>Justin Homa</td>
+                <td><strong>$7K</strong></td>
+                <td>1</td>
+                <td>29.5/40</td>
+                <td>N/A</td>
+            </tr>
+
+            </tbody>
+        </table>
+    </div>
+    
+    <div class="section">
+        <h2>Customer Satisfaction Rankings</h2>
+        <p class="section-summary">CSAT scores (1.00-5.00 scale). Portfolio median: 4.59. Top quartile: 4.75+</p>
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 40px;">Rank</th>
+                    <th>Account Director</th>
+                    <th style="width: 100px;">Avg CSAT</th>
+                    <th style="width: 80px;">Accounts</th>
+                    <th style="width: 100px;">Revenue</th>
+                    <th style="width: 100px;">Perf Score</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            <tr class="rank-1">
+                <td><strong>#1</strong></td>
+                <td>Jacqueline Maravilla</td>
+                <td><strong>4.97</strong> / 5.00</td>
+                <td>2</td>
+                <td>$1.76M</td>
+                <td>36.0/40</td>
+            </tr>
+
+            <tr class="rank-2">
+                <td><strong>#2</strong></td>
+                <td>Jack Thornton</td>
+                <td><strong>4.89</strong> / 5.00</td>
+                <td>2</td>
+                <td>$1.65M</td>
+                <td>28.7/40</td>
+            </tr>
+
+            <tr class="rank-3">
+                <td><strong>#3</strong></td>
+                <td>Benjamin Ehrenberg</td>
+                <td><strong>4.85</strong> / 5.00</td>
+                <td>2</td>
+                <td>$972K</td>
+                <td>30.0/40</td>
+            </tr>
+
+            <tr class="">
+                <td><strong>#4</strong></td>
+                <td>Isaac Calderon</td>
+                <td><strong>4.79</strong> / 5.00</td>
+                <td>5</td>
+                <td>$787K</td>
+                <td>30.0/40</td>
+            </tr>
+
+            <tr class="">
+                <td><strong>#5</strong></td>
+                <td>Brian Davis</td>
+                <td><strong>4.75</strong> / 5.00</td>
+                <td>1</td>
+                <td>$4.08M</td>
+                <td>22.3/40</td>
+            </tr>
+
+            <tr class="">
+                <td><strong>#6</strong></td>
+                <td>Grant Frazier</td>
+                <td><strong>4.74</strong> / 5.00</td>
+                <td>1</td>
+                <td>$4.18M</td>
+                <td>35.0/40</td>
+            </tr>
+
+            <tr class="">
+                <td><strong>#7</strong></td>
+                <td>Mark Schlerf</td>
+                <td><strong>4.74</strong> / 5.00</td>
+                <td>7</td>
+                <td>$1.54M</td>
+                <td>34.0/40</td>
+            </tr>
+
+            <tr class="">
+                <td><strong>#8</strong></td>
+                <td>Ana Sabater</td>
+                <td><strong>4.67</strong> / 5.00</td>
+                <td>3</td>
+                <td>$1.28M</td>
+                <td>34.5/40</td>
+            </tr>
+
+            <tr class="">
+                <td><strong>#9</strong></td>
+                <td>Taylor Wattenberg</td>
+                <td><strong>4.66</strong> / 5.00</td>
+                <td>1</td>
+                <td>$5.38M</td>
+                <td>34.0/40</td>
+            </tr>
+
+            <tr class="">
+                <td><strong>#10</strong></td>
+                <td>Patrick Murtha</td>
+                <td><strong>4.63</strong> / 5.00</td>
+                <td>3</td>
+                <td>$764K</td>
+                <td>26.8/40</td>
+            </tr>
+
+            <tr class="">
+                <td><strong>#11</strong></td>
+                <td>Justin Dallavis</td>
+                <td><strong>4.62</strong> / 5.00</td>
+                <td>1</td>
+                <td>$1.00M</td>
+                <td>30.5/40</td>
+            </tr>
+
+            <tr class="">
+                <td><strong>#12</strong></td>
+                <td>Paul Rhodes</td>
+                <td><strong>4.58</strong> / 5.00</td>
+                <td>2</td>
+                <td>$3.44M</td>
+                <td>29.5/40</td>
+            </tr>
+
+            <tr class="">
+                <td><strong>#13</strong></td>
+                <td>Stuart Kelloff</td>
+                <td><strong>4.30</strong> / 5.00</td>
+                <td>1</td>
+                <td>$1.38M</td>
+                <td>37.0/40</td>
+            </tr>
+
+            <tr class="">
+                <td><strong>#14</strong></td>
+                <td>Aaron Simpson</td>
+                <td><strong>4.17</strong> / 5.00</td>
+                <td>3</td>
+                <td>$989K</td>
+                <td>29.7/40</td>
+            </tr>
+
+            <tr class="">
+                <td><strong>#15</strong></td>
+                <td>Kimberly Wittekind</td>
+                <td><strong>4.13</strong> / 5.00</td>
+                <td>3</td>
+                <td>$1.00M</td>
+                <td>33.7/40</td>
+            </tr>
+
+            <tr class="">
+                <td><strong>#16</strong></td>
+                <td>Peggy Shum</td>
+                <td><strong>4.00</strong> / 5.00</td>
+                <td>1</td>
+                <td>$428K</td>
+                <td>23.0/40</td>
+            </tr>
+
+            </tbody>
+        </table>
+    </div>
+    
+    <div class="section">
+        <h2>Year-over-Year Growth Rankings</h2>
+        <p class="section-summary">YoY revenue growth rates (December 2025). Portfolio average: 106.4%</p>
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 40px;">Rank</th>
+                    <th>Account Director</th>
+                    <th style="width: 100px;">Growth Rate</th>
+                    <th style="width: 100px;">Revenue</th>
+                    <th style="width: 80px;">Accounts</th>
+                    <th style="width: 100px;">Perf Score</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            <tr class="rank-1">
+                <td><strong>#1</strong></td>
+                <td>Ana Sabater</td>
+                <td style="color: #10b981; font-weight: 600;"><strong>+1493.4%</strong></td>
+                <td>$1.28M</td>
+                <td>3</td>
+                <td>34.5/40</td>
+            </tr>
+
+            <tr class="rank-2">
+                <td><strong>#2</strong></td>
+                <td>Jack Thornton</td>
+                <td style="color: #10b981; font-weight: 600;"><strong>+152.2%</strong></td>
+                <td>$1.65M</td>
+                <td>2</td>
+                <td>28.7/40</td>
+            </tr>
+
+            <tr class="rank-3">
+                <td><strong>#3</strong></td>
+                <td>Jacqueline Maravilla</td>
+                <td style="color: #10b981; font-weight: 600;"><strong>+35.4%</strong></td>
+                <td>$1.76M</td>
+                <td>2</td>
+                <td>36.0/40</td>
+            </tr>
+
+            <tr class="">
+                <td><strong>#4</strong></td>
+                <td>Grant Frazier</td>
+                <td style="color: #10b981; font-weight: 600;"><strong>+30.9%</strong></td>
+                <td>$4.18M</td>
+                <td>1</td>
+                <td>35.0/40</td>
+            </tr>
+
+            <tr class="">
+                <td><strong>#5</strong></td>
+                <td>Taylor Wattenberg</td>
+                <td style="color: #10b981; font-weight: 600;"><strong>+28.1%</strong></td>
+                <td>$5.38M</td>
+                <td>1</td>
+                <td>34.0/40</td>
+            </tr>
+
+            <tr class="">
+                <td><strong>#6</strong></td>
+                <td>Stuart Kelloff</td>
+                <td style="color: #10b981; font-weight: 600;"><strong>+24.5%</strong></td>
+                <td>$1.38M</td>
+                <td>1</td>
+                <td>37.0/40</td>
+            </tr>
+
+            <tr class="">
+                <td><strong>#7</strong></td>
+                <td>Justin Dallavis</td>
+                <td style="color: #10b981; font-weight: 600;"><strong>+18.3%</strong></td>
+                <td>$1.00M</td>
+                <td>1</td>
+                <td>30.5/40</td>
+            </tr>
+
+            <tr class="">
+                <td><strong>#8</strong></td>
+                <td>Paul Rhodes</td>
+                <td style="color: #10b981; font-weight: 600;"><strong>+15.4%</strong></td>
+                <td>$3.44M</td>
+                <td>2</td>
+                <td>29.5/40</td>
+            </tr>
+
+            <tr class="">
+                <td><strong>#9</strong></td>
+                <td>Patrick Murtha</td>
+                <td style="color: #10b981; font-weight: 600;"><strong>+13.6%</strong></td>
+                <td>$764K</td>
+                <td>3</td>
+                <td>26.8/40</td>
+            </tr>
+
+            <tr class="">
+                <td><strong>#10</strong></td>
+                <td>Brian Davis</td>
+                <td style="color: #10b981; font-weight: 600;"><strong>+8.9%</strong></td>
+                <td>$4.08M</td>
+                <td>1</td>
+                <td>22.3/40</td>
+            </tr>
+
+            <tr class="">
+                <td><strong>#11</strong></td>
+                <td>Peggy Shum</td>
+                <td style="color: #10b981; font-weight: 600;"><strong>+8.5%</strong></td>
+                <td>$428K</td>
+                <td>1</td>
+                <td>23.0/40</td>
+            </tr>
+
+            <tr class="">
+                <td><strong>#12</strong></td>
+                <td>Aaron Simpson</td>
+                <td style="color: #10b981; font-weight: 600;"><strong>+7.3%</strong></td>
+                <td>$989K</td>
+                <td>3</td>
+                <td>29.7/40</td>
+            </tr>
+
+            <tr class="">
+                <td><strong>#13</strong></td>
+                <td>Benjamin Ehrenberg</td>
+                <td style="color: #10b981; font-weight: 600;"><strong>+6.0%</strong></td>
+                <td>$972K</td>
+                <td>2</td>
+                <td>30.0/40</td>
+            </tr>
+
+            <tr class="">
+                <td><strong>#14</strong></td>
+                <td>Mark Schlerf</td>
+                <td style="color: #10b981; font-weight: 600;"><strong>+1.5%</strong></td>
+                <td>$1.54M</td>
+                <td>7</td>
+                <td>34.0/40</td>
+            </tr>
+
+            <tr class="">
+                <td><strong>#15</strong></td>
+                <td>Justin Homa</td>
+                <td style="color: #ef4444; font-weight: 600;"><strong>+-1.7%</strong></td>
+                <td>$7K</td>
+                <td>1</td>
+                <td>29.5/40</td>
+            </tr>
+
+            <tr class="">
+                <td><strong>#16</strong></td>
+                <td>Isaac Calderon</td>
+                <td style="color: #ef4444; font-weight: 600;"><strong>+-6.6%</strong></td>
+                <td>$787K</td>
+                <td>5</td>
+                <td>30.0/40</td>
+            </tr>
+
+            <tr class="">
+                <td><strong>#17</strong></td>
+                <td>Kimberly Wittekind</td>
+                <td style="color: #ef4444; font-weight: 600;"><strong>+-26.3%</strong></td>
+                <td>$1.00M</td>
+                <td>3</td>
+                <td>33.7/40</td>
+            </tr>
+
+            </tbody>
+        </table>
+    </div>
+    
+    <div class="section">
+        <h2>Operational Excellence - Red Sites</h2>
+        <p class="section-summary">Sites with performance issues (lower is better). Green: 0-2, Yellow: 3-10, Red: 10+</p>
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 40px;">Rank</th>
+                    <th>Account Director</th>
+                    <th style="width: 100px;">Red Sites</th>
+                    <th style="width: 100px;">Headcount</th>
+                    <th style="width: 80px;">Accounts</th>
+                    <th style="width: 100px;">Perf Score</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            <tr class="rank-1">
+                <td><strong>#1</strong></td>
+                <td>Justin Homa</td>
+                <td style="color: #10b981; font-weight: 600;"><strong>0</strong></td>
+                <td>0</td>
+                <td>1</td>
+                <td>29.5/40</td>
+            </tr>
+
+            <tr class="rank-2">
+                <td><strong>#2</strong></td>
+                <td>Stuart Kelloff</td>
+                <td style="color: #10b981; font-weight: 600;"><strong>1</strong></td>
+                <td>128</td>
+                <td>1</td>
+                <td>37.0/40</td>
+            </tr>
+
+            <tr class="rank-3">
+                <td><strong>#3</strong></td>
+                <td>Grant Frazier</td>
+                <td style="color: #10b981; font-weight: 600;"><strong>1</strong></td>
+                <td>437</td>
+                <td>1</td>
+                <td>35.0/40</td>
+            </tr>
+
+            <tr class="">
+                <td><strong>#4</strong></td>
+                <td>Jack Thornton</td>
+                <td style="color: #10b981; font-weight: 600;"><strong>1</strong></td>
+                <td>272</td>
+                <td>2</td>
+                <td>28.7/40</td>
+            </tr>
+
+            <tr class="">
+                <td><strong>#5</strong></td>
+                <td>Peggy Shum</td>
+                <td style="color: #10b981; font-weight: 600;"><strong>1</strong></td>
+                <td>41</td>
+                <td>1</td>
+                <td>23.0/40</td>
+            </tr>
+
+            <tr class="">
+                <td><strong>#6</strong></td>
+                <td>Jacqueline Maravilla</td>
+                <td style="color: #10b981; font-weight: 600;"><strong>2</strong></td>
+                <td>113</td>
+                <td>2</td>
+                <td>36.0/40</td>
+            </tr>
+
+            <tr class="">
+                <td><strong>#7</strong></td>
+                <td>Mark Schlerf</td>
+                <td style="color: #10b981; font-weight: 600;"><strong>2</strong></td>
+                <td>186</td>
+                <td>7</td>
+                <td>34.0/40</td>
+            </tr>
+
+            <tr class="">
+                <td><strong>#8</strong></td>
+                <td>Benjamin Ehrenberg</td>
+                <td style="color: #10b981; font-weight: 600;"><strong>2</strong></td>
+                <td>140</td>
+                <td>2</td>
+                <td>30.0/40</td>
+            </tr>
+
+            <tr class="">
+                <td><strong>#9</strong></td>
+                <td>Kimberly Wittekind</td>
+                <td style="color: #f59e0b; font-weight: 600;"><strong>3</strong></td>
+                <td>196</td>
+                <td>3</td>
+                <td>33.7/40</td>
+            </tr>
+
+            <tr class="">
+                <td><strong>#10</strong></td>
+                <td>Isaac Calderon</td>
+                <td style="color: #f59e0b; font-weight: 600;"><strong>3</strong></td>
+                <td>135</td>
+                <td>5</td>
+                <td>30.0/40</td>
+            </tr>
+
+            <tr class="">
+                <td><strong>#11</strong></td>
+                <td>Taylor Wattenberg</td>
+                <td style="color: #f59e0b; font-weight: 600;"><strong>4</strong></td>
+                <td>600</td>
+                <td>1</td>
+                <td>34.0/40</td>
+            </tr>
+
+            <tr class="">
+                <td><strong>#12</strong></td>
+                <td>Ana Sabater</td>
+                <td style="color: #f59e0b; font-weight: 600;"><strong>6</strong></td>
+                <td>127</td>
+                <td>3</td>
+                <td>34.5/40</td>
+            </tr>
+
+            <tr class="">
+                <td><strong>#13</strong></td>
+                <td>Justin Dallavis</td>
+                <td style="color: #f59e0b; font-weight: 600;"><strong>7</strong></td>
+                <td>152</td>
+                <td>1</td>
+                <td>30.5/40</td>
+            </tr>
+
+            <tr class="">
+                <td><strong>#14</strong></td>
+                <td>Brian Davis</td>
+                <td style="color: #f59e0b; font-weight: 600;"><strong>7</strong></td>
+                <td>345</td>
+                <td>1</td>
+                <td>22.3/40</td>
+            </tr>
+
+            <tr class="">
+                <td><strong>#15</strong></td>
+                <td>Patrick Murtha</td>
+                <td style="color: #f59e0b; font-weight: 600;"><strong>10</strong></td>
+                <td>122</td>
+                <td>3</td>
+                <td>26.8/40</td>
+            </tr>
+
+            <tr class="">
+                <td><strong>#16</strong></td>
+                <td>Paul Rhodes</td>
+                <td style="color: #ef4444; font-weight: 600;"><strong>17</strong></td>
+                <td>348</td>
+                <td>2</td>
+                <td>29.5/40</td>
+            </tr>
+
+            <tr class="">
+                <td><strong>#17</strong></td>
+                <td>Aaron Simpson</td>
+                <td style="color: #ef4444; font-weight: 600;"><strong>22</strong></td>
+                <td>201</td>
+                <td>3</td>
+                <td>29.7/40</td>
+            </tr>
+
+            </tbody>
+        </table>
+    </div>
+    
+    <div class="section">
+        <h2>Workforce Management Rankings</h2>
+        <p class="section-summary">Total employees managed across all accounts. Largest portfolios exceed 400 employees.</p>
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 40px;">Rank</th>
+                    <th>Account Director</th>
+                    <th style="width: 100px;">Headcount</th>
+                    <th style="width: 100px;">Revenue</th>
+                    <th style="width: 100px;">Rev/Employee</th>
+                    <th style="width: 100px;">Perf Score</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            <tr class="rank-1">
+                <td><strong>#1</strong></td>
+                <td>Taylor Wattenberg</td>
+                <td><strong>600</strong></td>
+                <td>$5.38M</td>
+                <td>$9.0K</td>
+                <td>34.0/40</td>
+            </tr>
+
+            <tr class="rank-2">
+                <td><strong>#2</strong></td>
+                <td>Grant Frazier</td>
+                <td><strong>437</strong></td>
+                <td>$4.18M</td>
+                <td>$9.6K</td>
+                <td>35.0/40</td>
+            </tr>
+
+            <tr class="rank-3">
+                <td><strong>#3</strong></td>
+                <td>Paul Rhodes</td>
+                <td><strong>348</strong></td>
+                <td>$3.44M</td>
+                <td>$9.9K</td>
+                <td>29.5/40</td>
+            </tr>
+
+            <tr class="">
+                <td><strong>#4</strong></td>
+                <td>Brian Davis</td>
+                <td><strong>345</strong></td>
+                <td>$4.08M</td>
+                <td>$11.8K</td>
+                <td>22.3/40</td>
+            </tr>
+
+            <tr class="">
+                <td><strong>#5</strong></td>
+                <td>Jack Thornton</td>
+                <td><strong>272</strong></td>
+                <td>$1.65M</td>
+                <td>$6.0K</td>
+                <td>28.7/40</td>
+            </tr>
+
+            <tr class="">
+                <td><strong>#6</strong></td>
+                <td>Aaron Simpson</td>
+                <td><strong>201</strong></td>
+                <td>$989K</td>
+                <td>$4.9K</td>
+                <td>29.7/40</td>
+            </tr>
+
+            <tr class="">
+                <td><strong>#7</strong></td>
+                <td>Kimberly Wittekind</td>
+                <td><strong>196</strong></td>
+                <td>$1.00M</td>
+                <td>$5.1K</td>
+                <td>33.7/40</td>
+            </tr>
+
+            <tr class="">
+                <td><strong>#8</strong></td>
+                <td>Mark Schlerf</td>
+                <td><strong>186</strong></td>
+                <td>$1.54M</td>
+                <td>$8.3K</td>
+                <td>34.0/40</td>
+            </tr>
+
+            <tr class="">
+                <td><strong>#9</strong></td>
+                <td>Justin Dallavis</td>
+                <td><strong>152</strong></td>
+                <td>$1.00M</td>
+                <td>$6.6K</td>
+                <td>30.5/40</td>
+            </tr>
+
+            <tr class="">
+                <td><strong>#10</strong></td>
+                <td>Benjamin Ehrenberg</td>
+                <td><strong>140</strong></td>
+                <td>$972K</td>
+                <td>$6.9K</td>
+                <td>30.0/40</td>
+            </tr>
+
+            <tr class="">
+                <td><strong>#11</strong></td>
+                <td>Isaac Calderon</td>
+                <td><strong>135</strong></td>
+                <td>$787K</td>
+                <td>$5.8K</td>
+                <td>30.0/40</td>
+            </tr>
+
+            <tr class="">
+                <td><strong>#12</strong></td>
+                <td>Stuart Kelloff</td>
+                <td><strong>128</strong></td>
+                <td>$1.38M</td>
+                <td>$10.7K</td>
+                <td>37.0/40</td>
+            </tr>
+
+            <tr class="">
+                <td><strong>#13</strong></td>
+                <td>Ana Sabater</td>
+                <td><strong>127</strong></td>
+                <td>$1.28M</td>
+                <td>$10.1K</td>
+                <td>34.5/40</td>
+            </tr>
+
+            <tr class="">
+                <td><strong>#14</strong></td>
+                <td>Patrick Murtha</td>
+                <td><strong>122</strong></td>
+                <td>$764K</td>
+                <td>$6.3K</td>
+                <td>26.8/40</td>
+            </tr>
+
+            <tr class="">
+                <td><strong>#15</strong></td>
+                <td>Jacqueline Maravilla</td>
+                <td><strong>113</strong></td>
+                <td>$1.76M</td>
+                <td>$15.6K</td>
+                <td>36.0/40</td>
+            </tr>
+
+            <tr class="">
+                <td><strong>#16</strong></td>
+                <td>Peggy Shum</td>
+                <td><strong>41</strong></td>
+                <td>$428K</td>
+                <td>$10.4K</td>
+                <td>23.0/40</td>
+            </tr>
+
+            </tbody>
+        </table>
+    </div>
+    
+    </div> <!-- Close report-content -->
+    
+    <script>
+        // Set your password here (case-sensitive)
+        const REPORT_PASSWORD = "SBM2025";
+        
+        // Check password function
+        function checkPassword() {
+            const input = document.getElementById('passwordInput');
+            const overlay = document.getElementById('passwordOverlay');
+            const content = document.getElementById('reportContent');
+            const error = document.getElementById('passwordError');
+            
+            if (input.value === REPORT_PASSWORD) {
+                overlay.style.display = 'none';
+                content.classList.add('unlocked');
+                error.style.display = 'none';
+            } else {
+                error.style.display = 'block';
+                input.value = '';
+                input.focus();
+            }
+        }
+        
+        // Allow Enter key to submit
+        document.getElementById('passwordInput').addEventListener('keypress', function(event) {
+            if (event.key === 'Enter') {
+                checkPassword();
+            }
+        });
+        
+        // Focus input on load
+        window.addEventListener('load', function() {
+            document.getElementById('passwordInput').focus();
+        });
+    </script>
+</body>
+</html>

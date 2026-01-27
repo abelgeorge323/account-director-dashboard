@@ -1,0 +1,13 @@
+Account,Vertical,KPI,Dec-24,Jan-25,Feb-25,Mar-25,Apr-25,May-25,Jun-25,Jul-25,Aug-25,Sep-25,Oct-25,Nov-25,Dec-25
+Microsoft,TECHNOLOGY,Revenue ($),4197,4276,4048,4375,4466,4402,4396,4699,4562,4965,5108,4786,5376
+Microsoft,TECHNOLOGY,Growth (%),0.0,1.9,-3.6,4.2,6.4,4.9,4.7,12.0,8.7,18.3,21.7,14.0,28.1
+Microsoft,TECHNOLOGY,Gap ($),,,,,,-16,,,,,-12,-74,
+Microsoft,TECHNOLOGY,Red Sites ($),-93,-126,-108,-75,-49,-108,-105,-76,-96,-51,-72,-136,-92
+Microsoft,TECHNOLOGY,Red Sites (#),8,3,5,6,8,6,8,3,6,4,6,6,4
+Microsoft,TECHNOLOGY,Headcount,465,517,499,504,509,514,514,518,535,559,581,592,600
+Microsoft,TECHNOLOGY,Separations,1,4,6,9,3,2,6,9,9,10,10,8,13
+Microsoft,TECHNOLOGY,Turnover (%),0.2,0.8,1.2,1.8,0.6,0.4,1.2,1.7,1.7,1.8,1.7,1.4,2.2
+Microsoft,TECHNOLOGY,CSAT,4.65,4.97,4.49,4.55,4.64,4.84,4.70,4.47,4.65,4.56,4.53,4.68,4.66
+Microsoft,TECHNOLOGY,YTD Claims,3,,1,2,2,2,2,2,2,3,3,4,4
+Microsoft,TECHNOLOGY,YTD Recordables,2,,,1,1,1,1,1,1,1,1,2,2
+Microsoft,TECHNOLOGY,TRIR,0.46,,,0.90,0.65,0.52,0.43,0.36,0.31,0.27,0.24,0.44,0.40

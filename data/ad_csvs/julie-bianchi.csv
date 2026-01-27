@@ -1,0 +1,25 @@
+Account,Vertical,KPI,Dec-24,Jan-25,Feb-25,Mar-25,Apr-25,May-25,Jun-25,Jul-25,Aug-25,Sep-25,Oct-25,Nov-25,Dec-25
+CIGNA,FINANCE,Revenue ($),357,354,353,351,351,343,348,345,350,351,354,376,354
+CIGNA,FINANCE,Growth (%),0.0,-0.8,-1.3,-1.7,-1.7,-3.9,-2.6,-3.4,-1.9,-1.8,-0.8,5.3,-0.8
+CIGNA,FINANCE,Gap ($),-17,-17,-18,-17,-8,-18,-10,-4,-2,-6,-8,,
+CIGNA,FINANCE,Red Sites ($),-18,-18,-20,-18,-12,-19,-12,-8,-9,-8,-11,,-2
+CIGNA,FINANCE,Red Sites (#),6,4,4,3,2,3,2,2,2,2,3,,1
+CIGNA,FINANCE,Headcount,65,62,64,64,65,63,65,64,63,62,60,60,60
+CIGNA,FINANCE,Separations,,2,,1,,1,,2,1,1,3,1,
+CIGNA,FINANCE,Turnover (%),0.0,3.2,0.0,1.6,0.0,1.6,0.0,3.1,1.6,1.6,5.0,1.7,0.0
+CIGNA,FINANCE,CSAT,4.27,4.23,4.39,4.17,4.35,4.38,4.44,4.33,4.39,4.21,4.44,4.24,4.30
+CIGNA,FINANCE,YTD Claims,,,,,,,,,,,,,
+CIGNA,FINANCE,YTD Recordables,,,,,,,,,,,,,
+CIGNA,FINANCE,TRIR,,,,,,,,,,,,,
+Elevance Health,FINANCE,Revenue ($),190,178,175,180,176,192,205,212,209,180,192,151,147
+Elevance Health,FINANCE,Growth (%),0.0,-6.0,-7.4,-4.9,-6.9,1.1,8.2,11.9,10.1,-5.1,1.2,-20.2,-22.3
+Elevance Health,FINANCE,Gap ($),-13,-0,-6,-5,-4,-3,-2,-1,,,,-7,-14
+Elevance Health,FINANCE,Red Sites ($),-16,-8,-10,-10,-8,-9,-7,-9,-7,-8,-8,-10,-15
+Elevance Health,FINANCE,Red Sites (#),12,8,13,8,9,5,5,8,8,5,7,9,15
+Elevance Health,FINANCE,Headcount,31,32,29,29,29,33,34,34,29,28,25,24,24
+Elevance Health,FINANCE,Separations,1,,1,1,1,,,1,,2,1,1,
+Elevance Health,FINANCE,Turnover (%),3.2,0.0,3.4,3.4,3.4,0.0,0.0,2.9,0.0,7.1,4.0,4.2,0.0
+Elevance Health,FINANCE,CSAT,4.44,4.68,4.56,4.32,4.73,4.78,4.66,4.79,4.43,4.38,4.89,4.86,4.92
+Elevance Health,FINANCE,YTD Claims,,,,,,,,,,,,,
+Elevance Health,FINANCE,YTD Recordables,,,,,,,,,,,,,
+Elevance Health,FINANCE,TRIR,,,,,,,,,,,,,

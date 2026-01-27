@@ -1,0 +1,61 @@
+Account,Vertical,KPI,Dec-24,Jan-25,Feb-25,Mar-25,Apr-25,May-25,Jun-25,Jul-25,Aug-25,Sep-25,Oct-25,Nov-25,Dec-25
+AMD,TECHNOLOGY,Revenue ($),128,131,134,131,145,132,131,132,132,135,148,164,148
+AMD,TECHNOLOGY,Growth (%),0.0,2.4,4.6,2.1,12.7,3.0,2.0,3.0,2.8,5.6,15.8,28.1,15.2
+AMD,TECHNOLOGY,Gap ($),,-6,-9,-14,-0,-4,,-3,-23,-9,-10,,
+AMD,TECHNOLOGY,Red Sites ($),,-8,-13,-14,-2,-10,-1,-3,-23,-10,-10,-0,-0
+AMD,TECHNOLOGY,Red Sites (#),,1,1,3,2,1,1,2,3,2,3,1,2
+AMD,TECHNOLOGY,Headcount,21,24,23,24,24,23,23,22,25,27,24,26,26
+AMD,TECHNOLOGY,Separations,,,2,2,,1,,2,,,3,2,
+AMD,TECHNOLOGY,Turnover (%),0.0,0.0,8.7,8.3,0.0,4.3,0.0,9.1,0.0,0.0,12.5,7.7,0.0
+AMD,TECHNOLOGY,CSAT,5.00,4.94,4.75,3.50,4.96,4.38,5.00,4.25,4.58,4.58,4.38,4.75,4.25
+AMD,TECHNOLOGY,YTD Claims,,,,,,,,,,,,,
+AMD,TECHNOLOGY,YTD Recordables,,,,,,,,,,,,,
+AMD,TECHNOLOGY,TRIR,,,,,,,,,,,,,
+Omnicom,TECHNOLOGY,Revenue ($),,,,104,105,107,110,110,110,116,135,133,135
+Omnicom,TECHNOLOGY,Growth (%),0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+Omnicom,TECHNOLOGY,Gap ($),,,-2,-9,-19,-20,-13,-8,-1,-4,-26,-18,-15
+Omnicom,TECHNOLOGY,Red Sites ($),,,-2,-11,-19,-20,-18,-8,-5,-5,-28,-22,-16
+Omnicom,TECHNOLOGY,Red Sites (#),,,3,3,4,4,3,4,2,5,3,2,3
+Omnicom,TECHNOLOGY,Headcount,,,11,24,24,26,25,24,23,31,34,32,32
+Omnicom,TECHNOLOGY,Separations,,,,3,6,,,1,,,,1,
+Omnicom,TECHNOLOGY,Turnover (%),0.0,0.0,0.0,12.5,25.0,0.0,0.0,4.2,0.0,0.0,0.0,3.1,0.0
+Omnicom,TECHNOLOGY,CSAT,,,,4.33,4.54,3.71,3.83,4.43,4.33,4.70,4.43,4.63,4.71
+Omnicom,TECHNOLOGY,YTD Claims,,,,,,,,,,,,,
+Omnicom,TECHNOLOGY,YTD Recordables,,,,,,,,,,,,,
+Omnicom,TECHNOLOGY,TRIR,,,,,,,,,,,,,
+TGS Management,TECHNOLOGY,Revenue ($),45,45,52,49,51,49,52,51,50,50,50,51,50
+TGS Management,TECHNOLOGY,Growth (%),0.0,-0.6,15.0,9.1,12.2,9.1,13.5,12.5,10.1,11.0,10.5,12.4,10.7
+TGS Management,TECHNOLOGY,Gap ($),-2,-11,,,-0,-1,-0,-1,,,-1,-2,-9
+TGS Management,TECHNOLOGY,Red Sites ($),-2,-11,,,-0,-1,-0,-1,,,-1,-2,-9
+TGS Management,TECHNOLOGY,Red Sites (#),1,1,,,1,1,1,1,,,1,1,1
+TGS Management,TECHNOLOGY,Headcount,7,7,7,7,7,7,8,8,8,8,8,8,8
+TGS Management,TECHNOLOGY,Separations,,,,,,,,,,,,,
+TGS Management,TECHNOLOGY,Turnover (%),0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+TGS Management,TECHNOLOGY,CSAT,5.00,5.00,5.00,,3.75,3.75,4.50,5.00,4.75,,4.75,5.00,5.00
+TGS Management,TECHNOLOGY,YTD Claims,,,,,,,,,,,,,
+TGS Management,TECHNOLOGY,YTD Recordables,,,,,,,,,,,,,
+TGS Management,TECHNOLOGY,TRIR,,,,,,,,,,,,,
+SoftLayer Technologies,TECHNOLOGY,Revenue ($),5,5,5,5,5,5,5,5,5,5,5,5,5
+SoftLayer Technologies,TECHNOLOGY,Growth (%),0.0,6.1,0.0,4.7,0.0,0.0,0.0,0.0,4.3,2.1,3.1,0.0,4.4
+SoftLayer Technologies,TECHNOLOGY,Gap ($),,,,,,,-0,,,,,,
+SoftLayer Technologies,TECHNOLOGY,Red Sites ($),,,,,,,-0,,,,,,
+SoftLayer Technologies,TECHNOLOGY,Red Sites (#),,,,,,,1,,,,,,
+SoftLayer Technologies,TECHNOLOGY,Headcount,1,1,1,1,1,1,1,1,1,1,1,1,1
+SoftLayer Technologies,TECHNOLOGY,Separations,,,,,,,,,,,,,
+SoftLayer Technologies,TECHNOLOGY,Turnover (%),0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+SoftLayer Technologies,TECHNOLOGY,CSAT,,,5.00,,,,,5.00,5.00,5.00,4.38,4.00,4.75
+SoftLayer Technologies,TECHNOLOGY,YTD Claims,,,,,,,,,,,,,
+SoftLayer Technologies,TECHNOLOGY,YTD Recordables,,,,,,,,,,,,,
+SoftLayer Technologies,TECHNOLOGY,TRIR,,,,,,,,,,,,,
+CPI Satcom,TECHNOLOGY,Revenue ($),7,7,7,7,7,7,7,7,3,3,3,3,3
+CPI Satcom,TECHNOLOGY,Growth (%),0.0,-0.7,-0.7,-0.7,-0.7,-0.7,-0.7,-0.7,-58.8,-58.8,-58.8,-58.8,-52.7
+CPI Satcom,TECHNOLOGY,Gap ($),-0,-0,-0,-0,-1,-0,-1,,-0,-0,,-0,-0
+CPI Satcom,TECHNOLOGY,Red Sites ($),-0,-0,-0,-0,-1,-0,-1,-0,-1,-0,-0,-0,-0
+CPI Satcom,TECHNOLOGY,Red Sites (#),1,1,1,1,2,1,2,1,1,1,1,1,1
+CPI Satcom,TECHNOLOGY,Headcount,2,2,2,2,2,2,2,1,1,1,1,1,1
+CPI Satcom,TECHNOLOGY,Separations,,,,,,,,,,,,,
+CPI Satcom,TECHNOLOGY,Turnover (%),0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+CPI Satcom,TECHNOLOGY,CSAT,5.00,4.50,4.50,4.75,5.00,5.00,5.00,5.00,5.00,5.00,5.00,5.00,
+CPI Satcom,TECHNOLOGY,YTD Claims,,,,,,,,,,,,,
+CPI Satcom,TECHNOLOGY,YTD Recordables,,,,,,,,,,,,,
+CPI Satcom,TECHNOLOGY,TRIR,,,,,,,,,,,,,

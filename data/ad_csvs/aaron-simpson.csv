@@ -1,0 +1,37 @@
+Account,Vertical,KPI,Dec-24,Jan-25,Feb-25,Mar-25,Apr-25,May-25,Jun-25,Jul-25,Aug-25,Sep-25,Oct-25,Nov-25,Dec-25
+3M Corp,MANUFACTURING,Revenue ($),3,4,4,4,4,4,5,4,4,4,4,4,4
+3M Corp,MANUFACTURING,Growth (%),0.0,42.9,42.9,42.9,42.9,42.9,64.0,42.9,42.9,42.9,42.9,42.9,42.9
+3M Corp,MANUFACTURING,Gap ($),,,-2,-2,-2,-2,-2,-4,-1,-3,-1,-1,-2
+3M Corp,MANUFACTURING,Red Sites ($),,,-2,-2,-2,-2,-2,-4,-1,-3,-1,-1,-2
+3M Corp,MANUFACTURING,Red Sites (#),,,1,1,1,1,1,1,1,1,1,1,1
+3M Corp,MANUFACTURING,Headcount,2,2,2,2,2,2,2,2,1,2,1,1,1
+3M Corp,MANUFACTURING,Separations,,,,,,,,,1,,,,
+3M Corp,MANUFACTURING,Turnover (%),0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,100.0,0.0,0.0,0.0,0.0
+3M Corp,MANUFACTURING,CSAT,,5.00,4.75,5.00,5.00,5.00,5.00,5.00,4.00,4.00,5.00,5.00,4.00
+3M Corp,MANUFACTURING,YTD Claims,,,,,,,,,,,,,
+3M Corp,MANUFACTURING,YTD Recordables,,,,,,,,,,,,,
+3M Corp,MANUFACTURING,TRIR,,,,,,,,,,,,,
+Mars,MANUFACTURING,Revenue ($),935,897,894,870,878,889,1003,850,844,819,829,776,739
+Mars,MANUFACTURING,Growth (%),0.0,-4.0,-4.4,-6.9,-6.0,-4.9,7.3,-9.0,-9.7,-12.3,-11.3,-16.9,-21.0
+Mars,MANUFACTURING,Gap ($),-11,-41,-23,-45,-40,,-20,-19,-88,-50,-48,-58,-41
+Mars,MANUFACTURING,Red Sites ($),-61,-79,-68,-82,-69,-42,-61,-57,-98,-73,-75,-77,-58
+Mars,MANUFACTURING,Red Sites (#),11,11,11,12,13,10,13,12,15,14,13,13,14
+Mars,MANUFACTURING,Headcount,178,173,159,154,153,158,161,159,160,162,161,160,157
+Mars,MANUFACTURING,Separations,10,6,10,6,10,9,12,6,4,9,7,4,7
+Mars,MANUFACTURING,Turnover (%),5.6,3.5,6.3,3.9,6.5,5.7,7.5,3.8,2.5,5.6,4.3,2.5,4.5
+Mars,MANUFACTURING,CSAT,4.43,4.40,4.31,4.33,4.28,4.41,4.14,3.98,4.22,4.25,4.01,4.17,4.29
+Mars,MANUFACTURING,YTD Claims,1,,,,,,,,,,,,
+Mars,MANUFACTURING,YTD Recordables,1,,,,,,,,,,,,
+Mars,MANUFACTURING,TRIR,1.14,,,,,,,,,,,,
+Ball Corporation,MANUFACTURING,Revenue ($),,,,,,243,244,242,257,249,245,243,246
+Ball Corporation,MANUFACTURING,Growth (%),0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+Ball Corporation,MANUFACTURING,Gap ($),,,,,,,-16,,,-1,,-2,
+Ball Corporation,MANUFACTURING,Red Sites ($),,,,,-0,-21,-35,-13,-11,-16,-11,-11,-10
+Ball Corporation,MANUFACTURING,Red Sites (#),,,,,2,5,13,11,10,10,8,9,7
+Ball Corporation,MANUFACTURING,Headcount,,,,,,42,36,37,39,41,42,43,43
+Ball Corporation,MANUFACTURING,Separations,,,,,,7,1,2,1,2,3,2,
+Ball Corporation,MANUFACTURING,Turnover (%),0.0,0.0,0.0,0.0,0.0,16.7,2.8,5.4,2.6,4.9,7.1,4.7,0.0
+Ball Corporation,MANUFACTURING,CSAT,,,,,,4.17,4.35,4.21,4.36,4.23,4.51,4.23,4.22
+Ball Corporation,MANUFACTURING,YTD Claims,,,,,,,,,,,,,
+Ball Corporation,MANUFACTURING,YTD Recordables,,,,,,,,,,,,,
+Ball Corporation,MANUFACTURING,TRIR,,,,,,,,,,,,,

@@ -1,0 +1,49 @@
+Account,Vertical,KPI,Dec-24,Jan-25,Feb-25,Mar-25,Apr-25,May-25,Jun-25,Jul-25,Aug-25,Sep-25,Oct-25,Nov-25,Dec-25
+Geico,FINANCE,Revenue ($),,,,,,,,,8,7,66,454,461
+Geico,FINANCE,Growth (%),0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+Geico,FINANCE,Gap ($),,,,,,,,,-2,-1,-1,,-16
+Geico,FINANCE,Red Sites ($),,,,,,,,,-2,-2,-9,-13,-37
+Geico,FINANCE,Red Sites (#),,,,,,,,,1,5,12,6,7
+Geico,FINANCE,Headcount,,,,,,,,,,,86,97,100
+Geico,FINANCE,Separations,,,,,,,,,,,5,6,5
+Geico,FINANCE,Turnover (%),0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,5.8,6.2,5.0
+Geico,FINANCE,CSAT,,,,,,,,,,,4.50,4.76,4.61
+Geico,FINANCE,YTD Claims,,,,,,,,,,,,,
+Geico,FINANCE,YTD Recordables,,,,,,,,,,,,,
+Geico,FINANCE,TRIR,,,,,,,,,,,,,
+AbbVie,LIFE SCIENCE,Revenue ($),259,265,259,273,253,265,264,210,266,245,235,263,278
+AbbVie,LIFE SCIENCE,Growth (%),0.0,2.3,0.2,5.6,-2.4,2.3,2.0,-19.0,2.9,-5.4,-9.1,1.7,7.2
+AbbVie,LIFE SCIENCE,Gap ($),,-2,-4,-3,-8,-4,-6,,-4,-5,-9,-18,-0
+AbbVie,LIFE SCIENCE,Red Sites ($),-5,-4,-11,-8,-10,-9,-9,-11,-9,-8,-13,-23,-14
+AbbVie,LIFE SCIENCE,Red Sites (#),2,3,4,4,4,4,2,4,3,3,3,3,2
+AbbVie,LIFE SCIENCE,Headcount,46,44,46,48,48,48,51,48,46,47,47,48,49
+AbbVie,LIFE SCIENCE,Separations,,2,,1,,1,1,3,,,,1,2
+AbbVie,LIFE SCIENCE,Turnover (%),0.0,4.5,0.0,2.1,0.0,2.1,2.0,6.3,0.0,0.0,0.0,2.1,4.1
+AbbVie,LIFE SCIENCE,CSAT,4.94,4.94,5.00,4.94,4.90,4.94,4.94,4.88,4.88,4.66,4.85,4.94,4.81
+AbbVie,LIFE SCIENCE,YTD Claims,,,,,,,,,,,,,
+AbbVie,LIFE SCIENCE,YTD Recordables,,,,,,,,1,1,1,1,1,1
+AbbVie,LIFE SCIENCE,TRIR,,,,,,,,4.78,4.21,3.76,3.37,3.11,2.86
+Siemens,LIFE SCIENCE,Revenue ($),14,14,14,14,14,14,20,21,14,7,9,9,9
+Siemens,LIFE SCIENCE,Growth (%),0.0,-1.0,0.0,0.0,0.0,0.0,39.7,50.8,0.0,-52.4,-36.9,-36.9,-36.9
+Siemens,LIFE SCIENCE,Gap ($),-0,-0,-1,-6,-5,-1,-0,,,-3,-2,-1,-0
+Siemens,LIFE SCIENCE,Red Sites ($),-1,-1,-1,-1,-1,-2,-1,-0,,-5,-2,-1,-0
+Siemens,LIFE SCIENCE,Red Sites (#),1,1,1,1,1,1,1,1,,2,2,2,1
+Siemens,LIFE SCIENCE,Headcount,3,3,3,3,3,3,3,3,2,2,2,2,1
+Siemens,LIFE SCIENCE,Separations,,,,,,,,,1,,,,
+Siemens,LIFE SCIENCE,Turnover (%),0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,50.0,0.0,0.0,0.0,0.0
+Siemens,LIFE SCIENCE,CSAT,4.50,,4.25,5.00,,,4.00,,4.00,4.25,,,4.00
+Siemens,LIFE SCIENCE,YTD Claims,,,,,,,,,,,,,
+Siemens,LIFE SCIENCE,YTD Recordables,,,,,,,,,,,,,
+Siemens,LIFE SCIENCE,TRIR,,,,,,,,,,,,,
+Siemens Healthineers,LIFE SCIENCE,Revenue ($),,,,7,7,7,23,23,23,23,23,23,23
+Siemens Healthineers,LIFE SCIENCE,Growth (%),0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+Siemens Healthineers,LIFE SCIENCE,Gap ($),,,,,,,,-4,-5,-8,-7,-10,-6
+Siemens Healthineers,LIFE SCIENCE,Red Sites ($),,,-0,-6,-5,-5,-3,-4,-5,-8,-7,-10,-6
+Siemens Healthineers,LIFE SCIENCE,Red Sites (#),,,1,1,1,2,1,2,2,2,2,2,2
+Siemens Healthineers,LIFE SCIENCE,Headcount,,,3,4,3,4,7,7,7,7,7,8,7
+Siemens Healthineers,LIFE SCIENCE,Separations,,,,1,,,,,,1,,,2
+Siemens Healthineers,LIFE SCIENCE,Turnover (%),0.0,0.0,0.0,25.0,0.0,0.0,0.0,0.0,0.0,14.3,0.0,0.0,28.6
+Siemens Healthineers,LIFE SCIENCE,CSAT,,,,,,,,5.00,5.00,5.00,5.00,5.00,5.00
+Siemens Healthineers,LIFE SCIENCE,YTD Claims,,,,,,,,,,,,,
+Siemens Healthineers,LIFE SCIENCE,YTD Recordables,,,,,,,,,,,,,
+Siemens Healthineers,LIFE SCIENCE,TRIR,,,,,,,,,,,,,

@@ -1,0 +1,37 @@
+Account,Vertical,KPI,Dec-24,Jan-25,Feb-25,Mar-25,Apr-25,May-25,Jun-25,Jul-25,Aug-25,Sep-25,Oct-25,Nov-25,Dec-25
+Uber,TECHNOLOGY,Revenue ($),433,389,393,346,381,364,373,390,387,419,377,328,399
+Uber,TECHNOLOGY,Growth (%),0.0,-10.2,-9.1,-20.1,-12.0,-15.9,-13.9,-9.8,-10.5,-3.3,-12.8,-24.2,-7.8
+Uber,TECHNOLOGY,Gap ($),,,,,,-4,,,,,,,
+Uber,TECHNOLOGY,Red Sites ($),-2,-0,-0,-0,-0,-6,-0,,,-3,,-0,-1
+Uber,TECHNOLOGY,Red Sites (#),3,1,1,1,1,2,2,,,1,,1,1
+Uber,TECHNOLOGY,Headcount,50,50,50,50,48,48,49,49,48,43,42,44,45
+Uber,TECHNOLOGY,Separations,,,,1,2,,1,,,,,1,
+Uber,TECHNOLOGY,Turnover (%),0.0,0.0,0.0,2.0,4.2,0.0,2.0,0.0,0.0,0.0,0.0,2.3,0.0
+Uber,TECHNOLOGY,CSAT,4.86,4.71,4.67,4.61,4.66,4.81,4.61,4.67,4.57,4.75,4.49,4.41,4.81
+Uber,TECHNOLOGY,YTD Claims,1,,,,,,,,,,,,
+Uber,TECHNOLOGY,YTD Recordables,1,,,,,,,,,,,,
+Uber,TECHNOLOGY,TRIR,2.87,,,,,,,,,,,,
+LinkedIn,TECHNOLOGY,Revenue ($),17,14,14,14,14,14,14,17,49,748,797,760,778
+LinkedIn,TECHNOLOGY,Growth (%),0.0,-18.3,-20.2,-20.2,-20.2,-18.3,-20.2,-4.3,181.2,4212.1,4494.1,4282.6,4382.9
+LinkedIn,TECHNOLOGY,Gap ($),,,-1,-2,,,-1,,,,,-27,
+LinkedIn,TECHNOLOGY,Red Sites ($),,,-1,-2,,,-1,,-8,-12,-17,-65,-47
+LinkedIn,TECHNOLOGY,Red Sites (#),,,1,1,,,1,,4,2,5,5,5
+LinkedIn,TECHNOLOGY,Headcount,1,1,1,1,1,1,1,1,35,40,36,35,72
+LinkedIn,TECHNOLOGY,Separations,,,,,,,,,,1,1,,
+LinkedIn,TECHNOLOGY,Turnover (%),0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,2.5,2.8,0.0,0.0
+LinkedIn,TECHNOLOGY,CSAT,,5.00,,5.00,5.00,5.00,4.50,5.00,3.00,4.45,4.35,4.68,4.45
+LinkedIn,TECHNOLOGY,YTD Claims,,,,,,,,,,,,,
+LinkedIn,TECHNOLOGY,YTD Recordables,,,,,,,,,,,,,
+LinkedIn,TECHNOLOGY,TRIR,,,,,,,,,,,,,
+Scale AI,TECHNOLOGY,Revenue ($),52,51,52,58,57,74,76,76,106,104,106,102,106
+Scale AI,TECHNOLOGY,Growth (%),0.0,-0.8,0.6,12.1,10.6,43.9,46.4,46.5,105.1,101.4,105.5,97.4,105.1
+Scale AI,TECHNOLOGY,Gap ($),-1,-2,-6,-1,-6,-2,,-7,,,,,
+Scale AI,TECHNOLOGY,Red Sites ($),-1,-2,-6,-1,-6,-2,,-7,,,,,
+Scale AI,TECHNOLOGY,Red Sites (#),1,1,1,1,1,1,,1,,,,,
+Scale AI,TECHNOLOGY,Headcount,5,6,6,7,6,7,8,8,9,10,10,11,10
+Scale AI,TECHNOLOGY,Separations,,,,,,,,,,,,,
+Scale AI,TECHNOLOGY,Turnover (%),0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+Scale AI,TECHNOLOGY,CSAT,5.00,5.00,5.00,5.00,5.00,5.00,5.00,5.00,5.00,5.00,5.00,5.00,4.75
+Scale AI,TECHNOLOGY,YTD Claims,,,,,,,,,,,,,
+Scale AI,TECHNOLOGY,YTD Recordables,,,,,,,,,,,,,
+Scale AI,TECHNOLOGY,TRIR,,,,,,,,,,,,,

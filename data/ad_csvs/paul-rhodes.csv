@@ -1,0 +1,25 @@
+Account,Vertical,KPI,Dec-24,Jan-25,Feb-25,Mar-25,Apr-25,May-25,Jun-25,Jul-25,Aug-25,Sep-25,Oct-25,Nov-25,Dec-25
+Google,TECHNOLOGY,Revenue ($),2597,2629,2697,2686,2682,2849,3151,2838,2888,2981,3024,3388,3398
+Google,TECHNOLOGY,Growth (%),0.0,1.2,3.9,3.4,3.3,9.7,21.3,9.3,11.2,14.8,16.4,30.5,30.9
+Google,TECHNOLOGY,Gap ($),,,,-22,-32,,,-9,,,,,
+Google,TECHNOLOGY,Red Sites ($),-52,-40,-39,-78,-88,-52,-23,-84,-48,-25,-75,-103,-49
+Google,TECHNOLOGY,Red Sites (#),14,16,18,19,19,18,17,18,21,16,18,19,17
+Google,TECHNOLOGY,Headcount,313,323,333,328,328,326,321,325,327,337,344,342,342
+Google,TECHNOLOGY,Separations,2,4,2,4,5,4,5,2,5,1,4,7,2
+Google,TECHNOLOGY,Turnover (%),0.6,1.2,0.6,1.2,1.5,1.2,1.6,0.6,1.5,0.3,1.2,2.0,0.6
+Google,TECHNOLOGY,CSAT,4.63,4.60,4.69,4.67,4.50,4.61,4.57,4.28,4.47,4.57,4.72,4.61,4.58
+Google,TECHNOLOGY,YTD Claims,4,,2,5,5,5,5,5,6,6,9,9,10
+Google,TECHNOLOGY,YTD Recordables,,,2,2,2,2,2,2,2,2,2,2,2
+Google,TECHNOLOGY,TRIR,,,4.32,2.79,2.05,1.65,1.38,1.18,1.03,0.91,0.80,0.74,0.67
+DP World,DISTRIBUTION,Revenue ($),,,,,,,,,,,37,39,44
+DP World,DISTRIBUTION,Growth (%),0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+DP World,DISTRIBUTION,Gap ($),,,,,,,,,,-4,-0,,
+DP World,DISTRIBUTION,Red Sites ($),,,,,,,,,,-4,-0,,
+DP World,DISTRIBUTION,Red Sites (#),,,,,,,,,,1,1,,
+DP World,DISTRIBUTION,Headcount,,,,,,,,,,2,6,6,6
+DP World,DISTRIBUTION,Separations,,,,,,,,,,,,,
+DP World,DISTRIBUTION,Turnover (%),0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+DP World,DISTRIBUTION,CSAT,,,,,,,,,,,5.00,,
+DP World,DISTRIBUTION,YTD Claims,,,,,,,,,,,,,
+DP World,DISTRIBUTION,YTD Recordables,,,,,,,,,,,,,
+DP World,DISTRIBUTION,TRIR,,,,,,,,,,,,,

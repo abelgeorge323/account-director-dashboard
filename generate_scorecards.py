@@ -34,6 +34,20 @@ def load_follow_up_questions():
     with open("data/follow-up-questions.json", "r", encoding="utf-8") as f:
         return json.load(f)
 
+def load_verticals():
+    """Load tier data from verticals.csv."""
+    try:
+        df = pd.read_csv("data/verticals.csv")
+        verticals = {}
+        for _, row in df.iterrows():
+            ad_name = str(row.get("Account Director", "")).strip()
+            tier = str(row.get("Tier", "")).strip()
+            verticals[ad_name] = tier if tier else "Unassigned"
+        return verticals
+    except Exception as e:
+        print(f"Warning: Could not load verticals.csv: {e}")
+        return {}
+
 def calculate_aggregate_scores(df, ad_name):
     """Calculate aggregate scores for an AD across all their reviews."""
     # Strip trailing spaces from AD name in comparison
@@ -80,7 +94,9 @@ def calculate_aggregate_scores(df, ad_name):
                 if feedback_col_idx < len(row):
                     fb = str(row.iloc[feedback_col_idx])
                     if fb and fb.lower() not in ['nan', 'none', '']:
-                        reviewer_name = str(row.get("Name", "Anonymous")).strip()
+                        reviewer_name = str(row.get("Enter Your Name", "")).strip()
+                        if not reviewer_name or reviewer_name.lower() == "nan":
+                            reviewer_name = "Anonymous"
                         section_feedback.append({
                             "reviewer": reviewer_name,
                             "text": fb.strip()
@@ -102,10 +118,21 @@ def calculate_aggregate_scores(df, ad_name):
     total_score = sum(scored_sections) if scored_sections else 0
     max_possible = len(scored_sections) * 5  # 5 points per section
     
+    # Extract reviewer names
+    reviewers = []
+    for _, row in ad_reviews.iterrows():
+        reviewer_name = str(row.get("Enter Your Name", "")).strip()
+        # Handle NaN, empty, or missing values
+        if not reviewer_name or reviewer_name.lower() == "nan":
+            reviewer_name = "Anonymous"
+        if reviewer_name not in reviewers:
+            reviewers.append(reviewer_name)
+    
     return {
         "ad_name": ad_name.strip(),
         "account": ad_reviews.iloc[0].get("Account Name", "N/A"),
         "review_count": len(ad_reviews),
+        "reviewers": reviewers,
         "total_score": round(total_score, 2),
         "max_possible": max_possible,
         "avg_score": round(total_score / max_possible, 2) if max_possible > 0 else 0,
@@ -268,6 +295,17 @@ def generate_scorecard_html(ad_data, best_practices, follow_ups):
     # Follow-ups at the END only
     follow_ups_html = render_follow_ups_html(follow_ups)
     
+    # Format tier with color coding
+    tier_text = ad_data.get('tier', 'Unassigned')
+    tier_colors = {
+        'Tier 4': '#f97316',  # Orange
+        'Tier 5': '#6366f1',  # Indigo
+        'Tier 6': '#10b981',  # Green
+        'Unassigned': '#94a3b8'  # Gray
+    }
+    tier_color = tier_colors.get(tier_text, '#94a3b8')
+    tier = f'<span style="background: {tier_color}; color: white; padding: 0.3rem 0.8rem; border-radius: 12px; font-weight: 600; font-size: 0.9rem;">{tier_text}</span>'
+    
     # Build complete HTML with proper page breaks
     html = f"""<!DOCTYPE html>
 <html lang="en">
@@ -342,13 +380,13 @@ def generate_scorecard_html(ad_data, best_practices, follow_ups):
         .header-metadata {{
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 1rem;
-            margin-top: 1.5rem;
+            gap: 0.8rem;
+            margin-top: 1.2rem;
         }}
 
         .metadata-item {{
             background: rgba(255, 255, 255, 0.1);
-            padding: 0.75rem;
+            padding: 0.6rem;
             border-radius: 4px;
         }}
 
@@ -363,6 +401,8 @@ def generate_scorecard_html(ad_data, best_practices, follow_ups):
         .metadata-value {{
             font-size: 1.1rem;
             font-weight: 600;
+            display: flex;
+            align-items: center;
         }}
 
         .score-summary-first-page {{
@@ -545,6 +585,11 @@ def generate_scorecard_html(ad_data, best_practices, follow_ups):
         }}
 
         @media print {{
+            * {{
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }}
+            
             body {{
                 padding: 0.25in;
                 font-size: 9pt;
@@ -694,6 +739,10 @@ def generate_scorecard_html(ad_data, best_practices, follow_ups):
                 <div class="metadata-value">{ad_data['account']}</div>
             </div>
             <div class="metadata-item">
+                <div class="metadata-label">Tier</div>
+                <div class="metadata-value">{tier}</div>
+            </div>
+            <div class="metadata-item">
                 <div class="metadata-label">Review Date</div>
                 <div class="metadata-value">January 2026</div>
             </div>
@@ -735,6 +784,7 @@ def generate_all_scorecards():
     print("Loading data...")
     df = load_review_data()
     follow_up_data = load_follow_up_questions()
+    verticals_data = load_verticals()
     
     # Get unique AD names
     ad_names = df["Account Director Name"].unique()
@@ -754,6 +804,9 @@ def generate_all_scorecards():
         if not ad_data:
             print(f"  No review data found for {ad_name}")
             continue
+        
+        # Add tier data
+        ad_data['tier'] = verticals_data.get(ad_name.strip(), 'Unassigned')
         
         # Get follow-ups (no best practices in scorecards)
         follow_ups = follow_up_data.get(ad_name.strip(), [])

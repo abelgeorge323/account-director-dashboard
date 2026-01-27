@@ -1,0 +1,73 @@
+Account,Vertical,KPI,Dec-24,Jan-25,Feb-25,Mar-25,Apr-25,May-25,Jun-25,Jul-25,Aug-25,Sep-25,Oct-25,Nov-25,Dec-25
+Technicolor,TECHNOLOGY,Revenue ($),,,,,,,,,,,,,
+Technicolor,TECHNOLOGY,Growth (%),0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+Technicolor,TECHNOLOGY,Gap ($),-0,,,,,,,,,,,,
+Technicolor,TECHNOLOGY,Red Sites ($),-0,,,,,,,,,,,,
+Technicolor,TECHNOLOGY,Red Sites (#),1,,,,,,,,,,,,
+Technicolor,TECHNOLOGY,Headcount,1,,,,,,,,,,,,
+Technicolor,TECHNOLOGY,Separations,,,,,,,,,,,,,
+Technicolor,TECHNOLOGY,Turnover (%),0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+Technicolor,TECHNOLOGY,CSAT,,,,,,,,,,,,,
+Technicolor,TECHNOLOGY,YTD Claims,,,,,,,,,,,,,
+Technicolor,TECHNOLOGY,YTD Recordables,,,,,,,,,,,,,
+Technicolor,TECHNOLOGY,TRIR,,,,,,,,,,,,,
+Stripe,TECHNOLOGY,Revenue ($),53,56,60,58,,,,,,,,,
+Stripe,TECHNOLOGY,Growth (%),0.0,4.8,11.8,8.8,-100.0,-100.0,-100.0,-100.0,-100.0,-100.0,-100.0,-100.0,-100.0
+Stripe,TECHNOLOGY,Gap ($),-1,-0,-3,,-4,,-0,-0,-0,,,,
+Stripe,TECHNOLOGY,Red Sites ($),-1,-0,-3,,-4,,-0,-0,-0,,,,
+Stripe,TECHNOLOGY,Red Sites (#),1,1,1,,1,,1,1,1,,,,
+Stripe,TECHNOLOGY,Headcount,6,6,6,,,,,,,,,,
+Stripe,TECHNOLOGY,Separations,,,,,,,,,,,,,
+Stripe,TECHNOLOGY,Turnover (%),0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+Stripe,TECHNOLOGY,CSAT,3.75,3.50,,,,,,,,,,,
+Stripe,TECHNOLOGY,YTD Claims,,,,,,,,,,,,,
+Stripe,TECHNOLOGY,YTD Recordables,,,,,,,,,,,,,
+Stripe,TECHNOLOGY,TRIR,,,,,,,,,,,,,
+Oracle,TECHNOLOGY,Revenue ($),,,,,5,5,29,12,25,81,102,81,93
+Oracle,TECHNOLOGY,Growth (%),0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+Oracle,TECHNOLOGY,Gap ($),,-1,,,,-4,,-12,-31,,,-19,-28
+Oracle,TECHNOLOGY,Red Sites ($),,-1,,,,-4,,-12,-31,,,-19,-28
+Oracle,TECHNOLOGY,Red Sites (#),,1,,,,1,,1,1,,,1,1
+Oracle,TECHNOLOGY,Headcount,,,,,1,1,2,3,5,11,15,18,23
+Oracle,TECHNOLOGY,Separations,,,,,,,,2,3,,,,1
+Oracle,TECHNOLOGY,Turnover (%),0.0,0.0,0.0,0.0,0.0,0.0,0.0,66.7,60.0,0.0,0.0,0.0,4.3
+Oracle,TECHNOLOGY,CSAT,,,,,,,,5.00,,4.25,4.25,5.00,5.00
+Oracle,TECHNOLOGY,YTD Claims,,,,,,,,,,,,,
+Oracle,TECHNOLOGY,YTD Recordables,,,,,,,,,,,,,
+Oracle,TECHNOLOGY,TRIR,,,,,,,,,,,,,
+NTT Data,TECHNOLOGY,Revenue ($),1,2,1,1,1,1,1,,,,,,
+NTT Data,TECHNOLOGY,Growth (%),0.0,13.8,0.0,0.0,0.0,0.0,0.0,-100.0,-100.0,-100.0,-100.0,-100.0,-100.0
+NTT Data,TECHNOLOGY,Gap ($),,,,,,,,-0,,,,,
+NTT Data,TECHNOLOGY,Red Sites ($),,,,,,,,-0,,,,,
+NTT Data,TECHNOLOGY,Red Sites (#),,,,,,,,1,,,,,
+NTT Data,TECHNOLOGY,Headcount,1,1,1,1,1,1,,,,,,,
+NTT Data,TECHNOLOGY,Separations,,,,,,,,,,,,,
+NTT Data,TECHNOLOGY,Turnover (%),0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+NTT Data,TECHNOLOGY,CSAT,,,,,,,,,,,,,
+NTT Data,TECHNOLOGY,YTD Claims,,,,,,,,,,,,,
+NTT Data,TECHNOLOGY,YTD Recordables,,,,,,,,,,,,,
+NTT Data,TECHNOLOGY,TRIR,,,,,,,,,,,,,
+NCR Corporation,TECHNOLOGY,Revenue ($),,,,,,,,,,,,,
+NCR Corporation,TECHNOLOGY,Growth (%),0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+NCR Corporation,TECHNOLOGY,Gap ($),,,,,,,,,,,,,
+NCR Corporation,TECHNOLOGY,Red Sites ($),,,,,,,,,,,,,
+NCR Corporation,TECHNOLOGY,Red Sites (#),,,,,,,,,,,,,
+NCR Corporation,TECHNOLOGY,Headcount,,,,,,,,,,,,,
+NCR Corporation,TECHNOLOGY,Separations,,,,,,,,,,,,,
+NCR Corporation,TECHNOLOGY,Turnover (%),0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+NCR Corporation,TECHNOLOGY,CSAT,,,,,,,,,,,,,
+NCR Corporation,TECHNOLOGY,YTD Claims,,,,,,,,,,,,,
+NCR Corporation,TECHNOLOGY,YTD Recordables,,,,,,,,,,,,,
+NCR Corporation,TECHNOLOGY,TRIR,,,,,,,,,,,,,
+Snap Inc,TECHNOLOGY,Revenue ($),86,62,60,66,56,0,,,,,,,
+Snap Inc,TECHNOLOGY,Growth (%),0.0,-27.6,-30.6,-23.4,-35.4,-99.7,-100.0,-100.0,-100.0,-100.0,-100.0,-100.0,-100.0
+Snap Inc,TECHNOLOGY,Gap ($),-1,-7,-2,-3,-3,-8,-6,,,,,,
+Snap Inc,TECHNOLOGY,Red Sites ($),-1,-7,-2,-3,-3,-8,-6,,,,,,
+Snap Inc,TECHNOLOGY,Red Sites (#),1,1,1,1,1,1,1,,,,,,
+Snap Inc,TECHNOLOGY,Headcount,7,7,6,6,,,,,,,,,
+Snap Inc,TECHNOLOGY,Separations,,,,,,,,,,,,,
+Snap Inc,TECHNOLOGY,Turnover (%),0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+Snap Inc,TECHNOLOGY,CSAT,4.00,4.25,3.75,2.75,,,,,,,,,
+Snap Inc,TECHNOLOGY,YTD Claims,,,,,,,,,,,,,
+Snap Inc,TECHNOLOGY,YTD Recordables,,,,,,,,,,,,,
+Snap Inc,TECHNOLOGY,TRIR,,,,,,,,,,,,,
