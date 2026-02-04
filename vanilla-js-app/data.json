@@ -21,12 +21,21 @@
       "Goals",
       "Exec Presence"
     ],
-    "lastUpdated": "2026-02-03T18:15:55.196871"
+    "lastUpdated": "2026-02-04T00:58:05.248277"
   },
   "accountDirectors": [
     {
       "accountDirector": "Benjamin Ehrenberg",
-      "account": "Lockheed Martin",
+      "accounts": [
+        "Lockheed Martin",
+        "Parsons Corporation"
+      ],
+      "numAccounts": 2,
+      "revenue": 972.0,
+      "csat": 4.85,
+      "headcount": 140,
+      "redSites": 2,
+      "growth": 6.0,
       "vertical": "Manufacturing",
       "tier": "Tier 5",
       "reviewCount": 4,
@@ -154,7 +163,15 @@
     },
     {
       "accountDirector": "Justin Homa",
-      "account": "CBRE Merck",
+      "accounts": [
+        "Organon"
+      ],
+      "numAccounts": 1,
+      "revenue": 7.0,
+      "csat": null,
+      "headcount": 0,
+      "redSites": 0,
+      "growth": -1.7,
       "vertical": "Life Science",
       "tier": "Tier 5",
       "reviewCount": 3,
@@ -255,7 +272,21 @@
     },
     {
       "accountDirector": "Mark Schlerf",
-      "account": "HP LAM Xerox and others",
+      "accounts": [
+        "LAM Research",
+        "Hewlett-Packard",
+        "HPE",
+        "Conduent",
+        "Siltronic Corp",
+        "Photronics",
+        "Texas Instruments"
+      ],
+      "numAccounts": 7,
+      "revenue": 1543.0,
+      "csat": 4.735,
+      "headcount": 186,
+      "redSites": 2,
+      "growth": 1.5142857142857145,
       "vertical": "Technology",
       "tier": "Tier 5",
       "reviewCount": 4,
@@ -383,7 +414,16 @@
     },
     {
       "accountDirector": "Stuart Kelloff",
-      "account": "Nvidia",
+      "accounts": [
+        "Adobe",
+        "NVIDIA"
+      ],
+      "numAccounts": 2,
+      "revenue": 1375.0,
+      "csat": 4.3,
+      "headcount": 128,
+      "redSites": 1,
+      "growth": 24.5,
       "vertical": "Technology",
       "tier": "Tier 6",
       "reviewCount": 4,
@@ -511,7 +551,15 @@
     },
     {
       "accountDirector": "Grant Frazier",
-      "account": "Meta",
+      "accounts": [
+        "Meta"
+      ],
+      "numAccounts": 1,
+      "revenue": 4176.0,
+      "csat": 4.74,
+      "headcount": 437,
+      "redSites": 1,
+      "growth": 30.9,
       "vertical": "Technology",
       "tier": "Tier 6",
       "reviewCount": 4,
@@ -639,7 +687,16 @@
     },
     {
       "accountDirector": "Jacqueline Maravilla",
-      "account": "Lonza",
+      "accounts": [
+        "Lonza Biologics",
+        "Genentech"
+      ],
+      "numAccounts": 2,
+      "revenue": 1759.0,
+      "csat": 4.975,
+      "headcount": 113,
+      "redSites": 2,
+      "growth": 35.449999999999996,
       "vertical": "Life Science",
       "tier": "Tier 5",
       "reviewCount": 3,
@@ -740,7 +797,16 @@
     },
     {
       "accountDirector": "Paul Rhodes",
-      "account": "Google",
+      "accounts": [
+        "Google",
+        "DP World"
+      ],
+      "numAccounts": 2,
+      "revenue": 3442.0,
+      "csat": 4.58,
+      "headcount": 348,
+      "redSites": 17,
+      "growth": 15.45,
       "vertical": "Technology",
       "tier": "Tier 6",
       "reviewCount": 4,
@@ -868,7 +934,17 @@
     },
     {
       "accountDirector": "Kimberly Wittekind",
-      "account": "Nestle/GE Healthcare",
+      "accounts": [
+        "Nestle",
+        "GE Healthcare",
+        "Piper Aircraft"
+      ],
+      "numAccounts": 3,
+      "revenue": 1005.0,
+      "csat": 4.13,
+      "headcount": 196,
+      "redSites": 3,
+      "growth": -26.333333333333332,
       "vertical": "Manufacturing",
       "tier": "Tier 5",
       "reviewCount": 3,
@@ -969,7 +1045,17 @@
     },
     {
       "accountDirector": "Ana Sabater",
-      "account": "LinkedIn/Uber",
+      "accounts": [
+        "LinkedIn",
+        "Uber",
+        "Scale AI"
+      ],
+      "numAccounts": 3,
+      "revenue": 1283.0,
+      "csat": 4.67,
+      "headcount": 127,
+      "redSites": 6,
+      "growth": 1493.3999999999999,
       "vertical": "Technology",
       "tier": "Tier 5",
       "reviewCount": 4,
@@ -1097,7 +1183,15 @@
     },
     {
       "accountDirector": "Taylor Wattenberg",
-      "account": "Microsoft",
+      "accounts": [
+        "Microsoft"
+      ],
+      "numAccounts": 1,
+      "revenue": 5376.0,
+      "csat": 4.66,
+      "headcount": 600,
+      "redSites": 4,
+      "growth": 28.1,
       "vertical": "Technology",
       "tier": "Tier 6",
       "reviewCount": 3,
@@ -1198,7 +1292,16 @@
     },
     {
       "accountDirector": "Jack Thornton",
-      "account": "Nike Distribution",
+      "accounts": [
+        "Nike",
+        "GXO Logistics"
+      ],
+      "numAccounts": 2,
+      "revenue": 1645.0,
+      "csat": 4.89,
+      "headcount": 272,
+      "redSites": 1,
+      "growth": 152.2,
       "vertical": "Distribution",
       "tier": "Tier 4",
       "reviewCount": 3,
@@ -1299,7 +1402,19 @@
     },
     {
       "accountDirector": "Isaac Calderon",
-      "account": "Bayer/J&J/Kenvue/Millipore Sigma",
+      "accounts": [
+        "Bayer",
+        "MilliporeSigma",
+        "Kenvue",
+        "Bluerock Therapeutics",
+        "Johnson & Johnson"
+      ],
+      "numAccounts": 5,
+      "revenue": 787.0,
+      "csat": 4.7925,
+      "headcount": 135,
+      "redSites": 3,
+      "growth": -6.6,
       "vertical": "Life Science",
       "tier": "Tier 6",
       "reviewCount": 2,
@@ -1373,7 +1488,17 @@
     },
     {
       "accountDirector": "Patrick Murtha",
-      "account": "Cardinal/IQVIA/McKesson",
+      "accounts": [
+        "McKesson",
+        "Cardinal Health",
+        "IQVIA Biotech"
+      ],
+      "numAccounts": 3,
+      "revenue": 764.0,
+      "csat": 4.633333333333333,
+      "headcount": 122,
+      "redSites": 10,
+      "growth": 13.633333333333333,
       "vertical": "Life Science",
       "tier": "Tier 5",
       "reviewCount": 4,
@@ -1501,7 +1626,15 @@
     },
     {
       "accountDirector": "Brian Davis",
-      "account": "Merck (CBRE + Direct)",
+      "accounts": [
+        "Merck"
+      ],
+      "numAccounts": 1,
+      "revenue": 4077.0,
+      "csat": 4.75,
+      "headcount": 345,
+      "redSites": 7,
+      "growth": 8.9,
       "vertical": "Life Science",
       "tier": "Tier 6",
       "reviewCount": 2,
@@ -1575,7 +1708,17 @@
     },
     {
       "accountDirector": "Aaron Simpson",
-      "account": "Mars/3M",
+      "accounts": [
+        "Mars",
+        "Ball Corporation",
+        "3M Corp"
+      ],
+      "numAccounts": 3,
+      "revenue": 989.0,
+      "csat": 4.17,
+      "headcount": 201,
+      "redSites": 22,
+      "growth": 7.3,
       "vertical": "Manufacturing",
       "tier": "Tier 5",
       "reviewCount": 3,
@@ -1676,7 +1819,15 @@
     },
     {
       "accountDirector": "Justin Dallavis",
-      "account": "Boeing",
+      "accounts": [
+        "Boeing Company"
+      ],
+      "numAccounts": 1,
+      "revenue": 1002.0,
+      "csat": 4.62,
+      "headcount": 152,
+      "redSites": 7,
+      "growth": 18.3,
       "vertical": "Manufacturing",
       "tier": "Tier 5",
       "reviewCount": 4,
@@ -1804,7 +1955,15 @@
     },
     {
       "accountDirector": "Peggy Shum",
-      "account": "Deutsche Bank",
+      "accounts": [
+        "Chubb Insurance"
+      ],
+      "numAccounts": 1,
+      "revenue": 119.0,
+      "csat": 4.88,
+      "headcount": 26,
+      "redSites": 1,
+      "growth": 5.2,
       "vertical": "Finance",
       "tier": "Tier 5",
       "reviewCount": 2,
@@ -1878,7 +2037,13 @@
     },
     {
       "accountDirector": "David Pergola",
-      "account": "Merck Sodexo",
+      "accounts": [],
+      "numAccounts": 0,
+      "revenue": 0,
+      "csat": null,
+      "headcount": 0,
+      "redSites": 0,
+      "growth": null,
       "vertical": "Life Science",
       "tier": "Tier 5",
       "reviewCount": 3,
@@ -1979,7 +2144,15 @@
     },
     {
       "accountDirector": "Thomas Mahoney",
-      "account": "Amgen",
+      "accounts": [
+        "Amgen"
+      ],
+      "numAccounts": 1,
+      "revenue": 1493.0,
+      "csat": 4.3,
+      "headcount": 197,
+      "redSites": 3,
+      "growth": 13.2,
       "vertical": "Life Science",
       "tier": "Tier 5",
       "reviewCount": 2,
@@ -2053,7 +2226,17 @@
     },
     {
       "accountDirector": "Giselle Langelier",
-      "account": "Medtronic",
+      "accounts": [
+        "Medtronic",
+        "Capsida Biotherapeutics",
+        "Fuji Film"
+      ],
+      "numAccounts": 3,
+      "revenue": 672.0,
+      "csat": 4.593333333333334,
+      "headcount": 98,
+      "redSites": 2,
+      "growth": -1.3000000000000007,
       "vertical": "Life Science",
       "tier": "Tier 4",
       "reviewCount": 4,
@@ -2181,7 +2364,15 @@
     },
     {
       "accountDirector": "Rade Kukobat",
-      "account": "Eli Lilly",
+      "accounts": [
+        "Eli Lilly LCC/LRL"
+      ],
+      "numAccounts": 1,
+      "revenue": 431.64160401002505,
+      "csat": 2.25,
+      "headcount": 83,
+      "redSites": 1,
+      "growth": 55.4,
       "vertical": "Life Science",
       "tier": "Tier 6",
       "reviewCount": 5,
@@ -2336,7 +2527,13 @@
     },
     {
       "accountDirector": "Gregory DeMedio",
-      "account": "Abbott",
+      "accounts": [],
+      "numAccounts": 0,
+      "revenue": 0,
+      "csat": null,
+      "headcount": 0,
+      "redSites": 0,
+      "growth": null,
       "vertical": "Life Science",
       "tier": "Tier 6",
       "reviewCount": 3,
@@ -2437,7 +2634,17 @@
     },
     {
       "accountDirector": "Logan Newman",
-      "account": "GE Aero / Vernova",
+      "accounts": [
+        "General Electric",
+        "GE Power",
+        "Hyliion"
+      ],
+      "numAccounts": 3,
+      "revenue": 831.0,
+      "csat": 4.484999999999999,
+      "headcount": 146,
+      "redSites": 9,
+      "growth": 23.86666666666667,
       "vertical": "Manufacturing",
       "tier": "Tier 5",
       "reviewCount": 2,
@@ -2511,7 +2718,15 @@
     },
     {
       "accountDirector": "Luis Cabrera",
-      "account": "Takeda",
+      "accounts": [
+        "Takeda Pharmaceutical"
+      ],
+      "numAccounts": 1,
+      "revenue": 933.0,
+      "csat": 4.42,
+      "headcount": 123,
+      "redSites": 3,
+      "growth": -1.4,
       "vertical": "Life Science",
       "tier": "Tier 5",
       "reviewCount": 4,
@@ -2639,7 +2854,16 @@
     },
     {
       "accountDirector": "Scott Kimball",
-      "account": "Sanofi",
+      "accounts": [
+        "Sanofi",
+        "Moderna Biotechnology Company"
+      ],
+      "numAccounts": 2,
+      "revenue": 1257.0,
+      "csat": 4.16,
+      "headcount": 188,
+      "redSites": 2,
+      "growth": -50.0,
       "vertical": "Life Science",
       "tier": "Tier 5",
       "reviewCount": 3,
@@ -2740,7 +2964,16 @@
     },
     {
       "accountDirector": "Julie Bianchi",
-      "account": "Cigna",
+      "accounts": [
+        "CIGNA",
+        "Elevance Health"
+      ],
+      "numAccounts": 2,
+      "revenue": 501.0,
+      "csat": 4.609999999999999,
+      "headcount": 84,
+      "redSites": 16,
+      "growth": -11.55,
       "vertical": "Finance",
       "tier": "Tier 4",
       "reviewCount": 1,
@@ -2787,7 +3020,15 @@
     },
     {
       "accountDirector": "Nicholas Trenkamp",
-      "account": "P&G",
+      "accounts": [
+        "Procter & Gamble Company"
+      ],
+      "numAccounts": 1,
+      "revenue": 733.0,
+      "csat": 4.35,
+      "headcount": 113,
+      "redSites": 0,
+      "growth": -17.8,
       "vertical": "Manufacturing",
       "tier": "Tier 5",
       "reviewCount": 2,
@@ -2861,7 +3102,15 @@
     },
     {
       "accountDirector": "Jacob Reed",
-      "account": "Tesla",
+      "accounts": [
+        "Tesla Inc - Jacob Reed"
+      ],
+      "numAccounts": 1,
+      "revenue": 2431.0,
+      "csat": null,
+      "headcount": 527,
+      "redSites": 2,
+      "growth": 61.5,
       "vertical": "Technology",
       "tier": "Tier 6",
       "reviewCount": 1,
@@ -2908,7 +3157,15 @@
     },
     {
       "accountDirector": "Rafaed Ortiz",
-      "account": "Biogen",
+      "accounts": [
+        "Biogen"
+      ],
+      "numAccounts": 1,
+      "revenue": 705.0,
+      "csat": 4.35,
+      "headcount": 114,
+      "redSites": 1,
+      "growth": 4.8,
       "vertical": "Life Science",
       "tier": "Tier 5",
       "reviewCount": 3,
@@ -3009,7 +3266,16 @@
     },
     {
       "accountDirector": "Ayesha Nasir",
-      "account": "Westinghouse",
+      "accounts": [
+        "Westinghouse",
+        "DuPont"
+      ],
+      "numAccounts": 2,
+      "revenue": 369.0,
+      "csat": 4.63,
+      "headcount": 66,
+      "redSites": 2,
+      "growth": -27.6,
       "vertical": "Manufacturing",
       "tier": "Tier 4",
       "reviewCount": 2,
@@ -3083,7 +3349,13 @@
     },
     {
       "accountDirector": "Mike Barry",
-      "account": "BMS/Novartis",
+      "accounts": [],
+      "numAccounts": 0,
+      "revenue": 0,
+      "csat": null,
+      "headcount": 0,
+      "redSites": 0,
+      "growth": null,
       "vertical": "Life Science",
       "tier": "Tier 5",
       "reviewCount": 3,
@@ -3184,7 +3456,16 @@
     },
     {
       "accountDirector": "Siddarth Shah",
-      "account": "Micron",
+      "accounts": [
+        "Micron Tech",
+        "Mp Mask Technology Center"
+      ],
+      "numAccounts": 2,
+      "revenue": 1222.0,
+      "csat": 4.33,
+      "headcount": 196,
+      "redSites": 0,
+      "growth": 13.45,
       "vertical": "Technology",
       "tier": "Tier 5",
       "reviewCount": 4,
@@ -3312,7 +3593,15 @@
     },
     {
       "accountDirector": "Dustin Smith",
-      "account": "Amazon",
+      "accounts": [
+        "Amazon"
+      ],
+      "numAccounts": 1,
+      "revenue": 3140.0,
+      "csat": 4.76,
+      "headcount": 733,
+      "redSites": 16,
+      "growth": -38.7,
       "vertical": "Distribution",
       "tier": "Tier 6",
       "reviewCount": 1,
@@ -3359,7 +3648,20 @@
     },
     {
       "accountDirector": "Tiffany Purifoy",
-      "account": "Fidelity",
+      "accounts": [
+        "Charles Schwab",
+        "Citibank",
+        "Fidelity",
+        "T Rowe Price",
+        "State Farm Ins",
+        "JP Morgan Chase"
+      ],
+      "numAccounts": 6,
+      "revenue": 1192.0,
+      "csat": 4.35,
+      "headcount": 227,
+      "redSites": 14,
+      "growth": 27.666666666666668,
       "vertical": "Finance",
       "tier": "Tier 5",
       "reviewCount": 2,
@@ -3433,7 +3735,15 @@
     },
     {
       "accountDirector": "Keith Deuber",
-      "account": "Amazon",
+      "accounts": [
+        "Amazon"
+      ],
+      "numAccounts": 1,
+      "revenue": 3140,
+      "csat": 4.76,
+      "headcount": 733,
+      "redSites": 16,
+      "growth": -38.7,
       "vertical": "Distribution",
       "tier": "Tier 6",
       "reviewCount": 1,
