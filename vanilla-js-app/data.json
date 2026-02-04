@@ -21,7 +21,7 @@
       "Goals",
       "Exec Presence"
     ],
-    "lastUpdated": "2026-02-04T00:58:05.248277"
+    "lastUpdated": "2026-02-04T01:05:52.707130"
   },
   "accountDirectors": [
     {
@@ -2037,13 +2037,15 @@
     },
     {
       "accountDirector": "David Pergola",
-      "accounts": [],
-      "numAccounts": 0,
-      "revenue": 0,
-      "csat": null,
-      "headcount": 0,
+      "accounts": [
+        "Merck Sodexo"
+      ],
+      "numAccounts": 1,
+      "revenue": 1595.3478260869565,
+      "csat": 4.75,
+      "headcount": 135,
       "redSites": 0,
-      "growth": null,
+      "growth": 8.9,
       "vertical": "Life Science",
       "tier": "Tier 5",
       "reviewCount": 3,
@@ -2527,13 +2529,15 @@
     },
     {
       "accountDirector": "Gregory DeMedio",
-      "accounts": [],
-      "numAccounts": 0,
-      "revenue": 0,
-      "csat": null,
-      "headcount": 0,
-      "redSites": 0,
-      "growth": null,
+      "accounts": [
+        "Abbott Labs"
+      ],
+      "numAccounts": 1,
+      "revenue": 1713.0,
+      "csat": 4.49,
+      "headcount": 278,
+      "redSites": 10,
+      "growth": 0.8,
       "vertical": "Life Science",
       "tier": "Tier 6",
       "reviewCount": 3,
@@ -3349,13 +3353,16 @@
     },
     {
       "accountDirector": "Mike Barry",
-      "accounts": [],
-      "numAccounts": 0,
-      "revenue": 0,
-      "csat": null,
-      "headcount": 0,
-      "redSites": 0,
-      "growth": null,
+      "accounts": [
+        "Bristol Myers Squibb",
+        "Novartis"
+      ],
+      "numAccounts": 2,
+      "revenue": 1494.0,
+      "csat": 4.609999999999999,
+      "headcount": 212,
+      "redSites": 8,
+      "growth": -4.85,
       "vertical": "Life Science",
       "tier": "Tier 5",
       "reviewCount": 3,

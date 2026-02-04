@@ -31,6 +31,15 @@ def load_best_practices(bp_path="../data/best-practices.json"):
         print(f"⚠️  Invalid JSON in best practices file: {bp_path}")
         return {}
 
+def normalize_ad_name_for_financial(ad_name):
+    """Normalize AD names to match review CSV format"""
+    # Specific mappings for known mismatches
+    name_map = {
+        "Michael Barry": "Mike Barry",
+        "Gregory Demedio": "Gregory DeMedio",  # Fix capitalization
+    }
+    return name_map.get(ad_name, ad_name)
+
 def load_financial_data():
     """Load all AD CSV files and aggregate financial metrics"""
     ad_csvs_dir = Path("../data/ad_csvs")
@@ -39,6 +48,8 @@ def load_financial_data():
     for csv_file in ad_csvs_dir.glob("*.csv"):
         # Convert filename to AD name (e.g., "aaron-simpson.csv" -> "Aaron Simpson")
         ad_name = csv_file.stem.replace('-', ' ').title()
+        # Normalize to match review names
+        ad_name = normalize_ad_name_for_financial(ad_name)
         
         try:
             df = pd.read_csv(csv_file)
@@ -184,6 +195,20 @@ def apply_manual_mappings(financial_data):
     # Peggy Shum: Normalize Peggy Mcelwee -> Peggy Shum
     if "Peggy Mcelwee" in financial_data:
         financial_data["Peggy Shum"] = financial_data.pop("Peggy Mcelwee")
+    
+    # David Pergola: Add Merck Sodexo (calculated from Brian Davis's Merck ratio)
+    merck_rev_per_employee = 4077 / 345  # Brian Davis Merck: Revenue=$4,077K, Headcount=345
+    david_headcount = 135
+    david_revenue = david_headcount * merck_rev_per_employee
+    financial_data["David Pergola"] = {
+        'accounts': ['Merck Sodexo'],
+        'num_accounts': 1,
+        'revenue_total': david_revenue,
+        'csat_avg': 4.75,  # Use Brian's Merck CSAT
+        'headcount_total': david_headcount,
+        'red_sites_count': 0,
+        'growth_avg': 8.9  # Use Brian's Merck growth
+    }
     
     return financial_data
 
@@ -393,7 +418,7 @@ def aggregate_reviews(reviews, verticals, financial_data):
             'growth_avg': None
         })
         
-        aggregated.append({
+        ad_entry = {
             "accountDirector": ad_name,
             "accounts": fin_data.get('accounts', []),
             "numAccounts": fin_data.get('num_accounts', 0),
@@ -408,7 +433,9 @@ def aggregate_reviews(reviews, verticals, financial_data):
             "avgScores": avg_scores,
             "avgTotalScore": avg_total,
             "reviews": ad_review_list
-        })
+        }
+        
+        aggregated.append(ad_entry)
     
     return aggregated
 
