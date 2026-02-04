@@ -67,6 +67,18 @@ def extract_scores_and_feedback(df):
     """Extract scores and feedback from the DataFrame."""
     cols_list = list(df.columns)
     
+    # AD Name normalization mapping
+    AD_NAME_NORMALIZE = {
+        "Logan Newman's": "Logan Newman",
+        "Ayesha Nasi": "Ayesha Nasir",
+        "Gisell Langelier": "Giselle Langelier",
+        "Dave Pergola": "David Pergola",
+        "Greg DeMedio": "Gregory DeMedio",
+        "Greg Demedio": "Gregory DeMedio",
+        "Nick Trenkamp": "Nicholas Trenkamp",
+        "Nike Trenkamp": "Nicholas Trenkamp"
+    }
+    
     # New structure: columns 0-7 are metadata, 8+ are feedback/score pairs
     # Pattern: Feedback (col 8), Score (col 9), Feedback (col 10), Score (col 11), etc.
     start_idx = 8  # Start after "Enter Your Name" column
@@ -101,10 +113,19 @@ def extract_scores_and_feedback(df):
         if pd.isna(row.get("Account Director")) or str(row.get("Account Director")).strip() == "Account Director Name":
             continue
         
+        # Get and normalize AD name
+        ad_name = str(row.get("Account Director", "")).strip()
+        ad_name = AD_NAME_NORMALIZE.get(ad_name, ad_name)
+        
+        # Get reviewer name - try "Reviewer Name" (Enter Your Name) first, then fall back to "Name"
+        reviewer_name = str(row.get("Reviewer Name", "")).strip()
+        if not reviewer_name or reviewer_name.lower() == "nan":
+            reviewer_name = str(row.get("Name", "")).strip()
+        
         review = {
-            "accountDirector": str(row.get("Account Director", "")).strip(),
+            "accountDirector": ad_name,
             "account": str(row.get("Account", "")).strip(),
-            "reviewerName": str(row.get("Reviewer Name", "")).strip(),
+            "reviewerName": reviewer_name,
             "reviewerEmail": str(row.get("Reviewer Email", "")).strip(),
             "scores": {section: 0 for section in SCORING_SECTIONS},  # Initialize all sections
             "feedback": {section: "" for section in SCORING_SECTIONS},  # Initialize all sections
@@ -295,19 +316,19 @@ def build_rubric_data():
 
 def main():
     """Main function to build data.json."""
-    print("🔄 Loading CSV data...")
+    print("Loading CSV data...")
     df = load_csv_data()
     
-    print("📊 Extracting scores and feedback...")
+    print("Extracting scores and feedback...")
     reviews = extract_scores_and_feedback(df)
     
-    print("📁 Loading vertical mappings...")
+    print("Loading vertical mappings...")
     verticals = load_verticals()
     
-    print("🔢 Aggregating reviews by Account Director...")
+    print("Aggregating reviews by Account Director...")
     aggregated = aggregate_reviews(reviews, verticals)
     
-    print("📚 Building rubric data...")
+    print("Building rubric data...")
     rubrics = build_rubric_data()
     
     # Load best practices
@@ -333,7 +354,7 @@ def main():
     with open(output_path, "w", encoding="utf-8") as f:
         json.dump(data, f, indent=2, ensure_ascii=False)
     
-    print(f"✅ Successfully built {output_path}")
+    print(f"SUCCESS: Successfully built {output_path}")
     print(f"   - {len(aggregated)} Account Directors")
     print(f"   - {len(reviews)} Total Reviews")
     print(f"   - {len(SCORING_SECTIONS)} Scoring Sections")

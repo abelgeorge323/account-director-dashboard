@@ -1,43 +1,62 @@
 """
-Convert Enhanced EOY Report HTML to PDF using Playwright
+Convert HTML to PDF using wkhtmltopdf or weasyprint
 """
-from playwright.sync_api import sync_playwright
+import subprocess
 import os
+import sys
 
-html_file = "EOY_Report_2025_Enhanced.html"
-pdf_file = "EOY_Report_2025_Enhanced.pdf"
+html_file = 'EOY_Report_2025_Enhanced.html'
+pdf_file = 'EOY_Report_2025_Enhanced.pdf'
 
-print(f"🔧 Converting {html_file} to PDF...")
+print(f"Converting {html_file} to {pdf_file}...")
 
-# Check if HTML file exists
-if not os.path.exists(html_file):
-    print(f"❌ ERROR: {html_file} not found!")
-    print(f"   Please run 'python generate_enhanced_report.py' first.")
-    exit(1)
-
-# Convert to PDF
-with sync_playwright() as p:
-    print("   📂 Launching browser...")
-    browser = p.chromium.launch()
-    page = browser.new_page()
-    
-    print(f"   📄 Loading {html_file}...")
-    page.goto(f'file:///{os.path.abspath(html_file)}')
-    
-    print(f"   💾 Saving as {pdf_file}...")
-    page.pdf(
-        path=pdf_file,
-        format='Letter',
-        print_background=True,
-        margin={
-            'top': '0.5in',
-            'right': '0.5in',
-            'bottom': '0.5in',
-            'left': '0.5in'
-        }
+# Try wkhtmltopdf first (most common)
+try:
+    result = subprocess.run(
+        ['wkhtmltopdf', '--enable-local-file-access', html_file, pdf_file],
+        capture_output=True,
+        text=True
     )
-    
-    browser.close()
+    if result.returncode == 0:
+        print(f"SUCCESS: PDF created using wkhtmltopdf: {pdf_file}")
+        sys.exit(0)
+except FileNotFoundError:
+    print("wkhtmltopdf not found, trying alternative methods...")
 
-print(f"\n✅ SUCCESS! PDF created: {pdf_file}")
-print(f"   File size: {os.path.getsize(pdf_file) / 1024:.1f} KB")
+# Try weasyprint
+try:
+    from weasyprint import HTML
+    HTML(html_file).write_pdf(pdf_file)
+    print(f"SUCCESS: PDF created using weasyprint: {pdf_file}")
+    sys.exit(0)
+except ImportError:
+    print("weasyprint not installed...")
+
+# Try Chrome/Chromium headless
+chrome_paths = [
+    'chrome',
+    'google-chrome',
+    'chromium',
+    r'C:\Program Files\Google\Chrome\Application\chrome.exe',
+    r'C:\Program Files (x86)\Google\Chrome\Application\chrome.exe'
+]
+
+for chrome_path in chrome_paths:
+    try:
+        result = subprocess.run(
+            [chrome_path, '--headless', '--disable-gpu', f'--print-to-pdf={pdf_file}', html_file],
+            capture_output=True,
+            text=True
+        )
+        if result.returncode == 0:
+            print(f"SUCCESS: PDF created using Chrome: {pdf_file}")
+            sys.exit(0)
+    except FileNotFoundError:
+        continue
+
+print("\nCould not find any PDF converter.")
+print("\nAlternative options:")
+print("1. Open the HTML file in your browser and use Print -> Save as PDF (Ctrl+P)")
+print("2. Install wkhtmltopdf: https://wkhtmltopdf.org/downloads.html")
+print("3. Install weasyprint: pip install weasyprint")
+print(f"\nHTML report is ready to view: {html_file}")

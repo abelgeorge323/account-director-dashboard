@@ -6,17 +6,23 @@
     <title>2025 Account Director Performance Review</title>
     <style>
         @page {
-            margin: 0.5in;
+            margin: 0.6in 0.5in;
             size: letter;
+        }
+        
+        * {
+            box-sizing: border-box;
+            print-color-adjust: exact;
+            -webkit-print-color-adjust: exact;
         }
         
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.5;
+            line-height: 1.4;
             color: #1a1a1a;
             max-width: 100%;
-            margin: 0 auto;
-            padding: 20px;
+            margin: 0;
+            padding: 0;
             background: white;
             font-size: 9pt;
         }
@@ -24,87 +30,145 @@
         h1 {
             color: #1a1a1a;
             border-bottom: 3px solid #2563eb;
-            padding-bottom: 10px;
-            font-size: 26pt;
-            margin: 0 0 10px 0;
-            font-weight: 600;
+            padding-bottom: 8px;
+            font-size: 22pt;
+            margin: 0 0 8px 0;
+            font-weight: 700;
+            letter-spacing: -0.5px;
         }
         
         h2 {
             color: #1a1a1a;
-            font-size: 14pt;
-            margin: 15px 0 6px 0;
+            font-size: 13pt;
+            margin: 0 0 6px 0;
             page-break-after: avoid;
-            font-weight: 600;
-            border-bottom: 1px solid #e5e7eb;
-            padding-bottom: 5px;
+            font-weight: 700;
+            border-bottom: 2px solid #e5e7eb;
+            padding-bottom: 4px;
+            letter-spacing: -0.3px;
         }
         
         h2.first-section {
-            margin-top: 5px;
+            margin-top: 0;
         }
         
         h3 {
             color: #4b5563;
-            font-size: 11pt;
-            margin: 15px 0 8px 0;
+            font-size: 10pt;
+            margin: 12px 0 6px 0;
             font-weight: 600;
         }
         
         .subtitle {
-            font-size: 10pt;
+            font-size: 9pt;
             color: #6b7280;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
+            line-height: 1.3;
         }
-        
         
         table {
             width: 100%;
             border-collapse: collapse;
-            margin: 8px 0 15px 0;
+            margin: 6px 0 0 0;
             font-size: 7.5pt;
-            border: 1px solid #e5e7eb;
+            border: 1px solid #d1d5db;
+            page-break-inside: auto;
+        }
+        
+        thead {
+            display: table-header-group;
+        }
+        
+        tbody {
+            display: table-row-group;
         }
         
         th {
             background: #1f2937;
             color: white;
-            padding: 6px 4px;
+            padding: 7px 5px;
             text-align: left;
-            font-weight: 600;
+            font-weight: 700;
             font-size: 7.5pt;
             border-bottom: 2px solid #111827;
+            border-right: 1px solid #374151;
+            letter-spacing: 0.2px;
+        }
+        
+        th:last-child {
+            border-right: none;
         }
         
         td {
-            padding: 4px;
-            border-bottom: 1px solid #f3f4f6;
+            padding: 5px;
+            border-bottom: 1px solid #e5e7eb;
+            border-right: 1px solid #f3f4f6;
+            vertical-align: top;
+        }
+        
+        td:last-child {
+            border-right: none;
+        }
+        
+        tr {
+            page-break-inside: avoid;
         }
         
         tr:hover {
             background: #fafafa;
         }
         
+        tbody tr:last-child td {
+            border-bottom: 1px solid #d1d5db;
+        }
+        
         .rank-1 { 
             border-left: 4px solid #10b981;
-            background: #f0fdf4;
+            background: #ecfdf5 !important;
         }
         .rank-2 { 
             border-left: 4px solid #3b82f6;
-            background: #eff6ff;
+            background: #eff6ff !important;
         }
         .rank-3 { 
             border-left: 4px solid #8b5cf6;
-            background: #faf5ff;
+            background: #f5f3ff !important;
         }
         
         .tier-badge {
             display: inline-block;
-            padding: 3px 8px;
+            padding: 3px 7px;
             border-radius: 3px;
             font-size: 7pt;
-            font-weight: 600;
+            font-weight: 700;
             letter-spacing: 0.3px;
+            white-space: nowrap;
+        }
+        
+        /* Letter Grade Colors */
+        .grade-a {
+            background: #10b981;
+            color: white;
+        }
+        
+        .grade-b {
+            background: #3b82f6;
+            color: white;
+        }
+        
+        .grade-c {
+            background: #f59e0b;
+            color: white;
+        }
+        
+        .grade-d {
+            background: #ef4444;
+            color: white;
+        }
+        
+        .grade-f {
+            background: #dc2626;
+            color: white;
         }
         
         .tier-exceptional {
@@ -129,25 +193,300 @@
         
         .section {
             page-break-after: always;
+            page-break-inside: avoid;
+            margin-bottom: 0;
         }
         
         .accounts-list {
             font-size: 6.5pt;
             color: #6b7280;
-            line-height: 1.3;
+            line-height: 1.4;
         }
         
         .section-summary {
-            font-size: 8.5pt;
+            font-size: 8pt;
             color: #6b7280;
-            margin: -3px 0 8px 0;
+            margin: -2px 0 8px 0;
             font-style: italic;
+            line-height: 1.3;
+        }
+        
+        /* ===== LANDING PAGE STYLES ===== */
+        .landing-page {
+            page-break-after: always;
+            padding: 20px;
+        }
+        
+        .landing-header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 30px 0;
+            border-bottom: 3px solid #2563eb;
+        }
+        
+        .landing-title {
+            font-size: 32pt;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin: 0 0 10px 0;
+            letter-spacing: -1px;
+            line-height: 1.2;
+        }
+        
+        .landing-subtitle {
+            font-size: 12pt;
+            color: #6b7280;
+            margin: 0;
+            font-weight: 500;
+        }
+        
+        .landing-content {
+            max-width: 100%;
+        }
+        
+        .intro-box {
+            background: #f8fafc;
+            border-left: 4px solid #2563eb;
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        
+        .intro-box h3 {
+            margin-top: 0;
+            color: #1a1a1a;
+            font-size: 11pt;
+        }
+        
+        .intro-box p {
+            margin: 5px 0 0 0;
+            font-size: 9pt;
+            line-height: 1.5;
+        }
+        
+        .views-section {
+            margin: 25px 0;
+        }
+        
+        .views-section > p {
+            font-size: 9pt;
+            margin-bottom: 15px;
+        }
+        
+        .view-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin: 15px 0;
+        }
+        
+        .view-card {
+            background: white;
+            border: 2px solid #e5e7eb;
+            border-radius: 6px;
+            padding: 12px;
+            text-align: center;
+        }
+        
+        .view-icon {
+            font-size: 24pt;
+            margin-bottom: 8px;
+        }
+        
+        .view-title {
+            font-weight: 700;
+            font-size: 9.5pt;
+            color: #1a1a1a;
+            margin-bottom: 4px;
+        }
+        
+        .view-desc {
+            font-size: 8pt;
+            color: #6b7280;
+            line-height: 1.3;
+        }
+        
+        .tier-definitions {
+            margin: 25px 0;
+        }
+        
+        .tier-def-section {
+            margin: 20px 0;
+            background: #fafafa;
+            padding: 15px;
+            border-radius: 6px;
+        }
+        
+        .tier-def-section h3 {
+            margin-top: 0;
+            font-size: 11pt;
+            color: #1a1a1a;
+        }
+        
+        .tier-note {
+            font-size: 8pt;
+            color: #6b7280;
+            font-style: italic;
+            margin: 5px 0 10px 0;
+        }
+        
+        .tier-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin-top: 10px;
+        }
+        
+        .tier-def-item {
+            background: white;
+            padding: 8px 10px;
+            border-radius: 4px;
+            border: 1px solid #e5e7eb;
+            font-size: 8pt;
+            text-align: center;
+        }
+        
+        .tier-label {
+            font-weight: 700;
+            color: #2563eb;
+            display: inline-block;
+            margin-right: 4px;
+        }
+        
+        .metrics-overview {
+            margin: 25px 0;
+        }
+        
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .metric-box {
+            background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+            color: white;
+            padding: 15px;
+            border-radius: 6px;
+            text-align: center;
+        }
+        
+        .metric-value {
+            font-size: 24pt;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+        
+        .metric-label {
+            font-size: 9pt;
+            font-weight: 600;
+            margin-bottom: 3px;
+        }
+        
+        .metric-sublabel {
+            font-size: 7.5pt;
+            opacity: 0.9;
+        }
+        
+        .footnote {
+            margin-top: 30px;
+            padding-top: 15px;
+            border-top: 1px solid #e5e7eb;
+            font-size: 7.5pt;
+            color: #6b7280;
+        }
+        
+        .footnote p {
+            margin: 3px 0;
+        }
+        
+        /* ===== CONSOLIDATED TIER SECTIONS ===== */
+        .tier-container {
+            page-break-after: always;
+        }
+        
+        .tier-subsection {
+            margin-bottom: 25px;
+        }
+        
+        .tier-subsection:last-child {
+            margin-bottom: 0;
+        }
+        
+        .tier-subsection h2 {
+            font-size: 12pt;
+            margin-bottom: 5px;
+        }
+        
+        .tier-subsection .section-summary {
+            font-size: 7.5pt;
+            margin-bottom: 6px;
+        }
+        
+        .tier-subsection table {
+            font-size: 7pt;
+        }
+        
+        .tier-subsection th {
+            padding: 5px 4px;
+            font-size: 7pt;
+        }
+        
+        .tier-subsection td {
+            padding: 4px;
         }
         
         @media print {
-            .section { page-break-after: always; }
-            tr { page-break-inside: avoid; }
-            .password-overlay { display: none !important; }
+            body {
+                margin: 0;
+                padding: 0;
+            }
+            
+            .section { 
+                page-break-after: always;
+                page-break-inside: avoid;
+            }
+            
+            .section:last-child {
+                page-break-after: auto;
+            }
+            
+            table { 
+                page-break-inside: auto;
+            }
+            
+            tr { 
+                page-break-inside: avoid;
+                page-break-after: auto;
+            }
+            
+            thead { 
+                display: table-header-group;
+            }
+            
+            h1, h2, h3 {
+                page-break-after: avoid;
+                page-break-inside: avoid;
+            }
+            
+            .section-summary {
+                page-break-after: avoid;
+            }
+            
+            .password-overlay { 
+                display: none !important;
+            }
+            
+            .report-content {
+                display: block !important;
+            }
+            
+            /* Ensure colors print properly */
+            * {
+                print-color-adjust: exact !important;
+                -webkit-print-color-adjust: exact !important;
+            }
         }
         
         .password-overlay {
@@ -246,10 +585,76 @@
     </div>
     
     <div class="report-content" id="reportContent">
-    <h1>2025 Account Director Performance Review</h1>
-    <p class="subtitle">
-        Comprehensive performance analysis across 16 Account Directors | December 2025
-    </p>
+    
+    <!-- LANDING PAGE / EXECUTIVE SUMMARY -->
+    <div class="landing-page">
+        <div class="landing-header">
+            <h1 class="landing-title">2025 Account Director<br>Performance Review</h1>
+            <p class="landing-subtitle">Comprehensive Year-End Analysis | December 2025</p>
+        </div>
+        
+        <div class="landing-content">
+            <div class="views-section">
+                <h3>🔍 Report Views & Structure</h3>
+                <p>This report presents performance data through multiple lenses for comprehensive analysis:</p>
+                
+                <div class="view-grid">
+                    <div class="view-card">
+                        <div class="view-icon">🎯</div>
+                        <div class="view-title">Overall Rankings</div>
+                        <div class="view-desc">All ADs ranked by performance score (out of 40 points)</div>
+                    </div>
+                    
+                    <div class="view-card">
+                        <div class="view-icon">💰</div>
+                        <div class="view-title">Revenue Tiers</div>
+                        <div class="view-desc">6 tiers grouped by account revenue size</div>
+                    </div>
+                    
+                    <div class="view-card">
+                        <div class="view-icon">🏢</div>
+                        <div class="view-title">Vertical Views</div>
+                        <div class="view-desc">5 industry verticals (Manufacturing, Life Science, Technology, Distribution, Finance)</div>
+                    </div>
+                    
+                    <div class="view-card">
+                        <div class="view-icon">👥</div>
+                        <div class="view-title">Headcount Tiers</div>
+                        <div class="view-desc">Tier 4-6 grouped by account size (employees managed)</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tier-definitions">
+                <div class="tier-def-section">
+                    <h3>💰 Revenue Tier Definitions</h3>
+                    <div class="tier-grid">
+                        <div class="tier-def-item"><span class="tier-label">Tier 1</span> &lt; $100K</div>
+                        <div class="tier-def-item"><span class="tier-label">Tier 2</span> $100K - $500K</div>
+                        <div class="tier-def-item"><span class="tier-label">Tier 3</span> $500K - $750K</div>
+                        <div class="tier-def-item"><span class="tier-label">Tier 4</span> $750K - $1M</div>
+                        <div class="tier-def-item"><span class="tier-label">Tier 5</span> $1M - $1.5M</div>
+                        <div class="tier-def-item"><span class="tier-label">Tier 6</span> &gt; $1.5M</div>
+                    </div>
+                </div>
+                
+                <div class="tier-def-section">
+                    <h3>👥 Headcount Tier Definitions</h3>
+                    <p class="tier-note">Account Directors are assigned tiers based on total employees under management</p>
+                    <div class="tier-grid">
+                        <div class="tier-def-item"><span class="tier-label">Tier 1</span> 1-28 employees</div>
+                        <div class="tier-def-item"><span class="tier-label">Tier 2</span> 29-39 employees</div>
+                        <div class="tier-def-item"><span class="tier-label">Tier 3</span> 40-50 employees</div>
+                        <div class="tier-def-item"><span class="tier-label">Tier 4</span> 51-100 employees</div>
+                        <div class="tier-def-item"><span class="tier-label">Tier 5</span> 101-250 employees</div>
+                        <div class="tier-def-item"><span class="tier-label">Tier 6</span> 250+ employees</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- OVERALL PERFORMANCE RANKINGS -->
 
     <div class="section">
         <h2 class="first-section">Overall Performance Rankings</h2>
@@ -260,1069 +665,1865 @@
                 <th style="width: 30px;">Rank</th>
                 <th style="width: 120px;">Account Director</th>
                 <th style="width: 60px;">Score</th>
-                <th style="width: 80px;">Tier</th>
+                <th style="width: 80px;">Performance Grade</th>
                 <th style="width: 200px;">Accounts Managed</th>
                 <th style="width: 80px;">Revenue</th>
-                <th style="width: 60px;">CSAT</th>
+                <th style="width: 60px;">Scorecard</th>
                 <th style="width: 60px;">Headcount</th>
-                <th style="width: 60px;">Red Sites</th>
             </tr>
         </thead>
         <tbody>
 
             <tr class="rank-1">
                 <td><strong>#1</strong></td>
-                <td><strong>Stuart Kelloff</strong></td>
-                <td><strong>37.0</strong> / 40</td>
-                <td><span class="tier-badge tier-exceptional">EXCEPTIONAL</span></td>
-                <td class="accounts-list">NVIDIA</td>
-                <td>$1.38M</td>
-                <td>4.30</td>
-                <td>128</td>
-                <td>1</td>
+                <td><strong>Dustin Smith</strong></td>
+                <td><strong>39.0</strong> / 40</td>
+                <td><span class="tier-badge grade-a">A+</span></td>
+                <td class="accounts-list">Amazon</td>
+                <td>$3.14M</td>
+                <td>4.48</td>
+                <td>733</td>
             </tr>
 
             <tr class="rank-2">
                 <td><strong>#2</strong></td>
-                <td><strong>Jacqueline Maravilla</strong></td>
-                <td><strong>36.0</strong> / 40</td>
-                <td><span class="tier-badge tier-exceptional">EXCEPTIONAL</span></td>
-                <td class="accounts-list">Lonza Biologics, Genentech</td>
-                <td>$1.76M</td>
-                <td>4.97</td>
-                <td>113</td>
-                <td>2</td>
+                <td><strong>Keith Deuber</strong></td>
+                <td><strong>39.0</strong> / 40</td>
+                <td><span class="tier-badge grade-a">A+</span></td>
+                <td class="accounts-list">Amazon</td>
+                <td>$3.14M</td>
+                <td>4.48</td>
+                <td>733</td>
             </tr>
 
             <tr class="rank-3">
                 <td><strong>#3</strong></td>
-                <td><strong>Grant Frazier</strong></td>
-                <td><strong>35.0</strong> / 40</td>
-                <td><span class="tier-badge tier-strong">STRONG</span></td>
-                <td class="accounts-list">Meta</td>
-                <td>$4.18M</td>
-                <td>4.74</td>
-                <td>437</td>
-                <td>1</td>
+                <td><strong>Luis Cabrera</strong></td>
+                <td><strong>38.2</strong> / 40</td>
+                <td><span class="tier-badge grade-a">A</span></td>
+                <td class="accounts-list">Takeda Pharmaceutical</td>
+                <td>$933K</td>
+                <td>4.77</td>
+                <td>123</td>
             </tr>
 
             <tr class="">
                 <td><strong>#4</strong></td>
-                <td><strong>Ana Sabater</strong></td>
-                <td><strong>34.5</strong> / 40</td>
-                <td><span class="tier-badge tier-strong">STRONG</span></td>
-                <td class="accounts-list">Uber, LinkedIn, Scale AI</td>
-                <td>$1.28M</td>
-                <td>4.67</td>
-                <td>127</td>
-                <td>6</td>
+                <td><strong>Michael Barry</strong></td>
+                <td><strong>38.0</strong> / 40</td>
+                <td><span class="tier-badge grade-a">A</span></td>
+                <td class="accounts-list">Bristol Myers Squibb, Novartis</td>
+                <td>$1.49M</td>
+                <td>4.96</td>
+                <td>212</td>
             </tr>
 
             <tr class="">
                 <td><strong>#5</strong></td>
-                <td><strong>Mark Schlerf</strong></td>
-                <td><strong>34.0</strong> / 40</td>
-                <td><span class="tier-badge tier-strong">STRONG</span></td>
-                <td class="accounts-list">HPE, LAM Research, Hewlett-Packard +4 more</td>
-                <td>$1.54M</td>
-                <td>4.74</td>
-                <td>186</td>
-                <td>2</td>
+                <td><strong>Scott Kimball</strong></td>
+                <td><strong>37.3</strong> / 40</td>
+                <td><span class="tier-badge grade-a">A</span></td>
+                <td class="accounts-list">Sanofi, Moderna Biotechnology Company</td>
+                <td>$1.26M</td>
+                <td>4.84</td>
+                <td>188</td>
             </tr>
 
             <tr class="">
                 <td><strong>#6</strong></td>
-                <td><strong>Taylor Wattenberg</strong></td>
-                <td><strong>34.0</strong> / 40</td>
-                <td><span class="tier-badge tier-strong">STRONG</span></td>
-                <td class="accounts-list">Microsoft</td>
-                <td>$5.38M</td>
-                <td>4.66</td>
-                <td>600</td>
-                <td>4</td>
+                <td><strong>Stuart Kelloff</strong></td>
+                <td><strong>37.0</strong> / 40</td>
+                <td><span class="tier-badge grade-a">A</span></td>
+                <td class="accounts-list">NVIDIA, Adobe Systems</td>
+                <td>$2.23M</td>
+                <td>4.75</td>
+                <td>234</td>
             </tr>
 
             <tr class="">
                 <td><strong>#7</strong></td>
-                <td><strong>Kimberly Wittekind</strong></td>
-                <td><strong>33.7</strong> / 40</td>
-                <td><span class="tier-badge tier-strong">STRONG</span></td>
-                <td class="accounts-list">Nestle, GE Healthcare, Piper Aircraft</td>
-                <td>$1.00M</td>
-                <td>4.13</td>
-                <td>196</td>
-                <td>3</td>
+                <td><strong>Jacqueline Maravilla</strong></td>
+                <td><strong>36.0</strong> / 40</td>
+                <td><span class="tier-badge grade-a">A-</span></td>
+                <td class="accounts-list">Lonza Biologics, Genentech</td>
+                <td>$1.76M</td>
+                <td>5.00</td>
+                <td>113</td>
             </tr>
 
             <tr class="">
                 <td><strong>#8</strong></td>
-                <td><strong>Justin Dallavis</strong></td>
-                <td><strong>30.5</strong> / 40</td>
-                <td><span class="tier-badge tier-solid">SOLID</span></td>
-                <td class="accounts-list">Boeing Company</td>
-                <td>$1.00M</td>
-                <td>4.62</td>
-                <td>152</td>
-                <td>7</td>
+                <td><strong>Giselle Langelier</strong></td>
+                <td><strong>35.5</strong> / 40</td>
+                <td><span class="tier-badge grade-a">A-</span></td>
+                <td class="accounts-list">Medtronic, Capsida Biotherapeutics, Fuji Film</td>
+                <td>$672K</td>
+                <td>4.95</td>
+                <td>98</td>
             </tr>
 
             <tr class="">
                 <td><strong>#9</strong></td>
-                <td><strong>Isaac Calderon</strong></td>
-                <td><strong>30.0</strong> / 40</td>
-                <td><span class="tier-badge tier-solid">SOLID</span></td>
-                <td class="accounts-list">Bayer, Kenvue, Johnson & Johnson +2 more</td>
-                <td>$787K</td>
-                <td>4.79</td>
-                <td>135</td>
-                <td>3</td>
+                <td><strong>Grant Frazier</strong></td>
+                <td><strong>35.2</strong> / 40</td>
+                <td><span class="tier-badge grade-a">A-</span></td>
+                <td class="accounts-list">Meta</td>
+                <td>$4.18M</td>
+                <td>4.86</td>
+                <td>437</td>
             </tr>
 
             <tr class="">
                 <td><strong>#10</strong></td>
-                <td><strong>Benjamin Ehrenberg</strong></td>
-                <td><strong>30.0</strong> / 40</td>
-                <td><span class="tier-badge tier-solid">SOLID</span></td>
-                <td class="accounts-list">Lockheed Martin, Parsons Corporation</td>
-                <td>$972K</td>
-                <td>4.85</td>
-                <td>140</td>
-                <td>2</td>
+                <td><strong>Nicholas Trenkamp</strong></td>
+                <td><strong>35.0</strong> / 40</td>
+                <td><span class="tier-badge grade-a">A-</span></td>
+                <td class="accounts-list">Procter & Gamble Company</td>
+                <td>$733K</td>
+                <td>4.98</td>
+                <td>113</td>
             </tr>
 
             <tr class="">
                 <td><strong>#11</strong></td>
-                <td><strong>Aaron Simpson</strong></td>
-                <td><strong>29.7</strong> / 40</td>
-                <td><span class="tier-badge tier-solid">SOLID</span></td>
-                <td class="accounts-list">3M Corp, Mars, Ball Corporation</td>
-                <td>$989K</td>
-                <td>4.17</td>
-                <td>201</td>
-                <td>22</td>
+                <td><strong>Ayesha Nasir</strong></td>
+                <td><strong>34.5</strong> / 40</td>
+                <td><span class="tier-badge tier-strong">B+</span></td>
+                <td class="accounts-list">Westinghouse, DuPont</td>
+                <td>$369K</td>
+                <td>4.90</td>
+                <td>66</td>
             </tr>
 
             <tr class="">
                 <td><strong>#12</strong></td>
-                <td><strong>Justin Homa</strong></td>
-                <td><strong>29.5</strong> / 40</td>
-                <td><span class="tier-badge tier-solid">SOLID</span></td>
-                <td class="accounts-list">Organon</td>
-                <td>$7K</td>
-                <td>N/A</td>
-                <td>N/A</td>
-                <td>0</td>
+                <td><strong>Ana Sabater</strong></td>
+                <td><strong>34.5</strong> / 40</td>
+                <td><span class="tier-badge tier-strong">B+</span></td>
+                <td class="accounts-list">LinkedIn, Uber, Scale AI</td>
+                <td>$1.28M</td>
+                <td>4.92</td>
+                <td>127</td>
             </tr>
 
             <tr class="">
                 <td><strong>#13</strong></td>
-                <td><strong>Paul Rhodes</strong></td>
-                <td><strong>29.5</strong> / 40</td>
-                <td><span class="tier-badge tier-solid">SOLID</span></td>
-                <td class="accounts-list">Google, DP World</td>
-                <td>$3.44M</td>
-                <td>4.58</td>
-                <td>348</td>
-                <td>17</td>
+                <td><strong>Siddarth Shah</strong></td>
+                <td><strong>34.2</strong> / 40</td>
+                <td><span class="tier-badge tier-strong">B+</span></td>
+                <td class="accounts-list">Micron Tech, Mp Mask Technology Center</td>
+                <td>$1.22M</td>
+                <td>4.89</td>
+                <td>196</td>
             </tr>
 
             <tr class="">
                 <td><strong>#14</strong></td>
-                <td><strong>Jack Thornton</strong></td>
-                <td><strong>28.7</strong> / 40</td>
-                <td><span class="tier-badge tier-solid">SOLID</span></td>
-                <td class="accounts-list">Nike, GXO Logistics</td>
-                <td>$1.65M</td>
-                <td>4.89</td>
-                <td>272</td>
-                <td>1</td>
+                <td><strong>Mark Schlerf</strong></td>
+                <td><strong>34.0</strong> / 40</td>
+                <td><span class="tier-badge tier-strong">B+</span></td>
+                <td class="accounts-list">LAM Research, Hewlett-Packard, HPE +4 more</td>
+                <td>$1.54M</td>
+                <td>4.93</td>
+                <td>186</td>
             </tr>
 
             <tr class="">
                 <td><strong>#15</strong></td>
-                <td><strong>Patrick Murtha</strong></td>
-                <td><strong>26.8</strong> / 40</td>
-                <td><span class="tier-badge tier-development">DEVELOPMENT</span></td>
-                <td class="accounts-list">Cardinal Health, IQVIA Biotech, McKesson</td>
-                <td>$764K</td>
-                <td>4.63</td>
-                <td>122</td>
-                <td>10</td>
+                <td><strong>Taylor Wattenberg</strong></td>
+                <td><strong>34.0</strong> / 40</td>
+                <td><span class="tier-badge tier-strong">B+</span></td>
+                <td class="accounts-list">Microsoft</td>
+                <td>$5.38M</td>
+                <td>4.92</td>
+                <td>600</td>
             </tr>
 
             <tr class="">
                 <td><strong>#16</strong></td>
-                <td><strong>Peggy Shum</strong></td>
-                <td><strong>23.0</strong> / 40</td>
-                <td><span class="tier-badge tier-development">DEVELOPMENT</span></td>
-                <td class="accounts-list">Deutsche Bank</td>
-                <td>$428K</td>
-                <td>4.00</td>
-                <td>41</td>
-                <td>1</td>
+                <td><strong>Kimberly Wittekind</strong></td>
+                <td><strong>33.7</strong> / 40</td>
+                <td><span class="tier-badge tier-strong">B</span></td>
+                <td class="accounts-list">Nestle, GE Healthcare, Piper Aircraft</td>
+                <td>$1.00M</td>
+                <td>4.76</td>
+                <td>196</td>
             </tr>
 
             <tr class="">
                 <td><strong>#17</strong></td>
+                <td><strong>Rafaed Ortiz</strong></td>
+                <td><strong>33.0</strong> / 40</td>
+                <td><span class="tier-badge tier-strong">B</span></td>
+                <td class="accounts-list">Biogen</td>
+                <td>$705K</td>
+                <td>4.48</td>
+                <td>114</td>
+            </tr>
+
+            <tr class="">
+                <td><strong>#18</strong></td>
+                <td><strong>Logan Newman</strong></td>
+                <td><strong>32.5</strong> / 40</td>
+                <td><span class="tier-badge tier-strong">B</span></td>
+                <td class="accounts-list">General Electric, GE Power, Hyliion</td>
+                <td>$831K</td>
+                <td>4.71</td>
+                <td>146</td>
+            </tr>
+
+            <tr class="">
+                <td><strong>#19</strong></td>
+                <td><strong>Thomas Mahoney</strong></td>
+                <td><strong>32.0</strong> / 40</td>
+                <td><span class="tier-badge tier-strong">B</span></td>
+                <td class="accounts-list">Amgen</td>
+                <td>$1.49M</td>
+                <td>4.78</td>
+                <td>197</td>
+            </tr>
+
+            <tr class="">
+                <td><strong>#20</strong></td>
+                <td><strong>Justin Homa</strong></td>
+                <td><strong>30.7</strong> / 40</td>
+                <td><span class="tier-badge tier-strong">B-</span></td>
+                <td class="accounts-list">Merck CBRE, Organon</td>
+                <td>$1.84M*</td>
+                <td>5.00</td>
+                <td>155</td>
+            </tr>
+
+            <tr class="">
+                <td><strong>#21</strong></td>
+                <td><strong>Justin Dallavis</strong></td>
+                <td><strong>30.5</strong> / 40</td>
+                <td><span class="tier-badge tier-strong">B-</span></td>
+                <td class="accounts-list">Boeing Company</td>
+                <td>$1.00M</td>
+                <td>4.86</td>
+                <td>152</td>
+            </tr>
+
+            <tr class="">
+                <td><strong>#22</strong></td>
+                <td><strong>Tiffany Purifoy</strong></td>
+                <td><strong>30.5</strong> / 40</td>
+                <td><span class="tier-badge tier-strong">B-</span></td>
+                <td class="accounts-list">Charles Schwab, Citibank, Fidelity +3 more</td>
+                <td>$1.19M</td>
+                <td>4.91</td>
+                <td>227</td>
+            </tr>
+
+            <tr class="">
+                <td><strong>#23</strong></td>
+                <td><strong>Benjamin Ehrenberg</strong></td>
+                <td><strong>30.0</strong> / 40</td>
+                <td><span class="tier-badge tier-strong">B-</span></td>
+                <td class="accounts-list">Lockheed Martin, Parsons Corporation</td>
+                <td>$972K</td>
+                <td>4.99</td>
+                <td>140</td>
+            </tr>
+
+            <tr class="">
+                <td><strong>#24</strong></td>
+                <td><strong>Aaron Simpson</strong></td>
+                <td><strong>29.7</strong> / 40</td>
+                <td><span class="tier-badge tier-solid">C+</span></td>
+                <td class="accounts-list">Mars, Ball Corporation, 3M Corp</td>
+                <td>$989K</td>
+                <td>4.67</td>
+                <td>201</td>
+            </tr>
+
+            <tr class="">
+                <td><strong>#25</strong></td>
+                <td><strong>Paul Rhodes</strong></td>
+                <td><strong>29.5</strong> / 40</td>
+                <td><span class="tier-badge tier-solid">C+</span></td>
+                <td class="accounts-list">Google, DP World</td>
+                <td>$3.44M</td>
+                <td>4.86</td>
+                <td>348</td>
+            </tr>
+
+            <tr class="">
+                <td><strong>#26</strong></td>
+                <td><strong>Isaac Calderon</strong></td>
+                <td><strong>29.5</strong> / 40</td>
+                <td><span class="tier-badge tier-solid">C+</span></td>
+                <td class="accounts-list">Bayer, MilliporeSigma, Kenvue +2 more</td>
+                <td>$787K</td>
+                <td>4.87</td>
+                <td>285</td>
+            </tr>
+
+            <tr class="">
+                <td><strong>#27</strong></td>
+                <td><strong>Jacob Reed</strong></td>
+                <td><strong>29.0</strong> / 40</td>
+                <td><span class="tier-badge tier-solid">C+</span></td>
+                <td class="accounts-list">Tesla Inc - Jacob Reed</td>
+                <td>$2.43M</td>
+                <td>4.01</td>
+                <td>527</td>
+            </tr>
+
+            <tr class="">
+                <td><strong>#28</strong></td>
+                <td><strong>Jack Thornton</strong></td>
+                <td><strong>28.7</strong> / 40</td>
+                <td><span class="tier-badge tier-solid">C+</span></td>
+                <td class="accounts-list">Nike, GXO Logistics</td>
+                <td>$1.65M</td>
+                <td>5.00</td>
+                <td>79*</td>
+            </tr>
+
+            <tr class="">
+                <td><strong>#29</strong></td>
+                <td><strong>David Pergola</strong></td>
+                <td><strong>28.0</strong> / 40</td>
+                <td><span class="tier-badge tier-solid">C</span></td>
+                <td class="accounts-list">Merck Sodexo</td>
+                <td>$1.60M*</td>
+                <td>4.88</td>
+                <td>135</td>
+            </tr>
+
+            <tr class="">
+                <td><strong>#30</strong></td>
                 <td><strong>Brian Davis</strong></td>
-                <td><strong>22.3</strong> / 40</td>
-                <td><span class="tier-badge tier-development">DEVELOPMENT</span></td>
+                <td><strong>27.5</strong> / 40</td>
+                <td><span class="tier-badge tier-solid">C</span></td>
                 <td class="accounts-list">Merck</td>
                 <td>$4.08M</td>
-                <td>4.75</td>
+                <td>4.98</td>
                 <td>345</td>
-                <td>7</td>
+            </tr>
+
+            <tr class="">
+                <td><strong>#31</strong></td>
+                <td><strong>Patrick Murtha</strong></td>
+                <td><strong>26.8</strong> / 40</td>
+                <td><span class="tier-badge tier-solid">C</span></td>
+                <td class="accounts-list">McKesson, Cardinal Health, IQVIA Biotech</td>
+                <td>$764K</td>
+                <td>4.94</td>
+                <td>122</td>
+            </tr>
+
+            <tr class="">
+                <td><strong>#32</strong></td>
+                <td><strong>Rade Kukobat</strong></td>
+                <td><strong>26.2</strong> / 40</td>
+                <td><span class="tier-badge tier-solid">C</span></td>
+                <td class="accounts-list">Eli Lilly LCC/LRL</td>
+                <td>$432K*</td>
+                <td>4.53</td>
+                <td>83*</td>
+            </tr>
+
+            <tr class="">
+                <td><strong>#33</strong></td>
+                <td><strong>Julie Bianchi</strong></td>
+                <td><strong>26.0</strong> / 40</td>
+                <td><span class="tier-badge tier-solid">C</span></td>
+                <td class="accounts-list">CIGNA, Elevance Health</td>
+                <td>$501K</td>
+                <td>4.87</td>
+                <td>84</td>
+            </tr>
+
+            <tr class="">
+                <td><strong>#34</strong></td>
+                <td><strong>Peggy Shum</strong></td>
+                <td><strong>25.0</strong> / 40</td>
+                <td><span class="tier-badge tier-solid">C-</span></td>
+                <td class="accounts-list">Chubb Insurance, Deutsche Bank</td>
+                <td>$547K</td>
+                <td>4.85</td>
+                <td>67</td>
+            </tr>
+
+            <tr class="">
+                <td><strong>#35</strong></td>
+                <td><strong>Gregory DeMedio</strong></td>
+                <td><strong>23.7</strong> / 40</td>
+                <td><span class="tier-badge tier-development">D</span></td>
+                <td class="accounts-list">Abbott Labs</td>
+                <td>$1.71M</td>
+                <td>4.86</td>
+                <td>278</td>
             </tr>
 
         </tbody>
         </table>
     </div>
+<div class="tier-container">
 
-    <div class="section">
-        <h2>Revenue Performance Rankings</h2>
-        <p class="section-summary">Ranked by total portfolio revenue (December 2025). Top performers manage multi-million dollar accounts.</p>
+    <div class="tier-subsection">
+        <h2>Revenue Tier 2 ($100K - $500K)</h2>
+        <p class="section-summary">
+            2 Account Directors | Avg Performance Score: 30.4/40 | 
+            Combined Revenue: $801K | Total Headcount: 149
+        </p>
         <table>
             <thead>
                 <tr>
                     <th style="width: 40px;">Rank</th>
-                    <th>Account Director</th>
-                    <th style="width: 120px;">Total Revenue</th>
-                    <th style="width: 80px;">Accounts</th>
-                    <th style="width: 100px;">Perf Score</th>
-                    <th style="width: 100px;">Rev/Employee</th>
+                    <th style="width: 120px;">Account Director</th>
+                    <th style="width: 70px;">Grade</th>
+                    <th style="width: 50px;">Score</th>
+                    <th style="width: 160px;">Accounts Managed</th>
+                    <th style="width: 70px;">Revenue</th>
+                    <th style="width: 50px;">Scorecard</th>
+                    <th style="width: 60px;">Headcount</th>
                 </tr>
             </thead>
             <tbody>
 
-            <tr class="rank-1">
-                <td><strong>#1</strong></td>
-                <td>Taylor Wattenberg</td>
-                <td><strong>$5.38M</strong></td>
-                <td>1</td>
-                <td>34.0/40</td>
-                <td>$9.0K</td>
-            </tr>
+                <tr class="rank-1">
+                    <td><strong>#1</strong></td>
+                    <td><strong>Ayesha Nasir</strong></td>
+                    <td><span class="tier-badge grade-b">B+</span></td>
+                    <td><strong>34.5</strong> / 40</td>
+                    <td class="accounts-list">Westinghouse, DuPont</td>
+                    <td>$369K</td>
+                    <td>4.86</td>
+                    <td>66</td>
+                </tr>
 
-            <tr class="rank-2">
-                <td><strong>#2</strong></td>
-                <td>Grant Frazier</td>
-                <td><strong>$4.18M</strong></td>
-                <td>1</td>
-                <td>35.0/40</td>
-                <td>$9.6K</td>
-            </tr>
-
-            <tr class="rank-3">
-                <td><strong>#3</strong></td>
-                <td>Brian Davis</td>
-                <td><strong>$4.08M</strong></td>
-                <td>1</td>
-                <td>22.3/40</td>
-                <td>$11.8K</td>
-            </tr>
-
-            <tr class="">
-                <td><strong>#4</strong></td>
-                <td>Paul Rhodes</td>
-                <td><strong>$3.44M</strong></td>
-                <td>2</td>
-                <td>29.5/40</td>
-                <td>$9.9K</td>
-            </tr>
-
-            <tr class="">
-                <td><strong>#5</strong></td>
-                <td>Jacqueline Maravilla</td>
-                <td><strong>$1.76M</strong></td>
-                <td>2</td>
-                <td>36.0/40</td>
-                <td>$15.6K</td>
-            </tr>
-
-            <tr class="">
-                <td><strong>#6</strong></td>
-                <td>Jack Thornton</td>
-                <td><strong>$1.65M</strong></td>
-                <td>2</td>
-                <td>28.7/40</td>
-                <td>$6.0K</td>
-            </tr>
-
-            <tr class="">
-                <td><strong>#7</strong></td>
-                <td>Mark Schlerf</td>
-                <td><strong>$1.54M</strong></td>
-                <td>7</td>
-                <td>34.0/40</td>
-                <td>$8.3K</td>
-            </tr>
-
-            <tr class="">
-                <td><strong>#8</strong></td>
-                <td>Stuart Kelloff</td>
-                <td><strong>$1.38M</strong></td>
-                <td>1</td>
-                <td>37.0/40</td>
-                <td>$10.7K</td>
-            </tr>
-
-            <tr class="">
-                <td><strong>#9</strong></td>
-                <td>Ana Sabater</td>
-                <td><strong>$1.28M</strong></td>
-                <td>3</td>
-                <td>34.5/40</td>
-                <td>$10.1K</td>
-            </tr>
-
-            <tr class="">
-                <td><strong>#10</strong></td>
-                <td>Kimberly Wittekind</td>
-                <td><strong>$1.00M</strong></td>
-                <td>3</td>
-                <td>33.7/40</td>
-                <td>$5.1K</td>
-            </tr>
-
-            <tr class="">
-                <td><strong>#11</strong></td>
-                <td>Justin Dallavis</td>
-                <td><strong>$1.00M</strong></td>
-                <td>1</td>
-                <td>30.5/40</td>
-                <td>$6.6K</td>
-            </tr>
-
-            <tr class="">
-                <td><strong>#12</strong></td>
-                <td>Aaron Simpson</td>
-                <td><strong>$989K</strong></td>
-                <td>3</td>
-                <td>29.7/40</td>
-                <td>$4.9K</td>
-            </tr>
-
-            <tr class="">
-                <td><strong>#13</strong></td>
-                <td>Benjamin Ehrenberg</td>
-                <td><strong>$972K</strong></td>
-                <td>2</td>
-                <td>30.0/40</td>
-                <td>$6.9K</td>
-            </tr>
-
-            <tr class="">
-                <td><strong>#14</strong></td>
-                <td>Isaac Calderon</td>
-                <td><strong>$787K</strong></td>
-                <td>5</td>
-                <td>30.0/40</td>
-                <td>$5.8K</td>
-            </tr>
-
-            <tr class="">
-                <td><strong>#15</strong></td>
-                <td>Patrick Murtha</td>
-                <td><strong>$764K</strong></td>
-                <td>3</td>
-                <td>26.8/40</td>
-                <td>$6.3K</td>
-            </tr>
-
-            <tr class="">
-                <td><strong>#16</strong></td>
-                <td>Peggy Shum</td>
-                <td><strong>$428K</strong></td>
-                <td>1</td>
-                <td>23.0/40</td>
-                <td>$10.4K</td>
-            </tr>
-
-            <tr class="">
-                <td><strong>#17</strong></td>
-                <td>Justin Homa</td>
-                <td><strong>$7K</strong></td>
-                <td>1</td>
-                <td>29.5/40</td>
-                <td>N/A</td>
-            </tr>
+                <tr class="rank-2">
+                    <td><strong>#2</strong></td>
+                    <td><strong>Rade Kukobat</strong></td>
+                    <td><span class="tier-badge grade-c">C</span></td>
+                    <td><strong>26.2</strong> / 40</td>
+                    <td class="accounts-list">Eli Lilly LCC/LRL</td>
+                    <td>$432K*</td>
+                    <td>4.86</td>
+                    <td>83*</td>
+                </tr>
 
             </tbody>
         </table>
     </div>
-    
-    <div class="section">
-        <h2>Customer Satisfaction Rankings</h2>
-        <p class="section-summary">CSAT scores (1.00-5.00 scale). Portfolio median: 4.59. Top quartile: 4.75+</p>
+
+    <div class="tier-subsection">
+        <h2>Revenue Tier 3 ($500K - $750K)</h2>
+        <p class="section-summary">
+            5 Account Directors | Avg Performance Score: 30.9/40 | 
+            Combined Revenue: $3.16M | Total Headcount: 476
+        </p>
         <table>
             <thead>
                 <tr>
                     <th style="width: 40px;">Rank</th>
-                    <th>Account Director</th>
-                    <th style="width: 100px;">Avg CSAT</th>
-                    <th style="width: 80px;">Accounts</th>
-                    <th style="width: 100px;">Revenue</th>
-                    <th style="width: 100px;">Perf Score</th>
+                    <th style="width: 120px;">Account Director</th>
+                    <th style="width: 70px;">Grade</th>
+                    <th style="width: 50px;">Score</th>
+                    <th style="width: 160px;">Accounts Managed</th>
+                    <th style="width: 70px;">Revenue</th>
+                    <th style="width: 50px;">Scorecard</th>
+                    <th style="width: 60px;">Headcount</th>
                 </tr>
             </thead>
             <tbody>
 
-            <tr class="rank-1">
-                <td><strong>#1</strong></td>
-                <td>Jacqueline Maravilla</td>
-                <td><strong>4.97</strong> / 5.00</td>
-                <td>2</td>
-                <td>$1.76M</td>
-                <td>36.0/40</td>
-            </tr>
+                <tr class="rank-1">
+                    <td><strong>#1</strong></td>
+                    <td><strong>Giselle Langelier</strong></td>
+                    <td><span class="tier-badge grade-a">A-</span></td>
+                    <td><strong>35.5</strong> / 40</td>
+                    <td class="accounts-list">Medtronic, Capsida Biotherapeutics, Fuji Film</td>
+                    <td>$672K</td>
+                    <td>4.86</td>
+                    <td>98</td>
+                </tr>
 
-            <tr class="rank-2">
-                <td><strong>#2</strong></td>
-                <td>Jack Thornton</td>
-                <td><strong>4.89</strong> / 5.00</td>
-                <td>2</td>
-                <td>$1.65M</td>
-                <td>28.7/40</td>
-            </tr>
+                <tr class="rank-2">
+                    <td><strong>#2</strong></td>
+                    <td><strong>Nicholas Trenkamp</strong></td>
+                    <td><span class="tier-badge grade-a">A-</span></td>
+                    <td><strong>35.0</strong> / 40</td>
+                    <td class="accounts-list">Procter & Gamble Company</td>
+                    <td>$733K</td>
+                    <td>4.86</td>
+                    <td>113</td>
+                </tr>
 
-            <tr class="rank-3">
-                <td><strong>#3</strong></td>
-                <td>Benjamin Ehrenberg</td>
-                <td><strong>4.85</strong> / 5.00</td>
-                <td>2</td>
-                <td>$972K</td>
-                <td>30.0/40</td>
-            </tr>
+                <tr class="rank-3">
+                    <td><strong>#3</strong></td>
+                    <td><strong>Rafaed Ortiz</strong></td>
+                    <td><span class="tier-badge grade-b">B</span></td>
+                    <td><strong>33.0</strong> / 40</td>
+                    <td class="accounts-list">Biogen</td>
+                    <td>$705K</td>
+                    <td>4.86</td>
+                    <td>114</td>
+                </tr>
 
-            <tr class="">
-                <td><strong>#4</strong></td>
-                <td>Isaac Calderon</td>
-                <td><strong>4.79</strong> / 5.00</td>
-                <td>5</td>
-                <td>$787K</td>
-                <td>30.0/40</td>
-            </tr>
+                <tr class="">
+                    <td><strong>#4</strong></td>
+                    <td><strong>Julie Bianchi</strong></td>
+                    <td><span class="tier-badge grade-c">C</span></td>
+                    <td><strong>26.0</strong> / 40</td>
+                    <td class="accounts-list">CIGNA, Elevance Health</td>
+                    <td>$501K</td>
+                    <td>4.86</td>
+                    <td>84</td>
+                </tr>
 
-            <tr class="">
-                <td><strong>#5</strong></td>
-                <td>Brian Davis</td>
-                <td><strong>4.75</strong> / 5.00</td>
-                <td>1</td>
-                <td>$4.08M</td>
-                <td>22.3/40</td>
-            </tr>
-
-            <tr class="">
-                <td><strong>#6</strong></td>
-                <td>Grant Frazier</td>
-                <td><strong>4.74</strong> / 5.00</td>
-                <td>1</td>
-                <td>$4.18M</td>
-                <td>35.0/40</td>
-            </tr>
-
-            <tr class="">
-                <td><strong>#7</strong></td>
-                <td>Mark Schlerf</td>
-                <td><strong>4.74</strong> / 5.00</td>
-                <td>7</td>
-                <td>$1.54M</td>
-                <td>34.0/40</td>
-            </tr>
-
-            <tr class="">
-                <td><strong>#8</strong></td>
-                <td>Ana Sabater</td>
-                <td><strong>4.67</strong> / 5.00</td>
-                <td>3</td>
-                <td>$1.28M</td>
-                <td>34.5/40</td>
-            </tr>
-
-            <tr class="">
-                <td><strong>#9</strong></td>
-                <td>Taylor Wattenberg</td>
-                <td><strong>4.66</strong> / 5.00</td>
-                <td>1</td>
-                <td>$5.38M</td>
-                <td>34.0/40</td>
-            </tr>
-
-            <tr class="">
-                <td><strong>#10</strong></td>
-                <td>Patrick Murtha</td>
-                <td><strong>4.63</strong> / 5.00</td>
-                <td>3</td>
-                <td>$764K</td>
-                <td>26.8/40</td>
-            </tr>
-
-            <tr class="">
-                <td><strong>#11</strong></td>
-                <td>Justin Dallavis</td>
-                <td><strong>4.62</strong> / 5.00</td>
-                <td>1</td>
-                <td>$1.00M</td>
-                <td>30.5/40</td>
-            </tr>
-
-            <tr class="">
-                <td><strong>#12</strong></td>
-                <td>Paul Rhodes</td>
-                <td><strong>4.58</strong> / 5.00</td>
-                <td>2</td>
-                <td>$3.44M</td>
-                <td>29.5/40</td>
-            </tr>
-
-            <tr class="">
-                <td><strong>#13</strong></td>
-                <td>Stuart Kelloff</td>
-                <td><strong>4.30</strong> / 5.00</td>
-                <td>1</td>
-                <td>$1.38M</td>
-                <td>37.0/40</td>
-            </tr>
-
-            <tr class="">
-                <td><strong>#14</strong></td>
-                <td>Aaron Simpson</td>
-                <td><strong>4.17</strong> / 5.00</td>
-                <td>3</td>
-                <td>$989K</td>
-                <td>29.7/40</td>
-            </tr>
-
-            <tr class="">
-                <td><strong>#15</strong></td>
-                <td>Kimberly Wittekind</td>
-                <td><strong>4.13</strong> / 5.00</td>
-                <td>3</td>
-                <td>$1.00M</td>
-                <td>33.7/40</td>
-            </tr>
-
-            <tr class="">
-                <td><strong>#16</strong></td>
-                <td>Peggy Shum</td>
-                <td><strong>4.00</strong> / 5.00</td>
-                <td>1</td>
-                <td>$428K</td>
-                <td>23.0/40</td>
-            </tr>
+                <tr class="">
+                    <td><strong>#5</strong></td>
+                    <td><strong>Peggy Shum</strong></td>
+                    <td><span class="tier-badge grade-c">C-</span></td>
+                    <td><strong>25.0</strong> / 40</td>
+                    <td class="accounts-list">Chubb Insurance, Deutsche Bank</td>
+                    <td>$547K</td>
+                    <td>4.86</td>
+                    <td>67</td>
+                </tr>
 
             </tbody>
         </table>
     </div>
-    
-    <div class="section">
-        <h2>Year-over-Year Growth Rankings</h2>
-        <p class="section-summary">YoY revenue growth rates (December 2025). Portfolio average: 106.4%</p>
+
+    <div class="tier-subsection">
+        <h2>Revenue Tier 4 ($750K - $1M)</h2>
+        <p class="section-summary">
+            6 Account Directors | Avg Performance Score: 31.1/40 | 
+            Combined Revenue: $5.28M | Total Headcount: 1,017
+        </p>
         <table>
             <thead>
                 <tr>
                     <th style="width: 40px;">Rank</th>
-                    <th>Account Director</th>
-                    <th style="width: 100px;">Growth Rate</th>
-                    <th style="width: 100px;">Revenue</th>
-                    <th style="width: 80px;">Accounts</th>
-                    <th style="width: 100px;">Perf Score</th>
+                    <th style="width: 120px;">Account Director</th>
+                    <th style="width: 70px;">Grade</th>
+                    <th style="width: 50px;">Score</th>
+                    <th style="width: 160px;">Accounts Managed</th>
+                    <th style="width: 70px;">Revenue</th>
+                    <th style="width: 50px;">Scorecard</th>
+                    <th style="width: 60px;">Headcount</th>
                 </tr>
             </thead>
             <tbody>
 
-            <tr class="rank-1">
-                <td><strong>#1</strong></td>
-                <td>Ana Sabater</td>
-                <td style="color: #10b981; font-weight: 600;"><strong>+1493.4%</strong></td>
-                <td>$1.28M</td>
-                <td>3</td>
-                <td>34.5/40</td>
-            </tr>
+                <tr class="rank-1">
+                    <td><strong>#1</strong></td>
+                    <td><strong>Luis Cabrera</strong></td>
+                    <td><span class="tier-badge grade-a">A</span></td>
+                    <td><strong>38.2</strong> / 40</td>
+                    <td class="accounts-list">Takeda Pharmaceutical</td>
+                    <td>$933K</td>
+                    <td>4.86</td>
+                    <td>123</td>
+                </tr>
 
-            <tr class="rank-2">
-                <td><strong>#2</strong></td>
-                <td>Jack Thornton</td>
-                <td style="color: #10b981; font-weight: 600;"><strong>+152.2%</strong></td>
-                <td>$1.65M</td>
-                <td>2</td>
-                <td>28.7/40</td>
-            </tr>
+                <tr class="rank-2">
+                    <td><strong>#2</strong></td>
+                    <td><strong>Logan Newman</strong></td>
+                    <td><span class="tier-badge grade-b">B</span></td>
+                    <td><strong>32.5</strong> / 40</td>
+                    <td class="accounts-list">General Electric, GE Power, Hyliion</td>
+                    <td>$831K</td>
+                    <td>4.86</td>
+                    <td>146</td>
+                </tr>
 
-            <tr class="rank-3">
-                <td><strong>#3</strong></td>
-                <td>Jacqueline Maravilla</td>
-                <td style="color: #10b981; font-weight: 600;"><strong>+35.4%</strong></td>
-                <td>$1.76M</td>
-                <td>2</td>
-                <td>36.0/40</td>
-            </tr>
+                <tr class="rank-3">
+                    <td><strong>#3</strong></td>
+                    <td><strong>Benjamin Ehrenberg</strong></td>
+                    <td><span class="tier-badge grade-b">B-</span></td>
+                    <td><strong>30.0</strong> / 40</td>
+                    <td class="accounts-list">Lockheed Martin, Parsons Corporation</td>
+                    <td>$972K</td>
+                    <td>4.86</td>
+                    <td>140</td>
+                </tr>
 
-            <tr class="">
-                <td><strong>#4</strong></td>
-                <td>Grant Frazier</td>
-                <td style="color: #10b981; font-weight: 600;"><strong>+30.9%</strong></td>
-                <td>$4.18M</td>
-                <td>1</td>
-                <td>35.0/40</td>
-            </tr>
+                <tr class="">
+                    <td><strong>#4</strong></td>
+                    <td><strong>Aaron Simpson</strong></td>
+                    <td><span class="tier-badge grade-c">C+</span></td>
+                    <td><strong>29.7</strong> / 40</td>
+                    <td class="accounts-list">Mars, Ball Corporation, 3M Corp</td>
+                    <td>$989K</td>
+                    <td>4.86</td>
+                    <td>201</td>
+                </tr>
 
-            <tr class="">
-                <td><strong>#5</strong></td>
-                <td>Taylor Wattenberg</td>
-                <td style="color: #10b981; font-weight: 600;"><strong>+28.1%</strong></td>
-                <td>$5.38M</td>
-                <td>1</td>
-                <td>34.0/40</td>
-            </tr>
+                <tr class="">
+                    <td><strong>#5</strong></td>
+                    <td><strong>Isaac Calderon</strong></td>
+                    <td><span class="tier-badge grade-c">C+</span></td>
+                    <td><strong>29.5</strong> / 40</td>
+                    <td class="accounts-list">Bayer, MilliporeSigma, Kenvue +2 more</td>
+                    <td>$787K</td>
+                    <td>4.86</td>
+                    <td>285</td>
+                </tr>
 
-            <tr class="">
-                <td><strong>#6</strong></td>
-                <td>Stuart Kelloff</td>
-                <td style="color: #10b981; font-weight: 600;"><strong>+24.5%</strong></td>
-                <td>$1.38M</td>
-                <td>1</td>
-                <td>37.0/40</td>
-            </tr>
-
-            <tr class="">
-                <td><strong>#7</strong></td>
-                <td>Justin Dallavis</td>
-                <td style="color: #10b981; font-weight: 600;"><strong>+18.3%</strong></td>
-                <td>$1.00M</td>
-                <td>1</td>
-                <td>30.5/40</td>
-            </tr>
-
-            <tr class="">
-                <td><strong>#8</strong></td>
-                <td>Paul Rhodes</td>
-                <td style="color: #10b981; font-weight: 600;"><strong>+15.4%</strong></td>
-                <td>$3.44M</td>
-                <td>2</td>
-                <td>29.5/40</td>
-            </tr>
-
-            <tr class="">
-                <td><strong>#9</strong></td>
-                <td>Patrick Murtha</td>
-                <td style="color: #10b981; font-weight: 600;"><strong>+13.6%</strong></td>
-                <td>$764K</td>
-                <td>3</td>
-                <td>26.8/40</td>
-            </tr>
-
-            <tr class="">
-                <td><strong>#10</strong></td>
-                <td>Brian Davis</td>
-                <td style="color: #10b981; font-weight: 600;"><strong>+8.9%</strong></td>
-                <td>$4.08M</td>
-                <td>1</td>
-                <td>22.3/40</td>
-            </tr>
-
-            <tr class="">
-                <td><strong>#11</strong></td>
-                <td>Peggy Shum</td>
-                <td style="color: #10b981; font-weight: 600;"><strong>+8.5%</strong></td>
-                <td>$428K</td>
-                <td>1</td>
-                <td>23.0/40</td>
-            </tr>
-
-            <tr class="">
-                <td><strong>#12</strong></td>
-                <td>Aaron Simpson</td>
-                <td style="color: #10b981; font-weight: 600;"><strong>+7.3%</strong></td>
-                <td>$989K</td>
-                <td>3</td>
-                <td>29.7/40</td>
-            </tr>
-
-            <tr class="">
-                <td><strong>#13</strong></td>
-                <td>Benjamin Ehrenberg</td>
-                <td style="color: #10b981; font-weight: 600;"><strong>+6.0%</strong></td>
-                <td>$972K</td>
-                <td>2</td>
-                <td>30.0/40</td>
-            </tr>
-
-            <tr class="">
-                <td><strong>#14</strong></td>
-                <td>Mark Schlerf</td>
-                <td style="color: #10b981; font-weight: 600;"><strong>+1.5%</strong></td>
-                <td>$1.54M</td>
-                <td>7</td>
-                <td>34.0/40</td>
-            </tr>
-
-            <tr class="">
-                <td><strong>#15</strong></td>
-                <td>Justin Homa</td>
-                <td style="color: #ef4444; font-weight: 600;"><strong>+-1.7%</strong></td>
-                <td>$7K</td>
-                <td>1</td>
-                <td>29.5/40</td>
-            </tr>
-
-            <tr class="">
-                <td><strong>#16</strong></td>
-                <td>Isaac Calderon</td>
-                <td style="color: #ef4444; font-weight: 600;"><strong>+-6.6%</strong></td>
-                <td>$787K</td>
-                <td>5</td>
-                <td>30.0/40</td>
-            </tr>
-
-            <tr class="">
-                <td><strong>#17</strong></td>
-                <td>Kimberly Wittekind</td>
-                <td style="color: #ef4444; font-weight: 600;"><strong>+-26.3%</strong></td>
-                <td>$1.00M</td>
-                <td>3</td>
-                <td>33.7/40</td>
-            </tr>
+                <tr class="">
+                    <td><strong>#6</strong></td>
+                    <td><strong>Patrick Murtha</strong></td>
+                    <td><span class="tier-badge grade-c">C</span></td>
+                    <td><strong>26.8</strong> / 40</td>
+                    <td class="accounts-list">McKesson, Cardinal Health, IQVIA Biotech</td>
+                    <td>$764K</td>
+                    <td>4.86</td>
+                    <td>122</td>
+                </tr>
 
             </tbody>
         </table>
     </div>
-    
-    <div class="section">
-        <h2>Operational Excellence - Red Sites</h2>
-        <p class="section-summary">Sites with performance issues (lower is better). Green: 0-2, Yellow: 3-10, Red: 10+</p>
+</div>
+<div class="tier-container">
+
+    <div class="tier-subsection">
+        <h2>Revenue Tier 5 ($1M - $1.5M)</h2>
+        <p class="section-summary">
+            8 Account Directors | Avg Performance Score: 33.8/40 | 
+            Combined Revenue: $9.95M | Total Headcount: 1,495
+        </p>
         <table>
             <thead>
                 <tr>
                     <th style="width: 40px;">Rank</th>
-                    <th>Account Director</th>
-                    <th style="width: 100px;">Red Sites</th>
-                    <th style="width: 100px;">Headcount</th>
-                    <th style="width: 80px;">Accounts</th>
-                    <th style="width: 100px;">Perf Score</th>
+                    <th style="width: 120px;">Account Director</th>
+                    <th style="width: 70px;">Grade</th>
+                    <th style="width: 50px;">Score</th>
+                    <th style="width: 160px;">Accounts Managed</th>
+                    <th style="width: 70px;">Revenue</th>
+                    <th style="width: 50px;">Scorecard</th>
+                    <th style="width: 60px;">Headcount</th>
                 </tr>
             </thead>
             <tbody>
 
-            <tr class="rank-1">
-                <td><strong>#1</strong></td>
-                <td>Justin Homa</td>
-                <td style="color: #10b981; font-weight: 600;"><strong>0</strong></td>
-                <td>0</td>
-                <td>1</td>
-                <td>29.5/40</td>
-            </tr>
+                <tr class="rank-1">
+                    <td><strong>#1</strong></td>
+                    <td><strong>Michael Barry</strong></td>
+                    <td><span class="tier-badge grade-a">A</span></td>
+                    <td><strong>38.0</strong> / 40</td>
+                    <td class="accounts-list">Bristol Myers Squibb, Novartis</td>
+                    <td>$1.49M</td>
+                    <td>4.86</td>
+                    <td>212</td>
+                </tr>
 
-            <tr class="rank-2">
-                <td><strong>#2</strong></td>
-                <td>Stuart Kelloff</td>
-                <td style="color: #10b981; font-weight: 600;"><strong>1</strong></td>
-                <td>128</td>
-                <td>1</td>
-                <td>37.0/40</td>
-            </tr>
+                <tr class="rank-2">
+                    <td><strong>#2</strong></td>
+                    <td><strong>Scott Kimball</strong></td>
+                    <td><span class="tier-badge grade-a">A</span></td>
+                    <td><strong>37.3</strong> / 40</td>
+                    <td class="accounts-list">Sanofi, Moderna Biotechnology Company</td>
+                    <td>$1.26M</td>
+                    <td>4.86</td>
+                    <td>188</td>
+                </tr>
 
-            <tr class="rank-3">
-                <td><strong>#3</strong></td>
-                <td>Grant Frazier</td>
-                <td style="color: #10b981; font-weight: 600;"><strong>1</strong></td>
-                <td>437</td>
-                <td>1</td>
-                <td>35.0/40</td>
-            </tr>
+                <tr class="rank-3">
+                    <td><strong>#3</strong></td>
+                    <td><strong>Ana Sabater</strong></td>
+                    <td><span class="tier-badge grade-b">B+</span></td>
+                    <td><strong>34.5</strong> / 40</td>
+                    <td class="accounts-list">LinkedIn, Uber, Scale AI</td>
+                    <td>$1.28M</td>
+                    <td>4.86</td>
+                    <td>127</td>
+                </tr>
 
-            <tr class="">
-                <td><strong>#4</strong></td>
-                <td>Jack Thornton</td>
-                <td style="color: #10b981; font-weight: 600;"><strong>1</strong></td>
-                <td>272</td>
-                <td>2</td>
-                <td>28.7/40</td>
-            </tr>
+                <tr class="">
+                    <td><strong>#4</strong></td>
+                    <td><strong>Siddarth Shah</strong></td>
+                    <td><span class="tier-badge grade-b">B+</span></td>
+                    <td><strong>34.2</strong> / 40</td>
+                    <td class="accounts-list">Micron Tech, Mp Mask Technology Center</td>
+                    <td>$1.22M</td>
+                    <td>4.86</td>
+                    <td>196</td>
+                </tr>
 
-            <tr class="">
-                <td><strong>#5</strong></td>
-                <td>Peggy Shum</td>
-                <td style="color: #10b981; font-weight: 600;"><strong>1</strong></td>
-                <td>41</td>
-                <td>1</td>
-                <td>23.0/40</td>
-            </tr>
+                <tr class="">
+                    <td><strong>#5</strong></td>
+                    <td><strong>Kimberly Wittekind</strong></td>
+                    <td><span class="tier-badge grade-b">B</span></td>
+                    <td><strong>33.7</strong> / 40</td>
+                    <td class="accounts-list">Nestle, GE Healthcare, Piper Aircraft</td>
+                    <td>$1.00M</td>
+                    <td>4.86</td>
+                    <td>196</td>
+                </tr>
 
-            <tr class="">
-                <td><strong>#6</strong></td>
-                <td>Jacqueline Maravilla</td>
-                <td style="color: #10b981; font-weight: 600;"><strong>2</strong></td>
-                <td>113</td>
-                <td>2</td>
-                <td>36.0/40</td>
-            </tr>
+                <tr class="">
+                    <td><strong>#6</strong></td>
+                    <td><strong>Thomas Mahoney</strong></td>
+                    <td><span class="tier-badge grade-b">B</span></td>
+                    <td><strong>32.0</strong> / 40</td>
+                    <td class="accounts-list">Amgen</td>
+                    <td>$1.49M</td>
+                    <td>4.86</td>
+                    <td>197</td>
+                </tr>
 
-            <tr class="">
-                <td><strong>#7</strong></td>
-                <td>Mark Schlerf</td>
-                <td style="color: #10b981; font-weight: 600;"><strong>2</strong></td>
-                <td>186</td>
-                <td>7</td>
-                <td>34.0/40</td>
-            </tr>
+                <tr class="">
+                    <td><strong>#7</strong></td>
+                    <td><strong>Justin Dallavis</strong></td>
+                    <td><span class="tier-badge grade-b">B-</span></td>
+                    <td><strong>30.5</strong> / 40</td>
+                    <td class="accounts-list">Boeing Company</td>
+                    <td>$1.00M</td>
+                    <td>4.86</td>
+                    <td>152</td>
+                </tr>
 
-            <tr class="">
-                <td><strong>#8</strong></td>
-                <td>Benjamin Ehrenberg</td>
-                <td style="color: #10b981; font-weight: 600;"><strong>2</strong></td>
-                <td>140</td>
-                <td>2</td>
-                <td>30.0/40</td>
-            </tr>
-
-            <tr class="">
-                <td><strong>#9</strong></td>
-                <td>Kimberly Wittekind</td>
-                <td style="color: #f59e0b; font-weight: 600;"><strong>3</strong></td>
-                <td>196</td>
-                <td>3</td>
-                <td>33.7/40</td>
-            </tr>
-
-            <tr class="">
-                <td><strong>#10</strong></td>
-                <td>Isaac Calderon</td>
-                <td style="color: #f59e0b; font-weight: 600;"><strong>3</strong></td>
-                <td>135</td>
-                <td>5</td>
-                <td>30.0/40</td>
-            </tr>
-
-            <tr class="">
-                <td><strong>#11</strong></td>
-                <td>Taylor Wattenberg</td>
-                <td style="color: #f59e0b; font-weight: 600;"><strong>4</strong></td>
-                <td>600</td>
-                <td>1</td>
-                <td>34.0/40</td>
-            </tr>
-
-            <tr class="">
-                <td><strong>#12</strong></td>
-                <td>Ana Sabater</td>
-                <td style="color: #f59e0b; font-weight: 600;"><strong>6</strong></td>
-                <td>127</td>
-                <td>3</td>
-                <td>34.5/40</td>
-            </tr>
-
-            <tr class="">
-                <td><strong>#13</strong></td>
-                <td>Justin Dallavis</td>
-                <td style="color: #f59e0b; font-weight: 600;"><strong>7</strong></td>
-                <td>152</td>
-                <td>1</td>
-                <td>30.5/40</td>
-            </tr>
-
-            <tr class="">
-                <td><strong>#14</strong></td>
-                <td>Brian Davis</td>
-                <td style="color: #f59e0b; font-weight: 600;"><strong>7</strong></td>
-                <td>345</td>
-                <td>1</td>
-                <td>22.3/40</td>
-            </tr>
-
-            <tr class="">
-                <td><strong>#15</strong></td>
-                <td>Patrick Murtha</td>
-                <td style="color: #f59e0b; font-weight: 600;"><strong>10</strong></td>
-                <td>122</td>
-                <td>3</td>
-                <td>26.8/40</td>
-            </tr>
-
-            <tr class="">
-                <td><strong>#16</strong></td>
-                <td>Paul Rhodes</td>
-                <td style="color: #ef4444; font-weight: 600;"><strong>17</strong></td>
-                <td>348</td>
-                <td>2</td>
-                <td>29.5/40</td>
-            </tr>
-
-            <tr class="">
-                <td><strong>#17</strong></td>
-                <td>Aaron Simpson</td>
-                <td style="color: #ef4444; font-weight: 600;"><strong>22</strong></td>
-                <td>201</td>
-                <td>3</td>
-                <td>29.7/40</td>
-            </tr>
+                <tr class="">
+                    <td><strong>#8</strong></td>
+                    <td><strong>Tiffany Purifoy</strong></td>
+                    <td><span class="tier-badge grade-b">B-</span></td>
+                    <td><strong>30.5</strong> / 40</td>
+                    <td class="accounts-list">Charles Schwab, Citibank, Fidelity +3 more</td>
+                    <td>$1.19M</td>
+                    <td>4.86</td>
+                    <td>227</td>
+                </tr>
 
             </tbody>
         </table>
     </div>
-    
-    <div class="section">
-        <h2>Workforce Management Rankings</h2>
-        <p class="section-summary">Total employees managed across all accounts. Largest portfolios exceed 400 employees.</p>
+
+    <div class="tier-subsection">
+        <h2>Revenue Tier 6 (> $1.5M)</h2>
+        <p class="section-summary">
+            14 Account Directors | Avg Performance Score: 32.2/40 | 
+            Combined Revenue: $38.11M | Total Headcount: 4,903
+        </p>
         <table>
             <thead>
                 <tr>
                     <th style="width: 40px;">Rank</th>
-                    <th>Account Director</th>
-                    <th style="width: 100px;">Headcount</th>
-                    <th style="width: 100px;">Revenue</th>
-                    <th style="width: 100px;">Rev/Employee</th>
-                    <th style="width: 100px;">Perf Score</th>
+                    <th style="width: 120px;">Account Director</th>
+                    <th style="width: 70px;">Grade</th>
+                    <th style="width: 50px;">Score</th>
+                    <th style="width: 160px;">Accounts Managed</th>
+                    <th style="width: 70px;">Revenue</th>
+                    <th style="width: 50px;">Scorecard</th>
+                    <th style="width: 60px;">Headcount</th>
                 </tr>
             </thead>
             <tbody>
 
-            <tr class="rank-1">
-                <td><strong>#1</strong></td>
-                <td>Taylor Wattenberg</td>
-                <td><strong>600</strong></td>
-                <td>$5.38M</td>
-                <td>$9.0K</td>
-                <td>34.0/40</td>
-            </tr>
+                <tr class="rank-1">
+                    <td><strong>#1</strong></td>
+                    <td><strong>Dustin Smith</strong></td>
+                    <td><span class="tier-badge grade-a">A+</span></td>
+                    <td><strong>39.0</strong> / 40</td>
+                    <td class="accounts-list">Amazon</td>
+                    <td>$3.14M</td>
+                    <td>4.86</td>
+                    <td>733</td>
+                </tr>
 
-            <tr class="rank-2">
-                <td><strong>#2</strong></td>
-                <td>Grant Frazier</td>
-                <td><strong>437</strong></td>
-                <td>$4.18M</td>
-                <td>$9.6K</td>
-                <td>35.0/40</td>
-            </tr>
+                <tr class="rank-2">
+                    <td><strong>#2</strong></td>
+                    <td><strong>Keith Deuber</strong></td>
+                    <td><span class="tier-badge grade-a">A+</span></td>
+                    <td><strong>39.0</strong> / 40</td>
+                    <td class="accounts-list">Amazon</td>
+                    <td>$3.14M</td>
+                    <td>4.86</td>
+                    <td>733</td>
+                </tr>
 
-            <tr class="rank-3">
-                <td><strong>#3</strong></td>
-                <td>Paul Rhodes</td>
-                <td><strong>348</strong></td>
-                <td>$3.44M</td>
-                <td>$9.9K</td>
-                <td>29.5/40</td>
-            </tr>
+                <tr class="rank-3">
+                    <td><strong>#3</strong></td>
+                    <td><strong>Stuart Kelloff</strong></td>
+                    <td><span class="tier-badge grade-a">A</span></td>
+                    <td><strong>37.0</strong> / 40</td>
+                    <td class="accounts-list">NVIDIA, Adobe Systems</td>
+                    <td>$2.23M</td>
+                    <td>4.86</td>
+                    <td>234</td>
+                </tr>
 
-            <tr class="">
-                <td><strong>#4</strong></td>
-                <td>Brian Davis</td>
-                <td><strong>345</strong></td>
-                <td>$4.08M</td>
-                <td>$11.8K</td>
-                <td>22.3/40</td>
-            </tr>
+                <tr class="">
+                    <td><strong>#4</strong></td>
+                    <td><strong>Jacqueline Maravilla</strong></td>
+                    <td><span class="tier-badge grade-a">A-</span></td>
+                    <td><strong>36.0</strong> / 40</td>
+                    <td class="accounts-list">Lonza Biologics, Genentech</td>
+                    <td>$1.76M</td>
+                    <td>4.86</td>
+                    <td>113</td>
+                </tr>
 
-            <tr class="">
-                <td><strong>#5</strong></td>
-                <td>Jack Thornton</td>
-                <td><strong>272</strong></td>
-                <td>$1.65M</td>
-                <td>$6.0K</td>
-                <td>28.7/40</td>
-            </tr>
+                <tr class="">
+                    <td><strong>#5</strong></td>
+                    <td><strong>Grant Frazier</strong></td>
+                    <td><span class="tier-badge grade-a">A-</span></td>
+                    <td><strong>35.2</strong> / 40</td>
+                    <td class="accounts-list">Meta</td>
+                    <td>$4.18M</td>
+                    <td>4.86</td>
+                    <td>437</td>
+                </tr>
 
-            <tr class="">
-                <td><strong>#6</strong></td>
-                <td>Aaron Simpson</td>
-                <td><strong>201</strong></td>
-                <td>$989K</td>
-                <td>$4.9K</td>
-                <td>29.7/40</td>
-            </tr>
+                <tr class="">
+                    <td><strong>#6</strong></td>
+                    <td><strong>Mark Schlerf</strong></td>
+                    <td><span class="tier-badge grade-b">B+</span></td>
+                    <td><strong>34.0</strong> / 40</td>
+                    <td class="accounts-list">LAM Research, Hewlett-Packard, HPE +4 more</td>
+                    <td>$1.54M</td>
+                    <td>4.86</td>
+                    <td>186</td>
+                </tr>
 
-            <tr class="">
-                <td><strong>#7</strong></td>
-                <td>Kimberly Wittekind</td>
-                <td><strong>196</strong></td>
-                <td>$1.00M</td>
-                <td>$5.1K</td>
-                <td>33.7/40</td>
-            </tr>
+                <tr class="">
+                    <td><strong>#7</strong></td>
+                    <td><strong>Taylor Wattenberg</strong></td>
+                    <td><span class="tier-badge grade-b">B+</span></td>
+                    <td><strong>34.0</strong> / 40</td>
+                    <td class="accounts-list">Microsoft</td>
+                    <td>$5.38M</td>
+                    <td>4.86</td>
+                    <td>600</td>
+                </tr>
 
-            <tr class="">
-                <td><strong>#8</strong></td>
-                <td>Mark Schlerf</td>
-                <td><strong>186</strong></td>
-                <td>$1.54M</td>
-                <td>$8.3K</td>
-                <td>34.0/40</td>
-            </tr>
+                <tr class="">
+                    <td><strong>#8</strong></td>
+                    <td><strong>Justin Homa</strong></td>
+                    <td><span class="tier-badge grade-b">B-</span></td>
+                    <td><strong>30.7</strong> / 40</td>
+                    <td class="accounts-list">Merck CBRE, Organon</td>
+                    <td>$1.84M*</td>
+                    <td>4.86</td>
+                    <td>155</td>
+                </tr>
 
-            <tr class="">
-                <td><strong>#9</strong></td>
-                <td>Justin Dallavis</td>
-                <td><strong>152</strong></td>
-                <td>$1.00M</td>
-                <td>$6.6K</td>
-                <td>30.5/40</td>
-            </tr>
+                <tr class="">
+                    <td><strong>#9</strong></td>
+                    <td><strong>Paul Rhodes</strong></td>
+                    <td><span class="tier-badge grade-c">C+</span></td>
+                    <td><strong>29.5</strong> / 40</td>
+                    <td class="accounts-list">Google, DP World</td>
+                    <td>$3.44M</td>
+                    <td>4.86</td>
+                    <td>348</td>
+                </tr>
 
-            <tr class="">
-                <td><strong>#10</strong></td>
-                <td>Benjamin Ehrenberg</td>
-                <td><strong>140</strong></td>
-                <td>$972K</td>
-                <td>$6.9K</td>
-                <td>30.0/40</td>
-            </tr>
+                <tr class="">
+                    <td><strong>#10</strong></td>
+                    <td><strong>Jacob Reed</strong></td>
+                    <td><span class="tier-badge grade-c">C+</span></td>
+                    <td><strong>29.0</strong> / 40</td>
+                    <td class="accounts-list">Tesla Inc - Jacob Reed</td>
+                    <td>$2.43M</td>
+                    <td>4.86</td>
+                    <td>527</td>
+                </tr>
 
-            <tr class="">
-                <td><strong>#11</strong></td>
-                <td>Isaac Calderon</td>
-                <td><strong>135</strong></td>
-                <td>$787K</td>
-                <td>$5.8K</td>
-                <td>30.0/40</td>
-            </tr>
+                <tr class="">
+                    <td><strong>#11</strong></td>
+                    <td><strong>Jack Thornton</strong></td>
+                    <td><span class="tier-badge grade-c">C+</span></td>
+                    <td><strong>28.7</strong> / 40</td>
+                    <td class="accounts-list">Nike, GXO Logistics</td>
+                    <td>$1.65M</td>
+                    <td>4.86</td>
+                    <td>79*</td>
+                </tr>
 
-            <tr class="">
-                <td><strong>#12</strong></td>
-                <td>Stuart Kelloff</td>
-                <td><strong>128</strong></td>
-                <td>$1.38M</td>
-                <td>$10.7K</td>
-                <td>37.0/40</td>
-            </tr>
+                <tr class="">
+                    <td><strong>#12</strong></td>
+                    <td><strong>David Pergola</strong></td>
+                    <td><span class="tier-badge grade-c">C</span></td>
+                    <td><strong>28.0</strong> / 40</td>
+                    <td class="accounts-list">Merck Sodexo</td>
+                    <td>$1.60M*</td>
+                    <td>4.86</td>
+                    <td>135</td>
+                </tr>
 
-            <tr class="">
-                <td><strong>#13</strong></td>
-                <td>Ana Sabater</td>
-                <td><strong>127</strong></td>
-                <td>$1.28M</td>
-                <td>$10.1K</td>
-                <td>34.5/40</td>
-            </tr>
+                <tr class="">
+                    <td><strong>#13</strong></td>
+                    <td><strong>Brian Davis</strong></td>
+                    <td><span class="tier-badge grade-c">C</span></td>
+                    <td><strong>27.5</strong> / 40</td>
+                    <td class="accounts-list">Merck</td>
+                    <td>$4.08M</td>
+                    <td>4.86</td>
+                    <td>345</td>
+                </tr>
 
-            <tr class="">
-                <td><strong>#14</strong></td>
-                <td>Patrick Murtha</td>
-                <td><strong>122</strong></td>
-                <td>$764K</td>
-                <td>$6.3K</td>
-                <td>26.8/40</td>
-            </tr>
-
-            <tr class="">
-                <td><strong>#15</strong></td>
-                <td>Jacqueline Maravilla</td>
-                <td><strong>113</strong></td>
-                <td>$1.76M</td>
-                <td>$15.6K</td>
-                <td>36.0/40</td>
-            </tr>
-
-            <tr class="">
-                <td><strong>#16</strong></td>
-                <td>Peggy Shum</td>
-                <td><strong>41</strong></td>
-                <td>$428K</td>
-                <td>$10.4K</td>
-                <td>23.0/40</td>
-            </tr>
+                <tr class="">
+                    <td><strong>#14</strong></td>
+                    <td><strong>Gregory DeMedio</strong></td>
+                    <td><span class="tier-badge grade-d">D</span></td>
+                    <td><strong>23.7</strong> / 40</td>
+                    <td class="accounts-list">Abbott Labs</td>
+                    <td>$1.71M</td>
+                    <td>4.86</td>
+                    <td>278</td>
+                </tr>
 
             </tbody>
         </table>
+    </div>
+</div>
+<div class="tier-container">
+
+    <div class="tier-subsection">
+        <h2>Tier 4 - Headcount-Based Performance Rankings</h2>
+        <p class="section-summary">
+            4 Account Directors (51-100 employees) | Avg Score: 31.2/40 | 
+            Combined Revenue: $3.19M | Total Headcount: 327
+        </p>
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 40px;">Rank</th>
+                    <th style="width: 120px;">Account Director</th>
+                    <th style="width: 50px;">Score</th>
+                    <th style="width: 180px;">Accounts Managed</th>
+                    <th style="width: 70px;">Revenue</th>
+                    <th style="width: 50px;">Scorecard</th>
+                    <th style="width: 60px;">Headcount</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr class="rank-1">
+                    <td><strong>#1</strong></td>
+                    <td><strong>Giselle Langelier</strong></td>
+                    <td><strong>35.5</strong> / 40</td>
+                    <td class="accounts-list">Medtronic, Capsida Biotherapeutics, Fuji Film</td>
+                    <td>$672K</td>
+                    <td>TBD</td>
+                    <td>98</td>
+                </tr>
+
+                <tr class="rank-2">
+                    <td><strong>#2</strong></td>
+                    <td><strong>Ayesha Nasir</strong></td>
+                    <td><strong>34.5</strong> / 40</td>
+                    <td class="accounts-list">Westinghouse, DuPont</td>
+                    <td>$369K</td>
+                    <td>TBD</td>
+                    <td>66</td>
+                </tr>
+
+                <tr class="rank-3">
+                    <td><strong>#3</strong></td>
+                    <td><strong>Jack Thornton</strong></td>
+                    <td><strong>28.7</strong> / 40</td>
+                    <td class="accounts-list">Nike, GXO Logistics</td>
+                    <td>$1.65M</td>
+                    <td>TBD</td>
+                    <td>79*</td>
+                </tr>
+
+                <tr class="">
+                    <td><strong>#4</strong></td>
+                    <td><strong>Julie Bianchi</strong></td>
+                    <td><strong>26.0</strong> / 40</td>
+                    <td class="accounts-list">CIGNA, Elevance Health</td>
+                    <td>$501K</td>
+                    <td>TBD</td>
+                    <td>84</td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+
+    <div class="tier-subsection">
+        <h2>Tier 5 - Headcount-Based Performance Rankings</h2>
+        <p class="section-summary">
+            20 Account Directors (101-250 employees) | Avg Score: 32.5/40 | 
+            Combined Revenue: $23.16M | Total Headcount: 3,110
+        </p>
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 40px;">Rank</th>
+                    <th style="width: 120px;">Account Director</th>
+                    <th style="width: 50px;">Score</th>
+                    <th style="width: 180px;">Accounts Managed</th>
+                    <th style="width: 70px;">Revenue</th>
+                    <th style="width: 50px;">Scorecard</th>
+                    <th style="width: 60px;">Headcount</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr class="rank-1">
+                    <td><strong>#1</strong></td>
+                    <td><strong>Luis Cabrera</strong></td>
+                    <td><strong>38.2</strong> / 40</td>
+                    <td class="accounts-list">Takeda Pharmaceutical</td>
+                    <td>$933K</td>
+                    <td>TBD</td>
+                    <td>123</td>
+                </tr>
+
+                <tr class="rank-2">
+                    <td><strong>#2</strong></td>
+                    <td><strong>Michael Barry</strong></td>
+                    <td><strong>38.0</strong> / 40</td>
+                    <td class="accounts-list">Bristol Myers Squibb, Novartis</td>
+                    <td>$1.49M</td>
+                    <td>TBD</td>
+                    <td>212</td>
+                </tr>
+
+                <tr class="rank-3">
+                    <td><strong>#3</strong></td>
+                    <td><strong>Scott Kimball</strong></td>
+                    <td><strong>37.3</strong> / 40</td>
+                    <td class="accounts-list">Sanofi, Moderna Biotechnology Company</td>
+                    <td>$1.26M</td>
+                    <td>TBD</td>
+                    <td>188</td>
+                </tr>
+
+                <tr class="">
+                    <td><strong>#4</strong></td>
+                    <td><strong>Jacqueline Maravilla</strong></td>
+                    <td><strong>36.0</strong> / 40</td>
+                    <td class="accounts-list">Lonza Biologics, Genentech</td>
+                    <td>$1.76M</td>
+                    <td>TBD</td>
+                    <td>113</td>
+                </tr>
+
+                <tr class="">
+                    <td><strong>#5</strong></td>
+                    <td><strong>Nicholas Trenkamp</strong></td>
+                    <td><strong>35.0</strong> / 40</td>
+                    <td class="accounts-list">Procter & Gamble Company</td>
+                    <td>$733K</td>
+                    <td>TBD</td>
+                    <td>113</td>
+                </tr>
+
+                <tr class="">
+                    <td><strong>#6</strong></td>
+                    <td><strong>Ana Sabater</strong></td>
+                    <td><strong>34.5</strong> / 40</td>
+                    <td class="accounts-list">LinkedIn, Uber, Scale AI</td>
+                    <td>$1.28M</td>
+                    <td>TBD</td>
+                    <td>127</td>
+                </tr>
+
+                <tr class="">
+                    <td><strong>#7</strong></td>
+                    <td><strong>Siddarth Shah</strong></td>
+                    <td><strong>34.2</strong> / 40</td>
+                    <td class="accounts-list">Micron Tech, Mp Mask Technology Center</td>
+                    <td>$1.22M</td>
+                    <td>TBD</td>
+                    <td>196</td>
+                </tr>
+
+                <tr class="">
+                    <td><strong>#8</strong></td>
+                    <td><strong>Mark Schlerf</strong></td>
+                    <td><strong>34.0</strong> / 40</td>
+                    <td class="accounts-list">LAM Research, Hewlett-Packard, HPE +4 more</td>
+                    <td>$1.54M</td>
+                    <td>TBD</td>
+                    <td>186</td>
+                </tr>
+
+                <tr class="">
+                    <td><strong>#9</strong></td>
+                    <td><strong>Kimberly Wittekind</strong></td>
+                    <td><strong>33.7</strong> / 40</td>
+                    <td class="accounts-list">Nestle, GE Healthcare, Piper Aircraft</td>
+                    <td>$1.00M</td>
+                    <td>TBD</td>
+                    <td>196</td>
+                </tr>
+
+                <tr class="">
+                    <td><strong>#10</strong></td>
+                    <td><strong>Rafaed Ortiz</strong></td>
+                    <td><strong>33.0</strong> / 40</td>
+                    <td class="accounts-list">Biogen</td>
+                    <td>$705K</td>
+                    <td>TBD</td>
+                    <td>114</td>
+                </tr>
+
+                <tr class="">
+                    <td><strong>#11</strong></td>
+                    <td><strong>Logan Newman</strong></td>
+                    <td><strong>32.5</strong> / 40</td>
+                    <td class="accounts-list">General Electric, GE Power, Hyliion</td>
+                    <td>$831K</td>
+                    <td>TBD</td>
+                    <td>146</td>
+                </tr>
+
+                <tr class="">
+                    <td><strong>#12</strong></td>
+                    <td><strong>Thomas Mahoney</strong></td>
+                    <td><strong>32.0</strong> / 40</td>
+                    <td class="accounts-list">Amgen</td>
+                    <td>$1.49M</td>
+                    <td>TBD</td>
+                    <td>197</td>
+                </tr>
+
+                <tr class="">
+                    <td><strong>#13</strong></td>
+                    <td><strong>Justin Homa</strong></td>
+                    <td><strong>30.7</strong> / 40</td>
+                    <td class="accounts-list">Merck CBRE, Organon</td>
+                    <td>$1.84M*</td>
+                    <td>TBD</td>
+                    <td>155</td>
+                </tr>
+
+                <tr class="">
+                    <td><strong>#14</strong></td>
+                    <td><strong>Justin Dallavis</strong></td>
+                    <td><strong>30.5</strong> / 40</td>
+                    <td class="accounts-list">Boeing Company</td>
+                    <td>$1.00M</td>
+                    <td>TBD</td>
+                    <td>152</td>
+                </tr>
+
+                <tr class="">
+                    <td><strong>#15</strong></td>
+                    <td><strong>Tiffany Purifoy</strong></td>
+                    <td><strong>30.5</strong> / 40</td>
+                    <td class="accounts-list">Charles Schwab, Citibank, Fidelity +3 more</td>
+                    <td>$1.19M</td>
+                    <td>TBD</td>
+                    <td>227</td>
+                </tr>
+
+                <tr class="">
+                    <td><strong>#16</strong></td>
+                    <td><strong>Benjamin Ehrenberg</strong></td>
+                    <td><strong>30.0</strong> / 40</td>
+                    <td class="accounts-list">Lockheed Martin, Parsons Corporation</td>
+                    <td>$972K</td>
+                    <td>TBD</td>
+                    <td>140</td>
+                </tr>
+
+                <tr class="">
+                    <td><strong>#17</strong></td>
+                    <td><strong>Aaron Simpson</strong></td>
+                    <td><strong>29.7</strong> / 40</td>
+                    <td class="accounts-list">Mars, Ball Corporation, 3M Corp</td>
+                    <td>$989K</td>
+                    <td>TBD</td>
+                    <td>201</td>
+                </tr>
+
+                <tr class="">
+                    <td><strong>#18</strong></td>
+                    <td><strong>David Pergola</strong></td>
+                    <td><strong>28.0</strong> / 40</td>
+                    <td class="accounts-list">Merck Sodexo</td>
+                    <td>$1.60M*</td>
+                    <td>TBD</td>
+                    <td>135</td>
+                </tr>
+
+                <tr class="">
+                    <td><strong>#19</strong></td>
+                    <td><strong>Patrick Murtha</strong></td>
+                    <td><strong>26.8</strong> / 40</td>
+                    <td class="accounts-list">McKesson, Cardinal Health, IQVIA Biotech</td>
+                    <td>$764K</td>
+                    <td>TBD</td>
+                    <td>122</td>
+                </tr>
+
+                <tr class="">
+                    <td><strong>#20</strong></td>
+                    <td><strong>Peggy Shum</strong></td>
+                    <td><strong>25.0</strong> / 40</td>
+                    <td class="accounts-list">Chubb Insurance, Deutsche Bank</td>
+                    <td>$547K</td>
+                    <td>TBD</td>
+                    <td>67</td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+</div>
+
+    <div class="section">
+        <h2>Tier 6 - Headcount-Based Performance Rankings</h2>
+        <p class="section-summary">
+            11 Account Directors (250+ employees) | Avg Score: 31.8/40 | 
+            Combined Revenue: $30.94M | Total Headcount: 4,603
+        </p>
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 40px;">Rank</th>
+                    <th style="width: 120px;">Account Director</th>
+                    <th style="width: 60px;">Score</th>
+                    <th style="width: 200px;">Accounts Managed</th>
+                    <th style="width: 80px;">Revenue</th>
+                    <th style="width: 60px;">Scorecard</th>
+                    <th style="width: 60px;">Headcount</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr class="rank-1">
+                    <td><strong>#1</strong></td>
+                    <td><strong>Dustin Smith</strong></td>
+                    <td><strong>39.0</strong> / 40</td>
+                    <td class="accounts-list">Amazon</td>
+                    <td>$3.14M</td>
+                    <td>TBD</td>
+                    <td>733</td>
+                </tr>
+
+                <tr class="rank-2">
+                    <td><strong>#2</strong></td>
+                    <td><strong>Keith Deuber</strong></td>
+                    <td><strong>39.0</strong> / 40</td>
+                    <td class="accounts-list">Amazon</td>
+                    <td>$3.14M</td>
+                    <td>TBD</td>
+                    <td>733</td>
+                </tr>
+
+                <tr class="rank-3">
+                    <td><strong>#3</strong></td>
+                    <td><strong>Stuart Kelloff</strong></td>
+                    <td><strong>37.0</strong> / 40</td>
+                    <td class="accounts-list">NVIDIA, Adobe Systems</td>
+                    <td>$2.23M</td>
+                    <td>TBD</td>
+                    <td>234</td>
+                </tr>
+
+                <tr class="">
+                    <td><strong>#4</strong></td>
+                    <td><strong>Grant Frazier</strong></td>
+                    <td><strong>35.2</strong> / 40</td>
+                    <td class="accounts-list">Meta</td>
+                    <td>$4.18M</td>
+                    <td>TBD</td>
+                    <td>437</td>
+                </tr>
+
+                <tr class="">
+                    <td><strong>#5</strong></td>
+                    <td><strong>Taylor Wattenberg</strong></td>
+                    <td><strong>34.0</strong> / 40</td>
+                    <td class="accounts-list">Microsoft</td>
+                    <td>$5.38M</td>
+                    <td>TBD</td>
+                    <td>600</td>
+                </tr>
+
+                <tr class="">
+                    <td><strong>#6</strong></td>
+                    <td><strong>Paul Rhodes</strong></td>
+                    <td><strong>29.5</strong> / 40</td>
+                    <td class="accounts-list">Google, DP World</td>
+                    <td>$3.44M</td>
+                    <td>TBD</td>
+                    <td>348</td>
+                </tr>
+
+                <tr class="">
+                    <td><strong>#7</strong></td>
+                    <td><strong>Isaac Calderon</strong></td>
+                    <td><strong>29.5</strong> / 40</td>
+                    <td class="accounts-list">Bayer, MilliporeSigma, Kenvue +2 more</td>
+                    <td>$787K</td>
+                    <td>TBD</td>
+                    <td>285</td>
+                </tr>
+
+                <tr class="">
+                    <td><strong>#8</strong></td>
+                    <td><strong>Jacob Reed</strong></td>
+                    <td><strong>29.0</strong> / 40</td>
+                    <td class="accounts-list">Tesla Inc - Jacob Reed</td>
+                    <td>$2.43M</td>
+                    <td>TBD</td>
+                    <td>527</td>
+                </tr>
+
+                <tr class="">
+                    <td><strong>#9</strong></td>
+                    <td><strong>Brian Davis</strong></td>
+                    <td><strong>27.5</strong> / 40</td>
+                    <td class="accounts-list">Merck</td>
+                    <td>$4.08M</td>
+                    <td>TBD</td>
+                    <td>345</td>
+                </tr>
+
+                <tr class="">
+                    <td><strong>#10</strong></td>
+                    <td><strong>Rade Kukobat</strong></td>
+                    <td><strong>26.2</strong> / 40</td>
+                    <td class="accounts-list">Eli Lilly LCC/LRL</td>
+                    <td>$432K*</td>
+                    <td>TBD</td>
+                    <td>83*</td>
+                </tr>
+
+                <tr class="">
+                    <td><strong>#11</strong></td>
+                    <td><strong>Gregory DeMedio</strong></td>
+                    <td><strong>23.7</strong> / 40</td>
+                    <td class="accounts-list">Abbott Labs</td>
+                    <td>$1.71M</td>
+                    <td>TBD</td>
+                    <td>278</td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+
+            </tbody>
+        </table>
+    </div>
+<div class="tier-container" style="page-break-after: always;">
+    <div class="section">
+        <h2>Manufacturing Vertical</h2>
+        <p class="section-summary">
+            7 Account Directors | Avg Performance Score: 32.3/40 | 
+            Combined Revenue: $5.90M | Total Headcount: 1,014
+        </p>
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 40px;">Rank</th>
+                    <th style="width: 120px;">Account Director</th>
+                    <th style="width: 80px;">Performance Grade</th>
+                    <th style="width: 60px;">Score</th>
+                    <th style="width: 180px;">Accounts Managed</th>
+                    <th style="width: 80px;">Revenue</th>
+                    <th style="width: 60px;">Scorecard</th>
+                    <th style="width: 60px;">Headcount</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr class="rank-1">
+                    <td><strong>#1</strong></td>
+                    <td><strong>Nicholas Trenkamp</strong></td>
+                    <td><span class="tier-badge grade-a">A-</span></td>
+                    <td><strong>35.0</strong> / 40</td>
+                    <td class="accounts-list">Procter & Gamble Company</td>
+                    <td>$733K</td>
+                    <td>4.86</td>
+                    <td>113</td>
+                </tr>
+
+                <tr class="rank-2">
+                    <td><strong>#2</strong></td>
+                    <td><strong>Ayesha Nasir</strong></td>
+                    <td><span class="tier-badge grade-b">B+</span></td>
+                    <td><strong>34.5</strong> / 40</td>
+                    <td class="accounts-list">Westinghouse, DuPont</td>
+                    <td>$369K</td>
+                    <td>4.86</td>
+                    <td>66</td>
+                </tr>
+
+                <tr class="rank-3">
+                    <td><strong>#3</strong></td>
+                    <td><strong>Kimberly Wittekind</strong></td>
+                    <td><span class="tier-badge grade-b">B</span></td>
+                    <td><strong>33.7</strong> / 40</td>
+                    <td class="accounts-list">Nestle, GE Healthcare, Piper Aircraft</td>
+                    <td>$1.00M</td>
+                    <td>4.86</td>
+                    <td>196</td>
+                </tr>
+
+                <tr class="">
+                    <td><strong>#4</strong></td>
+                    <td><strong>Logan Newman</strong></td>
+                    <td><span class="tier-badge grade-b">B</span></td>
+                    <td><strong>32.5</strong> / 40</td>
+                    <td class="accounts-list">General Electric, GE Power, Hyliion</td>
+                    <td>$831K</td>
+                    <td>4.86</td>
+                    <td>146</td>
+                </tr>
+
+                <tr class="">
+                    <td><strong>#5</strong></td>
+                    <td><strong>Justin Dallavis</strong></td>
+                    <td><span class="tier-badge grade-b">B-</span></td>
+                    <td><strong>30.5</strong> / 40</td>
+                    <td class="accounts-list">Boeing Company</td>
+                    <td>$1.00M</td>
+                    <td>4.86</td>
+                    <td>152</td>
+                </tr>
+
+                <tr class="">
+                    <td><strong>#6</strong></td>
+                    <td><strong>Benjamin Ehrenberg</strong></td>
+                    <td><span class="tier-badge grade-b">B-</span></td>
+                    <td><strong>30.0</strong> / 40</td>
+                    <td class="accounts-list">Lockheed Martin, Parsons Corporation</td>
+                    <td>$972K</td>
+                    <td>4.86</td>
+                    <td>140</td>
+                </tr>
+
+                <tr class="">
+                    <td><strong>#7</strong></td>
+                    <td><strong>Aaron Simpson</strong></td>
+                    <td><span class="tier-badge grade-c">C+</span></td>
+                    <td><strong>29.7</strong> / 40</td>
+                    <td class="accounts-list">Mars, Ball Corporation, 3M Corp</td>
+                    <td>$989K</td>
+                    <td>4.86</td>
+                    <td>201</td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+</div><div class="tier-container" style="page-break-after: always;">
+    <div class="section">
+        <h2>Distribution Vertical</h2>
+        <p class="section-summary">
+            3 Account Directors | Avg Performance Score: 35.6/40 | 
+            Combined Revenue: $7.92M | Total Headcount: 1,545
+        </p>
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 40px;">Rank</th>
+                    <th style="width: 120px;">Account Director</th>
+                    <th style="width: 80px;">Performance Grade</th>
+                    <th style="width: 60px;">Score</th>
+                    <th style="width: 180px;">Accounts Managed</th>
+                    <th style="width: 80px;">Revenue</th>
+                    <th style="width: 60px;">Scorecard</th>
+                    <th style="width: 60px;">Headcount</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr class="rank-1">
+                    <td><strong>#1</strong></td>
+                    <td><strong>Dustin Smith</strong></td>
+                    <td><span class="tier-badge grade-a">A+</span></td>
+                    <td><strong>39.0</strong> / 40</td>
+                    <td class="accounts-list">Amazon</td>
+                    <td>$3.14M</td>
+                    <td>4.86</td>
+                    <td>733</td>
+                </tr>
+
+                <tr class="rank-2">
+                    <td><strong>#2</strong></td>
+                    <td><strong>Keith Deuber</strong></td>
+                    <td><span class="tier-badge grade-a">A+</span></td>
+                    <td><strong>39.0</strong> / 40</td>
+                    <td class="accounts-list">Amazon</td>
+                    <td>$3.14M</td>
+                    <td>4.86</td>
+                    <td>733</td>
+                </tr>
+
+                <tr class="rank-3">
+                    <td><strong>#3</strong></td>
+                    <td><strong>Jack Thornton</strong></td>
+                    <td><span class="tier-badge grade-c">C+</span></td>
+                    <td><strong>28.7</strong> / 40</td>
+                    <td class="accounts-list">Nike, GXO Logistics</td>
+                    <td>$1.65M</td>
+                    <td>4.86</td>
+                    <td>79*</td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+
+    <div class="section">
+        <h2>Life Science Vertical</h2>
+        <p class="section-summary">
+            14 Account Directors | Avg Performance Score: 31.6/40 | 
+            Combined Revenue: $19.52M | Total Headcount: 2,448
+        </p>
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 40px;">Rank</th>
+                    <th style="width: 120px;">Account Director</th>
+                    <th style="width: 80px;">Performance Grade</th>
+                    <th style="width: 60px;">Score</th>
+                    <th style="width: 180px;">Accounts Managed</th>
+                    <th style="width: 80px;">Revenue</th>
+                    <th style="width: 60px;">Scorecard</th>
+                    <th style="width: 60px;">Headcount</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr class="rank-1">
+                    <td><strong>#1</strong></td>
+                    <td><strong>Luis Cabrera</strong></td>
+                    <td><span class="tier-badge grade-a">A</span></td>
+                    <td><strong>38.2</strong> / 40</td>
+                    <td class="accounts-list">Takeda Pharmaceutical</td>
+                    <td>$933K</td>
+                    <td>4.86</td>
+                    <td>123</td>
+                </tr>
+
+                <tr class="rank-2">
+                    <td><strong>#2</strong></td>
+                    <td><strong>Michael Barry</strong></td>
+                    <td><span class="tier-badge grade-a">A</span></td>
+                    <td><strong>38.0</strong> / 40</td>
+                    <td class="accounts-list">Bristol Myers Squibb, Novartis</td>
+                    <td>$1.49M</td>
+                    <td>4.86</td>
+                    <td>212</td>
+                </tr>
+
+                <tr class="rank-3">
+                    <td><strong>#3</strong></td>
+                    <td><strong>Scott Kimball</strong></td>
+                    <td><span class="tier-badge grade-a">A</span></td>
+                    <td><strong>37.3</strong> / 40</td>
+                    <td class="accounts-list">Sanofi, Moderna Biotechnology Company</td>
+                    <td>$1.26M</td>
+                    <td>4.86</td>
+                    <td>188</td>
+                </tr>
+
+                <tr class="">
+                    <td><strong>#4</strong></td>
+                    <td><strong>Jacqueline Maravilla</strong></td>
+                    <td><span class="tier-badge grade-a">A-</span></td>
+                    <td><strong>36.0</strong> / 40</td>
+                    <td class="accounts-list">Lonza Biologics, Genentech</td>
+                    <td>$1.76M</td>
+                    <td>4.86</td>
+                    <td>113</td>
+                </tr>
+
+                <tr class="">
+                    <td><strong>#5</strong></td>
+                    <td><strong>Giselle Langelier</strong></td>
+                    <td><span class="tier-badge grade-a">A-</span></td>
+                    <td><strong>35.5</strong> / 40</td>
+                    <td class="accounts-list">Medtronic, Capsida Biotherapeutics, Fuji Film</td>
+                    <td>$672K</td>
+                    <td>4.86</td>
+                    <td>98</td>
+                </tr>
+
+                <tr class="">
+                    <td><strong>#6</strong></td>
+                    <td><strong>Rafaed Ortiz</strong></td>
+                    <td><span class="tier-badge grade-b">B</span></td>
+                    <td><strong>33.0</strong> / 40</td>
+                    <td class="accounts-list">Biogen</td>
+                    <td>$705K</td>
+                    <td>4.86</td>
+                    <td>114</td>
+                </tr>
+
+                <tr class="">
+                    <td><strong>#7</strong></td>
+                    <td><strong>Thomas Mahoney</strong></td>
+                    <td><span class="tier-badge grade-b">B</span></td>
+                    <td><strong>32.0</strong> / 40</td>
+                    <td class="accounts-list">Amgen</td>
+                    <td>$1.49M</td>
+                    <td>4.86</td>
+                    <td>197</td>
+                </tr>
+
+                <tr class="">
+                    <td><strong>#8</strong></td>
+                    <td><strong>Justin Homa</strong></td>
+                    <td><span class="tier-badge grade-b">B-</span></td>
+                    <td><strong>30.7</strong> / 40</td>
+                    <td class="accounts-list">Merck CBRE, Organon</td>
+                    <td>$1.84M*</td>
+                    <td>4.86</td>
+                    <td>155</td>
+                </tr>
+
+                <tr class="">
+                    <td><strong>#9</strong></td>
+                    <td><strong>Isaac Calderon</strong></td>
+                    <td><span class="tier-badge grade-c">C+</span></td>
+                    <td><strong>29.5</strong> / 40</td>
+                    <td class="accounts-list">Bayer, MilliporeSigma, Kenvue +2 more</td>
+                    <td>$787K</td>
+                    <td>4.86</td>
+                    <td>285</td>
+                </tr>
+
+                <tr class="">
+                    <td><strong>#10</strong></td>
+                    <td><strong>David Pergola</strong></td>
+                    <td><span class="tier-badge grade-c">C</span></td>
+                    <td><strong>28.0</strong> / 40</td>
+                    <td class="accounts-list">Merck Sodexo</td>
+                    <td>$1.60M*</td>
+                    <td>4.86</td>
+                    <td>135</td>
+                </tr>
+
+                <tr class="">
+                    <td><strong>#11</strong></td>
+                    <td><strong>Brian Davis</strong></td>
+                    <td><span class="tier-badge grade-c">C</span></td>
+                    <td><strong>27.5</strong> / 40</td>
+                    <td class="accounts-list">Merck</td>
+                    <td>$4.08M</td>
+                    <td>4.86</td>
+                    <td>345</td>
+                </tr>
+
+                <tr class="">
+                    <td><strong>#12</strong></td>
+                    <td><strong>Patrick Murtha</strong></td>
+                    <td><span class="tier-badge grade-c">C</span></td>
+                    <td><strong>26.8</strong> / 40</td>
+                    <td class="accounts-list">McKesson, Cardinal Health, IQVIA Biotech</td>
+                    <td>$764K</td>
+                    <td>4.86</td>
+                    <td>122</td>
+                </tr>
+
+                <tr class="">
+                    <td><strong>#13</strong></td>
+                    <td><strong>Rade Kukobat</strong></td>
+                    <td><span class="tier-badge grade-c">C</span></td>
+                    <td><strong>26.2</strong> / 40</td>
+                    <td class="accounts-list">Eli Lilly LCC/LRL</td>
+                    <td>$432K*</td>
+                    <td>4.86</td>
+                    <td>83*</td>
+                </tr>
+
+                <tr class="">
+                    <td><strong>#14</strong></td>
+                    <td><strong>Gregory DeMedio</strong></td>
+                    <td><span class="tier-badge grade-d">D</span></td>
+                    <td><strong>23.7</strong> / 40</td>
+                    <td class="accounts-list">Abbott Labs</td>
+                    <td>$1.71M</td>
+                    <td>4.86</td>
+                    <td>278</td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+
+    <div class="section">
+        <h2>Finance Vertical</h2>
+        <p class="section-summary">
+            3 Account Directors | Avg Performance Score: 27.2/40 | 
+            Combined Revenue: $2.24M | Total Headcount: 378
+        </p>
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 40px;">Rank</th>
+                    <th style="width: 120px;">Account Director</th>
+                    <th style="width: 80px;">Performance Grade</th>
+                    <th style="width: 60px;">Score</th>
+                    <th style="width: 180px;">Accounts Managed</th>
+                    <th style="width: 80px;">Revenue</th>
+                    <th style="width: 60px;">Scorecard</th>
+                    <th style="width: 60px;">Headcount</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr class="rank-1">
+                    <td><strong>#1</strong></td>
+                    <td><strong>Tiffany Purifoy</strong></td>
+                    <td><span class="tier-badge grade-b">B-</span></td>
+                    <td><strong>30.5</strong> / 40</td>
+                    <td class="accounts-list">Charles Schwab, Citibank, Fidelity +3 more</td>
+                    <td>$1.19M</td>
+                    <td>4.86</td>
+                    <td>227</td>
+                </tr>
+
+                <tr class="rank-2">
+                    <td><strong>#2</strong></td>
+                    <td><strong>Julie Bianchi</strong></td>
+                    <td><span class="tier-badge grade-c">C</span></td>
+                    <td><strong>26.0</strong> / 40</td>
+                    <td class="accounts-list">CIGNA, Elevance Health</td>
+                    <td>$501K</td>
+                    <td>4.86</td>
+                    <td>84</td>
+                </tr>
+
+                <tr class="rank-3">
+                    <td><strong>#3</strong></td>
+                    <td><strong>Peggy Shum</strong></td>
+                    <td><span class="tier-badge grade-c">C-</span></td>
+                    <td><strong>25.0</strong> / 40</td>
+                    <td class="accounts-list">Chubb Insurance, Deutsche Bank</td>
+                    <td>$547K</td>
+                    <td>4.86</td>
+                    <td>67</td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+</div><div class="tier-container">
+    <div class="section">
+        <h2>Technology Vertical</h2>
+        <p class="section-summary">
+            8 Account Directors | Avg Performance Score: 33.4/40 | 
+            Combined Revenue: $21.70M | Total Headcount: 2,655
+        </p>
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 40px;">Rank</th>
+                    <th style="width: 120px;">Account Director</th>
+                    <th style="width: 80px;">Performance Grade</th>
+                    <th style="width: 60px;">Score</th>
+                    <th style="width: 180px;">Accounts Managed</th>
+                    <th style="width: 80px;">Revenue</th>
+                    <th style="width: 60px;">Scorecard</th>
+                    <th style="width: 60px;">Headcount</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr class="rank-1">
+                    <td><strong>#1</strong></td>
+                    <td><strong>Stuart Kelloff</strong></td>
+                    <td><span class="tier-badge grade-a">A</span></td>
+                    <td><strong>37.0</strong> / 40</td>
+                    <td class="accounts-list">NVIDIA, Adobe Systems</td>
+                    <td>$2.23M</td>
+                    <td>4.86</td>
+                    <td>234</td>
+                </tr>
+
+                <tr class="rank-2">
+                    <td><strong>#2</strong></td>
+                    <td><strong>Grant Frazier</strong></td>
+                    <td><span class="tier-badge grade-a">A-</span></td>
+                    <td><strong>35.2</strong> / 40</td>
+                    <td class="accounts-list">Meta</td>
+                    <td>$4.18M</td>
+                    <td>4.86</td>
+                    <td>437</td>
+                </tr>
+
+                <tr class="rank-3">
+                    <td><strong>#3</strong></td>
+                    <td><strong>Ana Sabater</strong></td>
+                    <td><span class="tier-badge grade-b">B+</span></td>
+                    <td><strong>34.5</strong> / 40</td>
+                    <td class="accounts-list">LinkedIn, Uber, Scale AI</td>
+                    <td>$1.28M</td>
+                    <td>4.86</td>
+                    <td>127</td>
+                </tr>
+
+                <tr class="">
+                    <td><strong>#4</strong></td>
+                    <td><strong>Siddarth Shah</strong></td>
+                    <td><span class="tier-badge grade-b">B+</span></td>
+                    <td><strong>34.2</strong> / 40</td>
+                    <td class="accounts-list">Micron Tech, Mp Mask Technology Center</td>
+                    <td>$1.22M</td>
+                    <td>4.86</td>
+                    <td>196</td>
+                </tr>
+
+                <tr class="">
+                    <td><strong>#5</strong></td>
+                    <td><strong>Mark Schlerf</strong></td>
+                    <td><span class="tier-badge grade-b">B+</span></td>
+                    <td><strong>34.0</strong> / 40</td>
+                    <td class="accounts-list">LAM Research, Hewlett-Packard, HPE +4 more</td>
+                    <td>$1.54M</td>
+                    <td>4.86</td>
+                    <td>186</td>
+                </tr>
+
+                <tr class="">
+                    <td><strong>#6</strong></td>
+                    <td><strong>Taylor Wattenberg</strong></td>
+                    <td><span class="tier-badge grade-b">B+</span></td>
+                    <td><strong>34.0</strong> / 40</td>
+                    <td class="accounts-list">Microsoft</td>
+                    <td>$5.38M</td>
+                    <td>4.86</td>
+                    <td>600</td>
+                </tr>
+
+                <tr class="">
+                    <td><strong>#7</strong></td>
+                    <td><strong>Paul Rhodes</strong></td>
+                    <td><span class="tier-badge grade-c">C+</span></td>
+                    <td><strong>29.5</strong> / 40</td>
+                    <td class="accounts-list">Google, DP World</td>
+                    <td>$3.44M</td>
+                    <td>4.86</td>
+                    <td>348</td>
+                </tr>
+
+                <tr class="">
+                    <td><strong>#8</strong></td>
+                    <td><strong>Jacob Reed</strong></td>
+                    <td><span class="tier-badge grade-c">C+</span></td>
+                    <td><strong>29.0</strong> / 40</td>
+                    <td class="accounts-list">Tesla Inc - Jacob Reed</td>
+                    <td>$2.43M</td>
+                    <td>4.86</td>
+                    <td>527</td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+</div>
+    
+    <div style="margin-top: 2rem; padding: 1rem; background: #f9fafb; border-left: 4px solid #3b82f6; font-size: 8pt;">
+        <p style="margin: 0; font-weight: 600; color: #1f2937; margin-bottom: 0.5rem;">Notes:</p>
+        <p style="margin: 0.25rem 0; color: #4b5563;">
+            <strong>*Revenue (Calculated):</strong> Revenue figures marked with an asterisk are calculated based on headcount-to-revenue ratios from related portfolios, as these Account Directors manage sub-sections of larger accounts.
+        </p>
+        <p style="margin: 0.25rem 0; color: #4b5563;">
+            <strong>*Headcount (AD-Confirmed):</strong> Headcount figures marked with an asterisk reflect Account Director-confirmed adjustments that differ from system-reported values, ensuring accuracy for performance evaluation.
+        </p>
     </div>
     
     </div> <!-- Close report-content -->

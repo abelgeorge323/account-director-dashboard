@@ -1,18 +1,44 @@
-Account Director,Vertical,Tier
-Benjamin Ehrenberg,Manufacturing,Tier 5
-Brian Davis,Life Science,Tier 6
-Justin Homa,Life Science,Tier 5
-Mark Schlerf,Technology,Tier 5
-Grant Frazier,Technology,Tier 6
-Stuart Kelloff,Technology,Tier 6
-Jacqueline Maravilla,Life Science,Tier 5
-Paul Rhodes,Technology,Tier 6
-Kimberly Wittekind,Manufacturing,Tier 5
-Peggy Shum,Finance,Tier 5
-Ana Sabater,Technology,Tier 5
-Taylor Wattenberg,Technology,Tier 6
-Jack Thornton,Distribution,Tier 4
-Isaac Calderon,Life Science,Tier 6
-Patrick Murtha,Life Science,Tier 5
-Aaron Simpson,Manufacturing,Tier 5
-Justin Dallavis,Manufacturing,Tier 5
+Account Director,Vertical,Tier,Scorecard
+Benjamin Ehrenberg,Manufacturing,Tier 5,4.99
+Brian Davis,Life Science,Tier 6,4.98
+Justin Homa,Life Science,Tier 5,5.00
+Mark Schlerf,Technology,Tier 5,4.93
+Grant Frazier,Technology,Tier 6,4.86
+Stuart Kelloff,Technology,Tier 6,4.75
+Jacqueline Maravilla,Life Science,Tier 5,5.00
+Paul Rhodes,Technology,Tier 6,4.86
+Kimberly Wittekind,Manufacturing,Tier 5,4.76
+Peggy Shum,Finance,Tier 5,4.85
+Ana Sabater,Technology,Tier 5,4.92
+Taylor Wattenberg,Technology,Tier 6,4.92
+Jack Thornton,Distribution,Tier 4,5.00
+Isaac Calderon,Life Science,Tier 6,4.87
+Patrick Murtha,Life Science,Tier 5,4.94
+Aaron Simpson,Manufacturing,Tier 5,4.67
+Justin Dallavis,Manufacturing,Tier 5,4.86
+David Pergola,Life Science,Tier 5,4.88
+Thomas Mahoney,Life Science,Tier 5,4.78
+Giselle Langelier,Life Science,Tier 4,4.95
+Rade Kukobat,Life Science,Tier 6,4.53
+Gregory DeMedio,Life Science,Tier 6,4.86
+Logan Newman,Manufacturing,Tier 5,4.71
+Luis Cabrera,Life Science,Tier 5,4.77
+Scott Kimball,Life Science,Tier 5,4.84
+Nicholas Trenkamp,Manufacturing,Tier 5,4.98 
+Julie Bianchi,Finance,Tier 4,4.87
+Jacob Reed,Technology,Tier 6,4.01
+Ayesha Nasir,Manufacturing,Tier 4,4.90
+Mike Barry,Life Science,Tier 5,4.96
+Siddarth Shah,Technology,Tier 5,4.89
+Dustin Smith,Distribution,Tier 6,4.48
+Joshua Grady,Life Science,Tier 5,
+Collen Doles,Finance,Tier 6,
+Berenday Escamilla,Finance,Tier 4,
+Tiffany Purifoy,Finance,Tier 5,4.91
+RJ Ober,Technology,Tier 5,
+Jeremy Johnson,Technology,Tier 6,
+Corey Wallace,Life Science,Tier 5,
+Jennifer Segovia,Manufacturing,Tier 4,
+Robert Wallen,Automotive,Tier 5,
+Rafaed Ortiz,Life Science,Tier 5,4.48
+Keith Deuber,Distribution,Tier 6,4.48

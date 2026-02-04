@@ -329,6 +329,58 @@
       "leadership_endorsement": "Valarie Barnett: 'I'm comfortable with your ForSight skills'; James Peate praised diligence"
     }
   ],
-  "Peggy Shum": []
+  "Peggy Shum": [],
+  "Dave Pergola": [
+    {
+      "title": "Site Consolidation Without Disruption",
+      "category": "Operational Excellence & Change Management",
+      "description": "Managed consolidation of Kenilworth and Madison locations into Rahway HQ, doubling headcount from 3,000 to 6,500 without disrupting business continuity",
+      "context": "Merck consolidated operations to save on facility costs and upgrade infrastructure. Dave coordinated entire project with zero union grievances, no work stoppages, no escalations. Required extensive transitional calls with Sodexo and Merck to ensure effective communication and stakeholder alignment throughout.",
+      "impact": "Seamless transition with no operational disruptions; demonstrated effectiveness in managing complex change and stakeholder engagement",
+      "replicability": "High",
+      "status": "Proven & Active",
+      "leadership_endorsement": "Valarie acknowledged successful execution"
+    },
+    {
+      "title": "Strategic Value-Add Conversion ($69K/month ATB → Base Revenue)",
+      "category": "Financial Strategy & Partnership Positioning",
+      "description": "Delivered cost-neutral cleaning services for RY3034 executive spaces (Conference Center, ADB Office Center, Wellness Center) worth $69K/month, then negotiated incorporation into base scope",
+      "context": "Instead of charging ATB immediately, Dave provided services 'in good faith' to demonstrate partnership and help Merck find efficiencies. Strategic play: give value now, convert to permanent base revenue growth later. With new work releases, all recurring ATB (including this $69K/month) will be incorporated into base scope.",
+      "impact": "$69K/month value-add converted into base revenue growth; demonstrated flexibility and client-first partnership",
+      "replicability": "Very High",
+      "status": "Converting to Base (2026)",
+      "leadership_endorsement": "Valarie: 'Congratulations on that. So now you were doing something for free as a value add that you then flipped into...'"
+    },
+    {
+      "title": "Direct Contractor Revenue Protection ($475K ATB)",
+      "category": "Business Development & Strategic Positioning",
+      "description": "Specialized cleaning services for Merck's direct construction/decommissioning projects and contractor trailers - $475K ATB revenue protected from IFM partner claiming management fees",
+      "context": "Sodexo attempted to claim management fees on this revenue, arguing they manage SBM. Dave/team pushed back: 'We're under contract with you for Merck AND we're under a direct contract with this construction company - we should not pay you on top of getting paid for work outside our contract.' Successfully protected revenue stream.",
+      "impact": "$475K annual revenue retained; positioned for growth as new buildings come online",
+      "replicability": "Medium",
+      "status": "Proven & Active",
+      "leadership_endorsement": "Marvin: 'This is that revenue that Sodexo was trying to get their hands on that we pushed back on'"
+    },
+    {
+      "title": "Centralized Trashing Model Campus-Wide",
+      "category": "Operational Excellence & Sustainability",
+      "description": "50+ centralized trash stations installed campus-wide (ABW buildings Phase 1, expanding to full campus Phase 2)",
+      "context": "Eliminated office-by-office trash collection, freeing up labor for critical tasks. Result: 25% increase in servicing efficiency, 2% reduction in recycling contamination, cleanliness ratings improved 3.5 → 3.8 out of 5. Cost savings from reduced productivity time and liner consumption.",
+      "impact": "Operational efficiency increased 25%; employee satisfaction improved; cost savings from labor/consumables",
+      "replicability": "Very High",
+      "status": "Expanding (Phase 2 starting)",
+      "leadership_endorsement": "Valarie: 'I think this is probably exemplary. Best practice could be shared throughout SBM.'"
+    },
+    {
+      "title": "ABW Portering Optimization ($404K Savings)",
+      "category": "Financial Strategy & Workforce Optimization",
+      "description": "Optimized activity-based workstation porter services (5 FTEs reduced), delivering $404K cost savings while maintaining quality standards",
+      "context": "Reduced service hours without sacrificing user experience. Stable complaint rates, SLA adherence maintained. Effective stakeholder communication and performance metric monitoring were crucial to validate savings and maintain service quality.",
+      "impact": "$404K annual savings; demonstrated ability to reduce costs without quality degradation",
+      "replicability": "High",
+      "status": "Proven & Active",
+      "leadership_endorsement": "Valarie Barnett acknowledged successful execution"
+    }
+  ]
 }
 

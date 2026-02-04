@@ -1,0 +1,93 @@
+Account Director,Account Name,Source File,Revenue ($K),Headcount,Zero Revenue Flag,Total Revenue,Total Headcount
+Aaron Simpson,3M Corp,MANUFACTURING.csv,4.0,1.0,NO,989.0,201.0
+,Ball Corporation,MANUFACTURING.csv,246.0,43.0,NO,,
+,Mars,MANUFACTURING.csv,739.0,157.0,NO,,
+Ana Sabater,Uber,TECHNOLOGY.csv,399.0,45.0,NO,1283.0,127.0
+,Scale AI,TECHNOLOGY.csv,106.0,10.0,NO,,
+,LinkedIn,TECHNOLOGY.csv,778.0,72.0,NO,,
+Ayesha Nasir,DuPont,MANUFACTURING.csv,42.0,10.0,NO,369.0,66.0
+,Westinghouse,MANUFACTURING.csv,327.0,56.0,NO,,
+Benjamin Ehrenberg,Lockheed Martin,MANUFACTURING.csv,968.0,140.0,NO,972.0,140.0
+,Parsons Corporation,MANUFACTURING.csv,4.0,0,NO,,
+Berenday Escamilla,USAA,FINANCE.csv,419.0,98.0,NO,419.0,98.0
+Brian Davis,Merck,LIFE SCIENCE.csv,77.0,345.0,NO,77.0,345.0
+Colleen Doles,Wells Fargo,FINANCE.csv,58.0,369.0,NO,58.0,369.0
+Corey Wallace,AbbVie,LIFE SCIENCE.csv,278.0,49.0,NO,771.0,157.0
+,Siemens,LIFE SCIENCE.csv,9.0,1.0,NO,,
+,Siemens Healthineers,LIFE SCIENCE.csv,23.0,7.0,NO,,
+,Geico,FINANCE.csv,461.0,100.0,NO,,
+David Pergola,NO ACCOUNTS FOUND,,0,0,,0,0
+Dustin Smith,Amazon,DISTRIBUTION.csv,140.0,733.0,NO,140.0,733.0
+Giselle Langelier,Medtronic,LIFE SCIENCE.csv,586.0,85.0,NO,672.0,98.0
+,Capsida Biotherapeutics,LIFE SCIENCE.csv,57.0,7.0,NO,,
+,Fuji Film,LIFE SCIENCE.csv,29.0,6.0,NO,,
+Grant Frazier,NO ACCOUNTS FOUND,,0,0,,0,0
+Gregory DeMedio,NO ACCOUNTS FOUND,,0,0,,0,0
+Isaac Calderon,Johnson & Johnson,LIFE SCIENCE.csv,0,0,YES - REMOVE,1240.0,285.0
+,MilliporeSigma,LIFE SCIENCE.csv,183.0,38.0,NO,,
+,Bayer,LIFE SCIENCE.csv,511.0,86.0,NO,,
+,Bluerock Therapeutics,LIFE SCIENCE.csv,7.0,1.0,NO,,
+,Kenvue,LIFE SCIENCE.csv,86.0,10.0,NO,,
+,Johnson & Johnson - Puerto Rico,(01.22.26) VL & AD Rankings w RD Metrics (December 2025) PR.csv,321.0,108.0,NO,,
+,Kenvue - Puerto Rico,(01.22.26) VL & AD Rankings w RD Metrics (December 2025) PR.csv,132.0,42.0,NO,,
+Jack Thornton,Nike,DISTRIBUTION.csv,635.0,272.0,NO,645.0,272.0
+,GXO Logistics,DISTRIBUTION.csv,10.0,0,NO,,
+Jacob Reed,Tesla Inc,AUTOMOTIVE.csv,431.0,527.0,NO,431.0,527.0
+Jacqueline Maravilla,Genentech,LIFE SCIENCE.csv,276.0,31.0,NO,759.0,113.0
+,Lonza Biologics,LIFE SCIENCE.csv,483.0,82.0,NO,,
+Jennifer Segovia,General Dynamics,MANUFACTURING.csv,283.0,47.0,NO,495.0,81.0
+,Bombardier Learjet,MANUFACTURING.csv,0,0,YES - REMOVE,,
+,Northrop Grumman,MANUFACTURING.csv,212.0,34.0,NO,,
+Jeremy Johnson,Intel,MANUFACTURING.csv,397.0,479.0,NO,504.0,490.0
+,Altera,MANUFACTURING.csv,107.0,11.0,NO,,
+Joshua Grady,Gilead Sciences,LIFE SCIENCE.csv,215.0,146.0,NO,286.0,159.0
+,Avid Biodevices,LIFE SCIENCE.csv,71.0,13.0,NO,,
+Julie Bianchi,CIGNA,FINANCE.csv,354.0,60.0,NO,501.0,84.0
+,Elevance Health,FINANCE.csv,147.0,24.0,NO,,
+Justin Dallavis,Boeing Company,MANUFACTURING.csv,2.0,152.0,NO,2.0,152.0
+Justin Homa,Organon,LIFE SCIENCE.csv,7.0,0,NO,7.0,0
+Kimberly Wittekind,Nestle,MANUFACTURING.csv,646.0,127.0,NO,1005.0,196.0
+,GE Healthcare,MANUFACTURING.csv,359.0,69.0,NO,,
+,Piper Aircraft,MANUFACTURING.csv,0,0,YES - REMOVE,,
+Logan Newman,General Electric,MANUFACTURING.csv,708.0,127.0,NO,831.0,146.0
+,Hyliion,MANUFACTURING.csv,14.0,1.0,NO,,
+,GE Power,MANUFACTURING.csv,109.0,18.0,NO,,
+Luis Cabrera,Takeda Pharmaceutical,LIFE SCIENCE.csv,933.0,123.0,NO,933.0,123.0
+Mark Schlerf,Hewlett-Packard,MANUFACTURING.csv,331.0,60.0,NO,1387.0,172.0
+,Texas Instruments,MANUFACTURING.csv,0,0,YES - REMOVE,,
+,Conduent,MANUFACTURING.csv,72.0,11.0,NO,,
+,Siltronic Corp,MANUFACTURING.csv,65.0,8.0,NO,,
+,Photronics,MANUFACTURING.csv,16.0,1.0,NO,,
+,LAM Research,MANUFACTURING.csv,903.0,92.0,NO,,
+Michael Barry,Novartis,LIFE SCIENCE.csv,648.0,86.0,NO,1623.0,247.0
+,Bristol Myers Squibb,LIFE SCIENCE.csv,846.0,126.0,NO,,
+,Bristol Myers Squibb - Puerto Rico,(01.22.26) VL & AD Rankings w RD Metrics (December 2025) PR.csv,129.0,35.0,NO,,
+Nicholas Trenkamp,Procter & Gamble Company,MANUFACTURING.csv,733.0,113.0,NO,733.0,113.0
+Patrick Murtha,Cardinal Health,LIFE SCIENCE.csv,196.0,29.0,NO,764.0,122.0
+,IQVIA Biotech,LIFE SCIENCE.csv,79.0,20.0,NO,,
+,McKesson,LIFE SCIENCE.csv,489.0,73.0,NO,,
+Paul Rhodes,Google,TECHNOLOGY.csv,398.0,342.0,NO,442.0,348.0
+,DP World,DISTRIBUTION.csv,44.0,6.0,NO,,
+Peggy Shum,Chubb Insurance,FINANCE.csv,119.0,26.0,NO,547.0,67.0
+,Deutsche Bank,FINANCE.csv,428.0,41.0,NO,,
+Rade Kukobat,NO ACCOUNTS FOUND,,0,0,,0,0
+Rafaed Ortiz,Biogen,LIFE SCIENCE.csv,705.0,114.0,NO,705.0,114.0
+Robert Wallen,General Motors,AUTOMOTIVE.csv,675.0,80.0,NO,927.0,123.0
+,Detroit Diesel,AUTOMOTIVE.csv,252.0,43.0,NO,,
+Russell Ober,IBM,TECHNOLOGY.csv,550.0,92.0,NO,697.0,113.0
+,IRG Realty Advisors,TECHNOLOGY.csv,82.0,13.0,NO,,
+,Computershare,TECHNOLOGY.csv,65.0,8.0,NO,,
+Scott Kimball,Moderna Biotechnology Company,LIFE SCIENCE.csv,0,0,YES - REMOVE,257.0,188.0
+,Sanofi,LIFE SCIENCE.csv,257.0,188.0,NO,,
+Siddarth Shah,Micron Tech,MANUFACTURING.csv,171.0,185.0,NO,222.0,196.0
+,Mp Mask Technology Center,MANUFACTURING.csv,51.0,11.0,NO,,
+Stuart Kelloff,NVIDIA,TECHNOLOGY.csv,375.0,128.0,NO,531.0,142.0
+,HPE,TECHNOLOGY.csv,156.0,14.0,NO,,
+Taylor Wattenberg,NO ACCOUNTS FOUND,,0,0,,0,0
+Thomas Mahoney,Amgen,LIFE SCIENCE.csv,493.0,197.0,NO,493.0,197.0
+Tiffany Purifoy,JP Morgan Chase,FINANCE.csv,0,0,YES - REMOVE,1192.0,227.0
+,Fidelity,FINANCE.csv,197.0,47.0,NO,,
+,State Farm Ins,FINANCE.csv,128.0,23.0,NO,,
+,Charles Schwab,FINANCE.csv,454.0,65.0,NO,,
+,T Rowe Price,FINANCE.csv,175.0,39.0,NO,,
+,Citibank,FINANCE.csv,238.0,53.0,NO,,
