@@ -418,9 +418,14 @@ def aggregate_reviews(reviews, verticals, financial_data):
             'growth_avg': None
         })
         
+        # Get accounts list and create display string
+        accounts_list = fin_data.get('accounts', [])
+        account_display = ', '.join(accounts_list) if accounts_list else 'undefined'
+        
         ad_entry = {
             "accountDirector": ad_name,
-            "accounts": fin_data.get('accounts', []),
+            "account": account_display,  # For frontend compatibility (singular, joined string)
+            "accounts": accounts_list,  # Keep array for future use
             "numAccounts": fin_data.get('num_accounts', 0),
             "revenue": fin_data.get('revenue_total', 0),
             "csat": fin_data.get('csat_avg'),

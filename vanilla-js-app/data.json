@@ -21,11 +21,12 @@
       "Goals",
       "Exec Presence"
     ],
-    "lastUpdated": "2026-02-04T01:09:32.150978"
+    "lastUpdated": "2026-02-04T01:14:27.975200"
   },
   "accountDirectors": [
     {
       "accountDirector": "Benjamin Ehrenberg",
+      "account": "Lockheed Martin, Parsons Corporation",
       "accounts": [
         "Lockheed Martin",
         "Parsons Corporation"
@@ -163,6 +164,7 @@
     },
     {
       "accountDirector": "Justin Homa",
+      "account": "Organon",
       "accounts": [
         "Organon"
       ],
@@ -272,6 +274,7 @@
     },
     {
       "accountDirector": "Mark Schlerf",
+      "account": "LAM Research, Hewlett-Packard, HPE, Conduent, Siltronic Corp, Photronics, Texas Instruments",
       "accounts": [
         "LAM Research",
         "Hewlett-Packard",
@@ -414,6 +417,7 @@
     },
     {
       "accountDirector": "Stuart Kelloff",
+      "account": "Adobe, NVIDIA",
       "accounts": [
         "Adobe",
         "NVIDIA"
@@ -551,6 +555,7 @@
     },
     {
       "accountDirector": "Grant Frazier",
+      "account": "Meta",
       "accounts": [
         "Meta"
       ],
@@ -687,6 +692,7 @@
     },
     {
       "accountDirector": "Jacqueline Maravilla",
+      "account": "Lonza Biologics, Genentech",
       "accounts": [
         "Lonza Biologics",
         "Genentech"
@@ -797,6 +803,7 @@
     },
     {
       "accountDirector": "Paul Rhodes",
+      "account": "Google, DP World",
       "accounts": [
         "Google",
         "DP World"
@@ -934,6 +941,7 @@
     },
     {
       "accountDirector": "Kimberly Wittekind",
+      "account": "Nestle, GE Healthcare, Piper Aircraft",
       "accounts": [
         "Nestle",
         "GE Healthcare",
@@ -1045,6 +1053,7 @@
     },
     {
       "accountDirector": "Ana Sabater",
+      "account": "LinkedIn, Uber, Scale AI",
       "accounts": [
         "LinkedIn",
         "Uber",
@@ -1183,6 +1192,7 @@
     },
     {
       "accountDirector": "Taylor Wattenberg",
+      "account": "Microsoft",
       "accounts": [
         "Microsoft"
       ],
@@ -1292,6 +1302,7 @@
     },
     {
       "accountDirector": "Jack Thornton",
+      "account": "Nike, GXO Logistics",
       "accounts": [
         "Nike",
         "GXO Logistics"
@@ -1402,6 +1413,7 @@
     },
     {
       "accountDirector": "Isaac Calderon",
+      "account": "Bayer, MilliporeSigma, Kenvue, Bluerock Therapeutics, Johnson & Johnson",
       "accounts": [
         "Bayer",
         "MilliporeSigma",
@@ -1488,6 +1500,7 @@
     },
     {
       "accountDirector": "Patrick Murtha",
+      "account": "McKesson, Cardinal Health, IQVIA Biotech",
       "accounts": [
         "McKesson",
         "Cardinal Health",
@@ -1626,6 +1639,7 @@
     },
     {
       "accountDirector": "Brian Davis",
+      "account": "Merck",
       "accounts": [
         "Merck"
       ],
@@ -1708,6 +1722,7 @@
     },
     {
       "accountDirector": "Aaron Simpson",
+      "account": "Mars, Ball Corporation, 3M Corp",
       "accounts": [
         "Mars",
         "Ball Corporation",
@@ -1819,6 +1834,7 @@
     },
     {
       "accountDirector": "Justin Dallavis",
+      "account": "Boeing Company",
       "accounts": [
         "Boeing Company"
       ],
@@ -1955,6 +1971,7 @@
     },
     {
       "accountDirector": "Peggy Shum",
+      "account": "Chubb Insurance",
       "accounts": [
         "Chubb Insurance"
       ],
@@ -2037,6 +2054,7 @@
     },
     {
       "accountDirector": "David Pergola",
+      "account": "Merck Sodexo",
       "accounts": [
         "Merck Sodexo"
       ],
@@ -2146,6 +2164,7 @@
     },
     {
       "accountDirector": "Thomas Mahoney",
+      "account": "Amgen",
       "accounts": [
         "Amgen"
       ],
@@ -2228,6 +2247,7 @@
     },
     {
       "accountDirector": "Giselle Langelier",
+      "account": "Medtronic, Capsida Biotherapeutics, Fuji Film",
       "accounts": [
         "Medtronic",
         "Capsida Biotherapeutics",
@@ -2366,6 +2386,7 @@
     },
     {
       "accountDirector": "Rade Kukobat",
+      "account": "Eli Lilly LCC/LRL",
       "accounts": [
         "Eli Lilly LCC/LRL"
       ],
@@ -2529,6 +2550,7 @@
     },
     {
       "accountDirector": "Gregory DeMedio",
+      "account": "Abbott Labs",
       "accounts": [
         "Abbott Labs"
       ],
@@ -2638,6 +2660,7 @@
     },
     {
       "accountDirector": "Logan Newman",
+      "account": "General Electric, GE Power, Hyliion",
       "accounts": [
         "General Electric",
         "GE Power",
@@ -2722,6 +2745,7 @@
     },
     {
       "accountDirector": "Luis Cabrera",
+      "account": "Takeda Pharmaceutical",
       "accounts": [
         "Takeda Pharmaceutical"
       ],
@@ -2858,6 +2882,7 @@
     },
     {
       "accountDirector": "Scott Kimball",
+      "account": "Sanofi, Moderna Biotechnology Company",
       "accounts": [
         "Sanofi",
         "Moderna Biotechnology Company"
@@ -2968,6 +2993,7 @@
     },
     {
       "accountDirector": "Julie Bianchi",
+      "account": "CIGNA, Elevance Health",
       "accounts": [
         "CIGNA",
         "Elevance Health"
@@ -3024,6 +3050,7 @@
     },
     {
       "accountDirector": "Nicholas Trenkamp",
+      "account": "Procter & Gamble Company",
       "accounts": [
         "Procter & Gamble Company"
       ],
@@ -3106,6 +3133,7 @@
     },
     {
       "accountDirector": "Jacob Reed",
+      "account": "Tesla Inc - Jacob Reed",
       "accounts": [
         "Tesla Inc - Jacob Reed"
       ],
@@ -3161,6 +3189,7 @@
     },
     {
       "accountDirector": "Rafaed Ortiz",
+      "account": "Biogen",
       "accounts": [
         "Biogen"
       ],
@@ -3270,6 +3299,7 @@
     },
     {
       "accountDirector": "Ayesha Nasir",
+      "account": "Westinghouse, DuPont",
       "accounts": [
         "Westinghouse",
         "DuPont"
@@ -3353,6 +3383,7 @@
     },
     {
       "accountDirector": "Mike Barry",
+      "account": "Bristol Myers Squibb, Novartis",
       "accounts": [
         "Bristol Myers Squibb",
         "Novartis"
@@ -3463,6 +3494,7 @@
     },
     {
       "accountDirector": "Siddarth Shah",
+      "account": "Micron Tech, Mp Mask Technology Center",
       "accounts": [
         "Micron Tech",
         "Mp Mask Technology Center"
@@ -3600,6 +3632,7 @@
     },
     {
       "accountDirector": "Dustin Smith",
+      "account": "Amazon",
       "accounts": [
         "Amazon"
       ],
@@ -3655,6 +3688,7 @@
     },
     {
       "accountDirector": "Tiffany Purifoy",
+      "account": "Charles Schwab, Citibank, Fidelity, T Rowe Price, State Farm Ins, JP Morgan Chase",
       "accounts": [
         "Charles Schwab",
         "Citibank",
@@ -3742,6 +3776,7 @@
     },
     {
       "accountDirector": "Keith Deuber",
+      "account": "Amazon",
       "accounts": [
         "Amazon"
       ],
