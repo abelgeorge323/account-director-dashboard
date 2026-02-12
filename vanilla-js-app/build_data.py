@@ -209,7 +209,22 @@ def apply_manual_mappings(financial_data):
         'red_sites_count': 0,
         'growth_avg': 8.9  # Use Brian's Merck growth
     }
-    
+
+    # RJ Ober: Alias for Russell Ober (reviews use "RJ Ober", CSV file is russell-ober.csv)
+    if "Russell Ober" in financial_data:
+        financial_data["RJ Ober"] = financial_data["Russell Ober"].copy()
+
+    # Greyson Wolff: Honda (user will add automotive file later)
+    financial_data["Greyson Wolff"] = {
+        'accounts': ['Honda'],
+        'num_accounts': 1,
+        'revenue_total': 0,
+        'csat_avg': None,
+        'headcount_total': 0,
+        'red_sites_count': 0,
+        'growth_avg': None
+    }
+
     return financial_data
 
 # Define scoring sections

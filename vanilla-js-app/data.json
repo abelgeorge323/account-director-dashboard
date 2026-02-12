@@ -21,7 +21,7 @@
       "Goals",
       "Exec Presence"
     ],
-    "lastUpdated": "2026-02-12T00:43:23.187112"
+    "lastUpdated": "2026-02-12T01:40:47.040874"
   },
   "accountDirectors": [
     {
@@ -3840,14 +3840,18 @@
     },
     {
       "accountDirector": "RJ Ober",
-      "account": "undefined",
-      "accounts": [],
-      "numAccounts": 0,
-      "revenue": 0,
-      "csat": null,
-      "headcount": 0,
-      "redSites": 0,
-      "growth": null,
+      "account": "IBM, IRG Realty Advisors, Computershare",
+      "accounts": [
+        "IBM",
+        "IRG Realty Advisors",
+        "Computershare"
+      ],
+      "numAccounts": 3,
+      "revenue": 697.0,
+      "csat": 4.833333333333333,
+      "headcount": 113,
+      "redSites": 11,
+      "growth": 65.93333333333332,
       "vertical": "Technology",
       "tier": "Tier 5",
       "role": "Account Manager",
@@ -3953,16 +3957,18 @@
     },
     {
       "accountDirector": "Greyson Wolff",
-      "account": "undefined",
-      "accounts": [],
-      "numAccounts": 0,
+      "account": "Honda",
+      "accounts": [
+        "Honda"
+      ],
+      "numAccounts": 1,
       "revenue": 0,
       "csat": null,
       "headcount": 0,
       "redSites": 0,
       "growth": null,
-      "vertical": "N/A",
-      "tier": "",
+      "vertical": "Automotive",
+      "tier": "Tier 5",
       "role": "Account Director",
       "reviewCount": 1,
       "avgScores": {
