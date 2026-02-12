@@ -839,9 +839,46 @@
         .bp-filters {
             display: flex;
             gap: 1rem;
-            align-items: center;
+            align-items: flex-start;
             margin-bottom: 1.5rem;
             flex-wrap: wrap;
+        }
+        
+        .bp-category-filter-row {
+            display: flex;
+            flex-direction: column;
+            flex: 1 1 100%;
+        }
+        
+        .bp-category-chips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        
+        .bp-category-chip {
+            padding: 8px 14px;
+            border-radius: 20px;
+            border: 2px solid #e2e8f0;
+            background: white;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            color: var(--text-primary);
+            font-family: inherit;
+            border-left: 4px solid var(--chip-color, #94a3b8);
+        }
+        
+        .bp-category-chip:hover {
+            border-color: var(--chip-color, #94a3b8);
+            background: #f8fafc;
+        }
+        
+        .bp-category-chip.active {
+            background: var(--chip-color, #3b82f6);
+            border-color: var(--chip-color, #3b82f6);
+            color: white;
         }
         
         .checkbox-filter {
@@ -959,6 +996,31 @@
             background: #fef2f2;
             color: #991b1b;
             border-left: 3px solid #ef4444;
+        }
+        
+        .category-badge.cat-transitions { background: #ecfeff; color: #0e7490; border-left: 3px solid #06b6d4; }
+        .category-badge.cat-financial { background: #fffbeb; color: #b45309; border-left: 3px solid #f59e0b; }
+        .category-badge.cat-operational { background: #eff6ff; color: #1e40af; border-left: 3px solid #3b82f6; }
+        .category-badge.cat-innovation { background: #eef2ff; color: #4338ca; border-left: 3px solid #6366f1; }
+        .category-badge.cat-client { background: #ecfdf5; color: #047857; border-left: 3px solid #10b981; }
+        .category-badge.cat-governance { background: #f1f5f9; color: #475569; border-left: 3px solid #64748b; }
+        .category-badge.cat-people { background: #fff1f2; color: #be123c; border-left: 3px solid #f43f5e; }
+        .category-badge.cat-safety { background: #fef2f2; color: #b91c1c; border-left: 3px solid #ef4444; }
+        
+        .category-header.cat-transitions { background: #ecfeff; border-left-color: #06b6d4; }
+        .category-header.cat-financial { background: #fffbeb; border-left-color: #f59e0b; }
+        .category-header.cat-operational { background: #eff6ff; border-left-color: #3b82f6; }
+        .category-header.cat-innovation { background: #eef2ff; border-left-color: #6366f1; }
+        .category-header.cat-client { background: #ecfdf5; border-left-color: #10b981; }
+        .category-header.cat-governance { background: #f1f5f9; border-left-color: #64748b; }
+        .category-header.cat-people { background: #fff1f2; border-left-color: #f43f5e; }
+        .category-header.cat-safety { background: #fef2f2; border-left-color: #ef4444; }
+        
+        .compact-subcategory {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+            font-style: italic;
         }
         
         .card-title {
@@ -1160,6 +1222,26 @@
             align-items: center;
             justify-content: space-between;
             margin-bottom: 0.75rem;
+            gap: 12px;
+        }
+        
+        .practice-expand-indicator {
+            font-size: 0.9rem;
+            color: var(--primary-blue);
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+        
+        .practice-expanded {
+            margin-top: 1.25rem;
+            padding-top: 1.25rem;
+            border-top: 1px solid var(--border-color);
+        }
+        
+        .practice-expanded .card-description {
+            margin-bottom: 1rem;
+            line-height: 1.6;
+            color: var(--text-primary);
         }
         
         .compact-title {
@@ -1901,6 +1983,13 @@
                 </div>
                 
                 <div class="filter-group">
+                    <label class="filter-label" for="filter-role">Role</label>
+                    <select id="filter-role" class="filter-select">
+                        <option value="all">All Roles</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
                     <label class="filter-label" for="filter-account">Account</label>
                     <select id="filter-account" class="filter-select">
                         <option value="all">All Accounts</option>
@@ -1950,6 +2039,9 @@
                             <select id="tier-filter" class="sort-select">
                                 <option value="all">All Tiers</option>
                             </select>
+                            <select id="role-filter" class="sort-select">
+                                <option value="all">All Roles</option>
+                            </select>
                             <select id="sort-by" class="sort-select">
                                 <option value="totalScore">Total Score</option>
                                 <option value="tier">Tier</option>
@@ -1993,10 +2085,23 @@
                             <select id="bp-category-filter" class="filter-select">
                                 <option value="all">All Categories</option>
                             </select>
+                            <select id="bp-replicability-filter" class="filter-select">
+                                <option value="all">All Replicability</option>
+                            </select>
+                            <select id="bp-status-filter" class="filter-select">
+                                <option value="all">All Status</option>
+                            </select>
+                            <select id="bp-vertical-filter" class="filter-select">
+                                <option value="all">All Verticals</option>
+                            </select>
+                            <select id="bp-account-filter" class="filter-select">
+                                <option value="all">All Accounts</option>
+                            </select>
                             <label class="checkbox-filter">
                                 <input type="checkbox" id="bp-featured-only">
                                 Featured Only
                             </label>
+                            <button type="button" class="clear-filters-btn" id="bp-clear-filters" style="margin-top: 0;">Clear Filters</button>
                         </div>
                     </div>
                     

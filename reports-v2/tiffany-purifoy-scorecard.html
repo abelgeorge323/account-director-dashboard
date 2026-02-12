@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025 Year-End Scorecard - Tiffany Purifoy</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            background: #ffffff;
+            padding: 2rem;
+            max-width: 8.5in;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: #1a365d;
+            margin-bottom: 0.5rem;
+        }
+
+        h2 {
+            font-size: 1.35rem;
+            font-weight: 600;
+            color: #2c5282;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 0.5rem;
+        }
+
+        h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #2d3748;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        h4 {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #4a5568;
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .header-section {
+            background: linear-gradient(135deg, #1a365d 0%, #2c5282 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+        }
+
+        .header-section h1 {
+            color: white;
+            margin-bottom: 1.5rem;
+            font-size: 1.85rem;
+        }
+
+        .header-metadata {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.8rem;
+            margin-top: 1.2rem;
+        }
+
+        .metadata-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.6rem;
+            border-radius: 4px;
+        }
+
+        .metadata-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.8;
+            margin-bottom: 0.25rem;
+        }
+
+        .metadata-value {
+            font-size: 1.1rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+        }
+
+        .score-summary-first-page {
+            background: #f7fafc;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+        }
+
+        .score-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            background: white;
+        }
+
+        .score-table th {
+            background: #2c5282;
+            color: white;
+            padding: 0.75rem;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .score-table td {
+            padding: 0.75rem;
+            border: 1px solid #e2e8f0;
+        }
+
+        .score-table tr:nth-child(even) {
+            background: #f7fafc;
+        }
+
+
+        /* Follow-Up Questions Section */
+        .follow-up-section {
+            background: #fff8e1;
+            border-left: 4px solid #ff9800;
+            padding: 24px;
+            margin: 32px 0;
+            border-radius: 8px;
+            page-break-inside: avoid;
+        }
+
+        .follow-up-intro {
+            color: #e65100;
+            margin-bottom: 1rem;
+        }
+
+        .follow-up-item {
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 16px 0;
+        }
+
+        .follow-up-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .follow-up-category {
+            background: #2196f3;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .follow-up-source {
+            color: #666;
+            font-size: 14px;
+            font-style: italic;
+        }
+
+        .follow-up-quote {
+            background: #f5f5f5;
+            border-left: 3px solid #ff9800;
+            padding: 12px 16px;
+            margin: 12px 0;
+            font-style: italic;
+            color: #333;
+        }
+
+        .follow-up-action {
+            margin-top: 12px;
+            color: #333;
+        }
+
+        /* Scored Section - One section per page */
+        .scored-section {
+            page-break-after: always;
+            page-break-inside: avoid;
+            margin: 1.5rem 0;
+            padding: 1.5rem;
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            min-height: 400px;
+        }
+
+        .score-display {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin: 1rem 0;
+            padding: 1rem;
+            background: #f7fafc;
+            border-radius: 4px;
+        }
+
+        .score-label {
+            font-weight: 600;
+            color: #4a5568;
+        }
+
+        .score-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #2c5282;
+        }
+
+        .combined-feedback {
+            background: #f8f9fa;
+            border-left: 4px solid #2c5282;
+            padding: 1.25rem;
+            margin: 1rem 0;
+            border-radius: 4px;
+        }
+
+        .combined-feedback h4 {
+            color: #2c5282;
+            margin-bottom: 0.75rem;
+            font-size: 1rem;
+        }
+
+        .feedback-synthesis {
+            margin-top: 0.75rem;
+        }
+
+        .feedback-point {
+            padding: 0.75rem;
+            margin: 0.5rem 0;
+            background: white;
+            border-radius: 4px;
+            border-left: 3px solid #2c5282;
+            line-height: 1.6;
+        }
+
+        .feedback-point strong {
+            color: #2c5282;
+            font-size: 0.9rem;
+        }
+
+        .synthesis-list {
+            margin: 0.75rem 0 1rem 1.5rem;
+            padding-left: 1rem;
+        }
+
+        .synthesis-list li {
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+            color: #2d3748;
+        }
+
+        .feedback-synthesis p {
+            margin: 0.75rem 0;
+            line-height: 1.6;
+        }
+
+        .feedback-synthesis strong {
+            color: #2c5282;
+            font-weight: 600;
+        }
+
+        @media print {
+            * {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            
+            body {
+                padding: 0.25in;
+                font-size: 9pt;
+                line-height: 1.3;
+            }
+            
+            h1 {
+                font-size: 16pt;
+                margin-bottom: 0.3rem;
+            }
+            
+            h2 {
+                font-size: 12pt;
+                margin-top: 0.5rem;
+                margin-bottom: 0.4rem;
+                page-break-after: avoid;
+            }
+            
+            h3 {
+                font-size: 10pt;
+                margin-top: 0.4rem;
+                margin-bottom: 0.3rem;
+            }
+            
+            .header-section {
+                padding: 1rem;
+                margin-bottom: 1rem;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            
+            .header-metadata {
+                gap: 0.5rem;
+            }
+            
+            .metadata-item {
+                padding: 0.4rem;
+            }
+            
+            .metadata-label {
+                font-size: 7pt;
+            }
+            
+            .metadata-value {
+                font-size: 9pt;
+            }
+            
+            .score-summary-first-page {
+                page-break-after: always;
+                padding: 0.75rem;
+                margin-bottom: 1rem;
+            }
+            
+            .score-table {
+                margin: 0.75rem 0;
+                font-size: 9pt;
+            }
+            
+            .score-table th,
+            .score-table td {
+                padding: 0.35rem;
+            }
+            
+            .scored-section {
+                page-break-after: always;
+                page-break-inside: avoid;
+                margin: 0.5rem 0;
+                padding: 0.75rem;
+                border: 1px solid #e2e8f0;
+                min-height: unset;
+            }
+            
+            .score-display {
+                margin: 0.5rem 0;
+                padding: 0.5rem;
+            }
+            
+            .score-label {
+                font-size: 9pt;
+            }
+            
+            .score-value {
+                font-size: 14pt;
+            }
+            
+            .combined-feedback {
+                padding: 0.75rem;
+                margin: 0.5rem 0;
+            }
+            
+            .combined-feedback h4 {
+                font-size: 9pt;
+                margin-bottom: 0.4rem;
+            }
+            
+            .feedback-synthesis p {
+                margin: 0.4rem 0;
+                line-height: 1.4;
+                font-size: 9pt;
+            }
+            
+            .feedback-synthesis strong {
+                font-size: 9pt;
+            }
+            
+            .synthesis-list {
+                margin: 0.4rem 0 0.5rem 1rem;
+                padding-left: 0.5rem;
+            }
+            
+            .synthesis-list li {
+                margin-bottom: 0.25rem;
+                line-height: 1.4;
+                font-size: 8.5pt;
+            }
+            
+            .follow-up-section {
+                page-break-before: always;
+                page-break-inside: avoid;
+                padding: 1rem;
+                margin: 1rem 0;
+            }
+            
+            .follow-up-item {
+                padding: 0.75rem;
+                margin: 0.75rem 0;
+            }
+            
+            .follow-up-quote {
+                padding: 0.5rem;
+                margin: 0.5rem 0;
+                font-size: 8.5pt;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header-section">
+        <h1>2025 Year-End Account Review & 2026 QBR Readiness Scorecard</h1>
+        <div class="header-metadata">
+            <div class="metadata-item">
+                <div class="metadata-label">Account Director</div>
+                <div class="metadata-value">Tiffany Purifoy</div>
+            </div>
+            <div class="metadata-item">
+                <div class="metadata-label">Account</div>
+                <div class="metadata-value">Fidelity </div>
+            </div>
+            <div class="metadata-item">
+                <div class="metadata-label">Tier</div>
+                <div class="metadata-value"><span style="background: #6366f1; color: white; padding: 0.3rem 0.8rem; border-radius: 12px; font-weight: 600; font-size: 0.9rem;">Tier 5</span></div>
+            </div>
+            <div class="metadata-item">
+                <div class="metadata-label">Review Date</div>
+                <div class="metadata-value">January 2026</div>
+            </div>
+            <div class="metadata-item">
+                <div class="metadata-label">Total Reviews</div>
+                <div class="metadata-value">2</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="score-summary-first-page">
+        <h2>Executive Summary</h2>
+
+        <table class="score-table">
+            <thead>
+                <tr>
+                    <th>Evaluation Category</th>
+                    <th style="text-align: center;">Average Score</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+        <tr>
+            <td>Key Projects & Initiatives</td>
+            <td style="text-align: center; font-weight: 600;">4.0</td>
+        </tr>
+        
+        <tr>
+            <td>Value Adds & Cost Avoidance</td>
+            <td style="text-align: center; font-weight: 600;">4.0</td>
+        </tr>
+        
+        <tr>
+            <td>Cost Savings Delivered</td>
+            <td style="text-align: center; font-weight: 600;">3.5</td>
+        </tr>
+        
+        <tr>
+            <td>Innovation & Continuous Improvement</td>
+            <td style="text-align: center; font-weight: 600;">4.0</td>
+        </tr>
+        
+        <tr>
+            <td>Issues, Challenges & Accountability</td>
+            <td style="text-align: center; font-weight: 600;">4.5</td>
+        </tr>
+        
+        <tr>
+            <td>2026 Forward Strategy & Vision</td>
+            <td style="text-align: center; font-weight: 600;">3.5</td>
+        </tr>
+        
+        <tr>
+            <td>Personal Goals & Role Maturity</td>
+            <td style="text-align: center; font-weight: 600;">3.0</td>
+        </tr>
+        
+        <tr>
+            <td>Executive Presence & Presentation Skills</td>
+            <td style="text-align: center; font-weight: 600;">4.0</td>
+        </tr>
+        
+        <tr style="background: #e8f5e9; border-top: 3px solid #2c5282;">
+            <td style="font-weight: 700; text-transform: uppercase;">Overall Score</td>
+            <td style="text-align: center; font-weight: 700; font-size: 1.2rem; color: #2c5282;">30.5/40</td>
+        </tr>
+        
+            </tbody>
+        </table>
+    </div>
+
+    
+        <div class="scored-section">
+            <h2>Key Projects & Initiatives</h2>
+            <div class="score-display">
+                <span class="score-label">Average Score:</span>
+                <span class="score-value">4.0/5</span>
+            </div>
+            
+            
+    <div class="combined-feedback">
+        <h4>Combined Feedback from Leadership Reviews</h4>
+        <div class="feedback-synthesis">
+    
+            <p><strong>Overall Assessment:</strong> I think this was a good section that clearly outlined all items and inniatives each account has achieved this year.</p>
+        
+            <p><strong>Strengths:</strong></p>
+            <ul class="synthesis-list">
+        <li>I think this was a good section that clearly outlined all items and inniatives each account has achieved this year.</li><li>Presents a clear narrative of key initiatives and outcomes, with minor gaps in impact clarity or measurement. Impact aligning on scope with the customer impacted audits, surveys etc.</li></ul>
+        </div>
+    </div>
+    
+        </div>
+        
+        <div class="scored-section">
+            <h2>Value Adds & Cost Avoidance</h2>
+            <div class="score-display">
+                <span class="score-label">Average Score:</span>
+                <span class="score-value">4.0/5</span>
+            </div>
+            
+            
+    <div class="combined-feedback">
+        <h4>Combined Feedback from Leadership Reviews</h4>
+        <div class="feedback-synthesis">
+    
+            <p><strong>Overall Assessment:</strong> I think you did a good job explaining what you were able to do at each account to help support operations and provide value adds.</p>
+        
+            <p><strong>Strengths:</strong></p>
+            <ul class="synthesis-list">
+        <li>I think you did a good job explaining what you were able to do at each account to help support operations and provide value adds. Some items did not have a dollar amount attached and it would have been helpful to have a total of all activities to better understand scale and context.</li></ul>
+        </div>
+    </div>
+    
+        </div>
+        
+        <div class="scored-section">
+            <h2>Cost Savings Delivered</h2>
+            <div class="score-display">
+                <span class="score-label">Average Score:</span>
+                <span class="score-value">3.5/5</span>
+            </div>
+            
+            
+    <div class="combined-feedback">
+        <h4>Combined Feedback from Leadership Reviews</h4>
+        <div class="feedback-synthesis">
+    
+            <p><strong>Overall Assessment:</strong> Similar to above I think the individual items were good, but not all had a clear amount tied to them.</p>
+        
+            <p><strong>Areas for Development:</strong></p>
+            <ul class="synthesis-list">
+        <li>Similar to above I think the individual items were good, but not all had a clear amount tied to them.</li></ul>
+        </div>
+    </div>
+    
+        </div>
+        
+        <div class="scored-section">
+            <h2>Innovation & Continuous Improvement</h2>
+            <div class="score-display">
+                <span class="score-label">Average Score:</span>
+                <span class="score-value">4.0/5</span>
+            </div>
+            
+            
+    <div class="combined-feedback">
+        <h4>Combined Feedback from Leadership Reviews</h4>
+        <div class="feedback-synthesis">
+    
+            <p><strong>Overall Assessment:</strong> Each account had a clear recap of what has been done over the past year to drive innovation and there was a good mix of equipment and process improvements.</p>
+        
+            <p><strong>Strengths:</strong></p>
+            <ul class="synthesis-list">
+        <li>Each account had a clear recap of what has been done over the past year to drive innovation and there was a good mix of equipment and process improvements.</li></ul>
+        </div>
+    </div>
+    
+        </div>
+        
+        <div class="scored-section">
+            <h2>Issues, Challenges & Accountability</h2>
+            <div class="score-display">
+                <span class="score-label">Average Score:</span>
+                <span class="score-value">4.5/5</span>
+            </div>
+            
+            
+    <div class="combined-feedback">
+        <h4>Combined Feedback from Leadership Reviews</h4>
+        <div class="feedback-synthesis">
+    
+            <p><strong>Overall Assessment:</strong> You were very clear and transparent with the challenges each account has faced this year and did a good job responding to questions and providing additional details.</p>
+        
+            <p><strong>Strengths:</strong></p>
+            <ul class="synthesis-list">
+        <li>You were very clear and transparent with the challenges each account has faced this year and did a good job responding to questions and providing additional details.</li></ul>
+        </div>
+    </div>
+    
+        </div>
+        
+        <div class="scored-section">
+            <h2>2026 Forward Strategy & Vision</h2>
+            <div class="score-display">
+                <span class="score-label">Average Score:</span>
+                <span class="score-value">3.5/5</span>
+            </div>
+            
+            
+    <div class="combined-feedback">
+        <h4>Combined Feedback from Leadership Reviews</h4>
+        <div class="feedback-synthesis">
+    
+            <p><strong>Overall Assessment:</strong> The goals and objectives for each account were good but as mentioned some time bound measurables are needed to help drive progress on these goals.</p>
+        
+            <p><strong>Strengths:</strong></p>
+            <ul class="synthesis-list">
+        <li>Shared general goals or aspirations without clear execution detail.</li></ul>
+            <p><strong>Areas for Development:</strong></p>
+            <ul class="synthesis-list">
+        <li>The goals and objectives for each account were good but as mentioned some time bound measurables are needed to help drive progress on these goals.</li></ul>
+        </div>
+    </div>
+    
+        </div>
+        
+        <div class="scored-section">
+            <h2>Personal Goals & Role Maturity</h2>
+            <div class="score-display">
+                <span class="score-label">Average Score:</span>
+                <span class="score-value">3.0/5</span>
+            </div>
+            
+            
+    <div class="combined-feedback">
+        <h4>Combined Feedback from Leadership Reviews</h4>
+        <div class="feedback-synthesis">
+    
+            <p><strong>Overall Assessment:</strong> Your account goals were clear and made sense.</p>
+        
+            <p><strong>Strengths:</strong></p>
+            <ul class="synthesis-list">
+        <li>Your account goals were clear and made sense. AS we went over on the call just add time and dates to each goal to be able to measure progress.</li><li>You shared general development intentions without clear measures or ownership. In order to score higher in this category I would have needed clear next steps and measurable goals. As you set goals use SMART goals: SMART goals are a strategic framework for setting objectives that are Specific, Measurable, Achievable, Relevant, and Time-bound</li></ul>
+        </div>
+    </div>
+    
+        </div>
+        
+        <div class="scored-section">
+            <h2>Executive Presence & Presentation Skills</h2>
+            <div class="score-display">
+                <span class="score-label">Average Score:</span>
+                <span class="score-value">4.0/5</span>
+            </div>
+            
+            
+    <div class="combined-feedback">
+        <h4>Combined Feedback from Leadership Reviews</h4>
+        <div class="feedback-synthesis">
+    
+            <p><strong>Overall Assessment:</strong> Overall, your communication style is very clear and concise.</p>
+        
+            <p><strong>Strengths:</strong></p>
+            <ul class="synthesis-list">
+        <li>Overall, your communication style is very clear and concise. as noted on the call the initial part of your presentation was a little stiff you clearly know your information and things were even better when you spoke a little more naturally. It is very hard to cover multiple accounts in the time allotted I thought you did a great job with pacing to ger through all accounts with a good amount of detail.</li></ul>
+            <p><strong>Areas for Development:</strong></p>
+            <ul class="synthesis-list">
+        <li>Tiffany you have the ability to take accountability which I appreciate, overall there was a gap in your ability to confidently deliver this is a lot pressure but I need you to present with authority over your account(s). I would like you to reply less on prepared material and more on what you know. Gaps in timelines and how you will execute is the main driver for the lower score in some categories. Kudos to you investing in communications class.</li></ul>
+        </div>
+    </div>
+    
+        </div>
+        
+
+    
+    <div class="follow-up-section">
+        <h2>🎯 2026 Development Focus & Follow-Up Items</h2>
+        <p class="follow-up-intro">
+            Based on your year-end presentation and executive feedback, the following areas have been identified 
+            for focused development and follow-through in 2026.
+        </p>
+    
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">2026 Strategy & Vision - CRITICAL GAP</span>
+                <span class="follow-up-source">— Valarie Barnett</span>
+            </div>
+            <h3>Add Timelines and Dates to ALL 2026 Forward Strategy Items</h3>
+            <p class="follow-up-quote">"Valarie: 'The only thing that I would change about all of this is I need a road map. How are you gonna get there? What are you gonna do? Where are your dates? By when? So all of those need to be flushed out. If it's for insight management, what specifically and by when? Align for insight to CBRE metrics, I don't know that you're going to be able to do that. Be data-driven. OK, what does that mean? Define it be data-driven. How are you going to review for insight every day to check complaints? Different behavior from the site managers, from the regional team, weekly calls. What are you going to do to be data-driven and by when? Recordable free, obviously, but what are you going to do? So is there a safety plan that you have in play? Are you doing safety rewards across your accounts? How will you do it?' Valarie (later): 'A goal without a date is just a wish. So I don't want you to wish for it. We got to work towards it. In our one-on-ones, we need to be looking at your forward strategy and your personal goals. What will you do? How will you do it? And then when will you do it by? I just want to be able to hold you accountable to what you've committed to.'"</p>
+            <p class="follow-up-action"><strong>Action:</strong> URGENT - BEFORE NEXT 1-ON-1: (1) Create detailed road map for all 2026 strategy items with specific dates, (2) ForSight management: Define specific actions and completion dates, (3) Data-driven approach: Define what it means, how to implement (daily ForSight reviews, complaint tracking, site manager behavioral changes, weekly calls), (4) Recordable-free goal: Document safety plan, safety rewards program across accounts, (5) Each goal needs: What? How? By When?, (6) Send in body of email with slide deck, (7) Valarie: 'The hardest area that I had to score you on was the gaps in timelines and how you will execute. That was the main driver in some of those scores.'</p>
+        </div>
+        
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">Scope Alignment - Lesson Learned</span>
+                <span class="follow-up-source">— Valarie Barnett & Tiffany Purifoy (Self-Identified)</span>
+            </div>
+            <h3>Proactive Scope Alignment from Day 1 of Transition</h3>
+            <p class="follow-up-quote">"Valarie: 'So that's your lesson. That's your lesson learned, right? This is your job as the account director. Like you have to jump in there. You own the scope gaps, you own whatever we negotiated. You're stuck with it. In order to build the best client relationship going in right off of a transition, the first thing I would do is sit down align. Do we 100% agree on scope? Do we agree on frequency? Do we agree on quote unquote the contract headcount? Do we agree on how we're scoring ourselves? Do we agree on taking surveys, walking together? All that stuff is supposed to be the baseline of what happens.' Tiffany: 'If we were aligned on those things from the beginning, I think the moment of I don't want to say tension, but not being in alignment would have dissipated sooner, which would have impacted maybe higher I perform score scoring from Q2 and maybe not taken. While you see a gradual move here from Q2 to Q3, you'll see 2.55 to 2.97 to 3.34. My decision making and adjustments need to occur faster.' Tiffany (on what stopped her): 'In the beginning, well one giving grace for the transition... after that I leaned too heavily on our transition team in the routes and any adjustments that needed to be made when I needed to say no, this isn't working, this is the avenue that we need to take.'"</p>
+            <p class="follow-up-action"><strong>Action:</strong> Future transitions: (1) Day 1: Sit down with client to align on scope, frequency, headcount expectations, scoring methodology, survey process, (2) Don't lean on transition team for strategic decisions - own the account from start, (3) Act faster on needed adjustments - don't wait for gradual improvement over quarters, (4) Lesson: Fidelity took Q2 (2.55) → Q3 (2.97) → Q4 (3.34) when faster action could have started higher, (5) Don't give grace for transition - own accountability immediately</p>
+        </div>
+        
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">Presentation Skills & Executive Presence</span>
+                <span class="follow-up-source">— Valarie Barnett</span>
+            </div>
+            <h3>Rely Less on Prepared Material, Present with Confidence and Authority</h3>
+            <p class="follow-up-quote">"Valarie: 'You don't really sound like yourself to me. I don't know if you put a lot into this as far as pressure on yourself, but this isn't how you sound when we have conversations. You don't sound as confident, which I think you're reading because you don't sound as confident. Do you feel like you didn't rehearse or practice enough? Like why do you sound different today? When you talk one-on-one to me, you know your accounts backwards and forwards. So it was really hard to separate how I know you are to like how you presented today. But I have to judge you based on how you presented today. I want you to rely less on your prepared material on more on what you know. I need you to be able to present in front of me, in front of our CEO, in front of any executive leader, and confidently go through your material backwards and forwards with skill and with ease.' Valarie (in feedback): 'Overall there was a gap in your ability to confidently deliver. This is a lot of pressure but I need you to present with authority over your accounts.'"</p>
+            <p class="follow-up-action"><strong>Action:</strong> Ongoing development: (1) Continue Stage Academy communication classes - 'It did not show itself very well today' but keep investing, (2) Practice presenting without reading - know content so well you don't need slides, (3) Goal: Present to CEO, executives with confidence, skill, and ease, (4) Bridge gap between one-on-one confidence (where Tiffany knows accounts backwards/forwards) and presentation delivery, (5) Valarie: 'I definitely know that one of the things you want to work on is your presentation skills. I definitely feel like that's an opportunity for you. Maybe when you're in the room with a customer, you're more comfortable, you're more yourself,' (6) Work toward presenting with authority vs nervous delivery</p>
+        </div>
+        
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">Innovation Depth</span>
+                <span class="follow-up-source">— Valarie Barnett</span>
+            </div>
+            <h3>Full Assessment of Process, Technology, and Equipment Innovation Opportunities</h3>
+            <p class="follow-up-quote">"Valarie: 'The innovation for me was probably a little bit lacking. I think that we could do a better job of figuring out the value that it brings to the client, what lessons have we learned from innovation and where can we be a little bit more innovative, whether that be a process or a technology or equipment? Have you done a full assessment on that and where you would put that?'"</p>
+            <p class="follow-up-action"><strong>Action:</strong> 2026 Innovation Assessment: (1) Full evaluation across all accounts: Schwab, Fidelity, TRP, Citibank, (2) Categories: Process innovations (like periodic task calendar, crash cart), Technology innovations (mobile, AI, automation), Equipment innovations (autonomous vacuums, salt-handling equipment demos at Lone Tree), (3) Document value brought to client for each innovation, (4) Capture lessons learned from each innovation attempt, (5) Identify gaps: where can we be more innovative?, (6) Create innovation pipeline: what's next for each account?, (7) Valarie scored innovation area lower - opportunity for improvement</p>
+        </div>
+        
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">ForSight & CBRE Metrics Alignment</span>
+                <span class="follow-up-source">— Valarie Barnett & Tiffany Purifoy (Challenge)</span>
+            </div>
+            <h3>Resolve CSAT Scoring Discrepancy - Align CBRE to ForSight or Change Approach</h3>
+            <p class="follow-up-quote">"Tiffany: 'Holding myself and my team responsible, including all of the four insight management. I really would like to work with my leaders to align for insight metrics and CBRE metrics. The reason why we need to do this is because we've had quite a few failed CSATS and it's not because we're not performing, it's because they are scoring according to CBRE metrics and not according to SBM. And despite having those conversations over and over again, we do still seem to fall back into that.' Valarie: 'But how can you get them off of that? What's the plan?' Tiffany (explained): 'Since June of last year, we explained the metrics, CADA sent over a chart of what a 1 means versus what a 5 means. Depending on who takes the survey and depending on if SBM has done everything perfect that month, we will get a three, which in their eyes is still passing.' Tiffany (solution that worked): 'I've let them know that failing a CSAT impacts the bonus of our site managers and our operations team and since then their grading scores have been more I'll say lenient. We haven't failed really any since then because they don't want to negatively impact our team.' Valarie: 'You can't change forsight to align forsight to CBRE metrics.'"</p>
+            <p class="follow-up-action"><strong>Action:</strong> Ongoing management: (1) Valarie is clear: Cannot change ForSight to match CBRE metrics, (2) Current solution working: Explaining bonus impact made CBRE more lenient - continue this approach, (3) Document CBRE scoring patterns: who takes survey, what triggers 3 vs 4 vs 5, (4) Proactive communication before CSAT: remind them of scoring methodology and bonus impact, (5) Consider: Can we influence who takes the survey at CBRE?, (6) Accept: Some CBRE clients will always score differently - focus on relationship management vs metric alignment, (7) Goal: Maintain current improvement (no failed CSATS since implementing bonus explanation)</p>
+        </div>
+        
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">Executive Relationship Building</span>
+                <span class="follow-up-source">— Tiffany Purifoy (Self-Identified)</span>
+            </div>
+            <h3>Deepen Direct Client Relationships While Maintaining IFM Partnerships</h3>
+            <p class="follow-up-quote">"Tiffany (2026 goal): 'Deepening my executive relationships across key customers. This is a lesson that I'm learning as we move and navigate from TRP to direct or excuse me, JLL to direct. And now we're looking at, OK, you've made all these great relationships with the IFM, but you don't have any relationship with the end user. And so now I'm looking at how can I leverage those and still remain in good grace with my current IFM because there is a hindrance there and they do frown upon direct contact and relationship. How do I go about doing that?'"</p>
+            <p class="follow-up-action"><strong>Action:</strong> 2026 Focus: (1) Build direct relationships with end clients (TRP, Schwab, Fidelity) while managing IFM sensitivities (JLL, CBRE), (2) TRP case study: JLL losing contract - SBM bidding direct; 'I am working directly with T Rowe Price on these small projects' - continue this approach, (3) Strategy: Use project work to build direct relationships without threatening IFM, (4) More in-person client engagements: 'Common thing from our clients is more structured, I don't want to say structured, but more in person engagements. They really appreciate when you make visits out and they always offer to meet with you off-site and those are where the partnerships are strengthened,' (5) Off-site meetings: Fidelity example showed productivity of off-site discussions, (6) Balance: Don't burn IFM bridges while building direct relationships for future opportunities</p>
+        </div>
+        
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">Succession Planning - URGENT</span>
+                <span class="follow-up-source">— Tiffany Purifoy (Self-Identified)</span>
+            </div>
+            <h3>Develop #2 at Lone Tree to Eliminate Single Point of Failure Risk</h3>
+            <p class="follow-up-quote">"Tiffany: 'Developing a succession plan and accountable managers is key to any of the revenue that I look to acquire. Right now we spoke to the issue we may have over at Lone Tree and the I wouldn't say leverage that that current site manager has and putting our putting our business at risk like that is obviously not good business.' Tiffany (on Lone Tree opportunity): 'Over at our Lone Tree location, we were able to move from an RD to an AD model. Because of that, we are able to reinvest about 10K a month into our succession planning, which we need to do. We need to have a number two for our site manager that's currently in leadership there.'"</p>
+            <p class="follow-up-action"><strong>Action:</strong> URGENT: (1) Lone Tree site manager has leverage that puts business at risk - single point of failure, (2) Good news: RD → AD model freed up $10K/month to reinvest in succession planning, (3) Hire/develop #2 for Lone Tree site manager immediately, (4) Create succession plans across all accounts - not just Lone Tree, (5) Develop accountable managers who can step up, (6) This is prerequisite for growth: 'Key to any of the revenue that I look to acquire,' (7) Eliminate situations where one person's departure creates business risk</p>
+        </div>
+        
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">Cost Control & Financial Management</span>
+                <span class="follow-up-source">— Tiffany Purifoy (Self-Identified)</span>
+            </div>
+            <h3>Work with Matt (New Finance Manager) on Proactive Cost Tracking</h3>
+            <p class="follow-up-quote">"Tiffany (2026 goal): 'Understanding new ways to control my costs. Towards the end of Chris's tenure, I was able to see a little bit. We got a little bit more insight of some of the costs that were hitting my account where some sites went red and I couldn't understand why because labor was OK and so then some amortized cost or delayed billing or something like that would occur. So one of the things I've been working with Matt, our new finance manager and he's already put some measures and more ideas, let's say that in place to provide some more proactive communication so that you're not telling me that I'm red at the end of the month, you're able to let me know what those trends are and I can make some real time adjustments to avoid the site being red for that month.'"</p>
+            <p class="follow-up-action"><strong>Action:</strong> Ongoing with Matt: (1) Proactive cost communication vs end-of-month surprises, (2) Understand all costs hitting accounts: amortized equipment, delayed billing, not just labor, (3) Real-time trend visibility: identify red flags early, (4) Real-time adjustments: don't wait until month-end to discover red status, (5) Matt implementing new measures and ideas - actively participate in these, (6) Goal: Eliminate surprise red months where 'I couldn't understand why because labor was OK,' (7) Fidelity lesson: Ran red all 2025 - better cost visibility could have accelerated corrective action</p>
+        </div>
+        
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">Sales Process Development</span>
+                <span class="follow-up-source">— Tiffany Purifoy (Self-Identified)</span>
+            </div>
+            <h3>Continued Growth in Sales Process Understanding</h3>
+            <p class="follow-up-quote">"Tiffany (2026 goal): 'Continued growth and understanding of the sales process so that I am not a roadblock or hindrance to the sales process.'"</p>
+            <p class="follow-up-action"><strong>Action:</strong> 2026 Development: (1) Learn sales process deeply enough to support vs hinder, (2) Apply to: Orlando FL pipeline ($150K monthly), TRP direct bid + HQ building, Citibank Tampa/Jacksonville, Argentina/Latin America opportunity, (3) Understand: proposal development, pricing strategy, client decision-making process, competitive positioning, (4) Goal: Be an asset in sales cycles, not a bottleneck, (5) Work with sales team to understand where ADs can add value vs where they create friction, (6) 18% revenue growth goal requires sales process competence</p>
+        </div>
+        
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">Data-Driven Communication</span>
+                <span class="follow-up-source">— Tiffany Purifoy (Self-Identified)</span>
+            </div>
+            <h3>Deliver Crisp Data-Driven Communication Tied to Business Outcomes</h3>
+            <p class="follow-up-quote">"Tiffany (2026 goal): 'The ability to deliver crisp data-driven communication and how to tie it to a business impact and business outcomes. Schwab, Fidelity are very, very high in data-driven communication and my ability to deliver that communication has been OK so far, and it's something that I know that I need to be better at. I know the data, I know the information. Delivering it with confidence is something that I need to improve upon. And again, I will continue to take the necessary courses to improve upon that.'"</p>
+            <p class="follow-up-action"><strong>Action:</strong> Ongoing development: (1) Schwab and Fidelity demand data-driven communication - current performance 'OK,' needs improvement, (2) Gap: Knows the data and information, struggles with confident delivery, (3) Tie data to business outcomes: not just numbers, but impact on client's business, (4) Continue Stage Academy and other communication courses, (5) Practice: Present data to Valarie in 1-on-1s with confidence, (6) Apply to: scorecards, QBRs, renewal discussions, growth conversations, (7) This connects to presentation skills gap - same root issue of confident delivery</p>
+        </div>
+        
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">Process Optimization</span>
+                <span class="follow-up-source">— Tiffany Purifoy (Self-Identified)</span>
+            </div>
+            <h3>Reduce Operational Friction Through Process Improvement</h3>
+            <p class="follow-up-quote">"Tiffany (2026 goal): 'Reducing operational friction by improving internal processes adoption. What I mean by that is there are some things that we rinse and repeat from an operational standpoint and those are the things that again making the decision and holding people accountable to avoid that hamster wheel that we tend to be in in specific processes.' Tiffany (example): 'One thing specifically I will say is our hiring process actually it's improved now that we're moving to workday, the way information is shared. We have our recruiting team that then emails the site manager if there's any updates or anything, we're all email chasing. So what we've done is create a live sheet, a live Excel sheet that we're all sharing and I have recruiting updating in real time so that I don't have to, when I decide to work on a weekend, bug anyone to understand and get the most updated information. Some of the processes that we have are so antiquated when we have tools that will allow us to work smarter.'"</p>
+            <p class="follow-up-action"><strong>Action:</strong> 2026 Process Review: (1) Identify 'hamster wheel' processes that rinse and repeat without improvement, (2) Hiring process improvement: Live Excel sheet for recruiting updates (already implemented) - replicate this thinking elsewhere, (3) Eliminate email chasing: use real-time shared documents, (4) Leverage available tools: 'We have tools that will allow us to work smarter' - what else is being underutilized?, (5) Hold people accountable to new processes: adoption is key, (6) Areas to evaluate: onboarding, equipment tracking, CSAT follow-up, periodic task management, client communication, (7) Goal: Make smarter decisions faster with better information flow</p>
+        </div>
+        
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">Growth Goals</span>
+                <span class="follow-up-source">— Tiffany Purifoy (Self-Identified)</span>
+            </div>
+            <h3>18% Revenue Growth Target (Strategic Pipeline Work Only)</h3>
+            <p class="follow-up-quote">"Tiffany (2026 goal): 'My goals for 2026 is to increase my managed revenue by 18%. That number is strategic by the work that I look to win that's open right now. I'm not including the work that is currently looking to shift from JLL to direct. I think that's just retaining work. So I did not include that in the 18%.'"</p>
+            <p class="follow-up-action"><strong>Action:</strong> 2026 Growth Plan: (1) 18% revenue growth from new work only (not TRP JLL→direct transition), (2) Pipeline opportunities: Orlando FL ($150K monthly), Citibank Tampa/Jacksonville (Tampa is their largest piece), Argentina/Latin America (Citibank POC referred), Schwab floor work at Lone Tree/Austin ($222K annually), TRP HQ building (if won direct), (3) Retention work separate: TRP direct contract, Fidelity DC office work, (4) Track: What's included in 18%? What's the dollar target?, (5) Support requirements: succession planning, sales process competence, executive relationships, (6) Valarie will want to see progress tracking toward 18% in 1-on-1s</p>
+        </div>
+        
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">Personal Development - Books/Courses</span>
+                <span class="follow-up-source">— Tiffany Purifoy & Valarie Barnett</span>
+            </div>
+            <h3>Continue Communication Training Investment</h3>
+            <p class="follow-up-quote">"Tiffany: 'Continuing to invest in my communication and presentation courses, I did. I did actually invest in. It's called Stage Academy, a communication class. It did not show itself very well today. But that is something that I've invested in and I do have those classes and continue to take them. There are certain books obviously that are that I'm going through as well for that. I know one of the ones that you suggested Val was... it'll come back to me.' Valarie: 'I give you kudos for investing in a communications class and taking the bull by the horns and saying, listen, this might not be my strength when it comes to the things that make me nervous in front of executive leaders.'"</p>
+            <p class="follow-up-action"><strong>Action:</strong> Continue development: (1) Stage Academy - continue classes despite today's performance not reflecting training, (2) Valarie-suggested books - identify which book she recommended and complete it, (3) Practice presentations more before delivery, (4) Consider: Is Stage Academy the right program? Are there other options?, (5) Valarie appreciates the investment and self-awareness, (6) Goal: See training translate to confident executive presentations, (7) Don't get discouraged by today's performance - Valarie: 'Stay encouraged because I think that you know your accounts very well'</p>
+        </div>
+        
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">Accountability & Lessons Learned</span>
+                <span class="follow-up-source">— Valarie Barnett</span>
+            </div>
+            <h3>Continue Transparency and Ownership While Improving Execution Speed</h3>
+            <p class="follow-up-quote">"Valarie: 'I thought you did really well on owning and being accountable for the issues and challenges and I appreciate that... You have the ability to take accountability which I appreciate. We have some opportunities and I'm excited actually to take this year and get through them and to work together through them. I don't want you to be discouraged. Stay encouraged. You also know where growth is possible. And I know that you understand you have a growth mindset. Even like I can grow, I can get better, I can do these things, but you also have a growth mindset.'"</p>
+            <p class="follow-up-action"><strong>Action:</strong> Strengths to maintain: (1) Accountability and transparency - Valarie praised this multiple times, (2) Owning gaps: Fidelity transition delays, Citibank passivity, TRP periodic task visibility, (3) Growth mindset: Personal (communication training) and business (18% revenue growth), (4) Improvement area: Execute corrections faster - don't wait quarters for gradual improvement, (5) Citibank example: 'Budget was huge. Really turning the site around from an operational standpoint from a 2.5 to a stable 4. Customer now went from being at risk to we now have an advocate,' (6) Apply lessons learned faster in future situations, (7) Valarie's encouragement: Stay motivated, work together on opportunities</p>
+        </div>
+        </div>
+
+</body>
+</html>

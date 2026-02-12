@@ -19,7 +19,7 @@ except ImportError:
 
 def ensure_pdf_directory():
     """Create PDF output directory if it doesn't exist"""
-    pdf_dir = Path("reports/pdf")
+    pdf_dir = Path("reports-v2/pdf")
     pdf_dir.mkdir(parents=True, exist_ok=True)
     return pdf_dir
 
@@ -68,7 +68,7 @@ def main():
     reports = []
     
     # 1. Individual AD scorecards
-    scorecard_dir = Path("reports")
+    scorecard_dir = Path("reports-v2")
     for html_file in scorecard_dir.glob("*-scorecard.html"):
         pdf_name = html_file.stem + ".pdf"
         reports.append((html_file, pdf_dir / pdf_name))
@@ -84,28 +84,28 @@ def main():
         reports.append((highlights_report, pdf_dir / "AD_Highlights_Report_2025.pdf"))
     
     if not reports:
-        print("❌ No HTML reports found!")
+        print("[ERROR] No HTML reports found!")
         print("\nGenerate reports first:")
         print("  python generate_scorecards.py")
         print("  python generate_report.py")
         return
     
-    print(f"\n📄 Found {len(reports)} report(s) to convert\n")
+    print(f"\nFound {len(reports)} report(s) to convert\n")
     
     # Convert each report
     success_count = 0
     for html_path, pdf_path in reports:
         try:
-            print(f"Converting: {html_path.name} → {pdf_path.name}...", end=" ")
+            print(f"Converting: {html_path.name} -> {pdf_path.name}...", end=" ")
             convert_html_to_pdf(html_path, pdf_path)
-            print("✅")
+            print("[OK]")
             success_count += 1
         except Exception as e:
-            print(f"❌ Error: {e}")
+            print(f"[ERROR] {e}")
     
     print("\n" + "=" * 70)
-    print(f"✅ Successfully generated {success_count}/{len(reports)} PDFs")
-    print(f"📁 PDFs saved to: {pdf_dir.absolute()}")
+    print(f"[SUCCESS] Generated {success_count}/{len(reports)} PDFs")
+    print(f"PDFs saved to: {pdf_dir.absolute()}")
     print("=" * 70)
 
 

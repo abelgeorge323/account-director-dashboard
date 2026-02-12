@@ -21,7 +21,7 @@
       "Goals",
       "Exec Presence"
     ],
-    "lastUpdated": "2026-02-04T01:14:27.975200"
+    "lastUpdated": "2026-02-12T00:43:23.187112"
   },
   "accountDirectors": [
     {
@@ -39,6 +39,7 @@
       "growth": 6.0,
       "vertical": "Manufacturing",
       "tier": "Tier 5",
+      "role": "Account Director",
       "reviewCount": 4,
       "avgScores": {
         "Key Projects & Initiatives": 3.5,
@@ -176,18 +177,19 @@
       "growth": -1.7,
       "vertical": "Life Science",
       "tier": "Tier 5",
-      "reviewCount": 3,
+      "role": "Account Director",
+      "reviewCount": 2,
       "avgScores": {
-        "Key Projects & Initiatives": 4.0,
-        "Value Adds & Cost Avoidance": 4.0,
-        "Cost Savings Delivered": 3.6666666666666665,
-        "Innovation & Continuous Improvement": 3.6666666666666665,
-        "Issues, Challenges & Accountability": 4.333333333333333,
-        "2026 Forward Strategy & Vision": 3.6666666666666665,
-        "Personal Goals & Role Maturity": 3.6666666666666665,
-        "Executive Presence & Presentation Skills": 3.6666666666666665
+        "Key Projects & Initiatives": 4.5,
+        "Value Adds & Cost Avoidance": 4.5,
+        "Cost Savings Delivered": 4.5,
+        "Innovation & Continuous Improvement": 4.0,
+        "Issues, Challenges & Accountability": 4.5,
+        "2026 Forward Strategy & Vision": 4.0,
+        "Personal Goals & Role Maturity": 4.0,
+        "Executive Presence & Presentation Skills": 4.0
       },
-      "avgTotalScore": 30.666666666666664,
+      "avgTotalScore": 34.0,
       "reviews": [
         {
           "accountDirector": "Justin Homa",
@@ -215,33 +217,6 @@
             "Executive Presence & Presentation Skills": "No feedback provided"
           },
           "totalScore": 35.0
-        },
-        {
-          "accountDirector": "Justin Homa",
-          "account": "Merck (CBRE + Direct)",
-          "reviewerName": "Nick Viskovich",
-          "reviewerEmail": "nviskovich@sbmcorp.com",
-          "scores": {
-            "Key Projects & Initiatives": 3.0,
-            "Value Adds & Cost Avoidance": 3.0,
-            "Cost Savings Delivered": 2.0,
-            "Innovation & Continuous Improvement": 3.0,
-            "Issues, Challenges & Accountability": 4.0,
-            "2026 Forward Strategy & Vision": 3.0,
-            "Personal Goals & Role Maturity": 3.0,
-            "Executive Presence & Presentation Skills": 3.0
-          },
-          "feedback": {
-            "Key Projects & Initiatives": "Given Brian’s mid-year start, the review demonstrated a reasonable grasp of the portfolio and an understanding of the major initiatives in motion. Oversight across multiple relationships was clear, and there was evidence of active engagement and learning. That said, the articulation of initiatives leaned more toward inherited context and shared ownership than clearly defined initiatives Brian personally drove in 2025. As Brian moves into a full-year role, I would expect clearer framing around what he owns end-to-end, why those initiatives matter, and what changed for the client as a result.",
-            "Value Adds & Cost Avoidance": "Brian showed awareness of where value is created across the portfolio and how different teams contribute. However, value-adds and cost avoidance efforts were not yet clearly framed as deliberate actions owned by Brian with defined impact. This is understandable given tenure, but going forward, I would expect more explicit examples of decisions or interventions that delivered incremental value beyond the contract, even if directional in nature.",
-            "Cost Savings Delivered": "Cost savings delivered in 2025 were not clearly articulated. Given the timing of Brian’s start, this is not unexpected, but this section lacked clarity around ownership of savings, execution, or sustainability. As Brian enters a full operating year, it will be important to explicitly call out cost savings achieved, how they were driven, and whether they are repeatable improvements tied to financial stewardship.",
-            "Innovation & Continuous Improvement": "Brian demonstrated openness to learning the portfolio and engaging with existing processes and teams. However, leadership in driving new processes, tools, or meaningful improvements was not yet clearly established. This is appropriate for a ramp period. In 2026, I would expect Brian to move from participation to leadership by identifying opportunities to improve how the portfolio operates and testing changes with measurable outcomes.",
-            "Issues, Challenges & Accountability": "Brian was transparent about his tenure, the inherited nature of many challenges, and the shared accountability across the team. There was a healthy tone of ownership without defensiveness, which is important at this level. To continue building strength here, future reviews should include clearer reflection on what Brian would approach differently and specific corrective actions he intends to drive, with timelines.",
-            "2026 Forward Strategy & Vision": "A general forward-looking intent was present, but the 2026 strategy was not yet articulated as a clear, cohesive roadmap. This is reasonable given time in role. As Brian moves into a full planning cycle, I would expect a more structured strategy outlining priorities, sequencing, and how the portfolio will be elevated through retention, growth, and differentiation",
-            "Personal Goals & Role Maturity": "Brian demonstrated self-awareness around his ramp and role scope, which is a positive signal. Personal development goals, however, were not yet clearly defined or measurable. As he matures in the role, I would expect clearer leadership goals tied directly to portfolio performance, team development, and operational outcomes.",
-            "Executive Presence & Presentation Skills": "Brian communicated professionally and engaged appropriately with senior leaders. Executive presence is developing, and confidence will naturally increase with tenure. Going forward, tightening the narrative around outcomes, ownership, and forward strategy will strengthen Brian’s ability to lead executive-level account discussions more decisively.\r\n\r\nBrian is in a reasonable ramp phase and is demonstrating the right fundamentals: openness, accountability, and engagement across a complex portfolio. The primary opportunity moving into 2026 is shifting from shared context to clear ownership, tightening outcome-based storytelling, and more explicitly articulating impact. With a full year in role, expectations will appropriately rise, and Brian is positioned to meet them with stronger clarity and execution discipline."
-          },
-          "totalScore": 24.0
         },
         {
           "accountDirector": "Justin Homa",
@@ -292,6 +267,7 @@
       "growth": 1.5142857142857145,
       "vertical": "Technology",
       "tier": "Tier 5",
+      "role": "VP",
       "reviewCount": 4,
       "avgScores": {
         "Key Projects & Initiatives": 4.5,
@@ -430,6 +406,7 @@
       "growth": 24.5,
       "vertical": "Technology",
       "tier": "Tier 6",
+      "role": "Sr. Account Director",
       "reviewCount": 4,
       "avgScores": {
         "Key Projects & Initiatives": 5.0,
@@ -567,6 +544,7 @@
       "growth": 30.9,
       "vertical": "Technology",
       "tier": "Tier 6",
+      "role": "Sr. Account Director",
       "reviewCount": 4,
       "avgScores": {
         "Key Projects & Initiatives": 4.25,
@@ -705,6 +683,7 @@
       "growth": 35.449999999999996,
       "vertical": "Life Science",
       "tier": "Tier 5",
+      "role": "Account Director",
       "reviewCount": 3,
       "avgScores": {
         "Key Projects & Initiatives": 4.0,
@@ -816,6 +795,7 @@
       "growth": 15.45,
       "vertical": "Technology",
       "tier": "Tier 6",
+      "role": "Sr. Account Director",
       "reviewCount": 4,
       "avgScores": {
         "Key Projects & Initiatives": 3.5,
@@ -955,6 +935,7 @@
       "growth": -26.333333333333332,
       "vertical": "Manufacturing",
       "tier": "Tier 5",
+      "role": "Account Director",
       "reviewCount": 3,
       "avgScores": {
         "Key Projects & Initiatives": 4.333333333333333,
@@ -1067,6 +1048,7 @@
       "growth": 1493.3999999999999,
       "vertical": "Technology",
       "tier": "Tier 5",
+      "role": "Account Director",
       "reviewCount": 4,
       "avgScores": {
         "Key Projects & Initiatives": 4.75,
@@ -1204,6 +1186,7 @@
       "growth": 28.1,
       "vertical": "Technology",
       "tier": "Tier 6",
+      "role": "Account Director",
       "reviewCount": 3,
       "avgScores": {
         "Key Projects & Initiatives": 4.333333333333333,
@@ -1315,6 +1298,7 @@
       "growth": 152.2,
       "vertical": "Distribution",
       "tier": "Tier 4",
+      "role": "Account Director",
       "reviewCount": 3,
       "avgScores": {
         "Key Projects & Initiatives": 3.6666666666666665,
@@ -1429,6 +1413,7 @@
       "growth": -6.6,
       "vertical": "Life Science",
       "tier": "Tier 6",
+      "role": "Account Director",
       "reviewCount": 2,
       "avgScores": {
         "Key Projects & Initiatives": 3.5,
@@ -1514,6 +1499,7 @@
       "growth": 13.633333333333333,
       "vertical": "Life Science",
       "tier": "Tier 5",
+      "role": "Account Manager",
       "reviewCount": 4,
       "avgScores": {
         "Key Projects & Initiatives": 3.75,
@@ -1651,6 +1637,7 @@
       "growth": 8.9,
       "vertical": "Life Science",
       "tier": "Tier 6",
+      "role": "Sr. Account Director",
       "reviewCount": 2,
       "avgScores": {
         "Key Projects & Initiatives": 3.5,
@@ -1736,6 +1723,7 @@
       "growth": 7.3,
       "vertical": "Manufacturing",
       "tier": "Tier 5",
+      "role": "Account Director",
       "reviewCount": 3,
       "avgScores": {
         "Key Projects & Initiatives": 3.6666666666666665,
@@ -1846,6 +1834,7 @@
       "growth": 18.3,
       "vertical": "Manufacturing",
       "tier": "Tier 5",
+      "role": "Account Director",
       "reviewCount": 4,
       "avgScores": {
         "Key Projects & Initiatives": 4.0,
@@ -1983,6 +1972,7 @@
       "growth": 5.2,
       "vertical": "Finance",
       "tier": "Tier 5",
+      "role": "Account Director",
       "reviewCount": 2,
       "avgScores": {
         "Key Projects & Initiatives": 3.5,
@@ -2066,6 +2056,7 @@
       "growth": 8.9,
       "vertical": "Life Science",
       "tier": "Tier 5",
+      "role": "Account Director",
       "reviewCount": 3,
       "avgScores": {
         "Key Projects & Initiatives": 4.0,
@@ -2176,6 +2167,7 @@
       "growth": 13.2,
       "vertical": "Life Science",
       "tier": "Tier 5",
+      "role": "Account Director",
       "reviewCount": 2,
       "avgScores": {
         "Key Projects & Initiatives": 4.0,
@@ -2261,6 +2253,7 @@
       "growth": -1.3000000000000007,
       "vertical": "Life Science",
       "tier": "Tier 4",
+      "role": "Account Director",
       "reviewCount": 4,
       "avgScores": {
         "Key Projects & Initiatives": 4.75,
@@ -2398,6 +2391,7 @@
       "growth": 55.4,
       "vertical": "Life Science",
       "tier": "Tier 6",
+      "role": "Site Manager",
       "reviewCount": 5,
       "avgScores": {
         "Key Projects & Initiatives": 3.4,
@@ -2562,6 +2556,7 @@
       "growth": 0.8,
       "vertical": "Life Science",
       "tier": "Tier 6",
+      "role": "Sr. Account Director",
       "reviewCount": 3,
       "avgScores": {
         "Key Projects & Initiatives": 3.0,
@@ -2674,6 +2669,7 @@
       "growth": 23.86666666666667,
       "vertical": "Manufacturing",
       "tier": "Tier 5",
+      "role": "Account Director",
       "reviewCount": 2,
       "avgScores": {
         "Key Projects & Initiatives": 4.0,
@@ -2757,6 +2753,7 @@
       "growth": -1.4,
       "vertical": "Life Science",
       "tier": "Tier 5",
+      "role": "Account Manager",
       "reviewCount": 4,
       "avgScores": {
         "Key Projects & Initiatives": 5.0,
@@ -2895,6 +2892,7 @@
       "growth": -50.0,
       "vertical": "Life Science",
       "tier": "Tier 5",
+      "role": "Account Director",
       "reviewCount": 3,
       "avgScores": {
         "Key Projects & Initiatives": 5.0,
@@ -3006,6 +3004,7 @@
       "growth": -11.55,
       "vertical": "Finance",
       "tier": "Tier 4",
+      "role": "Account Manager",
       "reviewCount": 1,
       "avgScores": {
         "Key Projects & Initiatives": 4.0,
@@ -3062,6 +3061,7 @@
       "growth": -17.8,
       "vertical": "Manufacturing",
       "tier": "Tier 5",
+      "role": "Account Director",
       "reviewCount": 2,
       "avgScores": {
         "Key Projects & Initiatives": 4.0,
@@ -3145,6 +3145,7 @@
       "growth": 61.5,
       "vertical": "Technology",
       "tier": "Tier 6",
+      "role": "Account Director",
       "reviewCount": 1,
       "avgScores": {
         "Key Projects & Initiatives": 4.0,
@@ -3201,6 +3202,7 @@
       "growth": 4.8,
       "vertical": "Life Science",
       "tier": "Tier 5",
+      "role": "Account Manager",
       "reviewCount": 3,
       "avgScores": {
         "Key Projects & Initiatives": 4.333333333333333,
@@ -3312,6 +3314,7 @@
       "growth": -27.6,
       "vertical": "Manufacturing",
       "tier": "Tier 4",
+      "role": "Account Manager",
       "reviewCount": 2,
       "avgScores": {
         "Key Projects & Initiatives": 5.0,
@@ -3396,6 +3399,7 @@
       "growth": -4.85,
       "vertical": "Life Science",
       "tier": "Tier 5",
+      "role": "Sr. Account Director",
       "reviewCount": 3,
       "avgScores": {
         "Key Projects & Initiatives": 5.0,
@@ -3507,6 +3511,7 @@
       "growth": 13.45,
       "vertical": "Technology",
       "tier": "Tier 5",
+      "role": "Account Director",
       "reviewCount": 4,
       "avgScores": {
         "Key Projects & Initiatives": 4.25,
@@ -3644,6 +3649,7 @@
       "growth": -38.7,
       "vertical": "Distribution",
       "tier": "Tier 6",
+      "role": "VP",
       "reviewCount": 1,
       "avgScores": {
         "Key Projects & Initiatives": 5.0,
@@ -3705,6 +3711,7 @@
       "growth": 27.666666666666668,
       "vertical": "Finance",
       "tier": "Tier 5",
+      "role": "Account Director",
       "reviewCount": 2,
       "avgScores": {
         "Key Projects & Initiatives": 4.0,
@@ -3788,6 +3795,7 @@
       "growth": -38.7,
       "vertical": "Distribution",
       "tier": "Tier 6",
+      "role": "Sr. Director of Operations",
       "reviewCount": 1,
       "avgScores": {
         "Key Projects & Initiatives": 5.0,
@@ -3827,6 +3835,174 @@
             "Executive Presence & Presentation Skills": "Clear and confident communicator with a structured and logical flow. Able to tell a concise story on your account with an executive presence. The self reflection Keith gave was honest, transparent and vulnerable. Dustin I hear you and Keith saying you can do it but you need to use your resources. Agreed"
           },
           "totalScore": 39.0
+        }
+      ]
+    },
+    {
+      "accountDirector": "RJ Ober",
+      "account": "undefined",
+      "accounts": [],
+      "numAccounts": 0,
+      "revenue": 0,
+      "csat": null,
+      "headcount": 0,
+      "redSites": 0,
+      "growth": null,
+      "vertical": "Technology",
+      "tier": "Tier 5",
+      "role": "Account Manager",
+      "reviewCount": 1,
+      "avgScores": {
+        "Key Projects & Initiatives": 4.0,
+        "Value Adds & Cost Avoidance": 4.0,
+        "Cost Savings Delivered": 3.0,
+        "Innovation & Continuous Improvement": 3.0,
+        "Issues, Challenges & Accountability": 4.0,
+        "2026 Forward Strategy & Vision": 4.0,
+        "Personal Goals & Role Maturity": 4.0,
+        "Executive Presence & Presentation Skills": 4.0
+      },
+      "avgTotalScore": 30.0,
+      "reviews": [
+        {
+          "accountDirector": "RJ Ober",
+          "account": "IBM",
+          "reviewerName": "Yousef Abbasi",
+          "reviewerEmail": "anonymous",
+          "scores": {
+            "Key Projects & Initiatives": 4.0,
+            "Value Adds & Cost Avoidance": 4.0,
+            "Cost Savings Delivered": 3.0,
+            "Innovation & Continuous Improvement": 3.0,
+            "Issues, Challenges & Accountability": 4.0,
+            "2026 Forward Strategy & Vision": 4.0,
+            "Personal Goals & Role Maturity": 4.0,
+            "Executive Presence & Presentation Skills": 4.0
+          },
+          "feedback": {
+            "Key Projects & Initiatives": "Strong overview of the reviewed projects, with clear articulation of both client impact and the SBM solutions delivered. Regarding scope alignment, I would have appreciated additional detail on how the misalignment originated and whether any corrective steps were taken before end user concerns surfaced and the final resolution was reached. It would also be helpful to understand how our partnership and working relationship with JLL influenced the process and outcome.\r\n\r\nOverall, you demonstrated a solid partnership mindset and the ability to pivot effectively to support initiatives that matter to both our client and the end users.",
+            "Value Adds & Cost Avoidance": "Regarding the value add, I believe there was a missed opportunity to highlight the leadership impact created by having two dedicated leaders supporting IBM. With SBM investing in the partnership through both you and Lou, it would have been helpful to understand how this has strengthened relationships with both onsite and offsite leadership teams. We know this investment has created tangible benefits, and further elaboration would have reinforced that point.\r\n\r\nOn cost avoidance and savings, you delivered a clear and effective communication of the financial impacts, successfully demonstrating our value as a strategic partner.",
+            "Cost Savings Delivered": "The cost‑savings presented were impactful, though largely one‑time initiatives. Identifying more sustainable, long‑term savings may be challenging due to current contractual limitations and wage related constraints. It would have been helpful to see additional perspective on the ongoing challenges of sustaining cost savings efforts; however, the one‑time savings delivered still provide meaningful value to our partner.",
+            "Innovation & Continuous Improvement": "Even while our IFM partners were undergoing their RFP process, you continued to present technology proposals and solutions that demonstrated SBM’s commitment to a long‑term partnership. You noted your engagement with the HSSE partner at JLL and the review of our Good Catch program as an added benefit. Additional clarity on the specific advantages this provided JLL and the resulting impact on our relationship, would have strengthened the narrative.\r\n\r\nThe internal ATB tracker is a solid enhancement and represents a valuable new tool for internal operations.",
+            "Issues, Challenges & Accountability": "Your dialogue with Nick V. provided a strong opportunity to further demonstrate your depth of knowledge and experience on the account. I also appreciate your openness to learning and your willingness to incorporate additional perspectives, such as bringing Melissa into the conversation to help strengthen opportunities and solutions.",
+            "2026 Forward Strategy & Vision": "Focusing on a successful RFP and the upcoming Austin transition represents the most clearly defined and impactful priorities we can have at this stage. It’s encouraging to hear the proactive steps being taken to ensure success, as well as your clear understanding of the timelines involved. Incorporating potential innovations into the Austin site for future consideration also demonstrates forward thinking beyond the transition itself and highlights opportunities for added value.",
+            "Personal Goals & Role Maturity": "I appreciate the personal accountability you demonstrate in recognizing what you don’t yet know whether due to tenure or coming from outside the industry. Strong self‑awareness is essential for growth and development. You clearly outlined your goals with timelines and desired outcomes, all of which will positively impact you, our customers, and the advancement of your team.",
+            "Executive Presence & Presentation Skills": "I’ll tie this back to both your dialogue with Nick V. and your exchange with Valarie. Your ability to respond confidently and clearly to unrehearsed, unscripted questions demonstrates strong executive presence. With Valarie’s line of questioning, I would have liked to hear a more “bottom line up front” approach, especially since you have the knowledge and insight to address her budget questions with even greater clarity.You did an excellent job presenting a cohesive, well‑structured story each slide building logically on the last and tying the full narrative together. Well done."
+          },
+          "totalScore": 30.0
+        }
+      ]
+    },
+    {
+      "accountDirector": "Jeremy Johnson",
+      "account": "Intel, Altera",
+      "accounts": [
+        "Intel",
+        "Altera"
+      ],
+      "numAccounts": 2,
+      "revenue": 3504.0,
+      "csat": 4.470000000000001,
+      "headcount": 490,
+      "redSites": 1,
+      "growth": 0.2,
+      "vertical": "Technology",
+      "tier": "Tier 6",
+      "role": "Sr. Account Director",
+      "reviewCount": 1,
+      "avgScores": {
+        "Key Projects & Initiatives": 5.0,
+        "Value Adds & Cost Avoidance": 5.0,
+        "Cost Savings Delivered": 5.0,
+        "Innovation & Continuous Improvement": 5.0,
+        "Issues, Challenges & Accountability": 5.0,
+        "2026 Forward Strategy & Vision": 5.0,
+        "Personal Goals & Role Maturity": 3.0,
+        "Executive Presence & Presentation Skills": 5.0
+      },
+      "avgTotalScore": 38.0,
+      "reviews": [
+        {
+          "accountDirector": "Jeremy Johnson",
+          "account": "Intel",
+          "reviewerName": "Valarie Barnett",
+          "reviewerEmail": "anonymous",
+          "scores": {
+            "Key Projects & Initiatives": 5.0,
+            "Value Adds & Cost Avoidance": 5.0,
+            "Cost Savings Delivered": 5.0,
+            "Innovation & Continuous Improvement": 5.0,
+            "Issues, Challenges & Accountability": 5.0,
+            "2026 Forward Strategy & Vision": 5.0,
+            "Personal Goals & Role Maturity": 3.0,
+            "Executive Presence & Presentation Skills": 5.0
+          },
+          "feedback": {
+            "Key Projects & Initiatives": "Clearly framed the most important 2025 initiatives, why they mattered, and what changed for the client as a result; demonstrates strong judgment, prioritization, and impact awareness.",
+            "Value Adds & Cost Avoidance": "No feedback provided",
+            "Cost Savings Delivered": "Clearly explains how cost savings were created, quantified, and sustained; demonstrates strong financial stewardship.",
+            "Innovation & Continuous Improvement": "The excitement in pilots and willingness to trial items and processes is bold and I believe will support our larger win! Clearly and specifically demonstrated an intentional innovation or meaningful pivots to support Intel. Explained clear outcomes and lessons learned.",
+            "Issues, Challenges & Accountability": "Most successful year - financially, quality, and safety. Where you feel you fell short was on growth at $210k captured but went backwards with Intel closures and changes. Although you couldn’t change the reductions I like that you see how you could’ve been more strategically positioned.",
+            "2026 Forward Strategy & Vision": "No feedback provided",
+            "Personal Goals & Role Maturity": "Personal professional goal: force yourself out of your comfort zone learn something new, do something new this year. Want to ensure you have the right vision. By Q3 (decide what “it” is) Critical space differentiation - white paper a technology solution away from mop and bucket for lack of a better description… to be determined to really separate ourselves. Alex, Mark and Jeremy to formalize text Q1. I challenge you to bring someone under your wing as a number 2. If Amani is who you are pouring into what measurements of her success?",
+            "Executive Presence & Presentation Skills": "Exceptional presentation from structure to details to growth mindset. I appreciate your passion, and cadence. Your delivery and organization is a best practice!"
+          },
+          "totalScore": 38.0
+        }
+      ]
+    },
+    {
+      "accountDirector": "Greyson Wolff",
+      "account": "undefined",
+      "accounts": [],
+      "numAccounts": 0,
+      "revenue": 0,
+      "csat": null,
+      "headcount": 0,
+      "redSites": 0,
+      "growth": null,
+      "vertical": "N/A",
+      "tier": "",
+      "role": "Account Director",
+      "reviewCount": 1,
+      "avgScores": {
+        "Key Projects & Initiatives": 4.0,
+        "Value Adds & Cost Avoidance": 4.0,
+        "Cost Savings Delivered": 4.0,
+        "Innovation & Continuous Improvement": 4.0,
+        "Issues, Challenges & Accountability": 4.0,
+        "2026 Forward Strategy & Vision": 4.0,
+        "Personal Goals & Role Maturity": 4.0,
+        "Executive Presence & Presentation Skills": 4.0
+      },
+      "avgTotalScore": 32.0,
+      "reviews": [
+        {
+          "accountDirector": "Greyson Wolff",
+          "account": "Honda",
+          "reviewerName": "Valarie Barnett",
+          "reviewerEmail": "anonymous",
+          "scores": {
+            "Key Projects & Initiatives": 4.0,
+            "Value Adds & Cost Avoidance": 4.0,
+            "Cost Savings Delivered": 4.0,
+            "Innovation & Continuous Improvement": 4.0,
+            "Issues, Challenges & Accountability": 4.0,
+            "2026 Forward Strategy & Vision": 4.0,
+            "Personal Goals & Role Maturity": 4.0,
+            "Executive Presence & Presentation Skills": 4.0
+          },
+          "feedback": {
+            "Key Projects & Initiatives": "No feedback provided",
+            "Value Adds & Cost Avoidance": "No feedback provided",
+            "Cost Savings Delivered": "No feedback provided",
+            "Innovation & Continuous Improvement": "Introduced improvements or adaptations that positively impacted the account",
+            "Issues, Challenges & Accountability": "Identifies challenges and discusses improvement actions with reasonable clarity",
+            "2026 Forward Strategy & Vision": "Presents a strong forward-looking plan with reasonable clarity and timelines",
+            "Personal Goals & Role Maturity": "Establishes thoughtful goals with progress and clearly articulated next steps",
+            "Executive Presence & Presentation Skills": "Communicates clearly with logical flow; delivers a cohesive account story with minor gaps in executive presence or impact."
+          },
+          "totalScore": 32.0
         }
       ]
     }
@@ -4150,34 +4326,44 @@
     ],
     "Brian Davis": [
       {
-        "title": "Cross-Portfolio Expert Leverage Model",
-        "category": "Strategic Thinking & Resource Optimization",
-        "description": "Leverage dedicated resources across Merck portfolio (CBRE, Sodexo, Direct); pull in experts from one account to support another (e.g., Justin from CBRE as pest control expert for Direct sites)",
-        "context": "Brian manages Merck across three IFM partners (CBRE, Sodexo, Direct) with dedicated SBM resources on each. Rather than siloing expertise, he created a cross-portfolio leverage model where specialists can be pulled from one account to support another. For example, Justin from the CBRE account serves as the pest control expert for Direct sites. The scale of the portfolio supports complex problem-solving without additional client cost - 'We've got the whole team' available. Marvin Owens noted this strategic advantage as a best practice for large multi-partner accounts where SBM can provide continuity and expertise that IFMs can't match individually.",
-        "impact": "Scale of account supports problem-solving without additional cost; 'We've got the whole team'",
+        "title": "EHS Leadership as Value-Add - Eyes and Ears for Undermanned Merck",
+        "category": "Safety & Strategic Partnership",
+        "description": "Dedicated EHS personnel at Boston and San Francisco provide audit prep, safety governance, AND act as eyes/ears for undermanned Merck facilities; report on lab waste compliance beyond SBM scope",
+        "context": "Value-add leadership: 'Most significant thing we add to values is leadership on site that's above scope.' Examples: (1) South San Francisco site manager leading shutdown (3-4 month process) - 'Not only making sure our activities are integrated with SBM delivered scope, but also working directly with other providers, mentoring site directly to develop project management, Gantt charts that manage that shutdown,' (2) Safety audit prep - 'Dedicated EHS person at Boston and San Francisco. When we're doing their actual audits coming in, our safety guys tend to step up and while we're taking care of SBM's interests, their knowledge and having that expertise on-site is extra value add because they are helping advise and being eyes and ears that undermanned Merck isn't always able to do,' (3) EHS reporting at South San Francisco - 'Through our governance process while we're tracking our own metrics that tie to our scorecard, we are also reporting back on what we see is how labs are throwing their stuff away. Are they compliant? Where the problems are? Not reporting out against them as much as being eyes and ears in labs for facility manager so they can tie that to their own compliance.' This demonstrates SBM providing value beyond contract scope through embedded expertise.",
+        "impact": "Above-scope leadership value; Merck facilities understaffed benefit from SBM expertise; safety governance support; lab compliance insights provided",
         "replicability": "High",
         "status": "Proven & Active",
-        "leadership_endorsement": "Marvin Owens noted strategic advantage of portfolio structure"
+        "leadership_endorsement": "Demonstrates embedded partnership value beyond contractual scope"
       },
       {
-        "title": "Leading Merck IFM Workplace Experience Community of Practice",
-        "category": "Strategic Partnership & Thought Leadership",
-        "description": "Took over workplace experience community of practice; presented final survey results to Merck leadership; collaborated with CBRE and Sodexo on contractual protections (e.g., scoring methodology)",
-        "context": "Marvin Owens handed off the Merck Workplace Experience Community of Practice leadership to Brian, positioning SBM (not CBRE or Sodexo) as the thought leader. Brian presented final survey results directly to Merck executive leadership and collaborated with other IFMs on contractual protections like scoring methodology. This forced collaboration across IFMs (where SBM leads, not follows) and increased executive-level visibility for SBM. The strategic value: when Merck thinks 'workplace experience,' they think SBM first, not the larger IFM partners. This is partnership positioning at its best.",
-        "impact": "Positioned SBM as IFM thought leader; forced collaboration across IFMs; increased visibility to executive leadership",
-        "replicability": "Medium",
+        "title": "Vendor Coordination Process - Eliminating Client as Referee",
+        "category": "Process Excellence & Client Relationship",
+        "description": "Created vendor coordination process eliminating need for client to referee between multiple suppliers; resulted in seamless multi-provider collaboration",
+        "context": "Multi-vendor environment challenge: multiple suppliers at each Merck site create natural friction and boundary disputes. Brian's solution: 'Vendor coordination process that we put in place to coordinate between suppliers.' Result: 'What it's resulted in is client not having to play referee between what's the dividing lines between multiple suppliers they have on place.' This is particularly valuable in IFM context where client expects providers to work together seamlessly. Examples from transcript: coordinating with Sodexo and Mentor on pest control column access, working with CBRE on MYO data submissions, leading shutdown coordination at South San Francisco involving multiple providers. Value: reduces client burden, demonstrates mature partnership approach, positions SBM as collaborator vs territorial vendor.",
+        "impact": "Client relieved of referee role; seamless multi-provider operations; demonstrates partnership maturity; differentiates SBM from territorial vendors",
+        "replicability": "Very High",
         "status": "Proven & Active",
-        "leadership_endorsement": "Marvin Owens handed off to Brian; executive-level visibility"
+        "leadership_endorsement": "Demonstrated through multiple cross-vendor initiatives; client no longer playing referee"
       },
       {
-        "title": "MYO (Multi-Year Optimization) Custodial SLA Leadership",
-        "category": "Strategic Planning & Thought Leadership",
-        "description": "Leading custodial SLA optimization for Merck's $3B savings initiative (patent cliff); using education sector 4-level service model; Merck already positioning SBM to lead",
-        "context": "Merck is facing a patent cliff requiring $3B in savings across all services. For the Multi-Year Optimization (MYO) custodial SLA redesign, Merck leadership (Michael Gardner, Pierre Leo) is already positioning SBM to lead - not CBRE, not Sodexo. Brian is applying an education sector 4-level service model to create tiered custodial standards. The strategic win: 'If we're looking at optimizing custodial, it's SBM.' This positions SBM as the optimization thought leader across all IFMs in a $3B initiative, creating massive visibility and influence on future scope decisions. Leadership sees this as enterprise-level strategic positioning.",
-        "impact": "Positions SBM as optimization leader across all IFMs; 'If we're looking at optimizing custodial, it's SBM'",
-        "replicability": "Medium",
-        "status": "Active (2026)",
-        "leadership_endorsement": "Michael Gardner, Pierre Leo positioning SBM to lead"
+        "title": "Safety Excellence - Zero Incidents 2025 Across Direct Portfolio",
+        "category": "Safety Leadership",
+        "description": "Zero recordable incidents across Merck direct portfolio for all of 2025; strong safety culture maintained through complex transitions and cost reductions",
+        "context": "Brian emphasized safety performance when meeting with Merck: 'Knock on wood, we had zero incidents for portfolios as a whole for all of 2025.' This is particularly significant given: (1) First full year of IFM program, (2) Brian arrived mid-year June 2025, (3) Multiple transitions and integrations, (4) Aggressive cost savings and layoffs occurring, (5) Multiple equipment innovations being implemented. Maintaining zero incidents through this level of change demonstrates strong safety culture and operational discipline. Note: Brian disclosed 2026 challenges - 'We've had a recordable at Cambridge this year within our mailing room happened in December and also on greater account 2 recordables at our Rahway site under custodial' - showing transparency about current year performance while highlighting 2025 success.",
+        "impact": "Zero incidents 2025 across direct portfolio; safety culture maintained through major transitions and cost reductions",
+        "replicability": "Very High",
+        "status": "Proven (2025 only)",
+        "leadership_endorsement": "Zero incidents maintained through complex first-year IFM transitions"
+      },
+      {
+        "title": "Cost Savings Overachievement - $665K Delivered vs $275K Target (2.4x)",
+        "category": "Financial Excellence & Strategic Partnership",
+        "description": "Delivered $665K savings vs $275K contractual target; overachievement carries over to 2026, well on path to achieving year 2 requirements; avoided dollar-for-dollar penalty for underachievement",
+        "context": "IFM contract requirement: 'Written within our IFM contract for direct relationship, we had target this year of $275,000.' Result: 'We delivered $665,000 of that.' Risk mitigation: 'If we don't achieve the savings then according to our contract, we would actually have a financial impact dollar for dollar if we don't achieve that. Not a concern this year as we've overachieved that.' Strategic benefit: 'Some of that overachievement, the positive part of that is then that carries over... carries over to 2026. So we're not complete with 2026, but we've got sufficient carryover savings that we're well on path to achieving contractual goals for this year.' Key categories: supplier optimization with Securitas (paper management), self-perform optimization (custodial, packing/shipping, labs). Brian worked through risk management with global security to enact changes. 2026 budget: forecasting savings of almost double union increases, bringing budget down to $12.92M.",
+        "impact": "$665K vs $275K target (2.4x); 2026 carryover secured; penalty avoided; demonstrated savings capability for future contracts",
+        "replicability": "High",
+        "status": "Proven & Complete",
+        "leadership_endorsement": "Overachieved contractual requirement; positioned for multi-year success"
       }
     ],
     "Justin Homa": [
@@ -4214,16 +4400,6 @@
     ],
     "Justin Dallavis": [
       {
-        "title": "Angel's Huntsville Turnaround (Leadership Volunteerism)",
-        "category": "People & Culture + Turnaround Management",
-        "description": "Angel (Chicago SM) volunteered to move to Huntsville for turnaround; 'knew exactly what he was walking into'; failing CSATs/audits to perfect CSAT scores; identified successor (Robert Brimmer, 30yr Chicago lead) before leaving",
-        "context": "When Huntsville was failing (poor CSATs, failed audits), Angel - the site manager from Chicago - volunteered to move to Alabama for a turnaround assignment. He 'knew exactly what he was walking into' but went anyway. Result: complete transformation from failing to perfect CSAT scores. Before leaving Huntsville, Angel proactively identified and trained his Chicago successor Robert Brimmer (a 30-year veteran Chicago lead), documented all processes, and conducted shadow training over 60 days. JLL's feedback: 'They no longer have any janitorial concerns.' Leadership praised Angel's commitment and succession planning discipline. This enables strategic talent deployment while reducing knowledge loss risk.",
-        "impact": "'Complete transformation'; JLL: 'They no longer have any janitorial concerns'",
-        "replicability": "Medium (requires right talent)",
-        "status": "Proven & Active",
-        "leadership_endorsement": "Client effusive about transformation; leadership praised Angel's commitment"
-      },
-      {
         "title": "Equipment Investment for Time Efficiency",
         "category": "Innovation & Operational Excellence",
         "description": "Kaivax (all-in-one restroom cleaner: power washer, chemical spray, toilet brush, shop vac, floor scrub in one); Viper riding scrubbers; Tenant ride-on vacuums; Whittaker carpet spotters (crystallization, no extraction/blowers needed)",
@@ -4244,8 +4420,59 @@
         "leadership_endorsement": "Valarie Barnett: 'I'm comfortable with your ForSight skills'; James Peate praised diligence"
       }
     ],
-    "Peggy Shum": [],
+    "Peggy Shum": [
+      {
+        "title": "Vacation Coverage Bench Strategy ($21/hr vs $31/hr + No Benefits)",
+        "category": "Financial Strategy & Workforce Management",
+        "description": "Built reliable 6-person bench at $21/hr (vs $31/hr regular union rate + benefits) to eliminate OT and ATB time for vacation coverage; solved summer 2025 crisis",
+        "context": "Prior to bench, vacation coverage used ATB time and overtime at $31/hr fully-burdened rate plus health benefits. Summer 2025 was 'rough' - high vacation season, limited bench, undocumented approvals, no centralized tracking. Staff covered 2-3 positions simultaneously, creating visible gaps and evening catch-up churn. Peggy centralized vacation tracking/approval rules and built 6-person VR bench at $21/hr sustained lower rate. Now maps out vacations in advance. Result: eliminated OT for coverage, more stable operations, reliable coverage, consistency for staff. Also uses VRs for ATB projects to retain more margin vs regular employees on OT. Example: Interior window cleaning ($40-50K project) increased margin to 50% by using VRs instead of dedicating half of foreman's time (which was loss of oversight).",
+        "impact": "Eliminated vacation OT; $10/hr wage savings + no benefits; 50% margin on window cleaning; stable coverage",
+        "replicability": "High",
+        "status": "Proven & Active",
+        "leadership_endorsement": "Demonstrated cost containment and operational stability in constrained environment"
+      },
+      {
+        "title": "Institutional Knowledge Repository (Shared Folder)",
+        "category": "Operational Excellence & Knowledge Management",
+        "description": "Created shared folder repository for procedures, processes, and site knowledge to ensure 'knowledge continues living beyond tenure of any manager' and isn't lost with turnover",
+        "context": "Deutsche Bank had management turnover (removed underperforming site manager, Carlos covered intermittent FMLA, Chad Boulton coverage for months, Peggy came on Q2). Risk: knowledge walks out door with departing managers. Peggy created centralized repository: 'Allows knowledge to continue living beyond tenure of any manager. We don't want knowledge lost with a manager who turns over.' This is critical in union environment with complex rules and in high-turnover account recovery situation. Enables continuity despite personnel changes and protects against institutional knowledge loss.",
+        "impact": "Protected institutional knowledge; enabled continuity through turnover; reduced onboarding time for new managers",
+        "replicability": "Very High",
+        "status": "Proven & Active",
+        "leadership_endorsement": "Best practice for account continuity in high-turnover or recovery situations"
+      },
+      {
+        "title": "Audit Recalibration for Honest Baseline (Scores 4.5 → 4.0 Standard)",
+        "category": "Operational Excellence & Trust Building",
+        "description": "Recalibrated audit scoring from inflated baseline (4.5 with dust/crumbs in photos) to honest reality (4.0 = meets expectations, 5.0 = rare excellence), creating trustworthy system and alignment with CSAT",
+        "context": "In early 2025, site manager was scoring 4.5 while narratives/photos showed dust, crumbs, 'workstations need dusting' - disconnect between scores and reality. This prevented focus on real issues and created confusion: passing audits but failing CSAT. Valarie: 'I knew immediately we had a misalignment.' Peggy worked with CBRE to recalibrate scoring guidelines - 4.0 became baseline (meets expectations), 5.0 became rarity. Initially created 'steep drop' in scores, but it wasn't real decline - it was alignment with reality. Graph showed July as inflection point where recalibration, new management, and other fixes converged to begin recovery. Result: 'System became more trustworthy... protected integrity of our system altogether.' This enabled honest conversations with CBRE about resource needs and positioned for extension grounded in value, not labor cuts.",
+        "impact": "Restored audit integrity; created reliable data for decisions; aligned expectations; enabled honest client conversations",
+        "replicability": "Very High",
+        "status": "Proven & Active",
+        "leadership_endorsement": "Valarie: 'More honest and transparent. Not only do you gain trust, we can rely on the information. I was so confused why we were passing audits but failing CSAT.'"
+      },
+      {
+        "title": "NYC Pay Rule Optimization (Night Shift Designation Correction)",
+        "category": "Financial Strategy & Operational Hygiene",
+        "description": "Identified employees incorrectly designated as 'night shift' but working day hours, incurring unnecessary 30 minutes OT/day; corrected designation to save ~$500/month per employee",
+        "context": "NYC has different pay rules for shift differentials. Peggy discovered night employees incorrectly classified in system as 'night shift' but working daytime hours, triggering automatic 30 minutes OT per day. 'Regularly monitoring these things... helps us save $500/month per employee.' This is operational hygiene and 'low hanging fruit,' but in upside-down account, 'everything helps.' Demonstrates attention to detail in constrained financial environment where every dollar matters. Part of broader cost containment discipline: 'Turning every cushion... seeking cost containment wherever we can.'",
+        "impact": "~$500/month savings per affected employee; demonstrates financial discipline in constrained environment",
+        "replicability": "Very High (NYC-specific, but principle applies to any pay rule nuances)",
+        "status": "Proven & Active",
+        "leadership_endorsement": "Part of comprehensive cost containment in challenging financial environment"
+      }
+    ],
     "Dave Pergola": [
+      {
+        "title": "Centralized Trashing Model Campus-Wide",
+        "category": "Operational Excellence & Sustainability",
+        "description": "50+ centralized trash stations installed campus-wide (ABW buildings Phase 1, expanding to full campus Phase 2)",
+        "context": "Eliminated office-by-office trash collection, freeing up labor for critical tasks. Result: 25% increase in servicing efficiency, 2% reduction in recycling contamination, cleanliness ratings improved 3.5 → 3.8 out of 5. Cost savings from reduced productivity time and liner consumption.",
+        "impact": "Operational efficiency increased 25%; employee satisfaction improved; cost savings from labor/consumables",
+        "replicability": "Very High",
+        "status": "Expanding (Phase 2 starting)",
+        "leadership_endorsement": "Valarie: 'I think this is probably exemplary. Best practice could be shared throughout SBM.'"
+      },
       {
         "title": "Site Consolidation Without Disruption",
         "category": "Operational Excellence & Change Management",
@@ -4267,26 +4494,6 @@
         "leadership_endorsement": "Valarie: 'Congratulations on that. So now you were doing something for free as a value add that you then flipped into...'"
       },
       {
-        "title": "Direct Contractor Revenue Protection ($475K ATB)",
-        "category": "Business Development & Strategic Positioning",
-        "description": "Specialized cleaning services for Merck's direct construction/decommissioning projects and contractor trailers - $475K ATB revenue protected from IFM partner claiming management fees",
-        "context": "Sodexo attempted to claim management fees on this revenue, arguing they manage SBM. Dave/team pushed back: 'We're under contract with you for Merck AND we're under a direct contract with this construction company - we should not pay you on top of getting paid for work outside our contract.' Successfully protected revenue stream.",
-        "impact": "$475K annual revenue retained; positioned for growth as new buildings come online",
-        "replicability": "Medium",
-        "status": "Proven & Active",
-        "leadership_endorsement": "Marvin: 'This is that revenue that Sodexo was trying to get their hands on that we pushed back on'"
-      },
-      {
-        "title": "Centralized Trashing Model Campus-Wide",
-        "category": "Operational Excellence & Sustainability",
-        "description": "50+ centralized trash stations installed campus-wide (ABW buildings Phase 1, expanding to full campus Phase 2)",
-        "context": "Eliminated office-by-office trash collection, freeing up labor for critical tasks. Result: 25% increase in servicing efficiency, 2% reduction in recycling contamination, cleanliness ratings improved 3.5 → 3.8 out of 5. Cost savings from reduced productivity time and liner consumption.",
-        "impact": "Operational efficiency increased 25%; employee satisfaction improved; cost savings from labor/consumables",
-        "replicability": "Very High",
-        "status": "Expanding (Phase 2 starting)",
-        "leadership_endorsement": "Valarie: 'I think this is probably exemplary. Best practice could be shared throughout SBM.'"
-      },
-      {
         "title": "ABW Portering Optimization ($404K Savings)",
         "category": "Financial Strategy & Workforce Optimization",
         "description": "Optimized activity-based workstation porter services (5 FTEs reduced), delivering $404K cost savings while maintaining quality standards",
@@ -4295,6 +4502,846 @@
         "replicability": "High",
         "status": "Proven & Active",
         "leadership_endorsement": "Valarie Barnett acknowledged successful execution"
+      }
+    ],
+    "Thomas Mahoney": [
+      {
+        "title": "Sub-Team GMP Support Model for Geographically Isolated Sites",
+        "category": "Operational Excellence & Geographic Expansion",
+        "description": "Developed sub-team capability with Victor Madrigal to support LDC Kentucky from Cincinnati when local GMP resources unavailable",
+        "context": "Amgen awarded LDC Kentucky to SBM, but historically SBM couldn't support it due to geographic isolation and lack of local GMP expertise. Thomas partnered with Regional/Divisional leadership (Victor Madrigal) to create a trained sub-team in Cincinnati that can drive down to Kentucky during extended staffing shortages. The team maintains GMP compliance remotely while building local capability. This model unlocked a site SBM previously had to decline and demonstrated creative problem-solving for geographic coverage gaps.",
+        "impact": "Won previously unserviceable site; created replicable geographic expansion model",
+        "replicability": "High",
+        "status": "Proven & Active",
+        "leadership_endorsement": "Successfully executed; maintained GMP compliance"
+      },
+      {
+        "title": "Before/After Account Transformation Visualization",
+        "category": "Strategic Communication",
+        "description": "Visual map showing account evolution from risk profile at takeover to current state, demonstrating strategic decisions and growth trajectory",
+        "context": "Thomas took over Amgen in February 2025 with multiple risks: leadership issues at Thousand Oaks, GMP deviation focus plan at New Albany OH, ongoing Tampa transition, and upcoming 2027 renewal with ABM as primary threat. He created a strategic visualization showing the 'before' state (6 sites, $1.37M monthly revenue, CSAT 4.66) versus 'after' state (8 sites, $1.49M monthly revenue, CSAT 4.78), mapping which site leaders drove which outcomes. This visual storytelling translated operational wins into renewal positioning and demonstrated how tactical site improvements rolled up to account-level success. Valarie noted: 'I haven't seen it done this way in the past. This is definitely something I'm writing a note on' - showing how site-level execution connects directly to strategic account security.",
+        "impact": "Increased sites from 6 to 8; grew revenue from $1.37M to $1.49M monthly; improved CSAT 4.66 to 4.78",
+        "replicability": "Very High",
+        "status": "Proven & Active",
+        "leadership_endorsement": "Valarie Barnett: 'I haven't seen it done this way in the past. This is definitely something I'm writing a note on'"
+      },
+      {
+        "title": "Hyper-Vigilance GMP Log Check Protocol",
+        "category": "Operational Excellence & Risk Mitigation",
+        "description": "Daily written/verbal confirmation system where site manager verifies GMP logs are complete twice daily (once to client, twice internally)",
+        "context": "To remove SBM from JLL's improvement plan at New Albany OH, Thomas implemented a disciplined GMP log verification protocol: site manager confirms log completion verbally/written to client once per day and internally twice per day, seven days a week including weekends. This hyper-vigilance system caught issues before they became deviations and provided JLL/Amgen confidence that GMP compliance was under control. Jennifer (site manager) achieved only 1 minor deviation year-to-date (caused by Amgen e-log glitch, not SBM error), successfully removing SBM from the focus plan and positioning the site to reclaim an offsite warehouse from ABM.",
+        "impact": "Removed from JLL improvement plan; 1 minor deviation YTD (external system error); reclaimed warehouse from ABM",
+        "replicability": "Very High",
+        "status": "Proven & Active",
+        "leadership_endorsement": "Dan Hartman confirmed SBM off hot seat while JLL still struggles"
+      },
+      {
+        "title": "AI-Powered OT Spend Forecasting & Plan-vs-Actual Tracking",
+        "category": "Financial Strategy & Data Analytics",
+        "description": "Used UKG AI and analytical tools to identify OT spend patterns, build weekly forecasts, and run plan-vs-actual reviews to reduce negative margin",
+        "context": "When faced with $91K negative performance in September due to aggressive $500K annual savings requirement from JLL, Thomas turned to data analytics. He used AI tools within UKG to analyze overtime spend patterns across sites, created predictive forecasts, and implemented weekly plan-vs-actual reviews with site managers. This proactive approach reduced the negative margin by more than 50% (from $91K to $34K by December) while maintaining service quality. The systematic weekly discipline created accountability and early warning signals, preventing the typical year-end surprise of being 'upside down' financially.",
+        "impact": "Reduced negative margin by 50%+ ($91K to $34K); created predictive financial management system",
+        "replicability": "High",
+        "status": "Proven & Active",
+        "leadership_endorsement": "Demonstrated measurable financial turnaround"
+      }
+    ],
+    "Giselle Langelier": [
+      {
+        "title": "Leveraging Four Insight Platform for Transparency & Trust Recovery",
+        "category": "Client Relationship Management & Technology",
+        "description": "Weaponized Four Insight scorecard and Olivia analytics to rebuild client trust by demonstrating proactive transparency, process discipline, and real-time performance visibility",
+        "context": "Historical Medtronic complaint: 'SBM was not transparent, not proactive in showing what we're doing, where we're failing, what we're doing to address it.' Giselle systematically used Four Insight scorecard in client meetings to showcase SBM processes, failure identification, and corrective actions. When she met with Bruce (HQ leadership) last month, he was 'very impressed with the new Four Insight tool' - specifically the enhancements (Olivia, expanded processes) since he last saw it. Giselle's strategy: give clients access, use it to differentiate from competitors (Compass, other vendors don't have equivalent tools). This transparency directly supported renewal without RFP and contract extension success. Best practice: using internal ops platform as external client-facing differentiation tool, turning potential weakness (past lack of transparency) into competitive advantage.",
+        "impact": "Rebuilt trust; supported renewal without RFP; differentiated from competitors",
+        "replicability": "Very High",
+        "status": "Proven & Active",
+        "leadership_endorsement": "Bruce (Medtronic HQ) 'very impressed with new Four Insight tool'"
+      },
+      {
+        "title": "Educating Client on Contract Language to Limit Credits/Scope Creep",
+        "category": "Contract Management & Client Education",
+        "description": "Navigated aggressive rate card clause (client can request credits for hours not worked) by educating clients on contract mechanics, position-specific costing, and maintaining 90%+ planned hours threshold",
+        "context": "Medtronic contract has rate card with positions/hours and clause allowing credit requests for hours not worked. As long as SBM hits 90% of planned hours, client doesn't invoke clause. Small sites (like Irvine bell) notice absences and request credits incorrectly. Example: client asked for 25% credit for 1 of 4 people missing. Giselle educated: 'It doesn't work that way - it's by position (different hourly rates), and you have to account for OT from others covering the gap.' Supervisor position = $30/hr fully burdened, cleaner = $22/hr. Credit calculated by missing position rate minus OT from coverage. Giselle navigated this by: (1) maintaining transparency with hours reports, (2) educating clients on contract language, (3) staying above 90% threshold, and (4) leveraging strong relationships at most sites so clients don't invoke clause. This prevents margin erosion from improper credit requests while maintaining service quality.",
+        "impact": "Protected margin from improper credit requests; maintained client relationships despite aggressive contract clause",
+        "replicability": "High",
+        "status": "Proven & Active",
+        "leadership_endorsement": "Successfully negotiated with client; reached consensus on Irvine site"
+      },
+      {
+        "title": "Paper Cup Procurement Arbitrage ($28.8K Savings)",
+        "category": "Financial Strategy & Procurement",
+        "description": "Identified massive pricing inefficiency in client's existing paper cup vendor (First Choice at $1500 vs SBM procurement at $700 for same product), captured consumable spend, opened door to expand vending services",
+        "context": "Through casual conversation, Giselle discovered Medtronic was paying $1500 for paper cups through First Choice at three locations. She engaged SBM procurement and found identical product for ~$700 - 50% cheaper. Total annual savings: $28,800. This wasn't previously SBM-provided, but she took initiative to solve a client pain point. Valarie called it out: 'Paper cups. I think that's excellent... you just took the initiative? Like how can I save them money?' The win opened strategic conversations about taking over all vending services (coffee, creamers, consumables) from First Choice since SBM staff already do inventory/stocking. This demonstrates 'hunting' mentality - finding revenue/value in non-traditional areas and leveraging existing labor footprint to expand service lines without incremental cost.",
+        "impact": "$28.8K annual savings; opened door to vending/consumable expansion opportunity",
+        "replicability": "Very High",
+        "status": "Proven & Active",
+        "leadership_endorsement": "Valarie Barnett: 'I think that's excellent... you just took the initiative'"
+      },
+      {
+        "title": "Proactive Route Optimization with Scope Validation ($120K Savings, No CSAT Impact)",
+        "category": "Financial Strategy & Operational Excellence",
+        "description": "Identified redundancies in Santa Rosa routes by cross-walking actual work against scope of work, eliminated 2 FTEs ($120K savings) while maintaining CSAT/audit scores",
+        "context": "Medtronic Santa Rosa changed significantly (construction, partial facility closure, site population shifts). Senior leadership asked Giselle in May/June to review routes and validate scope adherence. Challenge: Medtronic uses one-size-fits-all SOW across all facilities regardless of differences (admin vs production, 24/7 vs M-F, etc.), so SOW includes tasks for space types some sites don't have. Giselle analyzed day cleaning routes, found redundancies, reallocated tasks to underutilized staff, and cut 2 positions effective Oct 31 (billing reduction Nov 1 to avoid labor hit). Result: 3 months post-implementation, CSAT unchanged, no complaints, audit scores consistently high. Giselle positioned this as proactive partnership: 'They've given us some business, I'm trying to be proactive and give them cost savings where we can.' Critical success factor: she validated the efficiency with data (CSAT, audits, complaints) before and after to prove no service degradation.",
+        "impact": "$120K annual savings; CSAT/audit scores maintained; demonstrated proactive partnership",
+        "replicability": "Very High",
+        "status": "Proven & Active",
+        "leadership_endorsement": "Senior leadership requested, client satisfied with outcome"
+      }
+    ],
+    "Rade Kukobat": [
+      {
+        "title": "Complaint Tracker with Daily Morning Meetings (15 KPI Achievement)",
+        "category": "Operational Excellence & Client Relationship Management",
+        "description": "Implemented structured complaint categorization system with daily site leadership meetings to review complaints, remedies, and ownership; reduced complaints from October spike to 15/month KPI by December",
+        "context": "Upon taking over Eli Lilly, Rade discovered SBM lacked alignment with CBRE/end users on what constituted a 'true complaint' and had defensive posture rather than learning mentality. He implemented daily morning meetings where managers discuss each complaint, how to remedy it, and who owns it. Site managers now recognize complaints early and take ownership. Process: (1) Listen first, (2) Understand and clarify need even if can't fix immediately, (3) Acknowledge quickly, (4) Take responsibility, (5) Follow up and close loop, (6) CC CBRE on all communication. Result: October had intentional spike as team aligned on complaint definition (non-defensive), then steep decline November → December hitting 15 complaint KPI. Visual graph showed trend and breakdown by category (service, vacuuming, stocking, 'other'). Rade added secondary column to categorize 'other' complaints to identify root causes and eliminate ambiguity. This transparency with CBRE rebuilt trust after historical 'feedback wasn't being heard' perception.",
+        "impact": "Reduced complaints to 15/month KPI; rebuilt CBRE trust through transparency; site leadership now proactive vs reactive",
+        "replicability": "Very High",
+        "status": "Proven & Active",
+        "leadership_endorsement": "Tony Gowan (CBRE leadership) praised recognition culture; end users noting 'tireless work day and night'"
+      },
+      {
+        "title": "Supply Spend Reduction Through Approval Workflow ($30K+ Monthly Savings)",
+        "category": "Financial Strategy & Process Improvement",
+        "description": "Reduced monthly supply spend from $80K-$120K average to $58K by implementing 3-tier approval workflow (supervisor → site manager → account manager) with standardized submission process",
+        "context": "Prior to RTO, supervisors at Corporate Center could order supplies directly with no oversight, leading to $80K-$120K monthly spend (budget: $90K). November hit $120K - significantly over budget. Rade implemented process: supervisor submits request, site manager approves, account manager discusses with site manager what's needed, why it's needed, and how it's being used. This 3-tier approval created accountability and visibility. Result: January 2026 with 3 days left in month, portfolio at $58,475 - on track to save ~$30K vs average. This is SBM standard process, but Lilly didn't have it implemented. Critical note from Valarie: this is cost efficiency/budget performance, not 'cost savings' to client since billing remains at $90K budget - SBM keeps the margin improvement. However, demonstrates financial discipline and positions for future cost savings proposals to client.",
+        "impact": "$30K+ monthly supply spend reduction vs average; improved budget performance; created financial accountability",
+        "replicability": "Very High",
+        "status": "Proven & Active",
+        "leadership_endorsement": "Valarie acknowledged financial discipline; positioned for future client cost savings proposals"
+      },
+      {
+        "title": "Overtime Reduction Strategy (52% Cut, ~$80K Saved in 4 Months)",
+        "category": "Financial Strategy & Workforce Management",
+        "description": "Cut overtime 52% over 4 months (Nov-Feb) by addressing staffing issues and implementing workforce planning; saved ~$80K in OT costs that were going negative on budget",
+        "context": "Post-RTO implementation, Lilly had significant staffing issues leading to excessive overtime that was eating margin (SBM doesn't pass through OT to CBRE on this contract). Rade worked with Rob Carlson to trend OT from November forward and implement corrective actions (better hiring, route optimization, staffing levels). Result: 52% OT reduction over 4 months, saving ~$80K. Valarie's coaching: OT reduction is budget performance/cost efficiency for SBM, not client cost avoidance, since client doesn't pay for OT - SBM absorbs negative margin. However, demonstrates operational excellence and financial discipline. This positions Rade to propose future innovations or efficiencies that could yield actual client cost savings in 2026.",
+        "impact": "$80K OT savings over 4 months; 52% reduction; improved budget performance and margin",
+        "replicability": "Very High",
+        "status": "Proven & Active",
+        "leadership_endorsement": "Rob Carlson collaborated on OT trending; Valarie provided coaching on cost terminology"
+      },
+      {
+        "title": "Subcontractor Supply Tracker for Noble Program (CBRE Initiative Support)",
+        "category": "Client Partnership & Process Innovation",
+        "description": "Created supply tracker and weekly meeting cadence for Noble (adult developmental needs program) to quantify supply usage and cost; solved years-long pain point in 20-minute meeting",
+        "context": "Noble is a CBRE initiative employing adults with developmental/special needs to service focus booths, conference rooms, team rooms at Lilly. Prior to Rade, Noble received supplies from SBM in bulk or ad hoc with no tracking of quantity or cost. This created budget uncertainty and strained relationship. Rade met with Rob Hartman 3 weeks prior to review and created: (1) Supply tracker with quantity and cost fields, (2) Weekly submission/review meetings, (3) Clear accountability for what Noble needs to be successful. Rob's feedback: 'I've been trying to work through this for years and you guys solved it here within 20 minutes.' This was a true value-add - SBM absorbing supply cost/tracking for CBRE subcontractor program at no additional charge, enabling CBRE's DEI/special needs employment initiative to succeed operationally.",
+        "impact": "Enabled CBRE DEI initiative; solved multi-year pain point in 20 minutes; tracked supply cost/usage; built partnership",
+        "replicability": "High",
+        "status": "Proven & Active",
+        "leadership_endorsement": "Rob Hartman: 'I've been trying to work through this for years and you guys solved it in 20 minutes'"
+      }
+    ],
+    "Gregory DeMedio": [
+      {
+        "title": "Annual Scope of Work Reviews with Standardization Matrix",
+        "category": "Operational Excellence & Standardization",
+        "description": "Implemented annual SOW review process (starting June 2026) with matrix to compare practices across 26 Abbott sites and identify best practices for standardization",
+        "context": "Abbott's scopes of work were a mess - implemented 8 years prior by CNW/CBRE and never updated. Greg spent 2024 cleaning them up, finished in 2025, and now conducts annual reviews starting June. Built a matrix to compare what each site does vs others to identify best practices and drive standardization. This addresses Abbott corporate's pain point (per Marvin): they manage 26 different relationships and want standardized approach but it's been challenging. The SOW reviews also help find efficiencies for cost savings and catch scope creep, bringing it to forefront to validate with customers. Result: some organic growth from validating scope, customers appreciate customization built into SOWs, and positions for standardization Abbott leadership wants.",
+        "impact": "26 sites standardized; identified cost efficiencies; captured scope creep; organic growth opportunities",
+        "replicability": "Very High",
+        "status": "Proven & Active (annual cycle starting June 2026)",
+        "leadership_endorsement": "Marvin Owens confirmed standardization is Abbott corporate pain point"
+      },
+      {
+        "title": "Bay Area Temp Labor Reduction (15 → 3-5 recurring)",
+        "category": "Financial Strategy & Workforce Management",
+        "description": "Reduced recurring temp labor from 15 at peak to 3-5 average in Bay Area by addressing root causes: FMLA management, interview prioritization, new hire follow-through",
+        "context": "Bay Area sites had 15 recurring temps at peak - very high. Greg dove into root causes with site leadership: (1) FMLA wasn't being managed properly, (2) Lack of prioritizing interview time, (3) Poor follow-through on new hire processes. Worked with teams to address these systematically. Result: reduced to 3-5 temps average (currently closer to 3), with occasional spikes for staffing gaps. This is budget performance improvement (temps are expensive) and demonstrates operational discipline. Critical note: Q4 2025 had some management challenges in Bay Area (former manager moved to Tesla, took 'major step backwards' with missed deadlines, billing errors, missed ATB), but by Q4 issues had 'subsided quite a bit' - still needs more oversight than other regions but working through it.",
+        "impact": "Reduced temp labor 67-80%; improved budget performance; addressed root cause operational issues",
+        "replicability": "Very High",
+        "status": "Proven & Active (ongoing monitoring needed)",
+        "leadership_endorsement": "Demonstrated operational turnaround despite management transition challenges"
+      },
+      {
+        "title": "Periodical Scope Calendars for Proactive Task Management",
+        "category": "Operational Excellence & Client Communication",
+        "description": "Implemented forward-looking periodical task calendars (weekly/monthly communication to client) to build trust through planning ahead, transparency, and validation of work completion",
+        "context": "Abbott Park led the way on this initiative, with a couple other sites also implementing. System creates: (1) Forward planning for periodical tasks, (2) Proactive communication (monthly or weekly), (3) Validation that work was completed. This has 'really helped build trust with customers' by demonstrating SBM plans ahead rather than reacts. Greg's goal: all sites have periodical calendars by end of Q2 2026. This is a trust-building mechanism that differentiates SBM - showing we're not just reactive but proactively managing recurring work cycles and communicating transparently.",
+        "impact": "Built trust through transparency; proactive vs reactive positioning; Q2 2026 goal for all 26 sites",
+        "replicability": "Very High",
+        "status": "Expanding (Abbott Park + others live; full rollout Q2 2026)",
+        "leadership_endorsement": "Greg noted this 'really helped build trust with customers'"
+      },
+      {
+        "title": "Audit Frequency Increase for Proactive Quality Management (20 → 65-70/month)",
+        "category": "Operational Excellence & Risk Mitigation",
+        "description": "Increased monthly audits from 20 to 65-70 at Abbott Park to get ahead of issues, validate quality, and demonstrate performance to difficult customer",
+        "context": "Abbott Park had alignment issues with customer Bianca (described as 'difficult'). Greg increased validation procedures dramatically - from 20 audits/month to 65-70/month at peak. Strategy: see issues before they become problems, validate quality of work (which was actually pretty good), address scoring misalignments to eliminate ambiguity, increase joint audits (1 → 2-3/month). This effort was communicated to senior Abbott leaders (Megan Wilson, DVP; Jose Escobar, senior procurement director) via meetings with Greg and Marvin. Result: 'dramatic turnaround' in relationship. Bianca later took new Abbott position (no longer customer), and new customer Megan started off 'really good.' This demonstrates using data and validation to overcome relationship challenges and rebuild trust with senior stakeholders.",
+        "impact": "Relationship turnaround; demonstrated accountability through data; increased joint audits; senior leader engagement",
+        "replicability": "High",
+        "status": "Proven & Active",
+        "leadership_endorsement": "Marvin Owens participated in senior leader meetings; Greg noted 'dramatic turnaround'"
+      }
+    ],
+    "Logan Newman": [
+      {
+        "title": "GVH Transition - 100% Incumbent Retention + 11 Forecast Projects in 90 Days",
+        "category": "Transition Excellence & Client Partnership",
+        "description": "Go-live Sept 8 with 100% incumbent retention (ABM + Southern laundry staff), delivered 11 forecast projects ($3K) + Sunday laundry service ($25K Q4) in first 90 days; invited to JLL lead team",
+        "context": "GVH transition had rocky start with 3 handoffs (Dustin Smith → Kim Wittekind → Logan). Once under Logan's accountability, 'things started getting into rhythm.' Success factors: (1) 100% incumbent retention from both ABM and Southern, retained incumbent site manager Byron Mines, (2) 11 forecast projects in Q4 addressing high-visibility areas to establish baselines, (3) Sunday laundry service aligned with production needs (~$3.5K/week, $25K Q4), (4) Logan invited to JLL lead team (meets 2x/week - operational updates Tuesday, big picture/priorities Friday). This engagement 'kicked off really strong partnership with JLL' and positioned for growth: 'Little whispers of talks of connections in nuclear sites in Japan and Germany.' JLL has 'every intention on acquiring Vernova portfolio and international business.'",
+        "impact": "$25K laundry revenue Q4 alone; $3K forecast projects; 100% incumbent retention; JLL lead team invitation; positioned for international growth",
+        "replicability": "Very High",
+        "status": "Proven & Active",
+        "leadership_endorsement": "Strong JLL partnership; Kim Wittekind supported transition; positioned for expansion"
+      },
+      {
+        "title": "Portfolio Centralized Trashing (30-45 Min Savings, 50 Cans → 7 Bins)",
+        "category": "Operational Excellence & Labor Optimization",
+        "description": "Streamlined trash collection routes and redeployed labor to deep cleaning tasks; reduced 30-45 minutes per route by replacing 50 individual trash cans with 7 large centralized bins",
+        "context": "Portfolio-wide initiative across GE Aerospace sites. 'A lot easier said than done' - many end users opposed to getting up from desks to throw away personal items. However, ergonomic advantages and additional cleaning time outweighed resistance. On average: 30-45 minutes saved per trashing route, or equivalent of consolidating 50 individual trash cans to 7 large bins. Redeployed saved labor to 'more effective cleaning tasks, deep cleaning.' This was operationally driven - not client requested, but SBM proactive optimization. Valarie noted: 'I liked the centralized trash the most because this is about what you delivered to the client and the impact.'",
+        "impact": "30-45 min/route labor savings; redeployed to deep cleaning; portfolio-wide standardization; improved ergonomics",
+        "replicability": "Very High",
+        "status": "Proven & Active",
+        "leadership_endorsement": "Valarie: 'I liked the centralized trash the most because this is about what you delivered to the client'"
+      },
+      {
+        "title": "Service Validation QR Codes Revealing Root Cause (27 Maintenance vs 12 Service Issues)",
+        "category": "Innovation & Data-Driven Insights",
+        "description": "Implemented service validation QR codes at Greenville, capturing real-time issues; discovered 27 of 44 issues were maintenance-related (not service), shifting focus and accountability",
+        "context": "At Greenville, Omentum pushed for service validation to see 'how many complaints weren't being recorded.' Placed QR codes in restrooms, office spaces, conference rooms for real-time reporting. Q4 results: 12 validated service issues, 5 rejections (out of scope), but surprisingly 27 maintenance-related issues. 'Interesting approaching this transparency what we found here' - majority of complaints were maintenance, not service. This gave 'both site and customer insight into where they needed to focus their efforts.' System fully utilized: 'Full validation, uploading photos, to-dos being issued, about 70% on-time completion.' Logan chose simplified version (reporting and service log only, no surveys) to maintain focus. This data-driven approach shifted blame away from SBM and onto facilities team.",
+        "impact": "Shifted accountability from service to maintenance; 70% on-time to-do completion; data-driven transparency; customer insight into root causes",
+        "replicability": "Very High",
+        "status": "Proven & Active",
+        "leadership_endorsement": "Customer found value in transparency; Omentum satisfied with discovery process"
+      },
+      {
+        "title": "Greenville 60-Day Recovery from 30-Day PIP (8/19 Staff → Fully Staffed)",
+        "category": "Account Recovery & Turnaround Management",
+        "description": "Executed complete site recovery from 8 of 19 staff, no supervisor, exited site manager, and 30-day PIP threat of removal in 60 days; achieved passing surveys and stabilization notification",
+        "context": "Logan's first conversation upon assuming oversight July 26: 'Hi, how you doing? You're on a 30-day PIP and active discussion about removing SBM.' He 'felt like I jumped on a sinking ship.' Recovery plan: (1) Staffing - hired to full complement, (2) Standards - EHS/recovery team (Aisha, Ronnie, Ryan) 5S'd closets and deep cleaned high-visibility areas, (3) Relationship - sent first end user surveys (received 7-8 failing surveys at once to establish baseline), (4) Leadership - installed strong site manager and supervisor. By Aug 11, recovery team on ground. October 1, Omentum formally gave stabilization notification and closed PIP. Total recovery: 60 days. January 2026: received almost all passing surveys for first time. Logan: 'We turned a high-risk site into a more stabilized operation.' Critical factor: $10K investment in recovery team support week was 'tremendously helpful... avoid any prolonged disruption.'",
+        "impact": "Prevented contract loss; 60-day turnaround from PIP to stabilization; January 2026 passing surveys; rebuilt broken customer relationship",
+        "replicability": "High",
+        "status": "Proven & Active",
+        "leadership_endorsement": "Kyle Wallace praised transparency and corrective measures; Valarie acknowledged difficult recovery"
+      }
+    ],
+    "Luis Cabrera": [
+      {
+        "title": "Core Cleaning SOP Change - Reusable Mops ($300K Savings + 21 Tons Waste Reduction)",
+        "category": "Innovation & Sustainability",
+        "description": "Participated in first core cleaning SOP change in 10+ years; switched from disposable to reusable mop heads, delivering $300K annual savings and eliminating 21 tons waste",
+        "context": "Luis: 'One of the biggest achievements I feel proud of.' Takeda allowed SBM 'seat at the table' when reviewing core cleaning SOP - first change in 10+ years. 'We participated in this development, reviewed SOP, sat with project manager, made decisions over this SOP.' Result: reusable mop heads vs disposable. Impact: '$300K per year in materials... leadership at Takeda extremely pleased.' Sustainability: '21 tons of waste out of not dumping mop heads every time we use them.' This was 3-4 month project including: engineering testing portion, SOP redlining, logistics for implementation, hyper care. Demonstrates deep client partnership where vendor influences operational decisions and drives both financial and environmental value.",
+        "impact": "$300K annual savings; 21 tons waste eliminated; first SOP change in 10+ years; deep client partnership demonstrated",
+        "replicability": "High",
+        "status": "Proven & Active",
+        "leadership_endorsement": "Takeda leadership 'extremely pleased'; Valarie called out visual as best practice; Nick Viskovich noted 'outcome-driven, showed ownership end-to-end'"
+      },
+      {
+        "title": "AMR Vacuum Self-Funding Model ($240K Investment, $114K Savings Delivered)",
+        "category": "Innovation & Financial Strategy",
+        "description": "Invested $240K in AMR equipment, self-funded through labor savings (didn't deliver 100% labor reduction to client), generated $114K direct savings; 3000+ hours use, 15M sq ft vacuumed, zero safety/service issues",
+        "context": "Luis addressed skepticism: 'A lot of people have different opinions about if AMRs have true impact on our operation. And they do.' Success required: (1) Modifying routines, (2) Being efficient in labor distribution, (3) Positioning to union as tool (not replacement) - 'providing more specialized tools so team can do better and more efficient job.' Financing: 'We're amortizing this and we did not deliver 100% of labor. We kept some to pay for equipment. SBM is not paying for this, it's self-paying.' Metrics: $114K delivered to Takeda, 3000+ hours use, 15M sq ft vacuumed autonomously, zero safety incidents, zero service issues. This proves AMR viability with proper implementation and union partnership. Valarie: 'Not only tested, you proven it as tool to make routines more efficient... getting customer to purchase equipment without letting labor go is best practice.'",
+        "impact": "$240K equipment investment self-funded; $114K savings delivered; 15M sq ft vacuumed; zero incidents; union buy-in achieved",
+        "replicability": "High",
+        "status": "Proven & Active",
+        "leadership_endorsement": "Valarie: 'Best practice - customer purchase equipment without letting labor go'; Shane requested inclusion in white paper/sales materials"
+      },
+      {
+        "title": "FDA Inspection Readiness - 4 Weeks, Zero Observations (2 Visits)",
+        "category": "Operational Excellence & Regulatory Compliance",
+        "description": "Achieved zero FDA observations across two inspections totaling 4 weeks on-site during summer 2025; maintained GMP compliance through systematic audits, inspection readiness checks, and professionalism",
+        "context": "FDA visited twice in 2025 (summer) - combined 4 weeks on-site. 'Having FDA for so long is very challenging, I can tell you that. But we didn't have any observations.' This was 'huge achievement' that 'really, really increased confidence and trust Takeda has on us, especially during RFP times... speaks very good about us.' Luis emphasized: 'This is not an accident. This is a project, Valarie. Maintaining compliance in the way that requires no findings through FDA inspection involves a lot of work, a lot of audits, inspection readiness checks, accountability, professionalism audits.' The comprehensive audit system and 'processes in place' enabled this success. Critical for RFP retention and client confidence in GMP capabilities.",
+        "impact": "Zero FDA observations; increased Takeda trust during RFP; demonstrated regulatory compliance excellence; protected contract",
+        "replicability": "Very High",
+        "status": "Proven & Active",
+        "leadership_endorsement": "Nick Viskovich: 'Strong judgment in prioritizing GMP compliance and FDA inspection readiness'; Valarie recognized as key achievement"
+      },
+      {
+        "title": "New Logbook Implementation (25% More Entries, Zero Deviation Increase)",
+        "category": "Operational Excellence & Risk Management",
+        "description": "Reviewed Takeda SOPs and implemented new logbooks increasing entries 25% (~5000 more entries/month), paving way for electronic logs; zero increase in deviations despite dramatically higher risk",
+        "context": "Luis: 'We pushed 3 initiatives related to GMP. Two were reviewing SOPs and that resulted in new logbooks implementation.' This was first of three GMP initiatives. 'Really paved the way for Takeda to implement electronic logs - 2026 is going to be the year we talk a lot about electronic logbook implementation.' Challenge: 'Extremely challenging because we increased our number of entries by about 25%, which added like 5000 more entries per month, which really increases the risk for deviations. But we didn't have that. We were very successful in adapting very well to new logs.' This demonstrates change management excellence and team training effectiveness. SBM participated in SOP review, sat with project managers, influenced decisions - having 'seat at the table.'",
+        "impact": "25% more log entries (~5000/month); zero deviation increase despite higher risk; paved way for electronic logs 2026",
+        "replicability": "Very High",
+        "status": "Proven & Active",
+        "leadership_endorsement": "Demonstrated strong change management and team adaptability; positioned for future technology adoption"
+      }
+    ],
+    "Scott Kimball": [
+      {
+        "title": "GMP Training Program Redesign (2 Months → 3 Weeks, 90% Capability)",
+        "category": "Operational Excellence & Workforce Development",
+        "description": "Jacqueline Lima de Silva completely revamped GMP new hire training, reducing timeline from 2 months to 3 weeks (90% trained) while maintaining full qualification standards; enables 24/7 emergency GMP coverage",
+        "context": "Post-Framingham GMP crisis, Sanofi/CBRE required near-24/7 GMP coverage capability. Challenge: 'If you don't get cleaning done at night, we can't wait until following night when team comes back to get rooms cleaned, qualified, and manufacturing back up.' Historically, 2-month lead time to fully train new GMP tech. Jacqueline (GMP manager at Framingham) 'completely revamped new hire training process' - now 3 weeks to 90% trained and able to enter spaces. This was 'huge game changer.' Impact: (1) Enabled emergency response capability, (2) Reduced staffing gap vulnerability, (3) Faster backfill for separations, (4) Customer 'very happy' - Jacqueline's name 'jumps out in CSATS.' Sean Henderson requested documentation: 'Best in class program... I have another GMP account taking 6+ months.' Nicole Ouimet: 'Best practice... document how we got GMP training down to 2-3 weeks.' Valarie requested Jacqueline for bid team consultations on GMP efficiencies.",
+        "impact": "67% training time reduction (2 months → 3 weeks); enabled 24/7 emergency coverage; faster backfill capability; customer satisfaction",
+        "replicability": "Very High",
+        "status": "Proven & Active",
+        "leadership_endorsement": "Sean Henderson: 'Best in class program'; Valarie: 'Farm her out to bid team'; Nicole: 'Best practice to document'"
+      },
+      {
+        "title": "Framingham 24/7 GMP Emergency Coverage Model (Cross-Training + Management Restructure)",
+        "category": "Operational Excellence & Service Innovation",
+        "description": "Delivered near-24/7 GMP coverage through complete cross-training (morning team now handles emergency cleans anywhere on campus) and moved experienced critical building supervisor to morning shift for daytime customer support",
+        "context": "Post-GMP crisis at Framingham, task: deliver 24/7 coverage while 'simultaneously finding efficiencies, saving money, protecting quality.' Solution: (1) Complete cross-training across all teams - morning GMP team (historically minor tasks: restocking, gowning, small cleans) now 'fully cross-trained to deliver any emergency clean anywhere in entire campus,' (2) Moved experienced critical building supervisor to morning shift to answer customer questions during actual operation hours 'in completely qualified, educated, experienced way,' (3) Jacqueline's 3-week training program enabling rapid team scaling. Result: zero manufacturing disruption from cleaning delays, customer confidence restored, positioned for FDA audit (CBRE: 'feel quite comfortable... if any FDA issues, won't be from cleaning operations'). Jonathan Perez Castro (senior site manager) and Jacqueline drove execution. Scott: 'Complete credit to site team at Framingham.'",
+        "impact": "24/7 emergency GMP coverage; zero manufacturing disruption; FDA audit confidence; customer satisfaction",
+        "replicability": "Very High",
+        "status": "Proven & Active",
+        "leadership_endorsement": "CBRE confident for FDA audit; Scott credited Framingham team; positioned as best practice"
+      },
+      {
+        "title": "Hard Landing Transition Success (Jan 1 2025, GMP + Slurry Operations)",
+        "category": "Transition Excellence",
+        "description": "Executed hard landing transition for complex GMP account including slurry operations (new to SBM); achieved 'like-for-like services, no disruptions' despite aggressive bid and learning curve",
+        "context": "Sanofi went live Jan 1, 2025 - first-year account. Nicole: 'Most aggressive GMP bid we've ever done from financial standpoint, on top of extremely complex environment with GMP slurry we hadn't done before.' Expected to be 'deep red' financially. Scott commitment: on budget by April - achieved through revenue increase and strategic staffing. Transition result: 'Great client feedback... achieved goals they set for hard landing - like-for-like services, no disruptions.' Nick McMackins: 'If we didn't have Sanofi as success story, we'd start saying no to CBRE hard landings more often... great example when we collaborate at high level, focus on data, have full transparency, we can achieve successful hard landing.' Nicole: 'You owned process from start to end... didn't suck life out of us... always came with solution, not just problems... leaned on SMEs when needed and knew when to do that.'",
+        "impact": "Complex GMP transition executed flawlessly; on budget by April; positioned for growth; CBRE confidence for future hard landings",
+        "replicability": "High",
+        "status": "Proven & Active",
+        "leadership_endorsement": "Nick McMackins: 'Helpful case study as we grow with CBRE'; Nicole: 'You transitioned seamlessly, managed exceptionally well'"
+      },
+      {
+        "title": "For Insight Mobile Trial Impact (Report-Its Tripled in First Month)",
+        "category": "Technology & Data Transparency",
+        "description": "Launched For Insight Mobile trial at Morristown (absorbed cost); tripled report-its in first full month (December: 30 report-its from 9-10 person team) by eliminating manual entry barriers",
+        "context": "Challenge: 'Report-its are notoriously difficult in non-mobile site because you have to add extra layers' - written down or passed to site manager, then site manager returns to computer to enter. Many roadblocks, doesn't happen as often as needed. Solution: Mobile trial at Morristown (go-live end of November). Result: December had 30 report-its from 9-10 person team - tripled vs pre-mobile. Scott: 'Pretty massive change.' Cost: SBM absorbed mobile trial costs, contributed to Morristown budget challenges but demonstrated value. Strategic positioning: now need to 'create the desire' (Valarie's words) to expand mobile portfolio-wide with CBRE funding. Valarie coaching: 'Like Costco tasting... make you want to buy what's in freezer section. If you don't get we want this everywhere response, we aren't doing what we need to do.'",
+        "impact": "3x increase in report-its; eliminated manual entry barriers; demonstrated mobile value; absorbed pilot cost for strategic positioning",
+        "replicability": "Very High",
+        "status": "Pilot Proven (expansion strategy in development)",
+        "leadership_endorsement": "Valarie: 'Work with us on how to create the desire for mobile everywhere'; demonstrated measurable impact"
+      }
+    ],
+    "Nicholas Trenkamp": [
+      {
+        "title": "Data-Driven Staffing Defense - Industry Standards Analysis",
+        "category": "Cost Avoidance & Strategic Defense",
+        "description": "Conducted comprehensive staffing validation using industry standards and square footage data per building; demonstrated need for +15 FTEs vs customer's reduction request, successfully defending current staffing levels",
+        "context": "Customer (P&G via JLL) was 'very cost savings driven and wanted to reduce staff.' Nick: 'Outside looking in, that wasn't feasible - we were already very thin.' Response: 'Full breakdown of data' showing 'not only do you not have enough staff, you need to add more and reducing would just cause further risk.' Created detailed spreadsheet showing industry benchmarks, square footage per building, internal square footage per room. Example: one location showed need for additional 15.58 FTEs based on standards. Result: got customer off cost reduction position entirely. Valarie: 'So you got your customer off position of cost savings?' Nick: 'Correct... cost avoidance.' Strategy: 'Proof is in the pudding... here's the data that shows this is not a good idea. You might save money, but it's not sustainable.' Valarie called this 'a best practice... using data to show customer they're getting more than what they're paying for.' She referenced securing $64K in revenue in first 3 months at another site using same strategy.",
+        "impact": "Avoided staffing reductions; defended existing headcount; positioned for future growth; customer backed down from cost savings push",
+        "replicability": "Very High",
+        "status": "Proven & Active",
+        "leadership_endorsement": "Valarie: 'This is a best practice... really using data to show customer they're getting more than paying for. I might tap your shoulder to teach this on broader call with site teams.'"
+      },
+      {
+        "title": "Financial Turnaround - ATB & Overtime Management",
+        "category": "Financial Excellence",
+        "description": "Transformed consistently red account to green for entirety of 2025; improved ATB work capture accuracy, optimized overtime coverage, reduced hours through biweekly cadence shift vs daily",
+        "context": "Pre-Nick: 'We were red consecutive... when I was at site level, I probably bonused one time.' Post-Nick (June 2025 onward): 'We were green for entirety of 2025.' Key focus areas: (1) ATB work capture - 'wasn't captured correctly,' (2) Overtime - 'poorly managed,' (3) Solution: 'Fine tuning those details as far as accuracy... every dollar on this account matters.' Process: weekly ATB project review with team to ensure proper quoting and capture; overtime coverage analysis - 'certain areas on biweekly cadence we can shift priority wise, make reduction in hours, still getting same service to customer.' Partner: worked alongside Cole (finance). Cole's feedback: 'Whatever you're doing, keep doing it because you're doing terrific job.' Valarie: 'I remember calls in 2022/23, up and down... 2024 we'd have good months, really bad months, could not get arms around it. For you guys to be on budget all year is huge accomplishment. I personally have not had to deal with financial internal stuff - thank you so much.'",
+        "impact": "Consistently green budget across all of 2025; improved ATB capture; optimized overtime; site manager bonuses achieved; eliminated leadership financial escalations",
+        "replicability": "Very High",
+        "status": "Proven & Active",
+        "leadership_endorsement": "Valarie: 'HUGE accomplishment to be on budget all year'; Cole (finance): 'Whatever you're doing, keep doing it'"
+      },
+      {
+        "title": "Weekly Cleaning Blitzes - Audit-Driven Accountability",
+        "category": "Quality & Customer Accountability",
+        "description": "Implemented weekly cleaning blitzes based on internal audit findings, with weekly summaries sent to customer; proactive approach to addressing quality trends and demonstrating responsiveness",
+        "context": "Nick implemented 'weekly cleaning blitzes' as 'ongoing efforts' by site management. These are 'all based off of audit findings... we're doing internally throughout the week.' Process: findings compiled into 'weekly summary to kind of hold us accountable to customer saying, hey, this is what we're going to focus on. So we can be more responsive to those trends.' This shows proactive quality management - not waiting for customer to identify issues, but self-identifying through internal audits and communicating action plans. Demonstrates transparency and continuous improvement mindset. Valarie asked if there were dollars associated with value adds - Nick said he'd start tracking in 2026.",
+        "impact": "Improved quality responsiveness; demonstrated accountability to customer; built trust through transparency; positioned for future value-add quantification",
+        "replicability": "Very High",
+        "status": "Proven & Active",
+        "leadership_endorsement": "Valarie requested tracking dollar value of these efforts in 2026"
+      },
+      {
+        "title": "Customer Management Through Data & 'Receipts' Strategy",
+        "category": "Client Relationship & Strategic Communication",
+        "description": "Established data-driven customer management philosophy using facts and documentation ('receipts') to substantiate every position; shifted customer off multiple unfavorable positions through evidence-based dialogue",
+        "context": "Nick's core philosophy: 'I'm all about having, I always use the word receipts, have those receipts to show the customer and validate our work so we can continue to grow and work in tandem and have that partnership, have that equal partnership.' Application: (1) Staffing defense - industry standards data, (2) Scope creep - For Insight tracking of out-of-scope requests, (3) Mason deficiencies - workstation reconfiguration documentation showing gap between SOW and actual space, (4) All proposals backed by spreadsheets and data analysis. Nick: 'Team is very data-driven, until you can specifically outline it and show it to customer, there's no receipts to really validate claims.' Valarie's assessment: 'Managing your customer in way I haven't really seen since Dustin. The upgrade I have with you even from Dustin is you're using data to tell your story and get what you want/need from them. They're not used to somebody substantiating every single detail of what they say... You've taken it to whole other level where there isn't bunch of back and forth. You're like: listen, these are the facts, this is how I know this to be true. You've been able to get them off their position on multiple things. That is no small feat with two women I know you're working with.'",
+        "impact": "Shifted customer off unfavorable positions multiple times; established credibility through data; created equal partnership dynamic; reduced back-and-forth negotiations",
+        "replicability": "Very High",
+        "status": "Proven & Active",
+        "leadership_endorsement": "Valarie: 'You're using data to tell your story... taken it to whole other level... no small feat with two women you're working with'"
+      }
+    ],
+    "Julie Bianchi": [
+      {
+        "title": "Co-Creating Quarterly Survey/Scorecard Integration with CBRE",
+        "category": "Innovation & Data Integration",
+        "description": "Partnering with CBRE to co-create joint quarterly survey integrating For Insight data with their scorecard format; positions SBM systems as superior while meeting customer reporting preferences",
+        "context": "CBRE (Mario) sends quarterly scorecard. During discussions, Mario 'started talking about SBM and For Insight and complimenting us on what a great system that is. He felt it was more detailed quite honestly than the scorecard process they were using.' Request: 'Asked if we could co-create a joint quarterly survey - doesn't replace obviously For Insight, we would never do that, but looking at their format and adding into it with our results.' Julie walked Mario through For Insight: 'KPIs, tolerances, all of that. So we're looking at how do we blend that.' Benefits emerging: Julie pointed out safety score was passing but not 5/5 despite '4 years of no incidents at Saint Louis, over 2 years here.' Good dialogue started. Meeting scheduled next week for Mario to show initial draft. Valarie: 'Please reach out to Sean. We're really trying to figure out how we can integrate better.' Julie: 'I think it's going to be really interesting process... make sure our successes are visible and recognized.'",
+        "impact": "Enhanced visibility of SBM performance; integrated reporting that highlights strengths; CBRE recognition of For Insight superiority; safety excellence highlighted",
+        "replicability": "Very High",
+        "status": "Development In Progress",
+        "leadership_endorsement": "Valarie directed collaboration with Sean for enterprise-level integration learning; Mario (CBRE) initiated request"
+      },
+      {
+        "title": "Strategic Weekly CBRE Partnership Touchbases",
+        "category": "Relationship Management & Strategic Alignment",
+        "description": "Established and maintained weekly touchbases with CBRE Senior Procurement Manager (Mario Cordone) to jointly drive 2026 initiatives; strengthened relationship beyond single facility across portfolio",
+        "context": "Julie implemented 'weekly touch base and have been doing that for quite some time with CBRE Senior Procurement Manager, Mario Cordone, looking really at driving 2026 initiatives jointly.' Focus: strengthening CBRE-SBM relationship across full portfolio (Connecticut, Missouri, Arizona). Julie emphasized working 'to make sure that relationship remains strong beyond just Bloomfield facility.' This regular cadence enables proactive partnership vs reactive problem-solving. Recent results: co-creating quarterly survey/scorecard, sustainability initiatives (waste analysis), recognition of For Insight value. Julie: 'My relationships are very strong with the site here, with CBRE overall, with procurement, with Cigna contracting.' Valarie: 'You're a class act. Very professional. I always appreciate your professionalism.'",
+        "impact": "Proactive partnership alignment; joint initiative development; portfolio-wide relationship strength; executive-level access",
+        "replicability": "Very High",
+        "status": "Proven & Active",
+        "leadership_endorsement": "Demonstrated strong relationship building with multiple stakeholders; positioned for contract renewal"
+      },
+      {
+        "title": "Value-Add Service Delivery - Events, Confidential Shred, Consumables Management",
+        "category": "Partnership & Service Expansion",
+        "description": "Providing value-add services at no additional cost: large events (site-wide lunches, executive events, retirements), confidential shred bin placement/collection (not in SOW), consumables inventory management",
+        "context": "Julie documented multiple value-adds across portfolio, particularly Bloomfield and Saint Louis: (1) Large events - 'site-wide free lunches, executive events, retirement parties' with challenge that 'often there's not a lot of time to get ready and you obviously want conference room or cafeteria area to be ready in really pristine condition,' (2) Confidential rolling shred bins - 'I've verified our scope of work, it's not in there. But it's something we started receiving work orders for. Doesn't take tremendous amount of time and I think it buys us a little bit of goodwill,' (3) Consumables management - 'We manage inventory and order management recommendations for consumables purchased by CBRE. We have presented consumables option through SBM, but at this point they have stated they believe their costs are less expensive, so we'll continue to keep that as an option.' Valarie's challenge: need to quantify dollar value of these in 2026.",
+        "impact": "Enhanced customer satisfaction; goodwill generation; positioned for scope expansion; demonstrates partnership mindset beyond contract",
+        "replicability": "Very High",
+        "status": "Proven & Active",
+        "leadership_endorsement": "Valarie requested dollar quantification for 2026 tracking"
+      },
+      {
+        "title": "Union Increase Pass-Through Secured - $44K Annual Recovery",
+        "category": "Financial Recovery & Relationship Management",
+        "description": "Secured $44K union increase pass-through for Saint Louis after extensive relationship management and negotiations; increases were initially not included in contract and POs were missing for extended period",
+        "context": "When Julie took over as account manager (April 2025), Saint Louis union increases were not included in contract. Challenge: 'We didn't even have the POs for quite some time.' Julie: 'That took a lot of conversation, a lot of really good relationship management and we did secure the union increase pass through for Saint Louis, which was total of just under $44,000.' Received at end of 2025. This demonstrates persistence in recovering contractually justified costs that were initially overlooked or not processed. Required navigating both CBRE and Cigna relationships to secure approval and payment. Critical skill: knowing when to push for what's rightfully owed vs accepting status quo.",
+        "impact": "$44K annual revenue recovery; corrected contract gap; established precedent for cost pass-through advocacy",
+        "replicability": "High",
+        "status": "Proven & Complete",
+        "leadership_endorsement": "Secured through persistent relationship management with CBRE and Cigna"
+      }
+    ],
+    "Rafaed Ortiz": [
+      {
+        "title": "Weekly ATB Tracker - Resolved Escalation & Improved Billing Accuracy",
+        "category": "Financial Excellence & Process Innovation",
+        "description": "Implemented weekly ATB tracker in Q4 resolving major escalation from Lee Johnson (Biogen) about Milan being blindsided by inconsistent ATB billing; team emails Monday with all prior week/weekend ATB work",
+        "context": "Major pain point early 2025: Julio received escalation from Lee Johnson because Milan (customer) 'was being blindsided, wouldn't consist in ATB and there was no way of us tracking it.' Julio: 'This was major pain point starting the year.' Rafaed's solution (Q4): Weekly ATB tracker where 'team basically every Monday they send me an email with all the ATB work from previous week and weekend... we are trying to capture that as accurately as possible.' Result: RTP specifically had $150K in ATB revenue for year. Marvin: 'We were challenged a lot with being able to track that appropriately. Once Rafael got his hands on it, he was able to put some good processes in place and really increase communication with client... we were missing that quite a bit before Rafael got there. Good job getting that tuned up and solidified.' Julio: 'Process now has been implemented and we have alignment on all three levels of organization.' Overall portfolio: $172K ATB revenue (63% increase vs 2024). Valarie: 'I love knowing that billing accuracy improved!'",
+        "impact": "$172K ATB revenue (63% increase); resolved executive escalation; three-level organizational alignment; billing accuracy improved; customer satisfaction increased",
+        "replicability": "Very High",
+        "status": "Proven & Active",
+        "leadership_endorsement": "Julio: 'Alignment on all three levels'; Marvin: 'Good job getting that tuned up'; Valarie: 'Love knowing billing accuracy improved!'"
+      },
+      {
+        "title": "Three-Tier GMP Logbook Review System - Zero Deviation Impact",
+        "category": "Quality Excellence & Risk Mitigation",
+        "description": "Implemented three-tier GMP review system (Supervisor → QA Specialist → GMP Program Manager) preventing deviations and SOP violations; achieved 99.86-99.93% right-first-time documentation accuracy",
+        "context": "Challenge: 'GMP documentation gaps in both bio and pharma sites.' Solution: 'Implemented three-tier review which is right now compiled of supervisors, QA specialist (person promoted mid-year), and GMP program manager.' Result: 'We have prevented deviations through proactive three-tier review system... has helped tremendously to avoid any impact due to deviation or SOP violations.' Performance: 'During 2025 we achieved 99.86 up to 99.93 right first time documentation accuracy in GMP program.' Additional validation: 'Important partner audit - we had zero observations.' Technology enabler: 'Implemented real-time documentation by deployment of laptops for employees... able to complete trainings on time.' This proactive quality system protects client from regulatory risk while demonstrating SBM's GMP expertise. Valarie: 'Huge value as it pertains to things you are doing in GMP.'",
+        "impact": "99.86-99.93% documentation accuracy; zero partner audit observations; deviation prevention; regulatory risk mitigation; client confidence",
+        "replicability": "Very High",
+        "status": "Proven & Active",
+        "leadership_endorsement": "Valarie: 'Huge value in GMP'; zero audit observations achieved"
+      },
+      {
+        "title": "30% Overtime Reduction Q4 vs Q3 Through Daily Pass-Downs & Route Optimization",
+        "category": "Financial Optimization",
+        "description": "Reduced overtime by nearly 30% Q4 vs Q3 through structured daily pass-downs ensuring everyone on same page, not re-cleaning already clean areas; weekly OT review with Aaron for trend analysis",
+        "context": "Challenge: 'Balancing ATB and controlling overtime.' Solutions: (1) 'Optimizing routes and improving communication... I've asked team to make sure every day they have official pass down so everybody's on same page and we are working on what needs to be worked on. We're not re-cleaning areas that were already clean,' (2) Weekly oversight - 'We are reviewing overtime weekly. I actually have meeting with Aaron every week and we're going to look closely at the trends.' Result: 'Reduced overtime on Q4 compared to Q3 by nearly 30%.' This systematic approach prevents waste while maintaining service quality. Combined with ATB tracking and holiday policy correction, contributed to finishing December green. These are foundational disciplines that previous management lacked.",
+        "impact": "30% OT reduction Q4 vs Q3; prevented duplicate work; weekly trend analysis; budget protection; contributed to green December",
+        "replicability": "Very High",
+        "status": "Proven & Active",
+        "leadership_endorsement": "Systematic approach to cost control; finished year on budget"
+      },
+      {
+        "title": "Strategic CBRE Partnership Through Biweekly 1-on-1s & Daily Presence",
+        "category": "Relationship Management",
+        "description": "Established biweekly 1-on-1s with Tim O'Donnell (CBRE POC) plus daily informal check-ins; transformed relationship from escalation mode to partnership; customer forgot about Julio (the goal)",
+        "context": "Rafael's relationship strategy: 'Launched biweekly one-on-one meeting with CBRE point of contact Tim O'Donnell. I think Tim and I we have created a good relationship not only on those biweekly meetings but every time I see him... I'm on site every day. So we always talk and in those meetings of course we talk about things that are going on but I always try to have a chat with him even if it's not work related.' Impact on CBRE: Tim 'lets me know things are going into right direction, definitely sees improvement, demeanor of team has improved a lot.' Sonia (notoriously difficult CBRE contact): 'Feedback I've heard is that she likes me a lot.' Julio's relief: 'Tim forgot about me, which is the goal. They should be working with you. They should not be reaching out to me, Marvin, Dan, or anybody else.' Valarie: 'Huge value... I love knowing... I love hearing you say I am on site every day.' Dan: 'Super happy to have you on team... having you there is sense of comfort for me.'",
+        "impact": "Transformed crisis account to stable partnership; CBRE POC satisfaction; difficult stakeholder buy-in; leadership escalations eliminated; daily visibility",
+        "replicability": "Very High",
+        "status": "Proven & Active",
+        "leadership_endorsement": "Julio: 'Tim forgot about me, which is the goal'; Dan: 'Sense of comfort'; Valarie: 'Love hearing you're on site every day'"
+      }
+    ],
+    "Ayesha Nasir": [
+      {
+        "title": "Boots on Ground Management Philosophy - Visibility to Customer & Team",
+        "category": "Leadership Philosophy & Transformation",
+        "description": "Realized early that success required managing boots on ground, not from behind computer; visible to both team and customer/client daily; transformed unstable account lacking For Insight data",
+        "context": "Ayesha took over Westinghouse end of 2023 into 2024. Initial state: 'Westinghouse was not a stable account when I took this over... We barely had For Insight data if I'm being honest.' Key realization: 'In order to be successful, I had to manage this account being boots on the ground and not from behind the computer and being visible not just to our team, but to the customer and the client.' This philosophy drove every subsequent success. Kyle's observation: 'Your willingness to do... you've done everything I've ever asked you to do, plus 20%. You were prepared to go places before I ever asked you. You were in the mix of solving problems I didn't even know about.' Application: site visits, route walkthroughs, time studies, customer face time, operational deep dives. Result: transformed unstable account into stable, growing portfolio.",
+        "impact": "Account stability achieved; customer confidence built; operational visibility established; data collection improved; leadership credibility earned",
+        "replicability": "Very High",
+        "status": "Proven & Active",
+        "leadership_endorsement": "Kyle: 'Everything I asked plus 20%... solving problems I didn't know about'; transformation from unstable to stable account"
+      },
+      {
+        "title": "Site-by-Site Contract Renewal with Scope Capture - $75K Growth Target Hit",
+        "category": "Contract Management & Revenue Growth",
+        "description": "Secured renewal on site-by-site basis across 8 sites; identified and captured scope creep in/out of scope items; aligned wacky previous amendments; hit $75K growth target through time studies and route optimization",
+        "context": "2025 defining year: 'In order to secure the renewal, I had to do it on a site by site basis. Total of 8 sites - capture in scope and out of scope items, make sure we capture that on our amendments for renewal.' Previous state: 'All previous amendments prior to 2025 were very wacky if I'm being honest, just didn't make sense. So I wanted to align all that.' Growth strategy: 'Made sure I hit my target which was 75K for last year. I increased monthly revenue... I did this also at site by site basis.' Methodology: 'I worked the time studies honestly and worked each route. I understood how we can make each route more efficient. Where are the deficiencies? Why do we have 8 hour person in manufacturing space when it's only taking us 4 hours to pick up trash? Making more efficiencies within operations really helped.' Result: labor models aligned with scope and headcount, customer visibility into leadership initiative.",
+        "impact": "$75K growth target achieved; 8 sites renewed; scope creep captured; efficient labor models created; customer confidence in leadership",
+        "replicability": "Very High",
+        "status": "Proven & Complete",
+        "leadership_endorsement": "Systematic approach to renewal and growth; hit aggressive targets through operational discipline"
+      },
+      {
+        "title": "Complaint Turnaround Transformation - 48 Hours to 3-4 Hours with RCA",
+        "category": "Service Excellence & Responsiveness",
+        "description": "Reduced complaint turnaround from 36-48 hours (previous leadership) to 3-4 hours; includes before/after photos, root cause analysis, and path forward in email response",
+        "context": "Identified major gap: 'I noticed with previous leadership we had about 36 hour to 48 hour complaint turnaround time and that was not normal for me.' New standard: 'We changed that into three to four hours. Any complaint that we get, we want to make sure we turn that around, whether it's in hotspot area, area with CEO sitting.' Process: (1) Respond within 3-4 hours, (2) Send email with before and after pictures, (3) Create root cause analysis of how complaint occurred, (4) Create path forward to prevent recurrence. This demonstrates proactive accountability vs reactive damage control. Shows customer SBM takes issues seriously and has systematic improvement mindset. Critical for VIP areas where complaints 'could make or break us.'",
+        "impact": "87.5% turnaround time reduction (48 hours → 3-4 hours); proactive accountability demonstrated; customer satisfaction; systematic improvement approach",
+        "replicability": "Very High",
+        "status": "Proven & Active",
+        "leadership_endorsement": "Transformed reactive handling to proactive accountability with timelines"
+      },
+      {
+        "title": "VIP Hotspot Mapping & Executive Area Management",
+        "category": "Strategic Operations & Risk Mitigation",
+        "description": "Created detailed VIP hotspot maps for every site; knows where every executive sits, which restroom/urinal they use, where they eat; requires daily walks by site team/lead/supervisor",
+        "context": "Proactive strategy: 'Identifying VIP hotspot areas. So every single site that I have, I know where the executives sit. I know where their restrooms are. I know where they eat. I know what urinal they use.' Mentoring approach: 'Really giving, mentoring my site team and getting them to understand you need to walk this area every single day. I don't care what happens, if not you, your lead, a supervisor, somebody.' Rationale: 'This is they could make or break us. So just understanding your site, where your people sit and having... going into those executive areas, it's very important to be ahead of daily issues.' This granular operational knowledge prevents complaints before they happen. Shows customer Ayesha understands their business and their people. Demonstrates SBM isn't just cleaning - we're protecting executive experience and company image.",
+        "impact": "Proactive issue prevention; executive satisfaction protected; complaints reduced; demonstrates deep site knowledge; positions SBM as strategic partner",
+        "replicability": "Very High",
+        "status": "Proven & Active",
+        "leadership_endorsement": "Systematic approach to protecting high-visibility areas; mentoring site teams on strategic importance"
+      }
+    ],
+    "Michael Barry": [
+      {
+        "title": "Proactive RFP & Transition Management - Account Health Check 18 Months Prior",
+        "category": "Strategic Planning & Execution",
+        "description": "Conducted account health check 18 months before RFP identifying problem spots, scalability opportunities; updated financial models; boots on ground next day after award; Cambridge transition scored 5.0",
+        "context": "Methodology: 'What I started to do in advance of both RFPs was account health check about 18 months prior. Just really what are our problem spots? Where are we successful? What's working well? Can we make it scalable?' Preparation: 'I also made sure that all our financial models were up to date in terms of labor, cost impactors and revenue.' Execution speed: 'As soon as we got green light to move forward with award, we're boots on the ground pretty much next day. We walked through, we did on-site visits.' Recruiting: 'Our recruiting efforts were done in advance.' Knowledge transfer: 'Then we also took all good things we were doing at existing BMS portfolio and we applied it to new site.' Cambridge result: 'Transition go live date was August 1st... comprehensive approach allowed both JLL and BMS leadership to remain focused on their core operations, confidence that we were handling transition smoothly and effectively. This resulted in **transition survey score of five** and multiple compliments since we have been on site.' Dan: 'Great work integrating Corrigo and creating valuable positions.'",
+        "impact": "18-month advance planning; seamless risk-free transitions; 5.0 transition survey; multiple customer compliments; scalable best practices applied",
+        "replicability": "Very High",
+        "status": "Proven & Active",
+        "leadership_endorsement": "Dan: 'Strong performance and clear communication'; transition survey score of 5; customer confidence maintained"
+      },
+      {
+        "title": "Garment Tech Role Creation - $254K Annual Cost Avoidance",
+        "category": "Innovation & Cost Avoidance",
+        "description": "Created dedicated garment management tech position at BMS Manatee to govern gowning invoices vs actual on-site usage; drove $254K cost avoidance with one position that paid for itself 10x over",
+        "context": "Challenge: Halfway through 2025, priced scope at Manatee as part of fusion project. Identified governance gap: 'Historically there was not a lot of governance around that process' of what BMS is invoiced for vs what's actually on site. Solution: 'Created a role for one resource in charge of garment management. Their title is garment tech. Position was just to make sure that what BMS is being invoiced for lines up with what we see on site, day in, day out.' Result: 'We just found out two weeks ago that with this one position, we drove cost avoidance of roughly **$254,000**.' Impact: 'Yeah, it was monumental. We got ton of accolades around it... still very fresh, so I anticipate getting some additional feedback. From our standpoint, it's a home run. This person has paid for themselves 10 times over.' Strategic positioning: 'Already in conversations I've had with JLL, they're potentially looking to see if this is a support or program we could potentially support elsewhere. To me, that's huge home run.' Mike Jedan: 'So much more impressive when you see it all in one place!'",
+        "impact": "$254K annual cost avoidance; position paid for itself 10x; JLL exploring enterprise-wide replication; monumental accolades from customer",
+        "replicability": "Very High",
+        "status": "Proven & Active",
+        "leadership_endorsement": "Customer exploring enterprise-wide expansion; JLL sourcing team sharing within life sciences realm"
+      },
+      {
+        "title": "Outcome-Based Service Model - 9% BMS Savings with Quality Uptick",
+        "category": "Service Innovation & Financial Excellence",
+        "description": "Implemented outcome-based staffing adjusting for space utilization/occupancy trends; peak coverage Tue-Thu, deep cleaning during lower occupancy Mon/Fri; drove 9% savings ($70K/month) with Q4 quality improvement vs Q3",
+        "context": "Innovation: 'Adjusted staffing levels based on space utilization and occupancy trends ensuring peak day coverage while focusing on deep cleaning and special cleaning projects during lower occupancy periods primarily Mondays and Fridays.' Philosophy: 'These adjustments aligned staffing levels with actual space utilization and occupancy patterns. We're no longer clean and clean. This approach allows us to provide adequate coverage, creating more efficient and optimized staffing model, allowing us to hit saving targets without major erosion of service quality.' Results: 'Drove about 9% save across all existing work... monthly decrease of almost 70K per month in terms of savings. With additional site we brought on, we were about 50K per month in terms of revenue to the good.' Quality validation: 'Knock on wood, we've actually seen slight uptick in our overall performance when looking at our quality metrics in Q4 versus Q3.' Mike: 'I anticipate this to be the new norm at some point.' Marvin: 'Mike did real good job to work with union to get their agreement on implementing something like this.'",
+        "impact": "9% savings across existing work ($70K/month); $50K/month additional revenue; quality metrics improved; union buy-in achieved; scalable model",
+        "replicability": "Very High",
+        "status": "Proven & Active",
+        "leadership_endorsement": "Mike anticipates 'this to be the new norm'; Marvin praised union negotiation approach"
+      },
+      {
+        "title": "Equipment Innovation - 50% Vacuum Labor Reduction at Cambridge",
+        "category": "Technology & Productivity",
+        "description": "Identified and implemented equipment innovations at BMS locations and Cambridge transition; achieved 50% reduction in labor time allocated to vacuuming",
+        "context": "Strategy: 'Based off of our expertise, we identified some equipment that would really drive some operational efficiencies. These three items are what we implemented at most BMS locations and at one we transitioned in Cambridge.' Impact: 'Actually saw about **50% reduction in labor time allocated to vacuuming**. So that was a home run. It allowed us to get our model in line sooner.' Customer response: 'From end user standpoint, they were pleased with incumbent, but now they're really happy that we're on site. So this is one of enhancements we're able to bring forth.' This demonstrates Mike's ability to leverage equipment vs just labor to drive efficiency. Combined with outcome-based model, creates sustainable competitive advantage.",
+        "impact": "50% vacuum labor reduction; model alignment accelerated; end user satisfaction increased; competitive differentiation demonstrated",
+        "replicability": "Very High",
+        "status": "Proven & Active",
+        "leadership_endorsement": "Customer feedback: happier with SBM than incumbent due to equipment enhancements"
+      }
+    ],
+    "Dustin Smith": [
+      {
+        "title": "Arizona Air Freshener Optimization - $14K Annual Savings",
+        "category": "Cost Savings & Operational Improvement",
+        "description": "Team conducted detailed deep dive for senior facility manager in Arizona; found and implemented alternative air freshener system; delivered $14K/year cost reduction",
+        "context": "Cost savings example: 'In Arizona, the team there did a detailed deep dive for the senior facility manager there. Ended up conducting and finding replacements and implementing a different air freshener system and saving about $14,000 a year for them.' This demonstrates site-level cost optimization capability and willingness to dig into details for client benefit. Valarie feedback: 'You key projects also highlighted your challenges and changes. I appreciate how you didn't just discuss the activity, but the results from changes we made.'",
+        "impact": "$14K annual savings; demonstrates site-level cost optimization capability",
+        "replicability": "Very High",
+        "status": "Proven & Active",
+        "leadership_endorsement": "Results-focused vs activity-focused; Valarie praised outcomes emphasis"
+      },
+      {
+        "title": "Kaivac Floor Machines - Unlocking Floor Care Growth Opportunity",
+        "category": "Innovation & Growth Strategy",
+        "description": "Introduced Kaivac all-floor machines at office locations; supported high-profile visit preparation in 48 hours when corporate care couldn't respond; positioned for floor care scope expansion across JLL portfolio",
+        "context": "Equipment innovation: 'During the transition we got Kaivac all floor machines at our locations. Even though the main floor care is actually a third party, it's corporate care that takes care of this, we still do a lot of ATV projects because corporate care is struggling to get there.' Proof point: 'One example is actually just I think it was last week we got about a 48 hour notice for a high profile visit in the Arizona marketplace and JLL couldn't get corporate care out to take care of a lot of carpet extractions and getting things taken care of. But our local team there within 48 hours was able to do extremely great preparation for that visit. They knocked out a lot of floor work.' Strategic opportunity: 'Because of that, we're already starting to have conversations in the Phoenix market specifically about taking over all of the floor care scope. I think this is probably one of our biggest growth opportunities within JLL. The JLL portfolio is those out of scope items right now that somebody else is doing, floor care is probably the biggest on the list. I think the Arizona market will be the first to fall and then it'll just march up the coast through California.' This demonstrates how equipment investment creates growth opportunities through performance vs just cost reduction.",
+        "impact": "48-hour high-profile visit support; floor care scope expansion conversations; Arizona first, then California expansion; largest growth opportunity identified",
+        "replicability": "Very High",
+        "status": "Active (Growth Opportunity)",
+        "leadership_endorsement": "Valarie: 'I'm surprised you were able to find or had innovations from the office side, but I'm grateful you do'"
+      },
+      {
+        "title": "Grammys Music After Party Support - High-Profile Event Execution",
+        "category": "Client Relationship & Event Support",
+        "description": "Supported Grammys music after party in Culver City; demonstrates capability to handle high-profile events in 24/7 music spaces; showcases flexibility and responsiveness",
+        "context": "Example of complex operations: 'There are operations in California that are 24/7 office spaces, 24/7 music spaces supporting high-profile events. We just supported the Grammys music after party in Culver City.' This demonstrates SBM's capability to handle high-visibility events requiring precise timing, cleanliness standards, and operational flexibility. Part of ongoing challenge: 'It's constant discussion about when we're doing things and who's going to be on staff.' This showcases the complexity of managing office environments vs traditional fulfillment centers.",
+        "impact": "High-profile event support; demonstrates capability for celebrity/VIP events; California portfolio sophistication",
+        "replicability": "Medium",
+        "status": "Proven",
+        "leadership_endorsement": "Showcases portfolio complexity and SBM's event execution capability"
+      },
+      {
+        "title": "Office Transition: 55 Sites from Transitional to Sustaining State in 5 Months",
+        "category": "Operational Excellence & Change Management",
+        "description": "Transitioned 55-site Amazon JLL office portfolio from August 2025 go-live to sustaining operations; integrated incumbent and external hire leaders; established operational stability across 24/7 office environments",
+        "context": "Dustin joined mid-year 2025, went live August 2025 with 55 different office sites under Amazon JLL contract. Challenge: 'We had a lot of different new leaders coming in from either the incumbent or external hires.' Strategy: 'Transitioning to a sustaining state I would say was one of the biggest things that we focused on this year.' This involved: (1) One-on-one meetings with each site leader across entire portfolio to align on scope expectations and outcomes (started September 2025), (2) Scope alignment from frequency-based to outcome-based contract - 'Led to a lot of back and forth on what's in and out of scope... old work orders... team from incumbent was used to billing that,' (3) Shift and task alignment with Amazon 24/7 office schedules - 'They said for years they had been trying to understand Amazon shift schedule. It was our site leadership team that led those discussions,' (4) Management process enhancement - 'We took on a lot of incumbent managers, external hires, nobody with a lot of SBM stink on them... really doing deep dive training and making sure we're bringing our site managers up to SBM standard.' Result: Late December through January saw 'tremendous uptick' in ForSight quality/quantity of audits. Valarie: 'You do really good job typically controlling the room, controlling your customer and you come very well prepared with what you're going to say. You're well spoken. You remain calm.'",
+        "impact": "55 sites stabilized in 5 months; scope clarity achieved; Amazon shift schedules mapped; site managers elevated to SBM standard; ForSight audit quality increased",
+        "replicability": "Very High",
+        "status": "Proven & Active",
+        "leadership_endorsement": "Valarie praised Dustin's executive presence and preparation; Nicole: 'I've worked a whole ton with you over the years... excellent job'"
+      }
+    ],
+    "Keith Deuber": [
+      {
+        "title": "Operationally Focused Leadership Team - Amazon SMEs",
+        "category": "Team Building & Talent Strategy",
+        "description": "Built operations-first leadership team with Amazon experience: Bill Darlington (5 years Amazon East), Sam (West), Kathy Telford (8 years Amazon MIT); transformed from account team to true operators; key driver in changing Amazon's perception of SBM",
+        "context": "Strategic insight: 'This may be one of the only accounts where truly to the core, winning in Amazon is proving operations and your operational effectiveness.' Team building: 'Throughout the year, obviously Dustin coming on put everything in the hyperdrive. But throughout the year, bringing in Bill Darlington on the East Coast, five years in Amazon, operations through and through. Sam on the West Coast operation through and through, as well as Kathy Telford, who I brought in as MIT, spent eight years on the Amazon accounts. Really a true SME in the space as well as an SME in the categories that we want to break into a bit more, the MX LS, AM ZL and such like that.' Impact on perception: 'I really think this assisted, if not was a key driver in changing the perception of SBM and Amazon's eyes. We've went from having an account team to having a true operations team.' Site-level impact: 'This really successfully assisted in strengthening our site level management as well. These are operators. These are not guys that are going there and just, hey, you got to do this, got to do that, got to do this, they're going there and they're strengthening our on site management, they're mentoring them, they're showing them what to do, leading by example.' Result: 'The outcome of that is, I mean as we can see through peak through the beginning of this year, we're hitting the highest scores ever. I attest that to truly changing our leadership from strictly an account-based to strong operators, which again this account to grow is truly operational success equals growth.'",
+        "impact": "Highest scores ever; perception transformed; site management strengthened; mentoring vs directing; operations = growth equation proven",
+        "replicability": "High",
+        "status": "Proven & Active",
+        "leadership_endorsement": "Valarie/Nicole: 'Keith, you come really strongly with the operational support. I feel almost every time you talk like if you said it, then it's facts. Like if you said that's the equipment problem, then that's what it is.'"
+      },
+      {
+        "title": "Relationship Campaign - Operations Team Focus Over Category Team",
+        "category": "Strategic Relationship Management",
+        "description": "Shifted relationship strategy from Amazon category team (who assign initial work) to operations teams (SPMs, RPMs, POLs) who influence site retention, loss, and RFP outcomes; established constant communication",
+        "context": "Strategic shift: 'First and foremost, we were focusing on the wrong group per se. We were focusing on the category team. That category team is what assigns the work initially. But what we didn't have in focus was the operations teams. The operations teams, even though they do not single-handedly assign the work, they do have heavy influence throughout the year of losing sites, winning sites as well as coming up in the 2027 or 2026 RFP.' Target roles: 'We started to meet with the SPMs, the RPMs, as well as the POLs or the procurement operation leaders, and those three roles are really what determines success at a site. A POR can come in, they can stamp of approval or they can put you on a PIP.' Implementation: 'Throughout the year, beginning of the year and then Dustin obviously came on midway through the year and it kind of went into hyperdrive.' Result: 'We shifted our focus throughout 2025 to focus on the procurement operations and getting in front of them, having constant communication and really changing the perspective of Amazon about SBM starting with that group because they have the most I would say influence when it comes to category.'",
+        "impact": "Relationships shifted to operations influencers; constant communication established; Amazon perception of SBM changed; positioned for 2026/2027 RFP success",
+        "replicability": "Very High",
+        "status": "Proven & Active",
+        "leadership_endorsement": "Strategic relationship targeting vs transactional category team focus"
+      },
+      {
+        "title": "Strategic Operations Governance - Daily 15-Min Touchbases During Peak",
+        "category": "Process Excellence & Real-Time Communication",
+        "description": "Implemented Teams regional chats for real-time communication; established 15-minute daily touchbases during peak (started one month before); enabled shift-by-shift responsiveness; achieved zero escalations, 93.3% average, zero PIPs during peak",
+        "context": "Amazon's unique risk: 'Amazon is different from other accounts. This is not an account that is, you know, hey, you have a year contract, three-year contract, we'll review it at the end of the contract. This is truly you fail two months in a row, you could potentially be on a pip. We're fending off a pip. You fail three in a row, you could potentially be kicked out of the site. So the typical standard on SBM internal communications just didn't work because it's a week to week contract, almost a shift by shift. You could drop a ball on a shift, next you know you're getting escalations.' Solution: '(1) Utilizing teams and setting up individual region by region teams chats to ensure that we're communicating real time. (2) During peak, starting about a month before peak, we set up 15 minute touch bases every single day with the teams, with the site managers, the regional, the area managers, just to make sure that we're communicating who was on site, where are the challenges, where are the gaps, when's the audit, what are the challenges of that week or that day?' Peak results: 'That truly I think was a driver into having 0 escalations during peak averaging at 93.3, which is significantly higher than we averaged during the peak prior and we were the only company that had zero sites on PIP throughout Peak, which is what's called out through our supplier Peak debrief with Marco Rosano.' This demonstrates Keith's understanding that Amazon requires fundamentally different communication cadence than typical SBM accounts.",
+        "impact": "Zero escalations during peak; 93.3% average (significantly higher than prior peak); only company with zero PIPs; real-time shift-level responsiveness",
+        "replicability": "Very High",
+        "status": "Proven & Active",
+        "leadership_endorsement": "Marco Rosano called out SBM as only company with zero PIPs during supplier peak debrief"
+      },
+      {
+        "title": "BI Dashboard Proof of Concept - Predictive Site Failure Analysis",
+        "category": "Innovation & Data-Driven Operations",
+        "description": "Created BI dashboard with innovations team to digest Amazon's weekly scorecard and KPI documents; enables predictive analysis of site failure trends; tracks week-over-week patterns; supports data-driven operational decisions",
+        "context": "Challenge: 'Amazon provides us with the weekly scorecard and then we also have to implement and send in a KPI document detailing out hours utilization, any service credits, staffing and such like that. What we were struggling with at the beginning of the year was digesting and actioning on those items, finding the key indicators to a site or trending to a site that is failing or catching it before it starts to have an escalation.' Solution: 'We created a BI dashboard with the innovations team that really allows us internally to track and trend and make predictive analysis on where a site's trending. Is it going to fail? What are the week over week fail trends and really put it on to a dashboard that allows us to make data-driven decisions to be able to sustain high operations.' This demonstrates Keith's strategic thinking to move from reactive to predictive operations management.",
+        "impact": "Predictive site failure analysis; proactive intervention before escalations; data-driven decisions; week-over-week trend identification",
+        "replicability": "Very High",
+        "status": "Proven & Active",
+        "leadership_endorsement": "Innovation team collaboration; moves from reactive to predictive operations"
+      }
+    ],
+    "Tiffany Purifoy": [
+      {
+        "title": "Schwab Restack Execution - 95% Occupancy, Zero Service Interruption",
+        "category": "Operational Excellence & Client Priority",
+        "description": "Successfully executed Schwab's largest portfolio-wide priority (restack to 95% occupancy); evaluated headcount and frequency adjustments internally; zero service interruption, zero missed service; client and occupants provided positive feedback",
+        "context": "Client priority: 'Restack was essentially Schwab's largest priority across the entire portfolio. They now operate at about a 95% occupancy and we are currently evaluating internally any need to increase headcount, considering any increase in frequencies.' Execution: 'Happy to report no interruption of service, no missed service. The client has had nothing but positive experience and feedback.' Strategic importance: 'This is important because this was a priority for Schwab and the Schwab's feedback, the occupants feedback is something that Schwab values.' This demonstrates ability to execute on client's #1 priority without service disruption while managing internal resource adjustments.",
+        "impact": "95% occupancy achieved; zero service interruption; positive client and occupant feedback; Schwab's #1 priority executed successfully",
+        "replicability": "Very High",
+        "status": "Proven & Complete",
+        "leadership_endorsement": "Executed client's largest priority with zero disruption"
+      },
+      {
+        "title": "Fidelity Scope Alignment - Off-Site Meeting Closed Financial Gap",
+        "category": "Strategic Negotiation & Partnership",
+        "description": "Met with CBRE POC off-site to align on expectations (carpet stain parameters, restroom frequencies); highly productive discussion resulted in mutual agreement on contract; already signed and implemented, closed financial gap",
+        "context": "Return to work context: 'Return to work is a common theme across all portfolios with the exception of State Farm. Our teams are at the end of return to work at both locations as well. They we really supported a lot of contracted work, post contract, construction support, new partitions, new carpets. Teams have been working over the weekends. Right now, if I'm not mistaken, our both locations are at full capacity, which makes it vital for us to have the conversation that we needed for comprehensive scope alignment.' Meeting execution: 'What we did was meet. I met with our CBRE point of contact. We met off-site and we really need to align on expectations from carpet staining parameters to restroom cleaning frequencies. The discussion was really highly productive and did result in a mutual to agree upon contract which has already been signed and implemented this year and that's the scope expansion that closed the financial gap.' Valarie feedback on scope: 'Scope's been aligned. What could we have done differently?' - Tiffany's lesson: Should have done this earlier in transition, not leaned so heavily on transition team.",
+        "impact": "Financial gap closed; contract signed and implemented; carpet/restroom expectations clarified; mutual agreement vs adversarial negotiation",
+        "replicability": "Very High",
+        "status": "Proven & Complete",
+        "leadership_endorsement": "Highly productive off-site meeting led to mutual contract agreement; Valarie emphasized importance of doing this earlier"
+      },
+      {
+        "title": "Periodic Task Calendar - Eliminated Client Complaints at TRP Colorado",
+        "category": "Communication & Process Excellence",
+        "description": "Built calendar for TRP Colorado listing all periodic tasks and completion dates; sent to customer monthly with updates; reviewed in scorecard meetings; zero complaints since implementation; enhanced partnership through communication",
+        "context": "Problem: 'The lack of visibility to periodic tasks. This was a complaint, a consistent complaint in our Colorado location and the client was making us aware that they wanted to basically know when periodical tasks were completed so that they could then perform service validations.' Solution: 'What we did was build a calendar for the client listing all of the periodic tasks when they would be completed, and that calendar was sent to the customer with any necessary updates on a monthly basis and reviewed on our scorecard meetings.' Result: 'We've had zero complaints since we've implemented this new process and the client is very appreciative. Actually the partnership has grown stronger due to the enhanced communication.' Accountability: 'From an accountability standpoint, the periodical task should have been provided to our client ahead of time, not something that they should be asking or wondering if it was done. As an owner of the account, I should have ensured that (A) client asked for it twice and (B) ensure that these were plans and routes, some of them involved routes, were in place prior to the client requesting this information.'",
+        "impact": "Zero complaints since implementation; partnership strengthened through communication; client appreciative; proactive vs reactive approach established",
+        "replicability": "Very High",
+        "status": "Proven & Active",
+        "leadership_endorsement": "Tiffany owns accountability - should have been proactive from start"
+      },
+      {
+        "title": "Mother's Room & Fitness Center Process - Prevented Repeat Privacy Incidents",
+        "category": "Risk Management & Process Implementation",
+        "description": "Implemented new entry process after two incidents at TRP (mother's room, fitness center); knock, wait 10 seconds, knock again, then enter even if IT light shows unoccupied; zero incidents since implementation; client appreciative",
+        "context": "Incidents: 'We've had two pretty important issues that occurred and one of them was an SBM entering a space. It was one of them was a mother's room. Another incident was a fitness center. Though I'm not sure if everyone's familiar with, there are lights on the door that let you know if it was occupied or not. In both incidences the IT stated that it was unoccupied. SBM employee knocked. There was no response. Employee entered to someone in the space.' Solution: 'Working directly with JLL and T. Rowe Price, we implemented a new process. That process basically states that employee is supposed to knock, wait a certain amount 10 seconds to enter, knock again and then enter the room because we obviously have keys to enter these spaces.' Result: 'Since this occurrence, both of those occurrences, there have been 0 incidences since implementation and the clients obviously really appreciate the implementation of this process.'",
+        "impact": "Zero privacy incidents since implementation; client appreciative; risk mitigated; process protects both occupants and SBM employees",
+        "replicability": "Very High",
+        "status": "Proven & Active",
+        "leadership_endorsement": "Worked directly with JLL and TRP; client appreciative of process implementation"
+      }
+    ],
+    "Greyson Wolff": [
+      {
+        "title": "Honda Portfolio Quality Turnaround - Q1 Struggles to Q2-Q4 Excellence",
+        "category": "Operational Excellence & Quality Management",
+        "description": "Transformed Honda portfolio quality from 6 failed KPIs and 6 failed surveys in Q1 to only 3 failed KPIs and 1 failed survey in remaining 9 months; improved joint inspection scores from Q1 4.39 to Q2-Q4 4.54; achieved zero failed joint inspections all year",
+        "context": "Portfolio performance: '11 sites throughout 2025, we came through at a 4.94 performance score out of five for our scorecards. That's sitting at a 99 plus percent. We had nine failed KPIs in 2025, but of those nine, six came in Q1 with only three failed KPIs from Q2 through Q4.' Survey performance: '4.3 average score across the 133 surveys... seven surveys that were failed across the entirety of the year. Six of those came in Q1 and there was only one that came throughout the remaining nine months.' Inspection turnaround: 'Joint audits in Q1 came in at a 4.39 and our failed inspections of the 31 for the entire year, 24 of those failed inspections came in Q1... We did not fail a single joint inspection for the entirety of the year. Q2 through Q4, that joint score increased to a 4.54.' Strategic focus: 'Since we started the Honda portfolio and were awarded the growth that led us to the size of the business we have currently, from day one, we've been really focused on not only the existing business that we have, but making sure that we are posturing ourselves in a position to be prepared for the growth that exists in Ohio.' This demonstrates dramatic quality improvement and positioning for $1M growth opportunity (Ohio RFP Q4 2026).",
+        "impact": "Q1 → Q2-Q4: 6 failed KPIs → 3 failed KPIs; 6 failed surveys → 1 failed survey; 4.39 → 4.54 joint scores; zero failed joint inspections; positioned for Ohio growth",
+        "replicability": "Very High",
+        "status": "Proven & Active",
+        "leadership_endorsement": "Valarie: 'You probably did the best of anyone presenting... You did the best of anyone presenting out of ForSight with your flow, your logic'"
+      },
+      {
+        "title": "Aztec Sidewinder Equipment - 50% Floor Stripping Time Reduction",
+        "category": "Innovation & Equipment Investment",
+        "description": "Introduced Aztec Sidewinder equipment for VCT floor stripping; piloted July 2025 in Georgia; reduced time/labor by 50%; delivered $5K December shutdown savings; forecasting $20K+ annual savings; reduced high-visibility area downtime for client",
+        "context": "Challenge: '100,000 square feet of VCT across nine different states is really no joke and so we've had to get creative in how we can figure out a way to support that.' Innovation: 'The Aztec Sidewinder is what we have introduced into the portfolio here at the end of December and something that's really going to be able to change the dynamic of how we are completing service within these shutdown periods. We ran a trial of this last July in Georgia. Love the results that we saw. And so from that we ordered 2 units, one to be used between Alabama and Georgia, another unit to be used in Indiana and Ohio.' Results: 'We quickly found that we can reduce the time that we are spending, the time and labor in stripping floors by about 50%. Internally what this allowed us to do just in one shutdown here in December of 2025 is provide about $5000 of cost savings for us internally, we're forecasting that at about $20,000 plus in 2026.' Client impact: 'These are very high visibility areas that we are having to shut down for days on end in order to be able to get through the work. Our opportunity to be able to do these quicker while still delivering just as high of a quality result, if not better and then be able to reallocate resources back throughout the plant to complete additional projects is something that is felt not only with our team internally, but really throughout the entirety of the facilities and the facilities team as well as the end users. We've been able to dramatically increase the amount of work that we're able to complete within a very jammed packed 8 to 10 day shutdown period.'",
+        "impact": "50% time reduction; $5K December savings; $20K+ forecasted 2026 savings; reduced high-visibility area downtime; increased shutdown project capacity",
+        "replicability": "Very High",
+        "status": "Proven & Active",
+        "leadership_endorsement": "Piloted before full investment; client impact on shutdown efficiency; increased work capacity"
+      },
+      {
+        "title": "Management Structure Investment - $18K Cost Avoidance to Honda",
+        "category": "Team Building & Strategic Investment",
+        "description": "Promoted Blake Pacheco to area manager (AAP/TMPG); hired William Smith as area manager (Hitachi Ostomo); brought on Christopher Blankenship (Ohio support); transformed from flat org chart to layered structure; $18K monthly cost avoidance to Honda while strengthening operations",
+        "context": "Starting point: 'At the beginning of 2025 when we started the year both from the HDMA portfolio and the American Honda, every single one of these sites were flat across our org chart. All of them are reporting directly into myself.' Transformation: 'Early in the year, we had the opportunity to promote Blake Pacheco into an area manager role where he's supporting both AAP and TMPG. Then we had the growth with Hitachi Ostomo, which allowed us to bring on another area manager in William Smith, give Blake the opportunity to be promoted into a role to oversee those existing locations as well as additional locations on our American Honda side of things. And then as we closed out the year here in transition into 2026, Christopher Blankenship has been brought on board of our team in the Ohio market to help support some of the locations that don't have dedicated site management.' Financial impact: 'We have two positions in our area manager and our senior area manager, Blake Pacheco and William Smith. The investment that we are pouring back into the portfolio there is $18,000 in cost avoidance on the Honda side of things.' Customer communication: 'One of the biggest things that we've been able to share through scorecard reviews, through formal business reviews is really the commitment that we have to the relationship with Honda and ultimately how that has translated to quality delivery. That starts with the investment that we have made to our management team.'",
+        "impact": "$18K monthly cost avoidance to Honda; flat org chart → layered structure; positioned for $1.7M portfolio growth; quality improvement enabled",
+        "replicability": "High",
+        "status": "Proven & Active",
+        "leadership_endorsement": "Demonstrated to Honda in scorecards and business reviews; commitment to relationship"
+      },
+      {
+        "title": "Frontline Wage Investment - $13K Monthly to Compete in Market",
+        "category": "Staffing Strategy & Retention",
+        "description": "Increased frontline associate wages by $13K monthly across markets where bid model rates couldn't meet staffing levels; enabled confident scope execution while maintaining green financial performance",
+        "context": "Market challenge: 'We've identified markets that we operate in and the wage rate with our bid model wage rates, we're just not meeting the staffing levels that we needed to be at in order to confidently execute our scope of work.' Decision: 'We had made the decisions here to increase those wages to be a lot more competitive with the market and with that we've had a $13,000 investment that is going back within that portfolio.' Strategic communication: Shared with Honda through business reviews as demonstration of commitment. Combined with $18K management investment = $31K total monthly investment while maintaining green performance. This demonstrates ability to make strategic investments that support quality delivery and position for growth.",
+        "impact": "$13K monthly wage investment; achieved staffing levels for confident scope execution; maintained green financial performance; demonstrated commitment to Honda",
+        "replicability": "High",
+        "status": "Proven & Active",
+        "leadership_endorsement": "Communicated to Honda as partnership commitment; enabled quality delivery"
+      }
+    ],
+    "Siddarth Shah": [
+      {
+        "title": "Curbit Award - Sustainability & Recycling Leadership Recognition",
+        "category": "Sustainability & Environmental Impact",
+        "description": "SBM team in Boise awarded the Curbit Award by City and County of Boise for exceptional recycling and sustainability efforts; team serves as frontline of Micron's sustainability program across 5.3M sq ft facility with 175 restrooms",
+        "context": "Recognition: 'One of the major initiatives that we wanted to highlight were our sustainability efforts. Our team supports the sustainability and the recycling efforts in Boise. With our team being the front line of the recycling and the sustainability section of Micron in Boise, we actually got awarded the Curbit award by the city and county of Boise, which was a huge win, and our team played a huge role supporting those efforts.' Scale: 5.3M sq ft campus, 175 restroom sets, 201 employees. 2026 initiatives: 'Scrape the Plate program initiative piloted in San Jose, sourcing new compostable liners, new trash/recycling/compost waste management program in San Jose and Boise, presenting cost savings to the client.'",
+        "impact": "City/county recognition for environmental leadership; positions SBM as sustainability partner; piloting new programs across portfolio (Scrape the Plate, compostable liners, comprehensive waste management)",
+        "replicability": "High",
+        "status": "Proven & Expanding",
+        "leadership_endorsement": "External recognition from city/county; client partnership on sustainability"
+      },
+      {
+        "title": "Paper Products Repurposing - Indirect Cost Savings & Carbon Footprint Reduction",
+        "category": "Cost Savings & Sustainability",
+        "description": "Instead of disposing paper products at 15% remaining, repurposing them for spills, leaks, and wipe-downs; reduces laundry costs, electricity usage, water consumption, and carbon footprint from rag washing",
+        "context": "Scale context: 'Having a site like Boise which stretches 5.3 million square feet, 175 sets of restrooms, the amount of toilet roll that gets used on a daily basis and the amount of waste of paper products was astronomical.' Innovation: 'We started repurposing our paper products. Any paper products that reach 15% need to be changed out and replenished, but we were not disposing those. We are now using, we are repurposing those for spills, any kind of leaks and any wipe downs that we need to do around the facility.' Impact: 'Might not seem like much, but this actually saves us doing laundry with our rags. It saves us with electricity. It actually reduces our carbon footprint. So there's a lot of cost savings indirectly. It's not necessarily monetary cost savings, but how are we using these products until we can actually dispose them without having impacts on using additional water and additional chemical going into our washing of the rags.' Client collaboration: 'We put together some information, data and presented it to the client. We made recommendations like maybe we should start using more bamboo based products, recycling products.'",
+        "impact": "Indirect cost savings across laundry/electricity/water; reduced carbon footprint; extended product lifecycle; data-driven sustainability presentation to client",
+        "replicability": "High",
+        "status": "Proven & Active",
+        "leadership_endorsement": "Client approved after data presentation; sustainability alignment with Micron values"
+      },
+      {
+        "title": "Window Washing Vendor Optimization - $15K Cost Reduction + Revenue Increase",
+        "category": "Cost Savings & Revenue Growth",
+        "description": "Reduced exterior window washing costs in San Jose by $15K through competitive vendor bidding, then proposed twice-yearly service (vs once yearly), converting cost savings into revenue growth opportunity",
+        "context": "Process: 'We worked with our management team, especially on the window washing projects and our pressure washing projects that we subcontract. We actually worked with different vendors and we had different vendors come out to the site and we reduced the cost of the window washing services by approximately $15,000.' Strategic conversion: 'Now of course that is considered ATB (above the bid), but the proposal was instead of doing the window washing once a year, we'll do it twice a year and that was approved by San Jose. So we're actually making a little bit more money when it comes to the subcontracting of the window washing, but that was a $15,000 cost savings for San Jose.' Impact: 'That was a huge win for us.'",
+        "impact": "$15K annual cost reduction for client; increased service frequency from 1x to 2x yearly; improved subcontract margins; strengthened client partnership",
+        "replicability": "High",
+        "status": "Proven & Active",
+        "leadership_endorsement": "Client approved increased service frequency at reduced annual cost"
+      },
+      {
+        "title": "Waxy Urine Digester Innovation - Eliminates Urinal Mats & Restroom Closures",
+        "category": "Product Innovation & Productivity",
+        "description": "Introduced Waxy urine digester/remover product in Boise that eliminates need for urinal mats, can be used during all shifts without closing restrooms, more effective than previous Citro Stride product, environmentally friendly",
+        "context": "Product benefits: 'Nothing special, but the nice thing about this product, it eliminates the use of urinal mats. So the customer doesn't need to buy urinal mats no more. It can be used during all shifts and we will not need to close down restrooms during the day. That basically means it increases productivity. We do not need to close down restrooms in order to start mopping underneath urinals and any restrooms as a whole.' Performance: 'It's tested and proven to be more effective than the current product that we were using called Citro Stride. It's green, environmentally friendly, which helps on the sustainability sides of things and it also leaves the restroom really refreshed and clean. It eliminates all the odors.' Status: 'Great product came in our hands. We've proposed it, it's been approved and it's actually proved to be a really great product.'",
+        "impact": "Eliminated urinal mat costs; no restroom closures during shifts (productivity gain); superior performance vs Citro Stride; sustainability alignment; improved restroom experience",
+        "replicability": "High",
+        "status": "Proven & Approved",
+        "leadership_endorsement": "Client approved; product delivering on all promises"
+      }
+    ],
+    "Jacob Reed": [
+      {
+        "title": "Proactive Maintenance Approach - $6K Sink to $120 Fixture Root Cause Analysis",
+        "category": "Cost Savings & Problem Solving",
+        "description": "Maintenance team shifted from reactive ticket chasing to proactive root cause analysis; example: instead of replacing $6K sink, identified calcium buildup and replaced $120 fixture; Tesla now requesting SBM partnership on broader facilities maintenance",
+        "context": "Reactive past: 'For the longest time we've been really reactive and we kind of just taking things and kind of like how do we get to the next ticket. I think Edgar and his team are really taking that to be more of a proactive approach instead of just throwing, allowing us to throw money at it and just say the sink is broken, just buy a new one. It costs like $6,000 for the sink.' Proactive approach: 'Edgar and his team actually took a second to say, hey, what do we find on the root of the problem? They remove the sink and find out there's just calcium buildup or inadequate pieces that people just kind of threw together because there was a deadline to get these areas turn over. Now we're actually bringing these permanent solutions that are actually instead of a $6,000 sink, it's replacing $120 fixture.' Client response: 'Now we're really getting our foothold on there where it's even getting to the part where they're like, hey, can you guys partner with facilities? What does it look like to give SBM more of the visual, more of the eye-opening to the maintenance world that goes into keeping the factory up and running.' Impact: 'It really just helps elevate us to where we're walking step with Tesla where it's how do we keep SBM growing with us.'",
+        "impact": "Massive cost savings via root cause analysis ($120 vs $6K example); Tesla requesting facilities partnership expansion; elevated from 'vendor to the side' to strategic partner; Edgar leadership recognized",
+        "replicability": "High",
+        "status": "Proven & Active",
+        "leadership_endorsement": "Tesla requesting expansion of SBM maintenance role; walking step with client"
+      },
+      {
+        "title": "Rapid Scaling for Tesla Shop Openings - 2 Week Lead Time",
+        "category": "Operational Excellence & Scalability",
+        "description": "Successfully scaled SBM operations for multiple Tesla shop openings (Cyber Cab station, new Model Y, battery expansion) with 2-week lead time from recruitment to fully operational; only vendor able to meet Tesla's rapid pace demands",
+        "context": "Challenge: 'Tesla kind of exploded and revitalized their program. A lot of shops opened up for us and really was tasked with like how quickly can SBM scale this. Tesla likes to tell themselves they want to be first to everything. They want things done in such a rapid pace that you don't really have time to catch your breath. The opening of the Cyber Cab station, the envelopment of the new Model Y and the battery expansion pieces all deemed a pretty heavy need for additional scope and additional headcount.' Execution: 'We were able to knock that out of the park with most lead time, about two weeks to get employees into the door and then see them up and running. One of the only vendors that could really meet those demands.' Key partnerships: 'Really got to kick it off to our HR team and our recruiting team to be able to get people to the door and then the operations team being able to coach them up and get them to where they need to be in that Tesla mindset pretty quick.'",
+        "impact": "Only vendor meeting Tesla's rapid expansion demands; 2-week recruitment-to-operational cycle; positioned SBM as scalable partner; supported Cyber Cab, Model Y, battery expansion launches",
+        "replicability": "High",
+        "status": "Proven & Active",
+        "leadership_endorsement": "Competitive differentiator for Tesla relationship; HR/recruiting/operations collaboration model"
+      },
+      {
+        "title": "Flood Support Process - $200K Savings + 4 Hours to 45 Minutes Response",
+        "category": "Emergency Response & Value-Added Services",
+        "description": "Developed systematic flood response process reducing response time from 4 hours to 45 minutes; saved Tesla $200K in 2025 by eliminating need for subcontractors; tracking and quantifying value monthly",
+        "context": "Problem: 'With the amount of adjustments and demand that Tesla's doing of like moving the factory around daily, monthly, there's always someone that's hitting either a pipe or hitting fire sprinklers, releasing hundreds of thousands of gallons of water. It became just an ordeal where production is down. Everybody's just waiting. The cars won't move because there's water in the way.' Old process: 'In the past it's taken us about four hours to get all this water kind of in once to center, get it all taken care of, get it all soaked up and moved on.' New process: 'Now where it's down to like 45 minutes to an hour, hour at the max. There's a process, there's a direction and there's guidance from our team. Our team looks like they're supposed to be there. People get excited where they're like SBM's here, they're going to take care of this water. We can keep moving from production because everybody's getting hounded in the background of like, why aren't these cars being made?' Value quantification: 'We were happy to announce to them that we saved them about $200K in savings. It wasn't necessarily built into our scope when we first started. We were just there for more of a residual water cleanup to where we took on the actual flooding in itself. They're not having to bring out any subvendors.' Tracking: 'We're able to give them that like a solid number. Now we're tracking that daily, monthly for them to be able to see that we are bringing that value add.'",
+        "impact": "$200K annual savings quantified; 75% time reduction (4 hours → 45 min); eliminated subcontractor delays (4-24 hour wait); production uptime protected; sticky service enhancement",
+        "replicability": "High",
+        "status": "Proven & Active",
+        "leadership_endorsement": "John Mann requested documentation for scaling; Valarie emphasized huge win"
+      },
+      {
+        "title": "Cost Savings Strategy Shift - Budget Alignment vs Egregious Demands",
+        "category": "Client Relationship Management & Financial Planning",
+        "description": "Shifted narrative from client-demanded cost savings ($600K+/month expectations) to proactive budget alignment with factory schedules; delivered $250K in holiday/shutdown savings while protecting operational integrity",
+        "context": "Old approach problem: 'The real goal internally for me is getting away from planning Tesla a lot of these cost savings. When we first started the account it was like how can we get SBM to give us more than $600,000 a month back in cost savings? It was like an expectation for you guys to just give us a giant amount of money back. It became like a nightmare trying to move things around.' New approach: 'I really wanted to show them the overall leader budget, being able to tell them these are necessities that we need. We're not over asking. We're not trying to take advantage. It was more or less aligning with them. We'll give you the cost savings that structure with how the factory operates, IE like holidays and factory shutdowns. We're able to go in there, produce some savings for them and say like, you guys are down, we see that we're not going to overstaff for a factory that's dead.' Results: 'Aligning with them on their schedules, kind of integrating into what Tesla's doing and kind of getting ahead of it instead of asking the customer how much do you need to save. It's more or less like, hey, what does the schedule looks like? Oh great, with that kind of reductions I can save you guys as much money. That one also came out to about $250K with the reduction there. Those were like just for major holidays, Christmas, Thanksgiving, 4th of July, MLK Day and Veteran's Day.' Philosophy: 'It's a really good way to just not allow them to push us around and kind of put our foot down and say, hey, we're going to move in the right direction of the budgets that we asked for are lean because they reflect exactly what we need and any kind of cost savings we'll be more than happy to give back to you, but those are justified and not like being over budgeted.'",
+        "impact": "$250K holiday/shutdown savings delivered; eliminated $600K+ egregious demands; established budget integrity; proactive scheduling alignment; protected operational necessities",
+        "replicability": "High",
+        "status": "Proven & Active",
+        "leadership_endorsement": "Shifted power dynamic; sustainable cost savings model vs unsustainable demands"
+      }
+    ],
+    "Jeremy Johnson": [
+      {
+        "title": "Presentation Organization - Lead with Wins",
+        "category": "Executive Presentation & Communication",
+        "description": "Open year-end reviews by leading with quick wins (financial, quality, safety) before diving into projects; markets SBM to leadership; sets positive tone",
+        "context": "Jeremy started his Intel review with quick wins in ForoInsight: financial recovery ($450K recaptured in 90 days, 11/12 months green), quality (0 production impacts, 94+ joint audit avg, 0 failed audits), surveys (98% pass, 196 completed), and safety (0.40 TRIR, 2 claims all year - best since 2020). Valarie Barnett: 'Your organization and your delivery of your presentation is 100% a best practice that should be studied. Jeremy out the gate led with some wins and how he delivered that I think was exceptional. Your overall performance was exceptional. You actually scored perfect on my side.'",
+        "impact": "Valarie: '100% a best practice that should be studied'; 'A+ as far as presentations are concerned'",
+        "replicability": "Very High",
+        "status": "Proven & Active",
+        "leadership_endorsement": "Valarie Barnett: 'Your organization and your delivery of your presentation is 100% a best practice that should be studied'"
+      },
+      {
+        "title": "Scorecard Realignment with Client KPIs + Daily Work Order Automation",
+        "category": "Governance & Data Alignment",
+        "description": "Added 5 new KPIs to internal scorecard to align with Intel/Omentum; created daily automation feeding Intel work order data and feedback into emails; integrated cost savings/avoidance KPI into monthly scorecard",
+        "context": "Realized KPI misalignment with what customer measured. Every quarter in 2025 ranked top category (Omentum top supplier). Worked with Omentum to create brand-new automation - Intel work order data and feedback in emails daily (never had before). Captures complaints, compliments, measures work order satisfaction. Cost savings/avoidance KPI now highlighted by operators every month in scorecard comments; ~15 billable work orders/month as value add = $10K/year. Valarie: 'I thought you highlighted the major initiatives that were delivered well, the outcomes and the client impact... results over just activities.'",
+        "impact": "Omentum top supplier all year; daily work order visibility; cost savings/avoidance now tracked in scorecard",
+        "replicability": "Very High",
+        "status": "Proven & Active",
+        "leadership_endorsement": "Valarie praised outcomes and client impact emphasis"
+      },
+      {
+        "title": "Fab 9 Rio Rancho - 2-Year Pricing Collaboration with Microcontamination",
+        "category": "Financial Strategy & Client Partnership",
+        "description": "Partnered with Intel global sourcing and microcontamination team on 800K sq ft fab retrofit; negotiated through 4 revisions from $2.4M to $1.2M; white papered by Intel, scaling to US and Malaysia fabs",
+        "context": "Fab 9 at Rio Rancho - 2 years in the making. First pass projected $2.4M ($200K/month). Partnered with global sourcing and microcontamination team to define what services actually needed in critical space. Four revisions over 2-year pricing negotiation; found operational efficiencies (waste removal routing). Revision 4 approved, going live March - $120K savings from Rev 1. White papered by Intel microcontamination team, scaling to other applicable fabs in US and Malaysia. Valarie: 'I think you executed it exceptional.'",
+        "impact": "$120K savings from original proposal; white papered by Intel; scaling to US and Malaysia fabs",
+        "replicability": "High",
+        "status": "Proven & Active",
+        "leadership_endorsement": "Valarie: 'I think you executed it exceptional'"
+      },
+      {
+        "title": "Willingness to Pilot & Transparency - Bold Process Changes",
+        "category": "Innovation & Continuous Improvement",
+        "description": "Pilot and try things without fear; admit where things went left, what worked, what to do differently; implement process improvements (SOWs, scope definitions) not just technology",
+        "context": "Valarie: 'Your willingness to pilot and try things, not being afraid to really admit where you guys have either went left where it's worked well or what you would do differently. I definitely appreciate the transparency. I think it's bold to implement processes to change SOWs, to do things that aren't necessarily just always technology, but sometimes making things better for the client. And you've proven that like across the portfolio, something so small was like a type of air freshener. It still goes a long way that we brought it to them and they didn't have to like.' Jeremy on robotics: 'We have to frame the conversation right from the get-go... we've been able to successfully do that... clear expectations up front. The last thing we want to do is go through a year long process on an innovation and ultimately introduce something that doesn't solve the problem.'",
+        "impact": "Air freshener pilot: 20% cost savings + 90% favorable feedback; Intel site manager marketed globally; fitness equipment SOW white papered",
+        "replicability": "Very High",
+        "status": "Proven & Active",
+        "leadership_endorsement": "Valarie: 'I definitely appreciate the transparency'; 'bold to implement processes'"
+      }
+    ],
+    "RJ Ober": [
+      {
+        "title": "Scope of Work Discrepancy Resolution - Direct Client Engagement",
+        "category": "Contract Management & Client Relations",
+        "description": "Within a month of onboarding, uncovered substantial contractual misalignments between SBM contract and JLL expectations; arranged direct meeting with IBM Regional FM Kelly Doan (with Yousef); addressed root causes, developed plan for periodic out-of-scope services",
+        "context": "San Jose was on JLL action plan with janitorial components perceived as service gaps. RJ arranged direct meeting with IBM Regional FM Kelly Doan; high-level client engagement made IBM feel heard. Addressed root causes, identified meaningful scope discrepancies, developed plan for periodic out-of-scope services. Result: dramatic improvement in working relationship of all three parties; site now generating end user compliments instead of complaints. JLL Global Account Director: 'Keep doing what you're doing in San Jose.'",
+        "impact": "San Jose turned from action plan/complaints to compliments; three-party relationship strengthened",
+        "replicability": "High",
+        "status": "Proven & Active",
+        "leadership_endorsement": "JLL acknowledged SBM contribution to their renewal; relationship turnaround noted"
+      },
+      {
+        "title": "SVL Office Restack - Rapid Coordination When Vendor Falls Through",
+        "category": "Operational Excellence & Crisis Response",
+        "description": "When moving contractor's janitorial scope fell through, rapidly coordinated inside/outside labor to clean 1200 offices in tandem with move schedule; completed ahead of schedule, exhausted half of PO, freed funds for executive deep cleanings",
+        "context": "Original plan: moving contractor provides post-construction and office swap cleanup. When that fell through, RJ rapidly coordinated combination of inside and outside labor to clean ~1200 offices in tandem with moving schedule. Completed ahead of schedule; used just over half of PO issued - freed funds for executive areas, floor treatments, carpet shampooing to prepare space for incoming IBMers and executives.",
+        "impact": "1200 offices cleaned ahead of schedule; half of PO saved for upgrade scope (executive deep cleanings)",
+        "replicability": "High",
+        "status": "Proven & Active",
+        "leadership_endorsement": "Demonstrates rapid coordination and adaptability"
+      },
+      {
+        "title": "ATB/OT Tracker - Supervisor-Driven Time Management",
+        "category": "Innovation & Process Improvement",
+        "description": "Developed simple form with Emra/innovations team to track ATB usage (coverage vs OT vs billable); supervisor-driven at site level; accountability and internal validation of OT vs client billing",
+        "context": "RJ wanted to understand how ATB was being used on site. Worked with Emra and tech vertical innovations to develop supervisor-driven form tracking: coverage, coverage for OT, or billable ATB. Benefit: accountability, time management, someone paying attention to standard. Internal validation of how OT is managed vs what's billed to client. Live ~1.5 months, good engagement from all site leaders.",
+        "impact": "Accountability for time management; internal validation of OT vs billing alignment",
+        "replicability": "Very High",
+        "status": "Proven & Active",
+        "leadership_endorsement": "Internal process innovation; portable to other accounts"
+      },
+      {
+        "title": "Relocation Service Model - Dynamic Scheduling Within Budget",
+        "category": "Operational Excellence & Financial Strategy",
+        "description": "RTP Durham and San Jose each consolidating 2 campuses into 1; offered cost-effective solutions with inside labor, outside labor, dynamic scheduling - all within labor budget constraints",
+        "context": "Two major relocation efforts: RTP Durham and San Jose each consolidating from 2 campuses into 1, vacating properties. RJ offered cost-effective solutions by adjusting service model to adapt to changing client needs. Combination of inside labor, outside labor, dynamic scheduling - all within labor budget constraints.",
+        "impact": "Client needs met during consolidation; budget compliance maintained",
+        "replicability": "High",
+        "status": "Proven & Active",
+        "leadership_endorsement": "Valarie: 'I thought you did real well as far as executive presence, your clarity, your thought, the way things were structured'"
       }
     ]
   }

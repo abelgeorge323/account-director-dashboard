@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025 Year-End Scorecard - Jacob Reed</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            background: #ffffff;
+            padding: 2rem;
+            max-width: 8.5in;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: #1a365d;
+            margin-bottom: 0.5rem;
+        }
+
+        h2 {
+            font-size: 1.35rem;
+            font-weight: 600;
+            color: #2c5282;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 0.5rem;
+        }
+
+        h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #2d3748;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        h4 {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #4a5568;
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .header-section {
+            background: linear-gradient(135deg, #1a365d 0%, #2c5282 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+        }
+
+        .header-section h1 {
+            color: white;
+            margin-bottom: 1.5rem;
+            font-size: 1.85rem;
+        }
+
+        .header-metadata {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.8rem;
+            margin-top: 1.2rem;
+        }
+
+        .metadata-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.6rem;
+            border-radius: 4px;
+        }
+
+        .metadata-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.8;
+            margin-bottom: 0.25rem;
+        }
+
+        .metadata-value {
+            font-size: 1.1rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+        }
+
+        .score-summary-first-page {
+            background: #f7fafc;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+        }
+
+        .score-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            background: white;
+        }
+
+        .score-table th {
+            background: #2c5282;
+            color: white;
+            padding: 0.75rem;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .score-table td {
+            padding: 0.75rem;
+            border: 1px solid #e2e8f0;
+        }
+
+        .score-table tr:nth-child(even) {
+            background: #f7fafc;
+        }
+
+
+        /* Follow-Up Questions Section */
+        .follow-up-section {
+            background: #fff8e1;
+            border-left: 4px solid #ff9800;
+            padding: 24px;
+            margin: 32px 0;
+            border-radius: 8px;
+            page-break-inside: avoid;
+        }
+
+        .follow-up-intro {
+            color: #e65100;
+            margin-bottom: 1rem;
+        }
+
+        .follow-up-item {
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 16px 0;
+        }
+
+        .follow-up-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .follow-up-category {
+            background: #2196f3;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .follow-up-source {
+            color: #666;
+            font-size: 14px;
+            font-style: italic;
+        }
+
+        .follow-up-quote {
+            background: #f5f5f5;
+            border-left: 3px solid #ff9800;
+            padding: 12px 16px;
+            margin: 12px 0;
+            font-style: italic;
+            color: #333;
+        }
+
+        .follow-up-action {
+            margin-top: 12px;
+            color: #333;
+        }
+
+        /* Scored Section - One section per page */
+        .scored-section {
+            page-break-after: always;
+            page-break-inside: avoid;
+            margin: 1.5rem 0;
+            padding: 1.5rem;
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            min-height: 400px;
+        }
+
+        .score-display {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin: 1rem 0;
+            padding: 1rem;
+            background: #f7fafc;
+            border-radius: 4px;
+        }
+
+        .score-label {
+            font-weight: 600;
+            color: #4a5568;
+        }
+
+        .score-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #2c5282;
+        }
+
+        .combined-feedback {
+            background: #f8f9fa;
+            border-left: 4px solid #2c5282;
+            padding: 1.25rem;
+            margin: 1rem 0;
+            border-radius: 4px;
+        }
+
+        .combined-feedback h4 {
+            color: #2c5282;
+            margin-bottom: 0.75rem;
+            font-size: 1rem;
+        }
+
+        .feedback-synthesis {
+            margin-top: 0.75rem;
+        }
+
+        .feedback-point {
+            padding: 0.75rem;
+            margin: 0.5rem 0;
+            background: white;
+            border-radius: 4px;
+            border-left: 3px solid #2c5282;
+            line-height: 1.6;
+        }
+
+        .feedback-point strong {
+            color: #2c5282;
+            font-size: 0.9rem;
+        }
+
+        .synthesis-list {
+            margin: 0.75rem 0 1rem 1.5rem;
+            padding-left: 1rem;
+        }
+
+        .synthesis-list li {
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+            color: #2d3748;
+        }
+
+        .feedback-synthesis p {
+            margin: 0.75rem 0;
+            line-height: 1.6;
+        }
+
+        .feedback-synthesis strong {
+            color: #2c5282;
+            font-weight: 600;
+        }
+
+        @media print {
+            * {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            
+            body {
+                padding: 0.25in;
+                font-size: 9pt;
+                line-height: 1.3;
+            }
+            
+            h1 {
+                font-size: 16pt;
+                margin-bottom: 0.3rem;
+            }
+            
+            h2 {
+                font-size: 12pt;
+                margin-top: 0.5rem;
+                margin-bottom: 0.4rem;
+                page-break-after: avoid;
+            }
+            
+            h3 {
+                font-size: 10pt;
+                margin-top: 0.4rem;
+                margin-bottom: 0.3rem;
+            }
+            
+            .header-section {
+                padding: 1rem;
+                margin-bottom: 1rem;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            
+            .header-metadata {
+                gap: 0.5rem;
+            }
+            
+            .metadata-item {
+                padding: 0.4rem;
+            }
+            
+            .metadata-label {
+                font-size: 7pt;
+            }
+            
+            .metadata-value {
+                font-size: 9pt;
+            }
+            
+            .score-summary-first-page {
+                page-break-after: always;
+                padding: 0.75rem;
+                margin-bottom: 1rem;
+            }
+            
+            .score-table {
+                margin: 0.75rem 0;
+                font-size: 9pt;
+            }
+            
+            .score-table th,
+            .score-table td {
+                padding: 0.35rem;
+            }
+            
+            .scored-section {
+                page-break-after: always;
+                page-break-inside: avoid;
+                margin: 0.5rem 0;
+                padding: 0.75rem;
+                border: 1px solid #e2e8f0;
+                min-height: unset;
+            }
+            
+            .score-display {
+                margin: 0.5rem 0;
+                padding: 0.5rem;
+            }
+            
+            .score-label {
+                font-size: 9pt;
+            }
+            
+            .score-value {
+                font-size: 14pt;
+            }
+            
+            .combined-feedback {
+                padding: 0.75rem;
+                margin: 0.5rem 0;
+            }
+            
+            .combined-feedback h4 {
+                font-size: 9pt;
+                margin-bottom: 0.4rem;
+            }
+            
+            .feedback-synthesis p {
+                margin: 0.4rem 0;
+                line-height: 1.4;
+                font-size: 9pt;
+            }
+            
+            .feedback-synthesis strong {
+                font-size: 9pt;
+            }
+            
+            .synthesis-list {
+                margin: 0.4rem 0 0.5rem 1rem;
+                padding-left: 0.5rem;
+            }
+            
+            .synthesis-list li {
+                margin-bottom: 0.25rem;
+                line-height: 1.4;
+                font-size: 8.5pt;
+            }
+            
+            .follow-up-section {
+                page-break-before: always;
+                page-break-inside: avoid;
+                padding: 1rem;
+                margin: 1rem 0;
+            }
+            
+            .follow-up-item {
+                padding: 0.75rem;
+                margin: 0.75rem 0;
+            }
+            
+            .follow-up-quote {
+                padding: 0.5rem;
+                margin: 0.5rem 0;
+                font-size: 8.5pt;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header-section">
+        <h1>2025 Year-End Account Review & 2026 QBR Readiness Scorecard</h1>
+        <div class="header-metadata">
+            <div class="metadata-item">
+                <div class="metadata-label">Account Director</div>
+                <div class="metadata-value">Jacob Reed</div>
+            </div>
+            <div class="metadata-item">
+                <div class="metadata-label">Account</div>
+                <div class="metadata-value">Tesla</div>
+            </div>
+            <div class="metadata-item">
+                <div class="metadata-label">Tier</div>
+                <div class="metadata-value"><span style="background: #10b981; color: white; padding: 0.3rem 0.8rem; border-radius: 12px; font-weight: 600; font-size: 0.9rem;">Tier 6</span></div>
+            </div>
+            <div class="metadata-item">
+                <div class="metadata-label">Review Date</div>
+                <div class="metadata-value">January 2026</div>
+            </div>
+            <div class="metadata-item">
+                <div class="metadata-label">Total Reviews</div>
+                <div class="metadata-value">1</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="score-summary-first-page">
+        <h2>Executive Summary</h2>
+
+        <table class="score-table">
+            <thead>
+                <tr>
+                    <th>Evaluation Category</th>
+                    <th style="text-align: center;">Average Score</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+        <tr>
+            <td>Key Projects & Initiatives</td>
+            <td style="text-align: center; font-weight: 600;">4.0</td>
+        </tr>
+        
+        <tr>
+            <td>Value Adds & Cost Avoidance</td>
+            <td style="text-align: center; font-weight: 600;">4.0</td>
+        </tr>
+        
+        <tr>
+            <td>Cost Savings Delivered</td>
+            <td style="text-align: center; font-weight: 600;">4.0</td>
+        </tr>
+        
+        <tr>
+            <td>Innovation & Continuous Improvement</td>
+            <td style="text-align: center; font-weight: 600;">4.0</td>
+        </tr>
+        
+        <tr>
+            <td>Issues, Challenges & Accountability</td>
+            <td style="text-align: center; font-weight: 600;">3.0</td>
+        </tr>
+        
+        <tr>
+            <td>2026 Forward Strategy & Vision</td>
+            <td style="text-align: center; font-weight: 600;">3.0</td>
+        </tr>
+        
+        <tr>
+            <td>Personal Goals & Role Maturity</td>
+            <td style="text-align: center; font-weight: 600;">3.0</td>
+        </tr>
+        
+        <tr>
+            <td>Executive Presence & Presentation Skills</td>
+            <td style="text-align: center; font-weight: 600;">4.0</td>
+        </tr>
+        
+        <tr style="background: #e8f5e9; border-top: 3px solid #2c5282;">
+            <td style="font-weight: 700; text-transform: uppercase;">Overall Score</td>
+            <td style="text-align: center; font-weight: 700; font-size: 1.2rem; color: #2c5282;">29.0/40</td>
+        </tr>
+        
+            </tbody>
+        </table>
+    </div>
+
+    
+        <div class="scored-section">
+            <h2>Key Projects & Initiatives</h2>
+            <div class="score-display">
+                <span class="score-label">Average Score:</span>
+                <span class="score-value">4.0/5</span>
+            </div>
+            
+            
+    <div class="combined-feedback">
+        <h4>Combined Feedback from Leadership Reviews</h4>
+        <div class="feedback-synthesis">
+    
+            <p><strong>Overall Assessment:</strong> You clearly framed the most important initiatives from 2025 explaining the scope of what we delivered I believe you could have woven in what impacts were made to the client.</p>
+        
+            <p><strong>Areas for Development:</strong></p>
+            <ul class="synthesis-list">
+        <li>You clearly framed the most important initiatives from 2025 explaining the scope of what we delivered I believe you could have woven in what impacts were made to the client. I did take away that they are becoming more dependent on us and allows us to be more ingrained and do more.</li></ul>
+        </div>
+    </div>
+    
+        </div>
+        
+        <div class="scored-section">
+            <h2>Value Adds & Cost Avoidance</h2>
+            <div class="score-display">
+                <span class="score-label">Average Score:</span>
+                <span class="score-value">4.0/5</span>
+            </div>
+            
+            
+    <div class="combined-feedback">
+        <h4>Combined Feedback from Leadership Reviews</h4>
+        <div class="feedback-synthesis">
+    
+            <p><strong>Overall Assessment:</strong> Clearly stated the value delivered, we saved time for water clean up from the sprinkler heads being hit.</p>
+        
+            <p><strong>Strengths:</strong></p>
+            <ul class="synthesis-list">
+        <li>Clearly stated the value delivered, we saved time for water clean up from the sprinkler heads being hit. Tighter turn around times and $200,000 in savings on the year!</li></ul>
+        </div>
+    </div>
+    
+        </div>
+        
+        <div class="scored-section">
+            <h2>Cost Savings Delivered</h2>
+            <div class="score-display">
+                <span class="score-label">Average Score:</span>
+                <span class="score-value">4.0/5</span>
+            </div>
+            
+            
+    <div class="combined-feedback">
+        <h4>Combined Feedback from Leadership Reviews</h4>
+        <div class="feedback-synthesis">
+    
+            <p><strong>Overall Assessment:</strong> $250k in savings! You explained how the cost savings was created and staying under budget in 2026 I challenge you to look for on-going implementable savings.</p>
+        
+            <p><strong>Areas for Development:</strong></p>
+            <ul class="synthesis-list">
+        <li>$250k in savings! You explained how the cost savings was created and staying under budget in 2026 I challenge you to look for on-going implementable savings.</li></ul>
+        </div>
+    </div>
+    
+        </div>
+        
+        <div class="scored-section">
+            <h2>Innovation & Continuous Improvement</h2>
+            <div class="score-display">
+                <span class="score-label">Average Score:</span>
+                <span class="score-value">4.0/5</span>
+            </div>
+            
+            
+    <div class="combined-feedback">
+        <h4>Combined Feedback from Leadership Reviews</h4>
+        <div class="feedback-synthesis">
+    
+            <p><strong>Overall Assessment:</strong> New process implemented by Telsa, the ticketing system sounds like it was a big project.</p>
+        
+            <p><strong>Strengths:</strong></p>
+            <ul class="synthesis-list">
+        <li>New process implemented by Telsa, the ticketing system sounds like it was a big project. I think using our tech savvy to support Tesla demonstrated our ability to close tickets swiftly. On-going machines down due to high use overcoming perception of machines, implementing the training on the machines on a regular basis. Are we using 4i asset management feature, please do in 2026. Are we maintaining the equipment differently lets use 4i.</li></ul>
+        </div>
+    </div>
+    
+        </div>
+        
+        <div class="scored-section">
+            <h2>Issues, Challenges & Accountability</h2>
+            <div class="score-display">
+                <span class="score-label">Average Score:</span>
+                <span class="score-value">3.0/5</span>
+            </div>
+            
+            
+    <div class="combined-feedback">
+        <h4>Combined Feedback from Leadership Reviews</h4>
+        <div class="feedback-synthesis">
+    
+            <p><strong>Overall Assessment:</strong> Fully transparent about the issues within Tesla leadership, thank you explaining that.</p>
+        
+            <p><strong>Areas for Development:</strong></p>
+            <ul class="synthesis-list">
+        <li>Fully transparent about the issues within Tesla leadership, thank you explaining that. What were the gaps that SBM had? To get full credit for this one I needed to see outlines of specific corrective actions and timelines. safety realignment from removal to reinvention at Tesla adding value to the program and that safety matters. Safety role has been filled thats huge win!</li></ul>
+        </div>
+    </div>
+    
+        </div>
+        
+        <div class="scored-section">
+            <h2>2026 Forward Strategy & Vision</h2>
+            <div class="score-display">
+                <span class="score-label">Average Score:</span>
+                <span class="score-value">3.0/5</span>
+            </div>
+            
+            
+    <div class="combined-feedback">
+        <h4>Combined Feedback from Leadership Reviews</h4>
+        <div class="feedback-synthesis">
+    
+            <p><strong>Overall Assessment:</strong> Shared goals and aspirations without a roadmap, how we will retain, grow and differentiation not as a theory, but actions.</p>
+        
+            <p><strong>Areas for Development:</strong></p>
+            <ul class="synthesis-list">
+        <li>Shared goals and aspirations without a roadmap, how we will retain, grow and differentiation not as a theory, but actions. To have scored higher there would need to have been actions attached to dates when will we talk data centers what strategy calls have been set up? I can align to your aspirations, but I need clear structure on the how we will achieve the aspirations.</li></ul>
+        </div>
+    </div>
+    
+        </div>
+        
+        <div class="scored-section">
+            <h2>Personal Goals & Role Maturity</h2>
+            <div class="score-display">
+                <span class="score-label">Average Score:</span>
+                <span class="score-value">3.0/5</span>
+            </div>
+            
+            
+    <div class="combined-feedback">
+        <h4>Combined Feedback from Leadership Reviews</h4>
+        <div class="feedback-synthesis">
+    
+            <p><strong>Overall Assessment:</strong> In order to score you higher I needed you to articulate next steps.</p>
+        
+            <p><strong>Areas for Development:</strong></p>
+            <ul class="synthesis-list">
+        <li>In order to score you higher I needed you to articulate next steps.</li></ul>
+        </div>
+    </div>
+    
+        </div>
+        
+        <div class="scored-section">
+            <h2>Executive Presence & Presentation Skills</h2>
+            <div class="score-display">
+                <span class="score-label">Average Score:</span>
+                <span class="score-value">4.0/5</span>
+            </div>
+            
+            
+    <div class="combined-feedback">
+        <h4>Combined Feedback from Leadership Reviews</h4>
+        <div class="feedback-synthesis">
+    
+            <p><strong>Overall Assessment:</strong> Overall you are knowledgeable confident and capable of presenting.</p>
+        
+            <p><strong>Strengths:</strong></p>
+            <ul class="synthesis-list">
+        <li>Overall you are knowledgeable confident and capable of presenting. Under the right leadership I can see you focusing on closing your goals and executing your 2026 vision and flushing out your strategy. You can present very well, its the details that will take your presentation to the next level - a visual while not required would have been helpful.</li></ul>
+        </div>
+    </div>
+    
+        </div>
+        
+
+    
+    <div class="follow-up-section">
+        <h2>🎯 2026 Development Focus & Follow-Up Items</h2>
+        <p class="follow-up-intro">
+            Based on your year-end presentation and executive feedback, the following areas have been identified 
+            for focused development and follow-through in 2026.
+        </p>
+    
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">SMART Goals & Timelines - All 2026 Initiatives</span>
+                <span class="follow-up-source">— Valarie Barnett</span>
+            </div>
+            <h3>Set Specific Dates for Every Goal - 'A Goal Without a Date is Just a Wish'</h3>
+            <p class="follow-up-quote">"Valarie: 'Overall, I think that you have really good high aspirations. I love that. But the only way that I can do that is for you to put dates. I jokingly say this on my OPS calls, and you've probably heard me say this before. A goal without a date is just a wish. So we have aspirations to get things done. It's almost like we hope to do these things, but the way that we can action them is by saying by this day I'm going to hold myself accountable to achieving XYZ. So if you say I want Optimus to be at one of the Tesla sites, we would need to know the release date of Optimus and then work backwards for implementation, purchase and implementation and start to come up with the actual strategy around that. If you say you want to win data centers along with John Mann and the tech team, where is that in play? When is the next RFP? So I'm looking for you to have a little more depth in this. I want you to develop this out. This is not a just like a one time feedback thing. This is a as you meet, whether it's with me, Nick, Nicole, this team, tech team, whoever as you meet, we want to hold you to your forward strategy and vision. So all these things are going to go into our Workday file, like each person's review. Your summary of your review is going to go into Workday. So will your personal goals.'"</p>
+            <p class="follow-up-action"><strong>Action:</strong> Set specific dates for all 2026 goals and initiatives: (1) OPTIMUS ROBOT IMPLEMENTATION: Research Optimus release date, Work backwards for purchase/implementation timeline, Set date for Tesla conversation about piloting Optimus, Define specific route or task for pilot (floors, bathrooms, trash, etc.), Set success metrics definition date, Valarie emphasized: 'We would need to know the release date of Optimus and then work backwards', (2) DATA CENTER (DOJO) RFP: Jacob mentioned Q2 2026 for Dojo RFP - get specific month, Set proposal preparation completion date, Set collaboration meeting date with John Mann/tech team, Set client presentation date, Define win strategy timeline, (3) LEADERSHIP DEVELOPMENT (3-6 months): Jacob said '3 to 6 months' for getting leadership (Francisco, Edgar) in front of Nico - pick specific date, Set Gloria and other supervisor MIT program completion dates (started this month), Define operations manager promotion timeline, Set client introduction dates for each leader, (4) EXTERNAL BUILDING SUPPORT: Set date for proposal submission, Set date for client decision, Implementation timeline if approved, (5) ROBO TAXI SCOPE: Set date for scope clarification meeting with Tesla, Decision timeline for SBM involvement, (6) SUSTAINABILITY/SUSTAINED GROWTH: Set quarterly check-in dates for '3-4 or 5 years down the road' sustainability validation, (7) VAL'S KEY MESSAGE: 'I want you to develop this out. We want to hold you to your forward strategy and vision. All these things are going to go into Workday as your actionable goals for 2026. I want to be able to sit down next year and go, man, look at what you were able to accomplish last year because you had a plan. Everything needs a date. Everything that you have shared with us today, I am excited. I want to be a part of those things with you, but I also want to hold you accountable because I can't do them for you.'</p>
+        </div>
+        
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">Internal Gaps & Accountability</span>
+                <span class="follow-up-source">— Valarie Barnett</span>
+            </div>
+            <h3>Own Internal Challenges - Missing #2 Position & Service Delivery Gaps</h3>
+            <p class="follow-up-quote">"Valarie: 'I don't feel like we necessarily owned any of the gaps on our side or problems that we had. I also was looking for corrective actions and timelines to some of the challenges or issues that we had, what came up or where are we with those things now? And what are our actions that we're taking in order to solution them in 2026? If there were any gaps, just want you to be transparent about whatever the gaps are. If it's service delivery, I think one of the gaps we experienced last year going into this year would have been that we didn't have, you didn't have a #2 right on the site for an extended period of time. I think that that's something that would have been a clear thing to call out, whether it be recruiting, whether it be the quality of candidates we had.'"</p>
+            <p class="follow-up-action"><strong>Action:</strong> Acknowledge and document internal gaps with corrective actions: (1) #2 POSITION GAP: Jacob didn't have a #2 on site for extended period, Corrective action needed: How was this resolved? When was position filled? What was impact? What's the plan to prevent future gaps?, (2) SERVICE DELIVERY CHALLENGES: Jacob mentioned 'there was some hiccups' and 'challenges' but didn't detail them in presentation, Valarie wants transparency about internal problems, not just client-side issues, Action: Document any service delivery gaps in 2025, Root cause analysis for each gap, Corrective actions taken and timelines, Prevention strategies for 2026, (3) SAFETY POSITION: Jacob called out safety as a problem that Dave Stauffer fixed, Good transparency, but need timeline: When did gap occur? How long was it unfilled? When was it resolved? What was impact during gap period?, (4) VAL'S EXPECTATION: 'This is a safe space. I appreciate you identifying the challenges as it pertains to Tesla site management changes, but I don't feel like we necessarily owned any of the gaps on our side. So safety was a problem for us. So it sounds like we're fully realigned there. Have we reinstated the safety position at Tesla?' (Jacob confirmed yes, quarterly Dave visits, Nico at ease), (5) 2026 PREVENTION: For any future internal gaps: Immediate acknowledgment, Root cause analysis, Corrective action with timeline, Communication plan to leadership, (6) TRANSPARENCY PRINCIPLE: Don't hide internal problems or only focus on client-side challenges, Own SBM gaps openly in reviews, Show what was learned and how it was fixed</p>
+        </div>
+        
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">ForoInsight Asset Management Implementation</span>
+                <span class="follow-up-source">— Valarie Barnett</span>
+            </div>
+            <h3>Track Equipment Check-In/Check-Out & Usage Hours for Tesla</h3>
+            <p class="follow-up-quote">"Valarie: 'I challenge you in 2026 to see if there's a way to incorporate the asset management tracker for the check in check out portion just so that you have the records. You may not want to. Maybe we're not tracking the assets in a way that we own them, but maybe we could at least track the check in, check out the hours usage so that you can produce a log to Tesla in addition to the trainings that you're doing.' Jacob context: 'We're not yet [using asset management] just because those are rented out through Tesla. One of the things they brought up was essentially they're getting to the point where it makes sense to buy them. So one of the asks for quarter two, quarter three was to potentially submit pricing for buying them out, right. And then that's what we would flip on the asset management because it would be SBM owned through Tesla using it out.' Valarie followup: '100% So that's OK. Just a challenge for 2026. I'm writing notes, so you'll get my note about that.'"</p>
+            <p class="follow-up-action"><strong>Action:</strong> Implement ForoInsight asset management for Tesla equipment tracking: (1) CURRENT STATE: Equipment is Tesla-owned/rented (like Optimus model), Jacob said 'We've done Excel sheets, but eventually the Excel sheet thing gets kind of redundant and not as tasteful', Monthly equipment trainings happening but no systematic tracking, (2) VAL'S CHALLENGE: Use ForoInsight asset management feature for check-in/check-out tracking, Track usage hours per machine, Produce logs for Tesla showing equipment usage patterns, Complement monthly training program with usage data, (3) JUSTIFICATION: Tesla was upset about equipment going down, thinking it was SBM's fault/negligence, Usage tracking + training logs = proof of proper care and maintenance, Data-driven approach to demonstrate equipment stewardship, (4) TIMELINE: Set date for ForoInsight asset management setup, Set date for training team on check-in/check-out process, Set date for first usage report to Tesla, Quarterly review dates for usage data analysis, (5) POTENTIAL EQUIPMENT PURCHASE (Q2/Q3 2026): Jacob mentioned Tesla considering buying equipment vs renting, If equipment purchased and becomes SBM-owned through contract, full asset management tracking becomes essential, Set dates: Equipment purchase proposal submission, Decision timeline, Asset management full implementation if purchased, (6) JACOB'S RECOGNITION: 'I think that's the route we want to go. We definitely want to be able to showcase the ForoInsight thing that's been the big picture seller for kind of moving on to 2026 is ForoInsight really showcases the difference between us and the other vendors.', (7) STRATEGIC VALUE: Differentiates SBM from other vendors (data-driven equipment management), Addresses Tesla's concerns about equipment care proactively, Positions SBM as tech-savvy, professional partner, Provides ammunition for equipment purchase justification</p>
+        </div>
+        
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">Documentation & Scalability</span>
+                <span class="follow-up-source">— John Mann</span>
+            </div>
+            <h3>Document Flood Support Process for Multi-Site Scaling</h3>
+            <p class="follow-up-quote">"John: 'That sounds like a great value add. Jacob, that's something that sounds like it's pretty scalable. Do you happen to have any like formal documentation around kind of what equipment you're using or what the workflow is for that within like the management team or the team so we can help scale that across other locations potentially?' Jacob: 'Yes, Sir. We're working on it right now. It's mainly just kind of a process driven. One of the feedback they gave us is that it just felt like there was just a cluster of people where it's like the old fashioned, you know, there's a fire in the building and everybody's grabbing buckets and running around. And now it's more of an alignment of showing leaders that are coaching, maneuvering people around or utilizing floor scrubbers, the tenants and there's just a process to it.' John: 'Cool. Yeah, that'd be great. That'd be cool. Best practice. Thanks.'"</p>
+            <p class="follow-up-action"><strong>Action:</strong> Create formal documentation for flood support process: (1) CURRENT STATE: 'We're working on it right now' - documentation in progress, Process driven by leaders coaching and maneuvering teams, Using floor scrubbers, Tenants (equipment), Systematic approach vs 'cluster of people grabbing buckets', (2) DOCUMENTATION NEEDED: Equipment list (floor scrubbers, Tenant equipment, water extraction tools, etc.), Workflow diagram: Initial assessment, Team deployment, Water containment, Extraction process, Cleanup and verification, Production coordination, Leadership roles: Who coaches? Who deploys? Who coordinates with Tesla production?, Response time benchmarks (45 min - 1 hour max), Training requirements for team members, Safety protocols, Communication process with Tesla during flood events, (3) VALUE PROPOSITION TO DOCUMENT: Time reduction: 4 hours → 45 minutes (75% improvement), Cost savings: $200K annually by eliminating subcontractors, Production uptime protection, Professional appearance ('Team looks like they're supposed to be there'), (4) SCALABILITY GOAL: John Mann identified this as scalable across other SBM locations, Other sites may have similar needs (manufacturing, data centers with water risks), Best practice for SBM enterprise-wide, (5) TIMELINE: Set completion date for documentation, Set review date with John Mann and tech team, Set date for presenting to other ADs/sites as best practice, (6) STRATEGIC IMPORTANCE: Differentiates SBM as emergency response capable, Quantifiable value add ($200K), Trackable metrics (time, cost), Replicable process for portfolio growth</p>
+        </div>
+        
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">Data Center Strategy & Collaboration</span>
+                <span class="follow-up-source">— John Mann</span>
+            </div>
+            <h3>Collaborate with Tech Team on Dojo Data Center Expertise & RFP Strategy</h3>
+            <p class="follow-up-quote">"John: 'I appreciate it is really good to learn, kind of understand Jacob and kind of get up to speed of how we can support you. Also want to make sure we talk through data centers more, right. We've got a pretty talented team out here. So what can we do to support that the information, the communication, the client, the operational excellence, you know, kind of mitigating the risks, but with the knowledge we already have. So happy to help you on that. Looking forward to it.' Jacob context: 'I really want to be that data center person for Tesla. I think it's a huge opportunity for us. Once you get into that data center environment it kind of expands from there. I'm sure John can let everybody know that. A lot of people think that data center cleaning is just normal warehouse bare footage cleanings. But there really is a science and kind of a dance to it and I want to be able to lead with that. I'm telling them like, hey, we're the experts when it comes to data centers there. The first one is going to come open for RFP in Q2 of 2026. That is the dojo that you guys are probably familiar with. We're already in there. We have about 4 to 5 employees in there servicing it. We stay ahead of those conversations. We meet with the different teams that are running it.'"</p>
+            <p class="follow-up-action"><strong>Action:</strong> Data center collaboration and RFP preparation plan: (1) DOJO RFP TIMELINE: Q2 2026 (April-June) - get specific month for RFP, Flagship data center for Austin area/Boston Tesla, Currently servicing with 4-5 employees (foot in door), Meeting with teams running it (Roger and his team - different from Nico/workplace), (2) JOHN MANN COLLABORATION AREAS: Information: SBM's data center best practices, industry standards, Tesla-specific requirements, Communication: Joint messaging for RFP, positioning SBM as data center experts, Client: Leveraging tech team's data center client relationships/case studies, Operational excellence: Tech team's playbook for data center cleaning protocols, Risk mitigation: What are common data center pitfalls? How to avoid them?, (3) JACOB'S LEARNING NEED: 'A lot of people think that data center cleaning is just normal warehouse bare footage cleanings. But there really is a science and kind of a dance to it', John's team has this expertise - transfer knowledge to Jacob's team, Train current 4-5 employees on data center best practices before RFP, Differentiate SBM's approach in RFP vs competitors, (4) POSITIONING STRATEGY: Jacob wants to 'lead with' data center expertise, 'Tell them like, hey, we're the experts when it comes to data centers', John's team provides credibility and track record for this claim, (5) MEETING/COLLABORATION TIMELINE: Set date for joint strategy session with John Mann/tech team, Set date for data center training for Jacob's 4-5 current Dojo employees, Set date for RFP preparation collaboration, Set date for client presentation dry run with tech team feedback, (6) RFP PREPARATION: Leverage SBM's data center portfolio (John's team), Quantify Jacob's current Dojo performance (4-5 employees - what metrics?), Differentiate from 'normal warehouse cleaning' narrative, Demonstrate 'science and dance' understanding, Address Roger's team separately from Nico's workplace team, (7) EXPANSION VISION: Jacob: 'Once you get into that data center environment it kind of expands from there', Dojo win = pathway to more Tesla data centers (X AI, other mergers mentioned), Set dates for pursuing additional data center opportunities after Dojo</p>
+        </div>
+        
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">Strategy Documentation & Tracking</span>
+                <span class="follow-up-source">— Nick Mcmackins</span>
+            </div>
+            <h3>Memorialize Presentation Highlights in Writing for Leadership Support & Tracking</h3>
+            <p class="follow-up-quote">"Nick: 'I won't repeat everything, Jacob. Obviously I'm close to a lot of what you're doing, but always just good hearing you repeat the strategy. I would like to, as others said, like memorialize it more on paper of what you feel the opportunities are both positive meaning revenue and just how we can support you better so you can deliver that. I think most of us are traveling next week, but maybe by the end of the week try and put something together of like every the highlights of what you presented today and just memorialize it down so we can track it and support you better on it.'"</p>
+            <p class="follow-up-action"><strong>Action:</strong> Create written strategy document from presentation: (1) TIMELINE: Nick suggested 'by the end of the week' (most leadership traveling next week), Set specific date for strategy document completion, (2) CONTENT TO MEMORIALIZE: REVENUE OPPORTUNITIES: Data center (Dojo) Q2 2026 RFP with estimated value, Robo taxi scope expansion with revenue estimate, External building support with pricing, Any other scope expansion discussions, Equipment purchase opportunity (Q2/Q3), SUPPORT NEEDS FROM LEADERSHIP: John Mann/tech team collaboration on data centers, Recruiting/HR support for continued rapid scaling, Equipment budget/approvals, ForoInsight asset management setup support, Optimus pilot approval and budget, GOALS & TIMELINES: Leadership development (Francisco, Edgar, Gloria + 3 MIT supervisors), 3-6 month timeline for client visibility, Single vendor positioning expansion, Sustained growth validation checkpoints, WINS TO TRACK: $200K flood support savings (annually), $250K holiday/shutdown savings (annually), #1 ranking out of 6 programs on Work ticketing, 1.2M sq ft tape laid by taping team, 2-week rapid scaling capability, (3) PURPOSE: Nick: 'So we can track it and support you better on it', Leadership wants to hold Jacob accountable to goals (Valarie's Workday comment), Leadership wants to know how to support Jacob's success, Tracking revenue opportunities for pipeline visibility, (4) FORMAT: Highlights of presentation (key accomplishments, wins, metrics), 2026 opportunities with revenue potential, Timelines for each initiative (per Valarie's 'dates' feedback), Support needed from leadership for each initiative, Success metrics for tracking, (5) DISTRIBUTION: Submit to Nick, Valarie, Nicole, John Mann, tech team, Share with Nico (client) as applicable for transparency, (6) ONGOING: Not one-time - update quarterly or as initiatives progress, Use for check-ins with leadership, Reference for mid-year and year-end reviews</p>
+        </div>
+        
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">Presentation Skills & Visual Communication</span>
+                <span class="follow-up-source">— Valarie Barnett</span>
+            </div>
+            <h3>Develop Visual Presentations - Highlight Key Takeaways in ForoInsight or Slides</h3>
+            <p class="follow-up-quote">"Valarie: 'I think you presented very well overall here today. You should be proud of what you've been able to communicate to us. It's just a little bit of the details are missing and I think a visual would have been extremely helpful even if you went in ForoInsight and kind of highlighted some of the key things or takeaways and then even if you didn't have a visual for the rest, but it wasn't required. This was a test to see how each person would respond to the request and overall thought you did pretty well.' Context: Valarie asked early on: 'Do you have a PowerPoint you're presenting from? If you do, for whatever reason, the screen just isn't sharing with us.' Jacob: 'No, I'm just reading from notes here. The PowerPoint is the one that's with ForoInsight, but no, I'm just reading off the notes I have here.'"</p>
+            <p class="follow-up-action"><strong>Action:</strong> Develop visual presentation skills for future client and leadership meetings: (1) VAL'S FEEDBACK: 'A visual would have been extremely helpful', Suggestion: Use ForoInsight to highlight key takeaways, OR create separate slide deck for key points, Then supplement with verbal notes for additional context, (2) THIS WAS A TEST: 'This was a test to see how each person would respond to the request', Jacob presented well overall but missed visual component, For future executive meetings, visuals will be expected/required, (3) FORINSIGHT AS VISUAL TOOL: Jacob mentioned 'The PowerPoint is the one that's with ForoInsight', Valarie suggested: 'Even if you went in ForoInsight and kind of highlighted some of the key things or takeaways', ForoInsight can serve as visual aid for data-driven presentations, (4) WHAT TO VISUALIZE: Key metrics: $200K flood savings, $250K holiday savings, #1 ranking, 1.2M sq ft tape, Timeline graphics: 2026 goals with dates (per Valarie's feedback), Leadership development roadmap (3-6 months), Data center RFP timeline (Q2 2026), Organizational charts: Francisco, Edgar, Gloria roles; MIT program structure, Process flows: Flood response workflow (per John Mann's documentation request), Revenue opportunities: Data center, robo taxi, external buildings with $ values, (5) 2026 APPLICATION: Client presentations (Nico, Roger for data center), Leadership QBRs (Nick, Valarie, Nicole), RFP presentations (Dojo data center Q2), Training/onboarding visuals for rapid scaling support, (6) JACOB'S STRENGTH: Valarie: 'You're extremely knowledgeable about your account. You're very confident when you speak. That's the type of presence that will want us to bring you into an executive meeting.' Add visuals to complement confidence and knowledge, 'Under the right leadership, I can see you focusing on flushing out your goals for 2026 and executing your actual vision.'</p>
+        </div>
+        
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">Optimus Robot Implementation - Strategic Approach</span>
+                <span class="follow-up-source">— Jacob Reed (Self-Documented) + Valarie Barnett (Feedback)</span>
+            </div>
+            <h3>Set Realistic Timeline for Being First SBM Vendor to Implement Optimus</h3>
+            <p class="follow-up-quote">"Jacob: 'My kind of goal here and I need you to kind of be patient with me is I want to be the first vendor to implement Optimus into one of our programs, one of our routes. I want to be the one that gets ahead of it with Tesla early to say like hey, let us be kind of the Guinea pig with getting this Optimus robot to either clean floors, clean the bathroom, service something, pick up trash, do something. I think it does a really good job of saying like, hey, we're willing to jump to those risky avenues with you. I think it too, it also helps shift like, hey, let us set up the narrative of this is what Optimus can do at the maximum instead of the latter where Tesla tells us, hey, we're gonna give you guys 5 robots, we need you to incorporate it, but we also need to cut 30% of your headcount. So I think it really does a really good job of allowing us to kind of tell them what we think Optimus to do instead of them telling us what we need to do with it. That's something I want to get to and have those conversations with you guys, but obviously I'll give you some time to chew on that. It's not like I'm going to do it tomorrow. I just want to be able to kind of let them know in the conversation like, yeah, I think it's really, really awesome to be in there with what Tesla's moving to.'"</p>
+            <p class="follow-up-action"><strong>Action:</strong> Optimus implementation strategic planning: (1) JACOB'S VISION: Be FIRST SBM vendor to implement Optimus robot, Pilot one route or task: floors, bathrooms, trash pickup, 'Guinea pig' approach - willing to test risky avenues, STRATEGIC GOAL: Control the narrative of what Optimus CAN do (maximize capabilities), vs Tesla dictating what Optimus MUST do (replace 30% headcount), Proactive vs reactive positioning, (2) VAL'S FEEDBACK ON TIMELINE: 'A goal without a date is just a wish', 'If you say I want Optimus to be at one of the Tesla sites, we would need to know the release date of Optimus and then work backwards for implementation, purchase and implementation and start to come up with the actual strategy around that', Need concrete timeline, not aspirational 'I want to', (3) REQUIRED RESEARCH/PLANNING: Optimus release date: When is it commercially available for pilot?, Optimus capabilities: What CAN it realistically do in 2026? (floors, bathrooms, trash - is this feasible?), Cost: Purchase vs lease? Budget approval needed?, Training: What's required to operate/maintain Optimus?, Integration: How does it work with existing routes/team?, Success metrics: How will pilot be evaluated?, (4) CONVERSATIONS WITH LEADERSHIP: Jacob: 'I want to have those conversations with you guys', Set date for Optimus strategy discussion with Nick, Valarie, Nicole, Set date for Tesla conversation about piloting (after internal approval), Get leadership buy-in before proposing to Tesla, (5) RISKS TO ADDRESS: Jacob's concern: 'Tesla tells us give you guys 5 robots, we need you to incorporate it, but we also need to cut 30% of your headcount', How to position pilot to avoid headcount reduction mandate?, What's the ROI that protects jobs vs eliminates them?, Is Optimus pilot genuinely helpful or just following Tesla's vision without SBM benefit?, (6) TIMELINE PRESSURE: Jacob: 'It's not like I'm going to do it tomorrow', But also: 'I want to be the FIRST vendor', Need to balance patience/realism with first-mover advantage, Other vendors may be having same conversations with Tesla, Set specific milestones: Q1 research, Q2 leadership approval, Q3 Tesla proposal, Q4 pilot?, (7) VAL'S OVERALL MESSAGE: 'I want to help you get there. But the only way that I can do that is for you to put dates. I want you to develop this out. Everything needs a date.'</p>
+        </div>
+        
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">Leadership Development & Succession Planning</span>
+                <span class="follow-up-source">— Jacob Reed (Self-Documented)</span>
+            </div>
+            <h3>Execute 3-6 Month Timeline for Francisco, Edgar & MIT Supervisors Client Visibility</h3>
+            <p class="follow-up-quote">"Jacob: 'More or less just giving them that confidence in 2026, like, hey, there's a structure of really great site managers. There's really good operations managers through the new structure that you announced and more or less getting those custodial supervisors in that mindset of like, hey, the next step as an operations manager is getting the operations managers into that mindset of like how do how do we get you to be a site manager. They haven't asked me the why yet, but I want to get ahead of it now to be able to say, hey, these are the leaders you can lean on and these are the people that are going to help bring that really beautiful program that we built here to the outside, outward expansion. In terms of your timeline there, I think getting the leadership and stuff like that, I want that to be in the next three to six months of really kind of getting them in front of Nico and then kind of taking a step back and saying, hey, they can do it there. I think Francisco and Edgar are really taking another approach and getting themselves into a limelight of like, OK, I trust Francisco, I trust Edgar and I want to continue to harbor that and get the next group already in that spotlight instead of just kind of waiting for things to fall and then throw them in there.'"</p>
+            <p class="follow-up-action"><strong>Action:</strong> Leadership development execution plan (3-6 months): (1) PRIMARY LEADERS (Francisco, Edgar): CURRENT STATE: 'Really taking another approach and getting themselves into a limelight', Nico starting to trust Francisco and Edgar, Jacob wants to 'continue to harbor that', GOAL: Get them in front of Nico consistently over next 3-6 months, Jacob 'taking a step back' - let them lead vs Jacob leading, Position them as go-to contacts for their areas, TIMELINE: Set specific date (3-6 months from now = April-July 2026) when Francisco and Edgar are primary client contacts, Set monthly milestones for client interactions, (2) MIT PROGRAM FOR SUPERVISORS: CURRENT STATUS: Started this month (January 2026), Selected 3 supervisors: 'hearty and ambitious', 'Shown they understand the capacity and need of Tesla', GOAL: Show them what's expected of operations manager, Create backup plan for quick deployment ('not a run around free for all'), Example: 'Gloria's going to be the OPS manager of the data center', TIMELINE: Set MIT program completion date (what month?), Set operations manager promotion timeline for successful graduates, Define 'what is expected of OPS manager' - document this, (3) CUSTODIAL SUPERVISORS DEVELOPMENT: Getting into mindset that 'next step is operations manager', Creating pipeline of leadership talent, Not waiting for 'bricks to fall' and then 'shove a brick in there', (4) STRATEGIC RATIONALE: Tesla concern: 'Things will get stretched too thin' with scope expansion, Jacob's response: Show strong leadership structure can handle growth, External building, data centers, robo taxi = need more leaders, 'These are the leaders you can lean on', (5) CLIENT VISIBILITY MILESTONES (3-6 MONTH PLAN): Month 1-2: Francisco and Edgar handling specific projects with Nico visibility, Month 3-4: Francisco and Edgar leading client meetings with Jacob attending, Month 5-6: Francisco and Edgar as primary contacts, Jacob in background, Throughout: MIT supervisors shadowing, learning, preparing for next level, (6) ACCOUNTABILITY: Set specific date for leadership handoff milestone review, Define success metrics: Client feedback on Francisco/Edgar?, Number of client interactions they lead?, Problems resolved independently?, (7) EXPANSION PREPAREDNESS: Once leadership proven, ready for: Data center (Dojo) RFP - Gloria as OPS manager?, External buildings - Francisco or Edgar leading?, Robo taxi scope - dedicated leader?, New scope = new leaders ready to deploy</p>
+        </div>
+        </div>
+
+</body>
+</html>

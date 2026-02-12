@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025 Year-End Scorecard - Brian Davis</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            background: #ffffff;
+            padding: 2rem;
+            max-width: 8.5in;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: #1a365d;
+            margin-bottom: 0.5rem;
+        }
+
+        h2 {
+            font-size: 1.35rem;
+            font-weight: 600;
+            color: #2c5282;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 0.5rem;
+        }
+
+        h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #2d3748;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        h4 {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #4a5568;
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .header-section {
+            background: linear-gradient(135deg, #1a365d 0%, #2c5282 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+        }
+
+        .header-section h1 {
+            color: white;
+            margin-bottom: 1.5rem;
+            font-size: 1.85rem;
+        }
+
+        .header-metadata {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.8rem;
+            margin-top: 1.2rem;
+        }
+
+        .metadata-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.6rem;
+            border-radius: 4px;
+        }
+
+        .metadata-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.8;
+            margin-bottom: 0.25rem;
+        }
+
+        .metadata-value {
+            font-size: 1.1rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+        }
+
+        .score-summary-first-page {
+            background: #f7fafc;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+        }
+
+        .score-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            background: white;
+        }
+
+        .score-table th {
+            background: #2c5282;
+            color: white;
+            padding: 0.75rem;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .score-table td {
+            padding: 0.75rem;
+            border: 1px solid #e2e8f0;
+        }
+
+        .score-table tr:nth-child(even) {
+            background: #f7fafc;
+        }
+
+
+        /* Follow-Up Questions Section */
+        .follow-up-section {
+            background: #fff8e1;
+            border-left: 4px solid #ff9800;
+            padding: 24px;
+            margin: 32px 0;
+            border-radius: 8px;
+            page-break-inside: avoid;
+        }
+
+        .follow-up-intro {
+            color: #e65100;
+            margin-bottom: 1rem;
+        }
+
+        .follow-up-item {
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 16px 0;
+        }
+
+        .follow-up-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .follow-up-category {
+            background: #2196f3;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .follow-up-source {
+            color: #666;
+            font-size: 14px;
+            font-style: italic;
+        }
+
+        .follow-up-quote {
+            background: #f5f5f5;
+            border-left: 3px solid #ff9800;
+            padding: 12px 16px;
+            margin: 12px 0;
+            font-style: italic;
+            color: #333;
+        }
+
+        .follow-up-action {
+            margin-top: 12px;
+            color: #333;
+        }
+
+        /* Scored Section - One section per page */
+        .scored-section {
+            page-break-after: always;
+            page-break-inside: avoid;
+            margin: 1.5rem 0;
+            padding: 1.5rem;
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            min-height: 400px;
+        }
+
+        .score-display {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin: 1rem 0;
+            padding: 1rem;
+            background: #f7fafc;
+            border-radius: 4px;
+        }
+
+        .score-label {
+            font-weight: 600;
+            color: #4a5568;
+        }
+
+        .score-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #2c5282;
+        }
+
+        .combined-feedback {
+            background: #f8f9fa;
+            border-left: 4px solid #2c5282;
+            padding: 1.25rem;
+            margin: 1rem 0;
+            border-radius: 4px;
+        }
+
+        .combined-feedback h4 {
+            color: #2c5282;
+            margin-bottom: 0.75rem;
+            font-size: 1rem;
+        }
+
+        .feedback-synthesis {
+            margin-top: 0.75rem;
+        }
+
+        .feedback-point {
+            padding: 0.75rem;
+            margin: 0.5rem 0;
+            background: white;
+            border-radius: 4px;
+            border-left: 3px solid #2c5282;
+            line-height: 1.6;
+        }
+
+        .feedback-point strong {
+            color: #2c5282;
+            font-size: 0.9rem;
+        }
+
+        .synthesis-list {
+            margin: 0.75rem 0 1rem 1.5rem;
+            padding-left: 1rem;
+        }
+
+        .synthesis-list li {
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+            color: #2d3748;
+        }
+
+        .feedback-synthesis p {
+            margin: 0.75rem 0;
+            line-height: 1.6;
+        }
+
+        .feedback-synthesis strong {
+            color: #2c5282;
+            font-weight: 600;
+        }
+
+        @media print {
+            * {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            
+            body {
+                padding: 0.25in;
+                font-size: 9pt;
+                line-height: 1.3;
+            }
+            
+            h1 {
+                font-size: 16pt;
+                margin-bottom: 0.3rem;
+            }
+            
+            h2 {
+                font-size: 12pt;
+                margin-top: 0.5rem;
+                margin-bottom: 0.4rem;
+                page-break-after: avoid;
+            }
+            
+            h3 {
+                font-size: 10pt;
+                margin-top: 0.4rem;
+                margin-bottom: 0.3rem;
+            }
+            
+            .header-section {
+                padding: 1rem;
+                margin-bottom: 1rem;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            
+            .header-metadata {
+                gap: 0.5rem;
+            }
+            
+            .metadata-item {
+                padding: 0.4rem;
+            }
+            
+            .metadata-label {
+                font-size: 7pt;
+            }
+            
+            .metadata-value {
+                font-size: 9pt;
+            }
+            
+            .score-summary-first-page {
+                page-break-after: always;
+                padding: 0.75rem;
+                margin-bottom: 1rem;
+            }
+            
+            .score-table {
+                margin: 0.75rem 0;
+                font-size: 9pt;
+            }
+            
+            .score-table th,
+            .score-table td {
+                padding: 0.35rem;
+            }
+            
+            .scored-section {
+                page-break-after: always;
+                page-break-inside: avoid;
+                margin: 0.5rem 0;
+                padding: 0.75rem;
+                border: 1px solid #e2e8f0;
+                min-height: unset;
+            }
+            
+            .score-display {
+                margin: 0.5rem 0;
+                padding: 0.5rem;
+            }
+            
+            .score-label {
+                font-size: 9pt;
+            }
+            
+            .score-value {
+                font-size: 14pt;
+            }
+            
+            .combined-feedback {
+                padding: 0.75rem;
+                margin: 0.5rem 0;
+            }
+            
+            .combined-feedback h4 {
+                font-size: 9pt;
+                margin-bottom: 0.4rem;
+            }
+            
+            .feedback-synthesis p {
+                margin: 0.4rem 0;
+                line-height: 1.4;
+                font-size: 9pt;
+            }
+            
+            .feedback-synthesis strong {
+                font-size: 9pt;
+            }
+            
+            .synthesis-list {
+                margin: 0.4rem 0 0.5rem 1rem;
+                padding-left: 0.5rem;
+            }
+            
+            .synthesis-list li {
+                margin-bottom: 0.25rem;
+                line-height: 1.4;
+                font-size: 8.5pt;
+            }
+            
+            .follow-up-section {
+                page-break-before: always;
+                page-break-inside: avoid;
+                padding: 1rem;
+                margin: 1rem 0;
+            }
+            
+            .follow-up-item {
+                padding: 0.75rem;
+                margin: 0.75rem 0;
+            }
+            
+            .follow-up-quote {
+                padding: 0.5rem;
+                margin: 0.5rem 0;
+                font-size: 8.5pt;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header-section">
+        <h1>2025 Year-End Account Review & 2026 QBR Readiness Scorecard</h1>
+        <div class="header-metadata">
+            <div class="metadata-item">
+                <div class="metadata-label">Account Director</div>
+                <div class="metadata-value">Brian Davis</div>
+            </div>
+            <div class="metadata-item">
+                <div class="metadata-label">Account</div>
+                <div class="metadata-value">Merck</div>
+            </div>
+            <div class="metadata-item">
+                <div class="metadata-label">Tier</div>
+                <div class="metadata-value"><span style="background: #10b981; color: white; padding: 0.3rem 0.8rem; border-radius: 12px; font-weight: 600; font-size: 0.9rem;">Tier 6</span></div>
+            </div>
+            <div class="metadata-item">
+                <div class="metadata-label">Review Date</div>
+                <div class="metadata-value">January 2026</div>
+            </div>
+            <div class="metadata-item">
+                <div class="metadata-label">Total Reviews</div>
+                <div class="metadata-value">2</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="score-summary-first-page">
+        <h2>Executive Summary</h2>
+
+        <table class="score-table">
+            <thead>
+                <tr>
+                    <th>Evaluation Category</th>
+                    <th style="text-align: center;">Average Score</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+        <tr>
+            <td>Key Projects & Initiatives</td>
+            <td style="text-align: center; font-weight: 600;">3.5</td>
+        </tr>
+        
+        <tr>
+            <td>Value Adds & Cost Avoidance</td>
+            <td style="text-align: center; font-weight: 600;">3.5</td>
+        </tr>
+        
+        <tr>
+            <td>Cost Savings Delivered</td>
+            <td style="text-align: center; font-weight: 600;">3.5</td>
+        </tr>
+        
+        <tr>
+            <td>Innovation & Continuous Improvement</td>
+            <td style="text-align: center; font-weight: 600;">4.0</td>
+        </tr>
+        
+        <tr>
+            <td>Issues, Challenges & Accountability</td>
+            <td style="text-align: center; font-weight: 600;">4.0</td>
+        </tr>
+        
+        <tr>
+            <td>2026 Forward Strategy & Vision</td>
+            <td style="text-align: center; font-weight: 600;">3.0</td>
+        </tr>
+        
+        <tr>
+            <td>Personal Goals & Role Maturity</td>
+            <td style="text-align: center; font-weight: 600;">3.0</td>
+        </tr>
+        
+        <tr>
+            <td>Executive Presence & Presentation Skills</td>
+            <td style="text-align: center; font-weight: 600;">3.0</td>
+        </tr>
+        
+        <tr style="background: #e8f5e9; border-top: 3px solid #2c5282;">
+            <td style="font-weight: 700; text-transform: uppercase;">Overall Score</td>
+            <td style="text-align: center; font-weight: 700; font-size: 1.2rem; color: #2c5282;">27.5/40</td>
+        </tr>
+        
+            </tbody>
+        </table>
+    </div>
+
+    
+        <div class="scored-section">
+            <h2>Key Projects & Initiatives</h2>
+            <div class="score-display">
+                <span class="score-label">Average Score:</span>
+                <span class="score-value">3.5/5</span>
+            </div>
+            
+            
+    <div class="combined-feedback">
+        <h4>Combined Feedback from Leadership Reviews</h4>
+        <div class="feedback-synthesis">
+    
+            <p><strong>Overall Assessment:</strong> clearly framed the most major projects or initiatives.</p>
+        
+            <p><strong>Strengths:</strong></p>
+            <ul class="synthesis-list">
+        <li>Given Brian’s mid-year start, the review demonstrated a reasonable grasp of the portfolio and an understanding of the major initiatives in motion. Oversight across multiple relationships was clear, and there was evidence of active engagement and learning. That said, the articulation of initiatives leaned more toward inherited context and shared ownership than clearly defined initiatives Brian personally drove in 2025. As Brian moves into a full-year role, I would expect clearer framing around what he owns end-to-end, why those initiatives matter, and what changed for the client as a result.</li></ul>
+            <p><strong>Areas for Development:</strong></p>
+            <ul class="synthesis-list">
+        <li>clearly framed the most major projects or initiatives. I would like to have understood the client impacts more.</li></ul>
+        </div>
+    </div>
+    
+        </div>
+        
+        <div class="scored-section">
+            <h2>Value Adds & Cost Avoidance</h2>
+            <div class="score-display">
+                <span class="score-label">Average Score:</span>
+                <span class="score-value">3.5/5</span>
+            </div>
+            
+            
+    <div class="combined-feedback">
+        <h4>Combined Feedback from Leadership Reviews</h4>
+        <div class="feedback-synthesis">
+    
+            <p><strong>Overall Assessment:</strong> Brian showed awareness of where value is created across the portfolio and how different teams contribute.</p>
+        
+            <p><strong>Areas for Development:</strong></p>
+            <ul class="synthesis-list">
+        <li>Brian showed awareness of where value is created across the portfolio and how different teams contribute. However, value-adds and cost avoidance efforts were not yet clearly framed as deliberate actions owned by Brian with defined impact. This is understandable given tenure, but going forward, I would expect more explicit examples of decisions or interventions that delivered incremental value beyond the contract, even if directional in nature.</li></ul>
+        </div>
+    </div>
+    
+        </div>
+        
+        <div class="scored-section">
+            <h2>Cost Savings Delivered</h2>
+            <div class="score-display">
+                <span class="score-label">Average Score:</span>
+                <span class="score-value">3.5/5</span>
+            </div>
+            
+            
+    <div class="combined-feedback">
+        <h4>Combined Feedback from Leadership Reviews</h4>
+        <div class="feedback-synthesis">
+    
+            <p><strong>Overall Assessment:</strong> Merck is very prescriptive about savings so I expect no less than a clear, high level of savings and accuracy.</p>
+        
+            <p><strong>Areas for Development:</strong></p>
+            <ul class="synthesis-list">
+        <li>Merck is very prescriptive about savings so I expect no less than a clear, high level of savings and accuracy. This is an automatic win from the portfolio requirements however, it still has to be executed so good work. I would like to understand the risks here more. Because this isnt self initiated what risks are there when implementing all of this savings?</li><li>Cost savings delivered in 2025 were not clearly articulated. Given the timing of Brian’s start, this is not unexpected, but this section lacked clarity around ownership of savings, execution, or sustainability. As Brian enters a full operating year, it will be important to explicitly call out cost savings achieved, how they were driven, and whether they are repeatable improvements tied to financial stewardship.</li></ul>
+        </div>
+    </div>
+    
+        </div>
+        
+        <div class="scored-section">
+            <h2>Innovation & Continuous Improvement</h2>
+            <div class="score-display">
+                <span class="score-label">Average Score:</span>
+                <span class="score-value">4.0/5</span>
+            </div>
+            
+            
+    <div class="combined-feedback">
+        <h4>Combined Feedback from Leadership Reviews</h4>
+        <div class="feedback-synthesis">
+    
+            <p><strong>Overall Assessment:</strong> You introduced improvements or equipment that positively impacts the client.</p>
+        
+            <p><strong>Strengths:</strong></p>
+            <ul class="synthesis-list">
+        <li>You introduced improvements or equipment that positively impacts the client. Love the willingness to test, learn and hear about the results.</li></ul>
+            <p><strong>Areas for Development:</strong></p>
+            <ul class="synthesis-list">
+        <li>Brian demonstrated openness to learning the portfolio and engaging with existing processes and teams. However, leadership in driving new processes, tools, or meaningful improvements was not yet clearly established. This is appropriate for a ramp period. In 2026, I would expect Brian to move from participation to leadership by identifying opportunities to improve how the portfolio operates and testing changes with measurable outcomes.</li></ul>
+        </div>
+    </div>
+    
+        </div>
+        
+        <div class="scored-section">
+            <h2>Issues, Challenges & Accountability</h2>
+            <div class="score-display">
+                <span class="score-label">Average Score:</span>
+                <span class="score-value">4.0/5</span>
+            </div>
+            
+            
+    <div class="combined-feedback">
+        <h4>Combined Feedback from Leadership Reviews</h4>
+        <div class="feedback-synthesis">
+    
+            <p><strong>Overall Assessment:</strong> Thank you for being transparent about the challenges, you owned the gaps, and outlined the corrective actions.</p>
+        
+            <p><strong>Strengths:</strong></p>
+            <ul class="synthesis-list">
+        <li>Thank you for being transparent about the challenges, you owned the gaps, and outlined the corrective actions. I would love to see a timeline by when will have things completed by. Dates are needed ideas need to be flushed out with assigned leaders.</li></ul>
+            <p><strong>Areas for Development:</strong></p>
+            <ul class="synthesis-list">
+        <li>Brian was transparent about his tenure, the inherited nature of many challenges, and the shared accountability across the team. There was a healthy tone of ownership without defensiveness, which is important at this level. To continue building strength here, future reviews should include clearer reflection on what Brian would approach differently and specific corrective actions he intends to drive, with timelines.</li></ul>
+        </div>
+    </div>
+    
+        </div>
+        
+        <div class="scored-section">
+            <h2>2026 Forward Strategy & Vision</h2>
+            <div class="score-display">
+                <span class="score-label">Average Score:</span>
+                <span class="score-value">3.0/5</span>
+            </div>
+            
+            
+    <div class="combined-feedback">
+        <h4>Combined Feedback from Leadership Reviews</h4>
+        <div class="feedback-synthesis">
+    
+            <p><strong>Overall Assessment:</strong> You shared general goals or aspirations without clear execution detail.</p>
+        
+            <p><strong>Areas for Development:</strong></p>
+            <ul class="synthesis-list">
+        <li>You shared general goals or aspirations without clear execution detail. Its important to apply the ideas to strategy. Developing a plan with Safety - we should have that done or an outline of it with dates. Sounds like we have a talent issue despite having the ability and autonomy to have people training and advancing. Them most clear item was the CBRE asset management.</li><li>A general forward-looking intent was present, but the 2026 strategy was not yet articulated as a clear, cohesive roadmap. This is reasonable given time in role. As Brian moves into a full planning cycle, I would expect a more structured strategy outlining priorities, sequencing, and how the portfolio will be elevated through retention, growth, and differentiation</li></ul>
+        </div>
+    </div>
+    
+        </div>
+        
+        <div class="scored-section">
+            <h2>Personal Goals & Role Maturity</h2>
+            <div class="score-display">
+                <span class="score-label">Average Score:</span>
+                <span class="score-value">3.0/5</span>
+            </div>
+            
+            
+    <div class="combined-feedback">
+        <h4>Combined Feedback from Leadership Reviews</h4>
+        <div class="feedback-synthesis">
+    
+            <p><strong>Overall Assessment:</strong> Based on the scoring criterial here you shared general development intentions without clear measures ownership, dates, or next steps.</p>
+        
+            <p><strong>Strengths:</strong></p>
+            <ul class="synthesis-list">
+        <li>Based on the scoring criterial here you shared general development intentions without clear measures ownership, dates, or next steps.</li></ul>
+            <p><strong>Areas for Development:</strong></p>
+            <ul class="synthesis-list">
+        <li>Brian demonstrated self-awareness around his ramp and role scope, which is a positive signal. Personal development goals, however, were not yet clearly defined or measurable. As he matures in the role, I would expect clearer leadership goals tied directly to portfolio performance, team development, and operational outcomes.</li></ul>
+        </div>
+    </div>
+    
+        </div>
+        
+        <div class="scored-section">
+            <h2>Executive Presence & Presentation Skills</h2>
+            <div class="score-display">
+                <span class="score-label">Average Score:</span>
+                <span class="score-value">3.0/5</span>
+            </div>
+            
+            
+    <div class="combined-feedback">
+        <h4>Combined Feedback from Leadership Reviews</h4>
+        <div class="feedback-synthesis">
+    
+            <p><strong>Overall Assessment:</strong> Overall you communicated much better in round two.</p>
+        
+            <p><strong>Strengths:</strong></p>
+            <ul class="synthesis-list">
+        <li>Brian communicated professionally and engaged appropriately with senior leaders. Executive presence is developing, and confidence will naturally increase with tenure. Going forward, tightening the narrative around outcomes, ownership, and forward strategy will strengthen Brian’s ability to lead executive-level account discussions more decisively.
+
+Brian is in a reasonable ramp phase and is demonstrating the right fundamentals: openness, accountability, and engagement across a complex portfolio. The primary opportunity moving into 2026 is shifting from shared context to clear ownership, tightening outcome-based storytelling, and more explicitly articulating impact. With a full year in role, expectations will appropriately rise, and Brian is positioned to meet them with stronger clarity and execution discipline.</li></ul>
+            <p><strong>Areas for Development:</strong></p>
+            <ul class="synthesis-list">
+        <li>Overall you communicated much better in round two. You relied heavily on the prepared material and from time to time added some input to the deck. The flow was logical, but I feel like this was a missed opportunity to tell a great story. I was able to piece together your story through the bullets but overall there is an opportunity here. Story telling and dates to the items to action.</li></ul>
+        </div>
+    </div>
+    
+        </div>
+        
+
+    
+    <div class="follow-up-section">
+        <h2>🎯 2026 Development Focus & Follow-Up Items</h2>
+        <p class="follow-up-intro">
+            Based on your year-end presentation and executive feedback, the following areas have been identified 
+            for focused development and follow-through in 2026.
+        </p>
+    
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">Storytelling & Presentation</span>
+                <span class="follow-up-source">— Valarie Barnett & Dan Hartman</span>
+            </div>
+            <h3>Transform Data Dump to Compelling Story with Passion</h3>
+            <p class="follow-up-quote">"Valarie: 'I felt like there was missed opportunity to tell your story in way supported by customer that differentiates us from everybody else. You have amazing story to tell. It just doesn't come across that way where it's kind of like a data dump instead of like, look at all these amazing things we've done for you, Merck. I almost felt like you were just giving me data dump, dump, dump as if somebody else told you information and you gave it back to me. Less than being involved and part of story and having that passion for it.' Dan: 'Merck is our largest dollar amount contract in life sciences, extremely complex. I was hoping I would come away feeling like I know a lot more. What you presented was lacking informing somebody who doesn't know complexities and value we bring. There's something missing.'"</p>
+            <p class="follow-up-action"><strong>Action:</strong> Storytelling transformation for 2026: (1) Structure as narrative: Merck presented these challenges → here's how we overcame them → this is what we were able to do for you, (2) Add passion and personal ownership vs reciting inherited facts, (3) Explain complexities in way that engages people who don't know details, (4) Differentiate SBM from Sodexo/CBRE through story, not just data, (5) Practice: this was practice run for how you'd present to Merck executives, (6) Show involvement and investment in story, not third-party reporting</p>
+        </div>
+        
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">Timelines & Accountability</span>
+                <span class="follow-up-source">— Valarie Barnett</span>
+            </div>
+            <h3>Add Dates to ALL 2026 Strategy Items</h3>
+            <p class="follow-up-quote">"From timing perspective on your issues and challenges, do you know when you will have any of these things completed by or a road map to get them done? If you don't have strategic plans with dates, you are not going to be able to get things done. Hold yourself accountable, hold your team accountable. You got to have the dates. Adding dates - I would like to have seen a little bit more depth in timeline."</p>
+            <p class="follow-up-action"><strong>Action:</strong> Add specific dates/timelines to all 2026 initiatives: (1) MYO process - June 2026 decision already stated, add Q1-Q2 milestone checkpoints, (2) Succession planning completion date, (3) Asset management pilot - Q3 2026 stated for CBRE lessons learned, when for direct sites?, (4) Leadership development milestones, (5) Vendor management SLA completion - Q1 2026 stated for remaining waste contracts, (6) Q1/Q2/Q3/Q4 breakdowns for all major initiatives</p>
+        </div>
+        
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">Succession Planning - URGENT</span>
+                <span class="follow-up-source">— Brian Davis (Self-Identified)</span>
+            </div>
+            <h3>Complete Succession Plans for All Key Roles (Cambridge, South SF, Boston)</h3>
+            <p class="follow-up-quote">"Focus on leadership development. We've had some key changes both within direct sites and across portfolio. At Cambridge changed out - I lost critical lab leader, but we're able to replace with someone on site. But what that took away is that change our succession plan for our site leader Griselda if she were to change. Also changed site manager at South San Francisco, but it also identified that we did not have right succession plans. While we had other leaders on site, we did not really have a plan to replace that person even for short time."</p>
+            <p class="follow-up-action"><strong>Action:</strong> Succession planning completion: (1) Cambridge - develop succession plan for Griselda (site leader) after losing lab leader backup, (2) South San Francisco - create succession plan for new site manager position, (3) Boston - assess succession depth, (4) Identify single points of failure across all direct sites, (5) Develop 'ready now' and 'ready in 6-12 months' candidates for each critical role, (6) Set completion date (Valarie: 'You'll have that completed by what day?'), (7) This also impacts portfolio-wide: 'We've got more capability to lead with Merck and these IFM programs if we free up or provide some more bandwidth within our leaders who frankly sometimes doing more of site manager's role than they should be.'</p>
+        </div>
+        
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">Leadership Development - #2 Person</span>
+                <span class="follow-up-source">— Valarie Barnett</span>
+            </div>
+            <h3>Develop Strong #2 to Free Up Strategic Bandwidth</h3>
+            <p class="follow-up-quote">"Valarie: 'Who's your #2, Mike?' Brian: 'That's a great segue into my looking forward - develop strong #2 to support some of my current responsibilities. That would create ability for me to expand my scope and take on some additional strategic items.'"</p>
+            <p class="follow-up-action"><strong>Action:</strong> Number 2 development: (1) Identify candidate who can take over day-to-day operational management across direct sites, (2) Free up Brian's bandwidth for: MYO leadership, strategic IFM positioning, growth opportunities (Elkton GMP, West Point GMP), cross-vendor coordination, (3) Timeline: when will #2 be identified? When operational? What specific responsibilities transfer?, (4) Brian's vision: expand scope to additional strategic items beyond current portfolio management</p>
+        </div>
+        
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">Vendor Management SLAs</span>
+                <span class="follow-up-source">— Brian Davis (Self-Identified)</span>
+            </div>
+            <h3>Complete Remaining Service Agreements by Q1 2026 (Focus: Waste Contracts)</h3>
+            <p class="follow-up-quote">"For pest control and vendor management, getting remaining service agreements is highlight here. Focus is to have that complete by end of this first quarter. The last remaining are waste contracts which have been most challenging as far as scope identifying that because they're bespoke at each one of sites."</p>
+            <p class="follow-up-action"><strong>Action:</strong> Q1 2026 vendor SLA completion: (1) Complete remaining waste contracts - most challenging due to bespoke scope at each site, (2) Ensure contracts and SLAs in place to effectively manage suppliers, (3) Create contingency suppliers especially for gases - 'We've had challenges in past where our single suppliers cannot meet demand for something like medical grade oxygen and we've had to scramble to get that additional,' (4) Process improvement with account team and procurement to address service concerns, (5) Create redundancy and resiliency within supplier process; vendor management (pest control, gases, security) dominates site conversation as 'their top risks'</p>
+        </div>
+        
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">Asset Management Pilot</span>
+                <span class="follow-up-source">— Valarie Barnett</span>
+            </div>
+            <h3>Complete Asset Management Pilot Rollout by Q3 2026</h3>
+            <p class="follow-up-quote">"Asset management? When will you roll out that pilot 2026? Is it Q1? You're going to do what? Q2, you're going to do what? Brian: 'We're piloting that in CBRE account now. Targeting that for third quarter in 2026 and that's based on completing it and taking lessons learned out of CBRE accounts.'"</p>
+            <p class="follow-up-action"><strong>Action:</strong> Asset management rollout: (1) Q1-Q2: Complete CBRE pilot and capture lessons learned, (2) Q3 2026: Roll out to direct sites based on CBRE learnings, (3) Document: what worked, what didn't, implementation process, change management approach, (4) Train teams on ForSight asset management features, (5) Measure: asset tracking accuracy, maintenance optimization, cost impact</p>
+        </div>
+        
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">Value-Add Quantification</span>
+                <span class="follow-up-source">— Brian Davis (Self-Identified)</span>
+            </div>
+            <h3>Put Dollar Amounts Against Extra Cleaning Services</h3>
+            <p class="follow-up-quote">"There is some stuff that we and I we probably need. We focus on doing better job of actually putting dollar amount against it such as extra cleaning of coffee stations in Cambridge and also tables and water. We do events, we've been doing that and I think we can capture that and look for more opportunity in future to identify those amounts and possibly bring them in scope."</p>
+            <p class="follow-up-action"><strong>Action:</strong> Quantify value-adds: (1) Extra coffee station cleaning at Cambridge, (2) Tables and water areas, (3) Event support across portfolio, (4) Other above-scope activities currently being absorbed, (5) Create tracking system similar to what Valarie recommended to other ADs, (6) Use quantified value to: demonstrate partnership, support retention conversations, potentially bring into contracted scope for revenue growth</p>
+        </div>
+        
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">Personal Goals - Reply to Invite</span>
+                <span class="follow-up-source">— Valarie Barnett</span>
+            </div>
+            <h3>Submit SMART Personal Goals via Email to Avoid Zero Score</h3>
+            <p class="follow-up-quote">"I don't want to give you zero on your personal goals. Right now you're scoring so high that I feel like I'll wait. We want to be able to give you points. Reply to the invite with your goals that would be most helpful."</p>
+            <p class="follow-up-action"><strong>Action:</strong> URGENT: Submit SMART personal goals via email reply: (1) Tie personal goals to 2026 forward strategy and Q1/Q2 initiatives, (2) Specific, Measurable, Achievable, Relevant, Time-bound format, (3) Examples: 96% Merck scorecard by Q4 ($30K profit fee), #2 person developed by Q2, MYO custodial SLA leadership delivered by June, succession plans complete by Q2, ForSight asset management rolled out by Q3, (4) Marvin referenced these would be performance review metrics</p>
+        </div>
+        
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">MYO Risk Assessment</span>
+                <span class="follow-up-source">— Valarie Barnett</span>
+            </div>
+            <h3>Document Risks of 15% Multi-Year Optimization Implementation</h3>
+            <p class="follow-up-quote">"This is an automatic win from portfolio requirements, however it still has to be executed so good work. I would like to understand the risks here more. Because this isn't self initiated, what risks are there when implementing all of this savings?"</p>
+            <p class="follow-up-action"><strong>Action:</strong> MYO risk documentation: (1) Brian showed worst-case scenario chart of cost impact if 15% reduction fully implemented, (2) Document specific risks: service quality degradation, employee morale, safety impacts, customer satisfaction decline, competitive vulnerability, (3) Mitigation strategies for each risk, (4) Phased approach vs big bang implementation, (5) How will SBM protect margins while delivering 15% customer savings?, (6) What's negotiable vs non-negotiable in SLA changes?, (7) Timeline: data calls done pre-Christmas 2025, decision June 2026, enacting late 2026 or 2027 budget</p>
+        </div>
+        
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">Communication & Depth</span>
+                <span class="follow-up-source">— Valarie Barnett</span>
+            </div>
+            <h3>Add More Depth to Client Impact and Why Initiatives Mattered</h3>
+            <p class="follow-up-quote">"Clearly framed the most major projects or initiatives. I would like to have understood the client impacts more. I would like to have seen a little bit more depth in some of the things that you have to do or that you have planned for this year."</p>
+            <p class="follow-up-action"><strong>Action:</strong> Enhanced depth in future presentations: (1) Don't just say what was done - explain why it mattered to Merck specifically, (2) Client impact beyond numbers - how did it make their lives easier? What problems solved? What risks mitigated?, (3) Connect initiatives to Merck's business objectives, not just IFM operational goals, (4) Valarie: 'Much better than last presentation' - continue improving, (5) Practice presenting with deeper context that engages people unfamiliar with account complexity</p>
+        </div>
+        </div>
+
+</body>
+</html>

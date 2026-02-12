@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025 Year-End Scorecard - Gregory DeMedio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            background: #ffffff;
+            padding: 2rem;
+            max-width: 8.5in;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: #1a365d;
+            margin-bottom: 0.5rem;
+        }
+
+        h2 {
+            font-size: 1.35rem;
+            font-weight: 600;
+            color: #2c5282;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 0.5rem;
+        }
+
+        h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #2d3748;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        h4 {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #4a5568;
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .header-section {
+            background: linear-gradient(135deg, #1a365d 0%, #2c5282 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+        }
+
+        .header-section h1 {
+            color: white;
+            margin-bottom: 1.5rem;
+            font-size: 1.85rem;
+        }
+
+        .header-metadata {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.8rem;
+            margin-top: 1.2rem;
+        }
+
+        .metadata-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.6rem;
+            border-radius: 4px;
+        }
+
+        .metadata-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.8;
+            margin-bottom: 0.25rem;
+        }
+
+        .metadata-value {
+            font-size: 1.1rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+        }
+
+        .score-summary-first-page {
+            background: #f7fafc;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+        }
+
+        .score-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            background: white;
+        }
+
+        .score-table th {
+            background: #2c5282;
+            color: white;
+            padding: 0.75rem;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .score-table td {
+            padding: 0.75rem;
+            border: 1px solid #e2e8f0;
+        }
+
+        .score-table tr:nth-child(even) {
+            background: #f7fafc;
+        }
+
+
+        /* Follow-Up Questions Section */
+        .follow-up-section {
+            background: #fff8e1;
+            border-left: 4px solid #ff9800;
+            padding: 24px;
+            margin: 32px 0;
+            border-radius: 8px;
+            page-break-inside: avoid;
+        }
+
+        .follow-up-intro {
+            color: #e65100;
+            margin-bottom: 1rem;
+        }
+
+        .follow-up-item {
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 16px 0;
+        }
+
+        .follow-up-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .follow-up-category {
+            background: #2196f3;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .follow-up-source {
+            color: #666;
+            font-size: 14px;
+            font-style: italic;
+        }
+
+        .follow-up-quote {
+            background: #f5f5f5;
+            border-left: 3px solid #ff9800;
+            padding: 12px 16px;
+            margin: 12px 0;
+            font-style: italic;
+            color: #333;
+        }
+
+        .follow-up-action {
+            margin-top: 12px;
+            color: #333;
+        }
+
+        /* Scored Section - One section per page */
+        .scored-section {
+            page-break-after: always;
+            page-break-inside: avoid;
+            margin: 1.5rem 0;
+            padding: 1.5rem;
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            min-height: 400px;
+        }
+
+        .score-display {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin: 1rem 0;
+            padding: 1rem;
+            background: #f7fafc;
+            border-radius: 4px;
+        }
+
+        .score-label {
+            font-weight: 600;
+            color: #4a5568;
+        }
+
+        .score-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #2c5282;
+        }
+
+        .combined-feedback {
+            background: #f8f9fa;
+            border-left: 4px solid #2c5282;
+            padding: 1.25rem;
+            margin: 1rem 0;
+            border-radius: 4px;
+        }
+
+        .combined-feedback h4 {
+            color: #2c5282;
+            margin-bottom: 0.75rem;
+            font-size: 1rem;
+        }
+
+        .feedback-synthesis {
+            margin-top: 0.75rem;
+        }
+
+        .feedback-point {
+            padding: 0.75rem;
+            margin: 0.5rem 0;
+            background: white;
+            border-radius: 4px;
+            border-left: 3px solid #2c5282;
+            line-height: 1.6;
+        }
+
+        .feedback-point strong {
+            color: #2c5282;
+            font-size: 0.9rem;
+        }
+
+        .synthesis-list {
+            margin: 0.75rem 0 1rem 1.5rem;
+            padding-left: 1rem;
+        }
+
+        .synthesis-list li {
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+            color: #2d3748;
+        }
+
+        .feedback-synthesis p {
+            margin: 0.75rem 0;
+            line-height: 1.6;
+        }
+
+        .feedback-synthesis strong {
+            color: #2c5282;
+            font-weight: 600;
+        }
+
+        @media print {
+            * {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            
+            body {
+                padding: 0.25in;
+                font-size: 9pt;
+                line-height: 1.3;
+            }
+            
+            h1 {
+                font-size: 16pt;
+                margin-bottom: 0.3rem;
+            }
+            
+            h2 {
+                font-size: 12pt;
+                margin-top: 0.5rem;
+                margin-bottom: 0.4rem;
+                page-break-after: avoid;
+            }
+            
+            h3 {
+                font-size: 10pt;
+                margin-top: 0.4rem;
+                margin-bottom: 0.3rem;
+            }
+            
+            .header-section {
+                padding: 1rem;
+                margin-bottom: 1rem;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            
+            .header-metadata {
+                gap: 0.5rem;
+            }
+            
+            .metadata-item {
+                padding: 0.4rem;
+            }
+            
+            .metadata-label {
+                font-size: 7pt;
+            }
+            
+            .metadata-value {
+                font-size: 9pt;
+            }
+            
+            .score-summary-first-page {
+                page-break-after: always;
+                padding: 0.75rem;
+                margin-bottom: 1rem;
+            }
+            
+            .score-table {
+                margin: 0.75rem 0;
+                font-size: 9pt;
+            }
+            
+            .score-table th,
+            .score-table td {
+                padding: 0.35rem;
+            }
+            
+            .scored-section {
+                page-break-after: always;
+                page-break-inside: avoid;
+                margin: 0.5rem 0;
+                padding: 0.75rem;
+                border: 1px solid #e2e8f0;
+                min-height: unset;
+            }
+            
+            .score-display {
+                margin: 0.5rem 0;
+                padding: 0.5rem;
+            }
+            
+            .score-label {
+                font-size: 9pt;
+            }
+            
+            .score-value {
+                font-size: 14pt;
+            }
+            
+            .combined-feedback {
+                padding: 0.75rem;
+                margin: 0.5rem 0;
+            }
+            
+            .combined-feedback h4 {
+                font-size: 9pt;
+                margin-bottom: 0.4rem;
+            }
+            
+            .feedback-synthesis p {
+                margin: 0.4rem 0;
+                line-height: 1.4;
+                font-size: 9pt;
+            }
+            
+            .feedback-synthesis strong {
+                font-size: 9pt;
+            }
+            
+            .synthesis-list {
+                margin: 0.4rem 0 0.5rem 1rem;
+                padding-left: 0.5rem;
+            }
+            
+            .synthesis-list li {
+                margin-bottom: 0.25rem;
+                line-height: 1.4;
+                font-size: 8.5pt;
+            }
+            
+            .follow-up-section {
+                page-break-before: always;
+                page-break-inside: avoid;
+                padding: 1rem;
+                margin: 1rem 0;
+            }
+            
+            .follow-up-item {
+                padding: 0.75rem;
+                margin: 0.75rem 0;
+            }
+            
+            .follow-up-quote {
+                padding: 0.5rem;
+                margin: 0.5rem 0;
+                font-size: 8.5pt;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header-section">
+        <h1>2025 Year-End Account Review & 2026 QBR Readiness Scorecard</h1>
+        <div class="header-metadata">
+            <div class="metadata-item">
+                <div class="metadata-label">Account Director</div>
+                <div class="metadata-value">Gregory DeMedio</div>
+            </div>
+            <div class="metadata-item">
+                <div class="metadata-label">Account</div>
+                <div class="metadata-value">Abbott </div>
+            </div>
+            <div class="metadata-item">
+                <div class="metadata-label">Tier</div>
+                <div class="metadata-value"><span style="background: #10b981; color: white; padding: 0.3rem 0.8rem; border-radius: 12px; font-weight: 600; font-size: 0.9rem;">Tier 6</span></div>
+            </div>
+            <div class="metadata-item">
+                <div class="metadata-label">Review Date</div>
+                <div class="metadata-value">January 2026</div>
+            </div>
+            <div class="metadata-item">
+                <div class="metadata-label">Total Reviews</div>
+                <div class="metadata-value">3</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="score-summary-first-page">
+        <h2>Executive Summary</h2>
+
+        <table class="score-table">
+            <thead>
+                <tr>
+                    <th>Evaluation Category</th>
+                    <th style="text-align: center;">Average Score</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+        <tr>
+            <td>Key Projects & Initiatives</td>
+            <td style="text-align: center; font-weight: 600;">3.0</td>
+        </tr>
+        
+        <tr>
+            <td>Value Adds & Cost Avoidance</td>
+            <td style="text-align: center; font-weight: 600;">3.0</td>
+        </tr>
+        
+        <tr>
+            <td>Cost Savings Delivered</td>
+            <td style="text-align: center; font-weight: 600;">3.33</td>
+        </tr>
+        
+        <tr>
+            <td>Innovation & Continuous Improvement</td>
+            <td style="text-align: center; font-weight: 600;">2.0</td>
+        </tr>
+        
+        <tr>
+            <td>Issues, Challenges & Accountability</td>
+            <td style="text-align: center; font-weight: 600;">2.67</td>
+        </tr>
+        
+        <tr>
+            <td>2026 Forward Strategy & Vision</td>
+            <td style="text-align: center; font-weight: 600;">3.0</td>
+        </tr>
+        
+        <tr>
+            <td>Personal Goals & Role Maturity</td>
+            <td style="text-align: center; font-weight: 600;">3.0</td>
+        </tr>
+        
+        <tr>
+            <td>Executive Presence & Presentation Skills</td>
+            <td style="text-align: center; font-weight: 600;">3.67</td>
+        </tr>
+        
+        <tr style="background: #e8f5e9; border-top: 3px solid #2c5282;">
+            <td style="font-weight: 700; text-transform: uppercase;">Overall Score</td>
+            <td style="text-align: center; font-weight: 700; font-size: 1.2rem; color: #2c5282;">23.67/40</td>
+        </tr>
+        
+            </tbody>
+        </table>
+    </div>
+
+    
+        <div class="scored-section">
+            <h2>Key Projects & Initiatives</h2>
+            <div class="score-display">
+                <span class="score-label">Average Score:</span>
+                <span class="score-value">3.0/5</span>
+            </div>
+            
+            
+    <div class="combined-feedback">
+        <h4>Combined Feedback from Leadership Reviews</h4>
+        <div class="feedback-synthesis">
+    
+            <p><strong>Overall Assessment:</strong> Counting the other two MSA changes and Customer relationship.</p>
+        
+            <p><strong>Strengths:</strong></p>
+            <ul class="synthesis-list">
+        <li>Greg highlighted the successful five-year contract renewal as the anchor achievement for 2025, which is a meaningful outcome given Abbott’s focus on cost discipline and prior years of optimization. He also referenced selective scope growth and the onboarding of a new site mid-January. While these are relevant initiatives, they were presented in a bundled manner that made it harder to clearly distinguish “projects” versus financial outcomes. This section would benefit from sharper separation and clearer framing of why each initiative mattered strategically to Abbott.</li></ul>
+            <p><strong>Areas for Development:</strong></p>
+            <ul class="synthesis-list">
+        <li>Counting the other two MSA changes and Customer relationship. I would say was a huge overall and a project I would give you credit for. While I understand the MSA being a contributing project it does not reflect anything that the site could feel or find value in. Reduction of temp labor as an initiative is really specific to SBM it doesn't help us show value to the customer. The three overall initiatives aren't very impactful to the customer. Strengthening our relationship is a part of the overall job expectations, and working with Bianca feels like thats been a 2 year process.</li><li>Solid performance on the account level, especially getting the renewal.</li></ul>
+        </div>
+    </div>
+    
+        </div>
+        
+        <div class="scored-section">
+            <h2>Value Adds & Cost Avoidance</h2>
+            <div class="score-display">
+                <span class="score-label">Average Score:</span>
+                <span class="score-value">3.0/5</span>
+            </div>
+            
+            
+    <div class="combined-feedback">
+        <h4>Combined Feedback from Leadership Reviews</h4>
+        <div class="feedback-synthesis">
+    
+            <p><strong>Overall Assessment:</strong> Clearly described how adding supervisors increased quality and validation for the client.</p>
+        
+            <p><strong>Areas for Development:</strong></p>
+            <ul class="synthesis-list">
+        <li>Clearly described how adding supervisors increased quality and validation for the client. But not a lot of operational clients facing value adds mentioned. These are probably happening at the sites, just not being expressed here.</li><li>Greg called out approximately $14K in cost avoidance at Abbott Park, funded by SBM to strengthen the relationship at the headquarters location. The intent and outcome were positive, and the initiative appears to have delivered relationship value. However, the broader value narrative leaned heavily toward financial mechanics rather than client impact. Elevating this section with clearer linkage to stakeholder trust, risk reduction, or long-term renewal confidence would strengthen the message.</li></ul>
+        </div>
+    </div>
+    
+        </div>
+        
+        <div class="scored-section">
+            <h2>Cost Savings Delivered</h2>
+            <div class="score-display">
+                <span class="score-label">Average Score:</span>
+                <span class="score-value">3.33/5</span>
+            </div>
+            
+            
+    <div class="combined-feedback">
+        <h4>Combined Feedback from Leadership Reviews</h4>
+        <div class="feedback-synthesis">
+    
+            <p><strong>Overall Assessment:</strong> Cost savings was not a key factor for the relationship in 25, not a lot of information here.</p>
+        
+            <p><strong>Strengths:</strong></p>
+            <ul class="synthesis-list">
+        <li>Greg provided helpful context around why cost savings were more limited in 2025, noting that Abbott had already realized significant savings in prior years. He demonstrated alignment with the client’s expectations and explained how right-sizing and model adjustments maintained savings within Abbott’s pricing framework. While the explanation was sound, the delivery could be more concise and outcome-focused, with clearer articulation of how SBM helped Abbott sustain savings without compromising service.</li></ul>
+            <p><strong>Areas for Development:</strong></p>
+            <ul class="synthesis-list">
+        <li>Cost savings was not a key factor for the relationship in 25, not a lot of information here.</li></ul>
+        </div>
+    </div>
+    
+        </div>
+        
+        <div class="scored-section">
+            <h2>Innovation & Continuous Improvement</h2>
+            <div class="score-display">
+                <span class="score-label">Average Score:</span>
+                <span class="score-value">2.0/5</span>
+            </div>
+            
+            
+    <div class="combined-feedback">
+        <h4>Combined Feedback from Leadership Reviews</h4>
+        <div class="feedback-synthesis">
+    
+            <p><strong>Overall Assessment:</strong> Your key initiative, cost savings and continuous improvement were all the same thing.</p>
+        
+            <p><strong>Areas for Development:</strong></p>
+            <ul class="synthesis-list">
+        <li>Your key initiative, cost savings and continuous improvement were all the same thing. I was hoping for more. While you communicated youhave a period calendar there was a gap in results and lessons learned. I feel there was a lack of innovation.</li><li>Nothing new to note here, feels like we are not pushing for innovation on the account.</li><li>Innovation was not a central theme in the presentation, which Greg appropriately acknowledged given the account’s maturity and prior cost-cutting cycles. That said, the section would benefit from highlighting incremental improvements, governance refinements, or process changes that show continuous evolution even in a stabilized account.</li></ul>
+        </div>
+    </div>
+    
+        </div>
+        
+        <div class="scored-section">
+            <h2>Issues, Challenges & Accountability</h2>
+            <div class="score-display">
+                <span class="score-label">Average Score:</span>
+                <span class="score-value">2.67/5</span>
+            </div>
+            
+            
+    <div class="combined-feedback">
+        <h4>Combined Feedback from Leadership Reviews</h4>
+        <div class="feedback-synthesis">
+    
+            <p><strong>Overall Assessment:</strong> Thank you for your transparency on the issues, but does not seem to be resoled with clear reflection, corrections, actions or timelines.</p>
+        
+            <p><strong>Strengths:</strong></p>
+            <ul class="synthesis-list">
+        <li>Greg demonstrated awareness of the constraints on cost savings and showed alignment with Abbott’s financial posture. He took accountability for managing within those limits and avoided over-promising. This was a steady, credible section, though it could be strengthened by explicitly naming key risks and how they were mitigated during the renewal year.</li></ul>
+            <p><strong>Areas for Development:</strong></p>
+            <ul class="synthesis-list">
+        <li>Thank you for your transparency on the issues, but does not seem to be resoled with clear reflection, corrections, actions or timelines.</li><li>Challenges have been kept at bay but not expressed in the presentation that way. Complexities of the account are not known to all, and they should be somehow mentioned in these presentations.</li></ul>
+        </div>
+    </div>
+    
+        </div>
+        
+        <div class="scored-section">
+            <h2>2026 Forward Strategy & Vision</h2>
+            <div class="score-display">
+                <span class="score-label">Average Score:</span>
+                <span class="score-value">3.0/5</span>
+            </div>
+            
+            
+    <div class="combined-feedback">
+        <h4>Combined Feedback from Leadership Reviews</h4>
+        <div class="feedback-synthesis">
+    
+            <p><strong>Overall Assessment:</strong> Your 2026 strategy felt thoughtful, and your initiatives need to be more flushed out or organized with timelines for each.</p>
+        
+            <p><strong>Areas for Development:</strong></p>
+            <ul class="synthesis-list">
+        <li>Your 2026 strategy felt thoughtful, and your initiatives need to be more flushed out or organized with timelines for each. You should have a deadline or else it each item is an idea. I also need to know what success looks like for each of these how are you measuring them.</li><li>Nothing special to note here.</li><li>The forward-looking narrative was present but understated. Greg referenced continued alignment and stability but did not clearly outline a proactive strategy for 2026 beyond maintaining the current model. A stronger vision around relationship expansion, targeted value creation, or strategic differentiation would elevate this section.</li></ul>
+        </div>
+    </div>
+    
+        </div>
+        
+        <div class="scored-section">
+            <h2>Personal Goals & Role Maturity</h2>
+            <div class="score-display">
+                <span class="score-label">Average Score:</span>
+                <span class="score-value">3.0/5</span>
+            </div>
+            
+            
+    <div class="combined-feedback">
+        <h4>Combined Feedback from Leadership Reviews</h4>
+        <div class="feedback-synthesis">
+    
+            <p><strong>Overall Assessment:</strong> Youi shared general goals with intentions without clear measures, ownership or dates.</p>
+        
+            <p><strong>Strengths:</strong></p>
+            <ul class="synthesis-list">
+        <li>Youi shared general goals with intentions without clear measures, ownership or dates.</li></ul>
+            <p><strong>Areas for Development:</strong></p>
+            <ul class="synthesis-list">
+        <li>More ambitious goals would be welcome.</li><li>Personal development goals were not explicitly articulated. Greg presents as steady and experienced, but future reviews would benefit from clearer self-reflection on growth areas or leadership objectives tied to the account’s next phase.</li></ul>
+        </div>
+    </div>
+    
+        </div>
+        
+        <div class="scored-section">
+            <h2>Executive Presence & Presentation Skills</h2>
+            <div class="score-display">
+                <span class="score-label">Average Score:</span>
+                <span class="score-value">3.67/5</span>
+            </div>
+            
+            
+    <div class="combined-feedback">
+        <h4>Combined Feedback from Leadership Reviews</h4>
+        <div class="feedback-synthesis">
+    
+            <p><strong>Overall Assessment:</strong> You are able to clearly and confidently present.</p>
+        
+            <p><strong>Strengths:</strong></p>
+            <ul class="synthesis-list">
+        <li>You are able to clearly and confidently present. Structure and flow is there you lacked substance to provide us with. I needed more from you on reflection of last year. The gaps were in impact, dates, and actions to take.</li><li>Greg was calm, credible, and clearly knowledgeable about the account. At times, content was bundled in a way that blurred sections, which made it harder for the audience to track against the rubric. Tightening structure and clearly signposting each section would materially improve executive clarity. 
+
+Greg delivered a solid, credible review anchored by a successful long-term contract renewal and disciplined financial stewardship. His strength lies in stability, alignment, and managing mature accounts with constrained cost levers. The primary opportunity is sharpening structure and storytelling to clearly separate projects, value, and outcomes, and to articulate a more forward-leaning strategy for 2026. Overall, this was a dependable performance that reflects steady account leadership.</li></ul>
+            <p><strong>Areas for Development:</strong></p>
+            <ul class="synthesis-list">
+        <li>Communication and presence were good, just felt lacking in impactful information.</li></ul>
+        </div>
+    </div>
+    
+        </div>
+        
+
+    
+    <div class="follow-up-section">
+        <h2>🎯 2026 Development Focus & Follow-Up Items</h2>
+        <p class="follow-up-intro">
+            Based on your year-end presentation and executive feedback, the following areas have been identified 
+            for focused development and follow-through in 2026.
+        </p>
+    
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">Strategic Planning & Goal Setting</span>
+                <span class="follow-up-source">— Valarie Barnett</span>
+            </div>
+            <h3>Add Specific Dates and Actions to All 2026 Goals</h3>
+            <p class="follow-up-quote">"A goal without a date is just a wish. I see a lot of things that are strategy and ideation. I really would like to see what actions are you going to take and by when so that when you meet with Dan or Marvin you can say I'm holding myself accountable."</p>
+            <p class="follow-up-action"><strong>Action:</strong> Convert all 2026 strategy items into actionable goals with completion dates: (1) Latam key contact meeting - by Q1, (2) High-value QBR revamp - specific date, (3) Succession plan - timeline, (4) All sites periodical calendars - Q2 end, (5) Growth opportunities (Westford, St. Paul) - decision by Feb; track in monthly leadership meetings</p>
+        </div>
+        
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">Client Impact & Value Demonstration</span>
+                <span class="follow-up-source">— Valarie Barnett</span>
+            </div>
+            <h3>Develop Client-Facing Projects and Initiatives with Measurable Impact</h3>
+            <p class="follow-up-quote">"These are important for us, but I see those as a part of your job. I don't see where at a particular site you had scope impact. What did we do for Abbott last year? I felt like you kind of pulled out some straws in order to fill something up on the page."</p>
+            <p class="follow-up-action"><strong>Action:</strong> 2026 goal: identify and execute client-facing initiatives that deliver measurable value Abbott would recognize (not just internal operational improvements); focus on results over activities; differentiate between job expectations and value creation; track impact metrics</p>
+        </div>
+        
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">Presentation & Storytelling</span>
+                <span class="follow-up-source">— Valarie Barnett</span>
+            </div>
+            <h3>Improve Storytelling with Impact, Dates, and Actions</h3>
+            <p class="follow-up-quote">"In 2026, maybe working on your storytelling. I felt like some of the gaps were the impact, the dates, no actions. I think that also help you with your time management."</p>
+            <p class="follow-up-action"><strong>Action:</strong> Develop narrative structure for future presentations that clearly articulates: (1) What was done (activity), (2) Why it mattered (impact), (3) When it was completed (dates), (4) What client value was created (results); practice storytelling to convey complexity and effort effectively</p>
+        </div>
+        
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">Documentation & Tracking</span>
+                <span class="follow-up-source">— Valarie Barnett & Tony Garcia (Abbott POC)</span>
+            </div>
+            <h3>Track Accomplishments Throughout Year to 'Brag Better'</h3>
+            <p class="follow-up-quote">"Get better with tracking some of these things. Even Tony said about just tracking and sharing information. You do great things, but when you look back 12 months ago, it's like 'I don't know what I did.' You need to brag on yourself a little."</p>
+            <p class="follow-up-action"><strong>Action:</strong> Implement quarterly or monthly accomplishment tracking system; document client wins, operational improvements, cost savings, relationship milestones as they happen; share with Tony regularly; maintain for year-end review to demonstrate full scope of work and value delivered</p>
+        </div>
+        
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">QBR Enhancement</span>
+                <span class="follow-up-source">— Gregory DeMedio (Self-Identified) & Nick Viskovich</span>
+            </div>
+            <h3>Revamp QBR to Be High-Value and Expand Audience</h3>
+            <p class="follow-up-quote">"QBR is very stale, just going over data. I do that with Tony almost every week, so it's redundant. Trying to come up with fresh ideas: voice of customer, site spotlights, driving more into value of SBM."</p>
+            <p class="follow-up-action"><strong>Action:</strong> Redesign QBR format to: (1) Highlight SBM GMP capabilities and regulatory audit success, (2) Add site spotlights showcasing specific value, (3) Include voice of customer feedback, (4) Invite site-level executives or broader Abbott audiences, (5) Differentiate SBM vs competitors (what can't ABM do?); work with Tony to expand attendee list</p>
+        </div>
+        
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">Relationship Expansion</span>
+                <span class="follow-up-source">— Gregory DeMedio (Self-Identified) & Nick Viskovich</span>
+            </div>
+            <h3>Strengthen Relationships Beyond Tony Garcia to Key Stakeholders</h3>
+            <p class="follow-up-quote">"I have a great relationship with Tony, but where's that Latin America key contact or site-level senior executives? Bringing them more to the fold so they can understand the value we bring."</p>
+            <p class="follow-up-action"><strong>Action:</strong> Identify and engage: (1) Latam key decision maker, (2) Site-level senior executives (met a few, expand relationships), (3) Abbott corporate stakeholders beyond procurement; loop them into portfolio conversations, year-end reviews, and value demonstrations</p>
+        </div>
+        
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">Leadership Development & Delegation</span>
+                <span class="follow-up-source">— Gregory DeMedio (Self-Identified)</span>
+            </div>
+            <h3>Improve Time Management by Delegating and Empowering Managers</h3>
+            <p class="follow-up-quote">"I need to get better with time management, prioritizing, delegating and empowering managers. I get more into the weeds than I probably should instead of delegating. It's my nature, but I need to focus on higher-end things."</p>
+            <p class="follow-up-action"><strong>Action:</strong> Shift from 'in the weeds' to strategic focus: delegate operational tasks to site/area managers; continue weekly training programs for newer managers but empower them to execute; prioritize high-impact activities (senior relationships, growth, innovation); develop succession plan (already in discussion)</p>
+        </div>
+        
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">Account Complexity Communication</span>
+                <span class="follow-up-source">— Marvin Owens & Dan Hartman</span>
+            </div>
+            <h3>Better Articulate Account Complexity in Presentations</h3>
+            <p class="follow-up-quote">"There is an opportunity for folks on this call to understand the amount of complexity on your account - 26 sites, unique things you have to do. The efforts and how hard you work didn't come across. Complexities should be mentioned in presentations."</p>
+            <p class="follow-up-action"><strong>Action:</strong> In future presentations, explicitly communicate: (1) Managing 26 different site relationships, (2) Annual site-specific contract renewals, (3) Regional/divisional team coordination complexity, (4) Unique Abbott requirements (no formal RFPs, strategic growth only); tell the story of effort and complexity to demonstrate scope of work</p>
+        </div>
+        </div>
+
+</body>
+</html>

@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025 Year-End Scorecard - Keith Deuber</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            background: #ffffff;
+            padding: 2rem;
+            max-width: 8.5in;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: #1a365d;
+            margin-bottom: 0.5rem;
+        }
+
+        h2 {
+            font-size: 1.35rem;
+            font-weight: 600;
+            color: #2c5282;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 0.5rem;
+        }
+
+        h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #2d3748;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        h4 {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #4a5568;
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .header-section {
+            background: linear-gradient(135deg, #1a365d 0%, #2c5282 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+        }
+
+        .header-section h1 {
+            color: white;
+            margin-bottom: 1.5rem;
+            font-size: 1.85rem;
+        }
+
+        .header-metadata {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.8rem;
+            margin-top: 1.2rem;
+        }
+
+        .metadata-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.6rem;
+            border-radius: 4px;
+        }
+
+        .metadata-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.8;
+            margin-bottom: 0.25rem;
+        }
+
+        .metadata-value {
+            font-size: 1.1rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+        }
+
+        .score-summary-first-page {
+            background: #f7fafc;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+        }
+
+        .score-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            background: white;
+        }
+
+        .score-table th {
+            background: #2c5282;
+            color: white;
+            padding: 0.75rem;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .score-table td {
+            padding: 0.75rem;
+            border: 1px solid #e2e8f0;
+        }
+
+        .score-table tr:nth-child(even) {
+            background: #f7fafc;
+        }
+
+
+        /* Follow-Up Questions Section */
+        .follow-up-section {
+            background: #fff8e1;
+            border-left: 4px solid #ff9800;
+            padding: 24px;
+            margin: 32px 0;
+            border-radius: 8px;
+            page-break-inside: avoid;
+        }
+
+        .follow-up-intro {
+            color: #e65100;
+            margin-bottom: 1rem;
+        }
+
+        .follow-up-item {
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 16px 0;
+        }
+
+        .follow-up-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .follow-up-category {
+            background: #2196f3;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .follow-up-source {
+            color: #666;
+            font-size: 14px;
+            font-style: italic;
+        }
+
+        .follow-up-quote {
+            background: #f5f5f5;
+            border-left: 3px solid #ff9800;
+            padding: 12px 16px;
+            margin: 12px 0;
+            font-style: italic;
+            color: #333;
+        }
+
+        .follow-up-action {
+            margin-top: 12px;
+            color: #333;
+        }
+
+        /* Scored Section - One section per page */
+        .scored-section {
+            page-break-after: always;
+            page-break-inside: avoid;
+            margin: 1.5rem 0;
+            padding: 1.5rem;
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            min-height: 400px;
+        }
+
+        .score-display {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin: 1rem 0;
+            padding: 1rem;
+            background: #f7fafc;
+            border-radius: 4px;
+        }
+
+        .score-label {
+            font-weight: 600;
+            color: #4a5568;
+        }
+
+        .score-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #2c5282;
+        }
+
+        .combined-feedback {
+            background: #f8f9fa;
+            border-left: 4px solid #2c5282;
+            padding: 1.25rem;
+            margin: 1rem 0;
+            border-radius: 4px;
+        }
+
+        .combined-feedback h4 {
+            color: #2c5282;
+            margin-bottom: 0.75rem;
+            font-size: 1rem;
+        }
+
+        .feedback-synthesis {
+            margin-top: 0.75rem;
+        }
+
+        .feedback-point {
+            padding: 0.75rem;
+            margin: 0.5rem 0;
+            background: white;
+            border-radius: 4px;
+            border-left: 3px solid #2c5282;
+            line-height: 1.6;
+        }
+
+        .feedback-point strong {
+            color: #2c5282;
+            font-size: 0.9rem;
+        }
+
+        .synthesis-list {
+            margin: 0.75rem 0 1rem 1.5rem;
+            padding-left: 1rem;
+        }
+
+        .synthesis-list li {
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+            color: #2d3748;
+        }
+
+        .feedback-synthesis p {
+            margin: 0.75rem 0;
+            line-height: 1.6;
+        }
+
+        .feedback-synthesis strong {
+            color: #2c5282;
+            font-weight: 600;
+        }
+
+        @media print {
+            * {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            
+            body {
+                padding: 0.25in;
+                font-size: 9pt;
+                line-height: 1.3;
+            }
+            
+            h1 {
+                font-size: 16pt;
+                margin-bottom: 0.3rem;
+            }
+            
+            h2 {
+                font-size: 12pt;
+                margin-top: 0.5rem;
+                margin-bottom: 0.4rem;
+                page-break-after: avoid;
+            }
+            
+            h3 {
+                font-size: 10pt;
+                margin-top: 0.4rem;
+                margin-bottom: 0.3rem;
+            }
+            
+            .header-section {
+                padding: 1rem;
+                margin-bottom: 1rem;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            
+            .header-metadata {
+                gap: 0.5rem;
+            }
+            
+            .metadata-item {
+                padding: 0.4rem;
+            }
+            
+            .metadata-label {
+                font-size: 7pt;
+            }
+            
+            .metadata-value {
+                font-size: 9pt;
+            }
+            
+            .score-summary-first-page {
+                page-break-after: always;
+                padding: 0.75rem;
+                margin-bottom: 1rem;
+            }
+            
+            .score-table {
+                margin: 0.75rem 0;
+                font-size: 9pt;
+            }
+            
+            .score-table th,
+            .score-table td {
+                padding: 0.35rem;
+            }
+            
+            .scored-section {
+                page-break-after: always;
+                page-break-inside: avoid;
+                margin: 0.5rem 0;
+                padding: 0.75rem;
+                border: 1px solid #e2e8f0;
+                min-height: unset;
+            }
+            
+            .score-display {
+                margin: 0.5rem 0;
+                padding: 0.5rem;
+            }
+            
+            .score-label {
+                font-size: 9pt;
+            }
+            
+            .score-value {
+                font-size: 14pt;
+            }
+            
+            .combined-feedback {
+                padding: 0.75rem;
+                margin: 0.5rem 0;
+            }
+            
+            .combined-feedback h4 {
+                font-size: 9pt;
+                margin-bottom: 0.4rem;
+            }
+            
+            .feedback-synthesis p {
+                margin: 0.4rem 0;
+                line-height: 1.4;
+                font-size: 9pt;
+            }
+            
+            .feedback-synthesis strong {
+                font-size: 9pt;
+            }
+            
+            .synthesis-list {
+                margin: 0.4rem 0 0.5rem 1rem;
+                padding-left: 0.5rem;
+            }
+            
+            .synthesis-list li {
+                margin-bottom: 0.25rem;
+                line-height: 1.4;
+                font-size: 8.5pt;
+            }
+            
+            .follow-up-section {
+                page-break-before: always;
+                page-break-inside: avoid;
+                padding: 1rem;
+                margin: 1rem 0;
+            }
+            
+            .follow-up-item {
+                padding: 0.75rem;
+                margin: 0.75rem 0;
+            }
+            
+            .follow-up-quote {
+                padding: 0.5rem;
+                margin: 0.5rem 0;
+                font-size: 8.5pt;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header-section">
+        <h1>2025 Year-End Account Review & 2026 QBR Readiness Scorecard</h1>
+        <div class="header-metadata">
+            <div class="metadata-item">
+                <div class="metadata-label">Account Director</div>
+                <div class="metadata-value">Keith Deuber</div>
+            </div>
+            <div class="metadata-item">
+                <div class="metadata-label">Account</div>
+                <div class="metadata-value">Amazon</div>
+            </div>
+            <div class="metadata-item">
+                <div class="metadata-label">Tier</div>
+                <div class="metadata-value"><span style="background: #10b981; color: white; padding: 0.3rem 0.8rem; border-radius: 12px; font-weight: 600; font-size: 0.9rem;">Tier 6</span></div>
+            </div>
+            <div class="metadata-item">
+                <div class="metadata-label">Review Date</div>
+                <div class="metadata-value">January 2026</div>
+            </div>
+            <div class="metadata-item">
+                <div class="metadata-label">Total Reviews</div>
+                <div class="metadata-value">1</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="score-summary-first-page">
+        <h2>Executive Summary</h2>
+
+        <table class="score-table">
+            <thead>
+                <tr>
+                    <th>Evaluation Category</th>
+                    <th style="text-align: center;">Average Score</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+        <tr>
+            <td>Key Projects & Initiatives</td>
+            <td style="text-align: center; font-weight: 600;">5.0</td>
+        </tr>
+        
+        <tr>
+            <td>Value Adds & Cost Avoidance</td>
+            <td style="text-align: center; font-weight: 600;">5.0</td>
+        </tr>
+        
+        <tr>
+            <td>Cost Savings Delivered</td>
+            <td style="text-align: center; font-weight: 600;">4.0</td>
+        </tr>
+        
+        <tr>
+            <td>Innovation & Continuous Improvement</td>
+            <td style="text-align: center; font-weight: 600;">5.0</td>
+        </tr>
+        
+        <tr>
+            <td>Issues, Challenges & Accountability</td>
+            <td style="text-align: center; font-weight: 600;">5.0</td>
+        </tr>
+        
+        <tr>
+            <td>2026 Forward Strategy & Vision</td>
+            <td style="text-align: center; font-weight: 600;">5.0</td>
+        </tr>
+        
+        <tr>
+            <td>Personal Goals & Role Maturity</td>
+            <td style="text-align: center; font-weight: 600;">5.0</td>
+        </tr>
+        
+        <tr>
+            <td>Executive Presence & Presentation Skills</td>
+            <td style="text-align: center; font-weight: 600;">5.0</td>
+        </tr>
+        
+        <tr style="background: #e8f5e9; border-top: 3px solid #2c5282;">
+            <td style="font-weight: 700; text-transform: uppercase;">Overall Score</td>
+            <td style="text-align: center; font-weight: 700; font-size: 1.2rem; color: #2c5282;">39.0/40</td>
+        </tr>
+        
+            </tbody>
+        </table>
+    </div>
+
+    
+        <div class="scored-section">
+            <h2>Key Projects & Initiatives</h2>
+            <div class="score-display">
+                <span class="score-label">Average Score:</span>
+                <span class="score-value">5.0/5</span>
+            </div>
+            
+            
+    <div class="combined-feedback">
+        <h4>Combined Feedback from Leadership Reviews</h4>
+        <div class="feedback-synthesis">
+    
+            <p><strong>Overall Assessment:</strong> You key projects also highlighted your challenges and changes.</p>
+        
+            <p><strong>Areas for Development:</strong></p>
+            <ul class="synthesis-list">
+        <li>You key projects also highlighted your challenges and changes. I appreciate how you didnt just discuss the activity, but the results from changes we made.</li></ul>
+        </div>
+    </div>
+    
+        </div>
+        
+        <div class="scored-section">
+            <h2>Value Adds & Cost Avoidance</h2>
+            <div class="score-display">
+                <span class="score-label">Average Score:</span>
+                <span class="score-value">5.0/5</span>
+            </div>
+            
+            <p><em>No specific feedback provided.</em></p>
+        </div>
+        
+        <div class="scored-section">
+            <h2>Cost Savings Delivered</h2>
+            <div class="score-display">
+                <span class="score-label">Average Score:</span>
+                <span class="score-value">4.0/5</span>
+            </div>
+            
+            <p><em>No specific feedback provided.</em></p>
+        </div>
+        
+        <div class="scored-section">
+            <h2>Innovation & Continuous Improvement</h2>
+            <div class="score-display">
+                <span class="score-label">Average Score:</span>
+                <span class="score-value">5.0/5</span>
+            </div>
+            
+            <p><em>No specific feedback provided.</em></p>
+        </div>
+        
+        <div class="scored-section">
+            <h2>Issues, Challenges & Accountability</h2>
+            <div class="score-display">
+                <span class="score-label">Average Score:</span>
+                <span class="score-value">5.0/5</span>
+            </div>
+            
+            
+    <div class="combined-feedback">
+        <h4>Combined Feedback from Leadership Reviews</h4>
+        <div class="feedback-synthesis">
+    
+            <p><strong>Overall Assessment:</strong> Thank you for your transparency and strategy around issues and challenges.</p>
+        
+            <p><strong>Strengths:</strong></p>
+            <ul class="synthesis-list">
+        <li>Thank you for your transparency and strategy around issues and challenges. Clearly owns gaps, and outlines specific corrective actions with timelines.</li></ul>
+        </div>
+    </div>
+    
+        </div>
+        
+        <div class="scored-section">
+            <h2>2026 Forward Strategy & Vision</h2>
+            <div class="score-display">
+                <span class="score-label">Average Score:</span>
+                <span class="score-value">5.0/5</span>
+            </div>
+            
+            
+    <div class="combined-feedback">
+        <h4>Combined Feedback from Leadership Reviews</h4>
+        <div class="feedback-synthesis">
+    
+            <p><strong>Overall Assessment:</strong> You both articulated a clear, compelling 2026 account roadmap tied to retention, growth, and differentiation, with defined priorities and sequencing.</p>
+        
+            <p><strong>Strengths:</strong></p>
+            <ul class="synthesis-list">
+        <li>You both articulated a clear, compelling 2026 account roadmap tied to retention, growth, and differentiation, with defined priorities and sequencing.</li></ul>
+        </div>
+    </div>
+    
+        </div>
+        
+        <div class="scored-section">
+            <h2>Personal Goals & Role Maturity</h2>
+            <div class="score-display">
+                <span class="score-label">Average Score:</span>
+                <span class="score-value">5.0/5</span>
+            </div>
+            
+            
+    <div class="combined-feedback">
+        <h4>Combined Feedback from Leadership Reviews</h4>
+        <div class="feedback-synthesis">
+    
+            <p><strong>Overall Assessment:</strong> Clearly defines measurable leadership goals that demonstrate role maturity, accountability, and impact on account performance.</p>
+        
+            <p><strong>Strengths:</strong></p>
+            <ul class="synthesis-list">
+        <li>Clearly defines measurable leadership goals that demonstrate role maturity, accountability, and impact on account performance. Monthly coaching and development plan - We are alined. I will support you to delegate and structure!</li></ul>
+        </div>
+    </div>
+    
+        </div>
+        
+        <div class="scored-section">
+            <h2>Executive Presence & Presentation Skills</h2>
+            <div class="score-display">
+                <span class="score-label">Average Score:</span>
+                <span class="score-value">5.0/5</span>
+            </div>
+            
+            
+    <div class="combined-feedback">
+        <h4>Combined Feedback from Leadership Reviews</h4>
+        <div class="feedback-synthesis">
+    
+            <p><strong>Overall Assessment:</strong> Clear and confident communicator with a structured and logical flow.</p>
+        
+            <p><strong>Areas for Development:</strong></p>
+            <ul class="synthesis-list">
+        <li>Clear and confident communicator with a structured and logical flow. Able to tell a concise story on your account with an executive presence. The self reflection Keith gave was honest, transparent and vulnerable. Dustin I hear you and Keith saying you can do it but you need to use your resources. Agreed</li></ul>
+        </div>
+    </div>
+    
+        </div>
+        
+
+    
+    <div class="follow-up-section">
+        <h2>🎯 2026 Development Focus & Follow-Up Items</h2>
+        <p class="follow-up-intro">
+            Based on your year-end presentation and executive feedback, the following areas have been identified 
+            for focused development and follow-through in 2026.
+        </p>
+    
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">Equipment Management - URGENT</span>
+                <span class="follow-up-source">— Keith Deuber (Self-Identified)</span>
+            </div>
+            <h3>Equipment Gap - Wrong Equipment Choice (Scrubbers vs Sweepers)</h3>
+            <p class="follow-up-quote">"Just to say it frankly, we chose the wrong piece of equipment coming into the account. That's no one's fault. As we're moving through Amazon, as we're maturing within Amazon, we're learning more and more what we need is staffing equipment. What we're dealing with with the current sites is the right on equipment. I think that's the biggest challenge we have being that with the amount of dust, cardboard debris, you know, anything you can think of from a warehouse perspective, we really need sweepers. Sweeper scrubbers or sweepers and when we went into this originally we focused on scrubbers. Scrubbers don't necessarily pick up debris which it gets clocked up. It gets there's a lot of issues when it comes to downtime with scrubbers in a warehouse setting. And so it's truly causing a challenge when it comes to operation and we saw it during peak big time."</p>
+            <p class="follow-up-action"><strong>Action:</strong> Q1-Q2 2026: (1) Work with procurement on existing sites + idle asset list, (2) Bill Darlington assessing equipment at warehouse, (3) Swap out scrubbers for sweepers at current sites, (4) Create equipment list for upcoming sites - 'Know which ones we need for which site types,' (5) Ready to order correct equipment when capturing new sites, (6) Lessons learned: warehouse = debris/dust = sweepers; offices = floors = scrubbers, (7) Peak proactive response: had 10+ equipment rental agencies ready, got equipment same/next day - maintain this contingency approach</p>
+        </div>
+        
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">Recruiting & Staffing</span>
+                <span class="follow-up-source">— Keith Deuber & Dustin Smith (Client's #1 Concern)</span>
+            </div>
+            <h3>Recruiting Delays During High Volume Events - Need Dedicated Recruiters</h3>
+            <p class="follow-up-quote">"Keith: 'Start this off by saying our recruiters are good. They're not bad. I think with the demand during HV high volume events being prime peak, it stretches them extremely thin, which causes a lot of delays in staffing.' Dustin: 'I would say this is his or their biggest concern, right. Like if you had to say the one thing that we need to improve upon, it's the ability to staff up, staff down, whether it's during high volume events or just we've got turnover. I think this is where we can show the best improvement for the client.'"</p>
+            <p class="follow-up-action"><strong>Action:</strong> Long-term solution: (1) Dedicated recruiters for Amazon account vs shared resources - 'In order to run this as we grow in order to run during high volume events even scaling up during growth, it's going to be key to take a look at dedicated recruiters that can spend from 6:00 AM their entire day on Amazon rather than being pulled in different directions,' (2) Short-term bridges: bi-weekly recruiting calls with site teams and recruiting (accurate opening count), (3) Centralized faces and spaces document updated weekly, (4) Proactive hiring: identify employees being written up - 'Hire to those positions rather than waiting till they're gone and it takes two or three weeks for a new hire to get in,' (5) CLIENT'S BIGGEST CONCERN per peak debrief with Mark - must show improvement here</p>
+        </div>
+        
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">Quality & Risk Management</span>
+                <span class="follow-up-source">— Keith Deuber (Self-Identified)</span>
+            </div>
+            <h3>Proactive Site Assessment Gap - High Performers Suddenly Face PIPs</h3>
+            <p class="follow-up-quote">"When I say this, it's based upon feedback and experience over the past year and it's referring to we have sites that are doing really well, 95 plus for months on end and then next thing you know the Amazon changes in SPM, RPM walks the site, VP comes in, does a visit and then we're fending off a pip. What this is stemming from is that once we see a site that's scoring well, we take our foot off the pedal. Oh, it's perfectly fine. It's good. We don't need to worry about it. And then we're playing catch up and being reactive."</p>
+            <p class="follow-up-action"><strong>Action:</strong> Q1 2026 ROLLOUT: (1) Revamped TQM process tailored to Amazon, (2) Monthly assessments: operations, building condition, processes, (3) Account team owns process, R&D team executes, (4) Keith: 'Old TQM process worked now. It's just I don't think we did it enough and I think there was too many lines on it. So this is scaled down version identified and really strategically implemented,' (5) Goal: Identify gaps BEFORE RPM/VP identifies them, (6) Prevent complacency on high-performing sites, (7) Valarie: 'You'll pilot this and then you'll let us know. Specifically me, you'll let me know... this will work'</p>
+        </div>
+        
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">Innovation & Technology</span>
+                <span class="follow-up-source">— Keith Deuber & Dustin Smith</span>
+            </div>
+            <h3>Mobile Rollout + Service Verification - Amazon Pilot</h3>
+            <p class="follow-up-quote">"Keith: 'Mobile rollout and service verification. I know this was previously approved and we are going and executing the pilot for three sites, two AR sorts which are our largest, probably our toughest implementation sites so we can finalize the process and how to implement this for Amazon and one TNS site. Specifically we're going to focus on bathrooms and break rooms. Ultimately data sharing transparency is what we're going for. They want to see it. They're asking for it.' Dustin: 'We did talk during our lessons learned conversation with Mark specifically about the service verification and he was very excited about this. He actually pushed us into taking on GYR1 in Phoenix and do it at an AR sort as well. So the client is very interested in seeing how this unfolds.'"</p>
+            <p class="follow-up-action"><strong>Action:</strong> Q1-Q3 2026: (1) Three-site pilot: 2 AR sorts (largest/toughest) + 1 TNS, (2) Focus: bathrooms and break rooms, (3) Client pushed for GYR1 Phoenix inclusion, (4) Goal: Data sharing transparency - 'They want to see it. They're asking for it,' (5) Amazon's Project Nexus: 4-year project to do this themselves - SBM goal is to beat them to it, (6) Valarie question: 'Will they pay for it?' - Dustin: Not in pilot phase, but potentially at renewal if major differentiation shown, (7) Rob Morrison emphasized data sharing - 'They're OK providing room book uplifts. We just need to show them the data that says we need it,' (8) Pilot → rollout → position as differentiation for renewal</p>
+        </div>
+        
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">Innovation & Technology</span>
+                <span class="follow-up-source">— Keith Deuber (Self-Identified)</span>
+            </div>
+            <h3>Real-Time Equipment Health and Utilization - QR Code System</h3>
+            <p class="follow-up-quote">"Implementing QR code based check in, check out process for the equipment again challenge there is the downtime for the equipment with with service coming on site. Putting QR codes on the machines, check in, check out, being able to identify yellow and red, meaning if a machine's down or if it needs consumables on it or whatever the case may be, but also tracking downtime is going to be beneficial to both operations and procurement."</p>
+            <p class="follow-up-action"><strong>Action:</strong> 2026: (1) QR codes on all equipment for check-in/check-out, (2) Track equipment health: green/yellow/red status, (3) Identify: machine down, needs consumables, maintenance required, (4) Track downtime data for operations decisions, (5) Support procurement with utilization data, (6) Ties to equipment gap challenge - prevent downtime with better tracking, (7) Complements peak strategy of having rental equipment ready</p>
+        </div>
+        
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">People & Culture</span>
+                <span class="follow-up-source">— Keith Deuber (Self-Identified)</span>
+            </div>
+            <h3>Operational Excellence Workforce Development - MIT University</h3>
+            <p class="follow-up-quote">"Operational excellence to workforce development. We already talked about TQM process, but also creating an Amazon aligned MIT University essentially. We've identified a few sites that we're going to have MIT University. Those would be identified Amazon, Amazon led or Amazon account based people for growth and for other sites if we do a turnover, but then also identifying an Amazon site that we can bring Val's MIT's too and spend 2 weeks there to really understand operations and the processes of which we perform."</p>
+            <p class="follow-up-action"><strong>Action:</strong> 2026: (1) Create MIT University at identified Amazon sites, (2) Amazon-specific training for SBM MIT program candidates - 2 weeks on Amazon site, (3) Train Amazon account-based people for growth and backfill, (4) Bring Valarie's MIT candidates to Amazon for 2-week immersion in operations and processes, (5) Build Amazon pipeline for growth, (6) Develop next-gen leaders with Amazon operational DNA from start</p>
+        </div>
+        
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">Personal Goals & Development</span>
+                <span class="follow-up-source">— Keith Deuber (Self-Identified with Valarie/Nicole Praise)</span>
+            </div>
+            <h3>Presentation and Executive Storytelling - Drive vs Support by May</h3>
+            <p class="follow-up-quote">"Keith: 'Throughout my career I've been kind of the color commentator where I would partner with an executive like Dustin and we put together a presentation, but he would drive the presentation and putting it together and I would provide the color commentary. By the end of May, I really want to get to a point where I can drive that because I feel like I can do it, but I've not done it yet because I've always been the color commentary.' Valarie: 'Today's presentation was a huge step for you, Keith, in the right direction. You had your own section, which was independent of Dustin's section. You're actively working on it.' Nicole: 'Keith, your personal goals that you laid out is probably the best that I've seen anyone layout.'"</p>
+            <p class="follow-up-action"><strong>Action:</strong> MAY 2026: (1) Structure executive story development plan with Dustin as mentor, (2) Lead next presentation instead of supporting, (3) Valarie already noted progress: 'You had your own section today,' (4) Build on strengths: 'Keith, you come really strongly with the operational support. I feel almost every time you talk like if you said it, then it's facts,' (5) Practice driving narrative vs providing color commentary, (6) Leverage Dustin's strengths (controlling room, preparation) through mentorship, (7) Nicole: 'Lots of presentations I'd done with you... where I have led it, but you've been the supporting cast member. If you say it for operations, it's fact. No one's going to question you at the table'</p>
+        </div>
+        
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">Personal Goals & Development</span>
+                <span class="follow-up-source">— Keith Deuber (Self-Identified)</span>
+            </div>
+            <h3>Driving Strategic Initiatives to Completion - Stay Out of Weeds</h3>
+            <p class="follow-up-quote">"Keith: 'I'm a visionary in terms of what we need to get done and what we need to implement. But I don't always see it to the end. I think part of that is my deep involvement within operations and getting pulled multiple different directions. There's going to be two things here. One, which is I hire people that can do the job. I need to let them do the job. And it's not so much micromanaging, it's more so I'm in the weeds, which is causing a conflict with my prioritization of the strategic initiatives. The strategic initiatives that we have set are extremely important to put us in position for extreme growth going into 2027 or 2026 2027.'"</p>
+            <p class="follow-up-action"><strong>Action:</strong> MARCH 2026: (1) Establish personal prioritization framework with Dustin's mentoring, (2) 'Hire people that can do the job. I need to let them do the job' - delegate operations vs being in weeds, (3) Protect strategic initiative time from operational firefighting, (4) Critical: TQM rollout, mobile/service verification, MIT University, equipment gap - these set up 2026-2027 growth, (5) Trust Bill, Sam, Kathy to handle operations - Keith shifts to strategic, (6) Balance: operational expertise is strength, but can't let it pull from strategic work</p>
+        </div>
+        
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">Personal Goals & Development</span>
+                <span class="follow-up-source">— Keith Deuber (Self-Identified)</span>
+            </div>
+            <h3>Build and Evaluate Personal Leadership Brand - Learn to Sell Yourself</h3>
+            <p class="follow-up-quote">"Keith: 'I suck at taking credit for anything that our team does. By the end of April establish a brand plan outlining the key attributes to what I do well throughout SBM. It's something that needs to happen. I feel extremely uncomfortable doing it, but in order to take that next step, I really need to figure out how to and learn how to sell myself in quote unquote.' Valarie: 'Thank you for your vulnerability and transparency. Like I feel like these are really honest goals, really good goals.'"</p>
+            <p class="follow-up-action"><strong>Action:</strong> APRIL 2026: (1) Establish brand plan: what are Keith's key attributes?, (2) Document wins and team accomplishments - take credit appropriately, (3) Learn to 'sell myself' despite discomfort, (4) Valarie: 'I appreciate that. You're saying this is what I want to work on, you're actively working on it,' (5) This enables next career step - can't advance if leadership doesn't know what you've accomplished, (6) '11 years and I've been operating... cleaning toilets and really getting my hands dirty. I'm in a space where I need to take the next step to the next level'</p>
+        </div>
+        
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">Communication & Data</span>
+                <span class="follow-up-source">— James Peate</span>
+            </div>
+            <h3>Add Measurable Impact and Data to Validate Claims in Presentations</h3>
+            <p class="follow-up-quote">"James: 'Two development areas. These aren't, these are ones that were addressed in the voiceover, but I think would have been helpful if there was more measurable impact and data to prove out, prove the outcomes and validate the claims on some of the slides. You did talk through it all, so I didn't have any questions as you went through, but it could be something that comes through in the visuals for people that maybe aren't listening to the narrative.'"</p>
+            <p class="follow-up-action"><strong>Action:</strong> Future presentations: (1) Add measurable data to slides (not just voiceover), (2) Quantify outcomes: 93.3% average, zero PIPs, 12-15 racks/day vs 3, 45-min break room cleaning, (3) Make visuals self-explanatory for people not listening to narrative, (4) Validate claims with data on slides themselves, (5) Balance operational detail (strength) with executive-level metrics (development area)</p>
+        </div>
+        
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">Communication & Data</span>
+                <span class="follow-up-source">— James Peate</span>
+            </div>
+            <h3>Clearly Identify Problem Statements in Innovation Slides</h3>
+            <p class="follow-up-quote">"James: 'The other area which again was addressed in the voiceover and the practical example in the innovation slide. When I first looked at that, I wasn't 100% clear what the problem statement was solving for was. There was some solutions and benefits and outcomes, but no clearly identified problem statement. And again, you said it in the voiceover, but could be something helpful that's in the visuals depending on who's in the room and who we will be looking at these types of presentations after.'"</p>
+            <p class="follow-up-action"><strong>Action:</strong> Future presentations: (1) Innovation slides need clear problem statement first, (2) Structure: Problem → Solution → Benefits → Outcomes, (3) Example: Problem = 'Under-rack cleaning taking 3 months, causing failures' → Solution = 'Blowers' → Outcome = '12-15 racks/day, monthly cadence,' (4) Make problem visible on slide (not just voiceover), (5) Helps audience understand context without narration</p>
+        </div>
+        
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">Communication & Data</span>
+                <span class="follow-up-source">— Nick Viskovich & James Peate</span>
+            </div>
+            <h3>Develop Written Narrative Capability for Amazon (Not Just Slide Decks)</h3>
+            <p class="follow-up-quote">"Nick: 'Key to unlocking executive sponsorship and growth is really being able to effectively tell your data, tell your story, both with data and anecdotes across the portfolio. One thing we're going to want to do to be effective communicators, especially with the audience here, is understand how to pull that into a written narrative with that data and the anecdotes that helps unlock that because that's how everything is digested and shared internally. A good presentation and slide deck is really helpful in this environment and I realize that's really how SBM communicates. Amazon, it's much more about the written narrative. The written narrative is the language of business there. Lean on James and myself to distill the work you're doing into those sound bites that are able to really show your work and educate the Amazon team on why we are a partner that can scale with them.'"</p>
+            <p class="follow-up-action"><strong>Action:</strong> Ongoing: (1) Learn Amazon's written narrative communication style (vs SBM's slide deck style), (2) Combine data + anecdotes in written format, (3) Work with Nick V and James to distill work into written sound bites, (4) Written narratives = how Amazon digests and shares information internally, (5) Develop playbooks that scale across portfolio with written narrative format, (6) QBRs coming up: opportunity to practice written narrative with Nick/James support, (7) Goal: 'Educate Amazon team on why we are a partner that can scale with them'</p>
+        </div>
+        </div>
+
+</body>
+</html>

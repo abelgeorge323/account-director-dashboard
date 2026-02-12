@@ -346,10 +346,14 @@ def extract_scores_and_feedback(df):
         review["totalScore"] = total
         
         # Handle joint reviews (e.g., "Brian Davis / Justin Homa")
+        # EXCLUDE Justin Homa from joint reviews (per user request)
         if " / " in review["accountDirector"]:
             # Split the names and create separate reviews for each
             names = [name.strip() for name in review["accountDirector"].split(" / ")]
             for name in names:
+                # Skip Justin Homa in joint reviews
+                if name == "Justin Homa":
+                    continue
                 individual_review = review.copy()
                 individual_review["accountDirector"] = name
                 individual_review["scores"] = review["scores"].copy()
@@ -361,27 +365,30 @@ def extract_scores_and_feedback(df):
     return reviews
 
 def load_verticals(vertical_path="../data/verticals.csv"):
-    """Load vertical and tier mapping."""
+    """Load vertical, tier, and role mapping."""
     try:
         vertical_df = pd.read_csv(vertical_path)
-        # Return dict with both vertical and tier
+        # Return dict with vertical, tier, and role
         result = {}
         for idx, row in vertical_df.iterrows():
             ad_name = row["Account Director"].strip() if pd.notna(row["Account Director"]) else ""
             vertical = row["Vertical"].strip() if pd.notna(row["Vertical"]) else "N/A"
             tier = row["Tier"].strip() if pd.notna(row["Tier"]) and str(row["Tier"]).strip() else ""
-            result[ad_name] = {"vertical": vertical, "tier": tier}
+            role = row["Role"].strip() if "Role" in row and pd.notna(row.get("Role")) and str(row.get("Role")).strip() else "Account Director"
+            result[ad_name] = {"vertical": vertical, "tier": tier, "role": role}
         return result
     except FileNotFoundError:
         return {}
     except KeyError:
-        # If Tier column doesn't exist, fall back to vertical only
+        # If columns don't exist, fall back
         vertical_df = pd.read_csv(vertical_path)
         result = {}
         for idx, row in vertical_df.iterrows():
             ad_name = row["Account Director"].strip() if pd.notna(row["Account Director"]) else ""
             vertical = row["Vertical"].strip() if pd.notna(row["Vertical"]) else "N/A"
-            result[ad_name] = {"vertical": vertical, "tier": ""}
+            tier = row["Tier"].strip() if pd.notna(row.get("Tier")) and str(row.get("Tier")).strip() else ""
+            role = row["Role"].strip() if "Role" in row and pd.notna(row.get("Role")) and str(row.get("Role")).strip() else "Account Director"
+            result[ad_name] = {"vertical": vertical, "tier": tier, "role": role}
         return result
 
 def aggregate_reviews(reviews, verticals, financial_data):
@@ -434,6 +441,7 @@ def aggregate_reviews(reviews, verticals, financial_data):
             "growth": fin_data.get('growth_avg'),
             "vertical": vertical_data.get("vertical", "N/A"),
             "tier": vertical_data.get("tier", ""),
+            "role": vertical_data.get("role", "Account Director"),
             "reviewCount": len(ad_review_list),
             "avgScores": avg_scores,
             "avgTotalScore": avg_total,

@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025 Year-End Scorecard - Rade Kukobat</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            background: #ffffff;
+            padding: 2rem;
+            max-width: 8.5in;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: #1a365d;
+            margin-bottom: 0.5rem;
+        }
+
+        h2 {
+            font-size: 1.35rem;
+            font-weight: 600;
+            color: #2c5282;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 0.5rem;
+        }
+
+        h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #2d3748;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        h4 {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #4a5568;
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .header-section {
+            background: linear-gradient(135deg, #1a365d 0%, #2c5282 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+        }
+
+        .header-section h1 {
+            color: white;
+            margin-bottom: 1.5rem;
+            font-size: 1.85rem;
+        }
+
+        .header-metadata {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.8rem;
+            margin-top: 1.2rem;
+        }
+
+        .metadata-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.6rem;
+            border-radius: 4px;
+        }
+
+        .metadata-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.8;
+            margin-bottom: 0.25rem;
+        }
+
+        .metadata-value {
+            font-size: 1.1rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+        }
+
+        .score-summary-first-page {
+            background: #f7fafc;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+        }
+
+        .score-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            background: white;
+        }
+
+        .score-table th {
+            background: #2c5282;
+            color: white;
+            padding: 0.75rem;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .score-table td {
+            padding: 0.75rem;
+            border: 1px solid #e2e8f0;
+        }
+
+        .score-table tr:nth-child(even) {
+            background: #f7fafc;
+        }
+
+
+        /* Follow-Up Questions Section */
+        .follow-up-section {
+            background: #fff8e1;
+            border-left: 4px solid #ff9800;
+            padding: 24px;
+            margin: 32px 0;
+            border-radius: 8px;
+            page-break-inside: avoid;
+        }
+
+        .follow-up-intro {
+            color: #e65100;
+            margin-bottom: 1rem;
+        }
+
+        .follow-up-item {
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 16px 0;
+        }
+
+        .follow-up-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .follow-up-category {
+            background: #2196f3;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .follow-up-source {
+            color: #666;
+            font-size: 14px;
+            font-style: italic;
+        }
+
+        .follow-up-quote {
+            background: #f5f5f5;
+            border-left: 3px solid #ff9800;
+            padding: 12px 16px;
+            margin: 12px 0;
+            font-style: italic;
+            color: #333;
+        }
+
+        .follow-up-action {
+            margin-top: 12px;
+            color: #333;
+        }
+
+        /* Scored Section - One section per page */
+        .scored-section {
+            page-break-after: always;
+            page-break-inside: avoid;
+            margin: 1.5rem 0;
+            padding: 1.5rem;
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            min-height: 400px;
+        }
+
+        .score-display {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin: 1rem 0;
+            padding: 1rem;
+            background: #f7fafc;
+            border-radius: 4px;
+        }
+
+        .score-label {
+            font-weight: 600;
+            color: #4a5568;
+        }
+
+        .score-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #2c5282;
+        }
+
+        .combined-feedback {
+            background: #f8f9fa;
+            border-left: 4px solid #2c5282;
+            padding: 1.25rem;
+            margin: 1rem 0;
+            border-radius: 4px;
+        }
+
+        .combined-feedback h4 {
+            color: #2c5282;
+            margin-bottom: 0.75rem;
+            font-size: 1rem;
+        }
+
+        .feedback-synthesis {
+            margin-top: 0.75rem;
+        }
+
+        .feedback-point {
+            padding: 0.75rem;
+            margin: 0.5rem 0;
+            background: white;
+            border-radius: 4px;
+            border-left: 3px solid #2c5282;
+            line-height: 1.6;
+        }
+
+        .feedback-point strong {
+            color: #2c5282;
+            font-size: 0.9rem;
+        }
+
+        .synthesis-list {
+            margin: 0.75rem 0 1rem 1.5rem;
+            padding-left: 1rem;
+        }
+
+        .synthesis-list li {
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+            color: #2d3748;
+        }
+
+        .feedback-synthesis p {
+            margin: 0.75rem 0;
+            line-height: 1.6;
+        }
+
+        .feedback-synthesis strong {
+            color: #2c5282;
+            font-weight: 600;
+        }
+
+        @media print {
+            * {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            
+            body {
+                padding: 0.25in;
+                font-size: 9pt;
+                line-height: 1.3;
+            }
+            
+            h1 {
+                font-size: 16pt;
+                margin-bottom: 0.3rem;
+            }
+            
+            h2 {
+                font-size: 12pt;
+                margin-top: 0.5rem;
+                margin-bottom: 0.4rem;
+                page-break-after: avoid;
+            }
+            
+            h3 {
+                font-size: 10pt;
+                margin-top: 0.4rem;
+                margin-bottom: 0.3rem;
+            }
+            
+            .header-section {
+                padding: 1rem;
+                margin-bottom: 1rem;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            
+            .header-metadata {
+                gap: 0.5rem;
+            }
+            
+            .metadata-item {
+                padding: 0.4rem;
+            }
+            
+            .metadata-label {
+                font-size: 7pt;
+            }
+            
+            .metadata-value {
+                font-size: 9pt;
+            }
+            
+            .score-summary-first-page {
+                page-break-after: always;
+                padding: 0.75rem;
+                margin-bottom: 1rem;
+            }
+            
+            .score-table {
+                margin: 0.75rem 0;
+                font-size: 9pt;
+            }
+            
+            .score-table th,
+            .score-table td {
+                padding: 0.35rem;
+            }
+            
+            .scored-section {
+                page-break-after: always;
+                page-break-inside: avoid;
+                margin: 0.5rem 0;
+                padding: 0.75rem;
+                border: 1px solid #e2e8f0;
+                min-height: unset;
+            }
+            
+            .score-display {
+                margin: 0.5rem 0;
+                padding: 0.5rem;
+            }
+            
+            .score-label {
+                font-size: 9pt;
+            }
+            
+            .score-value {
+                font-size: 14pt;
+            }
+            
+            .combined-feedback {
+                padding: 0.75rem;
+                margin: 0.5rem 0;
+            }
+            
+            .combined-feedback h4 {
+                font-size: 9pt;
+                margin-bottom: 0.4rem;
+            }
+            
+            .feedback-synthesis p {
+                margin: 0.4rem 0;
+                line-height: 1.4;
+                font-size: 9pt;
+            }
+            
+            .feedback-synthesis strong {
+                font-size: 9pt;
+            }
+            
+            .synthesis-list {
+                margin: 0.4rem 0 0.5rem 1rem;
+                padding-left: 0.5rem;
+            }
+            
+            .synthesis-list li {
+                margin-bottom: 0.25rem;
+                line-height: 1.4;
+                font-size: 8.5pt;
+            }
+            
+            .follow-up-section {
+                page-break-before: always;
+                page-break-inside: avoid;
+                padding: 1rem;
+                margin: 1rem 0;
+            }
+            
+            .follow-up-item {
+                padding: 0.75rem;
+                margin: 0.75rem 0;
+            }
+            
+            .follow-up-quote {
+                padding: 0.5rem;
+                margin: 0.5rem 0;
+                font-size: 8.5pt;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header-section">
+        <h1>2025 Year-End Account Review & 2026 QBR Readiness Scorecard</h1>
+        <div class="header-metadata">
+            <div class="metadata-item">
+                <div class="metadata-label">Account Director</div>
+                <div class="metadata-value">Rade Kukobat</div>
+            </div>
+            <div class="metadata-item">
+                <div class="metadata-label">Account</div>
+                <div class="metadata-value">Eli Lilly</div>
+            </div>
+            <div class="metadata-item">
+                <div class="metadata-label">Tier</div>
+                <div class="metadata-value"><span style="background: #10b981; color: white; padding: 0.3rem 0.8rem; border-radius: 12px; font-weight: 600; font-size: 0.9rem;">Tier 6</span></div>
+            </div>
+            <div class="metadata-item">
+                <div class="metadata-label">Review Date</div>
+                <div class="metadata-value">January 2026</div>
+            </div>
+            <div class="metadata-item">
+                <div class="metadata-label">Total Reviews</div>
+                <div class="metadata-value">5</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="score-summary-first-page">
+        <h2>Executive Summary</h2>
+
+        <table class="score-table">
+            <thead>
+                <tr>
+                    <th>Evaluation Category</th>
+                    <th style="text-align: center;">Average Score</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+        <tr>
+            <td>Key Projects & Initiatives</td>
+            <td style="text-align: center; font-weight: 600;">3.4</td>
+        </tr>
+        
+        <tr>
+            <td>Value Adds & Cost Avoidance</td>
+            <td style="text-align: center; font-weight: 600;">3.2</td>
+        </tr>
+        
+        <tr>
+            <td>Cost Savings Delivered</td>
+            <td style="text-align: center; font-weight: 600;">2.2</td>
+        </tr>
+        
+        <tr>
+            <td>Innovation & Continuous Improvement</td>
+            <td style="text-align: center; font-weight: 600;">3.6</td>
+        </tr>
+        
+        <tr>
+            <td>Issues, Challenges & Accountability</td>
+            <td style="text-align: center; font-weight: 600;">3.6</td>
+        </tr>
+        
+        <tr>
+            <td>2026 Forward Strategy & Vision</td>
+            <td style="text-align: center; font-weight: 600;">3.2</td>
+        </tr>
+        
+        <tr>
+            <td>Personal Goals & Role Maturity</td>
+            <td style="text-align: center; font-weight: 600;">3.2</td>
+        </tr>
+        
+        <tr>
+            <td>Executive Presence & Presentation Skills</td>
+            <td style="text-align: center; font-weight: 600;">3.8</td>
+        </tr>
+        
+        <tr style="background: #e8f5e9; border-top: 3px solid #2c5282;">
+            <td style="font-weight: 700; text-transform: uppercase;">Overall Score</td>
+            <td style="text-align: center; font-weight: 700; font-size: 1.2rem; color: #2c5282;">26.2/40</td>
+        </tr>
+        
+            </tbody>
+        </table>
+    </div>
+
+    
+        <div class="scored-section">
+            <h2>Key Projects & Initiatives</h2>
+            <div class="score-display">
+                <span class="score-label">Average Score:</span>
+                <span class="score-value">3.4/5</span>
+            </div>
+            
+            
+    <div class="combined-feedback">
+        <h4>Combined Feedback from Leadership Reviews</h4>
+        <div class="feedback-synthesis">
+    
+            <p><strong>Overall Assessment:</strong> How did the routes validate our reduction in complaints? Rade discussed building routes.</p>
+        
+            <p><strong>Strengths:</strong></p>
+            <ul class="synthesis-list">
+        <li>You did really well giving a project and initiative overview. Clearly articulated the scope and outcomes and the client impact specifically as it pertains to complaints. I believe the graph as helpful, and the results were clear. If you are going to put leaders on make sure you put their titles. Tony is more than a huge leader what is his title why is it relevant.</li><li>Good story on some of the process improvements and key projects that have been implemented.</li></ul>
+            <p><strong>Areas for Development:</strong></p>
+            <ul class="synthesis-list">
+        <li>How did the routes validate our reduction in complaints? Rade discussed building routes. Need to discuss results.</li><li>Key projects on the path forward were great, but need to be sure to document timelines and have key milestones to accomplish the goals. From a historical perspective its challenging as Rade is new, however there was an opportunity to speak to the changes made, development of leaders, and the massive progress the site has made over the last 6 months.</li><li>Rade clearly identified the major 2025 initiatives within his scope as Interim Account Manager, particularly the implementation of return-to-office readiness, night route realignment, workload balancing, and improved management systems. These efforts were necessary and appropriately prioritized given the account’s state. To strengthen this section, future articulation should more clearly frame these initiatives in terms of client impact and outcomes, not just execution, and explicitly distinguish between baseline operational requirements and discretionary leadership decision</li></ul>
+        </div>
+    </div>
+    
+        </div>
+        
+        <div class="scored-section">
+            <h2>Value Adds & Cost Avoidance</h2>
+            <div class="score-display">
+                <span class="score-label">Average Score:</span>
+                <span class="score-value">3.2/5</span>
+            </div>
+            
+            
+    <div class="combined-feedback">
+        <h4>Combined Feedback from Leadership Reviews</h4>
+        <div class="feedback-synthesis">
+    
+            <p><strong>Overall Assessment:</strong> Value add… didn’t include key project, value add for composting etc...</p>
+        
+            <p><strong>Strengths:</strong></p>
+            <ul class="synthesis-list">
+        <li>Value adds - Subcontractor tracker created /weekly standard for supplies at no charge to CBRE was a good one! 
+Cost Avoidance - Hand sanitizers works / OT reducing overtime is an SBM problem not a customer problem. While I think this is thoughtful it may not be exactly relevant. Partial credit provided for 2 items Value add and one cost avoidance.</li><li>Missed on this. His understanding of cost avoidance, Good Value add with support and assisting client with program management. After explanation, he was able to speak to avoided cost of hand sanitizer that was implemented from one of his projects.</li></ul>
+            <p><strong>Areas for Development:</strong></p>
+            <ul class="synthesis-list">
+        <li>Value add… didn’t include key project, value add for composting etc</li><li>There are two stories to tell here, but the impact on Value adds / Cost Avoidance to the customer was missed. The site has an incredible story to tell on the increased revenue and budget progress made with reducing cost of supply spend an overtime, This is not to be overlooked as its taken great leadership to get these results. The last 6 months at the site have had a focus on retaining our work as we have been at risk, now with the right leadership in place and documented operational process.... we need to focus on our path forward and what really sets us apart as a service provider.</li><li>Learning curve acknowledged - Rade demonstrated thoughtful intent around value creation through improved visibility, transparency, and partnership with CBRE. These efforts helped stabilize operations and reduce friction across teams. However, value adds were described more qualitatively than quantitatively. To elevate this section, Rade should translate these improvements into clearer operational, financial, or risk-avoidance outcomes that matter to the client.</li></ul>
+        </div>
+    </div>
+    
+        </div>
+        
+        <div class="scored-section">
+            <h2>Cost Savings Delivered</h2>
+            <div class="score-display">
+                <span class="score-label">Average Score:</span>
+                <span class="score-value">2.2/5</span>
+            </div>
+            
+            
+    <div class="combined-feedback">
+        <h4>Combined Feedback from Leadership Reviews</h4>
+        <div class="feedback-synthesis">
+    
+            <p><strong>Overall Assessment:</strong> Need clear understanding of cost savings...</p>
+        
+            <p><strong>Strengths:</strong></p>
+            <ul class="synthesis-list">
+        <li>Need clear understanding of cost savings</li><li>He did not clearly articulate any cost savings. Largely due to him being new as an Account Manager.</li><li>Cost savings were not clearly articulated as discrete outcomes in 2025. While route optimization and workload balancing likely contributed to efficiency, this section would benefit from clearer ownership of savings delivered, avoided costs, or sustained efficiencies. Even directional estimates or examples of disciplined cost control would strengthen credibility here.</li></ul>
+            <p><strong>Areas for Development:</strong></p>
+            <ul class="synthesis-list">
+        <li>Savings - Supply cost reduced. Supply budget is $90k a month down to $58k use of the total PO, but we are billing the full amount this is not a cost savings to the customer. A 2026, goal will be to initiate some cost savings. Unfortunately I cannot give you any credit for this one.</li><li>This was a learning opportunity for Rade as we have had a few projects that could be categorized as cost avoidance or cost savings, but not really articulated in the presentation.</li></ul>
+        </div>
+    </div>
+    
+        </div>
+        
+        <div class="scored-section">
+            <h2>Innovation & Continuous Improvement</h2>
+            <div class="score-display">
+                <span class="score-label">Average Score:</span>
+                <span class="score-value">3.6/5</span>
+            </div>
+            
+            
+    <div class="combined-feedback">
+        <h4>Combined Feedback from Leadership Reviews</h4>
+        <div class="feedback-synthesis">
+    
+            <p><strong>Overall Assessment:</strong> Discussed training and highlights...</p>
+        
+            <p><strong>Strengths:</strong></p>
+            <ul class="synthesis-list">
+        <li>Love the QR code innovation on supplies. Lilly is a flagship account we have to strategically prepare for 2026 with better strategy because more innovation is needed. Hand sanitizers is a weak innovation. The sheet is a good process innovation, not entered as report its huge miss using our tool is what makes us different. Great job on 5s and floor care. *** 2026 roadmap to innovation please turn in by 2/16.  ***</li><li>Get representation of Innovations and Improvements implemented. Good explanation and story behind each.</li></ul>
+            <p><strong>Areas for Development:</strong></p>
+            <ul class="synthesis-list">
+        <li>Discussed training and highlights</li><li>Similar to cost savings, the account has been heavily focused on "getting back to basics" rather being in innovative space. This was challenging to navigate in conversation, but Rade's passion really spoke in this section. We have a lot to look forward to in 2026, and Rade demonstrated his excitement to innovate and improve.</li><li>Rade showed a practical approach to continuous improvement by implementing management systems that improved visibility and accountability and strengthened the partnership with CBRE. While these changes were more evolutionary than innovative, they were appropriate for the role and timing. To reach a higher rating, future reviews should highlight lessons learned, measurable improvements, and how these practices can be standardized or scaled.</li></ul>
+        </div>
+    </div>
+    
+        </div>
+        
+        <div class="scored-section">
+            <h2>Issues, Challenges & Accountability</h2>
+            <div class="score-display">
+                <span class="score-label">Average Score:</span>
+                <span class="score-value">3.6/5</span>
+            </div>
+            
+            
+    <div class="combined-feedback">
+        <h4>Combined Feedback from Leadership Reviews</h4>
+        <div class="feedback-synthesis">
+    
+            <p><strong>Overall Assessment:</strong> Lists challenges...</p>
+        
+            <p><strong>Strengths:</strong></p>
+            <ul class="synthesis-list">
+        <li>I am well versed in your issues and challenges. I appreciated the transparency. I do feel like we went a little light on the true challenges or depth of the challenges. Clearly owned the gaps and outlined the corrective actions.</li><li>Good illustration of this topic. Good information.</li><li>Rade demonstrated transparency and accountability in acknowledging the constraints of the role and the operational realities of the account. He communicated challenges clearly and focused on corrective actions within his control. This section reflected maturity and credibility. Adding clearer timelines and success metrics for corrective actions would further strengthen accountability signaling.</li></ul>
+            <p><strong>Areas for Development:</strong></p>
+            <ul class="synthesis-list">
+        <li>Lists challenges</li><li>Challenges were discussed throughout the presentation, specifically around leadership, tenure of staff, and processes being followed at the site. There was still an opportunity to really call these items out and address head on as some of the major accomplishments of the last year were identifying and solving these challenges. Rade gave a lot of shout outs to the team that has supported and there is an amazing story to tell here.</li></ul>
+        </div>
+    </div>
+    
+        </div>
+        
+        <div class="scored-section">
+            <h2>2026 Forward Strategy & Vision</h2>
+            <div class="score-display">
+                <span class="score-label">Average Score:</span>
+                <span class="score-value">3.2/5</span>
+            </div>
+            
+            
+    <div class="combined-feedback">
+        <h4>Combined Feedback from Leadership Reviews</h4>
+        <div class="feedback-synthesis">
+    
+            <p><strong>Overall Assessment:</strong> Focus on dates...</p>
+        
+            <p><strong>Strengths:</strong></p>
+            <ul class="synthesis-list">
+        <li>Clearly articulated what was presented. Good detail and explanation on the why it is important.</li></ul>
+            <p><strong>Areas for Development:</strong></p>
+            <ul class="synthesis-list">
+        <li>Focus on dates</li><li>Excellent job on the 2026 strategy and goals. However, a goal without a date is a wish. Can you follow up on every item you plan to do you should be able to provide monthly updates on how things are going.</li><li>The path forward section was a great closure and demonstrated Rade's excitement and passion. Rade is a new leader, and has been on the front lines over the last several months, but you could really see his vision in this section for items he would like to accomplish. It will be very important to demonstrate key milestones in the upcoming projects, and send out communications as things are completed.</li><li>Rade outlined a logical forward direction focused on continued stabilization, stronger management systems, and improved alignment with CBRE. The strategy was appropriate given the interim nature of the role. To elevate this section, future articulation should include clearer prioritization and sequencing, particularly around how the account will be positioned for long-term success beyond interim leadership.</li></ul>
+        </div>
+    </div>
+    
+        </div>
+        
+        <div class="scored-section">
+            <h2>Personal Goals & Role Maturity</h2>
+            <div class="score-display">
+                <span class="score-label">Average Score:</span>
+                <span class="score-value">3.2/5</span>
+            </div>
+            
+            
+    <div class="combined-feedback">
+        <h4>Combined Feedback from Leadership Reviews</h4>
+        <div class="feedback-synthesis">
+    
+            <p><strong>Overall Assessment:</strong> Needs clear dates and deliverable...</p>
+        
+            <p><strong>Strengths:</strong></p>
+            <ul class="synthesis-list">
+        <li>Needs clear dates and deliverable</li></ul>
+            <p><strong>Areas for Development:</strong></p>
+            <ul class="synthesis-list">
+        <li>Good Goals but need more closure dates to these,</li><li>Rade is new in the role and still growing. Its important to lead the growth mindset and how our daily activity will lead to measurable results/growth. Key milestones need to be developed for the sites in 2026, and each week progress should be made toward completing theses milestones. We need to continue to upskill and manage the leaders so Rade can focus on goals of the account.</li><li>Rade demonstrated professionalism, composure, and growth readiness in stepping into an interim leadership role. Personal development goals, however, were not clearly articulated. Going forward, defining measurable leadership objectives tied to execution rigor, communication, and decision-making would strengthen this section.</li></ul>
+        </div>
+    </div>
+    
+        </div>
+        
+        <div class="scored-section">
+            <h2>Executive Presence & Presentation Skills</h2>
+            <div class="score-display">
+                <span class="score-label">Average Score:</span>
+                <span class="score-value">3.8/5</span>
+            </div>
+            
+            
+    <div class="combined-feedback">
+        <h4>Combined Feedback from Leadership Reviews</h4>
+        <div class="feedback-synthesis">
+    
+            <p><strong>Overall Assessment:</strong> Great energy...</p>
+        
+            <p><strong>Strengths:</strong></p>
+            <ul class="synthesis-list">
+        <li>Great energy</li><li>Your communication was clear, confident, and structured. I believe you have the ability to tell a concise compelling account story. You were professional and commanded the room. Good job overall.</li><li>Rade communicated enthusiastically, calmly and professionally and handled the discussion with openness despite technical challenges. While the presentation lacked polish at times, he maintained composure and stayed focused on the substance. Continued practice around executive storytelling, sharper framing of outcomes, and more confident pacing will meaningfully elevate his presence.
+
+performed well within the expectations of an interim Account Manager, prioritizing stability, transparency, and partnership during a period of operational need. His strengths are accountability, practicality, and steady leadership. The next level of growth will come from sharper outcome framing, clearer quantification of impact, and more confident executive communication. With continued development, Rade shows solid potential to take on expanded responsibility.</li></ul>
+            <p><strong>Areas for Development:</strong></p>
+            <ul class="synthesis-list">
+        <li>Very high energy and grasp of the information being presented. Only miss was understanding areas around cost savings and cost avoidance.</li><li>Rade spoke to our executive team with confidence, great energy, and spoke clearly throughout the presentation. This demonstrates one of his best attributes which is his personality and conversational skills. Rade was also open to feedback during the call and appeared very coachable. As he develops, he will have more experience to speak to and should assist in his ability to tell the story of the account.</li></ul>
+        </div>
+    </div>
+    
+        </div>
+        
+
+    
+    <div class="follow-up-section">
+        <h2>🎯 2026 Development Focus & Follow-Up Items</h2>
+        <p class="follow-up-intro">
+            Based on your year-end presentation and executive feedback, the following areas have been identified 
+            for focused development and follow-through in 2026.
+        </p>
+    
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">Financial Strategy - Cost Savings vs Avoidance</span>
+                <span class="follow-up-source">— Valarie Barnett</span>
+            </div>
+            <h3>Develop 2026 Client Cost Savings Initiatives</h3>
+            <p class="follow-up-quote">"2026 goal will be to initiate some cost savings... that's how you differentiate yourself. Because ABM or anybody else would walk in and say they could do your contract for cheaper. You just always want to be in every QBR innovating, bringing a new idea, offering cost savings."</p>
+            <p class="follow-up-action"><strong>Action:</strong> Develop quarterly cost savings proposals for CBRE/Lilly: identify scope reductions, efficiency opportunities, or contract modifications that permanently reduce client billing; present in QBRs and let client say no; proactive vs reactive positioning against competitors</p>
+        </div>
+        
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">Strategic Planning & Goal Tracking</span>
+                <span class="follow-up-source">— Valarie Barnett</span>
+            </div>
+            <h3>Add Specific Dates to All 2026 Goals</h3>
+            <p class="follow-up-quote">"Put the dates on here and every time you meet in your monthly meeting, where are you to goals 1-2-3? Are you marching there? I want updates when we accomplished each one."</p>
+            <p class="follow-up-action"><strong>Action:</strong> Add completion dates to all 2026 goals (cost effectiveness, client transparency, talent development); track progress in monthly meetings with Melissa/Sean/Chad; report milestone completions as achieved</p>
+        </div>
+        
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">Innovation Roadmap</span>
+                <span class="follow-up-source">— Valarie Barnett</span>
+            </div>
+            <h3>Create Quarterly Innovation Rollout Plan for 2026</h3>
+            <p class="follow-up-quote">"What you're seeing as innovation is SBM standard and expectations. You've created the baseline. Now in 2026, my challenge to you is to actually get innovative. What is your roadmap to innovation? What are you rolling out each quarter?"</p>
+            <p class="follow-up-action"><strong>Action:</strong> Develop 2026 quarterly innovation roadmap beyond operational baseline (Q1: QR supply system, Q2-Q4: TBD); identify emerging tech, sustainability initiatives, automation opportunities; present innovations in QBRs</p>
+        </div>
+        
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">Presentation & Tool Usage</span>
+                <span class="follow-up-source">— Sean Henderson</span>
+            </div>
+            <h3>Lead with Product - Present Through For Insight Platform</h3>
+            <p class="follow-up-quote">"Lead with product. I would love to see this presentation all done directly out of For Insight through the story of messaging within the tool... as you grow in the organization, that's going to be the expectation."</p>
+            <p class="follow-up-action"><strong>Action:</strong> Future presentations to be delivered directly through For Insight platform (scorecard, analytics, messaging) rather than extracting to PowerPoint; learn click-path and talk track for executive presentations</p>
+        </div>
+        
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">Leadership Development Focus</span>
+                <span class="follow-up-source">— Sean Henderson</span>
+            </div>
+            <h3>Lean Into Team Building and Process Standards</h3>
+            <p class="follow-up-quote">"Your jobs 1-2-3-4 is holding a standard from a process standpoint and building your team from managers, supervisors. Lean in on who's performing, where's the opportunity, what are you doing to continually build that team?"</p>
+            <p class="follow-up-action"><strong>Action:</strong> Focus monthly reviews on: (1) individual manager/supervisor performance assessment, (2) development opportunities identified, (3) coaching/training initiatives in progress, (4) process adherence metrics; showcase team building in future presentations</p>
+        </div>
+        
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">Growth Opportunities</span>
+                <span class="follow-up-source">— Nick Viskovich</span>
+            </div>
+            <h3>Quantify Total Addressable Market and Growth Strategy at Indy</h3>
+            <p class="follow-up-quote">"What's the growth opportunity with Lilly outside of where we're at today? What's the total addressable market as you see it? What are the forward-looking strategies to unlock that?"</p>
+            <p class="follow-up-action"><strong>Action:</strong> Work with Melissa to quantify Indy growth opportunities: GMP spaces opening, Event Center (April), total addressable market; develop capture strategy with timelines and revenue projections</p>
+        </div>
+        
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">Audience Awareness</span>
+                <span class="follow-up-source">— Dan Hartman</span>
+            </div>
+            <h3>Know Your Audience and Tee Up Gaps Proactively</h3>
+            <p class="follow-up-quote">"Knowing the audience of who you're presenting to is key. Even if you don't have a deliverable met, you can lead with that too. 'We focused on quality, getting everything up to par, and now we're going to look at cost savings moving forward.'"</p>
+            <p class="follow-up-action"><strong>Action:</strong> In future presentations, proactively acknowledge gaps or unmet deliverables and frame them as 'focused on X in 2025, now pivoting to Y in 2026' to control narrative and demonstrate strategic prioritization</p>
+        </div>
+        </div>
+
+</body>
+</html>

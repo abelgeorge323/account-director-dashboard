@@ -19,6 +19,45 @@ SCORING_SECTIONS = [
     "Executive Presence & Presentation Skills"
 ]
 
+# Name normalization to match verticals.csv (canonical names) and JSON files
+NAME_NORMALIZATION = {
+    # Variants to canonical verticals.csv names
+    "David Pergola": "David Pergola",  # Keep as is in verticals
+    "Dave Pergola": "David Pergola",
+    "Pergola, David": "David Pergola",
+    "Greg DeMedio": "Gregory DeMedio",
+    "Greg Demedio": "Gregory DeMedio",
+    "Gregory Demedio": "Gregory DeMedio",
+    "Gisell Langelier": "Giselle Langelier",
+    "Nick Trenkamp": "Nicholas Trenkamp",
+    "Nike Trenkamp": "Nicholas Trenkamp",
+    "Mike Barry": "Mike Barry",  # Keep as Mike in verticals
+    "Michael Barry": "Mike Barry",
+    "Logan Newman's": "Logan Newman",
+    "Ayesha Nasi": "Ayesha Nasir",
+    # Trailing spaces and ellipses - these need to be handled dynamically
+}
+
+# JSON normalization (for follow-up-questions.json which uses different names)
+JSON_NAME_NORMALIZATION = {
+    "David Pergola": "Dave Pergola",
+    "Mike Barry": "Michael Barry",
+}
+
+def normalize_name_to_canonical(name):
+    """Normalize AD name to canonical verticals.csv name."""
+    if not name:
+        return name
+    # Strip whitespace and common suffixes
+    cleaned = name.strip().rstrip('...').rstrip(' ').strip()
+    # Apply normalization mapping
+    return NAME_NORMALIZATION.get(cleaned, cleaned)
+
+def normalize_name_for_json(name):
+    """Normalize AD name to match JSON keys (best-practices.json and follow-up-questions.json)."""
+    canonical = normalize_name_to_canonical(name)
+    return JSON_NAME_NORMALIZATION.get(canonical, canonical)
+
 def load_review_data():
     """Load performance review data from CSV."""
     df = pd.read_csv("data/performance_reviews.csv", low_memory=False)
@@ -53,15 +92,17 @@ def calculate_aggregate_scores(df, ad_name):
     # Strip trailing spaces from AD name in comparison
     ad_reviews = df[df["Account Director Name"].str.strip() == ad_name.strip()]
     
-    # ALSO include joint reviews that contain this AD's name
-    # e.g., "Brian Davis / Justin Homa" should be included for both Brian and Justin
-    joint_reviews = df[df["Account Director Name"].str.contains("/", na=False)]
-    for idx, row in joint_reviews.iterrows():
-        joint_name = str(row["Account Director Name"]).strip()
-        # Check if this AD is part of the joint review
-        if ad_name.strip() in joint_name:
-            # Add this joint review to ad_reviews
-            ad_reviews = pd.concat([ad_reviews, pd.DataFrame([row])], ignore_index=True)
+    # EXCLUDE joint reviews for Justin Homa (per user request)
+    # For all other ADs, include joint reviews that contain their name
+    if ad_name.strip() != "Justin Homa":
+        # e.g., "Brian Davis / Justin Homa" should be included for Brian but NOT Justin
+        joint_reviews = df[df["Account Director Name"].str.contains("/", na=False)]
+        for idx, row in joint_reviews.iterrows():
+            joint_name = str(row["Account Director Name"]).strip()
+            # Check if this AD is part of the joint review
+            if ad_name.strip() in joint_name:
+                # Add this joint review to ad_reviews
+                ad_reviews = pd.concat([ad_reviews, pd.DataFrame([row])], ignore_index=True)
     
     if ad_reviews.empty:
         return None
@@ -786,7 +827,13 @@ def generate_all_scorecards():
     follow_up_data = load_follow_up_questions()
     verticals_data = load_verticals()
     
-    # Get unique AD names
+    # Normalize all AD names in the DataFrame to canonical names BEFORE processing
+    print("Normalizing AD names to match verticals.csv...")
+    df["Account Director Name"] = df["Account Director Name"].apply(
+        lambda x: normalize_name_to_canonical(x) if pd.notna(x) else x
+    )
+    
+    # Get unique canonical AD names
     ad_names = df["Account Director Name"].unique()
     ad_names = [name for name in ad_names if pd.notna(name) and str(name).strip() != "" and name != "Account Director Name"]
     
@@ -799,17 +846,20 @@ def generate_all_scorecards():
     for ad_name in ad_names:
         print(f"\nGenerating scorecard for {ad_name}...")
         
-        # Get aggregate data
+        # Get aggregate data (now all reviews with variants are under the canonical name)
         ad_data = calculate_aggregate_scores(df, ad_name)
         if not ad_data:
             print(f"  No review data found for {ad_name}")
             continue
         
-        # Add tier data
+        # Normalize name for JSON lookups (use different mapping for JSON files)
+        json_name = normalize_name_for_json(ad_name)
+        
+        # Add tier data (use canonical name for verticals.csv lookup)
         ad_data['tier'] = verticals_data.get(ad_name.strip(), 'Unassigned')
         
-        # Get follow-ups (no best practices in scorecards)
-        follow_ups = follow_up_data.get(ad_name.strip(), [])
+        # Get follow-ups (no best practices in scorecards) - use JSON normalized name
+        follow_ups = follow_up_data.get(json_name, [])
         
         print(f"  Found {len(follow_ups)} follow-up items")
         print(f"  Total Score: {ad_data['total_score']}/40.0")
@@ -819,13 +869,13 @@ def generate_all_scorecards():
         
         # Save to file with sanitized filename
         safe_name = ad_name.strip().lower().replace(' ', '-').replace('/', '-').replace('\\', '-')
-        filename = f"reports/{safe_name}-scorecard.html"
+        filename = f"reports-v2/{safe_name}-scorecard.html"
         with open(filename, "w", encoding="utf-8") as f:
             f.write(html)
         
-        print(f"  ✅ Saved to {filename}")
+        print(f"  [OK] Saved to {filename}")
     
-    print("\n🎉 All scorecards generated!")
+    print("\n[SUCCESS] All scorecards generated!")
 
 if __name__ == "__main__":
     generate_all_scorecards()

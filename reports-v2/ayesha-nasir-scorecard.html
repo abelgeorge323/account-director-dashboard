@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025 Year-End Scorecard - Ayesha Nasir</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            background: #ffffff;
+            padding: 2rem;
+            max-width: 8.5in;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: #1a365d;
+            margin-bottom: 0.5rem;
+        }
+
+        h2 {
+            font-size: 1.35rem;
+            font-weight: 600;
+            color: #2c5282;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 0.5rem;
+        }
+
+        h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #2d3748;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        h4 {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #4a5568;
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .header-section {
+            background: linear-gradient(135deg, #1a365d 0%, #2c5282 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+        }
+
+        .header-section h1 {
+            color: white;
+            margin-bottom: 1.5rem;
+            font-size: 1.85rem;
+        }
+
+        .header-metadata {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.8rem;
+            margin-top: 1.2rem;
+        }
+
+        .metadata-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.6rem;
+            border-radius: 4px;
+        }
+
+        .metadata-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.8;
+            margin-bottom: 0.25rem;
+        }
+
+        .metadata-value {
+            font-size: 1.1rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+        }
+
+        .score-summary-first-page {
+            background: #f7fafc;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+        }
+
+        .score-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            background: white;
+        }
+
+        .score-table th {
+            background: #2c5282;
+            color: white;
+            padding: 0.75rem;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .score-table td {
+            padding: 0.75rem;
+            border: 1px solid #e2e8f0;
+        }
+
+        .score-table tr:nth-child(even) {
+            background: #f7fafc;
+        }
+
+
+        /* Follow-Up Questions Section */
+        .follow-up-section {
+            background: #fff8e1;
+            border-left: 4px solid #ff9800;
+            padding: 24px;
+            margin: 32px 0;
+            border-radius: 8px;
+            page-break-inside: avoid;
+        }
+
+        .follow-up-intro {
+            color: #e65100;
+            margin-bottom: 1rem;
+        }
+
+        .follow-up-item {
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 16px 0;
+        }
+
+        .follow-up-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .follow-up-category {
+            background: #2196f3;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .follow-up-source {
+            color: #666;
+            font-size: 14px;
+            font-style: italic;
+        }
+
+        .follow-up-quote {
+            background: #f5f5f5;
+            border-left: 3px solid #ff9800;
+            padding: 12px 16px;
+            margin: 12px 0;
+            font-style: italic;
+            color: #333;
+        }
+
+        .follow-up-action {
+            margin-top: 12px;
+            color: #333;
+        }
+
+        /* Scored Section - One section per page */
+        .scored-section {
+            page-break-after: always;
+            page-break-inside: avoid;
+            margin: 1.5rem 0;
+            padding: 1.5rem;
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            min-height: 400px;
+        }
+
+        .score-display {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin: 1rem 0;
+            padding: 1rem;
+            background: #f7fafc;
+            border-radius: 4px;
+        }
+
+        .score-label {
+            font-weight: 600;
+            color: #4a5568;
+        }
+
+        .score-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #2c5282;
+        }
+
+        .combined-feedback {
+            background: #f8f9fa;
+            border-left: 4px solid #2c5282;
+            padding: 1.25rem;
+            margin: 1rem 0;
+            border-radius: 4px;
+        }
+
+        .combined-feedback h4 {
+            color: #2c5282;
+            margin-bottom: 0.75rem;
+            font-size: 1rem;
+        }
+
+        .feedback-synthesis {
+            margin-top: 0.75rem;
+        }
+
+        .feedback-point {
+            padding: 0.75rem;
+            margin: 0.5rem 0;
+            background: white;
+            border-radius: 4px;
+            border-left: 3px solid #2c5282;
+            line-height: 1.6;
+        }
+
+        .feedback-point strong {
+            color: #2c5282;
+            font-size: 0.9rem;
+        }
+
+        .synthesis-list {
+            margin: 0.75rem 0 1rem 1.5rem;
+            padding-left: 1rem;
+        }
+
+        .synthesis-list li {
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+            color: #2d3748;
+        }
+
+        .feedback-synthesis p {
+            margin: 0.75rem 0;
+            line-height: 1.6;
+        }
+
+        .feedback-synthesis strong {
+            color: #2c5282;
+            font-weight: 600;
+        }
+
+        @media print {
+            * {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            
+            body {
+                padding: 0.25in;
+                font-size: 9pt;
+                line-height: 1.3;
+            }
+            
+            h1 {
+                font-size: 16pt;
+                margin-bottom: 0.3rem;
+            }
+            
+            h2 {
+                font-size: 12pt;
+                margin-top: 0.5rem;
+                margin-bottom: 0.4rem;
+                page-break-after: avoid;
+            }
+            
+            h3 {
+                font-size: 10pt;
+                margin-top: 0.4rem;
+                margin-bottom: 0.3rem;
+            }
+            
+            .header-section {
+                padding: 1rem;
+                margin-bottom: 1rem;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            
+            .header-metadata {
+                gap: 0.5rem;
+            }
+            
+            .metadata-item {
+                padding: 0.4rem;
+            }
+            
+            .metadata-label {
+                font-size: 7pt;
+            }
+            
+            .metadata-value {
+                font-size: 9pt;
+            }
+            
+            .score-summary-first-page {
+                page-break-after: always;
+                padding: 0.75rem;
+                margin-bottom: 1rem;
+            }
+            
+            .score-table {
+                margin: 0.75rem 0;
+                font-size: 9pt;
+            }
+            
+            .score-table th,
+            .score-table td {
+                padding: 0.35rem;
+            }
+            
+            .scored-section {
+                page-break-after: always;
+                page-break-inside: avoid;
+                margin: 0.5rem 0;
+                padding: 0.75rem;
+                border: 1px solid #e2e8f0;
+                min-height: unset;
+            }
+            
+            .score-display {
+                margin: 0.5rem 0;
+                padding: 0.5rem;
+            }
+            
+            .score-label {
+                font-size: 9pt;
+            }
+            
+            .score-value {
+                font-size: 14pt;
+            }
+            
+            .combined-feedback {
+                padding: 0.75rem;
+                margin: 0.5rem 0;
+            }
+            
+            .combined-feedback h4 {
+                font-size: 9pt;
+                margin-bottom: 0.4rem;
+            }
+            
+            .feedback-synthesis p {
+                margin: 0.4rem 0;
+                line-height: 1.4;
+                font-size: 9pt;
+            }
+            
+            .feedback-synthesis strong {
+                font-size: 9pt;
+            }
+            
+            .synthesis-list {
+                margin: 0.4rem 0 0.5rem 1rem;
+                padding-left: 0.5rem;
+            }
+            
+            .synthesis-list li {
+                margin-bottom: 0.25rem;
+                line-height: 1.4;
+                font-size: 8.5pt;
+            }
+            
+            .follow-up-section {
+                page-break-before: always;
+                page-break-inside: avoid;
+                padding: 1rem;
+                margin: 1rem 0;
+            }
+            
+            .follow-up-item {
+                padding: 0.75rem;
+                margin: 0.75rem 0;
+            }
+            
+            .follow-up-quote {
+                padding: 0.5rem;
+                margin: 0.5rem 0;
+                font-size: 8.5pt;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header-section">
+        <h1>2025 Year-End Account Review & 2026 QBR Readiness Scorecard</h1>
+        <div class="header-metadata">
+            <div class="metadata-item">
+                <div class="metadata-label">Account Director</div>
+                <div class="metadata-value">Ayesha Nasir</div>
+            </div>
+            <div class="metadata-item">
+                <div class="metadata-label">Account</div>
+                <div class="metadata-value">Westinghouse </div>
+            </div>
+            <div class="metadata-item">
+                <div class="metadata-label">Tier</div>
+                <div class="metadata-value"><span style="background: #f97316; color: white; padding: 0.3rem 0.8rem; border-radius: 12px; font-weight: 600; font-size: 0.9rem;">Tier 4</span></div>
+            </div>
+            <div class="metadata-item">
+                <div class="metadata-label">Review Date</div>
+                <div class="metadata-value">January 2026</div>
+            </div>
+            <div class="metadata-item">
+                <div class="metadata-label">Total Reviews</div>
+                <div class="metadata-value">2</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="score-summary-first-page">
+        <h2>Executive Summary</h2>
+
+        <table class="score-table">
+            <thead>
+                <tr>
+                    <th>Evaluation Category</th>
+                    <th style="text-align: center;">Average Score</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+        <tr>
+            <td>Key Projects & Initiatives</td>
+            <td style="text-align: center; font-weight: 600;">5.0</td>
+        </tr>
+        
+        <tr>
+            <td>Value Adds & Cost Avoidance</td>
+            <td style="text-align: center; font-weight: 600;">4.5</td>
+        </tr>
+        
+        <tr>
+            <td>Cost Savings Delivered</td>
+            <td style="text-align: center; font-weight: 600;">4.5</td>
+        </tr>
+        
+        <tr>
+            <td>Innovation & Continuous Improvement</td>
+            <td style="text-align: center; font-weight: 600;">5.0</td>
+        </tr>
+        
+        <tr>
+            <td>Issues, Challenges & Accountability</td>
+            <td style="text-align: center; font-weight: 600;">4.0</td>
+        </tr>
+        
+        <tr>
+            <td>2026 Forward Strategy & Vision</td>
+            <td style="text-align: center; font-weight: 600;">3.5</td>
+        </tr>
+        
+        <tr>
+            <td>Personal Goals & Role Maturity</td>
+            <td style="text-align: center; font-weight: 600;">4.0</td>
+        </tr>
+        
+        <tr>
+            <td>Executive Presence & Presentation Skills</td>
+            <td style="text-align: center; font-weight: 600;">4.0</td>
+        </tr>
+        
+        <tr style="background: #e8f5e9; border-top: 3px solid #2c5282;">
+            <td style="font-weight: 700; text-transform: uppercase;">Overall Score</td>
+            <td style="text-align: center; font-weight: 700; font-size: 1.2rem; color: #2c5282;">34.5/40</td>
+        </tr>
+        
+            </tbody>
+        </table>
+    </div>
+
+    
+        <div class="scored-section">
+            <h2>Key Projects & Initiatives</h2>
+            <div class="score-display">
+                <span class="score-label">Average Score:</span>
+                <span class="score-value">5.0/5</span>
+            </div>
+            
+            
+    <div class="combined-feedback">
+        <h4>Combined Feedback from Leadership Reviews</h4>
+        <div class="feedback-synthesis">
+    
+            <p><strong>Overall Assessment:</strong> Clearly frames the most important 2025 initiatives, why they mattered, and what changed for the client as a result; demonstrates strong judgment, prioritization, and impact awareness.</p>
+        
+            <p><strong>Strengths:</strong></p>
+            <ul class="synthesis-list">
+        <li>Clearly frames the most important 2025 initiatives, why they mattered, and what changed for the client as a result; demonstrates strong judgment, prioritization, and impact awareness.</li><li>clearly articulated initiatives - rightsizing account, SOW alignment, and contract extensions</li></ul>
+        </div>
+    </div>
+    
+        </div>
+        
+        <div class="scored-section">
+            <h2>Value Adds & Cost Avoidance</h2>
+            <div class="score-display">
+                <span class="score-label">Average Score:</span>
+                <span class="score-value">4.5/5</span>
+            </div>
+            
+            
+    <div class="combined-feedback">
+        <h4>Combined Feedback from Leadership Reviews</h4>
+        <div class="feedback-synthesis">
+    
+            <p><strong>Overall Assessment:</strong> Good examples provided, but left a little desired on process and client impact...</p>
+        
+            <p><strong>Areas for Development:</strong></p>
+            <ul class="synthesis-list">
+        <li>Good examples provided, but left a little desired on process and client impact</li></ul>
+        </div>
+    </div>
+    
+        </div>
+        
+        <div class="scored-section">
+            <h2>Cost Savings Delivered</h2>
+            <div class="score-display">
+                <span class="score-label">Average Score:</span>
+                <span class="score-value">4.5/5</span>
+            </div>
+            
+            
+    <div class="combined-feedback">
+        <h4>Combined Feedback from Leadership Reviews</h4>
+        <div class="feedback-synthesis">
+    
+            <p><strong>Overall Assessment:</strong> You prevented the loss of an account through savings, you got creative you didnt lean on me for every detail of this.</p>
+        
+            <p><strong>Areas for Development:</strong></p>
+            <ul class="synthesis-list">
+        <li>You prevented the loss of an account through savings, you got creative you didnt lean on me for every detail of this.</li><li>clearly explained cost savings, but lacked the WOW! moment with a monthly/annual monetary roll up</li></ul>
+        </div>
+    </div>
+    
+        </div>
+        
+        <div class="scored-section">
+            <h2>Innovation & Continuous Improvement</h2>
+            <div class="score-display">
+                <span class="score-label">Average Score:</span>
+                <span class="score-value">5.0/5</span>
+            </div>
+            
+            
+    <div class="combined-feedback">
+        <h4>Combined Feedback from Leadership Reviews</h4>
+        <div class="feedback-synthesis">
+    
+            <p><strong>Overall Assessment:</strong> Demonstrates intentional innovation or meaningful pivots, with clear outcomes and lessons learned diving it up into two people instead of increasing labor.</p>
+        
+            <p><strong>Strengths:</strong></p>
+            <ul class="synthesis-list">
+        <li>Demonstrates intentional innovation or meaningful pivots, with clear outcomes and lessons learned diving it up into two people instead of increasing labor.</li></ul>
+            <p><strong>Areas for Development:</strong></p>
+            <ul class="synthesis-list">
+        <li>Continuous improvement was intentionally set from the beginning - outlining improvement of staffing, SOW, customer relations, etc.</li></ul>
+        </div>
+    </div>
+    
+        </div>
+        
+        <div class="scored-section">
+            <h2>Issues, Challenges & Accountability</h2>
+            <div class="score-display">
+                <span class="score-label">Average Score:</span>
+                <span class="score-value">4.0/5</span>
+            </div>
+            
+            
+    <div class="combined-feedback">
+        <h4>Combined Feedback from Leadership Reviews</h4>
+        <div class="feedback-synthesis">
+    
+            <p><strong>Overall Assessment:</strong> Thank you for your transparency.</p>
+        
+            <p><strong>Strengths:</strong></p>
+            <ul class="synthesis-list">
+        <li>Thank you for your transparency. Fully transparent about challenges, clearly owns gaps, and outlines specific corrective actions with timelines.</li><li>Discussed previous issues/gaps with closure; unclear on current/forward-facing gaps</li></ul>
+        </div>
+    </div>
+    
+        </div>
+        
+        <div class="scored-section">
+            <h2>2026 Forward Strategy & Vision</h2>
+            <div class="score-display">
+                <span class="score-label">Average Score:</span>
+                <span class="score-value">3.5/5</span>
+            </div>
+            
+            
+    <div class="combined-feedback">
+        <h4>Combined Feedback from Leadership Reviews</h4>
+        <div class="feedback-synthesis">
+    
+            <p><strong>Overall Assessment:</strong> Presents a strong forward-looking plan with reasonable clarity and timelines, I would like to see thus flushed out more with a more clear roadmap.</p>
+        
+            <p><strong>Areas for Development:</strong></p>
+            <ul class="synthesis-list">
+        <li>Presents a strong forward-looking plan with reasonable clarity and timelines, I would like to see thus flushed out more with a more clear roadmap. I need to understand how you plan to execute.</li><li>biggest concern here is what is the plan when/if Ayesha moves off the account</li></ul>
+        </div>
+    </div>
+    
+        </div>
+        
+        <div class="scored-section">
+            <h2>Personal Goals & Role Maturity</h2>
+            <div class="score-display">
+                <span class="score-label">Average Score:</span>
+                <span class="score-value">4.0/5</span>
+            </div>
+            
+            
+    <div class="combined-feedback">
+        <h4>Combined Feedback from Leadership Reviews</h4>
+        <div class="feedback-synthesis">
+    
+            <p><strong>Overall Assessment:</strong> Shares general development intentions without clear measures or ownership.</p>
+        
+            <p><strong>Strengths:</strong></p>
+            <ul class="synthesis-list">
+        <li>Shares general development intentions without clear measures or ownership. You can improve this score by attaching the dates to the goals make them measurable. SMART Goal - Specific, Measurable, Achievable, Relevant, and Time-bound</li><li>Clear and to the point - larger site with larger responsibilities.  Articulated attributes to support</li></ul>
+        </div>
+    </div>
+    
+        </div>
+        
+        <div class="scored-section">
+            <h2>Executive Presence & Presentation Skills</h2>
+            <div class="score-display">
+                <span class="score-label">Average Score:</span>
+                <span class="score-value">4.0/5</span>
+            </div>
+            
+            
+    <div class="combined-feedback">
+        <h4>Combined Feedback from Leadership Reviews</h4>
+        <div class="feedback-synthesis">
+    
+            <p><strong>Overall Assessment:</strong> Communicates clearly with logical flow; delivers a cohesive account story with minor gaps in executive presence or impact.</p>
+        
+            <p><strong>Strengths:</strong></p>
+            <ul class="synthesis-list">
+        <li>Communicates clearly with logical flow; delivers a cohesive account story with minor gaps in executive presence or impact.</li></ul>
+            <p><strong>Areas for Development:</strong></p>
+            <ul class="synthesis-list">
+        <li>Quick and to the point on major topics; may have lacked the developmental steps to support those topics</li></ul>
+        </div>
+    </div>
+    
+        </div>
+        
+
+    
+    <div class="follow-up-section">
+        <h2>🎯 2026 Development Focus & Follow-Up Items</h2>
+        <p class="follow-up-intro">
+            Based on your year-end presentation and executive feedback, the following areas have been identified 
+            for focused development and follow-through in 2026.
+        </p>
+    
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">Personal Goals - SMART Framework</span>
+                <span class="follow-up-source">— Valarie Barnett</span>
+            </div>
+            <h3>Rework All Goals into SMART Goal Format with Measurement Criteria</h3>
+            <p class="follow-up-quote">"I would like to see your goals reworked into the SMART goal format. Your goals are specific, you did a good job there, but how will we measure? What does success look like on those goals? Should be uploaded into Workday. This should be our general tracker of how we hold ourselves accountable."</p>
+            <p class="follow-up-action"><strong>Action:</strong> Convert all 2026 goals to SMART framework (Specific, Measurable, Actionable, Relevant, Time-bound): (1) Additional responsibility/higher revenue account - define revenue threshold, by when, what preparation needed, (2) Transitions team building - how many MITs by Q1? Which transitions will include MIT?, (3) Mentor operations/succession plan - specific milestones for Ronnie handover, (4) Better leader/speaker/presenter - what training, by when, how measured (presentations, feedback scores)?, (5) Each goal needs: what success looks like, how measured, accountability checkpoints</p>
+        </div>
+        
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">Career Development & Account Growth</span>
+                <span class="follow-up-source">— Ayesha Nasir & Valarie Barnett</span>
+            </div>
+            <h3>Ready for Larger Account with Higher Revenue - Westinghouse at Limit</h3>
+            <p class="follow-up-quote">"I feel as I'm ready for additional responsibility and I would love to manage an account with higher revenue. We are kind of at our limit with Westinghouse. The only opportunities I see are just very minute, like $4K here, tiny site there, Canadian stuff we kind of declined."</p>
+            <p class="follow-up-action"><strong>Action:</strong> Career trajectory planning: (1) Valarie: 'I know you are ready for your next challenge... a lot of accounts aren't anywhere near you... we won't go live on big account and put you on one... skills you've gained through transition support are building you up to be strong leader when you do get your home site and it's big, big account,' (2) 10 million in closed business already in Q1 - 'several exciting opportunities,' (3) Account fatigue - 'when you fix something... best thing is fix it and move on and fix something else, continue to build resume, earn stripes,' (4) Valarie's promise: 'You're not going to be without a home,' (5) Likely path: transition a site, fall in love with customer, stay there</p>
+        </div>
+        
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">Transitions Leadership</span>
+                <span class="follow-up-source">— Ayesha Nasir & Valarie Barnett</span>
+            </div>
+            <h3>Build Successful Transitions Team with Troy - East and West Coast Support</h3>
+            <p class="follow-up-quote">"If transitions is my trajectory, I want to have successful transitions team in East and West Coast. I get feedback that yes we support high-level transitions, but we're missing out smaller accounts and account directors/managers are spread thin. I would like to create path forward for transitions."</p>
+            <p class="follow-up-action"><strong>Action:</strong> Transitions team vision with Troy: (1) Valarie: 'I'll get with Troy about what transitions team leadership looks like and where you fall in on that,' (2) Problem statement: smaller accounts not getting transition support, ADs/AMs spread thin and can't focus on growth/succession, (3) Solution: dedicated transitions support freeing ADs to focus on growth, (4) MIT hiring - Valarie: 'Are you going to bring in MITs? By what day? Is it important you have at least one person junior to you working under you by end of Q1?', (5) Use pipeline: review existing transitions, pull in MIT for hands-on training, (6) Kyle: 'I think you could do something with Troy that probably hasn't been done. Your ability to run through brick walls and get things done.'</p>
+        </div>
+        
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">Succession Planning - Westinghouse</span>
+                <span class="follow-up-source">— Ayesha Nasir & Valarie Barnett</span>
+            </div>
+            <h3>Complete Handover to Ronnie with Client Introductions</h3>
+            <p class="follow-up-quote">"Ronnie's good, he's fine. I just didn't, my thing was I haven't gotten feedback from anybody. I'm still working on my accounts and doing transitions simultaneously because I don't want to be without a home. I just have to hand it over to him and introduce them to all our clients. I don't want to bring that up to them till I'm confident this is actually happening."</p>
+            <p class="follow-up-action"><strong>Action:</strong> Westinghouse succession execution: (1) Valarie's promise: 'You're not going to be without a home. You have my word,' (2) Once confirmed, introduce Ronnie to all clients at 8 sites, (3) Create formal handover plan: shadow period, solo with Ayesha backup, full ownership, (4) Document VIP hotspot maps, executive preferences, site-specific nuances for Ronnie, (5) Kyle's concern: 'Biggest concern is what is the plan when/if Ayesha moves off account' - this succession plan addresses it, (6) Ensure Ronnie understands boots-on-ground philosophy, 3-4 hour complaint turnaround, VIP area management</p>
+        </div>
+        
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">Presentation Skills Development</span>
+                <span class="follow-up-source">— Valarie Barnett & Kyle Wallace</span>
+            </div>
+            <h3>Slow Down Presentation Pace and Develop Key Points</h3>
+            <p class="follow-up-quote">"Valarie: 'You talk so fast.' Kyle: 'You went through your presentation extremely fast. You're a fast talker and you really punched up, delivered haymakers. There wasn't a whole lot of small talk that did afford you opportunity to maybe develop some of those points.'"</p>
+            <p class="follow-up-action"><strong>Action:</strong> Presentation enhancement: (1) Slow down speaking pace - practice with recording/timing, (2) Develop points - don't just deliver haymakers, explain process and client impact, (3) Add context and storytelling vs just results, (4) Kyle: 'May have lacked developmental steps to support those topics,' (5) Personal goal: 'I just want to be better leader, speaker, presenter,' (6) Practice presentations with peers for feedback, (7) Balance speed/efficiency with depth/development</p>
+        </div>
+        
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">Growth Path Forward</span>
+                <span class="follow-up-source">— Ayesha Nasir (Self-Identified)</span>
+            </div>
+            <h3>Q1: Assess CSAT/Audit Scores and Optimize Operations Efficiency</h3>
+            <p class="follow-up-quote">"Obviously Q1 I wanted to, my plan is assessing CSAT audit scores, understanding the operations deliverables or to operations efficiency. I do assess my data from survey scores and joint audits and whatever feedback client gives to us, I want to make sure we're optimizing our operations with that feedback."</p>
+            <p class="follow-up-action"><strong>Action:</strong> Q1 2026 operational optimization: (1) Systematic review of CSAT scores, joint audit results across all 8 Westinghouse sites, (2) Identify patterns - which sites performing well, which need attention, (3) Use client feedback to drive operational improvements, (4) Document operational deliverables vs expectations, (5) Create efficiency improvements based on data, (6) Share learnings across portfolio</p>
+        </div>
+        
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">Expansion Strategy</span>
+                <span class="follow-up-source">— Ayesha Nasir (Self-Identified)</span>
+            </div>
+            <h3>Q3-Q4: Focus on Expansion Opportunities</h3>
+            <p class="follow-up-quote">"Q3 and Q4, focusing on expansion."</p>
+            <p class="follow-up-action"><strong>Action:</strong> Expansion planning: (1) While Westinghouse 'at our limit' with only 'minute opportunities like $4K here, tiny site there,' continue exploring, (2) Canadian opportunities previously declined - reassess if circumstances changed, (3) More likely: transition support leading to new large account ownership, (4) Valarie: 'I think what will happen is you will transition a site, fall in love with customer, say these are my people, I want to stay here. Guaranteed,' (5) Be ready when big account opportunity arises - skills built through transitions are preparation</p>
+        </div>
+        
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">Transitions Support - 2025 Learning</span>
+                <span class="follow-up-source">— Ayesha Nasir (Self-Identified)</span>
+            </div>
+            <h3>Apply 2025 Transition Learnings (Logan, Kim, Justin, Lanza)</h3>
+            <p class="follow-up-quote">"Last year I supported Logan's account. I supported Kim's account at Leslie. I supported in operations the account for Boeing for Justin. So I learned a lot and I used a lot of stuff I've learned in 2025 into every area that I go. We're having successful Lanza transition, go live is Monday, February 2nd."</p>
+            <p class="follow-up-action"><strong>Action:</strong> Transition excellence documentation: (1) Document lessons learned from supporting Logan (account transitions), Kim (Leslie operations), Justin (Boeing operations), Lanza (transition go-live Feb 2, 2026), (2) What worked well? What would you do differently?, (3) Create transition playbook based on 2025 experiences, (4) Use this to train MITs when hired, (5) Demonstrate to Troy what successful transitions team could look like based on real examples</p>
+        </div>
+        
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">Leadership Recognition & Future Potential</span>
+                <span class="follow-up-source">— Kyle Wallace & Valarie Barnett</span>
+            </div>
+            <h3>Leverage Strengths - Run Through Brick Walls Mentality</h3>
+            <p class="follow-up-quote">"Kyle: 'Your ability to get things done is really impressive for your tenure. Way you're able to get through doors and get past admins and get to right people and talk to right people and deliver information is uncanny. You could be very successful in transitions... do something with Troy probably never been done... your ability to run through brick walls and get things done. Absolute pleasure to work with you and mentor you.'"</p>
+            <p class="follow-up-action"><strong>Action:</strong> Career development focus: (1) Kyle's identified strengths: gets things done, willingness to do plus 20%, solves problems before asked, gets past gatekeepers, talks to right people, runs through brick walls, (2) Valarie: 'Every time - what's she doing? What big account is she on? Has she relocated yet?', (3) Mike Prettyman foundation: 'Exceptional on the ground training from Mike Prettyman. Really got you quickly through crawling stage,' (4) Career trajectory: transitions → big account → continued growth, (5) Mentorship: pay it forward - 'Bring somebody in, Ayesha. Can we hire somebody else? You have friend like you? We'll take them. Goal is to continue to pay it forward,' (6) Kyle's vision: 'Really good, promising future ahead of you'</p>
+        </div>
+        
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">Personal Philosophy</span>
+                <span class="follow-up-source">— Ayesha Nasir (Self-Identified)</span>
+            </div>
+            <h3>Maintain Failure Is Not An Option Mindset</h3>
+            <p class="follow-up-quote">"Personal goals: I just want to be a better leader, speaker, presenter and for me failure is not an option."</p>
+            <p class="follow-up-action"><strong>Action:</strong> Continue growth mindset: (1) 'Failure is not an option' attitude that saved Columbia SC site, (2) Kyle's test: 'Do you want to have that conversation with Val that you're losing this account?' Response: 'Absolutely not,' (3) This mentality drove 3-month boots-on-ground blitz, creative problem-solving, and account save, (4) Balance: high standards for self while being realistic about challenges, (5) Continue learning - Ayesha: 'Level of learning curve and stuff I've learned, I could have never imagined in another position in another company. I do appreciate you guys a lot'</p>
+        </div>
+        </div>
+
+</body>
+</html>

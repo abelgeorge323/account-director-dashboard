@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025 Year-End Scorecard - Scott Kimball</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            background: #ffffff;
+            padding: 2rem;
+            max-width: 8.5in;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: #1a365d;
+            margin-bottom: 0.5rem;
+        }
+
+        h2 {
+            font-size: 1.35rem;
+            font-weight: 600;
+            color: #2c5282;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 0.5rem;
+        }
+
+        h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #2d3748;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        h4 {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #4a5568;
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .header-section {
+            background: linear-gradient(135deg, #1a365d 0%, #2c5282 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+        }
+
+        .header-section h1 {
+            color: white;
+            margin-bottom: 1.5rem;
+            font-size: 1.85rem;
+        }
+
+        .header-metadata {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.8rem;
+            margin-top: 1.2rem;
+        }
+
+        .metadata-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.6rem;
+            border-radius: 4px;
+        }
+
+        .metadata-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.8;
+            margin-bottom: 0.25rem;
+        }
+
+        .metadata-value {
+            font-size: 1.1rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+        }
+
+        .score-summary-first-page {
+            background: #f7fafc;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+        }
+
+        .score-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            background: white;
+        }
+
+        .score-table th {
+            background: #2c5282;
+            color: white;
+            padding: 0.75rem;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .score-table td {
+            padding: 0.75rem;
+            border: 1px solid #e2e8f0;
+        }
+
+        .score-table tr:nth-child(even) {
+            background: #f7fafc;
+        }
+
+
+        /* Follow-Up Questions Section */
+        .follow-up-section {
+            background: #fff8e1;
+            border-left: 4px solid #ff9800;
+            padding: 24px;
+            margin: 32px 0;
+            border-radius: 8px;
+            page-break-inside: avoid;
+        }
+
+        .follow-up-intro {
+            color: #e65100;
+            margin-bottom: 1rem;
+        }
+
+        .follow-up-item {
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 16px 0;
+        }
+
+        .follow-up-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .follow-up-category {
+            background: #2196f3;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .follow-up-source {
+            color: #666;
+            font-size: 14px;
+            font-style: italic;
+        }
+
+        .follow-up-quote {
+            background: #f5f5f5;
+            border-left: 3px solid #ff9800;
+            padding: 12px 16px;
+            margin: 12px 0;
+            font-style: italic;
+            color: #333;
+        }
+
+        .follow-up-action {
+            margin-top: 12px;
+            color: #333;
+        }
+
+        /* Scored Section - One section per page */
+        .scored-section {
+            page-break-after: always;
+            page-break-inside: avoid;
+            margin: 1.5rem 0;
+            padding: 1.5rem;
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            min-height: 400px;
+        }
+
+        .score-display {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin: 1rem 0;
+            padding: 1rem;
+            background: #f7fafc;
+            border-radius: 4px;
+        }
+
+        .score-label {
+            font-weight: 600;
+            color: #4a5568;
+        }
+
+        .score-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #2c5282;
+        }
+
+        .combined-feedback {
+            background: #f8f9fa;
+            border-left: 4px solid #2c5282;
+            padding: 1.25rem;
+            margin: 1rem 0;
+            border-radius: 4px;
+        }
+
+        .combined-feedback h4 {
+            color: #2c5282;
+            margin-bottom: 0.75rem;
+            font-size: 1rem;
+        }
+
+        .feedback-synthesis {
+            margin-top: 0.75rem;
+        }
+
+        .feedback-point {
+            padding: 0.75rem;
+            margin: 0.5rem 0;
+            background: white;
+            border-radius: 4px;
+            border-left: 3px solid #2c5282;
+            line-height: 1.6;
+        }
+
+        .feedback-point strong {
+            color: #2c5282;
+            font-size: 0.9rem;
+        }
+
+        .synthesis-list {
+            margin: 0.75rem 0 1rem 1.5rem;
+            padding-left: 1rem;
+        }
+
+        .synthesis-list li {
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+            color: #2d3748;
+        }
+
+        .feedback-synthesis p {
+            margin: 0.75rem 0;
+            line-height: 1.6;
+        }
+
+        .feedback-synthesis strong {
+            color: #2c5282;
+            font-weight: 600;
+        }
+
+        @media print {
+            * {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            
+            body {
+                padding: 0.25in;
+                font-size: 9pt;
+                line-height: 1.3;
+            }
+            
+            h1 {
+                font-size: 16pt;
+                margin-bottom: 0.3rem;
+            }
+            
+            h2 {
+                font-size: 12pt;
+                margin-top: 0.5rem;
+                margin-bottom: 0.4rem;
+                page-break-after: avoid;
+            }
+            
+            h3 {
+                font-size: 10pt;
+                margin-top: 0.4rem;
+                margin-bottom: 0.3rem;
+            }
+            
+            .header-section {
+                padding: 1rem;
+                margin-bottom: 1rem;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            
+            .header-metadata {
+                gap: 0.5rem;
+            }
+            
+            .metadata-item {
+                padding: 0.4rem;
+            }
+            
+            .metadata-label {
+                font-size: 7pt;
+            }
+            
+            .metadata-value {
+                font-size: 9pt;
+            }
+            
+            .score-summary-first-page {
+                page-break-after: always;
+                padding: 0.75rem;
+                margin-bottom: 1rem;
+            }
+            
+            .score-table {
+                margin: 0.75rem 0;
+                font-size: 9pt;
+            }
+            
+            .score-table th,
+            .score-table td {
+                padding: 0.35rem;
+            }
+            
+            .scored-section {
+                page-break-after: always;
+                page-break-inside: avoid;
+                margin: 0.5rem 0;
+                padding: 0.75rem;
+                border: 1px solid #e2e8f0;
+                min-height: unset;
+            }
+            
+            .score-display {
+                margin: 0.5rem 0;
+                padding: 0.5rem;
+            }
+            
+            .score-label {
+                font-size: 9pt;
+            }
+            
+            .score-value {
+                font-size: 14pt;
+            }
+            
+            .combined-feedback {
+                padding: 0.75rem;
+                margin: 0.5rem 0;
+            }
+            
+            .combined-feedback h4 {
+                font-size: 9pt;
+                margin-bottom: 0.4rem;
+            }
+            
+            .feedback-synthesis p {
+                margin: 0.4rem 0;
+                line-height: 1.4;
+                font-size: 9pt;
+            }
+            
+            .feedback-synthesis strong {
+                font-size: 9pt;
+            }
+            
+            .synthesis-list {
+                margin: 0.4rem 0 0.5rem 1rem;
+                padding-left: 0.5rem;
+            }
+            
+            .synthesis-list li {
+                margin-bottom: 0.25rem;
+                line-height: 1.4;
+                font-size: 8.5pt;
+            }
+            
+            .follow-up-section {
+                page-break-before: always;
+                page-break-inside: avoid;
+                padding: 1rem;
+                margin: 1rem 0;
+            }
+            
+            .follow-up-item {
+                padding: 0.75rem;
+                margin: 0.75rem 0;
+            }
+            
+            .follow-up-quote {
+                padding: 0.5rem;
+                margin: 0.5rem 0;
+                font-size: 8.5pt;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header-section">
+        <h1>2025 Year-End Account Review & 2026 QBR Readiness Scorecard</h1>
+        <div class="header-metadata">
+            <div class="metadata-item">
+                <div class="metadata-label">Account Director</div>
+                <div class="metadata-value">Scott Kimball</div>
+            </div>
+            <div class="metadata-item">
+                <div class="metadata-label">Account</div>
+                <div class="metadata-value">Sanofi</div>
+            </div>
+            <div class="metadata-item">
+                <div class="metadata-label">Tier</div>
+                <div class="metadata-value"><span style="background: #6366f1; color: white; padding: 0.3rem 0.8rem; border-radius: 12px; font-weight: 600; font-size: 0.9rem;">Tier 5</span></div>
+            </div>
+            <div class="metadata-item">
+                <div class="metadata-label">Review Date</div>
+                <div class="metadata-value">January 2026</div>
+            </div>
+            <div class="metadata-item">
+                <div class="metadata-label">Total Reviews</div>
+                <div class="metadata-value">3</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="score-summary-first-page">
+        <h2>Executive Summary</h2>
+
+        <table class="score-table">
+            <thead>
+                <tr>
+                    <th>Evaluation Category</th>
+                    <th style="text-align: center;">Average Score</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+        <tr>
+            <td>Key Projects & Initiatives</td>
+            <td style="text-align: center; font-weight: 600;">5.0</td>
+        </tr>
+        
+        <tr>
+            <td>Value Adds & Cost Avoidance</td>
+            <td style="text-align: center; font-weight: 600;">4.67</td>
+        </tr>
+        
+        <tr>
+            <td>Cost Savings Delivered</td>
+            <td style="text-align: center; font-weight: 600;">5.0</td>
+        </tr>
+        
+        <tr>
+            <td>Innovation & Continuous Improvement</td>
+            <td style="text-align: center; font-weight: 600;">4.67</td>
+        </tr>
+        
+        <tr>
+            <td>Issues, Challenges & Accountability</td>
+            <td style="text-align: center; font-weight: 600;">4.0</td>
+        </tr>
+        
+        <tr>
+            <td>2026 Forward Strategy & Vision</td>
+            <td style="text-align: center; font-weight: 600;">4.67</td>
+        </tr>
+        
+        <tr>
+            <td>Personal Goals & Role Maturity</td>
+            <td style="text-align: center; font-weight: 600;">4.33</td>
+        </tr>
+        
+        <tr>
+            <td>Executive Presence & Presentation Skills</td>
+            <td style="text-align: center; font-weight: 600;">5.0</td>
+        </tr>
+        
+        <tr style="background: #e8f5e9; border-top: 3px solid #2c5282;">
+            <td style="font-weight: 700; text-transform: uppercase;">Overall Score</td>
+            <td style="text-align: center; font-weight: 700; font-size: 1.2rem; color: #2c5282;">37.34/40</td>
+        </tr>
+        
+            </tbody>
+        </table>
+    </div>
+
+    
+        <div class="scored-section">
+            <h2>Key Projects & Initiatives</h2>
+            <div class="score-display">
+                <span class="score-label">Average Score:</span>
+                <span class="score-value">5.0/5</span>
+            </div>
+            
+            
+    <div class="combined-feedback">
+        <h4>Combined Feedback from Leadership Reviews</h4>
+        <div class="feedback-synthesis">
+    
+            <p><strong>Overall Assessment:</strong> Really good representation of projects and good context to support.</p>
+        
+            <p><strong>Strengths:</strong></p>
+            <ul class="synthesis-list">
+        <li>Really good representation of projects and good context to support. It's obvious that Scott is highly engaged with his account based on the level of detail provided.</li><li>You highlighted the major initiatives and challenges the key projects and outcomes. Framingham project stood out to me, I appreciated you giving them the credit in front of SLT. You explained why the initiatives mattered very clearly. You did an exceptional job explaining the impact to the customer whether they caused the key project to be needed or not. In 2026 I look forward to your strategies in things we bring to Sanofi as an advanced plan.</li><li>Scott very clearly articulated the specific projects in initiatives he worked on in 2025. While a handful were due to challenges that we faced, they were well solution and to be expected in a hard landing transition.</li></ul>
+        </div>
+    </div>
+    
+        </div>
+        
+        <div class="scored-section">
+            <h2>Value Adds & Cost Avoidance</h2>
+            <div class="score-display">
+                <span class="score-label">Average Score:</span>
+                <span class="score-value">4.67/5</span>
+            </div>
+            
+            
+    <div class="combined-feedback">
+        <h4>Combined Feedback from Leadership Reviews</h4>
+        <div class="feedback-synthesis">
+    
+            <p><strong>Overall Assessment:</strong> Not a significant amount of avoidance on this account.</p>
+        
+            <p><strong>Strengths:</strong></p>
+            <ul class="synthesis-list">
+        <li>You clearly articulated the value beyond contract scope and into estimated financial impact and potential growth. Love that you are seeking out opportunities to grow.</li></ul>
+            <p><strong>Areas for Development:</strong></p>
+            <ul class="synthesis-list">
+        <li>Not a significant amount of avoidance on this account. Was able to identify GMP emergency response cleaning. Savings delivered may be driving this lack of avoidances identified. Mobile absorption also called out which qualifies as an avoided cost.</li><li>Scott brought up two very specific key things that we can use moving forward as an organization of a best practice. Documenting how we got GMP training down to 2 to 3 weeks, in addition to how we as an organization can provide better value to other GMP clients with the GMP, saving idea, ideas and initiatives that his subject matter expert on his team has been able to do for him.</li></ul>
+        </div>
+    </div>
+    
+        </div>
+        
+        <div class="scored-section">
+            <h2>Cost Savings Delivered</h2>
+            <div class="score-display">
+                <span class="score-label">Average Score:</span>
+                <span class="score-value">5.0/5</span>
+            </div>
+            
+            
+    <div class="combined-feedback">
+        <h4>Combined Feedback from Leadership Reviews</h4>
+        <div class="feedback-synthesis">
+    
+            <p><strong>Overall Assessment:</strong> Managed significant ask from CBRE at a high level and did well to finish the year strong.</p>
+        
+            <p><strong>Strengths:</strong></p>
+            <ul class="synthesis-list">
+        <li>Managed significant ask from CBRE at a high level and did well to finish the year strong. Really demonstrated his grasp on his finances for his account. Great story on collaboration with our CBRE client and Sanofi overall.</li><li>It is extremely hard to find GMP efficiencies, I am blown away that its possible. I appreciate you all looking for what is possible. You explained the savings, the quantified it and how it sustains as well as how we will look for more.</li></ul>
+        </div>
+    </div>
+    
+        </div>
+        
+        <div class="scored-section">
+            <h2>Innovation & Continuous Improvement</h2>
+            <div class="score-display">
+                <span class="score-label">Average Score:</span>
+                <span class="score-value">4.67/5</span>
+            </div>
+            
+            
+    <div class="combined-feedback">
+        <h4>Combined Feedback from Leadership Reviews</h4>
+        <div class="feedback-synthesis">
+    
+            <p><strong>Overall Assessment:</strong> Good pilot with Mobile at Morristown.</p>
+        
+            <p><strong>Strengths:</strong></p>
+            <ul class="synthesis-list">
+        <li>Good pilot with Mobile at Morristown. Need to have a plan to get this rolled out across the platform and implemented with client funding.</li></ul>
+            <p><strong>Areas for Development:</strong></p>
+            <ul class="synthesis-list">
+        <li>Demonstrated intentional innovation through people movement. Partnering with an outside company XY sense is a smart move, leaning into it vs declining to support is appreciated at all levels. I would like to have understood more on what the outcomes are for us and Sanofi. Good report out on the mobile. CBRE should really appreciate the spike in report its we are helping them identify things they otherwise may not have. I like that you have lessons learned, now sell it across the other locations.</li></ul>
+        </div>
+    </div>
+    
+        </div>
+        
+        <div class="scored-section">
+            <h2>Issues, Challenges & Accountability</h2>
+            <div class="score-display">
+                <span class="score-label">Average Score:</span>
+                <span class="score-value">4.0/5</span>
+            </div>
+            
+            
+    <div class="combined-feedback">
+        <h4>Combined Feedback from Leadership Reviews</h4>
+        <div class="feedback-synthesis">
+    
+            <p><strong>Overall Assessment:</strong> With this being a new account Scott has done a great job navigating some of the challenges that were tethered throughout the presentation.</p>
+        
+            <p><strong>Strengths:</strong></p>
+            <ul class="synthesis-list">
+        <li>With this being a new account Scott has done a great job navigating some of the challenges that were tethered throughout the presentation. Framingham GMP issue in Q1. Significant cost savings request received the aggressive ask and delivered and made adjustments need to stabilize performance.</li></ul>
+            <p><strong>Areas for Development:</strong></p>
+            <ul class="synthesis-list">
+        <li>I think you clearly weaved your challenges in at the beginning. I would like to have a more clear understanding of the gaps and timelines. We had a set of failed surveys and issues I read but I dont know that those things were addressed in how we sustain.</li></ul>
+        </div>
+    </div>
+    
+        </div>
+        
+        <div class="scored-section">
+            <h2>2026 Forward Strategy & Vision</h2>
+            <div class="score-display">
+                <span class="score-label">Average Score:</span>
+                <span class="score-value">4.67/5</span>
+            </div>
+            
+            
+    <div class="combined-feedback">
+        <h4>Combined Feedback from Leadership Reviews</h4>
+        <div class="feedback-synthesis">
+    
+            <p><strong>Overall Assessment:</strong> Good representation of path forward and it is clear that Scott has devised a plan as he moves through 2026.</p>
+        
+            <p><strong>Strengths:</strong></p>
+            <ul class="synthesis-list">
+        <li>Good representation of path forward and it is clear that Scott has devised a plan as he moves through 2026.</li><li>Scott has a clear line of site to the growth opportunities on the table here in the US and Canada for 2026.</li></ul>
+            <p><strong>Areas for Development:</strong></p>
+            <ul class="synthesis-list">
+        <li>The way you laid out the 2026 roadmap was a best practice visually. You were clearly able to clearly explain the path reasons and timelines. I would like to have see what makes us different why Sanofi should chose us over the other providers. What is compelling them to select us? I did like that you want to support XY company in data analytics and using the data to augment our service delivery possibly.</li></ul>
+        </div>
+    </div>
+    
+        </div>
+        
+        <div class="scored-section">
+            <h2>Personal Goals & Role Maturity</h2>
+            <div class="score-display">
+                <span class="score-label">Average Score:</span>
+                <span class="score-value">4.33/5</span>
+            </div>
+            
+            
+    <div class="combined-feedback">
+        <h4>Combined Feedback from Leadership Reviews</h4>
+        <div class="feedback-synthesis">
+    
+            <p><strong>Overall Assessment:</strong> Did not include this but articulated explosive growth as his main personal goal.</p>
+        
+            <p><strong>Areas for Development:</strong></p>
+            <ul class="synthesis-list">
+        <li>Did not include this but articulated explosive growth as his main personal goal. I was not shared the role up with the timelines.</li><li>#1 Deliver explosive growth - Requested additional information on SMART GOALS: Specific, Measurable, Achievable, Relevant, and Time-bound</li></ul>
+        </div>
+    </div>
+    
+        </div>
+        
+        <div class="scored-section">
+            <h2>Executive Presence & Presentation Skills</h2>
+            <div class="score-display">
+                <span class="score-label">Average Score:</span>
+                <span class="score-value">5.0/5</span>
+            </div>
+            
+            
+    <div class="combined-feedback">
+        <h4>Combined Feedback from Leadership Reviews</h4>
+        <div class="feedback-synthesis">
+    
+            <p><strong>Overall Assessment:</strong> Scott is a high-level communicator.</p>
+        
+            <p><strong>Strengths:</strong></p>
+            <ul class="synthesis-list">
+        <li>Scott is a high-level communicator. Very comfortable and very well done.</li><li>You have an executive presence, clear and confident, I thought your story was concise and compelling.</li><li>Scott has made this hard landing look easy for those on the outside or have not been apart of this from the beginning. Sanofi was not an easy account, it was bid very aggressively from a financial standpoint. On top of an extremely complex environment with GMP and new program with Slurry. From the start, Scott owned it. He transitioned it seamlessly and have managed it exceptionally well.
+
+What really stood out to me is that it didn’t suck the life out of the SLT team and that says a lot. That doesn’t happen often. You consistently provided updates the good, the bad, and the ugly and regardless of the challenge, you came with a solution. You didn’t just bring problems up; you solved them.
+
+Most importantly, you’re a trusted advisor for both SBM and the client. While all ADs are empowered, in this case it genuinely showed. as said in the presentation they have been very reluctant to make a change.
+
+Everything you have done for the last 12 months has positioned you and SBM very well for the growth. Excited to see those results in 2026!</li></ul>
+        </div>
+    </div>
+    
+        </div>
+        
+
+    
+    <div class="follow-up-section">
+        <h2>🎯 2026 Development Focus & Follow-Up Items</h2>
+        <p class="follow-up-intro">
+            Based on your year-end presentation and executive feedback, the following areas have been identified 
+            for focused development and follow-through in 2026.
+        </p>
+    
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">Personal Goals - URGENT</span>
+                <span class="follow-up-source">— Valarie Barnett</span>
+            </div>
+            <h3>Develop SMART Personal Goals for 2026 (Due in 10-15 Minutes)</h3>
+            <p class="follow-up-quote">"Your personal goal was to learn an afterthought. I'm gonna challenge you. Your goal should be specific, measurable, achievable, relevant and time-based. Those goals will transfer into Workday. If you could get that to me in the next 10-15 minutes, I don't want to close out your sheet without giving you full credit."</p>
+            <p class="follow-up-action"><strong>Action:</strong> URGENT: Submit 1-2 SMART personal goals for 2026: (1) Specific - what exactly will you accomplish, (2) Measurable - how will you track progress, (3) Achievable - can be done in 2026, (4) Relevant - aligns to AD role, (5) Time-based - includes deadlines; examples: explosive growth quantified with $ target and timeline, consistency metrics, skill development with milestones</p>
+        </div>
+        
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">Growth Strategy & Differentiation</span>
+                <span class="follow-up-source">— Valarie Barnett</span>
+            </div>
+            <h3>Articulate Compelling Differentiators for All Growth Opportunities</h3>
+            <p class="follow-up-quote">"Why would they select us in Toronto? Why Swiftwater GMP award? What is compelling them to say SBM is better or different? Why would they take us to Europe? I want to hear those ideas flushed out. It's super critical for myself, Nicole, Nick V - we need to articulate our difference at Sanofi on the spot."</p>
+            <p class="follow-up-action"><strong>Action:</strong> Document specific differentiators for each opportunity: (1) Swiftwater GMP - what makes SBM better than incumbent, (2) Toronto - value proposition vs local competitors, (3) International - capabilities/advantages, (4) Write detailed response to Valarie; ensure sales team can articulate Sanofi-specific differentiation on demand</p>
+        </div>
+        
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">Innovation Monetization</span>
+                <span class="follow-up-source">— Valarie Barnett</span>
+            </div>
+            <h3>Create Desire for Mobile Everywhere - Monetization Strategy</h3>
+            <p class="follow-up-quote">"We did this as a pilot like a Costco tasting. My hope is you have clear outcomes, meaningful things to share so they say 'we want this everywhere.' If you don't get that response, we aren't doing what we need to do. Work with us to create that desire."</p>
+            <p class="follow-up-action"><strong>Action:</strong> Develop mobile expansion pitch for Feb 2026 QBR: (1) Document Morristown results (3x report-its, operational benefits, data insights), (2) Build business case for portfolio-wide rollout with CBRE funding, (3) Partner with Valarie/Nicole/Sean to craft 'create desire' strategy, (4) Present success story that compels 'we want this everywhere' response</p>
+        </div>
+        
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">Innovation & Data Strategy</span>
+                <span class="follow-up-source">— Scott Kimball (Self-Identified)</span>
+            </div>
+            <h3>XY Sense Data Value Demonstration Strategy</h3>
+            <p class="follow-up-quote">"They're paying for XY Sense and don't really know what to do with it. Either they'll look at it as waste of money or we'll step in and blow their minds with how we help them get value... solidify our place in their partnership mindset."</p>
+            <p class="follow-up-action"><strong>Action:</strong> Develop XY Sense partnership initiative: (1) Take Morristown 2-3 month data to customer Feb/March, (2) Demonstrate how restroom traffic patterns can optimize cleaning routes/frequencies, (3) Position SBM as data interpretation expert, (4) Expand to Cambridge if successful, (5) Help Sanofi extract value from existing vendor investment</p>
+        </div>
+        
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">2026 Strategic Focus</span>
+                <span class="follow-up-source">— Valarie Barnett</span>
+            </div>
+            <h3>Year 2 - Consistency and Proactive Initiatives</h3>
+            <p class="follow-up-quote">"Year one's key projects were reactionary. In 2026, your challenge is to look out for key projects and initiatives you can initiate that add value. You'll guide it more than they will this year."</p>
+            <p class="follow-up-action"><strong>Action:</strong> Shift from reactive (Year 1: dealing with crises/problems caused by client or circumstances) to proactive (Year 2: SBM-initiated value creation); 2026 theme: consistency and stability as foundation for explosive growth; plan strategic initiatives vs responding to challenges</p>
+        </div>
+        
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">SME Resource Sharing</span>
+                <span class="follow-up-source">— Sean Henderson & Valarie Barnett</span>
+            </div>
+            <h3>Document Jacqueline's GMP Best Practices for Enterprise Use</h3>
+            <p class="follow-up-quote">"Sean: 'Do you mind sending that out? Best practice. I have another GMP account taking 6+ months.' Valarie: 'You're going to get Jacqueline pulled into calls where we're bidding GMP because we need efficiencies. She sounds like an expert.'"</p>
+            <p class="follow-up-action"><strong>Action:</strong> Work with Jacqueline to document: (1) GMP training program redesign (2 months → 3 weeks process), (2) GMP management structure efficiencies (identified 4 more supervisors to cut), (3) Share with Sean Henderson for other GMP accounts, (4) Prepare Jacqueline for bid team consultations with Valarie/Nicole/Mike/Andy on GMP efficiency finding</p>
+        </div>
+        
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">Growth Pipeline Management</span>
+                <span class="follow-up-source">— Nicole Ouimet & Valarie Barnett</span>
+            </div>
+            <h3>Aggressive Growth Tracking with Clear Timelines</h3>
+            <p class="follow-up-quote">"Nicole: 'Everything you've outlined has positioned you for growth you have on timeline for 2026.' Valarie: 'How is that being managed and tracked? How are we aggressively going after it?'"</p>
+            <p class="follow-up-action"><strong>Action:</strong> Manage 2026 pipeline with clear accountability: (1) Swiftwater GMP - Q1 final award target, (2) Toronto - June 2026 (pending SBM corporate decision), (3) International - clarity by year-end, (4) Existing scope adds - monthly tracking, (5) $1.3M additional monthly revenue target by year-end; track progress in monthly leadership meetings</p>
+        </div>
+        </div>
+
+</body>
+</html>

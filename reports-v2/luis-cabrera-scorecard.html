@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025 Year-End Scorecard - Luis Cabrera</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            background: #ffffff;
+            padding: 2rem;
+            max-width: 8.5in;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: #1a365d;
+            margin-bottom: 0.5rem;
+        }
+
+        h2 {
+            font-size: 1.35rem;
+            font-weight: 600;
+            color: #2c5282;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 0.5rem;
+        }
+
+        h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #2d3748;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        h4 {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #4a5568;
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .header-section {
+            background: linear-gradient(135deg, #1a365d 0%, #2c5282 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+        }
+
+        .header-section h1 {
+            color: white;
+            margin-bottom: 1.5rem;
+            font-size: 1.85rem;
+        }
+
+        .header-metadata {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.8rem;
+            margin-top: 1.2rem;
+        }
+
+        .metadata-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.6rem;
+            border-radius: 4px;
+        }
+
+        .metadata-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.8;
+            margin-bottom: 0.25rem;
+        }
+
+        .metadata-value {
+            font-size: 1.1rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+        }
+
+        .score-summary-first-page {
+            background: #f7fafc;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+        }
+
+        .score-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            background: white;
+        }
+
+        .score-table th {
+            background: #2c5282;
+            color: white;
+            padding: 0.75rem;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .score-table td {
+            padding: 0.75rem;
+            border: 1px solid #e2e8f0;
+        }
+
+        .score-table tr:nth-child(even) {
+            background: #f7fafc;
+        }
+
+
+        /* Follow-Up Questions Section */
+        .follow-up-section {
+            background: #fff8e1;
+            border-left: 4px solid #ff9800;
+            padding: 24px;
+            margin: 32px 0;
+            border-radius: 8px;
+            page-break-inside: avoid;
+        }
+
+        .follow-up-intro {
+            color: #e65100;
+            margin-bottom: 1rem;
+        }
+
+        .follow-up-item {
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 16px 0;
+        }
+
+        .follow-up-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .follow-up-category {
+            background: #2196f3;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .follow-up-source {
+            color: #666;
+            font-size: 14px;
+            font-style: italic;
+        }
+
+        .follow-up-quote {
+            background: #f5f5f5;
+            border-left: 3px solid #ff9800;
+            padding: 12px 16px;
+            margin: 12px 0;
+            font-style: italic;
+            color: #333;
+        }
+
+        .follow-up-action {
+            margin-top: 12px;
+            color: #333;
+        }
+
+        /* Scored Section - One section per page */
+        .scored-section {
+            page-break-after: always;
+            page-break-inside: avoid;
+            margin: 1.5rem 0;
+            padding: 1.5rem;
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            min-height: 400px;
+        }
+
+        .score-display {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin: 1rem 0;
+            padding: 1rem;
+            background: #f7fafc;
+            border-radius: 4px;
+        }
+
+        .score-label {
+            font-weight: 600;
+            color: #4a5568;
+        }
+
+        .score-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #2c5282;
+        }
+
+        .combined-feedback {
+            background: #f8f9fa;
+            border-left: 4px solid #2c5282;
+            padding: 1.25rem;
+            margin: 1rem 0;
+            border-radius: 4px;
+        }
+
+        .combined-feedback h4 {
+            color: #2c5282;
+            margin-bottom: 0.75rem;
+            font-size: 1rem;
+        }
+
+        .feedback-synthesis {
+            margin-top: 0.75rem;
+        }
+
+        .feedback-point {
+            padding: 0.75rem;
+            margin: 0.5rem 0;
+            background: white;
+            border-radius: 4px;
+            border-left: 3px solid #2c5282;
+            line-height: 1.6;
+        }
+
+        .feedback-point strong {
+            color: #2c5282;
+            font-size: 0.9rem;
+        }
+
+        .synthesis-list {
+            margin: 0.75rem 0 1rem 1.5rem;
+            padding-left: 1rem;
+        }
+
+        .synthesis-list li {
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+            color: #2d3748;
+        }
+
+        .feedback-synthesis p {
+            margin: 0.75rem 0;
+            line-height: 1.6;
+        }
+
+        .feedback-synthesis strong {
+            color: #2c5282;
+            font-weight: 600;
+        }
+
+        @media print {
+            * {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            
+            body {
+                padding: 0.25in;
+                font-size: 9pt;
+                line-height: 1.3;
+            }
+            
+            h1 {
+                font-size: 16pt;
+                margin-bottom: 0.3rem;
+            }
+            
+            h2 {
+                font-size: 12pt;
+                margin-top: 0.5rem;
+                margin-bottom: 0.4rem;
+                page-break-after: avoid;
+            }
+            
+            h3 {
+                font-size: 10pt;
+                margin-top: 0.4rem;
+                margin-bottom: 0.3rem;
+            }
+            
+            .header-section {
+                padding: 1rem;
+                margin-bottom: 1rem;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            
+            .header-metadata {
+                gap: 0.5rem;
+            }
+            
+            .metadata-item {
+                padding: 0.4rem;
+            }
+            
+            .metadata-label {
+                font-size: 7pt;
+            }
+            
+            .metadata-value {
+                font-size: 9pt;
+            }
+            
+            .score-summary-first-page {
+                page-break-after: always;
+                padding: 0.75rem;
+                margin-bottom: 1rem;
+            }
+            
+            .score-table {
+                margin: 0.75rem 0;
+                font-size: 9pt;
+            }
+            
+            .score-table th,
+            .score-table td {
+                padding: 0.35rem;
+            }
+            
+            .scored-section {
+                page-break-after: always;
+                page-break-inside: avoid;
+                margin: 0.5rem 0;
+                padding: 0.75rem;
+                border: 1px solid #e2e8f0;
+                min-height: unset;
+            }
+            
+            .score-display {
+                margin: 0.5rem 0;
+                padding: 0.5rem;
+            }
+            
+            .score-label {
+                font-size: 9pt;
+            }
+            
+            .score-value {
+                font-size: 14pt;
+            }
+            
+            .combined-feedback {
+                padding: 0.75rem;
+                margin: 0.5rem 0;
+            }
+            
+            .combined-feedback h4 {
+                font-size: 9pt;
+                margin-bottom: 0.4rem;
+            }
+            
+            .feedback-synthesis p {
+                margin: 0.4rem 0;
+                line-height: 1.4;
+                font-size: 9pt;
+            }
+            
+            .feedback-synthesis strong {
+                font-size: 9pt;
+            }
+            
+            .synthesis-list {
+                margin: 0.4rem 0 0.5rem 1rem;
+                padding-left: 0.5rem;
+            }
+            
+            .synthesis-list li {
+                margin-bottom: 0.25rem;
+                line-height: 1.4;
+                font-size: 8.5pt;
+            }
+            
+            .follow-up-section {
+                page-break-before: always;
+                page-break-inside: avoid;
+                padding: 1rem;
+                margin: 1rem 0;
+            }
+            
+            .follow-up-item {
+                padding: 0.75rem;
+                margin: 0.75rem 0;
+            }
+            
+            .follow-up-quote {
+                padding: 0.5rem;
+                margin: 0.5rem 0;
+                font-size: 8.5pt;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header-section">
+        <h1>2025 Year-End Account Review & 2026 QBR Readiness Scorecard</h1>
+        <div class="header-metadata">
+            <div class="metadata-item">
+                <div class="metadata-label">Account Director</div>
+                <div class="metadata-value">Luis Cabrera</div>
+            </div>
+            <div class="metadata-item">
+                <div class="metadata-label">Account</div>
+                <div class="metadata-value">Takeda</div>
+            </div>
+            <div class="metadata-item">
+                <div class="metadata-label">Tier</div>
+                <div class="metadata-value"><span style="background: #6366f1; color: white; padding: 0.3rem 0.8rem; border-radius: 12px; font-weight: 600; font-size: 0.9rem;">Tier 5</span></div>
+            </div>
+            <div class="metadata-item">
+                <div class="metadata-label">Review Date</div>
+                <div class="metadata-value">January 2026</div>
+            </div>
+            <div class="metadata-item">
+                <div class="metadata-label">Total Reviews</div>
+                <div class="metadata-value">4</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="score-summary-first-page">
+        <h2>Executive Summary</h2>
+
+        <table class="score-table">
+            <thead>
+                <tr>
+                    <th>Evaluation Category</th>
+                    <th style="text-align: center;">Average Score</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+        <tr>
+            <td>Key Projects & Initiatives</td>
+            <td style="text-align: center; font-weight: 600;">5.0</td>
+        </tr>
+        
+        <tr>
+            <td>Value Adds & Cost Avoidance</td>
+            <td style="text-align: center; font-weight: 600;">4.75</td>
+        </tr>
+        
+        <tr>
+            <td>Cost Savings Delivered</td>
+            <td style="text-align: center; font-weight: 600;">5.0</td>
+        </tr>
+        
+        <tr>
+            <td>Innovation & Continuous Improvement</td>
+            <td style="text-align: center; font-weight: 600;">5.0</td>
+        </tr>
+        
+        <tr>
+            <td>Issues, Challenges & Accountability</td>
+            <td style="text-align: center; font-weight: 600;">5.0</td>
+        </tr>
+        
+        <tr>
+            <td>2026 Forward Strategy & Vision</td>
+            <td style="text-align: center; font-weight: 600;">4.75</td>
+        </tr>
+        
+        <tr>
+            <td>Personal Goals & Role Maturity</td>
+            <td style="text-align: center; font-weight: 600;">4.0</td>
+        </tr>
+        
+        <tr>
+            <td>Executive Presence & Presentation Skills</td>
+            <td style="text-align: center; font-weight: 600;">4.75</td>
+        </tr>
+        
+        <tr style="background: #e8f5e9; border-top: 3px solid #2c5282;">
+            <td style="font-weight: 700; text-transform: uppercase;">Overall Score</td>
+            <td style="text-align: center; font-weight: 700; font-size: 1.2rem; color: #2c5282;">38.25/40</td>
+        </tr>
+        
+            </tbody>
+        </table>
+    </div>
+
+    
+        <div class="scored-section">
+            <h2>Key Projects & Initiatives</h2>
+            <div class="score-display">
+                <span class="score-label">Average Score:</span>
+                <span class="score-value">5.0/5</span>
+            </div>
+            
+            
+    <div class="combined-feedback">
+        <h4>Combined Feedback from Leadership Reviews</h4>
+        <div class="feedback-synthesis">
+    
+            <p><strong>Overall Assessment:</strong> I thought the key achievement section was very well put together.</p>
+        
+            <p><strong>Strengths:</strong></p>
+            <ul class="synthesis-list">
+        <li>I thought the key achievement section was very well put together. The items were clearly explained and came with a detailed review of the impact and importance of each item.</li><li>Your visual was excellent a best practice! I appreciated you being able to identify what was delivered and what changed for Takeda as a result. You were able to demonstrate strong judgement.</li><li>Luis is highly engaged on his account both client and operations. Great detail on Key Projects and Initiatives.</li><li>Luis clearly articulated a small number of high-impact initiatives that mattered deeply to the client. He demonstrated strong judgment in prioritizing GMP compliance, FDA inspection readiness, and SOP modernization, and clearly explained why these efforts were critical to Takeda’s risk profile and long-term operations. The narrative was outcome-driven, showed ownership end-to-end, and made it clear what changed for the client as a result of the work.</li></ul>
+        </div>
+    </div>
+    
+        </div>
+        
+        <div class="scored-section">
+            <h2>Value Adds & Cost Avoidance</h2>
+            <div class="score-display">
+                <span class="score-label">Average Score:</span>
+                <span class="score-value">4.75/5</span>
+            </div>
+            
+            
+    <div class="combined-feedback">
+        <h4>Combined Feedback from Leadership Reviews</h4>
+        <div class="feedback-synthesis">
+    
+            <p><strong>Overall Assessment:</strong> There was a very clear explanation on each topic.</p>
+        
+            <p><strong>Strengths:</strong></p>
+            <ul class="synthesis-list">
+        <li>There was a very clear explanation on each topic. I had a very clear understanding of what was done to achieve all of the cost savings. I would have been interested to know how we were determining what we could support on regular time.</li><li>Clearly described the value delivered beyond contract scope that translated to value or cost avoidance. GREAT JOB!</li><li>Really good information shared here and has great context to support understanding of the various initiatives.</li><li>Luis delivered exceptional examples of value beyond contract scope. He translated operational improvements into tangible financial, sustainability, and risk-reduction outcomes, including meaningful cost avoidance, waste reduction, and regulatory confidence. The work demonstrated intentional decision-making, proactive partnership, and a clear understanding of how to align SBM’s efforts with Takeda’s strategic priorities.</li></ul>
+        </div>
+    </div>
+    
+        </div>
+        
+        <div class="scored-section">
+            <h2>Cost Savings Delivered</h2>
+            <div class="score-display">
+                <span class="score-label">Average Score:</span>
+                <span class="score-value">5.0/5</span>
+            </div>
+            
+            
+    <div class="combined-feedback">
+        <h4>Combined Feedback from Leadership Reviews</h4>
+        <div class="feedback-synthesis">
+    
+            <p><strong>Overall Assessment:</strong> Detailing the growth in Savings in 2024 vs 2025 was an excellent inclusion and really helped see the scale of work that was put into this.</p>
+        
+            <p><strong>Strengths:</strong></p>
+            <ul class="synthesis-list">
+        <li>Detailing the growth in Savings in 2024 vs 2025 was an excellent inclusion and really helped see the scale of work that was put into this.</li><li>Excellent visual, you clearly and effectively quantified savings and faced the challenges. I appreciated your humor regarding the on-going goals of savings and balancing that against the union challenges. You demonstrated a strong financial ownership over your account.</li><li>Excellent description of the savings journey. Really good story!</li><li>Cost savings were clearly articulated, quantified, and tied to repeatable process improvements rather than one-time actions. Luis showed strong ownership of execution, from SOP redesign through testing, implementation, and hypercare. The savings were framed in a way that demonstrated long-term sustainability and strong financial stewardship, reinforcing SBM’s role as a trusted operational partn</li></ul>
+        </div>
+    </div>
+    
+        </div>
+        
+        <div class="scored-section">
+            <h2>Innovation & Continuous Improvement</h2>
+            <div class="score-display">
+                <span class="score-label">Average Score:</span>
+                <span class="score-value">5.0/5</span>
+            </div>
+            
+            
+    <div class="combined-feedback">
+        <h4>Combined Feedback from Leadership Reviews</h4>
+        <div class="feedback-synthesis">
+    
+            <p><strong>Overall Assessment:</strong> The through line with the AMR conversation to the cost savings was excellent story telling.</p>
+        
+            <p><strong>Strengths:</strong></p>
+            <ul class="synthesis-list">
+        <li>The through line with the AMR conversation to the cost savings was excellent story telling.</li><li>Well done on AMRs you have not only tested this you have proven in as a tool to make routines more efficient than replacing people. Also getting the customer to purchase equipment without letting the labor go is a best practice. Calculating 3,000 hours of use or 50M sqft of vacuuming completed.</li><li>Again...really great job here. Appreciate your expertise in the area and how you articulated the impact.</li><li>Luis demonstrated meaningful innovation within a highly regulated environment, which is notably difficult to do well. His ability to influence SOP changes after a decade, introduce reusable materials, and advance sustainability programs reflects mature leadership, credibility with the client, and continuous improvement thinking. Innovation was practical, scalable, and client-centric.</li></ul>
+        </div>
+    </div>
+    
+        </div>
+        
+        <div class="scored-section">
+            <h2>Issues, Challenges & Accountability</h2>
+            <div class="score-display">
+                <span class="score-label">Average Score:</span>
+                <span class="score-value">5.0/5</span>
+            </div>
+            
+            
+    <div class="combined-feedback">
+        <h4>Combined Feedback from Leadership Reviews</h4>
+        <div class="feedback-synthesis">
+    
+            <p><strong>Overall Assessment:</strong> I thought you did a good job addressing the challenges head on and explaining the context around each challenge without making excuses.</p>
+        
+            <p><strong>Strengths:</strong></p>
+            <ul class="synthesis-list">
+        <li>I thought you did a good job addressing the challenges head on and explaining the context around each challenge without making excuses.</li><li>Really good story here as well. Challenges with solutions and path forward.</li><li>Luis acknowledged the increased complexity and risk associated with higher compliance requirements and increased documentation volume, and clearly owned the operational response. He demonstrated accountability by explaining how risk was actively managed rather than avoided. This section would be further strengthened by briefly highlighting one or two lessons learned that could be applied to other GMP accounts.</li></ul>
+            <p><strong>Areas for Development:</strong></p>
+            <ul class="synthesis-list">
+        <li>Thank you for your transparency on the issues and challenges that you have had. Calling out safety is a hard one to admit, but you owned it and based on your presentation everyone I am sure learned from it. Financials are a challenge for many accounts, the good news is that I know you all will do what is needed to build it back up. When accounts are renewed we always do a reset. The good news is I have every confidence in your ability to recover. Your financial challenges will be the hardest. When you overcome these new contract challenges you can write your own ticket here at SBM!</li></ul>
+        </div>
+    </div>
+    
+        </div>
+        
+        <div class="scored-section">
+            <h2>2026 Forward Strategy & Vision</h2>
+            <div class="score-display">
+                <span class="score-label">Average Score:</span>
+                <span class="score-value">4.75/5</span>
+            </div>
+            
+            
+    <div class="combined-feedback">
+        <h4>Combined Feedback from Leadership Reviews</h4>
+        <div class="feedback-synthesis">
+    
+            <p><strong>Overall Assessment:</strong> This section was very strong and had a clear outline of what was going to be accomplished.</p>
+        
+            <p><strong>Strengths:</strong></p>
+            <ul class="synthesis-list">
+        <li>This section was very strong and had a clear outline of what was going to be accomplished. It would have helped to have some dates associated with each topic.</li><li>Another great visual supported by depth clear explanation on the roadmap, the retention strategy and what makes us different what will we do differently. I hear you we need to be more visible from the executive team with an impact. (Abel - Note for VB how can ELT get involved) You will have challenges within the new contract that are unique with a fee at risk it will challenge you in a new way.</li><li>Loved this. Really good job taking this team through your planned journey!</li><li>Luis presented a clear forward-looking strategy tied to electronic logbooks, continued sustainability leadership, and deeper operational partnership. The path forward felt intentional and aligned with Takeda’s trajectory. This section could be elevated by explicitly calling out how SBM will scale or replicate these wins across other regulated accounts.</li></ul>
+        </div>
+    </div>
+    
+        </div>
+        
+        <div class="scored-section">
+            <h2>Personal Goals & Role Maturity</h2>
+            <div class="score-display">
+                <span class="score-label">Average Score:</span>
+                <span class="score-value">4.0/5</span>
+            </div>
+            
+            
+    <div class="combined-feedback">
+        <h4>Combined Feedback from Leadership Reviews</h4>
+        <div class="feedback-synthesis">
+    
+            <p><strong>Overall Assessment:</strong> #1 Clear and measurable personal goals: you mentioned being more independent.</p>
+        
+            <p><strong>Strengths:</strong></p>
+            <ul class="synthesis-list">
+        <li>#1 Clear and measurable personal goals: you mentioned being more independent. We can measure that how? I think through performance in Q1 #2 Financial Goals: I am aligned with 
+#3 A year of no no penalties, measured by contractual scorecard</li><li>Good job. Just need to tie these back with timelines and add more content.</li><li>Luis demonstrated strong role maturity through the way he spoke about partnership, accountability, and long-term impact. While personal development goals were not explicitly outlined, his ownership of complex, high-risk initiatives signals readiness for increased scope. Articulating personal growth objectives would further strengthen future reviews.</li></ul>
+        </div>
+    </div>
+    
+        </div>
+        
+        <div class="scored-section">
+            <h2>Executive Presence & Presentation Skills</h2>
+            <div class="score-display">
+                <span class="score-label">Average Score:</span>
+                <span class="score-value">4.75/5</span>
+            </div>
+            
+            
+    <div class="combined-feedback">
+        <h4>Combined Feedback from Leadership Reviews</h4>
+        <div class="feedback-synthesis">
+    
+            <p><strong>Overall Assessment:</strong> I thought you had a smooth flow throughout the presentation.</p>
+        
+            <p><strong>Strengths:</strong></p>
+            <ul class="synthesis-list">
+        <li>I thought you had a smooth flow throughout the presentation. You did a good job dividing you time and going into appropriate detail for each section.</li><li>Really great job and very good conversation with the ELT team. Great storyteller!</li><li>The strongest, most structured presentations across the group (so far). His visuals were clear, his narrative was disciplined, and his delivery balanced confidence with credibility. He communicated complex regulatory and operational topics in a way that was accessible, compelling, and executive-ready.
+
+Luis delivered an exceptional year-end review that exemplifies what strong account leadership looks like in a regulated, high-stakes environment. He demonstrated clear ownership, strategic thinking, and the ability to translate complex work into meaningful client outcomes. This was a best-in-class performance and a strong benchmark for GMP and enterprise accounts moving forward.</li></ul>
+            <p><strong>Areas for Development:</strong></p>
+            <ul class="synthesis-list">
+        <li>Luis, you communicate clearly and confidently. You aren't complacent you are always looking for ways to do the same things in a new way. You are proactive in your financials, and value creation. You are trusted not only within SBM but within CBRE and I am sure within Takeda as well. Your knowledge of your site strategy and hard work will pay off.</li></ul>
+        </div>
+    </div>
+    
+        </div>
+        
+
+    
+    <div class="follow-up-section">
+        <h2>🎯 2026 Development Focus & Follow-Up Items</h2>
+        <p class="follow-up-intro">
+            Based on your year-end presentation and executive feedback, the following areas have been identified 
+            for focused development and follow-through in 2026.
+        </p>
+    
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">Professional Development & Independence</span>
+                <span class="follow-up-source">— Valarie Barnett</span>
+            </div>
+            <h3>Achieve Independence from Julio - Measured by Q1 2026 Performance</h3>
+            <p class="follow-up-quote">"We want to measure your personal goals. I think a clear measurable goal for you is we can measure your independence through your Q1 performance. Julio, you've got to let go. Luis is going to make mistakes. Luis, you have to tell Julio 'I got it, I don't need your help.'"</p>
+            <p class="follow-up-action"><strong>Action:</strong> Fly solo as Account Manager by Q1 2026: (1) Make independent decisions and own outcomes, (2) Allow mistakes as learning opportunities (without crashing/burning), (3) Julio must step back and let Luis lead, (4) Measure success through Q1 financial performance and operational results; demonstrate capabilities for Account Director promotion path</p>
+        </div>
+        
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">Financial Performance</span>
+                <span class="follow-up-source">— Luis Cabrera (Self-Identified) & Valarie Barnett</span>
+            </div>
+            <h3>Close $1M Annual Revenue Gap (Central Square Loss + RFP Reduction)</h3>
+            <p class="follow-up-quote">"It's almost almost $1M per year that I'm going to have to close and make sure we recoup over first probably year or six months."</p>
+            <p class="follow-up-action"><strong>Action:</strong> Close ~$1M annual gap from: (1) Central Square GMP shutdown ($14K Oct, $26K monthly ongoing), (2) RFP reduction ($80K/month); recoup through Brooklyn Park MN growth ($1.7M/year target), 585 building transition, and organic expansion; timeline: 6-12 months</p>
+        </div>
+        
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">Contract Management & Risk Mitigation</span>
+                <span class="follow-up-source">— Valarie Barnett</span>
+            </div>
+            <h3>Zero KPI Penalties in 2026 (New Fee-at-Risk Contract)</h3>
+            <p class="follow-up-quote">"I would challenge you in #3: a year of no penalties on your new contract against your KPIs."</p>
+            <p class="follow-up-action"><strong>Action:</strong> Achieve zero financial penalties under new fee-at-risk contract structure: (1) Maintain all KPI performance thresholds, (2) Avoid financial component hits, (3) Luis accepted: 'Challenge accepted... SPM has us ready and equipped to achieve that challenge'; leverage strict internal accountability that exceeds client expectations</p>
+        </div>
+        
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">Growth Strategy</span>
+                <span class="follow-up-source">— Luis Cabrera (Self-Identified)</span>
+            </div>
+            <h3>Secure 585 Kendall Square Building Without RFP</h3>
+            <p class="follow-up-quote">"One of my main goals is to avoid at all cost a potential RFP for this. We want that job awarded to us without need of RFP, and that's definitely a strategy I need to develop."</p>
+            <p class="follow-up-action"><strong>Action:</strong> Develop strategy to secure 585 Kendall Square building transition (from Central Square) through direct award without RFP; leverage existing relationship, demonstrated GMP excellence, and Takeda confidence to position as incumbent advantage</p>
+        </div>
+        
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">Growth Opportunity</span>
+                <span class="follow-up-source">— Luis Cabrera & Julio Tejeda</span>
+            </div>
+            <h3>Brooklyn Park MN Acquisition ($1.7M Annual Revenue Target)</h3>
+            <p class="follow-up-quote">"Low-hanging fruit that Julio out of his new trenches is helping me achieve is Brooklyn Park Minnesota. GMP site, about $1.7M per year in revenue. Expect by Q2 2026 better news - we're transitioning this site."</p>
+            <p class="follow-up-action"><strong>Action:</strong> Close Brooklyn Park MN opportunity by Q2 2026: (1) Partner with Julio on strategy, (2) Leverage Takeda relationship and existing footprint, (3) Target $1.7M annual GMP site revenue to offset Central Square and RFP losses, (4) Position as critical growth initiative for financial gap closure</p>
+        </div>
+        
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">Strategic Positioning</span>
+                <span class="follow-up-source">— Luis Cabrera (Self-Identified)</span>
+            </div>
+            <h3>Strengthen Perception of SBM Support Structure Beyond Luis</h3>
+            <p class="follow-up-quote">"We heard a lot during RFP that 'we know Luis is there, but what else is behind SBM?' We have control environment team, Dan, Marvin, people behind me. We need to portray that... make it so they feel it, they see it. Not just tell them in presentation."</p>
+            <p class="follow-up-action"><strong>Action:</strong> Revamp QBR/engagement strategy to demonstrate SBM depth: (1) Bring senior leadership visibility to Takeda (Marvin, Dan, COO access), (2) Show support structure beyond Luis, (3) Make Takeda 'feel comfortable and supported' by entire organization, (4) Move beyond PowerPoint mentions to tangible leadership presence</p>
+        </div>
+        
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">Goal Development</span>
+                <span class="follow-up-source">— Valarie Barnett</span>
+            </div>
+            <h3>Flush Out Personal Goals with Timelines and Actionable Data</h3>
+            <p class="follow-up-quote">"I want you to flush those out and develop them just a little bit more with timelines and actionable data so that when you sit down with your management team, you can actually say where am I in the process of achieving what I wanted to this year?"</p>
+            <p class="follow-up-action"><strong>Action:</strong> Document personal goals with: (1) Specific timelines (Q1 independence, Q2 Brooklyn Park, 2026 zero penalties, financial gap closure 6-12 months), (2) Measurable milestones for each goal, (3) Progress tracking mechanism for monthly management reviews, (4) Clear success criteria</p>
+        </div>
+        
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">Lessons Learned</span>
+                <span class="follow-up-source">— Luis Cabrera (Self-Identified)</span>
+            </div>
+            <h3>RFP Lesson Learned - Be More Aggressive, Ask for What You Want</h3>
+            <p class="follow-up-quote">"Another conversation for another time about lessons learned for RFP: be more aggressive, definitely ask for what you want. That's the biggest lesson learned these RFPs left to me."</p>
+            <p class="follow-up-action"><strong>Action:</strong> Apply RFP lessons learned to future opportunities (585 building, Brooklyn Park): (1) Be more aggressive in positioning, (2) Explicitly ask for what SBM wants vs implicit expectations, (3) Don't undervalue capabilities or hesitate on pricing/scope, (4) Document lessons for future reference</p>
+        </div>
+        </div>
+
+</body>
+</html>

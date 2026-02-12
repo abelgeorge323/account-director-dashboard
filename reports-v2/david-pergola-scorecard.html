@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025 Year-End Scorecard - David Pergola</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            background: #ffffff;
+            padding: 2rem;
+            max-width: 8.5in;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: #1a365d;
+            margin-bottom: 0.5rem;
+        }
+
+        h2 {
+            font-size: 1.35rem;
+            font-weight: 600;
+            color: #2c5282;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 0.5rem;
+        }
+
+        h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #2d3748;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        h4 {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #4a5568;
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .header-section {
+            background: linear-gradient(135deg, #1a365d 0%, #2c5282 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+        }
+
+        .header-section h1 {
+            color: white;
+            margin-bottom: 1.5rem;
+            font-size: 1.85rem;
+        }
+
+        .header-metadata {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.8rem;
+            margin-top: 1.2rem;
+        }
+
+        .metadata-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.6rem;
+            border-radius: 4px;
+        }
+
+        .metadata-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.8;
+            margin-bottom: 0.25rem;
+        }
+
+        .metadata-value {
+            font-size: 1.1rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+        }
+
+        .score-summary-first-page {
+            background: #f7fafc;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+        }
+
+        .score-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            background: white;
+        }
+
+        .score-table th {
+            background: #2c5282;
+            color: white;
+            padding: 0.75rem;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .score-table td {
+            padding: 0.75rem;
+            border: 1px solid #e2e8f0;
+        }
+
+        .score-table tr:nth-child(even) {
+            background: #f7fafc;
+        }
+
+
+        /* Follow-Up Questions Section */
+        .follow-up-section {
+            background: #fff8e1;
+            border-left: 4px solid #ff9800;
+            padding: 24px;
+            margin: 32px 0;
+            border-radius: 8px;
+            page-break-inside: avoid;
+        }
+
+        .follow-up-intro {
+            color: #e65100;
+            margin-bottom: 1rem;
+        }
+
+        .follow-up-item {
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 16px 0;
+        }
+
+        .follow-up-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .follow-up-category {
+            background: #2196f3;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .follow-up-source {
+            color: #666;
+            font-size: 14px;
+            font-style: italic;
+        }
+
+        .follow-up-quote {
+            background: #f5f5f5;
+            border-left: 3px solid #ff9800;
+            padding: 12px 16px;
+            margin: 12px 0;
+            font-style: italic;
+            color: #333;
+        }
+
+        .follow-up-action {
+            margin-top: 12px;
+            color: #333;
+        }
+
+        /* Scored Section - One section per page */
+        .scored-section {
+            page-break-after: always;
+            page-break-inside: avoid;
+            margin: 1.5rem 0;
+            padding: 1.5rem;
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            min-height: 400px;
+        }
+
+        .score-display {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin: 1rem 0;
+            padding: 1rem;
+            background: #f7fafc;
+            border-radius: 4px;
+        }
+
+        .score-label {
+            font-weight: 600;
+            color: #4a5568;
+        }
+
+        .score-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #2c5282;
+        }
+
+        .combined-feedback {
+            background: #f8f9fa;
+            border-left: 4px solid #2c5282;
+            padding: 1.25rem;
+            margin: 1rem 0;
+            border-radius: 4px;
+        }
+
+        .combined-feedback h4 {
+            color: #2c5282;
+            margin-bottom: 0.75rem;
+            font-size: 1rem;
+        }
+
+        .feedback-synthesis {
+            margin-top: 0.75rem;
+        }
+
+        .feedback-point {
+            padding: 0.75rem;
+            margin: 0.5rem 0;
+            background: white;
+            border-radius: 4px;
+            border-left: 3px solid #2c5282;
+            line-height: 1.6;
+        }
+
+        .feedback-point strong {
+            color: #2c5282;
+            font-size: 0.9rem;
+        }
+
+        .synthesis-list {
+            margin: 0.75rem 0 1rem 1.5rem;
+            padding-left: 1rem;
+        }
+
+        .synthesis-list li {
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+            color: #2d3748;
+        }
+
+        .feedback-synthesis p {
+            margin: 0.75rem 0;
+            line-height: 1.6;
+        }
+
+        .feedback-synthesis strong {
+            color: #2c5282;
+            font-weight: 600;
+        }
+
+        @media print {
+            * {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            
+            body {
+                padding: 0.25in;
+                font-size: 9pt;
+                line-height: 1.3;
+            }
+            
+            h1 {
+                font-size: 16pt;
+                margin-bottom: 0.3rem;
+            }
+            
+            h2 {
+                font-size: 12pt;
+                margin-top: 0.5rem;
+                margin-bottom: 0.4rem;
+                page-break-after: avoid;
+            }
+            
+            h3 {
+                font-size: 10pt;
+                margin-top: 0.4rem;
+                margin-bottom: 0.3rem;
+            }
+            
+            .header-section {
+                padding: 1rem;
+                margin-bottom: 1rem;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            
+            .header-metadata {
+                gap: 0.5rem;
+            }
+            
+            .metadata-item {
+                padding: 0.4rem;
+            }
+            
+            .metadata-label {
+                font-size: 7pt;
+            }
+            
+            .metadata-value {
+                font-size: 9pt;
+            }
+            
+            .score-summary-first-page {
+                page-break-after: always;
+                padding: 0.75rem;
+                margin-bottom: 1rem;
+            }
+            
+            .score-table {
+                margin: 0.75rem 0;
+                font-size: 9pt;
+            }
+            
+            .score-table th,
+            .score-table td {
+                padding: 0.35rem;
+            }
+            
+            .scored-section {
+                page-break-after: always;
+                page-break-inside: avoid;
+                margin: 0.5rem 0;
+                padding: 0.75rem;
+                border: 1px solid #e2e8f0;
+                min-height: unset;
+            }
+            
+            .score-display {
+                margin: 0.5rem 0;
+                padding: 0.5rem;
+            }
+            
+            .score-label {
+                font-size: 9pt;
+            }
+            
+            .score-value {
+                font-size: 14pt;
+            }
+            
+            .combined-feedback {
+                padding: 0.75rem;
+                margin: 0.5rem 0;
+            }
+            
+            .combined-feedback h4 {
+                font-size: 9pt;
+                margin-bottom: 0.4rem;
+            }
+            
+            .feedback-synthesis p {
+                margin: 0.4rem 0;
+                line-height: 1.4;
+                font-size: 9pt;
+            }
+            
+            .feedback-synthesis strong {
+                font-size: 9pt;
+            }
+            
+            .synthesis-list {
+                margin: 0.4rem 0 0.5rem 1rem;
+                padding-left: 0.5rem;
+            }
+            
+            .synthesis-list li {
+                margin-bottom: 0.25rem;
+                line-height: 1.4;
+                font-size: 8.5pt;
+            }
+            
+            .follow-up-section {
+                page-break-before: always;
+                page-break-inside: avoid;
+                padding: 1rem;
+                margin: 1rem 0;
+            }
+            
+            .follow-up-item {
+                padding: 0.75rem;
+                margin: 0.75rem 0;
+            }
+            
+            .follow-up-quote {
+                padding: 0.5rem;
+                margin: 0.5rem 0;
+                font-size: 8.5pt;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header-section">
+        <h1>2025 Year-End Account Review & 2026 QBR Readiness Scorecard</h1>
+        <div class="header-metadata">
+            <div class="metadata-item">
+                <div class="metadata-label">Account Director</div>
+                <div class="metadata-value">David Pergola</div>
+            </div>
+            <div class="metadata-item">
+                <div class="metadata-label">Account</div>
+                <div class="metadata-value">Merck Sodexo</div>
+            </div>
+            <div class="metadata-item">
+                <div class="metadata-label">Tier</div>
+                <div class="metadata-value"><span style="background: #6366f1; color: white; padding: 0.3rem 0.8rem; border-radius: 12px; font-weight: 600; font-size: 0.9rem;">Tier 5</span></div>
+            </div>
+            <div class="metadata-item">
+                <div class="metadata-label">Review Date</div>
+                <div class="metadata-value">January 2026</div>
+            </div>
+            <div class="metadata-item">
+                <div class="metadata-label">Total Reviews</div>
+                <div class="metadata-value">3</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="score-summary-first-page">
+        <h2>Executive Summary</h2>
+
+        <table class="score-table">
+            <thead>
+                <tr>
+                    <th>Evaluation Category</th>
+                    <th style="text-align: center;">Average Score</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+        <tr>
+            <td>Key Projects & Initiatives</td>
+            <td style="text-align: center; font-weight: 600;">4.0</td>
+        </tr>
+        
+        <tr>
+            <td>Value Adds & Cost Avoidance</td>
+            <td style="text-align: center; font-weight: 600;">4.0</td>
+        </tr>
+        
+        <tr>
+            <td>Cost Savings Delivered</td>
+            <td style="text-align: center; font-weight: 600;">4.0</td>
+        </tr>
+        
+        <tr>
+            <td>Innovation & Continuous Improvement</td>
+            <td style="text-align: center; font-weight: 600;">3.33</td>
+        </tr>
+        
+        <tr>
+            <td>Issues, Challenges & Accountability</td>
+            <td style="text-align: center; font-weight: 600;">3.67</td>
+        </tr>
+        
+        <tr>
+            <td>2026 Forward Strategy & Vision</td>
+            <td style="text-align: center; font-weight: 600;">3.33</td>
+        </tr>
+        
+        <tr>
+            <td>Personal Goals & Role Maturity</td>
+            <td style="text-align: center; font-weight: 600;">2.33</td>
+        </tr>
+        
+        <tr>
+            <td>Executive Presence & Presentation Skills</td>
+            <td style="text-align: center; font-weight: 600;">3.33</td>
+        </tr>
+        
+        <tr style="background: #e8f5e9; border-top: 3px solid #2c5282;">
+            <td style="font-weight: 700; text-transform: uppercase;">Overall Score</td>
+            <td style="text-align: center; font-weight: 700; font-size: 1.2rem; color: #2c5282;">27.99/40</td>
+        </tr>
+        
+            </tbody>
+        </table>
+    </div>
+
+    
+        <div class="scored-section">
+            <h2>Key Projects & Initiatives</h2>
+            <div class="score-display">
+                <span class="score-label">Average Score:</span>
+                <span class="score-value">4.0/5</span>
+            </div>
+            
+            
+    <div class="combined-feedback">
+        <h4>Combined Feedback from Leadership Reviews</h4>
+        <div class="feedback-synthesis">
+    
+            <p><strong>Overall Assessment:</strong> We demonstrated our ability to properly plan, transition, and execute.</p>
+        
+            <p><strong>Strengths:</strong></p>
+            <ul class="synthesis-list">
+        <li>Dave has been very engaged with operations and client engagement this year and clearly articulated key projects and initiatives that he and the team have focused on this year.</li><li>David led and owned a highly complex site consolidation, transitioning Merck operations from Kenilworth and Madison into Rahway and effectively supporting the establishment of Rahway as the new headquarters. The increase in headcount from ~3,000 to ~6,500 without business disruption, union grievances, or work stoppages is a meaningful operational achievement. David clearly demonstrated ownership, coordination across multiple stakeholders, and disciplined execution. This was a strong section and appropriately positioned as a major 2025 accomplishment.</li></ul>
+            <p><strong>Areas for Development:</strong></p>
+            <ul class="synthesis-list">
+        <li>We demonstrated our ability to properly plan, transition, and execute. I would have added Merck Contract support to this section that is a key project I would say, but overall well done. You only had one key project, but did much more.</li></ul>
+        </div>
+    </div>
+    
+        </div>
+        
+        <div class="scored-section">
+            <h2>Value Adds & Cost Avoidance</h2>
+            <div class="score-display">
+                <span class="score-label">Average Score:</span>
+                <span class="score-value">4.0/5</span>
+            </div>
+            
+            
+    <div class="combined-feedback">
+        <h4>Combined Feedback from Leadership Reviews</h4>
+        <div class="feedback-synthesis">
+    
+            <p><strong>Overall Assessment:</strong> I really appreciate you having the dollars tracked and capability to recall what we performed without costs.</p>
+        
+            <p><strong>Strengths:</strong></p>
+            <ul class="synthesis-list">
+        <li>I really appreciate you having the dollars tracked and capability to recall what we performed without costs. What a partner! $69k/mo is impressive, moving this to the base will be an increase in revenue. Way to go! Thats a best practice.</li><li>Very clearly shared value adds and cost avoidance activity. Discussed high collaboration and forward plan to pull current ATB in to base as future state which will promote growth on the relationship.</li></ul>
+            <p><strong>Areas for Development:</strong></p>
+            <ul class="synthesis-list">
+        <li>David articulated several operational value adds, particularly around continuity of service, stakeholder engagement, and maintaining quality during a major transition. While the operational discipline was evident, the articulation of value leaned more toward effort than impact. This section would be strengthened by more explicitly tying value adds to outcomes Merck cares about, such as risk mitigation, employee experience, or avoided disruption during consolidation.</li></ul>
+        </div>
+    </div>
+    
+        </div>
+        
+        <div class="scored-section">
+            <h2>Cost Savings Delivered</h2>
+            <div class="score-display">
+                <span class="score-label">Average Score:</span>
+                <span class="score-value">4.0/5</span>
+            </div>
+            
+            
+    <div class="combined-feedback">
+        <h4>Combined Feedback from Leadership Reviews</h4>
+        <div class="feedback-synthesis">
+    
+            <p><strong>Overall Assessment:</strong> Merck has some of the most aggressive cost savings goals I have seen initially 30%.</p>
+        
+            <p><strong>Strengths:</strong></p>
+            <ul class="synthesis-list">
+        <li>This has been a key focus with the Sodexo client all year and Dave effectively shared what has been implemented as well as the $ associated with implementation. Key takeaway, share forward operations plan with Val to show reductions by position and new operating model considering savings are so significant.</li><li>Cost savings were clearly identified and quantified, most notably the $404K reduction achieved through optimization of ABW and portering services. David did a solid job explaining how service levels and SLAs were preserved despite reduced hours, reinforcing credibility. This was one of the stronger sections of the review and demonstrated both financial discipline and operational stewardship.</li></ul>
+            <p><strong>Areas for Development:</strong></p>
+            <ul class="synthesis-list">
+        <li>Merck has some of the most aggressive cost savings goals I have seen initially 30%. To execute without interruption and hold our results is very impressive. Gaining trust was a key sentence that you said. It has been hard to manage Sodexo successfully. We provided the savings proposal even if we didnt have to execute the removal of 44 people. It will be a win at anything less than 30%. I would like to have seen more on the optimization proposals with some depth to service delivery impacts.</li></ul>
+        </div>
+    </div>
+    
+        </div>
+        
+        <div class="scored-section">
+            <h2>Innovation & Continuous Improvement</h2>
+            <div class="score-display">
+                <span class="score-label">Average Score:</span>
+                <span class="score-value">3.33/5</span>
+            </div>
+            
+            
+    <div class="combined-feedback">
+        <h4>Combined Feedback from Leadership Reviews</h4>
+        <div class="feedback-synthesis">
+    
+            <p><strong>Overall Assessment:</strong> Merck rejected our innovation due to GDP gap.</p>
+        
+            <p><strong>Areas for Development:</strong></p>
+            <ul class="synthesis-list">
+        <li>Merck rejected our innovation due to GDP gap. How can we overcome this? (see note in 2026 goals) Is there a way to get 4i GDP approved? Centralized trash had a very big impact this could be a case study shared amongst the ops team.</li><li>David provided some good data here but there is an opportunity to expand on this. Client has been requesting optimizations so this list should be expanded a bit. Clear objective as we move to 2026.</li><li>The initiatives presented were largely optimization-driven rather than innovative, but they were appropriate given the scale of the transition and the maturity of the account. David showed an understanding of how to evolve service models to match Merck’s flexible workplace strategy. To elevate this section, future reviews should highlight lessons learned, repeatable playbooks, or process improvements that can be scaled beyond Rahway.</li></ul>
+        </div>
+    </div>
+    
+        </div>
+        
+        <div class="scored-section">
+            <h2>Issues, Challenges & Accountability</h2>
+            <div class="score-display">
+                <span class="score-label">Average Score:</span>
+                <span class="score-value">3.67/5</span>
+            </div>
+            
+            
+    <div class="combined-feedback">
+        <h4>Combined Feedback from Leadership Reviews</h4>
+        <div class="feedback-synthesis">
+    
+            <p><strong>Overall Assessment:</strong> Thank you for owning your challenges, one thing I feel we missed here was how we overcame Susanna joining.</p>
+        
+            <p><strong>Strengths:</strong></p>
+            <ul class="synthesis-list">
+        <li>Good job articulating challenges. More information needed on path forward solutions.</li><li>David acknowledged the complexity and risk inherent in the consolidation effort and demonstrated accountability for overseeing the entire project. He was transparent about the challenges and showed confidence in the controls and governance used to manage them. This section reflected solid ownership and credibility as an account leader.</li></ul>
+            <p><strong>Areas for Development:</strong></p>
+            <ul class="synthesis-list">
+        <li>Thank you for owning your challenges, one thing I feel we missed here was how we overcame Susanna joining. Need to fill the Sr Site Manager role with the proper Site Manager by tier. I would like to understand the resolve of several things on your issues. How will we overcome the challenges?</li></ul>
+        </div>
+    </div>
+    
+        </div>
+        
+        <div class="scored-section">
+            <h2>2026 Forward Strategy & Vision</h2>
+            <div class="score-display">
+                <span class="score-label">Average Score:</span>
+                <span class="score-value">3.33/5</span>
+            </div>
+            
+            
+    <div class="combined-feedback">
+        <h4>Combined Feedback from Leadership Reviews</h4>
+        <div class="feedback-synthesis">
+    
+            <p><strong>Overall Assessment:</strong> I really appreciate you having a clear outline to growth.</p>
+        
+            <p><strong>Strengths:</strong></p>
+            <ul class="synthesis-list">
+        <li>I really appreciate you having a clear outline to growth.</li><li>Forward Strategy and Vision, very general in nature. Need to expand on this considering all of the changes operationally that have occurred on location both internal SBM and client side. Also need to pull in strategy for direct Merck engagement as well.</li></ul>
+            <p><strong>Areas for Development:</strong></p>
+            <ul class="synthesis-list">
+        <li>David referenced continued optimization and operational stability but did not fully articulate a forward-looking strategy beyond maintaining performance and cost discipline. A clearer 2026 narrative around growth opportunities, service evolution, or deeper strategic partnership with Merck would strengthen this section.</li></ul>
+        </div>
+    </div>
+    
+        </div>
+        
+        <div class="scored-section">
+            <h2>Personal Goals & Role Maturity</h2>
+            <div class="score-display">
+                <span class="score-label">Average Score:</span>
+                <span class="score-value">2.33/5</span>
+            </div>
+            
+            
+    <div class="combined-feedback">
+        <h4>Combined Feedback from Leadership Reviews</h4>
+        <div class="feedback-synthesis">
+    
+            <p><strong>Overall Assessment:</strong> 2026 Goal - POC Rosanna or whomever involved and educated our our scorecard process.</p>
+        
+            <p><strong>Strengths:</strong></p>
+            <ul class="synthesis-list">
+        <li>Need to expand to include clear goals and objectives for 2026 to include time of implementation or completion.</li><li>While David demonstrated maturity and confidence in his role, personal development goals were not explicitly articulated. Future reviews would benefit from clearer articulation of leadership growth objectives or areas of focus tied to expanding scope or complexity.</li></ul>
+            <p><strong>Areas for Development:</strong></p>
+            <ul class="synthesis-list">
+        <li>2026 Goal - POC Rosanna or whomever involved and educated our our scorecard process. MIT Training - mentoring and training someone at all times. Get work releases. Needs to be clearl defined measurable goals. 
+Missing 2026 Goals</li></ul>
+        </div>
+    </div>
+    
+        </div>
+        
+        <div class="scored-section">
+            <h2>Executive Presence & Presentation Skills</h2>
+            <div class="score-display">
+                <span class="score-label">Average Score:</span>
+                <span class="score-value">3.33/5</span>
+            </div>
+            
+            
+    <div class="combined-feedback">
+        <h4>Combined Feedback from Leadership Reviews</h4>
+        <div class="feedback-synthesis">
+    
+            <p><strong>Overall Assessment:</strong> Overall I thought you presented well, I felt your knowledge of the material and account.</p>
+        
+            <p><strong>Strengths:</strong></p>
+            <ul class="synthesis-list">
+        <li>Good job in this area.</li><li>David was composed, professional, and knowledgeable, and he handled questions appropriately. At times, responses could be more crisply framed around business outcomes rather than operational details. Sharpening executive storytelling and proactively answering the “why it matters” will elevate his presence with senior audiences.
+
+David delivered a strong operational review anchored by a significant, well-executed consolidation effort and tangible cost savings. His strengths lie in execution, ownership, and operational discipline. The next step in his development is sharpening outcome-based storytelling and articulating a more forward-looking strategic narrative. Overall, this was a solid performance that reflects a dependable and capable account leader.</li></ul>
+            <p><strong>Areas for Development:</strong></p>
+            <ul class="synthesis-list">
+        <li>Overall I thought you presented well, I felt your knowledge of the material and account. I can appreciate the challenges as well as building a relationship with Sodexo and how hard that probably has been. To have gotten more credit I would like to have seen things flushed out more with solutions, to issues or challenges, depth to the value we bring. While you clearly articulated the what in what we have done I felt the impact to Merck was missing. What about us is different or better than our competitors? Why does Merck continue to chose us not just because we do what they ask but the value we bring what is that? Your notes were a helpful guide but you relied heavily on them, however, when asked you were able to provide more details which I appreciated. I challenge you to know the value, the why, and command the room wit authority over your material you have done great things - brag about it :)</li></ul>
+        </div>
+    </div>
+    
+        </div>
+        
+
+    
+    <div class="follow-up-section">
+        <h2>🎯 2026 Development Focus & Follow-Up Items</h2>
+        <p class="follow-up-intro">
+            Based on your year-end presentation and executive feedback, the following areas have been identified 
+            for focused development and follow-through in 2026.
+        </p>
+    
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">Strategic Communication & Partnership</span>
+                <span class="follow-up-source">— Valarie Barnett</span>
+            </div>
+            <h3>Overcome Client Objection to 4insite GMP Scorecard</h3>
+            <p class="follow-up-quote">"We're not in the business of like blaming the customer. So that sounds like there's an objection that we need to overcome... Your 2026 goal is to provide her with as much information as possible. I see an objection to anything that we do as an opportunity for us to better communicate."</p>
+            <p class="follow-up-action"><strong>Action:</strong> Collaborate with new Sodexo director to overcome objection; provide detailed compliance documentation showing 4insite meets FDA standards (not claiming certification, just compliance); schedule dedicated call to explain scoring methodology</p>
+        </div>
+        
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">Leadership Development & Succession Planning</span>
+                <span class="follow-up-source">— Valarie Barnett</span>
+            </div>
+            <h3>MIT Program - Mentoring at All Times</h3>
+            <p class="follow-up-quote">"You guys need at a site your size or with this level of complexity, you should always have somebody waiting and ready to go. And so now you're feeling the impacts of what that's like... My another goal for you for 2026 is to be mentoring and training someone at all times."</p>
+            <p class="follow-up-action"><strong>Action:</strong> Implement continuous MIT training; always have successor ready for Site Manager and Area Manager roles; conduct regular one-on-ones and developmental training</p>
+        </div>
+        
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">Contract Management</span>
+                <span class="follow-up-source">— Marvin Owens</span>
+            </div>
+            <h3>Execute Work Releases (Q1 2026 Priority)</h3>
+            <p class="follow-up-quote">"Part of his goal is to get those work releases executed... that has to be the number one priority... that's got to be a Q1 goal."</p>
+            <p class="follow-up-action"><strong>Action:</strong> Execute site-specific work releases by Q1 2026 with clearly defined terms, expectations, KPIs, SLAs; incorporate $69K/month executive space cleaning into base</p>
+        </div>
+        
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">Strategic Planning & Accountability</span>
+                <span class="follow-up-source">— Valarie Barnett</span>
+            </div>
+            <h3>Define Measurable 2026 Goals with Tracking Metrics</h3>
+            <p class="follow-up-quote">"Clearly, uh, defined, measurable... We want to be able to, you want to be able to meet with Marvin on your touch bases and go over those things and where you're tracking and progressing in the action items"</p>
+            <p class="follow-up-action"><strong>Action:</strong> Develop detailed 2026 goals with action items, timelines, and tracking metrics for quarterly check-ins with Marvin; ensure goals are clearly defined and measurable</p>
+        </div>
+        
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">Financial Planning & Communication</span>
+                <span class="follow-up-source">— Valarie Barnett</span>
+            </div>
+            <h3>Document MYO Proposal Details</h3>
+            <p class="follow-up-quote">"The one thing that's I think is missing here is just could you do me a favor in that 1.6 million? What are those projects? How will we... What will we do in order to get there? I know cut 22 heads, but from what programs?"</p>
+            <p class="follow-up-action"><strong>Action:</strong> Document detailed breakdown: 14 custodial FTEs, 2 lab FTEs + 1 supervisor, vehicle fleet reductions, consumable savings; provide written proposal with program-specific impact analysis</p>
+        </div>
+        </div>
+
+</body>
+</html>

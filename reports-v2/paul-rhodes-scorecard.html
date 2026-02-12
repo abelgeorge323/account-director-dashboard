@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025 Year-End Scorecard - Paul Rhodes</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            background: #ffffff;
+            padding: 2rem;
+            max-width: 8.5in;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: #1a365d;
+            margin-bottom: 0.5rem;
+        }
+
+        h2 {
+            font-size: 1.35rem;
+            font-weight: 600;
+            color: #2c5282;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 0.5rem;
+        }
+
+        h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #2d3748;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        h4 {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #4a5568;
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .header-section {
+            background: linear-gradient(135deg, #1a365d 0%, #2c5282 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+        }
+
+        .header-section h1 {
+            color: white;
+            margin-bottom: 1.5rem;
+            font-size: 1.85rem;
+        }
+
+        .header-metadata {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.8rem;
+            margin-top: 1.2rem;
+        }
+
+        .metadata-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.6rem;
+            border-radius: 4px;
+        }
+
+        .metadata-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.8;
+            margin-bottom: 0.25rem;
+        }
+
+        .metadata-value {
+            font-size: 1.1rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+        }
+
+        .score-summary-first-page {
+            background: #f7fafc;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+        }
+
+        .score-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            background: white;
+        }
+
+        .score-table th {
+            background: #2c5282;
+            color: white;
+            padding: 0.75rem;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .score-table td {
+            padding: 0.75rem;
+            border: 1px solid #e2e8f0;
+        }
+
+        .score-table tr:nth-child(even) {
+            background: #f7fafc;
+        }
+
+
+        /* Follow-Up Questions Section */
+        .follow-up-section {
+            background: #fff8e1;
+            border-left: 4px solid #ff9800;
+            padding: 24px;
+            margin: 32px 0;
+            border-radius: 8px;
+            page-break-inside: avoid;
+        }
+
+        .follow-up-intro {
+            color: #e65100;
+            margin-bottom: 1rem;
+        }
+
+        .follow-up-item {
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 16px 0;
+        }
+
+        .follow-up-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .follow-up-category {
+            background: #2196f3;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .follow-up-source {
+            color: #666;
+            font-size: 14px;
+            font-style: italic;
+        }
+
+        .follow-up-quote {
+            background: #f5f5f5;
+            border-left: 3px solid #ff9800;
+            padding: 12px 16px;
+            margin: 12px 0;
+            font-style: italic;
+            color: #333;
+        }
+
+        .follow-up-action {
+            margin-top: 12px;
+            color: #333;
+        }
+
+        /* Scored Section - One section per page */
+        .scored-section {
+            page-break-after: always;
+            page-break-inside: avoid;
+            margin: 1.5rem 0;
+            padding: 1.5rem;
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            min-height: 400px;
+        }
+
+        .score-display {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin: 1rem 0;
+            padding: 1rem;
+            background: #f7fafc;
+            border-radius: 4px;
+        }
+
+        .score-label {
+            font-weight: 600;
+            color: #4a5568;
+        }
+
+        .score-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #2c5282;
+        }
+
+        .combined-feedback {
+            background: #f8f9fa;
+            border-left: 4px solid #2c5282;
+            padding: 1.25rem;
+            margin: 1rem 0;
+            border-radius: 4px;
+        }
+
+        .combined-feedback h4 {
+            color: #2c5282;
+            margin-bottom: 0.75rem;
+            font-size: 1rem;
+        }
+
+        .feedback-synthesis {
+            margin-top: 0.75rem;
+        }
+
+        .feedback-point {
+            padding: 0.75rem;
+            margin: 0.5rem 0;
+            background: white;
+            border-radius: 4px;
+            border-left: 3px solid #2c5282;
+            line-height: 1.6;
+        }
+
+        .feedback-point strong {
+            color: #2c5282;
+            font-size: 0.9rem;
+        }
+
+        .synthesis-list {
+            margin: 0.75rem 0 1rem 1.5rem;
+            padding-left: 1rem;
+        }
+
+        .synthesis-list li {
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+            color: #2d3748;
+        }
+
+        .feedback-synthesis p {
+            margin: 0.75rem 0;
+            line-height: 1.6;
+        }
+
+        .feedback-synthesis strong {
+            color: #2c5282;
+            font-weight: 600;
+        }
+
+        @media print {
+            * {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            
+            body {
+                padding: 0.25in;
+                font-size: 9pt;
+                line-height: 1.3;
+            }
+            
+            h1 {
+                font-size: 16pt;
+                margin-bottom: 0.3rem;
+            }
+            
+            h2 {
+                font-size: 12pt;
+                margin-top: 0.5rem;
+                margin-bottom: 0.4rem;
+                page-break-after: avoid;
+            }
+            
+            h3 {
+                font-size: 10pt;
+                margin-top: 0.4rem;
+                margin-bottom: 0.3rem;
+            }
+            
+            .header-section {
+                padding: 1rem;
+                margin-bottom: 1rem;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            
+            .header-metadata {
+                gap: 0.5rem;
+            }
+            
+            .metadata-item {
+                padding: 0.4rem;
+            }
+            
+            .metadata-label {
+                font-size: 7pt;
+            }
+            
+            .metadata-value {
+                font-size: 9pt;
+            }
+            
+            .score-summary-first-page {
+                page-break-after: always;
+                padding: 0.75rem;
+                margin-bottom: 1rem;
+            }
+            
+            .score-table {
+                margin: 0.75rem 0;
+                font-size: 9pt;
+            }
+            
+            .score-table th,
+            .score-table td {
+                padding: 0.35rem;
+            }
+            
+            .scored-section {
+                page-break-after: always;
+                page-break-inside: avoid;
+                margin: 0.5rem 0;
+                padding: 0.75rem;
+                border: 1px solid #e2e8f0;
+                min-height: unset;
+            }
+            
+            .score-display {
+                margin: 0.5rem 0;
+                padding: 0.5rem;
+            }
+            
+            .score-label {
+                font-size: 9pt;
+            }
+            
+            .score-value {
+                font-size: 14pt;
+            }
+            
+            .combined-feedback {
+                padding: 0.75rem;
+                margin: 0.5rem 0;
+            }
+            
+            .combined-feedback h4 {
+                font-size: 9pt;
+                margin-bottom: 0.4rem;
+            }
+            
+            .feedback-synthesis p {
+                margin: 0.4rem 0;
+                line-height: 1.4;
+                font-size: 9pt;
+            }
+            
+            .feedback-synthesis strong {
+                font-size: 9pt;
+            }
+            
+            .synthesis-list {
+                margin: 0.4rem 0 0.5rem 1rem;
+                padding-left: 0.5rem;
+            }
+            
+            .synthesis-list li {
+                margin-bottom: 0.25rem;
+                line-height: 1.4;
+                font-size: 8.5pt;
+            }
+            
+            .follow-up-section {
+                page-break-before: always;
+                page-break-inside: avoid;
+                padding: 1rem;
+                margin: 1rem 0;
+            }
+            
+            .follow-up-item {
+                padding: 0.75rem;
+                margin: 0.75rem 0;
+            }
+            
+            .follow-up-quote {
+                padding: 0.5rem;
+                margin: 0.5rem 0;
+                font-size: 8.5pt;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header-section">
+        <h1>2025 Year-End Account Review & 2026 QBR Readiness Scorecard</h1>
+        <div class="header-metadata">
+            <div class="metadata-item">
+                <div class="metadata-label">Account Director</div>
+                <div class="metadata-value">Paul Rhodes</div>
+            </div>
+            <div class="metadata-item">
+                <div class="metadata-label">Account</div>
+                <div class="metadata-value">Google </div>
+            </div>
+            <div class="metadata-item">
+                <div class="metadata-label">Tier</div>
+                <div class="metadata-value"><span style="background: #10b981; color: white; padding: 0.3rem 0.8rem; border-radius: 12px; font-weight: 600; font-size: 0.9rem;">Tier 6</span></div>
+            </div>
+            <div class="metadata-item">
+                <div class="metadata-label">Review Date</div>
+                <div class="metadata-value">January 2026</div>
+            </div>
+            <div class="metadata-item">
+                <div class="metadata-label">Total Reviews</div>
+                <div class="metadata-value">4</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="score-summary-first-page">
+        <h2>Executive Summary</h2>
+
+        <table class="score-table">
+            <thead>
+                <tr>
+                    <th>Evaluation Category</th>
+                    <th style="text-align: center;">Average Score</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+        <tr>
+            <td>Key Projects & Initiatives</td>
+            <td style="text-align: center; font-weight: 600;">3.5</td>
+        </tr>
+        
+        <tr>
+            <td>Value Adds & Cost Avoidance</td>
+            <td style="text-align: center; font-weight: 600;">4.0</td>
+        </tr>
+        
+        <tr>
+            <td>Cost Savings Delivered</td>
+            <td style="text-align: center; font-weight: 600;">3.5</td>
+        </tr>
+        
+        <tr>
+            <td>Innovation & Continuous Improvement</td>
+            <td style="text-align: center; font-weight: 600;">4.0</td>
+        </tr>
+        
+        <tr>
+            <td>Issues, Challenges & Accountability</td>
+            <td style="text-align: center; font-weight: 600;">3.5</td>
+        </tr>
+        
+        <tr>
+            <td>2026 Forward Strategy & Vision</td>
+            <td style="text-align: center; font-weight: 600;">3.25</td>
+        </tr>
+        
+        <tr>
+            <td>Personal Goals & Role Maturity</td>
+            <td style="text-align: center; font-weight: 600;">3.5</td>
+        </tr>
+        
+        <tr>
+            <td>Executive Presence & Presentation Skills</td>
+            <td style="text-align: center; font-weight: 600;">4.25</td>
+        </tr>
+        
+        <tr style="background: #e8f5e9; border-top: 3px solid #2c5282;">
+            <td style="font-weight: 700; text-transform: uppercase;">Overall Score</td>
+            <td style="text-align: center; font-weight: 700; font-size: 1.2rem; color: #2c5282;">29.5/40</td>
+        </tr>
+        
+            </tbody>
+        </table>
+    </div>
+
+    
+        <div class="scored-section">
+            <h2>Key Projects & Initiatives</h2>
+            <div class="score-display">
+                <span class="score-label">Average Score:</span>
+                <span class="score-value">3.5/5</span>
+            </div>
+            
+            
+    <div class="combined-feedback">
+        <h4>Combined Feedback from Leadership Reviews</h4>
+        <div class="feedback-synthesis">
+    
+            <p><strong>Overall Assessment:</strong> Lean into the value for us not just the customer.</p>
+        
+            <p><strong>Strengths:</strong></p>
+            <ul class="synthesis-list">
+        <li>Lean into the value for us not just the customer. Any best practices? Alliance partnership or not be really well versed in our differences and always remind everyone of them.</li><li>3- discussed initiatives from a high level. Yousef hit on how we identify the value add of the client is bringing these to us first. Paul did a good job articulating process around the initiatives and process to ATB as well.</li><li>Demonstrated a strong shift from reactive to intentional account strategy. Effectively communicated project progress and execution with clarity. Thoughtful questions helped bridge gaps related to client outcomes. Moving forward, I’d like deeper insight into the client’s perspective and how these projects have influenced overall performance and strengthened/impacted the partnership.</li></ul>
+            <p><strong>Areas for Development:</strong></p>
+            <ul class="synthesis-list">
+        <li>Paul articulated several meaningful initiatives underway across the Google portfolio, including the shift toward a more intentional, unified account strategy, demand-based cleaning pilots, enhanced cleaning programs, and scope expansion through competitor displacement. The initiatives themselves were relevant and well selected. However, the framing leaned more toward describing what was happening or what partners were asking for rather than clearly articulating the outcomes those initiatives were designed to achieve. To strengthen this section, Paul should more explicitly define the objective behind each initiative, what success looks like for the client, and what changed or will change as a result.</li></ul>
+        </div>
+    </div>
+    
+        </div>
+        
+        <div class="scored-section">
+            <h2>Value Adds & Cost Avoidance</h2>
+            <div class="score-display">
+                <span class="score-label">Average Score:</span>
+                <span class="score-value">4.0/5</span>
+            </div>
+            
+            
+    <div class="combined-feedback">
+        <h4>Combined Feedback from Leadership Reviews</h4>
+        <div class="feedback-synthesis">
+    
+            <p><strong>Overall Assessment:</strong> Love how you quantified your value adds and avoidances!...</p>
+        
+            <p><strong>Strengths:</strong></p>
+            <ul class="synthesis-list">
+        <li>Love how you quantified your value adds and avoidances!</li><li>Paul clearly has thought out value adds and the roadmap to implementation.</li><li>The financial impact of the projects was clearly articulated. Paul demonstrated our ability to pivot and support programs as a true partner, focused on mutual success and delivering substantial savings to the overall program. Looking ahead, I’d like to see SBM take a more proactive role in driving program enhancements as subject matter experts, rather than primarily following the client’s direction.</li><li>Paul demonstrated awareness of how value can be created through improved alignment, reduced noise, and more predictable outcomes for the client. There were clear signals of partnership and responsiveness to JLL and Google priorities. That said, value adds and cost avoidance were largely described at a conceptual level. Going forward, this section would benefit from clearer examples of deliberate decisions or actions taken that delivered incremental value beyond the contract, and from translating those efforts into operational, financial, or risk-reduction impact.</li></ul>
+        </div>
+    </div>
+    
+        </div>
+        
+        <div class="scored-section">
+            <h2>Cost Savings Delivered</h2>
+            <div class="score-display">
+                <span class="score-label">Average Score:</span>
+                <span class="score-value">3.5/5</span>
+            </div>
+            
+            
+    <div class="combined-feedback">
+        <h4>Combined Feedback from Leadership Reviews</h4>
+        <div class="feedback-synthesis">
+    
+            <p><strong>Overall Assessment:</strong> Good overall explanation without any true areas of improvement.</p>
+        
+            <p><strong>Strengths:</strong></p>
+            <ul class="synthesis-list">
+        <li>Good overall explanation without any true areas of improvement. My only question was were these initiatives you came up with or managed based on your tenure.</li></ul>
+            <p><strong>Areas for Development:</strong></p>
+            <ul class="synthesis-list">
+        <li>While efficiency and demand-based models were discussed, cost savings delivered in 2025 were not clearly articulated or quantified. There was limited clarity on ownership of savings, execution details, or whether improvements are repeatable versus pilot-based. Given Paul’s tenure, this is understandable, but as he moves into a full operating year, I would expect clearer articulation of cost savings achieved, how they were driven, and how they will be sustained without eroding service quality or partnership trust.</li></ul>
+        </div>
+    </div>
+    
+        </div>
+        
+        <div class="scored-section">
+            <h2>Innovation & Continuous Improvement</h2>
+            <div class="score-display">
+                <span class="score-label">Average Score:</span>
+                <span class="score-value">4.0/5</span>
+            </div>
+            
+            
+    <div class="combined-feedback">
+        <h4>Combined Feedback from Leadership Reviews</h4>
+        <div class="feedback-synthesis">
+    
+            <p><strong>Overall Assessment:</strong> Great expansion outside of janitorial.</p>
+        
+            <p><strong>Strengths:</strong></p>
+            <ul class="synthesis-list">
+        <li>Great expansion outside of janitorial. Remember to consider  process innovations as well.</li></ul>
+            <p><strong>Areas for Development:</strong></p>
+            <ul class="synthesis-list">
+        <li>Value creation. I want to learn more about this with Paul and John.</li><li>With a strong focus on larger accounts within the Google portfolio and the successful implementation of program enhancements, is there an opportunity to scale these single-site offerings across the broader portfolio? Additionally, I would have appreciated more insight into client feedback beyond the general statement that ‘the client is excited,’ to better understand their perspective and thoughts on the programs.</li><li>Paul demonstrated a willingness to challenge the status quo and explore new operating models, particularly through right-time cleaning, enhanced cleaning programs, and pilot approaches at Westlake. These efforts reflect the right mindset. To elevate this further, future reviews should more clearly differentiate between ideas being tested versus innovations already delivering results, and capture lessons learned that inform broader rollout or course correction.</li></ul>
+        </div>
+    </div>
+    
+        </div>
+        
+        <div class="scored-section">
+            <h2>Issues, Challenges & Accountability</h2>
+            <div class="score-display">
+                <span class="score-label">Average Score:</span>
+                <span class="score-value">3.5/5</span>
+            </div>
+            
+            
+    <div class="combined-feedback">
+        <h4>Combined Feedback from Leadership Reviews</h4>
+        <div class="feedback-synthesis">
+    
+            <p><strong>Overall Assessment:</strong> I’d like to see more emphasis on timelines and deliverables so you can hold yourself accountable to overcoming in a sustainable way.</p>
+        
+            <p><strong>Strengths:</strong></p>
+            <ul class="synthesis-list">
+        <li>This portion of the presentation felt broadly outlined and lacked the specifics needed to provide deeper insight into the challenges and opportunities. The statement, ‘We need to figure out a way to drive innovation and the speed of innovation,’ without identifying the roadblocks or challenges, leaves much open to interpretation. Have we sought support to address these issues? As leaders and partners, managing accounts holistically is part of our role. A clearer understanding of why this is a challenge would be valuable. Are communication gaps with our partners contributing to this? Were we waiting for them to initiate? There seemed to be a lot left unsaid.</li></ul>
+            <p><strong>Areas for Development:</strong></p>
+            <ul class="synthesis-list">
+        <li>I’d like to see more emphasis on timelines and deliverables so you can hold yourself accountable to overcoming in a sustainable way.</li><li>Paul discussed how JLL doesn’t communicate between accounts and has taken it on himself to be they go between</li><li>Paul acknowledged real challenges across the Google portfolio, including operational noise, siloed execution, and partner-driven change requests. There was openness around tension points, particularly where efficiency initiatives could impact flexibility or responsiveness. To strengthen this section, Paul should more explicitly state what he would do differently, where trade-offs were made, and what corrective actions or guardrails he plans to put in place with clear timelines.</li></ul>
+        </div>
+    </div>
+    
+        </div>
+        
+        <div class="scored-section">
+            <h2>2026 Forward Strategy & Vision</h2>
+            <div class="score-display">
+                <span class="score-label">Average Score:</span>
+                <span class="score-value">3.25/5</span>
+            </div>
+            
+            
+    <div class="combined-feedback">
+        <h4>Combined Feedback from Leadership Reviews</h4>
+        <div class="feedback-synthesis">
+    
+            <p><strong>Overall Assessment:</strong> How do the things we do add value, not sure I understood what they find valuable or how you plan to achieve it.</p>
+        
+            <p><strong>Areas for Development:</strong></p>
+            <ul class="synthesis-list">
+        <li>How do the things we do add value, not sure I understood what they find valuable or how you plan to achieve it. I see where you’re going but I’d like you to know those things so we can action them.</li><li>I would’ve liked to have seen specific strategy details with timelines. Paul focused mostly on the JLL strategy Ascend.</li><li>I appreciated the emphasis on aligning with our partner around a shared vision. However, what does that vision entail? What does true alignment look like? Forward looking innovation was mentioned, but the specifics were unclear. What exactly are we innovating? The passion to support our partner and elevate value to Google came through strongly, which is greatly appreciated. What was missing were the concrete details: what steps we will take, how we will execute them, and the timeline for delivery.</li><li>Paul articulated a general forward-looking direction focused on unifying the account view, improving predictability, and scaling successful initiatives across regions. The intent is sound, but the strategy would benefit from sharper definition. Moving forward, I would expect a clearer 2026 roadmap that outlines priorities, sequencing, and how these initiatives directly support retention, growth, and differentiation for Google.</li></ul>
+        </div>
+    </div>
+    
+        </div>
+        
+        <div class="scored-section">
+            <h2>Personal Goals & Role Maturity</h2>
+            <div class="score-display">
+                <span class="score-label">Average Score:</span>
+                <span class="score-value">3.5/5</span>
+            </div>
+            
+            
+    <div class="combined-feedback">
+        <h4>Combined Feedback from Leadership Reviews</h4>
+        <div class="feedback-synthesis">
+    
+            <p><strong>Overall Assessment:</strong> I’m aligned with your goals use them in your touch base with leadership to ensure accountability.</p>
+        
+            <p><strong>Areas for Development:</strong></p>
+            <ul class="synthesis-list">
+        <li>I’m aligned with your goals use them in your touch base with leadership to ensure accountability.</li><li>A lot of great ideas and would like to know the how and why behind these goals. How do you plan to increase engagement? 
+What will you do with the account clarity?
+How will you create value?</li><li>The goals presented are commendable and will undoubtedly add value to our programs, team members, and partners. However, how will these goals be measured, and how is success defined? They felt more team and program oriented than personal, which is valuable, but I would also love to understand Paul’s personal goals.  What does he hope to achieve and what is the impact he envisions?</li><li>Paul demonstrated appropriate self-awareness given his short time in role and showed a thoughtful approach to learning the portfolio and relationships. Personal development goals, however, were not yet clearly articulated or measurable. As Paul settles into the role, I would expect clearer leadership goals tied to account outcomes, team alignment, and execution discipline.</li></ul>
+        </div>
+    </div>
+    
+        </div>
+        
+        <div class="scored-section">
+            <h2>Executive Presence & Presentation Skills</h2>
+            <div class="score-display">
+                <span class="score-label">Average Score:</span>
+                <span class="score-value">4.25/5</span>
+            </div>
+            
+            
+    <div class="combined-feedback">
+        <h4>Combined Feedback from Leadership Reviews</h4>
+        <div class="feedback-synthesis">
+    
+            <p><strong>Overall Assessment:</strong> You were able to present a clear structured account narrative.</p>
+        
+            <p><strong>Strengths:</strong></p>
+            <ul class="synthesis-list">
+        <li>You were able to present a clear structured account narrative. Responses were well thought out when asked a question. You demonstrated confidence into the business as well as your ability to present.</li><li>Paul has had to get up to speed very quickly and presented very well and was confident and comfortable presenting. A deeper dive into the details is my main feedback.</li><li>Paul communicated clearly and professionally and demonstrated comfort engaging with senior stakeholders. Executive presence is developing, and confidence will naturally increase with tenure. To elevate further, tightening the narrative around outcomes, ownership, and decision rationale will help Paul lead executive-level discussions with greater authority and clarity.
+
+Paul is in a reasonable ramp phase and is demonstrating the right instincts around strategy, partnership, and modernization of the Google account. The primary opportunity moving into 2026 is sharpening outcome-based framing, clearly defining ownership versus partner-driven initiatives, and translating strategy into measurable results. With greater clarity on the “why” behind initiatives and more explicit articulation of impact, Paul is well positioned to strengthen his effectiveness and influence over the next year.</li></ul>
+            <p><strong>Areas for Development:</strong></p>
+            <ul class="synthesis-list">
+        <li>Considering Paul’s relatively short tenure and limited time on the account, he did a fantastic job. However, references to his brief time, such as explicitly stating it upfront, seemed to be his desire lower expectations for the presentation. Removing those mentions would have strengthened the delivery and conveyed greater confidence. With more time on the account, I believe many of the gaps noted in the presentation will naturally be addressed, given the strength of his talking points and overall presentation. Gaining full account awareness will be a key advantage for him moving forward.</li></ul>
+        </div>
+    </div>
+    
+        </div>
+        
+
+    
+    <div class="follow-up-section">
+        <h2>🎯 2026 Development Focus & Follow-Up Items</h2>
+        <p class="follow-up-intro">
+            Based on your year-end presentation and executive feedback, the following areas have been identified 
+            for focused development and follow-through in 2026.
+        </p>
+    
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">2026 Strategy & Vision</span>
+                <span class="follow-up-source">— Melissa Hampton</span>
+            </div>
+            <h3>Define Value Creation Strategy with Specifics</h3>
+            <p class="follow-up-quote">"How do you plan to increase engagement? What will you do with the account clarity? How will you create value?"</p>
+            <p class="follow-up-action"><strong>Action:</strong> Develop specific action plans with timelines for engagement, clarity, and value creation initiatives</p>
+        </div>
+        
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">Key Projects & Initiatives</span>
+                <span class="follow-up-source">— Yousef Abbasi</span>
+            </div>
+            <h3>Articulate Client Perspective on Projects</h3>
+            <p class="follow-up-quote">"I'd like deeper insight into the client's perspective and how these projects have influenced overall performance and strengthened/impacted the partnership."</p>
+            <p class="follow-up-action"><strong>Action:</strong> Gather and document client feedback on project impact; incorporate client voice into future presentations</p>
+        </div>
+        </div>
+
+</body>
+</html>

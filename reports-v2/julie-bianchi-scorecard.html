@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025 Year-End Scorecard - Julie Bianchi</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            background: #ffffff;
+            padding: 2rem;
+            max-width: 8.5in;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: #1a365d;
+            margin-bottom: 0.5rem;
+        }
+
+        h2 {
+            font-size: 1.35rem;
+            font-weight: 600;
+            color: #2c5282;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 0.5rem;
+        }
+
+        h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #2d3748;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        h4 {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #4a5568;
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .header-section {
+            background: linear-gradient(135deg, #1a365d 0%, #2c5282 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+        }
+
+        .header-section h1 {
+            color: white;
+            margin-bottom: 1.5rem;
+            font-size: 1.85rem;
+        }
+
+        .header-metadata {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.8rem;
+            margin-top: 1.2rem;
+        }
+
+        .metadata-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.6rem;
+            border-radius: 4px;
+        }
+
+        .metadata-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.8;
+            margin-bottom: 0.25rem;
+        }
+
+        .metadata-value {
+            font-size: 1.1rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+        }
+
+        .score-summary-first-page {
+            background: #f7fafc;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+        }
+
+        .score-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            background: white;
+        }
+
+        .score-table th {
+            background: #2c5282;
+            color: white;
+            padding: 0.75rem;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .score-table td {
+            padding: 0.75rem;
+            border: 1px solid #e2e8f0;
+        }
+
+        .score-table tr:nth-child(even) {
+            background: #f7fafc;
+        }
+
+
+        /* Follow-Up Questions Section */
+        .follow-up-section {
+            background: #fff8e1;
+            border-left: 4px solid #ff9800;
+            padding: 24px;
+            margin: 32px 0;
+            border-radius: 8px;
+            page-break-inside: avoid;
+        }
+
+        .follow-up-intro {
+            color: #e65100;
+            margin-bottom: 1rem;
+        }
+
+        .follow-up-item {
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 16px 0;
+        }
+
+        .follow-up-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .follow-up-category {
+            background: #2196f3;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .follow-up-source {
+            color: #666;
+            font-size: 14px;
+            font-style: italic;
+        }
+
+        .follow-up-quote {
+            background: #f5f5f5;
+            border-left: 3px solid #ff9800;
+            padding: 12px 16px;
+            margin: 12px 0;
+            font-style: italic;
+            color: #333;
+        }
+
+        .follow-up-action {
+            margin-top: 12px;
+            color: #333;
+        }
+
+        /* Scored Section - One section per page */
+        .scored-section {
+            page-break-after: always;
+            page-break-inside: avoid;
+            margin: 1.5rem 0;
+            padding: 1.5rem;
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            min-height: 400px;
+        }
+
+        .score-display {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin: 1rem 0;
+            padding: 1rem;
+            background: #f7fafc;
+            border-radius: 4px;
+        }
+
+        .score-label {
+            font-weight: 600;
+            color: #4a5568;
+        }
+
+        .score-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #2c5282;
+        }
+
+        .combined-feedback {
+            background: #f8f9fa;
+            border-left: 4px solid #2c5282;
+            padding: 1.25rem;
+            margin: 1rem 0;
+            border-radius: 4px;
+        }
+
+        .combined-feedback h4 {
+            color: #2c5282;
+            margin-bottom: 0.75rem;
+            font-size: 1rem;
+        }
+
+        .feedback-synthesis {
+            margin-top: 0.75rem;
+        }
+
+        .feedback-point {
+            padding: 0.75rem;
+            margin: 0.5rem 0;
+            background: white;
+            border-radius: 4px;
+            border-left: 3px solid #2c5282;
+            line-height: 1.6;
+        }
+
+        .feedback-point strong {
+            color: #2c5282;
+            font-size: 0.9rem;
+        }
+
+        .synthesis-list {
+            margin: 0.75rem 0 1rem 1.5rem;
+            padding-left: 1rem;
+        }
+
+        .synthesis-list li {
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+            color: #2d3748;
+        }
+
+        .feedback-synthesis p {
+            margin: 0.75rem 0;
+            line-height: 1.6;
+        }
+
+        .feedback-synthesis strong {
+            color: #2c5282;
+            font-weight: 600;
+        }
+
+        @media print {
+            * {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            
+            body {
+                padding: 0.25in;
+                font-size: 9pt;
+                line-height: 1.3;
+            }
+            
+            h1 {
+                font-size: 16pt;
+                margin-bottom: 0.3rem;
+            }
+            
+            h2 {
+                font-size: 12pt;
+                margin-top: 0.5rem;
+                margin-bottom: 0.4rem;
+                page-break-after: avoid;
+            }
+            
+            h3 {
+                font-size: 10pt;
+                margin-top: 0.4rem;
+                margin-bottom: 0.3rem;
+            }
+            
+            .header-section {
+                padding: 1rem;
+                margin-bottom: 1rem;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            
+            .header-metadata {
+                gap: 0.5rem;
+            }
+            
+            .metadata-item {
+                padding: 0.4rem;
+            }
+            
+            .metadata-label {
+                font-size: 7pt;
+            }
+            
+            .metadata-value {
+                font-size: 9pt;
+            }
+            
+            .score-summary-first-page {
+                page-break-after: always;
+                padding: 0.75rem;
+                margin-bottom: 1rem;
+            }
+            
+            .score-table {
+                margin: 0.75rem 0;
+                font-size: 9pt;
+            }
+            
+            .score-table th,
+            .score-table td {
+                padding: 0.35rem;
+            }
+            
+            .scored-section {
+                page-break-after: always;
+                page-break-inside: avoid;
+                margin: 0.5rem 0;
+                padding: 0.75rem;
+                border: 1px solid #e2e8f0;
+                min-height: unset;
+            }
+            
+            .score-display {
+                margin: 0.5rem 0;
+                padding: 0.5rem;
+            }
+            
+            .score-label {
+                font-size: 9pt;
+            }
+            
+            .score-value {
+                font-size: 14pt;
+            }
+            
+            .combined-feedback {
+                padding: 0.75rem;
+                margin: 0.5rem 0;
+            }
+            
+            .combined-feedback h4 {
+                font-size: 9pt;
+                margin-bottom: 0.4rem;
+            }
+            
+            .feedback-synthesis p {
+                margin: 0.4rem 0;
+                line-height: 1.4;
+                font-size: 9pt;
+            }
+            
+            .feedback-synthesis strong {
+                font-size: 9pt;
+            }
+            
+            .synthesis-list {
+                margin: 0.4rem 0 0.5rem 1rem;
+                padding-left: 0.5rem;
+            }
+            
+            .synthesis-list li {
+                margin-bottom: 0.25rem;
+                line-height: 1.4;
+                font-size: 8.5pt;
+            }
+            
+            .follow-up-section {
+                page-break-before: always;
+                page-break-inside: avoid;
+                padding: 1rem;
+                margin: 1rem 0;
+            }
+            
+            .follow-up-item {
+                padding: 0.75rem;
+                margin: 0.75rem 0;
+            }
+            
+            .follow-up-quote {
+                padding: 0.5rem;
+                margin: 0.5rem 0;
+                font-size: 8.5pt;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header-section">
+        <h1>2025 Year-End Account Review & 2026 QBR Readiness Scorecard</h1>
+        <div class="header-metadata">
+            <div class="metadata-item">
+                <div class="metadata-label">Account Director</div>
+                <div class="metadata-value">Julie Bianchi</div>
+            </div>
+            <div class="metadata-item">
+                <div class="metadata-label">Account</div>
+                <div class="metadata-value">Cigna </div>
+            </div>
+            <div class="metadata-item">
+                <div class="metadata-label">Tier</div>
+                <div class="metadata-value"><span style="background: #f97316; color: white; padding: 0.3rem 0.8rem; border-radius: 12px; font-weight: 600; font-size: 0.9rem;">Tier 4</span></div>
+            </div>
+            <div class="metadata-item">
+                <div class="metadata-label">Review Date</div>
+                <div class="metadata-value">January 2026</div>
+            </div>
+            <div class="metadata-item">
+                <div class="metadata-label">Total Reviews</div>
+                <div class="metadata-value">1</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="score-summary-first-page">
+        <h2>Executive Summary</h2>
+
+        <table class="score-table">
+            <thead>
+                <tr>
+                    <th>Evaluation Category</th>
+                    <th style="text-align: center;">Average Score</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+        <tr>
+            <td>Key Projects & Initiatives</td>
+            <td style="text-align: center; font-weight: 600;">4.0</td>
+        </tr>
+        
+        <tr>
+            <td>Value Adds & Cost Avoidance</td>
+            <td style="text-align: center; font-weight: 600;">3.0</td>
+        </tr>
+        
+        <tr>
+            <td>Cost Savings Delivered</td>
+            <td style="text-align: center; font-weight: 600;">3.0</td>
+        </tr>
+        
+        <tr>
+            <td>Innovation & Continuous Improvement</td>
+            <td style="text-align: center; font-weight: 600;">4.0</td>
+        </tr>
+        
+        <tr>
+            <td>Issues, Challenges & Accountability</td>
+            <td style="text-align: center; font-weight: 600;">3.0</td>
+        </tr>
+        
+        <tr>
+            <td>2026 Forward Strategy & Vision</td>
+            <td style="text-align: center; font-weight: 600;">3.0</td>
+        </tr>
+        
+        <tr>
+            <td>Personal Goals & Role Maturity</td>
+            <td style="text-align: center; font-weight: 600;">3.0</td>
+        </tr>
+        
+        <tr>
+            <td>Executive Presence & Presentation Skills</td>
+            <td style="text-align: center; font-weight: 600;">3.0</td>
+        </tr>
+        
+        <tr style="background: #e8f5e9; border-top: 3px solid #2c5282;">
+            <td style="font-weight: 700; text-transform: uppercase;">Overall Score</td>
+            <td style="text-align: center; font-weight: 700; font-size: 1.2rem; color: #2c5282;">26.0/40</td>
+        </tr>
+        
+            </tbody>
+        </table>
+    </div>
+
+    
+        <div class="scored-section">
+            <h2>Key Projects & Initiatives</h2>
+            <div class="score-display">
+                <span class="score-label">Average Score:</span>
+                <span class="score-value">4.0/5</span>
+            </div>
+            
+            
+    <div class="combined-feedback">
+        <h4>Combined Feedback from Leadership Reviews</h4>
+        <div class="feedback-synthesis">
+    
+            <p><strong>Overall Assessment:</strong> Huge win on the floor care! Its taken us a long time to do the floors, the process for approval has been long and drawn out but I am so grateful we pushed for this! Good summary of the key projects across the account in 2025.</p>
+        
+            <p><strong>Areas for Development:</strong></p>
+            <ul class="synthesis-list">
+        <li>Huge win on the floor care! Its taken us a long time to do the floors, the process for approval has been long and drawn out but I am so grateful we pushed for this! Good summary of the key projects across the account in 2025. I feel like through this exercise I have more visibility and understanding to your impacts on the account. Only thing I would have added was why these key initiatives mattered to Cigna.</li></ul>
+        </div>
+    </div>
+    
+        </div>
+        
+        <div class="scored-section">
+            <h2>Value Adds & Cost Avoidance</h2>
+            <div class="score-display">
+                <span class="score-label">Average Score:</span>
+                <span class="score-value">3.0/5</span>
+            </div>
+            
+            
+    <div class="combined-feedback">
+        <h4>Combined Feedback from Leadership Reviews</h4>
+        <div class="feedback-synthesis">
+    
+            <p><strong>Overall Assessment:</strong> You were able to provide strong examples of value creation, I would like to have see this translated into business impact from a financial perspective.</p>
+        
+            <p><strong>Areas for Development:</strong></p>
+            <ul class="synthesis-list">
+        <li>You were able to provide strong examples of value creation, I would like to have see this translated into business impact from a financial perspective.</li></ul>
+        </div>
+    </div>
+    
+        </div>
+        
+        <div class="scored-section">
+            <h2>Cost Savings Delivered</h2>
+            <div class="score-display">
+                <span class="score-label">Average Score:</span>
+                <span class="score-value">3.0/5</span>
+            </div>
+            
+            
+    <div class="combined-feedback">
+        <h4>Combined Feedback from Leadership Reviews</h4>
+        <div class="feedback-synthesis">
+    
+            <p><strong>Overall Assessment:</strong> Saving on a position is a cost savings, I can agree with you there if we do not charge the customer for it ever .</p>
+        
+            <p><strong>Areas for Development:</strong></p>
+            <ul class="synthesis-list">
+        <li>Saving on a position is a cost savings, I can agree with you there if we do not charge the customer for it ever ... There may not have been a lot of cost savings which is ok in cases where we have to do something to support the clients outcomes. 2026 plans on either cost savings that we can deliver or ways to data to prove we provide higher service than they currently pay for.</li></ul>
+        </div>
+    </div>
+    
+        </div>
+        
+        <div class="scored-section">
+            <h2>Innovation & Continuous Improvement</h2>
+            <div class="score-display">
+                <span class="score-label">Average Score:</span>
+                <span class="score-value">4.0/5</span>
+            </div>
+            
+            <p><em>No specific feedback provided.</em></p>
+        </div>
+        
+        <div class="scored-section">
+            <h2>Issues, Challenges & Accountability</h2>
+            <div class="score-display">
+                <span class="score-label">Average Score:</span>
+                <span class="score-value">3.0/5</span>
+            </div>
+            
+            
+    <div class="combined-feedback">
+        <h4>Combined Feedback from Leadership Reviews</h4>
+        <div class="feedback-synthesis">
+    
+            <p><strong>Overall Assessment:</strong> Thank you for your transparency when it came to the issues you faced in 2025.</p>
+        
+            <p><strong>Areas for Development:</strong></p>
+            <ul class="synthesis-list">
+        <li>Thank you for your transparency when it came to the issues you faced in 2025.</li></ul>
+        </div>
+    </div>
+    
+        </div>
+        
+        <div class="scored-section">
+            <h2>2026 Forward Strategy & Vision</h2>
+            <div class="score-display">
+                <span class="score-label">Average Score:</span>
+                <span class="score-value">3.0/5</span>
+            </div>
+            
+            
+    <div class="combined-feedback">
+        <h4>Combined Feedback from Leadership Reviews</h4>
+        <div class="feedback-synthesis">
+    
+            <p><strong>Overall Assessment:</strong> Please reach out Sean on integrating the survey or scorecards we can and need to integrate! Good job looking at way to reinvent ourselves.</p>
+        
+            <p><strong>Strengths:</strong></p>
+            <ul class="synthesis-list">
+        <li>Please reach out Sean on integrating the survey or scorecards we can and need to integrate! Good job looking at way to reinvent ourselves. A huge opportunity for you would be adding dates and timelines. I want all of these planned out what are we doing when how will we execute? Timelines was the biggest ding here on your score.</li></ul>
+        </div>
+    </div>
+    
+        </div>
+        
+        <div class="scored-section">
+            <h2>Personal Goals & Role Maturity</h2>
+            <div class="score-display">
+                <span class="score-label">Average Score:</span>
+                <span class="score-value">3.0/5</span>
+            </div>
+            
+            
+    <div class="combined-feedback">
+        <h4>Combined Feedback from Leadership Reviews</h4>
+        <div class="feedback-synthesis">
+    
+            <p><strong>Overall Assessment:</strong> You shared general development of your intentions without measures or ownership.</p>
+        
+            <p><strong>Areas for Development:</strong></p>
+            <ul class="synthesis-list">
+        <li>You shared general development of your intentions without measures or ownership. It is critical that you flush out your ideas and add timelines. You have the ideas execute them, use the SMART goals method.</li></ul>
+        </div>
+    </div>
+    
+        </div>
+        
+        <div class="scored-section">
+            <h2>Executive Presence & Presentation Skills</h2>
+            <div class="score-display">
+                <span class="score-label">Average Score:</span>
+                <span class="score-value">3.0/5</span>
+            </div>
+            
+            
+    <div class="combined-feedback">
+        <h4>Combined Feedback from Leadership Reviews</h4>
+        <div class="feedback-synthesis">
+    
+            <p><strong>Overall Assessment:</strong> Communicates key points but relies on prepared material; executive presence is limited where there are things that can be done but havent been done.</p>
+        
+            <p><strong>Areas for Development:</strong></p>
+            <ul class="synthesis-list">
+        <li>Communicates key points but relies on prepared material; executive presence is limited where there are things that can be done but havent been done. Looking forward to your growth in analyzing the data, putting timelines in place holding yourself to executing your ideas.</li></ul>
+        </div>
+    </div>
+    
+        </div>
+        
+
+    
+    <div class="follow-up-section">
+        <h2>🎯 2026 Development Focus & Follow-Up Items</h2>
+        <p class="follow-up-intro">
+            Based on your year-end presentation and executive feedback, the following areas have been identified 
+            for focused development and follow-through in 2026.
+        </p>
+    
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">Personal Goals - SMART Framework</span>
+                <span class="follow-up-source">— Valarie Barnett</span>
+            </div>
+            <h3>Convert All Personal Goals to SMART Goals with Accountability Measures</h3>
+            <p class="follow-up-quote">"You mentioned SMART goals and I'm very familiar with that, but I didn't make these smart goals. You have some great ideas, but I'd like to see your ideas in a way that you hold yourself accountable. When will you have this done by? Let's put more into it."</p>
+            <p class="follow-up-action"><strong>Action:</strong> Rewrite all 2026 personal goals using SMART framework (Specific, Measurable, Achievable, Relevant, Time-bound): (1) For Insight mastery - define specific modules/features to learn, timeline for completion, how to measure proficiency, (2) Revenue growth - quantified targets with monthly/quarterly milestones, (3) Cost savings - specific dollar goals with deadlines, (4) Employee engagement - measurable initiatives with launch dates, (5) All goals need owners, deadlines, and accountability metrics</p>
+        </div>
+        
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">Forward Strategy - Missing Timelines</span>
+                <span class="follow-up-source">— Valarie Barnett</span>
+            </div>
+            <h3>Add Timelines and Dates to All 2026 Forward Strategy Items</h3>
+            <p class="follow-up-quote">"All of your forward strategy is missing timelines and dates. I could only give you like 3 stars out of 5. In order for it to really be a flushed out strategy, I need the dates. As we continue to meet monthly, we should be closer to getting these things closed out. They're not just wishes on a page."</p>
+            <p class="follow-up-action"><strong>Action:</strong> Add specific timelines to all forward strategy items: (1) Sustainability/waste analysis - completion date, signage implementation timeline, (2) Quarterly survey co-creation - draft review date, pilot timeline, rollout schedule, (3) For Insight deep-dive training - enrollment date, completion target, (4) Employee recognition program - launch date, frequency, metrics, (5) Contract renewal milestones - pre-May 2026 checkpoints; use timelines for monthly accountability in 1-on-1s</p>
+        </div>
+        
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">Cost Savings Strategy Development</span>
+                <span class="follow-up-source">— Valarie Barnett</span>
+            </div>
+            <h3>Develop Data-Driven Cost Savings Plans for 2026 (Learn from Nick Trenkamp)</h3>
+            <p class="follow-up-quote">"I don't really see this as cost savings to the client. You need to look within the individual sites and come up with strategic plans for 2026 on either cost savings that we can deliver or ways to use data to prove we're giving them more than what they pay for. Nick Trenkamp from P&G just did an excellent job with that."</p>
+            <p class="follow-up-action"><strong>Action:</strong> 2026 initiative: Develop site-specific cost savings strategies similar to Nick Trenkamp's industry standards approach: (1) Review Nick's P&G staffing defense methodology (data-driven, industry benchmarks), (2) Identify cost savings opportunities at Bloomfield, Saint Louis, remaining Arizona sites, (3) Use data to demonstrate value delivery vs cost (prove they're getting more than paying for), (4) Present quarterly findings to CBRE/Cigna with quantified impact</p>
+        </div>
+        
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">Value-Add Quantification</span>
+                <span class="follow-up-source">— Valarie Barnett (Implied)</span>
+            </div>
+            <h3>Quantify Dollar Value of All Value-Add Services</h3>
+            <p class="follow-up-quote">"Value-added services provided at no cost: large events, confidential shred bins, consumables management."</p>
+            <p class="follow-up-action"><strong>Action:</strong> 2026 tracking system: Assign dollar values to all gratuitous services: (1) Event setups - estimate hours, labor cost, compare to vendor pricing, (2) Confidential shred bin management - quantify time investment, market rate comparison, (3) Consumables management - administrative time value, (4) Emergency/short-notice work - premium rate avoidance, (5) Report quarterly to demonstrate partnership value for retention/renewal conversations</p>
+        </div>
+        
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">Operational Challenge Resolution</span>
+                <span class="follow-up-source">— Valarie Barnett</span>
+            </div>
+            <h3>Close Out Arizona Issues with Clear Resolution Documentation</h3>
+            <p class="follow-up-quote">"Some of the information around the challenges and issues, I don't necessarily know that those are over yet. Where is the resolve or is it still floating out there? Is it closed out? Where are we with it?"</p>
+            <p class="follow-up-action"><strong>Action:</strong> Document Arizona challenge resolution: (1) 18 medical locations, 11 sold by Cigna - what's current status?, (2) Site manager change - how has new SM improved responsiveness/relationships, metrics?, (3) Joint audits/surveys - current scores vs 2025 failures, corrective actions completed?, (4) Lesson learned (should have requested night supervisor earlier) - how applied to other sites?, (5) Provide closure narrative with before/after data, timelines, current state</p>
+        </div>
+        
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">For Insight Training & Mastery</span>
+                <span class="follow-up-source">— Julie Bianchi (Self-Identified) & Valarie Barnett</span>
+            </div>
+            <h3>Complete Comprehensive For Insight Training with Measurable Outcomes</h3>
+            <p class="follow-up-quote">"For Insight is amazing, but I'm being very honest with myself. I use it, but nowhere near to the extent of what it can provide. Gain more in-depth knowledge on all the different things I can get so I've got better reporting, identify trends, ultimately impact business decisions. Val: What steps have you taken to get there?"</p>
+            <p class="follow-up-action"><strong>Action:</strong> For Insight mastery plan with accountability: (1) Schedule training sessions with For Insight team or expert users - specific dates, (2) Identify 5-10 specific features/reports to master (trend analysis, predictive analytics, custom dashboards, etc.), (3) Set milestone dates for each module completion, (4) Create sample reports demonstrating new capabilities, (5) Present findings to Mario/CBRE showing data-driven insights for business decisions, (6) Measure: # of new reports generated, trends identified, business decisions influenced</p>
+        </div>
+        
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">Idea Execution & Follow-Through</span>
+                <span class="follow-up-source">— Julie Bianchi (Self-Identified)</span>
+            </div>
+            <h3>Transform Ideas into Action - Stop Talking, Start Doing</h3>
+            <p class="follow-up-quote">"When we're meeting with our customer, interactions be more detailed. We talk about ideas and then they seem to go nowhere. I take responsibility for that too. I'd really like to, I will work with them: let's generate ideas, when we're saying hey it would be great if, all right so what is it going to take to do that? Let's not just talk about it. Let's do it."</p>
+            <p class="follow-up-action"><strong>Action:</strong> Implement idea-to-action framework: (1) During customer meetings, capture ideas in real-time, (2) Before meeting ends, assign owners, deadlines, resource needs for each idea, (3) Next meeting agenda: review action items from previous meeting, report progress, (4) Track idea-to-implementation conversion rate, (5) Examples: sustainability signage (waste analysis → signage design → approval → installation with dates), quarterly survey (draft → pilot → rollout with milestones), (6) Demonstrate follow-through that builds customer confidence</p>
+        </div>
+        
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">Sustainability Initiative Execution</span>
+                <span class="follow-up-source">— Julie Bianchi & Valarie Barnett</span>
+            </div>
+            <h3>Complete Waste Analysis and Recycling Signage Implementation</h3>
+            <p class="follow-up-quote">"Really focusing on driving this forward. Common theme for Mario and Saint Louis is managing waste, in particular recycling efforts. Bags of trash go out with empty bottles, cans because people don't pay attention or not clear. Signage is very poor. We had call Tuesday with Sue Beats Atkinson. Next steps: waste analysis, then signage solutions."</p>
+            <p class="follow-up-action"><strong>Action:</strong> Sustainability project with timelines: (1) Complete waste analysis with Sue Beats Atkinson - target completion date, (2) Design signage recommendations (clear, visible, color-coded) - draft date, (3) Present to Mario and Cigna for approval - meeting date, (4) Implement at Bloomfield pilot - installation date, (5) Measure: contamination rate reduction, recycling volume increase, cost impact, (6) Expand to Saint Louis based on results - rollout timeline, (7) Follow up on call commitments to prevent initiative from 'going nowhere'</p>
+        </div>
+        
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">Employee Engagement & Recognition</span>
+                <span class="follow-up-source">— Julie Bianchi (Self-Identified)</span>
+            </div>
+            <h3>Launch Employee Recognition Program with Measurable Engagement</h3>
+            <p class="follow-up-quote">"Creating increased visibility. Seeking ideas from them, getting their opinions. What would make something better? What would make their job easier? Making sure they have opportunity to be heard. One employee mentioned: hey, how come we don't have employee of the month? That can go a long way."</p>
+            <p class="follow-up-action"><strong>Action:</strong> Employee engagement initiative: (1) Launch employee of the month program - criteria, selection process, recognition method, start date, (2) Quarterly town halls or feedback sessions - schedule, agenda, action item tracking, (3) Idea submission process - how employees submit suggestions, review timeline, implementation tracking, (4) Recognition doesn't require money - spotlight in communications, peer recognition, leadership shout-outs, (5) Measure: participation rate, ideas submitted/implemented, employee satisfaction, retention improvement</p>
+        </div>
+        
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">Lessons Learned - Arizona Supervision</span>
+                <span class="follow-up-source">— Julie Bianchi (Self-Identified)</span>
+            </div>
+            <h3>Apply Arizona Lesson: Request Supervision Funding Early When Issues Arise</h3>
+            <p class="follow-up-quote">"18 locations, some over an hour/almost two hour drive. No night supervision. I believe that was not sufficient management level to assist with reaching required results. Lesson learned: obtaining funding for needed supervision should have been requested when we saw these issues happening."</p>
+            <p class="follow-up-action"><strong>Action:</strong> Operational governance: (1) Establish early warning system for quality/audit issues requiring supervision intervention, (2) When issues emerge, immediately assess if supervision gap exists, (3) Build business case with data (travel distances, coverage gaps, audit failures) before problems compound, (4) Present to customer proactively vs reactively, (5) Don't wait for perfect timing - address supervision needs when identified, not when convenient, (6) Document ROI of supervision investment (quality improvement, audit scores, customer satisfaction)</p>
+        </div>
+        
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">Strategic Communication - Impact Articulation</span>
+                <span class="follow-up-source">— Valarie Barnett</span>
+            </div>
+            <h3>Articulate Why Key Initiatives Matter to Customer (Not Just What Was Done)</h3>
+            <p class="follow-up-quote">"Good summary of key projects across account in 2025. Through this exercise I have more visibility and understanding to your impacts. Only thing I would have added was why these key initiatives mattered to Cigna."</p>
+            <p class="follow-up-action"><strong>Action:</strong> Enhanced storytelling framework: When presenting projects/initiatives, structure as: (1) What we did (the action), (2) Why it mattered to customer (business impact, risk mitigation, strategic alignment), (3) How we executed (process, challenges overcome), (4) Results achieved (quantified when possible), (5) What's next (sustainability, expansion); Examples: 3M floors - why world headquarters image matters to Cigna brand, Union increases - why cost recovery matters to margin protection, Contract renewal - why structure change reduces Cigna administrative burden</p>
+        </div>
+        
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">Communication Depth</span>
+                <span class="follow-up-source">— Valarie Barnett</span>
+            </div>
+            <h3>Add More Depth with Timelines, Execution Plans, and Accountability</h3>
+            <p class="follow-up-quote">"I feel like there was some executive presence, but you would have to work on fleshing out your ideas to be executable and what's been executed or where you are in your timelines. It's more the teeth and depth to each item."</p>
+            <p class="follow-up-action"><strong>Action:</strong> Communication enhancement: (1) Every project/initiative should include: current status (%), timeline (start/expected completion), owner, next milestone, blockers if any, (2) Challenges should include: issue identified (when), root cause, corrective action taken, timeline for resolution, current status (open/closed), lessons learned, (3) Forward strategy needs: specific goal, why it matters, how we'll achieve it, who owns it, by when, how we'll measure success, (4) Practice presenting with this depth for monthly 1-on-1s to build habit</p>
+        </div>
+        </div>
+
+</body>
+</html>

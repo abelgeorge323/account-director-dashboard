@@ -11,11 +11,16 @@ const AppState = {
     filters: {
         vertical: 'all',
         account: 'all',
-        tier: 'all'
+        tier: 'all',
+        role: 'all'
     },
     bestPracticesFilters: {
         adName: 'all',
         category: 'all',
+        replicability: 'all',
+        status: 'all',
+        vertical: 'all',
+        account: 'all',
         featuredOnly: false
     },
     sort: {
@@ -23,6 +28,7 @@ const AppState = {
         order: 'desc'
     },
     expandedRows: new Set(),
+    expandedPractices: new Set(),
     selectedAD: null
 };
 
@@ -31,6 +37,23 @@ const AppState = {
 window.toggleRow = function(adName) {
     console.log('🎯 TOGGLE ROW CALLED:', adName);
     toggleExpandedRow(adName);
+};
+
+window.togglePracticeExpand = function(practiceKey) {
+    const isExpanded = AppState.expandedPractices.has(practiceKey);
+    if (isExpanded) {
+        AppState.expandedPractices.delete(practiceKey);
+    } else {
+        AppState.expandedPractices.add(practiceKey);
+    }
+    const card = document.querySelector(`.practice-card[data-practice-key="${practiceKey}"]`);
+    if (card) {
+        card.classList.toggle('expanded', !isExpanded);
+        const expandedEl = card.querySelector('.practice-expanded');
+        const indicator = card.querySelector('.practice-expand-indicator');
+        if (expandedEl) expandedEl.style.display = isExpanded ? 'none' : 'block';
+        if (indicator) indicator.textContent = isExpanded ? '▶' : '▼';
+    }
 };
 
 window.viewDetails = function(adName) {
@@ -72,12 +95,23 @@ async function loadBestPractices() {
         const bestPracticesData = AppState.data.bestPractices;
         const practices = [];
         const categories = new Set();
+        const replicabilities = new Set();
+        const statuses = new Set();
+        const verticals = new Set();
+        const accounts = new Set();
         
-        // Create AD to account mapping
+        // Create AD to account and vertical mapping
         const adAccountMap = {};
+        const adVerticalMap = {};
         if (AppState.data.accountDirectors) {
             AppState.data.accountDirectors.forEach(ad => {
-                adAccountMap[ad.accountDirector] = ad.account;
+                adAccountMap[ad.accountDirector] = ad.account || '';
+                adVerticalMap[ad.accountDirector] = ad.vertical || 'N/A';
+                if (ad.vertical && ad.vertical !== 'N/A') verticals.add(ad.vertical);
+                // Extract unique accounts from comma-separated account string
+                if (ad.account) {
+                    ad.account.split(',').map(a => a.trim()).filter(a => a && a !== 'undefined').forEach(acc => accounts.add(acc));
+                }
             });
         }
         
@@ -86,15 +120,25 @@ async function loadBestPractices() {
             const adPractices = bestPracticesData[adName];
             if (Array.isArray(adPractices)) {
                 adPractices.forEach(practice => {
+                    const replicable = practice.replicability || 'Medium';
+                    const status = practice.status || '';
+                    replicabilities.add(replicable);
+                    if (status) statuses.add(status);
+                    
+                    const umbrellaCat = getUmbrellaCategory(practice.category);
+                    const umbrellaStat = getUmbrellaStatus(practice.status || '');
                     practices.push({
                         ...practice,
                         adName: adName,
-                        account: adAccountMap[adName] || '',  // Get account from AD data
-                        replicable: practice.replicability || 'Medium',  // Map replicability to replicable
-                        replicableDetails: '',  // Not in new structure
-                        quote: practice.leadership_endorsement || '',  // Use endorsement as quote
-                        featured: practice.status === 'Proven & Active' || practice.status === 'Proven & Scalable',  // Auto-feature proven practices
-                        metrics: []  // Not in new structure
+                        account: adAccountMap[adName] || '',
+                        vertical: adVerticalMap[adName] || 'N/A',
+                        replicable: replicable,
+                        replicableDetails: '',
+                        quote: practice.leadership_endorsement || '',
+                        featured: practice.status === 'Proven & Active' || practice.status === 'Proven & Scalable',
+                        metrics: [],
+                        umbrellaCategory: umbrellaCat,
+                        umbrellaStatus: umbrellaStat
                     });
                     if (practice.category) {
                         categories.add(practice.category);
@@ -108,6 +152,11 @@ async function loadBestPractices() {
             metadata: {
                 totalPractices: practices.length,
                 categories: Array.from(categories).sort(),
+                umbrellaCategories: UMBRELLA_CATEGORIES.map(u => u.id),
+                replicabilities: Array.from(replicabilities).sort(),
+                statuses: Array.from(statuses).sort(),
+                verticals: Array.from(verticals).sort(),
+                accounts: Array.from(accounts).sort(),
                 lastUpdated: AppState.data.metadata?.lastUpdated || new Date().toISOString()
             },
             practices: practices
@@ -202,6 +251,7 @@ function populateFilters() {
     const verticals = new Set();
     const accounts = new Set();
     const tiers = new Set();
+    const roles = new Set();
     
     AppState.data.accountDirectors.forEach(ad => {
         if (ad.vertical && ad.vertical !== 'N/A') verticals.add(ad.vertical);
@@ -211,6 +261,7 @@ function populateFilters() {
         } else {
             tiers.add('Unassigned');
         }
+        if (ad.role) roles.add(ad.role);
     });
     
     // Populate vertical filter (in rankings view)
@@ -232,6 +283,28 @@ function populateFilters() {
             option.value = tier;
             option.textContent = tier;
             tierFilterSelect.appendChild(option);
+        });
+    }
+    
+    // Populate role filter (in rankings view)
+    const roleFilterSelect = document.getElementById('role-filter');
+    if (roleFilterSelect) {
+        Array.from(roles).sort().forEach(role => {
+            const option = document.createElement('option');
+            option.value = role;
+            option.textContent = role;
+            roleFilterSelect.appendChild(option);
+        });
+    }
+    
+    // Populate role filter in sidebar
+    const filterRole = document.getElementById('filter-role');
+    if (filterRole) {
+        Array.from(roles).sort().forEach(role => {
+            const option = document.createElement('option');
+            option.value = role;
+            option.textContent = role;
+            filterRole.appendChild(option);
         });
     }
     
@@ -260,6 +333,9 @@ function getFilteredData() {
             if (adTier !== AppState.filters.tier) {
                 return false;
             }
+        }
+        if (AppState.filters.role !== 'all' && (ad.role || 'Account Director') !== AppState.filters.role) {
+            return false;
         }
         return true;
     });
@@ -674,12 +750,55 @@ function renderRubric() {
 }
 
 // ==================== BEST PRACTICES VIEW ====================
+// Umbrella categories: group 60+ granular categories into 8 buckets for easier filtering
+const UMBRELLA_CATEGORIES = [
+    { id: 'Transitions', label: 'Transitions', class: 'cat-transitions', color: '#06b6d4' },
+    { id: 'Financial Strategy', label: 'Financial Strategy', class: 'cat-financial', color: '#f59e0b' },
+    { id: 'Operational Excellence', label: 'Operational Excellence', class: 'cat-operational', color: '#3b82f6' },
+    { id: 'Innovation & Technology', label: 'Innovation & Technology', class: 'cat-innovation', color: '#6366f1' },
+    { id: 'Client Relations & Partnership', label: 'Client Relations & Partnership', class: 'cat-client', color: '#10b981' },
+    { id: 'Governance & Process', label: 'Governance & Process', class: 'cat-governance', color: '#64748b' },
+    { id: 'People & Culture', label: 'People & Culture', class: 'cat-people', color: '#f43f5e' },
+    { id: 'Safety & Quality', label: 'Safety & Quality', class: 'cat-safety', color: '#ef4444' }
+];
+
+// Umbrella statuses: group granular statuses into broader buckets
+const UMBRELLA_STATUSES = [
+    { id: 'Proven', label: 'Proven (Active, Scalable, Complete, etc.)' },
+    { id: 'In Development', label: 'In Development (2026 goals, pilots, etc.)' },
+    { id: 'Active / Expanding', label: 'Active / Expanding' }
+];
+
+function getUmbrellaStatus(granularStatus) {
+    if (!granularStatus) return 'Proven';
+    const s = granularStatus.toLowerCase();
+    if (s.includes('development') || s.includes('2026 development') || s.includes('pilot') || s.includes('in progress')) return 'In Development';
+    if (s.includes('expanding') || s.includes('converting') || s.includes('phase 2') || (s.startsWith('active (') && (s.includes('2026') || s.includes('growth')))) return 'Active / Expanding';
+    return 'Proven';
+}
+
+function getUmbrellaCategory(granularCategory) {
+    if (!granularCategory) return 'Operational Excellence';
+    const c = granularCategory.toLowerCase();
+    if (c.includes('transition') || c.includes('turnaround') || c.includes('account recovery')) return 'Transitions';
+    if (c.includes('financial') || c.includes('cost savings') || c.includes('cost avoidance') || c.includes('revenue growth') || c.includes('financial excellence') || c.includes('financial optimization') || c.includes('financial recovery') || c.includes('contract management') || c.includes('procurement')) return 'Financial Strategy';
+    if (c.includes('operational') || c.includes('process excellence') || c.includes('service excellence') || c.includes('emergency response') || c.includes('labor optimization') || c.includes('standardization') || c.includes('scalability') || c.includes('crisis response') || c.includes('service innovation')) return 'Operational Excellence';
+    if (c.includes('innovation') || c.includes('technology') || c.includes('data-driven') || c.includes('product innovation') || c.includes('equipment investment') || c.includes('sustainability')) return 'Innovation & Technology';
+    if (c.includes('client') || c.includes('partnership') || c.includes('relationship management') || c.includes('strategic partnership') || c.includes('strategic negotiation') || c.includes('service expansion') || c.includes('business development') || c.includes('strategic thinking')) return 'Client Relations & Partnership';
+    if (c.includes('governance') || c.includes('process improvement') || c.includes('communication') || c.includes('strategic communication') || c.includes('data alignment') || c.includes('real-time communication') || c.includes('strategic planning') || c.includes('executive presentation')) return 'Governance & Process';
+    if (c.includes('people') || c.includes('team building') || c.includes('staffing') || c.includes('workforce') || c.includes('talent') || c.includes('retention') || c.includes('leadership philosophy')) return 'People & Culture';
+    if (c.includes('safety') || c.includes('quality') || c.includes('risk management') || c.includes('compliance') || c.includes('regulatory') || c.includes('accountability')) return 'Safety & Quality';
+    return 'Operational Excellence';
+}
+
 function populateBestPracticesFilters() {
     if (!AppState.bestPractices) return;
     
+    const meta = AppState.bestPractices.metadata;
+    
     // Populate AD filter
     const adFilter = document.getElementById('bp-ad-filter');
-    const uniqueADs = [...new Set(AppState.bestPractices.practices.map(p => p.adName))];
+    const uniqueADs = [...new Set(AppState.bestPractices.practices.map(p => p.adName))].sort();
     uniqueADs.forEach(ad => {
         const option = document.createElement('option');
         option.value = ad;
@@ -687,48 +806,102 @@ function populateBestPracticesFilters() {
         adFilter.appendChild(option);
     });
     
-    // Populate category filter
-    const categoryFilter = document.getElementById('bp-category-filter');
-    AppState.bestPractices.metadata.categories.forEach(category => {
-        const option = document.createElement('option');
-        option.value = category;
-        option.textContent = category;
-        categoryFilter.appendChild(option);
-    });
+    // Populate category filter with umbrella categories (dropdown)
+    const categoryFilterSelect = document.getElementById('bp-category-filter');
+    if (categoryFilterSelect) {
+        categoryFilterSelect.innerHTML = '<option value="all">All Categories</option>';
+        UMBRELLA_CATEGORIES.forEach(umbrella => {
+            const option = document.createElement('option');
+            option.value = umbrella.id;
+            option.textContent = umbrella.label;
+            categoryFilterSelect.appendChild(option);
+        });
+    }
+    
+    // Populate replicability filter
+    const replicabilityFilter = document.getElementById('bp-replicability-filter');
+    if (replicabilityFilter) {
+        (meta.replicabilities || []).forEach(r => {
+            const option = document.createElement('option');
+            option.value = r;
+            option.textContent = r;
+            replicabilityFilter.appendChild(option);
+        });
+    }
+    
+    // Populate status filter with umbrella statuses
+    const statusFilter = document.getElementById('bp-status-filter');
+    if (statusFilter) {
+        statusFilter.innerHTML = '<option value="all">All Status</option>';
+        UMBRELLA_STATUSES.forEach(us => {
+            const option = document.createElement('option');
+            option.value = us.id;
+            option.textContent = us.label;
+            statusFilter.appendChild(option);
+        });
+    }
+    
+    // Populate vertical filter
+    const verticalFilter = document.getElementById('bp-vertical-filter');
+    if (verticalFilter) {
+        (meta.verticals || []).forEach(v => {
+            const option = document.createElement('option');
+            option.value = v;
+            option.textContent = v;
+            verticalFilter.appendChild(option);
+        });
+    }
+    
+    // Populate account filter
+    const accountFilter = document.getElementById('bp-account-filter');
+    if (accountFilter) {
+        (meta.accounts || []).forEach(a => {
+            const option = document.createElement('option');
+            option.value = a;
+            option.textContent = a;
+            accountFilter.appendChild(option);
+        });
+    }
 }
 
-function getCategoryClass(category) {
-    const classes = {
-        'Innovation & Technology': 'cat-innovation',
-        'Business Development & Strategy': 'cat-business',
-        'Client Relations & Advocacy': 'cat-relations',
-        'Cost Savings & Efficiency': 'cat-savings',
-        'Process Improvement': 'cat-process',
-        'Communication & Presentation': 'cat-communication'
-    };
-    return classes[category] || 'cat-default';
+function getCategoryClass(categoryOrUmbrella) {
+    const u = UMBRELLA_CATEGORIES.find(x => x.id === categoryOrUmbrella);
+    return u ? u.class : 'cat-default';
 }
 
-function getCategoryBadge(category) {
-    const categoryClass = getCategoryClass(category);
-    return `<span class="category-badge ${categoryClass}">${category.toUpperCase()}</span>`;
+function getCategoryBadge(practice) {
+    const umbrella = practice.umbrellaCategory || getUmbrellaCategory(practice.category);
+    const categoryClass = getCategoryClass(umbrella);
+    return `<span class="category-badge ${categoryClass}">${umbrella.toUpperCase()}</span>`;
+}
+
+function getPracticeKey(practice, index) {
+    return `bp-${index}-${(practice.title || '').slice(0, 30).replace(/[^a-zA-Z0-9]/g, '-')}`;
+}
+
+function escapeHtml(str) {
+    if (!str) return '';
+    const div = document.createElement('div');
+    div.textContent = str;
+    return div.innerHTML;
 }
 
 function getFilteredPractices() {
     if (!AppState.bestPractices) return [];
     
+    const f = AppState.bestPracticesFilters;
+    
     return AppState.bestPractices.practices.filter(practice => {
-        if (AppState.bestPracticesFilters.adName !== 'all' && 
-            practice.adName !== AppState.bestPracticesFilters.adName) {
-            return false;
+        if (f.adName !== 'all' && practice.adName !== f.adName) return false;
+        if (f.category !== 'all' && practice.umbrellaCategory !== f.category) return false;
+        if (f.replicability !== 'all' && (practice.replicable || practice.replicability) !== f.replicability) return false;
+        if (f.status !== 'all' && practice.umbrellaStatus !== f.status) return false;
+        if (f.vertical !== 'all' && practice.vertical !== f.vertical) return false;
+        if (f.account !== 'all') {
+            const practiceAccounts = (practice.account || '').split(',').map(a => a.trim());
+            if (!practiceAccounts.includes(f.account)) return false;
         }
-        if (AppState.bestPracticesFilters.category !== 'all' && 
-            practice.category !== AppState.bestPracticesFilters.category) {
-            return false;
-        }
-        if (AppState.bestPracticesFilters.featuredOnly && !practice.featured) {
-            return false;
-        }
+        if (f.featuredOnly && !practice.featured) return false;
         return true;
     });
 }
@@ -740,6 +913,7 @@ function renderBestPractices() {
         return;
     }
     
+    AppState.expandedPractices.clear();
     const filtered = getFilteredPractices();
     
     // Render featured practices
@@ -758,54 +932,53 @@ function renderFeaturedPractices(practices) {
         return;
     }
     
+    const startIdx = 10000; // Offset to avoid collision with all-practices keys
     container.innerHTML = `
         <div class="featured-section-header">
             <div class="featured-badge">FEATURED HIGHLIGHTS</div>
-            <div class="featured-subtitle">Strategic initiatives with high impact and replicability</div>
+            <div class="featured-subtitle">Strategic initiatives with high impact and replicability • Click to expand</div>
         </div>
-        ${practices.map(practice => `
-            <div class="practice-card featured fade-in">
-                <div class="practice-header">
-                    ${getCategoryBadge(practice.category)}
+        ${practices.map((practice, i) => {
+            const key = getPracticeKey(practice, startIdx + i);
+            const isExpanded = AppState.expandedPractices.has(key);
+            const desc = escapeHtml(practice.description || '');
+            const ctx = escapeHtml(practice.context || '');
+            const quote = escapeHtml(practice.quote || '');
+            return `
+            <div class="practice-card featured compact ${isExpanded ? 'expanded' : ''}" data-practice-key="${key}" onclick="event.stopPropagation(); window.togglePracticeExpand('${key}');" style="cursor: pointer;">
+                <div class="compact-summary">
+                    <div class="practice-header">${getCategoryBadge(practice)}</div>
+                    <div class="compact-header">
+                        <h3 class="card-title">${practice.title}</h3>
+                        <span class="practice-expand-indicator">${isExpanded ? '▼' : '▶'}</span>
+                    </div>
+                    <div class="card-meta">
+                        <span class="ad-name">${practice.adName}</span>
+                        <span class="separator">|</span>
+                        <span class="account-name">${practice.account}</span>
+                    </div>
+                    <div class="compact-details">
+                        <div class="compact-detail">
+                            <span class="compact-label">Impact:</span>
+                            <span class="compact-value">${practice.impact}</span>
+                        </div>
+                        <div class="compact-detail">
+                            <span class="compact-label">Replicability:</span>
+                            <span class="compact-value">${practice.replicable}</span>
+                        </div>
+                    </div>
                 </div>
-                <h3 class="card-title">${practice.title}</h3>
-                <div class="card-meta">
-                    <span class="ad-name">${practice.adName}</span>
-                    <span class="separator">|</span>
-                    <span class="account-name">${practice.account}</span>
+                <div class="practice-expanded" style="display: ${isExpanded ? 'block' : 'none'};">
+                    ${desc ? `<p class="card-description">${desc}</p>` : ''}
+                    ${ctx ? `<div class="detail-item"><span class="detail-label">CONTEXT</span><span class="detail-text">${ctx}</span></div>` : ''}
+                    <div class="card-details">
+                        <div class="detail-item"><span class="detail-label">IMPACT</span><span class="detail-text">${practice.impact}</span></div>
+                        <div class="detail-item"><span class="detail-label">STATUS</span><span class="detail-text">${practice.status || '—'}</span></div>
+                    </div>
+                    ${quote ? `<blockquote class="practice-quote">"${quote}"</blockquote>` : ''}
                 </div>
-                
-                <p class="card-description">${practice.description}</p>
-                
-                <div class="card-details">
-                    <div class="detail-item">
-                        <span class="detail-label">IMPACT</span>
-                        <span class="detail-text">${practice.impact}</span>
-                    </div>
-                    <div class="detail-item">
-                        <span class="detail-label">REPLICABILITY</span>
-                        <span class="detail-text">${practice.replicable} — ${practice.replicableDetails}</span>
-                    </div>
-                    <div class="detail-item">
-                        <span class="detail-label">STATUS</span>
-                        <span class="detail-text">${practice.status}</span>
-                    </div>
-                </div>
-                
-                <blockquote class="practice-quote">
-                    "${practice.quote}"
-                </blockquote>
-                
-                ${practice.metrics ? `
-                    <div class="metrics-section">
-                        <div class="metrics-label">KEY METRICS</div>
-                        <ul class="metrics-list">
-                            ${practice.metrics.map(m => `<li>${m}</li>`).join('')}
-                        </ul>
-                    </div>
-                ` : ''}
             </div>
-        `).join('')}
+        `}).join('')}
     `;
 }
 
@@ -817,50 +990,76 @@ function renderAllPractices(practices) {
         return;
     }
     
-    // Group by category
-    const byCategory = {};
+    // Group by umbrella category (8 sections instead of 60+)
+    const byUmbrella = {};
     practices.forEach(practice => {
-        if (!byCategory[practice.category]) {
-            byCategory[practice.category] = [];
-        }
-        byCategory[practice.category].push(practice);
+        const umbrella = practice.umbrellaCategory || getUmbrellaCategory(practice.category);
+        if (!byUmbrella[umbrella]) byUmbrella[umbrella] = [];
+        byUmbrella[umbrella].push(practice);
     });
+    const umbrellaOrder = UMBRELLA_CATEGORIES.map(u => u.id);
+    const sortedUmbrellas = Object.keys(byUmbrella).sort((a, b) => 
+        umbrellaOrder.indexOf(a) - umbrellaOrder.indexOf(b));
+    
+    let practiceIndex = 0;
     
     container.innerHTML = `
         <div class="all-practices-header">
             <h2 class="section-title">ALL BEST PRACTICES</h2>
             <div class="section-divider"></div>
         </div>
-        ${Object.entries(byCategory).map(([category, categoryPractices]) => `
+        ${sortedUmbrellas.map(umbrella => {
+            const umbrellaDef = UMBRELLA_CATEGORIES.find(u => u.id === umbrella);
+            const headerClass = umbrellaDef ? umbrellaDef.class : 'cat-default';
+            return `
             <div class="category-section fade-in">
-                <div class="category-header ${getCategoryClass(category)}">
-                    <span class="category-title">${category.toUpperCase()}</span>
+                <div class="category-header ${headerClass}" style="${umbrellaDef ? `border-left-color: ${umbrellaDef.color}` : ''}">
+                    <span class="category-title">${umbrella.toUpperCase()}</span>
                 </div>
-                ${categoryPractices.map(practice => `
-                    <div class="practice-card compact">
-                        <div class="compact-header">
-                            <h4 class="compact-title">${practice.title}</h4>
-                            ${practice.featured ? '<span class="featured-indicator">FEATURED</span>' : ''}
-                        </div>
-                        <div class="compact-meta">
-                            <span class="meta-ad">${practice.adName}</span>
-                            <span class="meta-separator">|</span>
-                            <span class="meta-account">${practice.account}</span>
-                        </div>
-                        <div class="compact-details">
-                            <div class="compact-detail">
-                                <span class="compact-label">Impact:</span>
-                                <span class="compact-value">${practice.impact}</span>
+                ${byUmbrella[umbrella].map(practice => {
+                    const key = getPracticeKey(practice, practiceIndex++);
+                    const isExpanded = AppState.expandedPractices.has(key);
+                    const desc = escapeHtml(practice.description || '');
+                    const ctx = escapeHtml(practice.context || '');
+                    const quote = escapeHtml(practice.quote || '');
+                    return `
+                    <div class="practice-card compact ${isExpanded ? 'expanded' : ''}" data-practice-key="${key}" onclick="event.stopPropagation(); window.togglePracticeExpand('${key}');" style="cursor: pointer;">
+                        <div class="compact-summary">
+                            <div class="compact-header">
+                                <h4 class="compact-title">${practice.title}</h4>
+                                <span class="practice-expand-indicator">${isExpanded ? '▼' : '▶'}</span>
+                                ${practice.featured ? '<span class="featured-indicator">FEATURED</span>' : ''}
                             </div>
-                            <div class="compact-detail">
-                                <span class="compact-label">Replicability:</span>
-                                <span class="compact-value">${practice.replicable}</span>
+                            <div class="compact-meta">
+                                <span class="meta-ad">${practice.adName}</span>
+                                <span class="meta-separator">|</span>
+                                <span class="meta-account">${practice.account}</span>
                             </div>
+                            ${practice.category && practice.category !== umbrella ? `<div class="compact-subcategory">${practice.category}</div>` : ''}
+                            <div class="compact-details">
+                                <div class="compact-detail">
+                                    <span class="compact-label">Impact:</span>
+                                    <span class="compact-value">${practice.impact}</span>
+                                </div>
+                                <div class="compact-detail">
+                                    <span class="compact-label">Replicability:</span>
+                                    <span class="compact-value">${practice.replicable}</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="practice-expanded" style="display: ${isExpanded ? 'block' : 'none'};">
+                            ${desc ? `<p class="card-description">${desc}</p>` : ''}
+                            ${ctx ? `<div class="detail-item"><span class="detail-label">CONTEXT</span><span class="detail-text">${ctx}</span></div>` : ''}
+                            <div class="card-details">
+                                <div class="detail-item"><span class="detail-label">IMPACT</span><span class="detail-text">${practice.impact}</span></div>
+                                <div class="detail-item"><span class="detail-label">STATUS</span><span class="detail-text">${practice.status || '—'}</span></div>
+                            </div>
+                            ${quote ? `<blockquote class="practice-quote">"${quote}"</blockquote>` : ''}
                         </div>
                     </div>
-                `).join('')}
+                `}).join('')}
             </div>
-        `).join('')}
+        `}).join('')}
     `;
 }
 
@@ -919,6 +1118,15 @@ function setupEventListeners() {
         });
     }
     
+    // Role filter (in rankings view)
+    const roleFilter = document.getElementById('role-filter');
+    if (roleFilter) {
+        roleFilter.addEventListener('change', (e) => {
+            AppState.filters.role = e.target.value;
+            if (AppState.currentView === 'rankings') renderRankings();
+        });
+    }
+    
     // Old filters for reviews view (if they exist)
     const filterVertical = document.getElementById('filter-vertical');
     const filterAccount = document.getElementById('filter-account');
@@ -943,10 +1151,13 @@ function setupEventListeners() {
             AppState.filters.vertical = 'all';
             AppState.filters.account = 'all';
             AppState.filters.tier = 'all';
+            AppState.filters.role = 'all';
             if (filterVertical) filterVertical.value = 'all';
             if (filterAccount) filterAccount.value = 'all';
+            if (filterRole) filterRole.value = 'all';
             if (tierFilter) tierFilter.value = 'all';
             if (verticalFilter) verticalFilter.value = 'all';
+            if (roleFilter) roleFilter.value = 'all';
             if (AppState.currentView === 'rankings') renderRankings();
         });
     }
@@ -975,25 +1186,42 @@ function setupEventListeners() {
     // Best Practices filters
     const bpAdFilter = document.getElementById('bp-ad-filter');
     const bpCategoryFilter = document.getElementById('bp-category-filter');
+    const bpReplicabilityFilter = document.getElementById('bp-replicability-filter');
+    const bpStatusFilter = document.getElementById('bp-status-filter');
+    const bpVerticalFilter = document.getElementById('bp-vertical-filter');
+    const bpAccountFilter = document.getElementById('bp-account-filter');
     const bpFeaturedOnly = document.getElementById('bp-featured-only');
     
-    if (bpAdFilter) {
-        bpAdFilter.addEventListener('change', (e) => {
-            AppState.bestPracticesFilters.adName = e.target.value;
-            if (AppState.currentView === 'best-practices') renderBestPractices();
-        });
-    }
+    const bpFilterHandler = (e, key) => {
+        AppState.bestPracticesFilters[key] = e.target.value;
+        if (AppState.currentView === 'best-practices') renderBestPractices();
+    };
     
-    if (bpCategoryFilter) {
-        bpCategoryFilter.addEventListener('change', (e) => {
-            AppState.bestPracticesFilters.category = e.target.value;
-            if (AppState.currentView === 'best-practices') renderBestPractices();
-        });
-    }
+    if (bpAdFilter) bpAdFilter.addEventListener('change', (e) => bpFilterHandler(e, 'adName'));
+    if (bpCategoryFilter) bpCategoryFilter.addEventListener('change', (e) => bpFilterHandler(e, 'category'));
+    if (bpReplicabilityFilter) bpReplicabilityFilter.addEventListener('change', (e) => bpFilterHandler(e, 'replicability'));
+    if (bpStatusFilter) bpStatusFilter.addEventListener('change', (e) => bpFilterHandler(e, 'status'));
+    if (bpVerticalFilter) bpVerticalFilter.addEventListener('change', (e) => bpFilterHandler(e, 'vertical'));
+    if (bpAccountFilter) bpAccountFilter.addEventListener('change', (e) => bpFilterHandler(e, 'account'));
     
     if (bpFeaturedOnly) {
         bpFeaturedOnly.addEventListener('change', (e) => {
             AppState.bestPracticesFilters.featuredOnly = e.target.checked;
+            if (AppState.currentView === 'best-practices') renderBestPractices();
+        });
+    }
+    
+    const bpClearFilters = document.getElementById('bp-clear-filters');
+    if (bpClearFilters) {
+        bpClearFilters.addEventListener('click', () => {
+            AppState.bestPracticesFilters = { adName: 'all', category: 'all', replicability: 'all', status: 'all', vertical: 'all', account: 'all', featuredOnly: false };
+            if (bpAdFilter) bpAdFilter.value = 'all';
+            if (bpCategoryFilter) bpCategoryFilter.value = 'all';
+            if (bpReplicabilityFilter) bpReplicabilityFilter.value = 'all';
+            if (bpStatusFilter) bpStatusFilter.value = 'all';
+            if (bpVerticalFilter) bpVerticalFilter.value = 'all';
+            if (bpAccountFilter) bpAccountFilter.value = 'all';
+            if (bpFeaturedOnly) bpFeaturedOnly.checked = false;
             if (AppState.currentView === 'best-practices') renderBestPractices();
         });
     }

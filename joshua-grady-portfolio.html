@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joshua Grady - Account Director Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+            padding: 40px;
+        }
+        
+        @media print {
+            .section {
+                page-break-before: auto;
+                page-break-after: auto;
+                page-break-inside: auto;
+            }
+            
+            .section h2 {
+                page-break-after: avoid;
+                orphans: 3;
+            }
+            
+            .account-card {
+                page-break-inside: avoid;
+                margin-bottom: 15px;
+            }
+            
+            .alert-box, .trend-info {
+                page-break-inside: avoid;
+            }
+            
+            table {
+                page-break-inside: avoid;
+            }
+            
+            .metrics-grid {
+                page-break-inside: avoid;
+            }
+            
+            .account-metrics {
+                page-break-inside: avoid;
+            }
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .header {
+            border-bottom: 4px solid #4CAF50;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .header h1 {
+            color: #2c3e50;
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+        
+        .header .subtitle {
+            color: #7f8c8d;
+            font-size: 18px;
+            font-weight: 500;
+        }
+        
+        .status-banner {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px 20px;
+            margin-bottom: 30px;
+            border-radius: 4px;
+        }
+        
+        .status-banner h3 {
+            color: #856404;
+            margin-bottom: 8px;
+            font-size: 16px;
+        }
+        
+        .status-banner p {
+            color: #856404;
+            font-size: 14px;
+            margin: 0;
+        }
+        
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .metric-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .metric-card.green {
+            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+        }
+        
+        .metric-card.orange {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+        
+        .metric-card.blue {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        }
+        
+        .metric-card h3 {
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 10px;
+            opacity: 0.9;
+        }
+        
+        .metric-card .value {
+            font-size: 28px;
+            font-weight: bold;
+        }
+        
+        .section {
+            margin-bottom: 30px;
+        }
+        
+        .section h2 {
+            color: #2c3e50;
+            font-size: 24px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #4CAF50;
+            padding-bottom: 10px;
+        }
+        
+        .account-card {
+            background: #f8f9fa;
+            border-left: 4px solid #4CAF50;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-radius: 4px;
+        }
+        
+        .account-card.warning {
+            border-left-color: #ff9800;
+            background: #fff8f0;
+        }
+        
+        .account-card h3 {
+            color: #2c3e50;
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+        
+        .account-metrics {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .account-metric {
+            background: white;
+            padding: 12px;
+            border-radius: 4px;
+            border: 1px solid #e0e0e0;
+        }
+        
+        .account-metric .label {
+            font-size: 12px;
+            color: #7f8c8d;
+            margin-bottom: 5px;
+        }
+        
+        .account-metric .value {
+            font-size: 18px;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+        
+        .account-metric .value.negative {
+            color: #e74c3c;
+        }
+        
+        .account-metric .value.positive {
+            color: #27ae60;
+        }
+        
+        .trend-info {
+            background: #e3f2fd;
+            padding: 15px;
+            border-radius: 4px;
+            margin-top: 15px;
+        }
+        
+        .trend-info h4 {
+            color: #1565c0;
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
+        
+        .trend-info p {
+            color: #1976d2;
+            font-size: 13px;
+            margin: 5px 0;
+        }
+        
+        .alert-box {
+            background: #ffebee;
+            border-left: 4px solid #e74c3c;
+            padding: 15px;
+            border-radius: 4px;
+            margin-top: 15px;
+        }
+        
+        .alert-box h4 {
+            color: #c0392b;
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
+        
+        .alert-box ul {
+            margin-left: 20px;
+            color: #e74c3c;
+        }
+        
+        .alert-box li {
+            margin: 5px 0;
+            font-size: 13px;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+        
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #e0e0e0;
+            font-size: 13px;
+        }
+        
+        th {
+            background: #f5f5f5;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+        
+        .footer-notes {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 30px;
+            border: 1px solid #e0e0e0;
+        }
+        
+        .footer-notes h3 {
+            color: #2c3e50;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+        
+        .footer-notes p {
+            color: #7f8c8d;
+            font-size: 13px;
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Joshua Grady</h1>
+            <div class="subtitle">Account Director | Life Science Vertical | Tier 5</div>
+        </div>
+
+        <div class="status-banner">
+            <h3>Portfolio Status</h3>
+            <p><strong>Review Status:</strong> Not yet completed in system | <strong>Data as of:</strong> December 2025</p>
+        </div>
+
+        <div class="metrics-grid">
+            <div class="metric-card green">
+                <h3>Total Revenue</h3>
+                <div class="value">$1.29M</div>
+            </div>
+            <div class="metric-card blue">
+                <h3>Total Headcount</h3>
+                <div class="value">159</div>
+            </div>
+            <div class="metric-card orange">
+                <h3>Accounts</h3>
+                <div class="value">2</div>
+            </div>
+            <div class="metric-card">
+                <h3>Avg Margin</h3>
+                <div class="value">4.72%</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Account Performance Analysis</h2>
+            
+            <!-- Gilead Sciences -->
+            <div class="account-card warning">
+                <h3>Gilead Sciences</h3>
+                <p style="color: #7f8c8d; margin-bottom: 15px;"><strong>Vertical:</strong> Life Science | <strong>Started:</strong> Dec 2024</p>
+                
+                <div class="account-metrics">
+                    <div class="account-metric">
+                        <div class="label">Dec 2025 Revenue</div>
+                        <div class="value">$1.215M</div>
+                    </div>
+                    <div class="account-metric">
+                        <div class="label">YoY Growth</div>
+                        <div class="value negative">-10.6%</div>
+                    </div>
+                    <div class="account-metric">
+                        <div class="label">Headcount</div>
+                        <div class="value">146</div>
+                    </div>
+                    <div class="account-metric">
+                        <div class="label">Turnover</div>
+                        <div class="value positive">0.0%</div>
+                    </div>
+                    <div class="account-metric">
+                        <div class="label">CSAT</div>
+                        <div class="value positive">4.72</div>
+                    </div>
+                    <div class="account-metric">
+                        <div class="label">Red Sites</div>
+                        <div class="value negative">2 ($5K)</div>
+                    </div>
+                </div>
+
+                <div class="alert-box">
+                    <h4>Critical Issues Requiring Attention</h4>
+                    <ul>
+                        <li><strong>Consistent Negative Growth:</strong> -10.6% YoY decline, with ongoing contraction throughout 2025</li>
+                        <li><strong>Red Sites:</strong> 2 locations totaling $5K in losses (Nov: 1 site/$1K, Dec: 2 sites/$5K)</li>
+                        <li><strong>Headcount Reduction:</strong> Decreased from 154 (Dec '24) to 146 (Dec '25), loss of 8 employees</li>
+                        <li><strong>Safety Concerns:</strong> 3 YTD claims recorded (increasing trend through year)</li>
+                    </ul>
+                </div>
+
+                <div class="trend-info">
+                    <h4>2025 Performance Trends</h4>
+                    <p><strong>Revenue Trend:</strong> Started at $1.359M (Dec '24), declined to low of $1.128M (Aug '25), slight recovery to $1.215M (Dec '25)</p>
+                    <p><strong>Peak Decline:</strong> -17.0% in August 2025</p>
+                    <p><strong>Headcount Change:</strong> -8 employees year-over-year (5.2% reduction)</p>
+                    <p><strong>Positive Notes:</strong> Strong CSAT (4.72), zero turnover in December, managing separations effectively</p>
+                </div>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Month</th>
+                            <th>Revenue</th>
+                            <th>Growth %</th>
+                            <th>Headcount</th>
+                            <th>Red Sites</th>
+                            <th>CSAT</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Dec '24</td>
+                            <td>$1.359M</td>
+                            <td>0.0%</td>
+                            <td>154</td>
+                            <td>1</td>
+                            <td>4.72</td>
+                        </tr>
+                        <tr>
+                            <td>Jun '25</td>
+                            <td>$1.140M</td>
+                            <td>-16.1%</td>
+                            <td>140</td>
+                            <td>0</td>
+                            <td>4.74</td>
+                        </tr>
+                        <tr>
+                            <td>Dec '25</td>
+                            <td>$1.215M</td>
+                            <td>-10.6%</td>
+                            <td>146</td>
+                            <td>2</td>
+                            <td>4.72</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Avid Biodevices -->
+            <div class="account-card warning">
+                <h3>Avid Biodevices</h3>
+                <p style="color: #7f8c8d; margin-bottom: 15px;"><strong>Vertical:</strong> Life Science | <strong>Started:</strong> Dec 2024</p>
+                
+                <div class="account-metrics">
+                    <div class="account-metric">
+                        <div class="label">Dec 2025 Revenue</div>
+                        <div class="value">$71K</div>
+                    </div>
+                    <div class="account-metric">
+                        <div class="label">YoY Growth</div>
+                        <div class="value negative">-25.6%</div>
+                    </div>
+                    <div class="account-metric">
+                        <div class="label">Headcount</div>
+                        <div class="value">13</div>
+                    </div>
+                    <div class="account-metric">
+                        <div class="label">Turnover</div>
+                        <div class="value positive">0.0%</div>
+                    </div>
+                    <div class="account-metric">
+                        <div class="label">CSAT</div>
+                        <div class="value positive">5.00</div>
+                    </div>
+                    <div class="account-metric">
+                        <div class="label">Red Sites</div>
+                        <div class="value negative">1 ($1K)</div>
+                    </div>
+                </div>
+
+                <div class="alert-box">
+                    <h4>Critical Issues Requiring Attention</h4>
+                    <ul>
+                        <li><strong>Severe Revenue Decline:</strong> -25.6% YoY, dropped from $95K to $71K</li>
+                        <li><strong>Red Site:</strong> 1 location with $1K loss in December 2025</li>
+                        <li><strong>Small Team at Risk:</strong> Only 13 employees (down from 16), vulnerable to further attrition</li>
+                        <li><strong>Volatility:</strong> Revenue swings from $95K (Dec '24) to $66K (Sep '25) to $86K (Nov '25) to $71K (Dec '25)</li>
+                        <li><strong>Missing CSAT Data:</strong> No customer satisfaction data from July onwards (last recorded 5.00)</li>
+                    </ul>
+                </div>
+
+                <div class="trend-info">
+                    <h4>2025 Performance Trends</h4>
+                    <p><strong>Revenue Volatility:</strong> High fluctuation throughout year, ranging from $66K to $90K monthly</p>
+                    <p><strong>Worst Month:</strong> September 2025 at $66K (-30.5% growth)</p>
+                    <p><strong>Headcount Reduction:</strong> -3 employees year-over-year (18.8% reduction)</p>
+                    <p><strong>Positive Notes:</strong> Perfect 5.00 CSAT (when measured), zero turnover, no safety incidents</p>
+                    <p><strong>Concern:</strong> CSAT measurements stopped in June - need visibility into client satisfaction</p>
+                </div>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Month</th>
+                            <th>Revenue</th>
+                            <th>Growth %</th>
+                            <th>Headcount</th>
+                            <th>Red Sites</th>
+                            <th>CSAT</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Dec '24</td>
+                            <td>$95</td>
+                            <td>0.0%</td>
+                            <td>16</td>
+                            <td>0</td>
+                            <td>5.00</td>
+                        </tr>
+                        <tr>
+                            <td>Jun '25</td>
+                            <td>$74</td>
+                            <td>-22.4%</td>
+                            <td>11</td>
+                            <td>1</td>
+                            <td>5.00</td>
+                        </tr>
+                        <tr>
+                            <td>Sep '25</td>
+                            <td>$66</td>
+                            <td>-30.5%</td>
+                            <td>12</td>
+                            <td>0</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Dec '25</td>
+                            <td>$71</td>
+                            <td>-25.6%</td>
+                            <td>13</td>
+                            <td>1</td>
+                            <td>-</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Portfolio Summary & Strategic Priorities</h2>
+            
+            <div style="background: #f8f9fa; border: 1px solid #e0e0e0; border-radius: 8px; padding: 20px; margin-bottom: 20px;">
+                <h3 style="color: #2c3e50; margin-bottom: 15px; font-size: 18px;">Overall Portfolio Health</h3>
+                <p style="margin-bottom: 10px;"><strong>Strengths:</strong></p>
+                <ul style="margin-left: 20px; margin-bottom: 15px;">
+                    <li>Excellent customer satisfaction scores (Gilead: 4.72, Avid: 5.00)</li>
+                    <li>Zero turnover in December across both accounts</li>
+                    <li>No recordable safety incidents at either location</li>
+                    <li>Strong client relationships maintained despite financial challenges</li>
+                </ul>
+                
+                <p style="margin-bottom: 10px;"><strong>Critical Challenges:</strong></p>
+                <ul style="margin-left: 20px; margin-bottom: 15px;">
+                    <li>Both accounts experiencing significant negative growth (Gilead: -10.6%, Avid: -25.6%)</li>
+                    <li>Total of 3 red sites requiring immediate corrective action</li>
+                    <li>Combined headcount reduction of 11 employees year-over-year</li>
+                    <li>Revenue decline of approximately $168K from starting baseline ($1.359M + $95K = $1.454M to $1.286M)</li>
+                    <li>Missing CSAT data for Avid Biodevices since July 2025</li>
+                </ul>
+            </div>
+
+            <div style="background: #e3f2fd; border-left: 4px solid #2196f3; padding: 20px; border-radius: 4px;">
+                <h4 style="color: #1565c0; margin-bottom: 10px; font-size: 16px;">Strategic Review Questions (Based on Leadership Standards)</h4>
+                <ul style="margin-left: 20px;">
+                    <li><strong>Revenue Stabilization Plan:</strong> What specific corrective actions with timelines will reverse the negative growth trends? By what date will both accounts show positive YoY growth?</li>
+                    <li><strong>Red Sites Recovery:</strong> What is the root cause analysis for the 3 red sites totaling $6K? What are the specific recovery plans with implementation dates?</li>
+                    <li><strong>Client Partnerships:</strong> Despite negative growth, both accounts maintain strong CSAT scores. What initiatives are planned to convert this client satisfaction into revenue growth?</li>
+                    <li><strong>Avid Biodevices Strategy:</strong> This small account shows -25.6% decline and high volatility. Is this account viable long-term, or should resources be reallocated?</li>
+                    <li><strong>Missing CSAT Data:</strong> Why did Avid Biodevices stop reporting CSAT after June? What's the plan to restore measurement visibility?</li>
+                    <li><strong>Headcount Planning:</strong> With 11 fewer employees YoY, what's the right-sizing strategy? Are we losing billable positions or improving efficiency?</li>
+                    <li><strong>Growth Opportunities:</strong> What specific expansion opportunities exist within Gilead Sciences (larger footprint) and Avid Biodevices? What are the proposal dates?</li>
+                    <li><strong>Service Mix Analysis:</strong> What services are declining vs. growing at each account? Can service mix be optimized for better margins?</li>
+                    <li><strong>2026 SMART Goals:</strong> What are your specific, measurable goals with dates for revenue growth, red site elimination, and client expansion?</li>
+                    <li><strong>Leadership Development:</strong> As a Tier 5 AD managing challenging accounts, what skills/initiatives will you develop to turn around portfolio performance?</li>
+                </ul>
+            </div>
+        </div>
+
+        <div style="background: #f3e5f5; border: 1px solid #9c27b0; border-radius: 8px; padding: 20px; margin-top: 30px;">
+            <h3 style="color: #6a1b9a; margin-bottom: 15px;">Leadership Expectations (Common Feedback Themes)</h3>
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; font-size: 14px;">
+                <div>
+                    <strong>📅 Dates Required:</strong> Every initiative needs a specific date for accountability
+                </div>
+                <div>
+                    <strong>📊 Root Cause Analysis:</strong> Go deeper than symptoms - what's driving the declines?
+                </div>
+                <div>
+                    <strong>🎯 Corrective Action Plans:</strong> Specific steps with owners and dates to fix red sites
+                </div>
+                <div>
+                    <strong>💡 Innovation Focus:</strong> What new services or technology can reverse negative trends?
+                </div>
+                <div>
+                    <strong>📈 Growth Roadmap:</strong> Clear plan to convert CSAT strength into revenue opportunities
+                </div>
+                <div>
+                    <strong>🔧 Data Visibility:</strong> Ensure all metrics (especially CSAT) are tracked consistently
+                </div>
+                <div>
+                    <strong>📖 Client Storytelling:</strong> Articulate the "why" behind client decisions and trends
+                </div>
+                <div>
+                    <strong>🎓 Resilience & Strategy:</strong> Managing challenging accounts requires creative problem-solving
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-notes">
+            <h3>Data Notes</h3>
+            <p><strong>Source:</strong> Account performance data through December 2025</p>
+            <p><strong>Status:</strong> EOY review not yet completed in system | Transcript not yet processed</p>
+            <p><strong>Prepared:</strong> January 29, 2026</p>
+        </div>
+    </div>
+</body>
+</html>

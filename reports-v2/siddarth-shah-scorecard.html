@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025 Year-End Scorecard - Siddarth Shah</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            background: #ffffff;
+            padding: 2rem;
+            max-width: 8.5in;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: #1a365d;
+            margin-bottom: 0.5rem;
+        }
+
+        h2 {
+            font-size: 1.35rem;
+            font-weight: 600;
+            color: #2c5282;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 0.5rem;
+        }
+
+        h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #2d3748;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        h4 {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #4a5568;
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .header-section {
+            background: linear-gradient(135deg, #1a365d 0%, #2c5282 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+        }
+
+        .header-section h1 {
+            color: white;
+            margin-bottom: 1.5rem;
+            font-size: 1.85rem;
+        }
+
+        .header-metadata {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.8rem;
+            margin-top: 1.2rem;
+        }
+
+        .metadata-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.6rem;
+            border-radius: 4px;
+        }
+
+        .metadata-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.8;
+            margin-bottom: 0.25rem;
+        }
+
+        .metadata-value {
+            font-size: 1.1rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+        }
+
+        .score-summary-first-page {
+            background: #f7fafc;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+        }
+
+        .score-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            background: white;
+        }
+
+        .score-table th {
+            background: #2c5282;
+            color: white;
+            padding: 0.75rem;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .score-table td {
+            padding: 0.75rem;
+            border: 1px solid #e2e8f0;
+        }
+
+        .score-table tr:nth-child(even) {
+            background: #f7fafc;
+        }
+
+
+        /* Follow-Up Questions Section */
+        .follow-up-section {
+            background: #fff8e1;
+            border-left: 4px solid #ff9800;
+            padding: 24px;
+            margin: 32px 0;
+            border-radius: 8px;
+            page-break-inside: avoid;
+        }
+
+        .follow-up-intro {
+            color: #e65100;
+            margin-bottom: 1rem;
+        }
+
+        .follow-up-item {
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 16px 0;
+        }
+
+        .follow-up-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .follow-up-category {
+            background: #2196f3;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .follow-up-source {
+            color: #666;
+            font-size: 14px;
+            font-style: italic;
+        }
+
+        .follow-up-quote {
+            background: #f5f5f5;
+            border-left: 3px solid #ff9800;
+            padding: 12px 16px;
+            margin: 12px 0;
+            font-style: italic;
+            color: #333;
+        }
+
+        .follow-up-action {
+            margin-top: 12px;
+            color: #333;
+        }
+
+        /* Scored Section - One section per page */
+        .scored-section {
+            page-break-after: always;
+            page-break-inside: avoid;
+            margin: 1.5rem 0;
+            padding: 1.5rem;
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            min-height: 400px;
+        }
+
+        .score-display {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin: 1rem 0;
+            padding: 1rem;
+            background: #f7fafc;
+            border-radius: 4px;
+        }
+
+        .score-label {
+            font-weight: 600;
+            color: #4a5568;
+        }
+
+        .score-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #2c5282;
+        }
+
+        .combined-feedback {
+            background: #f8f9fa;
+            border-left: 4px solid #2c5282;
+            padding: 1.25rem;
+            margin: 1rem 0;
+            border-radius: 4px;
+        }
+
+        .combined-feedback h4 {
+            color: #2c5282;
+            margin-bottom: 0.75rem;
+            font-size: 1rem;
+        }
+
+        .feedback-synthesis {
+            margin-top: 0.75rem;
+        }
+
+        .feedback-point {
+            padding: 0.75rem;
+            margin: 0.5rem 0;
+            background: white;
+            border-radius: 4px;
+            border-left: 3px solid #2c5282;
+            line-height: 1.6;
+        }
+
+        .feedback-point strong {
+            color: #2c5282;
+            font-size: 0.9rem;
+        }
+
+        .synthesis-list {
+            margin: 0.75rem 0 1rem 1.5rem;
+            padding-left: 1rem;
+        }
+
+        .synthesis-list li {
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+            color: #2d3748;
+        }
+
+        .feedback-synthesis p {
+            margin: 0.75rem 0;
+            line-height: 1.6;
+        }
+
+        .feedback-synthesis strong {
+            color: #2c5282;
+            font-weight: 600;
+        }
+
+        @media print {
+            * {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            
+            body {
+                padding: 0.25in;
+                font-size: 9pt;
+                line-height: 1.3;
+            }
+            
+            h1 {
+                font-size: 16pt;
+                margin-bottom: 0.3rem;
+            }
+            
+            h2 {
+                font-size: 12pt;
+                margin-top: 0.5rem;
+                margin-bottom: 0.4rem;
+                page-break-after: avoid;
+            }
+            
+            h3 {
+                font-size: 10pt;
+                margin-top: 0.4rem;
+                margin-bottom: 0.3rem;
+            }
+            
+            .header-section {
+                padding: 1rem;
+                margin-bottom: 1rem;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            
+            .header-metadata {
+                gap: 0.5rem;
+            }
+            
+            .metadata-item {
+                padding: 0.4rem;
+            }
+            
+            .metadata-label {
+                font-size: 7pt;
+            }
+            
+            .metadata-value {
+                font-size: 9pt;
+            }
+            
+            .score-summary-first-page {
+                page-break-after: always;
+                padding: 0.75rem;
+                margin-bottom: 1rem;
+            }
+            
+            .score-table {
+                margin: 0.75rem 0;
+                font-size: 9pt;
+            }
+            
+            .score-table th,
+            .score-table td {
+                padding: 0.35rem;
+            }
+            
+            .scored-section {
+                page-break-after: always;
+                page-break-inside: avoid;
+                margin: 0.5rem 0;
+                padding: 0.75rem;
+                border: 1px solid #e2e8f0;
+                min-height: unset;
+            }
+            
+            .score-display {
+                margin: 0.5rem 0;
+                padding: 0.5rem;
+            }
+            
+            .score-label {
+                font-size: 9pt;
+            }
+            
+            .score-value {
+                font-size: 14pt;
+            }
+            
+            .combined-feedback {
+                padding: 0.75rem;
+                margin: 0.5rem 0;
+            }
+            
+            .combined-feedback h4 {
+                font-size: 9pt;
+                margin-bottom: 0.4rem;
+            }
+            
+            .feedback-synthesis p {
+                margin: 0.4rem 0;
+                line-height: 1.4;
+                font-size: 9pt;
+            }
+            
+            .feedback-synthesis strong {
+                font-size: 9pt;
+            }
+            
+            .synthesis-list {
+                margin: 0.4rem 0 0.5rem 1rem;
+                padding-left: 0.5rem;
+            }
+            
+            .synthesis-list li {
+                margin-bottom: 0.25rem;
+                line-height: 1.4;
+                font-size: 8.5pt;
+            }
+            
+            .follow-up-section {
+                page-break-before: always;
+                page-break-inside: avoid;
+                padding: 1rem;
+                margin: 1rem 0;
+            }
+            
+            .follow-up-item {
+                padding: 0.75rem;
+                margin: 0.75rem 0;
+            }
+            
+            .follow-up-quote {
+                padding: 0.5rem;
+                margin: 0.5rem 0;
+                font-size: 8.5pt;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header-section">
+        <h1>2025 Year-End Account Review & 2026 QBR Readiness Scorecard</h1>
+        <div class="header-metadata">
+            <div class="metadata-item">
+                <div class="metadata-label">Account Director</div>
+                <div class="metadata-value">Siddarth Shah</div>
+            </div>
+            <div class="metadata-item">
+                <div class="metadata-label">Account</div>
+                <div class="metadata-value">Micron</div>
+            </div>
+            <div class="metadata-item">
+                <div class="metadata-label">Tier</div>
+                <div class="metadata-value"><span style="background: #6366f1; color: white; padding: 0.3rem 0.8rem; border-radius: 12px; font-weight: 600; font-size: 0.9rem;">Tier 5</span></div>
+            </div>
+            <div class="metadata-item">
+                <div class="metadata-label">Review Date</div>
+                <div class="metadata-value">January 2026</div>
+            </div>
+            <div class="metadata-item">
+                <div class="metadata-label">Total Reviews</div>
+                <div class="metadata-value">4</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="score-summary-first-page">
+        <h2>Executive Summary</h2>
+
+        <table class="score-table">
+            <thead>
+                <tr>
+                    <th>Evaluation Category</th>
+                    <th style="text-align: center;">Average Score</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+        <tr>
+            <td>Key Projects & Initiatives</td>
+            <td style="text-align: center; font-weight: 600;">4.25</td>
+        </tr>
+        
+        <tr>
+            <td>Value Adds & Cost Avoidance</td>
+            <td style="text-align: center; font-weight: 600;">4.25</td>
+        </tr>
+        
+        <tr>
+            <td>Cost Savings Delivered</td>
+            <td style="text-align: center; font-weight: 600;">4.25</td>
+        </tr>
+        
+        <tr>
+            <td>Innovation & Continuous Improvement</td>
+            <td style="text-align: center; font-weight: 600;">4.5</td>
+        </tr>
+        
+        <tr>
+            <td>Issues, Challenges & Accountability</td>
+            <td style="text-align: center; font-weight: 600;">4.25</td>
+        </tr>
+        
+        <tr>
+            <td>2026 Forward Strategy & Vision</td>
+            <td style="text-align: center; font-weight: 600;">4.25</td>
+        </tr>
+        
+        <tr>
+            <td>Personal Goals & Role Maturity</td>
+            <td style="text-align: center; font-weight: 600;">4.0</td>
+        </tr>
+        
+        <tr>
+            <td>Executive Presence & Presentation Skills</td>
+            <td style="text-align: center; font-weight: 600;">4.5</td>
+        </tr>
+        
+        <tr style="background: #e8f5e9; border-top: 3px solid #2c5282;">
+            <td style="font-weight: 700; text-transform: uppercase;">Overall Score</td>
+            <td style="text-align: center; font-weight: 700; font-size: 1.2rem; color: #2c5282;">34.25/40</td>
+        </tr>
+        
+            </tbody>
+        </table>
+    </div>
+
+    
+        <div class="scored-section">
+            <h2>Key Projects & Initiatives</h2>
+            <div class="score-display">
+                <span class="score-label">Average Score:</span>
+                <span class="score-value">4.25/5</span>
+            </div>
+            
+            
+    <div class="combined-feedback">
+        <h4>Combined Feedback from Leadership Reviews</h4>
+        <div class="feedback-synthesis">
+    
+            <p><strong>Overall Assessment:</strong> Clearly frames the most important 2025 initiatives, why they mattered, and what changed for the client as a result; demonstrates strong judgment, prioritization, and impact awareness.</p>
+        
+            <p><strong>Strengths:</strong></p>
+            <ul class="synthesis-list">
+        <li>Clearly frames the most important 2025 initiatives, why they mattered, and what changed for the client as a result; demonstrates strong judgment, prioritization, and impact awareness. From sustainability, to additional cleaning you create client impact.</li></ul>
+            <p><strong>Areas for Development:</strong></p>
+            <ul class="synthesis-list">
+        <li>5</li><li>I think there's an opportunity to tie more of our initiatives to our customer's goals in order to better define impact. One public example, waste reduction. Micron is targeting 95% diversion from landfill. If our sustainability initiative is to use cores of paper towels, etc. toward reuse but ultimately they still end up in the landfill, our initiative may be slightly misaligned with Micron's overall goal. Maybe we target dual roll dispensers from GP that automatically dispense a second roll towel when the first roll depletes, encouraging full utilization of that stub roll. Tork Peakserve is another potential option. I think you gave some compelling examples of initiatives (plate scraping, etc) that have real impact on the client's goals. Just want to encourage more communication around what the client's specific goals are, even searching publicly available information, and crafting our initiatives and messaging around how we can impact them.</li></ul>
+        </div>
+    </div>
+    
+        </div>
+        
+        <div class="scored-section">
+            <h2>Value Adds & Cost Avoidance</h2>
+            <div class="score-display">
+                <span class="score-label">Average Score:</span>
+                <span class="score-value">4.25/5</span>
+            </div>
+            
+            
+    <div class="combined-feedback">
+        <h4>Combined Feedback from Leadership Reviews</h4>
+        <div class="feedback-synthesis">
+    
+            <p><strong>Overall Assessment:</strong> San Jose was a challenge that you were able to overcome! Clearly articulates value delivered regarding the additional resources to support the work at no cost to the customer.</p>
+        
+            <p><strong>Strengths:</strong></p>
+            <ul class="synthesis-list">
+        <li>San Jose was a challenge that you were able to overcome! Clearly articulates value delivered regarding the additional resources to support the work at no cost to the customer. James' question helped flush out how we quantified the value increased quality.</li></ul>
+            <p><strong>Areas for Development:</strong></p>
+            <ul class="synthesis-list">
+        <li>4</li><li>Provided strong examples of value creation with diretional financial framing. I LOVED that you called out window cleaning cost savings leading to enhanced service performance at the SJC site. We tend to forget about "savings" like this that don't result in YOY impact, but the fact that funds were able to be pivoted into other customer priorities with SBM is exactly the kind of cost savings we want to drive. Savings on urinal mats and other initiatives could be quanitifed, tightened. But each was a compelling example.</li></ul>
+        </div>
+    </div>
+    
+        </div>
+        
+        <div class="scored-section">
+            <h2>Cost Savings Delivered</h2>
+            <div class="score-display">
+                <span class="score-label">Average Score:</span>
+                <span class="score-value">4.25/5</span>
+            </div>
+            
+            
+    <div class="combined-feedback">
+        <h4>Combined Feedback from Leadership Reviews</h4>
+        <div class="feedback-synthesis">
+    
+            <p><strong>Overall Assessment:</strong> Sid you clearly explained the way you thought about ways to save the client money.</p>
+        
+            <p><strong>Strengths:</strong></p>
+            <ul class="synthesis-list">
+        <li>Sid you clearly explained the way you thought about ways to save the client money. You thought about the best way to save long term ie : Paper products. I also love the sustainability twist on using all of the toilet paper etc it is a best practice. Many people do not think about savings based on supplies or reduction to sub contracted labor. Way to increase your scope and save the customer a creative win!</li><li>Regarding value-added work, I'm not sure there was a quantified amount that we delivered to the client in SJC, which makes me wonder if the client understands the value of our reinvestment into that site. It's 100% OK to deliver a project at no charge or at cost, better if the client knows they're getting something for free, and best for the client to know (and be reminded of) the estimated values of of the work we've done for them. Again, thought you had strong examples here, I just wonder if we could tighten up some of the quantified impact.</li></ul>
+            <p><strong>Areas for Development:</strong></p>
+            <ul class="synthesis-list">
+        <li>4</li></ul>
+        </div>
+    </div>
+    
+        </div>
+        
+        <div class="scored-section">
+            <h2>Innovation & Continuous Improvement</h2>
+            <div class="score-display">
+                <span class="score-label">Average Score:</span>
+                <span class="score-value">4.5/5</span>
+            </div>
+            
+            
+    <div class="combined-feedback">
+        <h4>Combined Feedback from Leadership Reviews</h4>
+        <div class="feedback-synthesis">
+    
+            <p><strong>Overall Assessment:</strong> I really appreciated that you didnt look only at autonomous equipment, the whiz or other basic equipment.</p>
+        
+            <p><strong>Areas for Development:</strong></p>
+            <ul class="synthesis-list">
+        <li>I really appreciated that you didnt look only at autonomous equipment, the whiz or other basic equipment. I liked that you used product, this is a best practice! Increasing productivity!!! Thats a win we need to share this Urine Digester with all of Operations!  A lot of equipment that improved our service delivery and added visible value to the customer.</li><li>4</li><li>Mentioned this on the call, but I love that you are leaning into areas where the company has limited playbook for you to go off of (construction cleaning, MAC work, event support, & more). You're helping write the playbook, and I think that's impressive and commendable.</li></ul>
+        </div>
+    </div>
+    
+        </div>
+        
+        <div class="scored-section">
+            <h2>Issues, Challenges & Accountability</h2>
+            <div class="score-display">
+                <span class="score-label">Average Score:</span>
+                <span class="score-value">4.25/5</span>
+            </div>
+            
+            
+    <div class="combined-feedback">
+        <h4>Combined Feedback from Leadership Reviews</h4>
+        <div class="feedback-synthesis">
+    
+            <p><strong>Overall Assessment:</strong> Thank you for being fully transparent about challenges, clearly owns gaps, and outlines specific corrective actions with timelines.</p>
+        
+            <p><strong>Strengths:</strong></p>
+            <ul class="synthesis-list">
+        <li>Thank you for being fully transparent about challenges, clearly owns gaps, and outlines specific corrective actions with timelines. I appreciate you owning it, and more importantly closing the gaps. You might be one of he few who actually put in their do different.</li></ul>
+            <p><strong>Areas for Development:</strong></p>
+            <ul class="synthesis-list">
+        <li>4</li><li>We trust your assessment that the gaps in SJC were largely due to a demanding client. This may have glazed over some of the real misses down there, and opportunities for improvement. The end result is that you managed the account and led the team to right wrongs and improe our service. Just think there may have been more room for partial ownership of challenges down there, and that honestly they would have done nothing but strengthen your already strong credibility on the call.</li></ul>
+        </div>
+    </div>
+    
+        </div>
+        
+        <div class="scored-section">
+            <h2>2026 Forward Strategy & Vision</h2>
+            <div class="score-display">
+                <span class="score-label">Average Score:</span>
+                <span class="score-value">4.25/5</span>
+            </div>
+            
+            
+    <div class="combined-feedback">
+        <h4>Combined Feedback from Leadership Reviews</h4>
+        <div class="feedback-synthesis">
+    
+            <p><strong>Overall Assessment:</strong> You have had a great presentation so far I look forward to more dates and depth around what you will implement when? I want a true timeline of implementation, testing whatever you have to do.</p>
+        
+            <p><strong>Strengths:</strong></p>
+            <ul class="synthesis-list">
+        <li>You have had a great presentation so far I look forward to more dates and depth around what you will implement when? I want a true timeline of implementation, testing whatever you have to do. Be ahead of the customer that is very important you are on the right track with that. I like that you are focused on growth and retention.</li><li>Love the tenacity on Micron Singapore. Second the feedback of others regarding intermediate steps, or the bite-size chunks you'll be taking along the way. I think others were concerned about time-bound goals, I'd encourage more thinking around what needs to happen, in sequence, for your big vision to take effect, and road-mapping that for SLT.</li></ul>
+            <p><strong>Areas for Development:</strong></p>
+            <ul class="synthesis-list">
+        <li>4</li></ul>
+        </div>
+    </div>
+    
+        </div>
+        
+        <div class="scored-section">
+            <h2>Personal Goals & Role Maturity</h2>
+            <div class="score-display">
+                <span class="score-label">Average Score:</span>
+                <span class="score-value">4.0/5</span>
+            </div>
+            
+            
+    <div class="combined-feedback">
+        <h4>Combined Feedback from Leadership Reviews</h4>
+        <div class="feedback-synthesis">
+    
+            <p><strong>Overall Assessment:</strong> Add dates to your goals so when you meet with leadership you can share where you are to the dates you set for yourself.</p>
+        
+            <p><strong>Areas for Development:</strong></p>
+            <ul class="synthesis-list">
+        <li>Add dates to your goals so when you meet with leadership you can share where you are to the dates you set for yourself.</li><li>4</li><li>Feedback previously given regarding time-bound goals, but I think you had a strong vision for where the account can and will be in 2027 and I very much look forward to seeing and helping you achieve it.</li></ul>
+        </div>
+    </div>
+    
+        </div>
+        
+        <div class="scored-section">
+            <h2>Executive Presence & Presentation Skills</h2>
+            <div class="score-display">
+                <span class="score-label">Average Score:</span>
+                <span class="score-value">4.5/5</span>
+            </div>
+            
+            
+    <div class="combined-feedback">
+        <h4>Combined Feedback from Leadership Reviews</h4>
+        <div class="feedback-synthesis">
+    
+            <p><strong>Overall Assessment:</strong> You communication of your account story is clear and confident.</p>
+        
+            <p><strong>Strengths:</strong></p>
+            <ul class="synthesis-list">
+        <li>You communication of your account story is clear and confident. I appreciated hearing all about your plans, I agree we have to be aggressive we have to have a win strategy. I need you to partner with Nick V and Nicole on how to push our way into more. You do a great job finding opportunities. When you close Singapore I want to celebrate in a big way!</li><li>Discussion was led with confidence and authority, with a well-constructed story of achievements on the account. Your presentation style is engaging and easy to interact with.</li></ul>
+            <p><strong>Areas for Development:</strong></p>
+            <ul class="synthesis-list">
+        <li>5</li></ul>
+        </div>
+    </div>
+    
+        </div>
+        
+
+    
+    <div class="follow-up-section">
+        <h2>🎯 2026 Development Focus & Follow-Up Items</h2>
+        <p class="follow-up-intro">
+            Based on your year-end presentation and executive feedback, the following areas have been identified 
+            for focused development and follow-through in 2026.
+        </p>
+    
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">SMART Goals & Timelines</span>
+                <span class="follow-up-source">— Valarie Barnett</span>
+            </div>
+            <h3>Set Specific Dates for All 2026 Goals - Move from Strategy to Execution Timeline</h3>
+            <p class="follow-up-quote">"Valarie: 'The one detail that I want you to flush out, maybe make it a part of your 2026 goals, which I thought you gave yourself a fair amount of those, just the dates around things. So I would love to see you have by this day I want to accomplish this. So for example, if Singapore and taking over Singapore is on your list, what day will when will you want to, when do you want to get with Nick V and Nicole and James Peate on the call and work on really what your storytelling strategy is? What are you going to say when you get in front of Singapore? So if that is really, truly on your heart and that's your goal that you set for yourself, by what day will you have your whole presentation memorized, locked down? And then by what day do you want to go to Singapore? Do you want to be in Singapore by Q2? When do we want to pull this work away from the competitor who's there? So I'm giving that as one singular example. You have great ideas. You have a lot of strategy behind those ideas, but I want you to set dates for yourself so you can hold yourself accountable to those dates and that we can hold you accountable to those dates as well.'"</p>
+            <p class="follow-up-action"><strong>Action:</strong> Create SMART timeline for each 2026 goal with specific dates: (1) SINGAPORE/MALAYSIA: Set date for storytelling strategy call with Nick V/Nicole/James, presentation finalization deadline, memorization deadline, travel date (Q2 target?), competitor displacement timeline, (2) MAC SERVICES & EVENTS: CNW response expected end of Feb 2026 - set pilot launch date if approved, Boise and San Jose implementation dates, staffing plan completion date, (3) ID1 PRODUCTION LAB: Q2 2026 go-live - set pricing resubmission date, CNW partnership discussion date, autonomous equipment demo date with Nilfisk, staffing readiness date, (4) BUILDING 42 (7-story admin): Q2 completion, Q3 go-live - set CNW partnership meeting date, pre-mobilization cleaning proposal date, janitorial services proposal date, (5) ID2 PRODUCTION LAB: Q3/Q4 2026 construction start - set Parth Gandani follow-up dates (meeting next week confirmed), Hoffman continuation agreement date, trailer expansion pricing date, (6) SYRACUSE NY: Set Parth Gandani meeting outcomes date (next week), existing 2-floor opportunity investigation date, construction support proposal date, (7) MANASSAS VA: Jason De Boer outreach date, RFP invitation follow-up date, next RFP estimated timing, (8) AUTONOMOUS EQUIPMENT: Nilfisk demo dates for San Jose and Boise, client presentation dates, pricing proposal dates for ID1/ID2, (9) SPARTAN CHEMICALS: February 2026 rollout confirmed - set implementation date, training completion date, sustainability report date, (10) LONGMONT MAX LAB: Q3 2026 at 100% capacity - set migration completion date, Pike location lease end (February confirmed), equipment delivery dates, staffing ramp-up dates, (11) 8 FTEs WHITE GLOVE SERVICE: $37K/month proposal submitted - set CNW decision date, implementation timeline if approved, (12) HOFFMAN CONTRACT: $116K/month current, potential doubling for ID2 - set expansion negotiation date, trailer setup timeline, (13) CONVERT $35,771 INVESTMENT INTO BILLABLE: Set date to present new programs/scope additions to recover cost-avoidance investment, (14) Valarie's key message: 'You have great ideas, a lot of strategy, but I want you to set dates for yourself so you can hold yourself accountable to those dates and that we can hold you accountable to those dates as well.' This applies to ALL initiatives mentioned.</p>
+        </div>
+        
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">Executive Presence & Language</span>
+                <span class="follow-up-source">— James Peate</span>
+            </div>
+            <h3>Change Language from 'If We Get Involved' to 'When We Get Involved' - Project Confidence</h3>
+            <p class="follow-up-quote">"James: 'Two comments. One is when you said if we get involved, I would change that language to when we get involved. I'm confident in the plans there.'"</p>
+            <p class="follow-up-action"><strong>Action:</strong> Language shift for confidence and positioning: (1) Context: Siddarth said 'if we get involved' when discussing growth opportunities (ID1, ID2, Syracuse, Singapore, Building 42), (2) James correction: Change to 'WHEN we get involved' to project confidence in plans, (3) This applies to all growth conversations: Internal (leadership, operational teams), Client-facing (CNW, Micron POCs), Vendor partnerships (Nilfisk, Hoffman, construction teams), (4) Mental shift: These are not 'maybes' - they are planned outcomes with execution timelines, (5) Aligns with Val's feedback about setting dates: If you're setting dates, you're planning for 'when,' not 'if,' (6) Competitive positioning: 'When' language signals to clients that SBM is the expected partner, not a hopeful bidder, (7) Practice this in: Parth Gandani meeting next week (Syracuse, ID1, ID2), Singapore Director of Facilities conversations, Jason De Boer Manassas outreach, CNW partnership discussions on Building 42 and MAC services</p>
+        </div>
+        
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">Marketing & Communications Strategy</span>
+                <span class="follow-up-source">— James Peate</span>
+            </div>
+            <h3>Use Every Touch Point as Marketing Opportunity - Not Just RFP Conversations</h3>
+            <p class="follow-up-quote">"James: 'And then the other one is, and my take away here is you're already doing this, but I wanted to reinforce it is that we're making sure that we're having those ongoing conversations and talking about the wins and the success and the progress, whether it's at the site level, the account level or even SBM more broadly as we're leading in innovation and our solutions. So it's not just a conversation that comes up with the upcoming RFPs and so forth that we have. So we're using every touch point as a marketing communications opportunity to deliver messages like you did today.'"</p>
+            <p class="follow-up-action"><strong>Action:</strong> Marketing communications at every level - not just during RFPs: (1) SITE LEVEL: Use every interaction with Micron site contacts to share wins, innovations, progress, (2) Examples: Monthly scorecards with Christie Benzman (direct POC) - include innovation highlights, sustainability wins, efficiency improvements; Joint audits - showcase new products (Waxy digester), new processes (work order integration), new equipment; Daily operations - ensure supervisors/site managers communicate proactive solutions and improvements to Micron staff, (3) ACCOUNT LEVEL: Business reviews with growth decision-makers (Jeremy Briggs, Mark Feifel, Dave Strelo) - not just operational updates but SBM innovation leadership, autonomous equipment positioning, sustainability leadership (Curbit Award), cost savings examples ($15K window washing, paper product repurposing); Parth Gandani relationship (ID1, ID2, Syracuse) - position SBM as innovation partner from construction through operations; Craig Lloyd outreach (when he becomes #1 priority) - lead with SBM's technology leadership, international capabilities (Singapore/Malaysia), track record of managing complexity (5.3M sq ft, 201 employees, 6 sites), (4) SBM BROADLY: Share Micron portfolio success across SBM - template for other tech clients, Position Micron relationship as case study for: Technology client capabilities, Autonomous equipment expertise (Nilfisk partnership), International expansion readiness (Singapore/Malaysia), Large-scale cleanroom operations (600K sq ft production labs), Sustainability leadership (Curbit Award, compostable programs), Cost-optimization partnership ($35,771 investment, then billable conversion), (5) TIMING: Not just 'upcoming RFPs' but ongoing - every monthly scorecard, every business review, every site visit, every email, (6) MESSAGE CONSISTENCY: Deliver same quality messaging as today's presentation - wins, success, progress, innovation, leadership, (7) James's note: 'You're already doing this' - so continue and amplify, don't change approach, just ensure EVERY touchpoint includes marketing value</p>
+        </div>
+        
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">Lessons Learned & Continuous Improvement</span>
+                <span class="follow-up-source">— James Peate</span>
+            </div>
+            <h3>Continue Retrospective Lens - 'How Do We Stop This Happening Again?'</h3>
+            <p class="follow-up-quote">"James: 'On the issues and challenges, I really loved the lessons learned that you put in there. So it wasn't just that we had an issue, we came up with an action plan, we addressed it, but then we turned or you turned around and said so how do we stop this happening again? How do we scale that and make sure that it's not something that just comes up again. I really like that retrospective lessons learned lens that you put on those.'"</p>
+            <p class="follow-up-action"><strong>Action:</strong> Maintain and expand retrospective problem-solving approach: (1) CURRENT STRENGTH: Siddarth's approach to issues wasn't just reactive (problem → action plan → resolution) but strategic (problem → action plan → resolution → prevention → scalability), (2) EXAMPLES FROM 2025: San Jose scope misalignment: Not just 'added supervisors' but 'Let's discuss action plan, pricing, incorporate into scope moving forward' to prevent future gray areas, Boise cleanroom out-of-scope activities: Not just 'stopped placing orders' but 'identified all gray areas, realigned responsibilities, created clear scope boundaries' to protect future teams, Work order platform incompatibility: Not just 'we'll handle it manually' but 'created manual integration process with before/after pictures' to establish scalable validation system, (3) 2026 APPLICATION: After every challenge, ask: 'How do we prevent this from happening again?' 'How do we scale this learning across the portfolio?' 'What process/training/documentation prevents recurrence?', (4) SPECIFIC 2026 OPPORTUNITIES: MAC services/events pilot (new program) - document learnings for rollout across portfolio, Autonomous equipment with Nilfisk - capture why Tenant failed, why Nilfisk succeeds, create vendor evaluation criteria, Singapore/Malaysia expansion - document international expansion process for future global opportunities, ID1/ID2 production labs - create playbook for future cleanroom production facilities, Converting $35,771 investment to billable - document value-add to billable-scope conversion process, (5) SCALABILITY MINDSET: Every solution at Micron could benefit other SBM tech clients, Every challenge overcome becomes competitive advantage in next RFP, Every innovation tested becomes portfolio-wide offering, (6) James's emphasis: This retrospective approach is a STRENGTH to continue, not just something done well once</p>
+        </div>
+        
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">Leveraging Vertical Strength</span>
+                <span class="follow-up-source">— Mark Schlerf</span>
+            </div>
+            <h3>Continue Asking 'Who Does This?' Across SBM - Don't Be an Island</h3>
+            <p class="follow-up-quote">"Mark: 'I love that you're leaning into things like Mac work, things that maybe the playbook isn't as well defined within SBM and we have plenty of sites that we do it at and yet not in Boise, Idaho. And so I love that you're seeing it as an opportunity and not afraid of it and that you're leaning on the vertical, the strength of the vertical. I think I've seen where you've asked questions of hey, who does this? Who does that? I mean, I think you have made Boise not an island because of how you how you leverage the strengths of the people around you to learn from and just gather along the way. I think that is really a strength of yours, just assimilating the learnings from others.'"</p>
+            <p class="follow-up-action"><strong>Action:</strong> Maintain and expand collaborative learning approach across SBM: (1) CURRENT STRENGTH: Siddarth doesn't treat Boise as isolated - actively asks 'who does this?' across SBM when facing new opportunities, (2) MAC SERVICES EXAMPLE: Mark noted 'plenty of sites do MAC work' at SBM, just not in Boise/Idaho - Siddarth is pulling from those sites' playbooks, not creating from scratch, (3) 2026 LEVERAGE OPPORTUNITIES: MAC services & events: Which SBM sites do this? What are their staffing models, pricing structures, client communication processes? Get their playbooks BEFORE CNW approval (end of Feb), Autonomous equipment: Which SBM sites use autonomous equipment? What brands? What client adoption process worked? What pushback did they face and overcome? Use this BEFORE Nilfisk demos, International expansion (Singapore/Malaysia): Does SBM have international operations? If not, who has expanded to new countries/regions? What legal, HR, operational considerations? Tap this BEFORE formal introduction, Cleanroom production labs (ID1, ID2 - 600K sq ft each): Which SBM sites have large cleanroom experience? What equipment, training, safety protocols are essential? Learn BEFORE Q2 go-live, Scope expansion strategy (converting $35,771 investment to billable): Which ADs have successfully converted value-adds into billable scope? What was their client conversation approach? Pricing justification?, (4) MARK'S OBSERVATION: 'Made Boise not an island' - this is the goal for every AD, (5) CONTINUATION: Keep asking 'who does this?' for EVERY new initiative, Assimilate learnings from others BEFORE implementing, Leverage vertical strength (Mark, Val, other ADs) as resources, (6) RECIPROCAL: As Siddarth succeeds with MAC work, Singapore, autonomous equipment - he becomes the 'who does this?' answer for other ADs, (7) Mark's encouragement: 'I think that is really a strength of yours' - don't lose this collaborative approach as you become more experienced</p>
+        </div>
+        
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">Growth Opportunity Timeline - ID1 Production Lab</span>
+                <span class="follow-up-source">— Siddarth Shah (Self-Documented)</span>
+            </div>
+            <h3>ID1 Go-Live Q2 2026 - Pricing Submitted, Partner with CNW, Autonomous Equipment Ready</h3>
+            <p class="follow-up-quote">"Siddarth: 'The ID1 training lab, the potential go-live is in Q2 of 2026. We've already submitted pricing for two FTEs at this location. The project was put on hold in 2025 because of construction delays, but we're starting to see some tractions for the ID1 facility.'"</p>
+            <p class="follow-up-action"><strong>Action:</strong> ID1 production lab execution plan (600K sq ft cleanroom): (1) TIMELINE: Q2 2026 go-live (April-June), currently seeing traction after 2025 construction delays, (2) CURRENT STATUS: Pricing submitted for 2 FTEs, Hoffman construction cleaning ongoing ($116K/month), Parth Gandani meeting scheduled next week, (3) PRE-GO-LIVE ACTIONS: Reconfirm pricing and FTE count (is 2 FTEs sufficient for 600K sq ft cleanroom?), Autonomous equipment demo with Nilfisk - coordinate with Parth Gandani meeting, present autonomous solution for mile-long hallways, CNW partnership confirmation - ensure SBM is vendor of choice (not RFP), Staffing recruitment and cleanroom training plan (cleanroom requirements are specialized), Equipment procurement - autonomous machines, specialized cleanroom equipment, Safety and compliance training for production lab environment, (4) OPPORTUNITY SIZING: 600K sq ft cleanroom (massive facility), Mile-long hallways (autonomous equipment justification), Currently servicing construction via Hoffman - natural transition to operations, (5) RISK: 'The project was put on hold in 2025' - could happen again, need backup timeline, (6) NEXT WEEK MEETING WITH PARTH GANDANI: Confirm Q2 timeline, Discuss SBM operations transition from construction cleaning, Present autonomous equipment vision, Confirm FTE needs, Explore ID2 timeline (adjacent 600K sq ft lab), Discuss Syracuse opportunities, (7) STRATEGIC IMPORTANCE: First major production lab for SBM at Micron, Proof of concept for ID2 (also 600K sq ft), Demonstration of autonomous equipment capabilities, Expansion of existing Boise portfolio (currently 5.3M sq ft → 6.3M sq ft), (8) CONNECTION TO VAL'S FEEDBACK: Set specific date for go-live, autonomous demo, CNW partnership meeting, staffing completion - don't leave in 'Q2' generality</p>
+        </div>
+        
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">Growth Opportunity Timeline - Building 42</span>
+                <span class="follow-up-source">— Siddarth Shah (Self-Documented)</span>
+            </div>
+            <h3>Building 42 (7-Story Admin) - Q2 Completion, Q3 Go-Live, Partner for Pre-Mobilization Cleaning</h3>
+            <p class="follow-up-quote">"Siddarth: 'We've got a new seven story admin building which is called Building 42. It should be completed by Q2 and will go live in Q3. We want to make sure that we partner with Cushman and Wakefield to take on the janitorial services there, discuss taking over the construction, pre-mobilization cleaning services in Building 42. Building 42 has been erected. It's a seven story building which is smack center of what used to be our parking lot. If you come back to Boise, you will see a complete different facility now.'"</p>
+            <p class="follow-up-action"><strong>Action:</strong> Building 42 execution strategy: (1) TIMELINE: Q2 2026 completion (April-June), Q3 2026 go-live (July-September), Currently erected, under construction, (2) FACILITY: 7-story admin building, Center of Boise campus (former parking lot location), Significant visibility on campus, (3) TWO-PHASE OPPORTUNITY: PHASE 1 - Pre-mobilization cleaning: Construction cleaning/turnover services, Typically higher-margin work, Demonstrates capabilities before operations begin, Get in early to secure operations relationship, PHASE 2 - Janitorial services: Ongoing operations once building goes live in Q3, Addition to existing Boise portfolio, (4) PARTNERSHIP STRATEGY: 'Partner with Cushman and Wakefield' - CNW is existing client across Micron portfolio, Leverage existing relationship, not competitive bid, Position SBM as natural choice due to campus presence (201 employees, 5.3M sq ft), Convenience and efficiency of single vendor for entire campus, (5) NEXT ACTIONS (PER VAL'S FEEDBACK - SET DATES): CNW partnership discussion date - propose both pre-mobilization and operations, Pre-mobilization pricing submission date - Q1 2026 before Q2 completion, Operations pricing and staffing plan date - before Q3 go-live, Staffing recruitment timeline - admin building may need different skill mix, Equipment and supplies procurement date, (6) STRATEGIC IMPORTANCE: Highly visible facility (7 stories, campus center), Admin building = executive presence, white-glove expectations likely, MAC services opportunity (new admin building = desks, moves, setups), Complements existing Boise campus portfolio, Could be included in proposed MAC services program (end of Feb CNW response), (7) RISK MITIGATION: Completion date could slip (construction often delays) - maintain CNW communication, Competition for pre-mobilization work - move quickly to secure, Different expectations for admin vs production/lab spaces - clarify scope early, (8) OPPORTUNITY SIZING: 7 stories = significant square footage addition, Admin building = potential for additional services (MAC, events) beyond janitorial, (9) VAL'S FEEDBACK APPLICATION: 'By what day do you want to...' - set specific CNW meeting date, pricing date, decision date, implementation date for both phases</p>
+        </div>
+        
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">Growth Opportunity Timeline - ID2 Production Lab</span>
+                <span class="follow-up-source">— Siddarth Shah (Self-Documented)</span>
+            </div>
+            <h3>ID2 Second Production Lab - Q3/Q4 2026 Construction Start, Double Hoffman Contract</h3>
+            <p class="follow-up-quote">"Siddarth: 'ID2 is a huge one. We continue to support the construction cleaning through the Hoffman construction projects. ID2 is going to be a second production lab that they're building right behind ID1. That would give us the opportunity to put our foot in the door and make sure that we continue servicing the trailers and then hopefully get grandfathered in to actually servicing the janitorial services for ID2 once it goes live. We're looking at them starting construction in Q3 or Q4 of 2026. They've already broken ground.'"</p>
+            <p class="follow-up-action"><strong>Action:</strong> ID2 strategy and timeline (second 600K sq ft cleanroom): (1) TIMELINE: Ground already broken, Q3 or Q4 2026 construction start (July-December), Behind ID1 (which goes live Q2 2026), (2) CONSTRUCTION PHASE OPPORTUNITY: Currently: Hoffman contract $116K/month (ID1 trailers), ID2 potential: Double the trailer space and construction area, 'Hopefully doubling' Hoffman contract to ~$232K/month, Timeline: Set expansion negotiation date with Hoffman, (3) 'GRANDFATHERED IN' STRATEGY: Foot in door via construction cleaning (Hoffman trailers), Transition from construction to operations (like ID1 approach), 'Grandfathered in' suggests avoiding RFP by being incumbent, Requires: Excellent construction cleaning performance, Strong relationship with Parth Gandani (meeting next week), CNW partnership on transition plan, (4) NEXT WEEK PARTH GANDANI MEETING: ID1 timeline confirmation (Q2 go-live), ID2 construction timeline (Q3/Q4 start), Hoffman contract expansion discussion (doubling opportunity), Operations transition strategy (construction → janitorial for both ID1 and ID2), Syracuse opportunities (separate discussion), (5) STRATEGIC IMPORTANCE: Second 600K sq ft production lab (matching ID1), Demonstrates SBM's scalability (can handle multiple massive production labs), Proof of autonomous equipment value (mile-long hallways × 2 facilities), Total opportunity: ID1 + ID2 = 1.2M sq ft of new cleanroom space, (6) RISK: 'Hopefully get grandfathered in' - not guaranteed, need proactive positioning, Construction start could delay (common in projects this size), Competition could bid for operations even if SBM does construction cleaning, (7) REVENUE IMPACT: Construction phase: ~$232K/month (if doubled from current $116K), Operations phase: TBD, but 600K sq ft cleanroom with autonomous equipment = significant monthly revenue, (8) CONNECTION TO OTHER INITIATIVES: Autonomous equipment: ID2 is second use case (after ID1), Nilfisk partnership: Demonstrate value across both production labs, Parth Gandani relationship: Critical for ID1 and ID2 success, (9) VAL'S FEEDBACK APPLICATION: Set specific dates: Parth meeting next week outcomes, Hoffman expansion negotiation date, ID2 construction start confirmation date, Operations proposal submission date, CNW transition plan discussion date, (10) JAMES'S FEEDBACK APPLICATION: Change language from 'hopefully get grandfathered in' to 'WHEN we transition from construction to operations' - confidence, not hope</p>
+        </div>
+        
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">Growth Opportunity Timeline - Syracuse NY</span>
+                <span class="follow-up-source">— Siddarth Shah (Self-Documented)</span>
+            </div>
+            <h3>Syracuse NY New Investment - Parth Gandani Meeting Next Week, Existing 2-Floor Opportunity On Hold</h3>
+            <p class="follow-up-quote">"Siddarth: 'Syracuse, NY is a new one that just recently they're going to be investing a lot of money in Syracuse, NY. I've met up with a contact at Micron by the name of Parth Gandani, who I'm currently dealing with with the production lab building in the construction of ID1 and ID2. I've actually got a meeting with him next week to actually discuss how we can actually start supporting the Syracuse building and the construction of Syracuse, if it's gonna be through Hoffman, if it's gonna be through Hansel Phillips, if it's gonna be through any other vendor which we want in. So we're gonna look at current existing opportunities in Syracuse. I know there's one building over there where initially we were looking at potentially taking on two floors, but that was put on hold because that was landlord driven.'"</p>
+            <p class="follow-up-action"><strong>Action:</strong> Syracuse NY execution plan: (1) MEETING NEXT WEEK WITH PARTH GANDANI: Agenda: Syracuse construction support opportunities, Vendor identification (Hoffman? Hansel Phillips? Other?), Existing 2-floor opportunity status (was landlord-driven, on hold), SBM entry strategy for Syracuse market, (2) CONTEXT: Micron investing heavily in Syracuse, NY, New facility/expansion (construction phase starting), Parth Gandani is Siddarth's contact for ID1, ID2, and now Syracuse, Relationship leverage: Using ID1/ID2 relationship to enter Syracuse, (3) CONSTRUCTION PHASE: 'How we can start supporting Syracuse building and construction', Similar to Hoffman model in Boise (trailers, construction cleaning), Foot-in-door strategy for operations (like ID1, ID2 approach), Vendor TBD: Hoffman (current Boise partner), Hansel Phillips, or other, (4) EXISTING OPPORTUNITY: 2-floor opportunity in one building, Was 'landlord driven' (not Micron direct), Put on hold, Status: Need to reactivate or confirm dead, (5) NEXT WEEK MEETING OBJECTIVES: Understand Micron's Syracuse investment scale and timeline, Identify construction vendor (Hoffman preferred due to relationship), Discuss SBM's role: construction cleaning, trailers, pre-mobilization, operations, Clarify 2-floor opportunity - still viable? Different approach needed?, Position SBM as Micron's partner across geographies (Boise, Syracuse, future), Connect Syracuse to Singapore/Malaysia strategy (expanding beyond Boise), (6) STRATEGIC IMPORTANCE: Geographic expansion beyond Boise/San Jose/Longmont/Folsom, Demonstrates SBM's ability to support Micron nationally, Parth Gandani relationship extending across multiple projects/locations, Precedent for future Micron expansions (if successful in Syracuse), (7) RISK: 'Landlord driven' complexity - less control than Micron-direct facilities, 'Put on hold' history - could delay again, New market for SBM - may need local partnerships or hiring, (8) VAL'S FEEDBACK APPLICATION: After next week meeting, set specific dates: If construction support approved: Start date, staffing plan date, equipment/supplies date, If 2-floor opportunity reactivated: Proposal date, decision timeline, implementation date, If new opportunities identified: Pursuit timeline, proposal dates, decision dates, (9) JAMES'S FEEDBACK APPLICATION: Use next week meeting to 'talk about wins and success and progress' from Boise (Curbit Award, $201K growth, CNW relationship), Use every touch point as marketing opportunity - this meeting isn't just about Syracuse, it's about SBM's capabilities, (10) MARK'S FEEDBACK APPLICATION: 'Who does this?' - Which SBM sites have expanded into new geographic markets? What was their approach? Learn before Syracuse execution, (11) CONNECTION TO OTHER INITIATIVES: Singapore/Malaysia: Syracuse is domestic expansion proof point, ID1/ID2: Parth sees SBM execution across projects, Hoffman relationship: May extend to Syracuse construction if Hoffman is vendor</p>
+        </div>
+        
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">Growth Opportunity Timeline - Longmont Max Lab Migration</span>
+                <span class="follow-up-source">— Siddarth Shah (Self-Documented)</span>
+            </div>
+            <h3>Longmont Max Lab - Pike Lease Ends February, 100% Capacity Q3 2026, Phased Growth Approach</h3>
+            <p class="follow-up-quote">"Siddarth: 'In Longmont, we're currently servicing the Pike location to the Max location in Longmont, Colorado. So we're going to continue servicing this Pike location until the Micron lease ends in February and then once they migrate completely to the Max lab, we're going to start servicing that facility at 100% capacity based off the construction. So we're looking at maybe Q3 of 2026.'"</p>
+            <p class="follow-up-action"><strong>Action:</strong> Longmont Max Lab transition plan: (1) CURRENT STATE: Servicing Pike location (existing), Migrating to Max Lab (Clover Basin - new facility), Currently servicing 65,000 sq ft at Max Lab (partial), Phased approach as facility grows, (2) TIMELINE: February 2026: Pike location lease ends, Continue servicing Pike until then, Q3 2026: Max Lab at 100% capacity (July-September), 'Based off construction' - completion dependent, (3) TRANSITION PLAN: Phase 1 (Current - Feb 2026): Dual service - Pike + partial Max Lab (65K sq ft), Phase 2 (Feb 2026): Pike lease ends, Max Lab still growing but Pike service ends, Phase 3 (Q3 2026): Max Lab 100% capacity, full service begins, (4) EQUIPMENT INVESTMENT: 'Bigger, more efficient equipment in Longmont, specifically for Clover Basin (Max Lab)', 'Larger machine covers more ground, reduces need for additional headcount', Already invested and deployed, (5) NEXT ACTIONS (VAL'S FEEDBACK - SET DATES): Max Lab 100% completion confirmation date (Q3 2026 estimate - get specific), Pike location final day of service (February 2026 - get specific date), Staffing transition plan: Pike employees to Max Lab? New hires? Timeline?, Equipment delivery/setup completion date for 100% capacity service, Training completion for new facility (larger equipment, different layout), Micron walkthrough and scope confirmation date for 100% capacity, (6) FINANCIAL IMPACT: Pike location monthly revenue: TBD, Max Lab partial (65K sq ft) current monthly revenue: TBD, Max Lab 100% capacity monthly revenue: TBD (need to calculate growth), Net change: Potentially higher revenue with larger, more efficient facility, (7) STRATEGIC IMPORTANCE: Facility upgrade: Pike (old) → Max Lab (new, larger, more efficient), Equipment advantage: Larger machine positioning SBM well for efficiency, Growth trajectory: Started 65K sq ft, growing to 100% capacity, Demonstrates SBM's ability to grow with client through facility transitions, (8) RISK: 'Based off construction' - Q3 100% could delay, Pike lease ends February but Max Lab may not be 100% ready - gap period?, Construction completion risk (common delays), Dual service period (Pike + Max) is operationally complex, (9) COORDINATION: With Boise campus (Siddarth's main portfolio), With CNW (property management), With Micron Longmont team (different POCs than Boise?), (10) VAL'S FEEDBACK APPLICATION: Set specific dates: February Pike end date, Q3 Max Lab 100% date, Transition milestones (equipment, staffing, training), Revenue impact calculation dates (11) CONNECTION: Growing from 5 sites to 6 sites in 2025 (mentioned in opening) - this was likely the Max Lab addition</p>
+        </div>
+        
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">Growth Opportunity - MAC Services & Events</span>
+                <span class="follow-up-source">— Siddarth Shah (Self-Documented)</span>
+            </div>
+            <h3>MAC Services & Event Support - $25K/Month Proposal, CNW Response Expected End of February</h3>
+            <p class="follow-up-quote">"Siddarth: 'Should we successfully introduce the new event and MAC services at the site, this will increase the number of services that SBM can offer across the portfolio. Just recently I put together a proposal of how SBM can support MAC services and event support. It's a completely different program, completely new program that I've been working with the CNW team. Once it's been approved, we'll be able to pilot it at Boise and in San Jose, making sure that we are supporting all the events, but more importantly with all this growth that's happening in Boise, the MAC services, this is the desk move, the setups of all the conference rooms and all that. This is going to be a huge part of our growth. That's one of the opportunities that I'm currently working on with CNW. I'm hoping to hear back from them by the end of February.' Next steps: 'We've already submitted proposals for the event and MAC support that should bring an additional $25,000 a month.'"</p>
+            <p class="follow-up-action"><strong>Action:</strong> MAC services implementation strategy: (1) PROPOSAL STATUS: Submitted to CNW, $25K/month additional revenue, Response expected end of February 2026, (2) SCOPE: MAC SERVICES: Desk moves (major need with Boise growth), Conference room setups, Furniture moves/adjustments, Space reconfigurations, EVENTS SUPPORT: Event setup/breakdown, Coordination support, Materials handling, (3) PILOT LOCATIONS: Boise (primary - due to massive growth: Building 42, ID1, ID2), San Jose (secondary - flagship facility), (4) STRATEGIC RATIONALE: 'With all this growth happening in Boise, the MAC services is going to be a huge part of our growth', Building 42: 7-story admin building = significant desk moves/setups, ID1: 600K sq ft production lab = facility setup support, ID2: Second 600K sq ft lab = additional setup support, Return to office initiatives = desk moves and space reconfigurations, (5) MARK SCHLERF'S FEEDBACK: 'Plenty of sites do MAC work at SBM, just not in Boise', Siddarth is 'leaning into things where playbook isn't as well defined', 'Leaning on the vertical, the strength of the vertical', ACTION: Before February response, identify which SBM sites do MAC work, get their staffing models, pricing structures, client communication processes, operational playbooks, (6) NEXT ACTIONS IF APPROVED (VAL'S FEEDBACK - SET DATES): Pilot launch date in Boise, Pilot launch date in San Jose, Staffing plan: How many FTEs? What skills needed? Hire or train existing staff?, Equipment/supplies procurement date (moving equipment, furniture protection, tools), Training completion date for MAC services team, Client communication process setup (work order integration, scheduling, billing), Success metrics definition (what makes pilot successful for portfolio-wide rollout?), (7) NEXT ACTIONS IF NOT APPROVED: Understand CNW objections, Revise proposal (pricing? scope? timing?), Alternative approach (start with events only? smaller pilot?), (8) REVENUE IMPACT: $25K/month = $300K annual, If successful in Boise/San Jose, expand across portfolio (Longmont, Folsom, future Syracuse, Singapore?), (9) COMPETITIVE ADVANTAGE: SBM already on-site with 201 employees in Boise - convenience factor, Existing relationship with CNW - trust established, Knowledge of facilities - faster ramp-up than external vendor, (10) CONNECTION TO $35,771 INVESTMENT: 'My intention is to eliminate this $35,000 and introduce new programs into scope which warrant that $35,000', MAC services could be one of the programs that converts investment into billable, (11) VAL'S FEEDBACK EMPHASIS: 'By the end of February' is good, but then set: If approved: Pilot start date (March? April?), If not approved: Revision submission date, follow-up meeting date, (12) JAMES'S FEEDBACK APPLICATION: When discussing with CNW, emphasize SBM's innovation leadership, existing on-site presence, convenience and efficiency of single-vendor solution, Use as marketing opportunity to showcase SBM's versatility beyond janitorial</p>
+        </div>
+        
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">Growth Opportunity - Manassas VA</span>
+                <span class="follow-up-source">— Siddarth Shah (Self-Documented)</span>
+            </div>
+            <h3>Manassas VA - Lost 2024 RFP to Incumbent, Reaching Out to Jason De Boer for Next RFP Invitation</h3>
+            <p class="follow-up-quote">"Siddarth: 'Micron Manassas, VA, the last RFP was in 2024. We were invited to bid. It did not go in our favor. It went in the favor of the incumbent, but I've already reached out to the point of contact there. His name is Jason De Boer in hope to get invited for the next RFP at Micron in Manassas.'"</p>
+            <p class="follow-up-action"><strong>Action:</strong> Manassas VA re-engagement strategy: (1) HISTORY: 2024 RFP: SBM invited to bid, Lost to incumbent vendor, Relationship exists: Jason De Boer is POC, (2) CURRENT STATUS: Siddarth has reached out to Jason De Boer, Goal: Get invited to next RFP, (3) CONTEXT: Lost RFPs are learning opportunities, Incumbent advantage overcome by: Demonstrating differentiation (autonomous equipment, sustainability leadership, technology alignment), Building relationship during off-cycle (not just at RFP time), Showcasing SBM's Micron success at other locations, (4) JAMES'S FEEDBACK APPLICATION: 'Use every touch point as marketing communications opportunity', Don't wait for next RFP announcement to engage with Jason De Boer, Ongoing conversation strategy: Share Micron wins from other locations (Curbit Award, $201K Boise growth, autonomous equipment plans, Singapore expansion), Position SBM as Micron's strategic partner nationally, not just vendor, Offer to visit/present SBM capabilities, Include Jason in relevant updates (not spam, but strategic touches), (5) NEXT ACTIONS (VAL'S FEEDBACK - SET DATES): Jason De Boer follow-up meeting date - don't just leave at 'reached out', Manassas facility visit date - face-to-face relationship building, SBM capabilities presentation date - proactive, not waiting for RFP, Next RFP timing research - when is incumbent contract up? Set calendar reminder for 6 months before, Competitive intelligence - what did incumbent offer that won? How can SBM differentiate?, (6) DIFFERENTIATION STRATEGY: Highlight SBM's Micron portfolio: 6 sites across Boise, San Jose, Longmont, Folsom (not just single-site vendor), Technology leadership: Autonomous equipment partnership (Nilfisk), work order integration innovation, Waxy product, Sustainability: Curbit Award, compostable programs, paper product repurposing, carbon footprint focus, Scale: 201 employees at Boise alone, $1.1M monthly revenue in portfolio, proven large-scale management, Growth partnership: $201K growth in 2025, expanding to Syracuse, Building 42, ID1, ID2 - not static vendor, (7) RISK: Incumbent advantage is strong (they won 2024), 'Hope to get invited' is not a plan - need proactive relationship strategy, Without regular engagement, Jason De Boer may not think of SBM for next RFP, (8) VAL'S FEEDBACK EMPHASIS: 'By what day do you want to...' - Set specific Jason De Boer engagement dates: Q1 2026: Capabilities presentation, Q2 2026: Facility visit, Q3 2026: Follow-up on contract timing, Q4 2026: Pre-RFP relationship confirmation, (9) JAMES'S 'WHEN NOT IF': Change 'hope to get invited' to 'WHEN we're invited to next RFP' - then work backwards on relationship building to make that true, (10) STRATEGIC IMPORTANCE: Geographic expansion (Virginia), Demonstrates persistence (didn't give up after 2024 loss), Learning from loss and re-engaging strategically</p>
+        </div>
+        
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">2026 Proposal Deliverables - In Progress</span>
+                <span class="follow-up-source">— Siddarth Shah (Self-Documented)</span>
+            </div>
+            <h3>8 FTEs White Glove Service - $37K/Month Executive Building Restroom Enhancement Submitted</h3>
+            <p class="follow-up-quote">"Siddarth: 'We've submitted proposals for an additional 8 FTEs to enhance the white glove services in executive buildings and executive spaces specifically for restrooms that should be bringing in at least $37,000 a month.'"</p>
+            <p class="follow-up-action"><strong>Action:</strong> 8 FTE white-glove service proposal: (1) PROPOSAL STATUS: Submitted (timing not specified), $37K/month additional revenue, Scope: 8 additional FTEs, (2) SCOPE: White-glove services in executive buildings, Executive spaces, Specifically focused on restrooms, (3) CONTEXT: San Jose is flagship facility (Sonia Marotta, CEO, sits there), 'New FM wanted more of a white glove service than what was agreed upon when we took on contract', This proposal addresses that elevated expectation, (4) STRATEGIC RATIONALE: Building 42 (7-story admin building) opening Q2/Q3 2026 - executive presence, Executive spaces require higher service standards, Restrooms in executive areas are high-visibility, high-impact, Proactive proposal vs reactive to complaints, (5) NEXT ACTIONS (VAL'S FEEDBACK - SET DATES): CNW/Micron decision date - when do you expect response? Follow-up date if no response by [specific date], If approved: Staffing recruitment timeline (8 FTEs - specialized white-glove skills), Training completion date (white-glove standards, executive building protocols), Implementation start date, If not approved: Understand objections, Revised proposal submission date, Alternative approach (fewer FTEs? different scope?), (6) REVENUE IMPACT: $37K/month = $444K annual, Combined with MAC services ($25K/month) = $62K/month = $744K annual in new proposals, (7) CONNECTION TO $35,771 INVESTMENT: Could this be part of converting the cost-avoidance investment into billable scope?, Current $35,771/month in free additional resources could justify this $37K proposal, (8) COMPETITIVE POSITIONING: Proactive vs reactive: Proposing enhancements before being asked/demanded, Aligns with client's elevated expectations (white-glove vs standard janitorial), Demonstrates understanding of executive building needs, (9) RISK: 8 FTEs is significant addition - are margins modeled correctly?, White-glove service is subjective - need clear KPIs/expectations documented, Executive spaces = higher scrutiny = higher performance pressure, (10) VAL'S FEEDBACK APPLICATION: Set specific dates: Decision expected by [date], Recruitment start date if approved, Training completion date, Go-live date, Success metrics date (how will white-glove service be measured?), (11) JAMES'S FEEDBACK APPLICATION: This is a marketing opportunity: Position SBM's white-glove capabilities, Use as example of proactive partnership (not waiting for RFP), Highlight in conversations with other Micron locations (Syracuse, Singapore), (12) STRATEGIC IMPORTANCE: Addresses 2025 San Jose challenge (white-glove expectations), Positions SBM for executive-level facilities (Building 42, future admin buildings), Differentiates from standard janitorial - moves SBM upmarket</p>
+        </div>
+        </div>
+
+</body>
+</html>

@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025 Year-End Scorecard - Justin Dallavis</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            background: #ffffff;
+            padding: 2rem;
+            max-width: 8.5in;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: #1a365d;
+            margin-bottom: 0.5rem;
+        }
+
+        h2 {
+            font-size: 1.35rem;
+            font-weight: 600;
+            color: #2c5282;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 0.5rem;
+        }
+
+        h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #2d3748;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        h4 {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #4a5568;
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .header-section {
+            background: linear-gradient(135deg, #1a365d 0%, #2c5282 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+        }
+
+        .header-section h1 {
+            color: white;
+            margin-bottom: 1.5rem;
+            font-size: 1.85rem;
+        }
+
+        .header-metadata {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.8rem;
+            margin-top: 1.2rem;
+        }
+
+        .metadata-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.6rem;
+            border-radius: 4px;
+        }
+
+        .metadata-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.8;
+            margin-bottom: 0.25rem;
+        }
+
+        .metadata-value {
+            font-size: 1.1rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+        }
+
+        .score-summary-first-page {
+            background: #f7fafc;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+        }
+
+        .score-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            background: white;
+        }
+
+        .score-table th {
+            background: #2c5282;
+            color: white;
+            padding: 0.75rem;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .score-table td {
+            padding: 0.75rem;
+            border: 1px solid #e2e8f0;
+        }
+
+        .score-table tr:nth-child(even) {
+            background: #f7fafc;
+        }
+
+
+        /* Follow-Up Questions Section */
+        .follow-up-section {
+            background: #fff8e1;
+            border-left: 4px solid #ff9800;
+            padding: 24px;
+            margin: 32px 0;
+            border-radius: 8px;
+            page-break-inside: avoid;
+        }
+
+        .follow-up-intro {
+            color: #e65100;
+            margin-bottom: 1rem;
+        }
+
+        .follow-up-item {
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 16px 0;
+        }
+
+        .follow-up-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .follow-up-category {
+            background: #2196f3;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .follow-up-source {
+            color: #666;
+            font-size: 14px;
+            font-style: italic;
+        }
+
+        .follow-up-quote {
+            background: #f5f5f5;
+            border-left: 3px solid #ff9800;
+            padding: 12px 16px;
+            margin: 12px 0;
+            font-style: italic;
+            color: #333;
+        }
+
+        .follow-up-action {
+            margin-top: 12px;
+            color: #333;
+        }
+
+        /* Scored Section - One section per page */
+        .scored-section {
+            page-break-after: always;
+            page-break-inside: avoid;
+            margin: 1.5rem 0;
+            padding: 1.5rem;
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            min-height: 400px;
+        }
+
+        .score-display {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin: 1rem 0;
+            padding: 1rem;
+            background: #f7fafc;
+            border-radius: 4px;
+        }
+
+        .score-label {
+            font-weight: 600;
+            color: #4a5568;
+        }
+
+        .score-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #2c5282;
+        }
+
+        .combined-feedback {
+            background: #f8f9fa;
+            border-left: 4px solid #2c5282;
+            padding: 1.25rem;
+            margin: 1rem 0;
+            border-radius: 4px;
+        }
+
+        .combined-feedback h4 {
+            color: #2c5282;
+            margin-bottom: 0.75rem;
+            font-size: 1rem;
+        }
+
+        .feedback-synthesis {
+            margin-top: 0.75rem;
+        }
+
+        .feedback-point {
+            padding: 0.75rem;
+            margin: 0.5rem 0;
+            background: white;
+            border-radius: 4px;
+            border-left: 3px solid #2c5282;
+            line-height: 1.6;
+        }
+
+        .feedback-point strong {
+            color: #2c5282;
+            font-size: 0.9rem;
+        }
+
+        .synthesis-list {
+            margin: 0.75rem 0 1rem 1.5rem;
+            padding-left: 1rem;
+        }
+
+        .synthesis-list li {
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+            color: #2d3748;
+        }
+
+        .feedback-synthesis p {
+            margin: 0.75rem 0;
+            line-height: 1.6;
+        }
+
+        .feedback-synthesis strong {
+            color: #2c5282;
+            font-weight: 600;
+        }
+
+        @media print {
+            * {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            
+            body {
+                padding: 0.25in;
+                font-size: 9pt;
+                line-height: 1.3;
+            }
+            
+            h1 {
+                font-size: 16pt;
+                margin-bottom: 0.3rem;
+            }
+            
+            h2 {
+                font-size: 12pt;
+                margin-top: 0.5rem;
+                margin-bottom: 0.4rem;
+                page-break-after: avoid;
+            }
+            
+            h3 {
+                font-size: 10pt;
+                margin-top: 0.4rem;
+                margin-bottom: 0.3rem;
+            }
+            
+            .header-section {
+                padding: 1rem;
+                margin-bottom: 1rem;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            
+            .header-metadata {
+                gap: 0.5rem;
+            }
+            
+            .metadata-item {
+                padding: 0.4rem;
+            }
+            
+            .metadata-label {
+                font-size: 7pt;
+            }
+            
+            .metadata-value {
+                font-size: 9pt;
+            }
+            
+            .score-summary-first-page {
+                page-break-after: always;
+                padding: 0.75rem;
+                margin-bottom: 1rem;
+            }
+            
+            .score-table {
+                margin: 0.75rem 0;
+                font-size: 9pt;
+            }
+            
+            .score-table th,
+            .score-table td {
+                padding: 0.35rem;
+            }
+            
+            .scored-section {
+                page-break-after: always;
+                page-break-inside: avoid;
+                margin: 0.5rem 0;
+                padding: 0.75rem;
+                border: 1px solid #e2e8f0;
+                min-height: unset;
+            }
+            
+            .score-display {
+                margin: 0.5rem 0;
+                padding: 0.5rem;
+            }
+            
+            .score-label {
+                font-size: 9pt;
+            }
+            
+            .score-value {
+                font-size: 14pt;
+            }
+            
+            .combined-feedback {
+                padding: 0.75rem;
+                margin: 0.5rem 0;
+            }
+            
+            .combined-feedback h4 {
+                font-size: 9pt;
+                margin-bottom: 0.4rem;
+            }
+            
+            .feedback-synthesis p {
+                margin: 0.4rem 0;
+                line-height: 1.4;
+                font-size: 9pt;
+            }
+            
+            .feedback-synthesis strong {
+                font-size: 9pt;
+            }
+            
+            .synthesis-list {
+                margin: 0.4rem 0 0.5rem 1rem;
+                padding-left: 0.5rem;
+            }
+            
+            .synthesis-list li {
+                margin-bottom: 0.25rem;
+                line-height: 1.4;
+                font-size: 8.5pt;
+            }
+            
+            .follow-up-section {
+                page-break-before: always;
+                page-break-inside: avoid;
+                padding: 1rem;
+                margin: 1rem 0;
+            }
+            
+            .follow-up-item {
+                padding: 0.75rem;
+                margin: 0.75rem 0;
+            }
+            
+            .follow-up-quote {
+                padding: 0.5rem;
+                margin: 0.5rem 0;
+                font-size: 8.5pt;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header-section">
+        <h1>2025 Year-End Account Review & 2026 QBR Readiness Scorecard</h1>
+        <div class="header-metadata">
+            <div class="metadata-item">
+                <div class="metadata-label">Account Director</div>
+                <div class="metadata-value">Justin Dallavis</div>
+            </div>
+            <div class="metadata-item">
+                <div class="metadata-label">Account</div>
+                <div class="metadata-value">Boeing </div>
+            </div>
+            <div class="metadata-item">
+                <div class="metadata-label">Tier</div>
+                <div class="metadata-value"><span style="background: #6366f1; color: white; padding: 0.3rem 0.8rem; border-radius: 12px; font-weight: 600; font-size: 0.9rem;">Tier 5</span></div>
+            </div>
+            <div class="metadata-item">
+                <div class="metadata-label">Review Date</div>
+                <div class="metadata-value">January 2026</div>
+            </div>
+            <div class="metadata-item">
+                <div class="metadata-label">Total Reviews</div>
+                <div class="metadata-value">4</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="score-summary-first-page">
+        <h2>Executive Summary</h2>
+
+        <table class="score-table">
+            <thead>
+                <tr>
+                    <th>Evaluation Category</th>
+                    <th style="text-align: center;">Average Score</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+        <tr>
+            <td>Key Projects & Initiatives</td>
+            <td style="text-align: center; font-weight: 600;">4.0</td>
+        </tr>
+        
+        <tr>
+            <td>Value Adds & Cost Avoidance</td>
+            <td style="text-align: center; font-weight: 600;">4.0</td>
+        </tr>
+        
+        <tr>
+            <td>Cost Savings Delivered</td>
+            <td style="text-align: center; font-weight: 600;">3.75</td>
+        </tr>
+        
+        <tr>
+            <td>Innovation & Continuous Improvement</td>
+            <td style="text-align: center; font-weight: 600;">3.5</td>
+        </tr>
+        
+        <tr>
+            <td>Issues, Challenges & Accountability</td>
+            <td style="text-align: center; font-weight: 600;">4.5</td>
+        </tr>
+        
+        <tr>
+            <td>2026 Forward Strategy & Vision</td>
+            <td style="text-align: center; font-weight: 600;">3.25</td>
+        </tr>
+        
+        <tr>
+            <td>Personal Goals & Role Maturity</td>
+            <td style="text-align: center; font-weight: 600;">3.5</td>
+        </tr>
+        
+        <tr>
+            <td>Executive Presence & Presentation Skills</td>
+            <td style="text-align: center; font-weight: 600;">4.0</td>
+        </tr>
+        
+        <tr style="background: #e8f5e9; border-top: 3px solid #2c5282;">
+            <td style="font-weight: 700; text-transform: uppercase;">Overall Score</td>
+            <td style="text-align: center; font-weight: 700; font-size: 1.2rem; color: #2c5282;">30.5/40</td>
+        </tr>
+        
+            </tbody>
+        </table>
+    </div>
+
+    
+        <div class="scored-section">
+            <h2>Key Projects & Initiatives</h2>
+            <div class="score-display">
+                <span class="score-label">Average Score:</span>
+                <span class="score-value">4.0/5</span>
+            </div>
+            
+            
+    <div class="combined-feedback">
+        <h4>Combined Feedback from Leadership Reviews</h4>
+        <div class="feedback-synthesis">
+    
+            <p><strong>Overall Assessment:</strong> Although you’re hitting the points required I’m concerned about you reading.</p>
+        
+            <p><strong>Areas for Development:</strong></p>
+            <ul class="synthesis-list">
+        <li>Although you’re hitting the points required I’m concerned about you reading.</li><li>Great job articulating the 2025 initiatives; however, more desire for client impact.  Why were these initiatives important to the client and what feedback was received?</li><li>Justin clearly articulated several major 2025 initiatives across the Boeing portfolio, including significant site expansions, onboarding of new facilities, and stabilization of previously underperforming locations. The scope and complexity of these initiatives were evident, particularly in Mascoutah, Huntsville, Fort Walton Beach, and Swansea. Justin demonstrated strong ownership and execution. To reach a 5, future reviews should further tighten the narrative around why each initiative mattered most to Boeing and more explicitly connect each effort to measurable client outcomes.</li></ul>
+        </div>
+    </div>
+    
+        </div>
+        
+        <div class="scored-section">
+            <h2>Value Adds & Cost Avoidance</h2>
+            <div class="score-display">
+                <span class="score-label">Average Score:</span>
+                <span class="score-value">4.0/5</span>
+            </div>
+            
+            
+    <div class="combined-feedback">
+        <h4>Combined Feedback from Leadership Reviews</h4>
+        <div class="feedback-synthesis">
+    
+            <p><strong>Overall Assessment:</strong> You’ve shown that you can articulate the value estimate the financial, operational and risk input but again I can totally tell you’re reading and I want you to be able to present to executives at all level based on what you know.</p>
+        
+            <p><strong>Areas for Development:</strong></p>
+            <ul class="synthesis-list">
+        <li>You’ve shown that you can articulate the value estimate the financial, operational and risk input but again I can totally tell you’re reading and I want you to be able to present to executives at all level based on what you know. In the future have notes not a script. You did well pivoting and answering questions which supports my theory you have all the knowledge needed to deliver a successful presentation!</li><li>Exceptional explanation and itemization of cost savings related items/initiatives; however, lacked that WOW! moment with quantitative value - example: total portfolio cost savings $40k through A,B,C initiatives</li><li>Justin presented a strong set of value-add examples delivered beyond contract scope, including absorbed wage increases, expanded floor care, restroom deep cleaning, route restructuring, and in-housing of window washing. These efforts clearly reinforced SBM’s position as a proactive partner rather than a reactive vendor. To strengthen this section further, Justin should consistently translate these initiatives into estimated financial, operational, or risk-based impact to make the value more tangible at an executive level.</li></ul>
+        </div>
+    </div>
+    
+        </div>
+        
+        <div class="scored-section">
+            <h2>Cost Savings Delivered</h2>
+            <div class="score-display">
+                <span class="score-label">Average Score:</span>
+                <span class="score-value">3.75/5</span>
+            </div>
+            
+            
+    <div class="combined-feedback">
+        <h4>Combined Feedback from Leadership Reviews</h4>
+        <div class="feedback-synthesis">
+    
+            <p><strong>Overall Assessment:</strong> Excellent job articulating initiatives and actions; however, lacking that client impact piece and potential mic-drop moment of quantified cost savings dollar i.</p>
+        
+            <p><strong>Strengths:</strong></p>
+            <ul class="synthesis-list">
+        <li>Justin effectively highlighted several credible cost savings and cost avoidance measures, including reduced reliance on third-party services, improved labor efficiency through equipment investments, and lifecycle extension of flooring and carpet assets. The examples were concrete and relevant to Boeing’s operating environment. Elevation to a 5 would require clearer quantification and documentation of savings over time and how these practices are sustained and replicated across sites.</li></ul>
+            <p><strong>Areas for Development:</strong></p>
+            <ul class="synthesis-list">
+        <li>Excellent job articulating initiatives and actions; however, lacking that client impact piece and potential mic-drop moment of quantified cost savings dollar i.e. $1M cost savings!</li></ul>
+        </div>
+    </div>
+    
+        </div>
+        
+        <div class="scored-section">
+            <h2>Innovation & Continuous Improvement</h2>
+            <div class="score-display">
+                <span class="score-label">Average Score:</span>
+                <span class="score-value">3.5/5</span>
+            </div>
+            
+            
+    <div class="combined-feedback">
+        <h4>Combined Feedback from Leadership Reviews</h4>
+        <div class="feedback-synthesis">
+    
+            <p><strong>Overall Assessment:</strong> Always demonstrate the value.</p>
+        
+            <p><strong>Strengths:</strong></p>
+            <ul class="synthesis-list">
+        <li>Justin demonstrated strong leadership in introducing new tools, equipment, and methods, including Kaivac systems, rideable equipment, in-house window washing, and Whittaker carpet spotters. These initiatives showed a willingness to test, adopt, and scale improvements that directly enhance efficiency and service quality. Continued focus on standardizing these innovations into formal playbooks and measuring outcomes consistently would further elevate this area.</li></ul>
+            <p><strong>Areas for Development:</strong></p>
+            <ul class="synthesis-list">
+        <li>Always demonstrate the value. Even if you cannot do tech you can innovate a process and be able to discuss the value.</li><li>Items in work, but still requiring development.  Strategy, implementation, and due dates still WIP</li></ul>
+        </div>
+    </div>
+    
+        </div>
+        
+        <div class="scored-section">
+            <h2>Issues, Challenges & Accountability</h2>
+            <div class="score-display">
+                <span class="score-label">Average Score:</span>
+                <span class="score-value">4.5/5</span>
+            </div>
+            
+            
+    <div class="combined-feedback">
+        <h4>Combined Feedback from Leadership Reviews</h4>
+        <div class="feedback-synthesis">
+    
+            <p><strong>Overall Assessment:</strong> You provided clear explanation of the challenges and discussed your improvements and some actions.</p>
+        
+            <p><strong>Strengths:</strong></p>
+            <ul class="synthesis-list">
+        <li>Justin was transparent and accountable in addressing challenges, particularly around leadership transitions and historically underperforming sites such as Huntsville. He clearly owned the turnaround efforts and highlighted the decisive actions taken, including leadership redeployment and internal talent development. This section was a strength. Further improvement would come from outlining clearer timelines and metrics used to determine when a site is fully stabilized.</li></ul>
+            <p><strong>Areas for Development:</strong></p>
+            <ul class="synthesis-list">
+        <li>You provided clear explanation of the challenges and discussed your improvements and some actions. I would like to understand what success looks like and your timelines for correction / resolve. Weekly leadership meetings for alignment are great but more details on the actions taken would be better. Which you answered when asked so good job there!</li><li>Proactively owned shortcomings on management issues, even implementing an Internal CAP on Huntsville and OKC.</li></ul>
+        </div>
+    </div>
+    
+        </div>
+        
+        <div class="scored-section">
+            <h2>2026 Forward Strategy & Vision</h2>
+            <div class="score-display">
+                <span class="score-label">Average Score:</span>
+                <span class="score-value">3.25/5</span>
+            </div>
+            
+            
+    <div class="combined-feedback">
+        <h4>Combined Feedback from Leadership Reviews</h4>
+        <div class="feedback-synthesis">
+    
+            <p><strong>Overall Assessment:</strong> Gap in timelines where critical for roll out.</p>
+        
+            <p><strong>Areas for Development:</strong></p>
+            <ul class="synthesis-list">
+        <li>Gap in timelines where critical for roll out. Not an actual plan. Reach out Melissa Hampton regarding JLL escalation. The path forward lacked the strategy to achieve the results you want and timelines.</li><li>Time limited.</li><li>Justin articulated a clear forward strategy focused on continued expansion, standardization of successful service models, and deepening trust with Boeing and JLL. The direction is sound and aligned with both retention and growth. To reach an exceptional rating, future articulation should include clearer prioritization, sequencing, and a sharper view of where differentiation will matter most in 2026.</li></ul>
+        </div>
+    </div>
+    
+        </div>
+        
+        <div class="scored-section">
+            <h2>Personal Goals & Role Maturity</h2>
+            <div class="score-display">
+                <span class="score-label">Average Score:</span>
+                <span class="score-value">3.5/5</span>
+            </div>
+            
+            
+    <div class="combined-feedback">
+        <h4>Combined Feedback from Leadership Reviews</h4>
+        <div class="feedback-synthesis">
+    
+            <p><strong>Overall Assessment:</strong> Great results.</p>
+        
+            <p><strong>Strengths:</strong></p>
+            <ul class="synthesis-list">
+        <li>Great results. Like that you used some 4i. Your personal goals felt made up on the fly. Want you to use SMART goals. I would have to have heard the timelines roadmaps and strategy.</li><li>Time limited - Clearly communicated measurable, tangible goals and expectations.</li><li>Justin demonstrated strong role maturity, particularly in managing complex portfolios, developing leaders, and making tough operational decisions. His emphasis on proactive service, talent development, and consistency reflects a growth mindset. Making personal development goals more explicit and measurable would further strengthen this section.</li></ul>
+        </div>
+    </div>
+    
+        </div>
+        
+        <div class="scored-section">
+            <h2>Executive Presence & Presentation Skills</h2>
+            <div class="score-display">
+                <span class="score-label">Average Score:</span>
+                <span class="score-value">4.0/5</span>
+            </div>
+            
+            
+    <div class="combined-feedback">
+        <h4>Combined Feedback from Leadership Reviews</h4>
+        <div class="feedback-synthesis">
+    
+            <p><strong>Overall Assessment:</strong> I cannot give you a 5.</p>
+        
+            <p><strong>Strengths:</strong></p>
+            <ul class="synthesis-list">
+        <li>I cannot give you a 5.0 based on reading a script. Overall good presentation well thought out. When communicating why something is good for a customer always think how are we providing value to them and communicate that. I also gave you credit for being able to answer the question off script and really clearly.</li><li>Justin communicated confidently and professionally, demonstrating strong command of both the portfolio and the details behind his initiatives. His storytelling was clear and engaging, though occasionally dense. Continued refinement toward more concise executive-level framing and sharper quantification of impact will further elevate his presence.
+
+Justin delivered a strong 2025 performance across a complex, high-visibility portfolio. His strengths lie in execution, leadership development, and proactive value creation. The opportunity ahead is to sharpen quantification, standardize innovations, and continue elevating executive storytelling. Justin is operating at a high level and is well positioned for continued growth and increased scope.</li></ul>
+            <p><strong>Areas for Development:</strong></p>
+            <ul class="synthesis-list">
+        <li>Justin articulates very well and has really immersed himself into an extremely challenging Boeing portfolio.  Clearly demonstrates his knowledge of KPIs, client connection, and Ops, but also has positioned SBM for future growth!</li></ul>
+        </div>
+    </div>
+    
+        </div>
+        
+
+    
+    <div class="follow-up-section">
+        <h2>🎯 2026 Development Focus & Follow-Up Items</h2>
+        <p class="follow-up-intro">
+            Based on your year-end presentation and executive feedback, the following areas have been identified 
+            for focused development and follow-through in 2026.
+        </p>
+    
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">Financial Impact & ROI</span>
+                <span class="follow-up-source">— James Peate</span>
+            </div>
+            <h3>Quantify Value-Adds with Dollar Figures in Presentations</h3>
+            <p class="follow-up-quote">"Add in the quantification to the presentations... things like the challenges, corrective actions, what was the impact... the specific actions that were taken... and the improvements made"</p>
+            <p class="follow-up-action"><strong>Action:</strong> Add dollar figures and quantified impact to all value-add activities, corrective actions, and innovations in future presentations</p>
+        </div>
+        
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">Innovation & Continuous Improvement</span>
+                <span class="follow-up-source">— Valarie Barnett</span>
+            </div>
+            <h3>Define Timeline for Reported/Carrigo Integration</h3>
+            <p class="follow-up-quote">"When? [for Carrigo/Reported integration]"</p>
+            <p class="follow-up-action"><strong>Action:</strong> Establish specific rollout timeline for Carrigo and Reported integration; clarify dependencies and current status with JLL IT team</p>
+        </div>
+        
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">Innovation & Continuous Improvement</span>
+                <span class="follow-up-source">— Valarie Barnett</span>
+            </div>
+            <h3>Roll Out AI Verify with Melissa Hampton's Support</h3>
+            <p class="follow-up-quote">"I'm gonna have you reach out to Melissa Hampton... We're past the beginning stages. We're live across multiple sites."</p>
+            <p class="follow-up-action"><strong>Action:</strong> Contact Melissa Hampton to accelerate AI Verify rollout at Saint Louis sites (Swansea, Cortex, O'Fallon) and Mesa; target completion within 3 months</p>
+        </div>
+        
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">Operational Excellence</span>
+                <span class="follow-up-source">— Valarie Barnett</span>
+            </div>
+            <h3>Validate Data Transparency Directly with Customers</h3>
+            <p class="follow-up-quote">"I challenge you to go directly to your customers and ask them, do they have any more complaints than what we have. What we don't want to ever have happen is for our data integrity to be in [question]."</p>
+            <p class="follow-up-action"><strong>Action:</strong> Implement regular validation with JLL/Boeing POCs to ensure ForSight complaint data matches their actual complaint count; address data integrity gaps</p>
+        </div>
+        
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">2026 Strategy & Vision</span>
+                <span class="follow-up-source">— Valarie Barnett</span>
+            </div>
+            <h3>Define Process Innovation Goal for 2026</h3>
+            <p class="follow-up-quote">"I'm going to challenge you in 2026 on the record. My challenge to you... will be to innovate a process or something that we do on a regular basis that could be being done better for Boeing. And what the value of that? What value creation is there in it?"</p>
+            <p class="follow-up-action"><strong>Action:</strong> Identify and implement one major process innovation for Boeing in 2026; document value creation and impact</p>
+        </div>
+        
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">Personal Goals & Development</span>
+                <span class="follow-up-source">— Valarie Barnett</span>
+            </div>
+            <h3>Add SMART Goals with Dates and Measurement Criteria</h3>
+            <p class="follow-up-quote">"SMART goals... They're measurable. How will we measure success?... Are they time bound? So we're missing time bound and how you'll measure yourself specifically."</p>
+            <p class="follow-up-action"><strong>Action:</strong> Document all 2026 goals with specific dates, milestones, and measurement criteria for Workday system (Saint Louis growth by November, Colorado June/July, $250K/month growth target, 0 recordables, 5.0 CSAT/audit scores)</p>
+        </div>
+        
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">Strategic Thinking & Planning</span>
+                <span class="follow-up-source">— Valarie Barnett</span>
+            </div>
+            <h3>Define Success Timeline for CAP Sites (Huntsville/OKC)</h3>
+            <p class="follow-up-quote">"It sounds like they're still on kind of like the issues and challenges tracker... they're kind of on your watch list I guess. What's your timeline to say like these things are corrected?"</p>
+            <p class="follow-up-action"><strong>Action:</strong> Document specific criteria and timeline for Huntsville and OKC to move from 'watch list' to 'fully corrected' status; clarify 90-day CAP milestones</p>
+        </div>
+        
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">Executive Presence</span>
+                <span class="follow-up-source">— Kyle Wallace</span>
+            </div>
+            <h3>Add Mic Drop Moments to Presentations</h3>
+            <p class="follow-up-quote">"I was looking for... your mic drop moment... I know there's a significant amount of dollars that you've saved... you positioned yourself so well for Saint Louis, which has been remarkable by the way. That's a mic drop moment."</p>
+            <p class="follow-up-action"><strong>Action:</strong> Identify and prominently feature major wins and differentiators in presentations (e.g., Saint Louis positioning, cost savings, Fort Walton Beach transformation, Huntsville turnaround)</p>
+        </div>
+        
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">2026 Strategy & Vision</span>
+                <span class="follow-up-source">— Valarie Barnett</span>
+            </div>
+            <h3>Document Path Forward with Specific Timelines</h3>
+            <p class="follow-up-quote">"Clean up goals, add dates/targets/actions for workday system."</p>
+            <p class="follow-up-action"><strong>Action:</strong> Create formal documentation of Saint Louis growth strategy ($250K/month), MIT development program expansion (Mesa, Mascouda), Brian's leadership role transition, and pricing plan collaboration with Strategic Pricing team and Nick Viskovich</p>
+        </div>
+        </div>
+
+</body>
+</html>

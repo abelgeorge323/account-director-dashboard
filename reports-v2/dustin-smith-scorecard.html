@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025 Year-End Scorecard - Dustin Smith</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            background: #ffffff;
+            padding: 2rem;
+            max-width: 8.5in;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: #1a365d;
+            margin-bottom: 0.5rem;
+        }
+
+        h2 {
+            font-size: 1.35rem;
+            font-weight: 600;
+            color: #2c5282;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 0.5rem;
+        }
+
+        h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #2d3748;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        h4 {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #4a5568;
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .header-section {
+            background: linear-gradient(135deg, #1a365d 0%, #2c5282 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+        }
+
+        .header-section h1 {
+            color: white;
+            margin-bottom: 1.5rem;
+            font-size: 1.85rem;
+        }
+
+        .header-metadata {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.8rem;
+            margin-top: 1.2rem;
+        }
+
+        .metadata-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.6rem;
+            border-radius: 4px;
+        }
+
+        .metadata-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.8;
+            margin-bottom: 0.25rem;
+        }
+
+        .metadata-value {
+            font-size: 1.1rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+        }
+
+        .score-summary-first-page {
+            background: #f7fafc;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+        }
+
+        .score-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            background: white;
+        }
+
+        .score-table th {
+            background: #2c5282;
+            color: white;
+            padding: 0.75rem;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .score-table td {
+            padding: 0.75rem;
+            border: 1px solid #e2e8f0;
+        }
+
+        .score-table tr:nth-child(even) {
+            background: #f7fafc;
+        }
+
+
+        /* Follow-Up Questions Section */
+        .follow-up-section {
+            background: #fff8e1;
+            border-left: 4px solid #ff9800;
+            padding: 24px;
+            margin: 32px 0;
+            border-radius: 8px;
+            page-break-inside: avoid;
+        }
+
+        .follow-up-intro {
+            color: #e65100;
+            margin-bottom: 1rem;
+        }
+
+        .follow-up-item {
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 16px 0;
+        }
+
+        .follow-up-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .follow-up-category {
+            background: #2196f3;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .follow-up-source {
+            color: #666;
+            font-size: 14px;
+            font-style: italic;
+        }
+
+        .follow-up-quote {
+            background: #f5f5f5;
+            border-left: 3px solid #ff9800;
+            padding: 12px 16px;
+            margin: 12px 0;
+            font-style: italic;
+            color: #333;
+        }
+
+        .follow-up-action {
+            margin-top: 12px;
+            color: #333;
+        }
+
+        /* Scored Section - One section per page */
+        .scored-section {
+            page-break-after: always;
+            page-break-inside: avoid;
+            margin: 1.5rem 0;
+            padding: 1.5rem;
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            min-height: 400px;
+        }
+
+        .score-display {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin: 1rem 0;
+            padding: 1rem;
+            background: #f7fafc;
+            border-radius: 4px;
+        }
+
+        .score-label {
+            font-weight: 600;
+            color: #4a5568;
+        }
+
+        .score-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #2c5282;
+        }
+
+        .combined-feedback {
+            background: #f8f9fa;
+            border-left: 4px solid #2c5282;
+            padding: 1.25rem;
+            margin: 1rem 0;
+            border-radius: 4px;
+        }
+
+        .combined-feedback h4 {
+            color: #2c5282;
+            margin-bottom: 0.75rem;
+            font-size: 1rem;
+        }
+
+        .feedback-synthesis {
+            margin-top: 0.75rem;
+        }
+
+        .feedback-point {
+            padding: 0.75rem;
+            margin: 0.5rem 0;
+            background: white;
+            border-radius: 4px;
+            border-left: 3px solid #2c5282;
+            line-height: 1.6;
+        }
+
+        .feedback-point strong {
+            color: #2c5282;
+            font-size: 0.9rem;
+        }
+
+        .synthesis-list {
+            margin: 0.75rem 0 1rem 1.5rem;
+            padding-left: 1rem;
+        }
+
+        .synthesis-list li {
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+            color: #2d3748;
+        }
+
+        .feedback-synthesis p {
+            margin: 0.75rem 0;
+            line-height: 1.6;
+        }
+
+        .feedback-synthesis strong {
+            color: #2c5282;
+            font-weight: 600;
+        }
+
+        @media print {
+            * {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            
+            body {
+                padding: 0.25in;
+                font-size: 9pt;
+                line-height: 1.3;
+            }
+            
+            h1 {
+                font-size: 16pt;
+                margin-bottom: 0.3rem;
+            }
+            
+            h2 {
+                font-size: 12pt;
+                margin-top: 0.5rem;
+                margin-bottom: 0.4rem;
+                page-break-after: avoid;
+            }
+            
+            h3 {
+                font-size: 10pt;
+                margin-top: 0.4rem;
+                margin-bottom: 0.3rem;
+            }
+            
+            .header-section {
+                padding: 1rem;
+                margin-bottom: 1rem;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            
+            .header-metadata {
+                gap: 0.5rem;
+            }
+            
+            .metadata-item {
+                padding: 0.4rem;
+            }
+            
+            .metadata-label {
+                font-size: 7pt;
+            }
+            
+            .metadata-value {
+                font-size: 9pt;
+            }
+            
+            .score-summary-first-page {
+                page-break-after: always;
+                padding: 0.75rem;
+                margin-bottom: 1rem;
+            }
+            
+            .score-table {
+                margin: 0.75rem 0;
+                font-size: 9pt;
+            }
+            
+            .score-table th,
+            .score-table td {
+                padding: 0.35rem;
+            }
+            
+            .scored-section {
+                page-break-after: always;
+                page-break-inside: avoid;
+                margin: 0.5rem 0;
+                padding: 0.75rem;
+                border: 1px solid #e2e8f0;
+                min-height: unset;
+            }
+            
+            .score-display {
+                margin: 0.5rem 0;
+                padding: 0.5rem;
+            }
+            
+            .score-label {
+                font-size: 9pt;
+            }
+            
+            .score-value {
+                font-size: 14pt;
+            }
+            
+            .combined-feedback {
+                padding: 0.75rem;
+                margin: 0.5rem 0;
+            }
+            
+            .combined-feedback h4 {
+                font-size: 9pt;
+                margin-bottom: 0.4rem;
+            }
+            
+            .feedback-synthesis p {
+                margin: 0.4rem 0;
+                line-height: 1.4;
+                font-size: 9pt;
+            }
+            
+            .feedback-synthesis strong {
+                font-size: 9pt;
+            }
+            
+            .synthesis-list {
+                margin: 0.4rem 0 0.5rem 1rem;
+                padding-left: 0.5rem;
+            }
+            
+            .synthesis-list li {
+                margin-bottom: 0.25rem;
+                line-height: 1.4;
+                font-size: 8.5pt;
+            }
+            
+            .follow-up-section {
+                page-break-before: always;
+                page-break-inside: avoid;
+                padding: 1rem;
+                margin: 1rem 0;
+            }
+            
+            .follow-up-item {
+                padding: 0.75rem;
+                margin: 0.75rem 0;
+            }
+            
+            .follow-up-quote {
+                padding: 0.5rem;
+                margin: 0.5rem 0;
+                font-size: 8.5pt;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header-section">
+        <h1>2025 Year-End Account Review & 2026 QBR Readiness Scorecard</h1>
+        <div class="header-metadata">
+            <div class="metadata-item">
+                <div class="metadata-label">Account Director</div>
+                <div class="metadata-value">Dustin Smith</div>
+            </div>
+            <div class="metadata-item">
+                <div class="metadata-label">Account</div>
+                <div class="metadata-value">Amazon</div>
+            </div>
+            <div class="metadata-item">
+                <div class="metadata-label">Tier</div>
+                <div class="metadata-value"><span style="background: #10b981; color: white; padding: 0.3rem 0.8rem; border-radius: 12px; font-weight: 600; font-size: 0.9rem;">Tier 6</span></div>
+            </div>
+            <div class="metadata-item">
+                <div class="metadata-label">Review Date</div>
+                <div class="metadata-value">January 2026</div>
+            </div>
+            <div class="metadata-item">
+                <div class="metadata-label">Total Reviews</div>
+                <div class="metadata-value">1</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="score-summary-first-page">
+        <h2>Executive Summary</h2>
+
+        <table class="score-table">
+            <thead>
+                <tr>
+                    <th>Evaluation Category</th>
+                    <th style="text-align: center;">Average Score</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+        <tr>
+            <td>Key Projects & Initiatives</td>
+            <td style="text-align: center; font-weight: 600;">5.0</td>
+        </tr>
+        
+        <tr>
+            <td>Value Adds & Cost Avoidance</td>
+            <td style="text-align: center; font-weight: 600;">5.0</td>
+        </tr>
+        
+        <tr>
+            <td>Cost Savings Delivered</td>
+            <td style="text-align: center; font-weight: 600;">4.0</td>
+        </tr>
+        
+        <tr>
+            <td>Innovation & Continuous Improvement</td>
+            <td style="text-align: center; font-weight: 600;">5.0</td>
+        </tr>
+        
+        <tr>
+            <td>Issues, Challenges & Accountability</td>
+            <td style="text-align: center; font-weight: 600;">5.0</td>
+        </tr>
+        
+        <tr>
+            <td>2026 Forward Strategy & Vision</td>
+            <td style="text-align: center; font-weight: 600;">5.0</td>
+        </tr>
+        
+        <tr>
+            <td>Personal Goals & Role Maturity</td>
+            <td style="text-align: center; font-weight: 600;">5.0</td>
+        </tr>
+        
+        <tr>
+            <td>Executive Presence & Presentation Skills</td>
+            <td style="text-align: center; font-weight: 600;">5.0</td>
+        </tr>
+        
+        <tr style="background: #e8f5e9; border-top: 3px solid #2c5282;">
+            <td style="font-weight: 700; text-transform: uppercase;">Overall Score</td>
+            <td style="text-align: center; font-weight: 700; font-size: 1.2rem; color: #2c5282;">39.0/40</td>
+        </tr>
+        
+            </tbody>
+        </table>
+    </div>
+
+    
+        <div class="scored-section">
+            <h2>Key Projects & Initiatives</h2>
+            <div class="score-display">
+                <span class="score-label">Average Score:</span>
+                <span class="score-value">5.0/5</span>
+            </div>
+            
+            
+    <div class="combined-feedback">
+        <h4>Combined Feedback from Leadership Reviews</h4>
+        <div class="feedback-synthesis">
+    
+            <p><strong>Overall Assessment:</strong> You key projects also highlighted your challenges and changes.</p>
+        
+            <p><strong>Areas for Development:</strong></p>
+            <ul class="synthesis-list">
+        <li>You key projects also highlighted your challenges and changes. I appreciate how you didnt just discuss the activity, but the results from changes we made.</li></ul>
+        </div>
+    </div>
+    
+        </div>
+        
+        <div class="scored-section">
+            <h2>Value Adds & Cost Avoidance</h2>
+            <div class="score-display">
+                <span class="score-label">Average Score:</span>
+                <span class="score-value">5.0/5</span>
+            </div>
+            
+            <p><em>No specific feedback provided.</em></p>
+        </div>
+        
+        <div class="scored-section">
+            <h2>Cost Savings Delivered</h2>
+            <div class="score-display">
+                <span class="score-label">Average Score:</span>
+                <span class="score-value">4.0/5</span>
+            </div>
+            
+            <p><em>No specific feedback provided.</em></p>
+        </div>
+        
+        <div class="scored-section">
+            <h2>Innovation & Continuous Improvement</h2>
+            <div class="score-display">
+                <span class="score-label">Average Score:</span>
+                <span class="score-value">5.0/5</span>
+            </div>
+            
+            <p><em>No specific feedback provided.</em></p>
+        </div>
+        
+        <div class="scored-section">
+            <h2>Issues, Challenges & Accountability</h2>
+            <div class="score-display">
+                <span class="score-label">Average Score:</span>
+                <span class="score-value">5.0/5</span>
+            </div>
+            
+            
+    <div class="combined-feedback">
+        <h4>Combined Feedback from Leadership Reviews</h4>
+        <div class="feedback-synthesis">
+    
+            <p><strong>Overall Assessment:</strong> Thank you for your transparency and strategy around issues and challenges.</p>
+        
+            <p><strong>Strengths:</strong></p>
+            <ul class="synthesis-list">
+        <li>Thank you for your transparency and strategy around issues and challenges. Clearly owns gaps, and outlines specific corrective actions with timelines.</li></ul>
+        </div>
+    </div>
+    
+        </div>
+        
+        <div class="scored-section">
+            <h2>2026 Forward Strategy & Vision</h2>
+            <div class="score-display">
+                <span class="score-label">Average Score:</span>
+                <span class="score-value">5.0/5</span>
+            </div>
+            
+            
+    <div class="combined-feedback">
+        <h4>Combined Feedback from Leadership Reviews</h4>
+        <div class="feedback-synthesis">
+    
+            <p><strong>Overall Assessment:</strong> You both articulated a clear, compelling 2026 account roadmap tied to retention, growth, and differentiation, with defined priorities and sequencing.</p>
+        
+            <p><strong>Strengths:</strong></p>
+            <ul class="synthesis-list">
+        <li>You both articulated a clear, compelling 2026 account roadmap tied to retention, growth, and differentiation, with defined priorities and sequencing.</li></ul>
+        </div>
+    </div>
+    
+        </div>
+        
+        <div class="scored-section">
+            <h2>Personal Goals & Role Maturity</h2>
+            <div class="score-display">
+                <span class="score-label">Average Score:</span>
+                <span class="score-value">5.0/5</span>
+            </div>
+            
+            
+    <div class="combined-feedback">
+        <h4>Combined Feedback from Leadership Reviews</h4>
+        <div class="feedback-synthesis">
+    
+            <p><strong>Overall Assessment:</strong> Clearly defines measurable leadership goals that demonstrate role maturity, accountability, and impact on account performance.</p>
+        
+            <p><strong>Strengths:</strong></p>
+            <ul class="synthesis-list">
+        <li>Clearly defines measurable leadership goals that demonstrate role maturity, accountability, and impact on account performance. Monthly coaching and development plan - We are alined. I will support you to delegate and structure!</li></ul>
+        </div>
+    </div>
+    
+        </div>
+        
+        <div class="scored-section">
+            <h2>Executive Presence & Presentation Skills</h2>
+            <div class="score-display">
+                <span class="score-label">Average Score:</span>
+                <span class="score-value">5.0/5</span>
+            </div>
+            
+            
+    <div class="combined-feedback">
+        <h4>Combined Feedback from Leadership Reviews</h4>
+        <div class="feedback-synthesis">
+    
+            <p><strong>Overall Assessment:</strong> Clear and confident communicator with a structured and logical flow.</p>
+        
+            <p><strong>Areas for Development:</strong></p>
+            <ul class="synthesis-list">
+        <li>Clear and confident communicator with a structured and logical flow. Able to tell a concise story on your account with an executive presence. The self reflection Keith gave was honest, transparent and vulnerable. Dustin I hear you and Keith saying you can do it but you need to use your resources. Agreed</li></ul>
+        </div>
+    </div>
+    
+        </div>
+        
+
+    
+    <div class="follow-up-section">
+        <h2>🎯 2026 Development Focus & Follow-Up Items</h2>
+        <p class="follow-up-intro">
+            Based on your year-end presentation and executive feedback, the following areas have been identified 
+            for focused development and follow-through in 2026.
+        </p>
+    
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">Personal Goals & Development</span>
+                <span class="follow-up-source">— Valarie Barnett</span>
+            </div>
+            <h3>Transition from Problem-Solver to Coaching Leader</h3>
+            <p class="follow-up-quote">"Developing the coaching leadership capabilities. What I really want to try to focus on is moving from being a direct problem solving helper to more of a coaching first leadership style. I find myself in the weeds and really struggling to pull up to that strategic level. By the end of March, I want to have an implemented monthly coaching cadence with direct reports and an individual development plan for each one of my direct reports."</p>
+            <p class="follow-up-action"><strong>Action:</strong> MARCH 2026: (1) Implement monthly coaching cadence with all direct reports, (2) Create individual development plan (IDP) for each direct report, (3) Stop jumping into weeds as first instinct - coach others to solve problems, (4) Valarie: 'I'm gonna hold you to that. Please do because this is where you need to go, Val, because I will quickly jump into the weeds.' (5) Develop next level of leaders vs doing work yourself, (6) Take strategic step up while team takes operational step up</p>
+        </div>
+        
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">Strategic Thinking & Planning</span>
+                <span class="follow-up-source">— Dustin Smith (Self-Identified)</span>
+            </div>
+            <h3>Expand Strategic Thinking - 2-3 Year Distribution Roadmap by June</h3>
+            <p class="follow-up-quote">"Expanding strategic thinking and long-term planning. I find myself looking at what's happening this week, next week, towards the end of the year. But really with a brand new vertical, I've got the opportunity to set up a two to three-year plan. By June I'm looking to have a two to three-year distribution road map from a capabilities, from a client targeting perspective and I'll be really working on that with Rebecca as she comes online as well."</p>
+            <p class="follow-up-action"><strong>Action:</strong> JUNE 2026: (1) Develop 2-3 year distribution roadmap with Rebecca, (2) Capabilities planning: what do we need to win?, (3) Client targeting: who do we pursue and when?, (4) Align growth with operations capacity, (5) Move from weekly/monthly thinking to multi-year strategic planning, (6) Set vertical direction vs just managing current accounts</p>
+        </div>
+        
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">Time Management & Prioritization</span>
+                <span class="follow-up-source">— Dustin Smith (Self-Identified)</span>
+            </div>
+            <h3>Leadership Battle Rhythm Optimization - Own the Calendar</h3>
+            <p class="follow-up-quote">"Leadership battle rhythm optimization is what I'm calling it. That's a fancy way of saying that my calendar owns me. I don't own my calendar. I think the important piece here is to really do the other two things I need to be able to set time aside to focus on strategic initiatives and prioritizing what's important. Keith talked about setting up the 15 minute daily calls that we have with the OPS team. Those are all important, but really taking a look at all of the meetings that we have and everything that we have in front of us and prioritizing and establishing a true leadership guidance for our leadership battle rhythm for the account leaders and making sure we're sticking to it and starting to manage our calendar versus letting the calendar manage us. It's a lofty goal, but I'm gonna try."</p>
+            <p class="follow-up-action"><strong>Action:</strong> Ongoing: (1) Audit all recurring meetings - which are essential vs nice-to-have?, (2) Block strategic thinking time on calendar as protected time, (3) Establish leadership battle rhythm guidance for account leaders, (4) Prioritize based on strategic value vs urgency, (5) Create calendar management discipline, (6) Balance operational touchpoints (15-min daily calls) with strategic work time, (7) This enables other two goals - can't coach or think strategically if calendar-driven</p>
+        </div>
+        
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">Innovation & Technology</span>
+                <span class="follow-up-source">— Dustin Smith (Self-Identified)</span>
+            </div>
+            <h3>Roll Out Mobile + AI Verification at Phoenix 11 and Tempe</h3>
+            <p class="follow-up-quote">"We're also going to roll out mobile or we have mobile rolled out on the JLL side, but we are going to roll out AI verification. We're going to do that at Phoenix 11 and Tempe marketplace."</p>
+            <p class="follow-up-action"><strong>Action:</strong> Q1 2026: (1) Implement AI verification at Phoenix 11 and Tempe, (2) Document results and lessons learned, (3) Determine scalability across JLL portfolio, (4) Tie to Amazon's data transparency requirements, (5) Measure impact on quality, client visibility, operational efficiency</p>
+        </div>
+        
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">Sustainability & Client Requirements</span>
+                <span class="follow-up-source">— Valarie Barnett</span>
+            </div>
+            <h3>Green Spend Project - Align to Sue Bea's Requirements by March</h3>
+            <p class="follow-up-quote">"Valarie: 'Does your Green spend March JLL align to Sue Bea's her requirement for Green spend?' Dustin: 'Yes, so the so her green spend analysis piece is due prior to this. The reason I have March on here is because a lot of this is, hey, when we're done with these paper products, we're ordering these. So it's really just through attrition that some of these items will get changed over.'"</p>
+            <p class="follow-up-action"><strong>Action:</strong> MARCH 2026: (1) Complete green spend product identification and replacement planning (due before Sue Bea's analysis), (2) Phase out non-green items through depletion/attrition, (3) Order green replacements as current stock depletes, (4) Track green spend percentage improvement, (5) Align to JLL's sustainability goals and Sue Bea's corporate requirements, (6) Document savings/cost impact of green products vs conventional</p>
+        </div>
+        
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">People & Culture</span>
+                <span class="follow-up-source">— Dustin Smith (Self-Identified)</span>
+            </div>
+            <h3>Management Process Enhancement - Bring Site Managers to SBM Standard</h3>
+            <p class="follow-up-quote">"Management process enhancement and standardization. Like I said previously, we took on a lot of incumbent managers, external hires, nobody with a lot of SBM stink on them. This is really doing a deep dive training and making sure that we're bringing our site managers up to the SBM standard as quickly as possible. This is an ongoing effort. Last month we focused on quality and quantity of audits and I think if you were to go back and look in ForSight, there was a tremendous uptick in late December through January compared to previous months. So really the idea is we're going to take different processes, different focus items or KPIs and really do a push to drive that up to the SBM standard."</p>
+            <p class="follow-up-action"><strong>Action:</strong> Ongoing: (1) Monthly focus areas for site manager development (January = audits - already showed 'tremendous uptick'), (2) Deep dive training on SBM standards vs incumbent practices, (3) Measure improvement month-over-month in ForSight, (4) Rotate through different KPIs/processes each month, (5) Document 'SBM standard' for each process area, (6) Goal: Transform incumbent/external hires into SBM-caliber site managers within 12 months</p>
+        </div>
+        
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">Presentation & Communication</span>
+                <span class="follow-up-source">— Valarie Barnett</span>
+            </div>
+            <h3>Progressive Actions and Mile Markers for 2026 Vision</h3>
+            <p class="follow-up-quote">"Valarie: 'I want to see you guys flush those out and then like what are our mile markers so Dustin. Every time we meet, you almost should have a separate sheet where all you're talking about is your 2026 vision and your personal goals and how close are we? What are the things that we've done to take strides towards those things?'"</p>
+            <p class="follow-up-action"><strong>Action:</strong> Every 1-on-1 with Valarie: (1) Create separate tracking sheet for 2026 vision and personal goals, (2) Report progress on: coaching cadence, 2-3 year roadmap, calendar management, (3) Identify mile markers: what's the next 3 things to do?, (4) Measure: how close are we to each goal?, (5) Document specific actions taken since last meeting, (6) Hold yourself accountable with visible progress tracking</p>
+        </div>
+        
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">Executive Presence</span>
+                <span class="follow-up-source">— Valarie Barnett, Nicole Ouimet</span>
+            </div>
+            <h3>Continue Excellence in Presentation and Executive Presence</h3>
+            <p class="follow-up-quote">"Valarie: 'Dustin, you do a really good job typically controlling the room, controlling your customer and you come very well prepared with what you're going to say. You're well spoken. You remain calm.' Nicole: 'Dustin, I've worked a whole ton with you over the years. I thought you guys did an excellent job.' Valarie: 'Clear and confident communicator with a structured and logical flow. Able to tell a concise story on your account with an executive presence.'"</p>
+            <p class="follow-up-action"><strong>Action:</strong> Continue strengths: (1) Maintain preparation discipline - come ready with structured story, (2) Continue calm, controlled presence in high-pressure situations, (3) Leverage executive presence to support Keith's development in this area, (4) Use these strengths to mentor team on client communication, (5) Apply presentation skills to 2-3 year roadmap development with executives</p>
+        </div>
+        </div>
+
+</body>
+</html>

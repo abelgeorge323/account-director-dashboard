@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025 Year-End Scorecard - Mike Barry</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            background: #ffffff;
+            padding: 2rem;
+            max-width: 8.5in;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: #1a365d;
+            margin-bottom: 0.5rem;
+        }
+
+        h2 {
+            font-size: 1.35rem;
+            font-weight: 600;
+            color: #2c5282;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 0.5rem;
+        }
+
+        h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #2d3748;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        h4 {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #4a5568;
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .header-section {
+            background: linear-gradient(135deg, #1a365d 0%, #2c5282 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+        }
+
+        .header-section h1 {
+            color: white;
+            margin-bottom: 1.5rem;
+            font-size: 1.85rem;
+        }
+
+        .header-metadata {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.8rem;
+            margin-top: 1.2rem;
+        }
+
+        .metadata-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.6rem;
+            border-radius: 4px;
+        }
+
+        .metadata-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.8;
+            margin-bottom: 0.25rem;
+        }
+
+        .metadata-value {
+            font-size: 1.1rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+        }
+
+        .score-summary-first-page {
+            background: #f7fafc;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+        }
+
+        .score-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            background: white;
+        }
+
+        .score-table th {
+            background: #2c5282;
+            color: white;
+            padding: 0.75rem;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .score-table td {
+            padding: 0.75rem;
+            border: 1px solid #e2e8f0;
+        }
+
+        .score-table tr:nth-child(even) {
+            background: #f7fafc;
+        }
+
+
+        /* Follow-Up Questions Section */
+        .follow-up-section {
+            background: #fff8e1;
+            border-left: 4px solid #ff9800;
+            padding: 24px;
+            margin: 32px 0;
+            border-radius: 8px;
+            page-break-inside: avoid;
+        }
+
+        .follow-up-intro {
+            color: #e65100;
+            margin-bottom: 1rem;
+        }
+
+        .follow-up-item {
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 16px 0;
+        }
+
+        .follow-up-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .follow-up-category {
+            background: #2196f3;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .follow-up-source {
+            color: #666;
+            font-size: 14px;
+            font-style: italic;
+        }
+
+        .follow-up-quote {
+            background: #f5f5f5;
+            border-left: 3px solid #ff9800;
+            padding: 12px 16px;
+            margin: 12px 0;
+            font-style: italic;
+            color: #333;
+        }
+
+        .follow-up-action {
+            margin-top: 12px;
+            color: #333;
+        }
+
+        /* Scored Section - One section per page */
+        .scored-section {
+            page-break-after: always;
+            page-break-inside: avoid;
+            margin: 1.5rem 0;
+            padding: 1.5rem;
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            min-height: 400px;
+        }
+
+        .score-display {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin: 1rem 0;
+            padding: 1rem;
+            background: #f7fafc;
+            border-radius: 4px;
+        }
+
+        .score-label {
+            font-weight: 600;
+            color: #4a5568;
+        }
+
+        .score-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #2c5282;
+        }
+
+        .combined-feedback {
+            background: #f8f9fa;
+            border-left: 4px solid #2c5282;
+            padding: 1.25rem;
+            margin: 1rem 0;
+            border-radius: 4px;
+        }
+
+        .combined-feedback h4 {
+            color: #2c5282;
+            margin-bottom: 0.75rem;
+            font-size: 1rem;
+        }
+
+        .feedback-synthesis {
+            margin-top: 0.75rem;
+        }
+
+        .feedback-point {
+            padding: 0.75rem;
+            margin: 0.5rem 0;
+            background: white;
+            border-radius: 4px;
+            border-left: 3px solid #2c5282;
+            line-height: 1.6;
+        }
+
+        .feedback-point strong {
+            color: #2c5282;
+            font-size: 0.9rem;
+        }
+
+        .synthesis-list {
+            margin: 0.75rem 0 1rem 1.5rem;
+            padding-left: 1rem;
+        }
+
+        .synthesis-list li {
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+            color: #2d3748;
+        }
+
+        .feedback-synthesis p {
+            margin: 0.75rem 0;
+            line-height: 1.6;
+        }
+
+        .feedback-synthesis strong {
+            color: #2c5282;
+            font-weight: 600;
+        }
+
+        @media print {
+            * {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            
+            body {
+                padding: 0.25in;
+                font-size: 9pt;
+                line-height: 1.3;
+            }
+            
+            h1 {
+                font-size: 16pt;
+                margin-bottom: 0.3rem;
+            }
+            
+            h2 {
+                font-size: 12pt;
+                margin-top: 0.5rem;
+                margin-bottom: 0.4rem;
+                page-break-after: avoid;
+            }
+            
+            h3 {
+                font-size: 10pt;
+                margin-top: 0.4rem;
+                margin-bottom: 0.3rem;
+            }
+            
+            .header-section {
+                padding: 1rem;
+                margin-bottom: 1rem;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            
+            .header-metadata {
+                gap: 0.5rem;
+            }
+            
+            .metadata-item {
+                padding: 0.4rem;
+            }
+            
+            .metadata-label {
+                font-size: 7pt;
+            }
+            
+            .metadata-value {
+                font-size: 9pt;
+            }
+            
+            .score-summary-first-page {
+                page-break-after: always;
+                padding: 0.75rem;
+                margin-bottom: 1rem;
+            }
+            
+            .score-table {
+                margin: 0.75rem 0;
+                font-size: 9pt;
+            }
+            
+            .score-table th,
+            .score-table td {
+                padding: 0.35rem;
+            }
+            
+            .scored-section {
+                page-break-after: always;
+                page-break-inside: avoid;
+                margin: 0.5rem 0;
+                padding: 0.75rem;
+                border: 1px solid #e2e8f0;
+                min-height: unset;
+            }
+            
+            .score-display {
+                margin: 0.5rem 0;
+                padding: 0.5rem;
+            }
+            
+            .score-label {
+                font-size: 9pt;
+            }
+            
+            .score-value {
+                font-size: 14pt;
+            }
+            
+            .combined-feedback {
+                padding: 0.75rem;
+                margin: 0.5rem 0;
+            }
+            
+            .combined-feedback h4 {
+                font-size: 9pt;
+                margin-bottom: 0.4rem;
+            }
+            
+            .feedback-synthesis p {
+                margin: 0.4rem 0;
+                line-height: 1.4;
+                font-size: 9pt;
+            }
+            
+            .feedback-synthesis strong {
+                font-size: 9pt;
+            }
+            
+            .synthesis-list {
+                margin: 0.4rem 0 0.5rem 1rem;
+                padding-left: 0.5rem;
+            }
+            
+            .synthesis-list li {
+                margin-bottom: 0.25rem;
+                line-height: 1.4;
+                font-size: 8.5pt;
+            }
+            
+            .follow-up-section {
+                page-break-before: always;
+                page-break-inside: avoid;
+                padding: 1rem;
+                margin: 1rem 0;
+            }
+            
+            .follow-up-item {
+                padding: 0.75rem;
+                margin: 0.75rem 0;
+            }
+            
+            .follow-up-quote {
+                padding: 0.5rem;
+                margin: 0.5rem 0;
+                font-size: 8.5pt;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header-section">
+        <h1>2025 Year-End Account Review & 2026 QBR Readiness Scorecard</h1>
+        <div class="header-metadata">
+            <div class="metadata-item">
+                <div class="metadata-label">Account Director</div>
+                <div class="metadata-value">Mike Barry</div>
+            </div>
+            <div class="metadata-item">
+                <div class="metadata-label">Account</div>
+                <div class="metadata-value">BMS/Novartis</div>
+            </div>
+            <div class="metadata-item">
+                <div class="metadata-label">Tier</div>
+                <div class="metadata-value"><span style="background: #6366f1; color: white; padding: 0.3rem 0.8rem; border-radius: 12px; font-weight: 600; font-size: 0.9rem;">Tier 5</span></div>
+            </div>
+            <div class="metadata-item">
+                <div class="metadata-label">Review Date</div>
+                <div class="metadata-value">January 2026</div>
+            </div>
+            <div class="metadata-item">
+                <div class="metadata-label">Total Reviews</div>
+                <div class="metadata-value">3</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="score-summary-first-page">
+        <h2>Executive Summary</h2>
+
+        <table class="score-table">
+            <thead>
+                <tr>
+                    <th>Evaluation Category</th>
+                    <th style="text-align: center;">Average Score</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+        <tr>
+            <td>Key Projects & Initiatives</td>
+            <td style="text-align: center; font-weight: 600;">5.0</td>
+        </tr>
+        
+        <tr>
+            <td>Value Adds & Cost Avoidance</td>
+            <td style="text-align: center; font-weight: 600;">5.0</td>
+        </tr>
+        
+        <tr>
+            <td>Cost Savings Delivered</td>
+            <td style="text-align: center; font-weight: 600;">5.0</td>
+        </tr>
+        
+        <tr>
+            <td>Innovation & Continuous Improvement</td>
+            <td style="text-align: center; font-weight: 600;">5.0</td>
+        </tr>
+        
+        <tr>
+            <td>Issues, Challenges & Accountability</td>
+            <td style="text-align: center; font-weight: 600;">4.67</td>
+        </tr>
+        
+        <tr>
+            <td>2026 Forward Strategy & Vision</td>
+            <td style="text-align: center; font-weight: 600;">4.33</td>
+        </tr>
+        
+        <tr>
+            <td>Personal Goals & Role Maturity</td>
+            <td style="text-align: center; font-weight: 600;">4.0</td>
+        </tr>
+        
+        <tr>
+            <td>Executive Presence & Presentation Skills</td>
+            <td style="text-align: center; font-weight: 600;">5.0</td>
+        </tr>
+        
+        <tr style="background: #e8f5e9; border-top: 3px solid #2c5282;">
+            <td style="font-weight: 700; text-transform: uppercase;">Overall Score</td>
+            <td style="text-align: center; font-weight: 700; font-size: 1.2rem; color: #2c5282;">38.0/40</td>
+        </tr>
+        
+            </tbody>
+        </table>
+    </div>
+
+    
+        <div class="scored-section">
+            <h2>Key Projects & Initiatives</h2>
+            <div class="score-display">
+                <span class="score-label">Average Score:</span>
+                <span class="score-value">5.0/5</span>
+            </div>
+            
+            
+    <div class="combined-feedback">
+        <h4>Combined Feedback from Leadership Reviews</h4>
+        <div class="feedback-synthesis">
+    
+            <p><strong>Overall Assessment:</strong> Very good work.</p>
+        
+            <p><strong>Strengths:</strong></p>
+            <ul class="synthesis-list">
+        <li>Very good work. Heavy RFP year and good client engagement. Really good ownership of all things BMS/Novartis.</li><li>Strong performance and clear communication</li><li>It's so much more impressive what you were able to accomplish this year when you see it all in one place!</li></ul>
+        </div>
+    </div>
+    
+        </div>
+        
+        <div class="scored-section">
+            <h2>Value Adds & Cost Avoidance</h2>
+            <div class="score-display">
+                <span class="score-label">Average Score:</span>
+                <span class="score-value">5.0/5</span>
+            </div>
+            
+            
+    <div class="combined-feedback">
+        <h4>Combined Feedback from Leadership Reviews</h4>
+        <div class="feedback-synthesis">
+    
+            <p><strong>Overall Assessment:</strong> Good values adds and avoidances.</p>
+        
+            <p><strong>Strengths:</strong></p>
+            <ul class="synthesis-list">
+        <li>Good values adds and avoidances. Really good information shared with great details supporting what was presented to his client base.</li><li>Great job here Mike.</li></ul>
+            <p><strong>Areas for Development:</strong></p>
+            <ul class="synthesis-list">
+        <li>Solved problems for the client and proactively addressed value adds.</li></ul>
+        </div>
+    </div>
+    
+        </div>
+        
+        <div class="scored-section">
+            <h2>Cost Savings Delivered</h2>
+            <div class="score-display">
+                <span class="score-label">Average Score:</span>
+                <span class="score-value">5.0/5</span>
+            </div>
+            
+            
+    <div class="combined-feedback">
+        <h4>Combined Feedback from Leadership Reviews</h4>
+        <div class="feedback-synthesis">
+    
+            <p><strong>Overall Assessment:</strong> Mikes entire 2025 was cost savings related.</p>
+        
+            <p><strong>Strengths:</strong></p>
+            <ul class="synthesis-list">
+        <li>Mikes entire 2025 was cost savings related. It's clear that Mike is well invested and has clear understanding of his financial position with his clients and owns all savings activities with his client base. Mike always finds a way to find these opportunities.</li><li>Clearly defined and driven through the RFP.</li><li>Your ability to retain a significant amount of business, across different relationships, is more than impressive.  On top of that, providing these savings and linking them to tangible initiatives involved a great amount of creativity.</li></ul>
+        </div>
+    </div>
+    
+        </div>
+        
+        <div class="scored-section">
+            <h2>Innovation & Continuous Improvement</h2>
+            <div class="score-display">
+                <span class="score-label">Average Score:</span>
+                <span class="score-value">5.0/5</span>
+            </div>
+            
+            
+    <div class="combined-feedback">
+        <h4>Combined Feedback from Leadership Reviews</h4>
+        <div class="feedback-synthesis">
+    
+            <p><strong>Overall Assessment:</strong> Good information shared in this area.</p>
+        
+            <p><strong>Strengths:</strong></p>
+            <ul class="synthesis-list">
+        <li>Good information shared in this area. Key highlight was Mike's management of the RFP and transition process. Really demonstrated the intentional approach to providing innovations to his clients.</li><li>Great work integrating Corrigo and creating valuable positions that drive improvement and cost avoidances.</li><li>Great job linking to real customer relationship enhancing initiatives.</li></ul>
+        </div>
+    </div>
+    
+        </div>
+        
+        <div class="scored-section">
+            <h2>Issues, Challenges & Accountability</h2>
+            <div class="score-display">
+                <span class="score-label">Average Score:</span>
+                <span class="score-value">4.67/5</span>
+            </div>
+            
+            
+    <div class="combined-feedback">
+        <h4>Combined Feedback from Leadership Reviews</h4>
+        <div class="feedback-synthesis">
+    
+            <p><strong>Overall Assessment:</strong> Really good job here.</p>
+        
+            <p><strong>Areas for Development:</strong></p>
+            <ul class="synthesis-list">
+        <li>Really good job here. There may have been challenges but Mike has done a great job managing these and keeping his accounts off of the radar. Again, it's clear that Mike knows his operations.</li><li>Faced challenges and kept account quiet and CSAT's up.</li><li>Perhaps add more around what you learned as a result of the challenges.</li></ul>
+        </div>
+    </div>
+    
+        </div>
+        
+        <div class="scored-section">
+            <h2>2026 Forward Strategy & Vision</h2>
+            <div class="score-display">
+                <span class="score-label">Average Score:</span>
+                <span class="score-value">4.33/5</span>
+            </div>
+            
+            
+    <div class="combined-feedback">
+        <h4>Combined Feedback from Leadership Reviews</h4>
+        <div class="feedback-synthesis">
+    
+            <p><strong>Overall Assessment:</strong> Good initiatives with clear path to get there with Quarterly delivery plan.</p>
+        
+            <p><strong>Strengths:</strong></p>
+            <ul class="synthesis-list">
+        <li>Good initiatives with clear path to get there with Quarterly delivery plan. All initiatives well throughout.</li></ul>
+            <p><strong>Areas for Development:</strong></p>
+            <ul class="synthesis-list">
+        <li>Defined quarterly goals.</li><li>I agree with your ideas here.  I'd like a couple of names of people who you want to develop so they can take your role and then you can take on a new challenge.</li></ul>
+        </div>
+    </div>
+    
+        </div>
+        
+        <div class="scored-section">
+            <h2>Personal Goals & Role Maturity</h2>
+            <div class="score-display">
+                <span class="score-label">Average Score:</span>
+                <span class="score-value">4.0/5</span>
+            </div>
+            
+            
+    <div class="combined-feedback">
+        <h4>Combined Feedback from Leadership Reviews</h4>
+        <div class="feedback-synthesis">
+    
+            <p><strong>Overall Assessment:</strong> Good goals for accounts that have been managed at a high level with regards to overall KPIs and Safety record.</p>
+        
+            <p><strong>Strengths:</strong></p>
+            <ul class="synthesis-list">
+        <li>Good goals for accounts that have been managed at a high level with regards to overall KPIs and Safety record. Good plan for #2 recruitment and development.</li></ul>
+            <p><strong>Areas for Development:</strong></p>
+            <ul class="synthesis-list">
+        <li>Lacking some detail on personal goals</li><li>I think the opportunity here is for you to identify what you need to go to the next level. I would like to see some professional development items identified as opposed to specific performance items.  Those are important too, want to see a balance.  As I mentioned, I will send you some ideas and we can talk more about it next week.</li></ul>
+        </div>
+    </div>
+    
+        </div>
+        
+        <div class="scored-section">
+            <h2>Executive Presence & Presentation Skills</h2>
+            <div class="score-display">
+                <span class="score-label">Average Score:</span>
+                <span class="score-value">5.0/5</span>
+            </div>
+            
+            
+    <div class="combined-feedback">
+        <h4>Combined Feedback from Leadership Reviews</h4>
+        <div class="feedback-synthesis">
+    
+            <p><strong>Overall Assessment:</strong> Very well done.</p>
+        
+            <p><strong>Strengths:</strong></p>
+            <ul class="synthesis-list">
+        <li>Very well done. Very comfortable with the group on the call. Mike knows his business and throughout his presentation it is clear that he knows his business and owns the relationships that he manages.</li><li>Solid presentation skills, not a lot of fluff or filler words. Confident and articulate. Sometimes sounded like you were either reading or too rehearsed though. Overall, great!</li><li>You really mastered the presentation of your accounts.  What you have done this past year is so impressive and I think you captured extremely well.</li></ul>
+        </div>
+    </div>
+    
+        </div>
+        
+
+    
+    <div class="follow-up-section">
+        <h2>🎯 2026 Development Focus & Follow-Up Items</h2>
+        <p class="follow-up-intro">
+            Based on your year-end presentation and executive feedback, the following areas have been identified 
+            for focused development and follow-through in 2026.
+        </p>
+    
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">Personal Goals - URGENT: SMART Framework</span>
+                <span class="follow-up-source">— Valarie Barnett</span>
+            </div>
+            <h3>Reply to Meeting Invite with SMART Personal Goals to Avoid Zero Credit</h3>
+            <p class="follow-up-quote">"I don't want to give you zero on your personal goals. Right now you're scoring so high that I feel like I'll wait, but I don't want you to not get the credit. Reply to the invite with your goals. Your bullet points in looking forward are great initiatives, but I need specific, measurable, achievable, relevant, and time-bound personal goals. When will you achieve something by? How is it impactful?"</p>
+            <p class="follow-up-action"><strong>Action:</strong> URGENT: Create and submit SMART personal goals via email reply: (1) Specific - what exactly will you accomplish, (2) Measurable - how will you track progress/success, (3) Achievable - realistic within 2026, (4) Relevant - ties to AD role, (5) Time-bound - Q1/Q2/Q3/Q4 deadlines; Examples: Develop #2 person to specified capability by Q2, maintain KPI performance at 2025 levels through Q4, expand autonomous equipment pilots by Q3, secure additional Novartis service lines by Q2</p>
+        </div>
+        
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">Succession Planning - #2 Development</span>
+                <span class="follow-up-source">— Valarie Barnett</span>
+            </div>
+            <h3>Develop Strong #2 Person - Passionate Problem Solver Like Mike</h3>
+            <p class="follow-up-quote">"Valarie: 'Who's your #2, Mike?' Mike: 'That's a great segue into my looking forward once we get there - develop strong #2 to support some of my current responsibilities.' Valarie: 'My challenge to you is that number two person. When will you have your number two person trained up by and they've got to be passionate and excited and a problem solver like you. They may have to work under you for six to nine months, right?'"</p>
+            <p class="follow-up-action"><strong>Action:</strong> Number 2 development plan with timeline: (1) Identify candidate - passionate, problem solver, excited to learn Mike's approach, (2) 6-9 month training period under Mike's direct mentorship, (3) Gradual responsibility transfer: shadow phase, supported autonomy, independent execution, (4) Document Mike's methodologies: 18-month RFP prep, outcome-based model implementation, union negotiation approach, customer relationship management, (5) Goal: Mike freed up for additional strategic responsibilities or new accounts, (6) Include in SMART goals with specific timeline; Valarie: 'Novartis and BMS are not the end all be all for you. You can do more. You're fully capable and you've proven that.'</p>
+        </div>
+        
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">Mentorship Expansion</span>
+                <span class="follow-up-source">— Dan Hartman, Valarie Barnett & Marvin Owens</span>
+            </div>
+            <h3>Formalize Mentorship Program - Always Have 1-2 People in Development</h3>
+            <p class="follow-up-quote">"Dan: 'Your bullet point on personal growth #3. That's Tom right now. I'm gonna kick him over to you. Start mentoring him for me.' Valarie: 'You should always have a group of one to two people that you're constantly mentoring, one existing and one brand new. When we want somebody to be great site manager, we send them to Scott. Same holds true with you. Everyone should understand this is what it looks like.'"</p>
+            <p class="follow-up-action"><strong>Action:</strong> Structured mentorship program: (1) Always have 1-2 people in active mentorship: one existing (mid-development), one brand new (foundation building), (2) Tom (Amgen) - Dan's request to help with challenging savings targets and JLL performance, leverage Mike's BMS/Novartis experience, (3) Corey - Marvin mentioned rolling up through Mike's structure before Geico move, (4) Melissa's request: 'Why am I struggling to find MIT for Eli Lilly when we have someone who can just create one for me, Mike?', (5) Document mentorship approach: Mike: 'I feel like I've been able to expedite their growth in pretty short window. That's where my skill set and experience lends itself as well as overcoming challenging savings targets,' (6) Create pipeline: identify high-potential managers, rotate them through Mike's portfolio for training</p>
+        </div>
+        
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">Tom Amgen Support</span>
+                <span class="follow-up-source">— Dan Hartman</span>
+            </div>
+            <h3>Engage with Tom on Amgen - Challenging Savings Targets with JLL</h3>
+            <p class="follow-up-quote">"Dan: 'I'd really like to leverage you and get you engaged with Tom on Amgen. I'm a little too jaded by the thing I've been attached to for too long. He's going to be up against some really challenging savings targets with JLL and performance. We could schedule a visit because you are doing great stuff here. I roll my eyes when I say savings at this point, which isn't good.'"</p>
+            <p class="follow-up-action"><strong>Action:</strong> Amgen savings support: (1) Schedule site visit with Tom and Dan to review Amgen challenges, (2) Share BMS/Novartis playbook: outcome-based model, equipment innovation, union negotiation, consumable takeover, centralized trashing expansion, (3) Conduct operational review: where are efficiencies?, what's scalable?, financial model validation, (4) Mike: 'There are additional savings expectations for Novartis for 27 and 28. So I'm already thinking about what we're going to end up doing. Happy to discuss with Tom. I'm sure it's something I've seen at some point,' (5) Provide Dan fresh perspective vs his jaded view, (6) Timeline: Q1 visit and assessment</p>
+        </div>
+        
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">Novartis Direct Relationship Development</span>
+                <span class="follow-up-source">— Mike Barry (Self-Identified)</span>
+            </div>
+            <h3>Strengthen Novartis Direct Relationship & Expand Service Lines</h3>
+            <p class="follow-up-quote">"Establish strong rapport with new Novartis Direct customers, that's something we went live with January 1st to really strengthen overall relationship. Work with new Novartis Direct model to see if there's additional service lines we can get that we can take on."</p>
+            <p class="follow-up-action"><strong>Action:</strong> Novartis relationship building: (1) Q1-Q2: Strengthen rapport with new direct contacts at Cambridge and East Hanover (went live Jan 1, 2026), (2) Identify additional service line opportunities beyond custodial + consumables, (3) Critical context: 'CBRE just got put out to bid for hard services... very interesting to see what this account looks like in six months. Novartis anticipates making their award sometime middle of February,' (4) Threat: 'ABM is in running for hard service and I'm sure they're going to try to bundle their services,' (5) Defense strategy: strengthen direct relationship, expand SBM service offerings, position as comprehensive partner vs single-service vendor</p>
+        </div>
+        
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">ABM Bundling Threat</span>
+                <span class="follow-up-source">— Mike Barry (Self-Identified)</span>
+            </div>
+            <h3>Monitor and Defend Against ABM Bundling at Novartis Hard Services RFP</h3>
+            <p class="follow-up-quote">"CBRE just got put out to bid for hard services at Novartis. ABM is in running and I'm sure they're going to try to bundle their services. Something we'll need to stay aware of. There's still chance CBRE retains it. I think JLL is also down selected. Novartis anticipates making their award sometime middle of February."</p>
+            <p class="follow-up-action"><strong>Action:</strong> Competitive defense strategy: (1) Monitor Novartis hard services RFP - award expected mid-February, (2) ABM threat: likely to bundle custodial with hard services to displace SBM, (3) Best outcomes: CBRE retains (existing relationship), JLL wins (IFM partner), (4) Worst outcome: ABM wins and bundles services, (5) Mitigation: strengthen SBM direct relationship, deliver exceptional Q1 performance, expand service lines to increase switching cost, position as specialized partner vs commodity bundler, (6) Stay close to decision-makers, understand evaluation criteria, (7) If ABM wins: negotiate to retain SBM as specialist vs bundled commodity service</p>
+        </div>
+        
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">Q1 Initiatives</span>
+                <span class="follow-up-source">— Mike Barry (Self-Identified)</span>
+            </div>
+            <h3>Complete Q1 Scorecard Updates, Route Refinements & Corrigo Integration</h3>
+            <p class="follow-up-quote">"Update site scorecards to reflect new KPIs and their associated weights from RFP. They're both in development on JLL side and Novartis side. Goal would be to create some additional collaboration with scorecard reviews. Refine outcome based cleaning routes and adjust way station locations based off of usage patterns we see on site. Expand For Insight integration with Corrigo for more streamlined operation while creating better analytics."</p>
+            <p class="follow-up-action"><strong>Action:</strong> Q1 operational enhancements: (1) Scorecard updates - complete within 2 weeks per Mike's timeline, align with new KPI weights from RFP, create collaboration opportunities in reviews, (2) Route optimization - refine outcome-based cleaning routes based on actual usage patterns observed, adjust way station locations for efficiency, (3) Corrigo integration - expand For Insight/Corrigo integration (Dan praised this), streamline operations, create better analytics for customer presentations; Mike noted integration 'been a little slower than anticipated, but it's not on our end, it's their end. So I'm OK with that.'</p>
+        </div>
+        
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">Q2 Initiatives</span>
+                <span class="follow-up-source">— Mike Barry (Self-Identified)</span>
+            </div>
+            <h3>Pilot Autonomous Equipment & Develop Sustainability Programs (Durable Coffee, Lab Recycling)</h3>
+            <p class="follow-up-quote">"Q2: Look to identify opportunities to pilot some autonomous equipment. JLL has hinted that they will need some support in realm of sustainability once they get through their transitional activities. Two items we're potentially looking at would be durable coffee program as well as some additional opportunities within lab space in terms of recycling. Sue already has idea of what they're potentially looking at."</p>
+            <p class="follow-up-action"><strong>Action:</strong> Q2 innovation roadmap: (1) Autonomous equipment pilots - identify opportunities with JLL (continuing equipment innovation success like 50% vacuum labor reduction), (2) Sustainability support - JLL indicated need post-transition phase, work with Sue on: durable coffee program implementation, lab space recycling enhancements, (3) Valarie's note on earlier sustainability slide: 'That's a best practice. Ensure there is monthly JLL meeting on sustainability. Sue probably hosts that meeting. You might want to double check she's recording that value out,' (4) Position SBM as sustainability partner beyond just cleaning</p>
+        </div>
+        
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">Year-End Initiative</span>
+                <span class="follow-up-source">— Mike Barry (Self-Identified)</span>
+            </div>
+            <h3>Develop Tiered Service Model Framework for Novartis 5% Year-Over-Year Savings</h3>
+            <p class="follow-up-quote">"End of year discussion around implementation of tiered service model for Novartis. There's obligation for us to drive 5% year over year savings for 27 and 28. We agreed during RFP process that we would work with site leads on creating framework of tiered service model towards end of this year. That's one of other items that will get some of our time and attention."</p>
+            <p class="follow-up-action"><strong>Action:</strong> Tiered service model development: (1) Contractual obligation: 5% year-over-year savings for 2027 and 2028 at Novartis, (2) Q3-Q4 2026: Work with site leads to create tiered service framework, (3) Allow customer to choose service levels based on needs vs one-size-fits-all, (4) Balance cost reduction with service quality options, (5) Learn from 2025 outcome-based model success (9% savings with quality improvement), (6) Similar to how Mike anticipated outcome-based model becoming 'the new norm,' position tiered model as next evolution</p>
+        </div>
+        
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">Leadership Recognition</span>
+                <span class="follow-up-source">— Valarie Barnett, Marvin Owens, Mike Jedan</span>
+            </div>
+            <h3>Continue Excellence - Recognized as Tight Ship Leader</h3>
+            <p class="follow-up-quote">"Valarie: 'Mike, you clearly have executive presence. You speak extremely confidently. You know your account. You tell story effectively. You are organized, detailed, driven. You take on challenges, solve problems. You leave us out of it. Very rarely lean on executive team for support. If you call me and need help, it's truly something probably not possible. If there's a way, I feel like you figure it out. You're fully capable.' Marvin: 'I appreciate how well you take ownership. If it's in your hands we know it's good from cradle to grave. Since you've taken over, we haven't had any noise out of those two accounts.' Valarie: 'Everyone should understand like this is what it looks like. You are organized, structured. You're on tight ship.'"</p>
+            <p class="follow-up-action"><strong>Action:</strong> Continue operational excellence: (1) Maintain cradle-to-grave ownership philosophy, (2) Keep accounts 'off the radar' through proactive problem-solving, (3) Document approaches for mentorship replication, (4) Valarie's challenge: 'You can do more. You've proven that. Novartis and BMS are not the end all be all,' (5) Mike Jedan: 'I think opportunity here is for you to identify what you need to go to next level. I would like to see some professional development items identified,' (6) Career trajectory: develop #2, expand mentorship, potentially take on additional strategic accounts when ready</p>
+        </div>
+        </div>
+
+</body>
+</html>
