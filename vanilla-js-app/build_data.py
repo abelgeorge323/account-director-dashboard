@@ -19,6 +19,64 @@ def clean_numeric_value(val):
     except:
         return None
 
+# Map AD account names to ATB CSV account names when they differ (e.g. "Tesla Inc - Jacob Reed" -> "Tesla Inc")
+ATB_ACCOUNT_ALIASES = {
+    "Tesla Inc - Jacob Reed": "Tesla Inc",
+}
+
+def parse_atb_value(val):
+    """Parse ATB value: ' -   ' or '-' = None (redacted), ' 318,620 ' = number, ' (1,411) ' = negative."""
+    if pd.isna(val) or val == '':
+        return None
+    s = str(val).strip()
+    if not s or s == '-' or (len(s) <= 3 and all(c in ' -' for c in s)):
+        return None
+    try:
+        s = s.replace(',', '').replace('(', '-').replace(')', '')
+        return float(s)
+    except (ValueError, TypeError):
+        return None
+
+
+def load_atb_data(atb_path="../data/ATB Q4.2025-Jan. 2026.csv"):
+    """Load ATB (Above the Base Services) data from CSV.
+    Returns {account_name: {october, november, december, january, totalProgram, totalCostCenter, hasSubcontractedWork}}
+    """
+    SUBCONTRACTED_ACCOUNTS = {'Procter & Gamble Company', 'Procter & Gamble Company - Costa Rica', 'Merck'}
+    try:
+        df = pd.read_csv(atb_path, skiprows=3, header=None, encoding='utf-8')
+    except FileNotFoundError:
+        print(f"  ATB file not found: {atb_path}")
+        return {}
+
+    result = {}
+    for _, row in df.iterrows():
+        service = str(row.iloc[0]).strip() if pd.notna(row.iloc[0]) else ''
+        if service != 'Above Base Services':
+            continue
+        account_raw = str(row.iloc[1]).strip() if pd.notna(row.iloc[1]) else ''
+        if not account_raw or 'Portfolio' not in account_raw:
+            continue
+        account = account_raw.replace(' Portfolio', '').strip()
+        oct_val = parse_atb_value(row.iloc[2])
+        nov_val = parse_atb_value(row.iloc[3])
+        dec_val = parse_atb_value(row.iloc[4])
+        jan_val = parse_atb_value(row.iloc[5])
+        total_program = parse_atb_value(row.iloc[6]) if len(row) > 6 else None
+        total_cost_center = parse_atb_value(row.iloc[7]) if len(row) > 7 else None
+        has_subcontracted = account in SUBCONTRACTED_ACCOUNTS
+        result[account] = {
+            'october': oct_val,
+            'november': nov_val,
+            'december': dec_val,
+            'january': jan_val,
+            'totalProgram': total_program,
+            'totalCostCenter': total_cost_center,
+            'hasSubcontractedWork': has_subcontracted
+        }
+    return result
+
+
 def load_best_practices(bp_path="../data/best-practices.json"):
     """Load best practices from JSON file."""
     try:
@@ -192,9 +250,23 @@ def apply_manual_mappings(financial_data):
     if "Gisell Langelier" in financial_data:
         financial_data["Giselle Langelier"] = financial_data.pop("Gisell Langelier")
     
-    # Peggy Shum: Normalize Peggy Mcelwee -> Peggy Shum
+    # Peggy Shum: Merge Peggy Mcelwee (Chubb) with Peggy Shum (Deutsche Bank) - don't replace
     if "Peggy Mcelwee" in financial_data:
-        financial_data["Peggy Shum"] = financial_data.pop("Peggy Mcelwee")
+        mcelwee = financial_data.pop("Peggy Mcelwee")
+        if "Peggy Shum" in financial_data:
+            shum = financial_data["Peggy Shum"]
+            all_accounts = list(dict.fromkeys(shum.get('accounts', []) + mcelwee.get('accounts', [])))
+            financial_data["Peggy Shum"] = {
+                'accounts': all_accounts,
+                'num_accounts': len(all_accounts),
+                'revenue_total': shum.get('revenue_total', 0) + mcelwee.get('revenue_total', 0),
+                'csat_avg': (shum.get('csat_avg') or mcelwee.get('csat_avg')),
+                'headcount_total': shum.get('headcount_total', 0) + mcelwee.get('headcount_total', 0),
+                'red_sites_count': shum.get('red_sites_count', 0) + mcelwee.get('red_sites_count', 0),
+                'growth_avg': (shum.get('growth_avg') or mcelwee.get('growth_avg')),
+            }
+        else:
+            financial_data["Peggy Shum"] = mcelwee
     
     # David Pergola: Add Merck Sodexo (calculated from Brian Davis's Merck ratio)
     merck_rev_per_employee = 4077 / 345  # Brian Davis Merck: Revenue=$4,077K, Headcount=345
@@ -214,9 +286,9 @@ def apply_manual_mappings(financial_data):
     if "Russell Ober" in financial_data:
         financial_data["RJ Ober"] = financial_data["Russell Ober"].copy()
 
-    # Greyson Wolff: Honda (user will add automotive file later)
+    # Greyson Wolff: Honda Motor Company (matches ATB CSV; user will add automotive file later)
     financial_data["Greyson Wolff"] = {
-        'accounts': ['Honda'],
+        'accounts': ['Honda Motor Company'],
         'num_accounts': 1,
         'revenue_total': 0,
         'csat_avg': None,
@@ -406,29 +478,32 @@ def load_verticals(vertical_path="../data/verticals.csv"):
             result[ad_name] = {"vertical": vertical, "tier": tier, "role": role}
         return result
 
-def aggregate_reviews(reviews, verticals, financial_data):
+def aggregate_reviews(reviews, verticals, financial_data, atb_data=None):
     """Aggregate reviews by Account Director."""
     from collections import defaultdict
-    
+
+    if atb_data is None:
+        atb_data = {}
+
     ad_reviews = defaultdict(list)
-    
+
     for review in reviews:
         ad_reviews[review["accountDirector"]].append(review)
-    
+
     aggregated = []
-    
+
     for ad_name, ad_review_list in ad_reviews.items():
         # Calculate average scores
         avg_scores = {}
         for section in SCORING_SECTIONS:
             scores = [r["scores"].get(section, 0) for r in ad_review_list]
             avg_scores[section] = sum(scores) / len(scores) if scores else 0
-        
+
         avg_total = sum(avg_scores.values())
-        
+
         # Get vertical and tier data
         vertical_data = verticals.get(ad_name, {"vertical": "N/A", "tier": ""})
-        
+
         # Get financial data
         fin_data = financial_data.get(ad_name, {
             'accounts': [],
@@ -439,11 +514,34 @@ def aggregate_reviews(reviews, verticals, financial_data):
             'red_sites_count': 0,
             'growth_avg': None
         })
-        
+
         # Get accounts list and create display string
         accounts_list = fin_data.get('accounts', [])
         account_display = ', '.join(accounts_list) if accounts_list else 'undefined'
-        
+
+        # Build ATB data: match AD accounts to ATB by exact name (with aliases for known mismatches)
+        atb_accounts = []
+        total_atb = 0
+        for acc in accounts_list:
+            atb_key = ATB_ACCOUNT_ALIASES.get(acc, acc)
+            atb_row = atb_data.get(atb_key)
+            if atb_row:
+                oct_v = atb_row.get('october') or 0
+                nov_v = atb_row.get('november') or 0
+                dec_v = atb_row.get('december') or 0
+                jan_v = atb_row.get('january') or 0
+                total_atb += oct_v + nov_v + dec_v + jan_v
+                atb_accounts.append({
+                    'account': acc,
+                    'october': atb_row.get('october'),
+                    'november': atb_row.get('november'),
+                    'december': atb_row.get('december'),
+                    'january': atb_row.get('january'),
+                    'totalProgram': atb_row.get('totalProgram'),
+                    'totalCostCenter': atb_row.get('totalCostCenter'),
+                    'hasSubcontractedWork': atb_row.get('hasSubcontractedWork', False)
+                })
+
         ad_entry = {
             "accountDirector": ad_name,
             "account": account_display,  # For frontend compatibility (singular, joined string)
@@ -460,11 +558,15 @@ def aggregate_reviews(reviews, verticals, financial_data):
             "reviewCount": len(ad_review_list),
             "avgScores": avg_scores,
             "avgTotalScore": avg_total,
-            "reviews": ad_review_list
+            "reviews": ad_review_list,
+            "atbData": {
+                "accounts": atb_accounts,
+                "totalAtb": total_atb
+            }
         }
-        
+
         aggregated.append(ad_entry)
-    
+
     return aggregated
 
 def build_rubric_data():
@@ -571,9 +673,13 @@ def main():
     
     print("Applying manual mappings...")
     financial_data = apply_manual_mappings(financial_data)
-    
+
+    print("Loading ATB data...")
+    atb_data = load_atb_data()
+    print(f"   - Loaded ATB for {len(atb_data)} accounts")
+
     print("Aggregating reviews by Account Director...")
-    aggregated = aggregate_reviews(reviews, verticals, financial_data)
+    aggregated = aggregate_reviews(reviews, verticals, financial_data, atb_data)
     
     print("Building rubric data...")
     rubrics = build_rubric_data()

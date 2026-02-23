@@ -21,7 +21,7 @@
       "Goals",
       "Exec Presence"
     ],
-    "lastUpdated": "2026-02-12T01:40:47.040874"
+    "lastUpdated": "2026-02-23T00:43:43.004504"
   },
   "accountDirectors": [
     {
@@ -161,7 +161,32 @@
           },
           "totalScore": 16.0
         }
-      ]
+      ],
+      "atbData": {
+        "accounts": [
+          {
+            "account": "Lockheed Martin",
+            "october": 7708.0,
+            "november": 9288.0,
+            "december": 4056.0,
+            "january": 9192.0,
+            "totalProgram": null,
+            "totalCostCenter": null,
+            "hasSubcontractedWork": false
+          },
+          {
+            "account": "Parsons Corporation",
+            "october": null,
+            "november": null,
+            "december": null,
+            "january": 4397.0,
+            "totalProgram": null,
+            "totalCostCenter": null,
+            "hasSubcontractedWork": false
+          }
+        ],
+        "totalAtb": 34641.0
+      }
     },
     {
       "accountDirector": "Justin Homa",
@@ -245,7 +270,22 @@
           },
           "totalScore": 33.0
         }
-      ]
+      ],
+      "atbData": {
+        "accounts": [
+          {
+            "account": "Organon",
+            "october": null,
+            "november": null,
+            "december": 908.0,
+            "january": null,
+            "totalProgram": null,
+            "totalCostCenter": null,
+            "hasSubcontractedWork": false
+          }
+        ],
+        "totalAtb": 908.0
+      }
     },
     {
       "accountDirector": "Mark Schlerf",
@@ -389,7 +429,62 @@
           },
           "totalScore": 33.0
         }
-      ]
+      ],
+      "atbData": {
+        "accounts": [
+          {
+            "account": "LAM Research",
+            "october": 77762.0,
+            "november": 127921.0,
+            "december": 102706.0,
+            "january": 73260.0,
+            "totalProgram": null,
+            "totalCostCenter": null,
+            "hasSubcontractedWork": false
+          },
+          {
+            "account": "Hewlett-Packard",
+            "october": 162242.0,
+            "november": 123347.0,
+            "december": 107330.0,
+            "january": 105450.0,
+            "totalProgram": null,
+            "totalCostCenter": null,
+            "hasSubcontractedWork": false
+          },
+          {
+            "account": "HPE",
+            "october": 20382.0,
+            "november": 31892.0,
+            "december": 7822.0,
+            "january": 33344.0,
+            "totalProgram": null,
+            "totalCostCenter": null,
+            "hasSubcontractedWork": false
+          },
+          {
+            "account": "Conduent",
+            "october": 473.0,
+            "november": 464.0,
+            "december": 5430.0,
+            "january": 1683.0,
+            "totalProgram": null,
+            "totalCostCenter": null,
+            "hasSubcontractedWork": false
+          },
+          {
+            "account": "Siltronic Corp",
+            "october": 3838.0,
+            "november": null,
+            "december": 8605.0,
+            "january": 3810.0,
+            "totalProgram": null,
+            "totalCostCenter": null,
+            "hasSubcontractedWork": false
+          }
+        ],
+        "totalAtb": 997761.0
+      }
     },
     {
       "accountDirector": "Stuart Kelloff",
@@ -528,7 +623,22 @@
           },
           "totalScore": 37.0
         }
-      ]
+      ],
+      "atbData": {
+        "accounts": [
+          {
+            "account": "NVIDIA",
+            "october": 273876.0,
+            "november": 144247.0,
+            "december": 280509.0,
+            "january": 247658.0,
+            "totalProgram": null,
+            "totalCostCenter": null,
+            "hasSubcontractedWork": false
+          }
+        ],
+        "totalAtb": 946290.0
+      }
     },
     {
       "accountDirector": "Grant Frazier",
@@ -666,7 +776,22 @@
           },
           "totalScore": 32.0
         }
-      ]
+      ],
+      "atbData": {
+        "accounts": [
+          {
+            "account": "Meta",
+            "october": 24383.0,
+            "november": 45702.0,
+            "december": 69095.0,
+            "january": 43225.0,
+            "totalProgram": null,
+            "totalCostCenter": null,
+            "hasSubcontractedWork": false
+          }
+        ],
+        "totalAtb": 182405.0
+      }
     },
     {
       "accountDirector": "Jacqueline Maravilla",
@@ -778,7 +903,32 @@
           },
           "totalScore": 35.0
         }
-      ]
+      ],
+      "atbData": {
+        "accounts": [
+          {
+            "account": "Lonza Biologics",
+            "october": 246125.0,
+            "november": 248324.0,
+            "december": 382288.0,
+            "january": 277902.0,
+            "totalProgram": null,
+            "totalCostCenter": null,
+            "hasSubcontractedWork": false
+          },
+          {
+            "account": "Genentech",
+            "october": 45748.0,
+            "november": 73389.0,
+            "december": 84035.0,
+            "january": 80533.0,
+            "totalProgram": null,
+            "totalCostCenter": null,
+            "hasSubcontractedWork": false
+          }
+        ],
+        "totalAtb": 1438344.0
+      }
     },
     {
       "accountDirector": "Paul Rhodes",
@@ -917,7 +1067,32 @@
           },
           "totalScore": 23.0
         }
-      ]
+      ],
+      "atbData": {
+        "accounts": [
+          {
+            "account": "Google",
+            "october": 1466286.0,
+            "november": 1986404.0,
+            "december": 1970135.0,
+            "january": 1681803.0,
+            "totalProgram": null,
+            "totalCostCenter": null,
+            "hasSubcontractedWork": false
+          },
+          {
+            "account": "DP World",
+            "october": 269.0,
+            "november": 3139.0,
+            "december": 5478.0,
+            "january": 4730.0,
+            "totalProgram": null,
+            "totalCostCenter": null,
+            "hasSubcontractedWork": false
+          }
+        ],
+        "totalAtb": 7118244.0
+      }
     },
     {
       "accountDirector": "Kimberly Wittekind",
@@ -1030,7 +1205,22 @@
           },
           "totalScore": 32.0
         }
-      ]
+      ],
+      "atbData": {
+        "accounts": [
+          {
+            "account": "Nestle",
+            "october": 24417.0,
+            "november": 27132.0,
+            "december": 18589.0,
+            "january": 20589.0,
+            "totalProgram": null,
+            "totalCostCenter": null,
+            "hasSubcontractedWork": false
+          }
+        ],
+        "totalAtb": 90727.0
+      }
     },
     {
       "accountDirector": "Ana Sabater",
@@ -1170,7 +1360,42 @@
           },
           "totalScore": 32.0
         }
-      ]
+      ],
+      "atbData": {
+        "accounts": [
+          {
+            "account": "LinkedIn",
+            "october": 50005.0,
+            "november": 58048.0,
+            "december": 121313.0,
+            "january": 40591.0,
+            "totalProgram": null,
+            "totalCostCenter": null,
+            "hasSubcontractedWork": false
+          },
+          {
+            "account": "Uber",
+            "october": 10638.0,
+            "november": 1077.0,
+            "december": 60199.0,
+            "january": 13700.0,
+            "totalProgram": null,
+            "totalCostCenter": null,
+            "hasSubcontractedWork": false
+          },
+          {
+            "account": "Scale AI",
+            "october": 9805.0,
+            "november": 1551.0,
+            "december": 16220.0,
+            "january": 4188.0,
+            "totalProgram": null,
+            "totalCostCenter": null,
+            "hasSubcontractedWork": false
+          }
+        ],
+        "totalAtb": 387335.0
+      }
     },
     {
       "accountDirector": "Taylor Wattenberg",
@@ -1281,7 +1506,22 @@
           },
           "totalScore": 30.0
         }
-      ]
+      ],
+      "atbData": {
+        "accounts": [
+          {
+            "account": "Microsoft",
+            "october": 757274.0,
+            "november": 976820.0,
+            "december": 933063.0,
+            "january": 1107554.0,
+            "totalProgram": null,
+            "totalCostCenter": null,
+            "hasSubcontractedWork": false
+          }
+        ],
+        "totalAtb": 3774711.0
+      }
     },
     {
       "accountDirector": "Jack Thornton",
@@ -1393,7 +1633,22 @@
           },
           "totalScore": 26.0
         }
-      ]
+      ],
+      "atbData": {
+        "accounts": [
+          {
+            "account": "Nike",
+            "october": 5264.0,
+            "november": 12951.0,
+            "december": 24678.0,
+            "january": 15961.0,
+            "totalProgram": null,
+            "totalCostCenter": null,
+            "hasSubcontractedWork": false
+          }
+        ],
+        "totalAtb": 58854.0
+      }
     },
     {
       "accountDirector": "Isaac Calderon",
@@ -1481,7 +1736,42 @@
           },
           "totalScore": 24.0
         }
-      ]
+      ],
+      "atbData": {
+        "accounts": [
+          {
+            "account": "Bayer",
+            "october": 55178.0,
+            "november": 69183.0,
+            "december": 52929.0,
+            "january": 139922.0,
+            "totalProgram": null,
+            "totalCostCenter": null,
+            "hasSubcontractedWork": false
+          },
+          {
+            "account": "Kenvue",
+            "october": 3965.0,
+            "november": 13927.0,
+            "december": 12359.0,
+            "january": 5222.0,
+            "totalProgram": null,
+            "totalCostCenter": null,
+            "hasSubcontractedWork": false
+          },
+          {
+            "account": "Bluerock Therapeutics",
+            "october": null,
+            "november": null,
+            "december": 414.0,
+            "january": null,
+            "totalProgram": null,
+            "totalCostCenter": null,
+            "hasSubcontractedWork": false
+          }
+        ],
+        "totalAtb": 353099.0
+      }
     },
     {
       "accountDirector": "Patrick Murtha",
@@ -1621,7 +1911,42 @@
           },
           "totalScore": 24.0
         }
-      ]
+      ],
+      "atbData": {
+        "accounts": [
+          {
+            "account": "McKesson",
+            "october": 57654.0,
+            "november": 57296.0,
+            "december": 59698.0,
+            "january": 56581.0,
+            "totalProgram": null,
+            "totalCostCenter": null,
+            "hasSubcontractedWork": false
+          },
+          {
+            "account": "Cardinal Health",
+            "october": null,
+            "november": 3660.0,
+            "december": 2508.0,
+            "january": null,
+            "totalProgram": null,
+            "totalCostCenter": null,
+            "hasSubcontractedWork": false
+          },
+          {
+            "account": "IQVIA Biotech",
+            "october": 3096.0,
+            "november": 3488.0,
+            "december": 4698.0,
+            "january": 4032.0,
+            "totalProgram": null,
+            "totalCostCenter": null,
+            "hasSubcontractedWork": false
+          }
+        ],
+        "totalAtb": 252711.0
+      }
     },
     {
       "accountDirector": "Brian Davis",
@@ -1705,7 +2030,22 @@
           },
           "totalScore": 31.0
         }
-      ]
+      ],
+      "atbData": {
+        "accounts": [
+          {
+            "account": "Merck",
+            "october": 751226.0,
+            "november": 725383.0,
+            "december": 750705.0,
+            "january": 672930.0,
+            "totalProgram": null,
+            "totalCostCenter": null,
+            "hasSubcontractedWork": true
+          }
+        ],
+        "totalAtb": 2900244.0
+      }
     },
     {
       "accountDirector": "Aaron Simpson",
@@ -1818,7 +2158,32 @@
           },
           "totalScore": 34.0
         }
-      ]
+      ],
+      "atbData": {
+        "accounts": [
+          {
+            "account": "Mars",
+            "october": 3519.0,
+            "november": 1709.0,
+            "december": 4542.0,
+            "january": 1122.0,
+            "totalProgram": null,
+            "totalCostCenter": null,
+            "hasSubcontractedWork": false
+          },
+          {
+            "account": "Ball Corporation",
+            "october": 57103.0,
+            "november": 55256.0,
+            "december": 57756.0,
+            "january": 53810.0,
+            "totalProgram": null,
+            "totalCostCenter": null,
+            "hasSubcontractedWork": false
+          }
+        ],
+        "totalAtb": 234817.0
+      }
     },
     {
       "accountDirector": "Justin Dallavis",
@@ -1956,20 +2321,36 @@
           },
           "totalScore": 28.0
         }
-      ]
+      ],
+      "atbData": {
+        "accounts": [
+          {
+            "account": "Boeing Company",
+            "october": 41008.0,
+            "november": 33794.0,
+            "december": 39387.0,
+            "january": 32937.0,
+            "totalProgram": null,
+            "totalCostCenter": null,
+            "hasSubcontractedWork": false
+          }
+        ],
+        "totalAtb": 147126.0
+      }
     },
     {
       "accountDirector": "Peggy Shum",
-      "account": "Chubb Insurance",
+      "account": "Deutsche Bank, Chubb Insurance",
       "accounts": [
+        "Deutsche Bank",
         "Chubb Insurance"
       ],
-      "numAccounts": 1,
-      "revenue": 119.0,
-      "csat": 4.88,
-      "headcount": 26,
-      "redSites": 1,
-      "growth": 5.2,
+      "numAccounts": 2,
+      "revenue": 547.0,
+      "csat": 4.0,
+      "headcount": 67,
+      "redSites": 2,
+      "growth": 8.5,
       "vertical": "Finance",
       "tier": "Tier 5",
       "role": "Account Director",
@@ -2040,7 +2421,22 @@
           },
           "totalScore": 27.0
         }
-      ]
+      ],
+      "atbData": {
+        "accounts": [
+          {
+            "account": "Deutsche Bank",
+            "october": 45955.0,
+            "november": 33815.0,
+            "december": 61170.0,
+            "january": 32899.0,
+            "totalProgram": null,
+            "totalCostCenter": null,
+            "hasSubcontractedWork": false
+          }
+        ],
+        "totalAtb": 173839.0
+      }
     },
     {
       "accountDirector": "David Pergola",
@@ -2151,7 +2547,11 @@
           },
           "totalScore": 27.0
         }
-      ]
+      ],
+      "atbData": {
+        "accounts": [],
+        "totalAtb": 0
+      }
     },
     {
       "accountDirector": "Thomas Mahoney",
@@ -2235,7 +2635,22 @@
           },
           "totalScore": 29.0
         }
-      ]
+      ],
+      "atbData": {
+        "accounts": [
+          {
+            "account": "Amgen",
+            "october": 305916.0,
+            "november": 365321.0,
+            "december": 242061.0,
+            "january": 343364.0,
+            "totalProgram": null,
+            "totalCostCenter": null,
+            "hasSubcontractedWork": false
+          }
+        ],
+        "totalAtb": 1256662.0
+      }
     },
     {
       "accountDirector": "Giselle Langelier",
@@ -2375,7 +2790,42 @@
           },
           "totalScore": 37.0
         }
-      ]
+      ],
+      "atbData": {
+        "accounts": [
+          {
+            "account": "Medtronic",
+            "october": 157338.0,
+            "november": 147511.0,
+            "december": 137309.0,
+            "january": 124207.0,
+            "totalProgram": null,
+            "totalCostCenter": null,
+            "hasSubcontractedWork": false
+          },
+          {
+            "account": "Capsida Biotherapeutics",
+            "october": 10681.0,
+            "november": null,
+            "december": 12143.0,
+            "january": 15868.0,
+            "totalProgram": null,
+            "totalCostCenter": null,
+            "hasSubcontractedWork": false
+          },
+          {
+            "account": "Fuji Film",
+            "october": 4556.0,
+            "november": 2547.0,
+            "december": 580.0,
+            "january": 6388.0,
+            "totalProgram": null,
+            "totalCostCenter": null,
+            "hasSubcontractedWork": false
+          }
+        ],
+        "totalAtb": 619128.0
+      }
     },
     {
       "accountDirector": "Rade Kukobat",
@@ -2540,7 +2990,11 @@
           },
           "totalScore": 24.0
         }
-      ]
+      ],
+      "atbData": {
+        "accounts": [],
+        "totalAtb": 0
+      }
     },
     {
       "accountDirector": "Gregory DeMedio",
@@ -2651,7 +3105,22 @@
           },
           "totalScore": 23.0
         }
-      ]
+      ],
+      "atbData": {
+        "accounts": [
+          {
+            "account": "Abbott Labs",
+            "october": 109198.0,
+            "november": 140719.0,
+            "december": 191125.0,
+            "january": 199251.0,
+            "totalProgram": null,
+            "totalCostCenter": null,
+            "hasSubcontractedWork": false
+          }
+        ],
+        "totalAtb": 640293.0
+      }
     },
     {
       "accountDirector": "Logan Newman",
@@ -2737,7 +3206,32 @@
           },
           "totalScore": 36.0
         }
-      ]
+      ],
+      "atbData": {
+        "accounts": [
+          {
+            "account": "General Electric",
+            "october": 34635.0,
+            "november": 27907.0,
+            "december": 47147.0,
+            "january": 3980.0,
+            "totalProgram": null,
+            "totalCostCenter": null,
+            "hasSubcontractedWork": false
+          },
+          {
+            "account": "GE Power",
+            "october": null,
+            "november": 3933.0,
+            "december": 4423.0,
+            "january": null,
+            "totalProgram": null,
+            "totalCostCenter": null,
+            "hasSubcontractedWork": false
+          }
+        ],
+        "totalAtb": 122025.0
+      }
     },
     {
       "accountDirector": "Luis Cabrera",
@@ -2875,7 +3369,22 @@
           },
           "totalScore": 39.0
         }
-      ]
+      ],
+      "atbData": {
+        "accounts": [
+          {
+            "account": "Takeda Pharmaceutical",
+            "october": 1676.0,
+            "november": null,
+            "december": null,
+            "january": null,
+            "totalProgram": null,
+            "totalCostCenter": null,
+            "hasSubcontractedWork": false
+          }
+        ],
+        "totalAtb": 1676.0
+      }
     },
     {
       "accountDirector": "Scott Kimball",
@@ -2987,7 +3496,22 @@
           },
           "totalScore": 40.0
         }
-      ]
+      ],
+      "atbData": {
+        "accounts": [
+          {
+            "account": "Sanofi",
+            "october": 42126.0,
+            "november": 31070.0,
+            "december": 11293.0,
+            "january": 13425.0,
+            "totalProgram": null,
+            "totalCostCenter": null,
+            "hasSubcontractedWork": false
+          }
+        ],
+        "totalAtb": 97914.0
+      }
     },
     {
       "accountDirector": "Julie Bianchi",
@@ -3045,7 +3569,32 @@
           },
           "totalScore": 26.0
         }
-      ]
+      ],
+      "atbData": {
+        "accounts": [
+          {
+            "account": "CIGNA",
+            "october": null,
+            "november": null,
+            "december": null,
+            "january": 1031.0,
+            "totalProgram": null,
+            "totalCostCenter": null,
+            "hasSubcontractedWork": false
+          },
+          {
+            "account": "Elevance Health",
+            "october": 6461.0,
+            "november": 8072.0,
+            "december": 2927.0,
+            "january": 4360.0,
+            "totalProgram": null,
+            "totalCostCenter": null,
+            "hasSubcontractedWork": false
+          }
+        ],
+        "totalAtb": 22851.0
+      }
     },
     {
       "accountDirector": "Nicholas Trenkamp",
@@ -3129,7 +3678,22 @@
           },
           "totalScore": 34.0
         }
-      ]
+      ],
+      "atbData": {
+        "accounts": [
+          {
+            "account": "Procter & Gamble Company",
+            "october": 201535.0,
+            "november": 146251.0,
+            "december": 116429.0,
+            "january": 139402.0,
+            "totalProgram": null,
+            "totalCostCenter": null,
+            "hasSubcontractedWork": true
+          }
+        ],
+        "totalAtb": 603617.0
+      }
     },
     {
       "accountDirector": "Jacob Reed",
@@ -3186,7 +3750,22 @@
           },
           "totalScore": 29.0
         }
-      ]
+      ],
+      "atbData": {
+        "accounts": [
+          {
+            "account": "Tesla Inc - Jacob Reed",
+            "october": 56932.0,
+            "november": 15605.0,
+            "december": 313423.0,
+            "january": 64459.0,
+            "totalProgram": null,
+            "totalCostCenter": null,
+            "hasSubcontractedWork": false
+          }
+        ],
+        "totalAtb": 450419.0
+      }
     },
     {
       "accountDirector": "Rafaed Ortiz",
@@ -3297,7 +3876,22 @@
           },
           "totalScore": 29.0
         }
-      ]
+      ],
+      "atbData": {
+        "accounts": [
+          {
+            "account": "Biogen",
+            "october": 20239.0,
+            "november": 16819.0,
+            "december": 12358.0,
+            "january": 20047.0,
+            "totalProgram": null,
+            "totalCostCenter": null,
+            "hasSubcontractedWork": false
+          }
+        ],
+        "totalAtb": 69463.0
+      }
     },
     {
       "accountDirector": "Ayesha Nasir",
@@ -3382,7 +3976,32 @@
           },
           "totalScore": 35.0
         }
-      ]
+      ],
+      "atbData": {
+        "accounts": [
+          {
+            "account": "Westinghouse",
+            "october": 375.0,
+            "november": 365.0,
+            "december": 261.0,
+            "january": 104.0,
+            "totalProgram": null,
+            "totalCostCenter": null,
+            "hasSubcontractedWork": false
+          },
+          {
+            "account": "DuPont",
+            "october": 831.0,
+            "november": null,
+            "december": 917.0,
+            "january": -547.0,
+            "totalProgram": null,
+            "totalCostCenter": null,
+            "hasSubcontractedWork": false
+          }
+        ],
+        "totalAtb": 2306.0
+      }
     },
     {
       "accountDirector": "Mike Barry",
@@ -3494,7 +4113,32 @@
           },
           "totalScore": 36.0
         }
-      ]
+      ],
+      "atbData": {
+        "accounts": [
+          {
+            "account": "Bristol Myers Squibb",
+            "october": 72131.0,
+            "november": 69150.0,
+            "december": 103439.0,
+            "january": 61149.0,
+            "totalProgram": null,
+            "totalCostCenter": null,
+            "hasSubcontractedWork": false
+          },
+          {
+            "account": "Novartis",
+            "october": 143787.0,
+            "november": 116391.0,
+            "december": 155332.0,
+            "january": 171263.0,
+            "totalProgram": null,
+            "totalCostCenter": null,
+            "hasSubcontractedWork": false
+          }
+        ],
+        "totalAtb": 892642.0
+      }
     },
     {
       "accountDirector": "Siddarth Shah",
@@ -3633,7 +4277,32 @@
           },
           "totalScore": 34.0
         }
-      ]
+      ],
+      "atbData": {
+        "accounts": [
+          {
+            "account": "Micron Tech",
+            "october": 28418.0,
+            "november": 3651.0,
+            "december": 180116.0,
+            "january": 6402.0,
+            "totalProgram": null,
+            "totalCostCenter": null,
+            "hasSubcontractedWork": false
+          },
+          {
+            "account": "Mp Mask Technology Center",
+            "october": 6098.0,
+            "november": 4325.0,
+            "december": 3106.0,
+            "january": 6532.0,
+            "totalProgram": null,
+            "totalCostCenter": null,
+            "hasSubcontractedWork": false
+          }
+        ],
+        "totalAtb": 238648.0
+      }
     },
     {
       "accountDirector": "Dustin Smith",
@@ -3690,7 +4359,22 @@
           },
           "totalScore": 39.0
         }
-      ]
+      ],
+      "atbData": {
+        "accounts": [
+          {
+            "account": "Amazon",
+            "october": 17965.0,
+            "november": 1961.0,
+            "december": 475.0,
+            "january": 3311.0,
+            "totalProgram": null,
+            "totalCostCenter": null,
+            "hasSubcontractedWork": false
+          }
+        ],
+        "totalAtb": 23712.0
+      }
     },
     {
       "accountDirector": "Tiffany Purifoy",
@@ -3779,7 +4463,62 @@
           },
           "totalScore": 30.0
         }
-      ]
+      ],
+      "atbData": {
+        "accounts": [
+          {
+            "account": "Charles Schwab",
+            "october": 38299.0,
+            "november": 35102.0,
+            "december": 38073.0,
+            "january": 61063.0,
+            "totalProgram": null,
+            "totalCostCenter": null,
+            "hasSubcontractedWork": false
+          },
+          {
+            "account": "Citibank",
+            "october": 273.0,
+            "november": 449.0,
+            "december": 1523.0,
+            "january": 540.0,
+            "totalProgram": null,
+            "totalCostCenter": null,
+            "hasSubcontractedWork": false
+          },
+          {
+            "account": "Fidelity",
+            "october": 29328.0,
+            "november": 32335.0,
+            "december": 27347.0,
+            "january": 35996.0,
+            "totalProgram": null,
+            "totalCostCenter": null,
+            "hasSubcontractedWork": false
+          },
+          {
+            "account": "T Rowe Price",
+            "october": 2834.0,
+            "november": null,
+            "december": 1995.0,
+            "january": null,
+            "totalProgram": null,
+            "totalCostCenter": null,
+            "hasSubcontractedWork": false
+          },
+          {
+            "account": "State Farm Ins",
+            "october": 6100.0,
+            "november": 2190.0,
+            "december": 9884.0,
+            "january": 3800.0,
+            "totalProgram": null,
+            "totalCostCenter": null,
+            "hasSubcontractedWork": false
+          }
+        ],
+        "totalAtb": 327131.0
+      }
     },
     {
       "accountDirector": "Keith Deuber",
@@ -3836,7 +4575,22 @@
           },
           "totalScore": 39.0
         }
-      ]
+      ],
+      "atbData": {
+        "accounts": [
+          {
+            "account": "Amazon",
+            "october": 17965.0,
+            "november": 1961.0,
+            "december": 475.0,
+            "january": 3311.0,
+            "totalProgram": null,
+            "totalCostCenter": null,
+            "hasSubcontractedWork": false
+          }
+        ],
+        "totalAtb": 23712.0
+      }
     },
     {
       "accountDirector": "RJ Ober",
@@ -3895,7 +4649,42 @@
           },
           "totalScore": 30.0
         }
-      ]
+      ],
+      "atbData": {
+        "accounts": [
+          {
+            "account": "IBM",
+            "october": 103830.0,
+            "november": 128860.0,
+            "december": 103106.0,
+            "january": 100661.0,
+            "totalProgram": null,
+            "totalCostCenter": null,
+            "hasSubcontractedWork": false
+          },
+          {
+            "account": "IRG Realty Advisors",
+            "october": 64882.0,
+            "november": 57612.0,
+            "december": 66736.0,
+            "january": 68092.0,
+            "totalProgram": null,
+            "totalCostCenter": null,
+            "hasSubcontractedWork": false
+          },
+          {
+            "account": "Computershare",
+            "october": 5186.0,
+            "november": 5970.0,
+            "december": 4565.0,
+            "january": 2950.0,
+            "totalProgram": null,
+            "totalCostCenter": null,
+            "hasSubcontractedWork": false
+          }
+        ],
+        "totalAtb": 712450.0
+      }
     },
     {
       "accountDirector": "Jeremy Johnson",
@@ -3953,13 +4742,38 @@
           },
           "totalScore": 38.0
         }
-      ]
+      ],
+      "atbData": {
+        "accounts": [
+          {
+            "account": "Intel",
+            "october": 861054.0,
+            "november": 929633.0,
+            "december": 238315.0,
+            "january": 739656.0,
+            "totalProgram": null,
+            "totalCostCenter": null,
+            "hasSubcontractedWork": false
+          },
+          {
+            "account": "Altera",
+            "october": 20477.0,
+            "november": 3826.0,
+            "december": 3139.0,
+            "january": 8863.0,
+            "totalProgram": null,
+            "totalCostCenter": null,
+            "hasSubcontractedWork": false
+          }
+        ],
+        "totalAtb": 2804963.0
+      }
     },
     {
       "accountDirector": "Greyson Wolff",
-      "account": "Honda",
+      "account": "Honda Motor Company",
       "accounts": [
-        "Honda"
+        "Honda Motor Company"
       ],
       "numAccounts": 1,
       "revenue": 0,
@@ -4010,7 +4824,22 @@
           },
           "totalScore": 32.0
         }
-      ]
+      ],
+      "atbData": {
+        "accounts": [
+          {
+            "account": "Honda Motor Company",
+            "october": 163837.0,
+            "november": 143805.0,
+            "december": 143482.0,
+            "january": 165371.0,
+            "totalProgram": null,
+            "totalCostCenter": null,
+            "hasSubcontractedWork": false
+          }
+        ],
+        "totalAtb": 616495.0
+      }
     }
   ],
   "rubrics": {
