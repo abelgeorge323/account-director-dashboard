@@ -27,8 +27,13 @@ const AppState = {
         by: 'totalScore',
         order: 'desc'
     },
+    atbSort: {
+        by: 'totalAtb',
+        order: 'desc'
+    },
     expandedRows: new Set(),
     expandedPractices: new Set(),
+    expandedATBRows: new Set(),
     selectedAD: null
 };
 
@@ -209,8 +214,9 @@ function showView(viewName) {
     });
     
     // Hide all views
-    ['rankings-view', 'reviews-view', 'best-practices-view', 'rubric-view'].forEach(id => {
-        document.getElementById(id).classList.add('hidden');
+    ['rankings-view', 'reviews-view', 'best-practices-view', 'rubric-view', 'atb-view'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.classList.add('hidden');
     });
     
     // Show selected view
@@ -233,6 +239,10 @@ function showView(viewName) {
         rubric: {
             title: 'Scoring Rubric & Methodology',
             subtitle: 'Understand how Account Director performance is evaluated'
+        },
+        atb: {
+            title: 'Above the Base (ATB) Leaderboard',
+            subtitle: 'ATB by Account Director • Oct 2025 – Jan 2026'
         }
     };
     
@@ -244,6 +254,7 @@ function showView(viewName) {
     else if (viewName === 'reviews') renderReviews();
     else if (viewName === 'best-practices') renderBestPractices();
     else if (viewName === 'rubric') renderRubric();
+    else if (viewName === 'atb') renderATB();
 }
 
 // ==================== FILTER MANAGEMENT ====================
@@ -296,6 +307,20 @@ function populateFilters() {
             roleFilterSelect.appendChild(option);
         });
     }
+
+    // Populate ATB view filters
+    ['atb-vertical-filter', 'atb-tier-filter', 'atb-role-filter'].forEach((id, i) => {
+        const sel = document.getElementById(id);
+        if (!sel) return;
+        const source = i === 0 ? verticals : i === 1 ? tiers : roles;
+        sel.innerHTML = '<option value="all">' + (i === 0 ? 'All Verticals' : i === 1 ? 'All Tiers' : 'All Roles') + '</option>';
+        Array.from(source).sort().forEach(v => {
+            const opt = document.createElement('option');
+            opt.value = v;
+            opt.textContent = v;
+            sel.appendChild(opt);
+        });
+    });
     
     // Populate role filter in sidebar
     const filterRole = document.getElementById('filter-role');
@@ -1063,6 +1088,222 @@ function renderAllPractices(practices) {
     `;
 }
 
+// ==================== ATB VIEW ====================
+window.toggleATBRow = function(adName) {
+    if (AppState.expandedATBRows.has(adName)) {
+        AppState.expandedATBRows.delete(adName);
+    } else {
+        AppState.expandedATBRows.add(adName);
+    }
+    const row = document.querySelector(`#atb-leaderboard .leaderboard-row[data-ad="${adName}"]`);
+    if (row) {
+        row.classList.toggle('expanded', AppState.expandedATBRows.has(adName));
+        const indicator = row.querySelector('.expand-indicator');
+        if (indicator) indicator.textContent = AppState.expandedATBRows.has(adName) ? '▼' : '▶';
+        let section = row.nextElementSibling;
+        if (section && section.classList.contains('atb-expanded-section')) {
+            section.style.display = AppState.expandedATBRows.has(adName) ? 'block' : 'none';
+        } else if (AppState.expandedATBRows.has(adName)) {
+            const ad = AppState.data.accountDirectors.find(a => a.accountDirector === adName);
+            if (ad) {
+                const sectionEl = document.createElement('div');
+                sectionEl.className = 'atb-expanded-section expanded-section';
+                sectionEl.style.display = 'block';
+                sectionEl.innerHTML = renderATBExpandedSection(ad);
+                row.insertAdjacentElement('afterend', sectionEl);
+                const atb = ad.atbData || { accounts: [] };
+                if (atb.accounts && atb.accounts.length > 0) {
+                    const oct = atb.accounts.reduce((s, a) => s + (a.october || 0), 0);
+                    const nov = atb.accounts.reduce((s, a) => s + (a.november || 0), 0);
+                    const dec = atb.accounts.reduce((s, a) => s + (a.december || 0), 0);
+                    const jan = atb.accounts.reduce((s, a) => s + (a.january || 0), 0);
+                    setTimeout(() => initATBChart('atb-chart-' + ad.accountDirector.replace(/\s/g, '-'), oct, nov, dec, jan), 50);
+                }
+            }
+        }
+    }
+};
+
+function formatATBValue(val) {
+    if (val === null || val === undefined) return '—';
+    const n = Number(val);
+    if (isNaN(n)) return '—';
+    if (n >= 0) return '$' + Math.round(n).toLocaleString();
+    return '($' + Math.abs(Math.round(n)).toLocaleString() + ')';
+}
+
+function renderATBExpandedSection(ad) {
+    const atb = ad.atbData || { accounts: [], totalAtb: 0 };
+    const accounts = atb.accounts || [];
+    if (accounts.length === 0) {
+        return '<div class="atb-expanded-content"><p style="color: var(--text-secondary);">No ATB data for this Account Director.</p></div>';
+    }
+    const oct = accounts.reduce((s, a) => s + (a.october || 0), 0);
+    const nov = accounts.reduce((s, a) => s + (a.november || 0), 0);
+    const dec = accounts.reduce((s, a) => s + (a.december || 0), 0);
+    const jan = accounts.reduce((s, a) => s + (a.january || 0), 0);
+    const chartId = 'atb-chart-' + ad.accountDirector.replace(/\s/g, '-');
+    const tableRows = accounts.map(a => `
+        <tr>
+            <td>${a.account}${a.hasSubcontractedWork ? ' *' : ''}</td>
+            <td>${a.october !== null && a.october !== undefined ? formatATBValue(a.october) : '—'}</td>
+            <td>${a.november !== null && a.november !== undefined ? formatATBValue(a.november) : '—'}</td>
+            <td>${a.december !== null && a.december !== undefined ? formatATBValue(a.december) : '—'}</td>
+            <td>${a.january !== null && a.january !== undefined ? formatATBValue(a.january) : '—'}</td>
+        </tr>
+    `).join('');
+    const subNote = accounts.some(a => a.hasSubcontractedWork) ? '<p style="font-size: 0.85em; color: var(--text-secondary); margin-top: 8px;">* Some TB contains subcontracted work (P&G, Merck)</p>' : '';
+    return `
+        <div class="atb-expanded-content">
+            <h4 style="margin-bottom: 12px;">ATB by Month (Aggregate)</h4>
+            <div style="height: 200px; margin-bottom: 20px;">
+                <canvas id="${chartId}"></canvas>
+            </div>
+            <h4 style="margin-bottom: 12px;">Per-Account Breakdown</h4>
+            <table class="atb-account-table" style="width: 100%; border-collapse: collapse;">
+                <thead>
+                    <tr style="border-bottom: 2px solid var(--border-color);">
+                        <th style="text-align: left; padding: 8px;">Account</th>
+                        <th style="text-align: right; padding: 8px;">October</th>
+                        <th style="text-align: right; padding: 8px;">November</th>
+                        <th style="text-align: right; padding: 8px;">December</th>
+                        <th style="text-align: right; padding: 8px;">January</th>
+                    </tr>
+                </thead>
+                <tbody>${tableRows}</tbody>
+            </table>
+            ${subNote}
+        </div>
+    `;
+}
+
+function initATBChart(canvasId, oct, nov, dec, jan) {
+    const ctx = document.getElementById(canvasId);
+    if (!ctx || typeof Chart === 'undefined') return;
+    new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['October', 'November', 'December', 'January'],
+            datasets: [{
+                label: 'ATB ($)',
+                data: [oct, nov, dec, jan],
+                backgroundColor: ['rgba(30, 64, 175, 0.7)', 'rgba(30, 64, 175, 0.7)', 'rgba(30, 64, 175, 0.7)', 'rgba(30, 64, 175, 0.7)'],
+                borderColor: 'rgb(30, 64, 175)',
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: { legend: { display: false } },
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    ticks: { callback: v => '$' + (v >= 1000 ? (v/1000) + 'K' : v) }
+                }
+            }
+        }
+    });
+}
+
+function getFilteredATBData() {
+    let filtered = AppState.data.accountDirectors.filter(ad => {
+        if (AppState.filters.vertical !== 'all' && ad.vertical !== AppState.filters.vertical) return false;
+        if (AppState.filters.tier !== 'all') {
+            const adTier = ad.tier || 'Unassigned';
+            if (adTier !== AppState.filters.tier) return false;
+        }
+        if (AppState.filters.role !== 'all' && (ad.role || 'Account Director') !== AppState.filters.role) return false;
+        return true;
+    });
+    const sortBy = AppState.atbSort.by;
+    const order = AppState.atbSort.order;
+    filtered.sort((a, b) => {
+        let aVal, bVal;
+        if (sortBy === 'totalAtb') {
+            aVal = (a.atbData && a.atbData.totalAtb) || 0;
+            bVal = (b.atbData && b.atbData.totalAtb) || 0;
+        } else {
+            aVal = a.avgTotalScore || 0;
+            bVal = b.avgTotalScore || 0;
+        }
+        return order === 'desc' ? bVal - aVal : aVal - bVal;
+    });
+    return filtered;
+}
+
+function renderATB() {
+    const filtered = getFilteredATBData();
+    const metricsEl = document.getElementById('atb-metrics-grid');
+    if (metricsEl) {
+        const totalCount = filtered.length;
+        const atbValues = filtered.map(ad => (ad.atbData && ad.atbData.totalAtb) || 0).filter(v => v > 0);
+        const avgAtb = atbValues.length > 0 ? atbValues.reduce((a, b) => a + b, 0) / atbValues.length : 0;
+        const topAtb = atbValues.length > 0 ? Math.max(...atbValues) : 0;
+        const lowAtb = atbValues.length > 0 ? Math.min(...atbValues.filter(v => v > 0)) : 0;
+        metricsEl.innerHTML = `
+            <div class="metric-card fade-in"><div class="metric-label">Total</div><div class="metric-value">${totalCount}</div></div>
+            <div class="metric-card fade-in"><div class="metric-label">Avg ATB</div><div class="metric-value">${formatATBValue(avgAtb)}</div></div>
+            <div class="metric-card fade-in"><div class="metric-label">Top</div><div class="metric-value">${formatATBValue(topAtb)}</div></div>
+            <div class="metric-card fade-in"><div class="metric-label">Low</div><div class="metric-value">${formatATBValue(lowAtb)}</div></div>
+        `;
+    }
+    const container = document.getElementById('atb-leaderboard');
+    if (!container) return;
+    if (filtered.length === 0) {
+        container.innerHTML = '<p style="text-align: center; color: var(--text-secondary); padding: 40px;">No Account Directors match the current filters.</p>';
+        return;
+    }
+    const getTierBadge = (tier) => {
+        if (!tier) return '';
+        let bg = tier === 'Tier 4' ? '#f97316' : tier === 'Tier 5' ? '#6366f1' : tier === 'Tier 6' ? '#10b981' : '#94a3b8';
+        return `<span style="margin-left: 8px; padding: 3px 10px; background: ${bg}; color: white; border-radius: 12px; font-size: 0.7rem; font-weight: 600;">${tier}</span>`;
+    };
+    container.innerHTML = filtered.map((ad, index) => {
+        const rank = index + 1;
+        const rankClass = rank <= 3 ? `rank-${rank}` : 'rank-other';
+        const totalAtb = (ad.atbData && ad.atbData.totalAtb) || 0;
+        const isExpanded = AppState.expandedATBRows.has(ad.accountDirector);
+        return `
+            <div class="leaderboard-row ${isExpanded ? 'expanded' : ''} fade-in" data-ad="${ad.accountDirector}"
+                 onclick="window.toggleATBRow('${ad.accountDirector.replace(/'/g, "\\'")}');" style="cursor: pointer;">
+                <div class="rank-badge ${rankClass}">${rank}</div>
+                <div class="ad-info">
+                    <div class="ad-name">${ad.accountDirector}</div>
+                    <div class="ad-account">${ad.account}</div>
+                </div>
+                <div class="ad-vertical">📂 ${ad.vertical || 'N/A'} ${getTierBadge(ad.tier)}</div>
+                <div class="ad-score-container">
+                    <div class="ad-score">${formatATBValue(totalAtb)}</div>
+                    <div class="ad-score-label">ATB (Oct-Jan)</div>
+                </div>
+                <span class="expand-indicator">${isExpanded ? '▼' : '▶'}</span>
+            </div>
+        `;
+    }).join('');
+    AppState.expandedATBRows.forEach(adName => {
+        const ad = filtered.find(a => a.accountDirector === adName);
+        if (ad) {
+            const row = container.querySelector(`.leaderboard-row[data-ad="${adName}"]`);
+            if (row && !row.nextElementSibling?.classList?.contains('atb-expanded-section')) {
+                const sectionEl = document.createElement('div');
+                sectionEl.className = 'atb-expanded-section expanded-section';
+                sectionEl.style.display = 'block';
+                sectionEl.innerHTML = renderATBExpandedSection(ad);
+                row.insertAdjacentElement('afterend', sectionEl);
+                const atb = ad.atbData || { accounts: [] };
+                if (atb.accounts && atb.accounts.length > 0) {
+                    const oct = atb.accounts.reduce((s, a) => s + (a.october || 0), 0);
+                    const nov = atb.accounts.reduce((s, a) => s + (a.november || 0), 0);
+                    const dec = atb.accounts.reduce((s, a) => s + (a.december || 0), 0);
+                    const jan = atb.accounts.reduce((s, a) => s + (a.january || 0), 0);
+                    setTimeout(() => initATBChart('atb-chart-' + ad.accountDirector.replace(/\s/g, '-'), oct, nov, dec, jan), 50);
+                }
+            }
+        }
+    });
+}
+
 // ==================== EVENT LISTENERS ====================
 function setupEventListeners() {
     // Mobile menu
@@ -1158,7 +1399,14 @@ function setupEventListeners() {
             if (tierFilter) tierFilter.value = 'all';
             if (verticalFilter) verticalFilter.value = 'all';
             if (roleFilter) roleFilter.value = 'all';
+            const atbV = document.getElementById('atb-vertical-filter');
+            const atbT = document.getElementById('atb-tier-filter');
+            const atbR = document.getElementById('atb-role-filter');
+            if (atbV) atbV.value = 'all';
+            if (atbT) atbT.value = 'all';
+            if (atbR) atbR.value = 'all';
             if (AppState.currentView === 'rankings') renderRankings();
+            if (AppState.currentView === 'atb') renderATB();
         });
     }
     
@@ -1174,6 +1422,18 @@ function setupEventListeners() {
         AppState.expandedRows.clear(); // Clear expanded rows when sorting
         renderRankings();
     });
+
+    // ATB view filters and sort
+    const atbVertical = document.getElementById('atb-vertical-filter');
+    const atbTier = document.getElementById('atb-tier-filter');
+    const atbRole = document.getElementById('atb-role-filter');
+    const atbSortBy = document.getElementById('atb-sort-by');
+    const atbSortOrder = document.getElementById('atb-sort-order');
+    if (atbVertical) atbVertical.addEventListener('change', (e) => { AppState.filters.vertical = e.target.value; if (AppState.currentView === 'atb') renderATB(); });
+    if (atbTier) atbTier.addEventListener('change', (e) => { AppState.filters.tier = e.target.value; if (AppState.currentView === 'atb') renderATB(); });
+    if (atbRole) atbRole.addEventListener('change', (e) => { AppState.filters.role = e.target.value; if (AppState.currentView === 'atb') renderATB(); });
+    if (atbSortBy) atbSortBy.addEventListener('change', (e) => { AppState.atbSort.by = e.target.value; AppState.expandedATBRows.clear(); if (AppState.currentView === 'atb') renderATB(); });
+    if (atbSortOrder) atbSortOrder.addEventListener('change', (e) => { AppState.atbSort.order = e.target.value; AppState.expandedATBRows.clear(); if (AppState.currentView === 'atb') renderATB(); });
     
     // AD selector in reviews view
     document.getElementById('ad-select').addEventListener('change', (e) => {

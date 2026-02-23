@@ -384,7 +384,7 @@
             border-radius: 12px;
             padding: 18px 22px;
             display: grid;
-            grid-template-columns: 50px 1fr 180px 150px 40px;
+            grid-template-columns: 50px 1fr minmax(180px, 200px) minmax(200px, 260px) 40px;
             align-items: center;
             gap: 18px;
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -644,6 +644,17 @@
                 max-height: 1000px;
                 transform: translateY(0);
             }
+        }
+
+        .atb-expanded-content h4 { margin-bottom: 8px; font-size: 1em; }
+        .atb-account-table td, .atb-account-table th { padding: 8px 12px; border-bottom: 1px solid var(--border-color); }
+        .atb-account-table tbody tr:hover { background: rgba(30, 64, 175, 0.05); }
+        /* ATB leaderboard: wider score column to prevent large numbers from bleeding */
+        #atb-leaderboard .leaderboard-row {
+            grid-template-columns: 50px 1fr minmax(180px, 220px) minmax(220px, 300px) 40px;
+        }
+        #atb-leaderboard .ad-score {
+            font-size: 1.8em;
         }
         
         .section-scores-grid {
@@ -1970,6 +1981,10 @@
                     <span class="view-icon">📚</span>
                     <span>Scoring Rubric</span>
                 </button>
+                <button class="view-btn" data-view="atb">
+                    <span class="view-icon">📊</span>
+                    <span>Above the Base (ATB)</span>
+                </button>
             </div>
             
             <div class="filters">
@@ -2127,6 +2142,40 @@
                         <!-- Rubric content will be inserted here -->
                     </div>
                 </div>
+
+                <!-- ATB View -->
+                <div id="atb-view" class="hidden">
+                    <div class="rankings-header">
+                        <div>
+                            <div class="rankings-title">
+                                <span>📊</span>
+                                <span>Above the Base (ATB) Leaderboard</span>
+                            </div>
+                            <p class="rankings-subtitle">Click to expand • Sorted by total ATB (Oct-Jan)</p>
+                        </div>
+                        <div class="sort-controls">
+                            <select id="atb-vertical-filter" class="sort-select">
+                                <option value="all">All Verticals</option>
+                            </select>
+                            <select id="atb-tier-filter" class="sort-select">
+                                <option value="all">All Tiers</option>
+                            </select>
+                            <select id="atb-role-filter" class="sort-select">
+                                <option value="all">All Roles</option>
+                            </select>
+                            <select id="atb-sort-by" class="sort-select">
+                                <option value="totalAtb">Total ATB</option>
+                                <option value="totalScore">Performance Score</option>
+                            </select>
+                            <select id="atb-sort-order" class="sort-select">
+                                <option value="desc">Highest First</option>
+                                <option value="asc">Lowest First</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="metrics-grid" id="atb-metrics-grid"></div>
+                    <div class="leaderboard" id="atb-leaderboard"></div>
+                </div>
             </div>
         </main>
     </div>
@@ -2167,6 +2216,7 @@
         });
     </script>
     
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
     <script src="app.js"></script>
 </body>
 </html>
