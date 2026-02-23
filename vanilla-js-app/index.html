@@ -649,6 +649,21 @@
         .atb-expanded-content h4 { margin-bottom: 8px; font-size: 1em; }
         .atb-account-table td, .atb-account-table th { padding: 8px 12px; border-bottom: 1px solid var(--border-color); }
         .atb-account-table tbody tr:hover { background: rgba(30, 64, 175, 0.05); }
+        /* Horizontal scroll for table on narrow screens */
+        .atb-table-scroll {
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            margin-bottom: 8px;
+            width: 100%;
+        }
+
+        .atb-subcontracted-note {
+            font-size: 0.85em;
+            color: var(--text-secondary);
+            margin-top: 8px;
+            word-wrap: break-word;
+            max-width: 100%;
+        }
         /* ATB leaderboard: wider score column to prevent large numbers from bleeding */
         #atb-leaderboard .leaderboard-row {
             grid-template-columns: 50px 1fr minmax(180px, 220px) minmax(220px, 300px) 40px;
@@ -1650,6 +1665,33 @@
                 font-size: 1.8em;
             }
 
+            /* ATB leaderboard: compact mobile grid */
+            #atb-leaderboard .leaderboard-row {
+                grid-template-columns: 40px 1fr minmax(90px, 120px) 36px;
+                gap: 8px;
+            }
+
+            #atb-leaderboard .ad-vertical {
+                display: none;
+            }
+
+            #atb-leaderboard .ad-score {
+                font-size: 1.2em;
+            }
+
+            #atb-leaderboard .ad-score-label {
+                font-size: 0.65em;
+            }
+
+            /* ATB expanded: table scroll + chart fit */
+            .atb-expanded-content {
+                overflow-x: hidden;
+            }
+
+            .atb-expanded-content canvas {
+                max-width: 100%;
+            }
+
             .ad-score-max {
                 font-size: 0.65em;
             }
@@ -1781,6 +1823,14 @@
 
             .ad-name {
                 font-size: 0.9em;
+            }
+
+            #atb-leaderboard .leaderboard-row {
+                grid-template-columns: 36px 1fr minmax(80px, 100px) 32px;
+            }
+
+            #atb-leaderboard .ad-score {
+                font-size: 1.1em;
             }
 
             .ad-account {

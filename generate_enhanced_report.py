@@ -1237,25 +1237,10 @@ def generate_enhanced_html(rankings, df, financial_data, tier_data, scorecard_da
         "Finance": []
     }
     
-    # #region agent log
-    vertical_sample = []
-    # #endregion
-    
     for ad in overall_rankings:
         vertical = ad.get('vertical', 'Unassigned')
-        
-        # #region agent log
-        if len(vertical_sample) < 10:
-            vertical_sample.append({"name": ad.get('name'), "vertical": vertical, "in_groups": vertical in vertical_groups})
-        # #endregion
-        
         if vertical in vertical_groups:
             vertical_groups[vertical].append(ad)
-    
-    # #region agent log
-    with open(r'c:\Users\abelg\OneDrive\Desktop\Account-Directors\.cursor\debug.log', 'a') as f:
-        f.write(json.dumps({"location":"generate_enhanced_report.py:1206","message":"After populating vertical_groups","data":{"vertical_sample":vertical_sample,"vertical_groups_sizes_after":{k:len(v) for k,v in vertical_groups.items()}},"timestamp":__import__('time').time()*1000,"sessionId":"debug-session","hypothesisId":"F"})+'\n')
-    # #endregion
     
     # Sort each vertical by performance score
     for vertical in vertical_groups:

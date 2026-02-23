@@ -1152,7 +1152,7 @@ function renderATBExpandedSection(ad) {
             <td>${a.january !== null && a.january !== undefined ? formatATBValue(a.january) : '—'}</td>
         </tr>
     `).join('');
-    const subNote = accounts.some(a => a.hasSubcontractedWork) ? '<p style="font-size: 0.85em; color: var(--text-secondary); margin-top: 8px;">* Some TB contains subcontracted work (P&G, Merck)</p>' : '';
+    const subNote = accounts.some(a => a.hasSubcontractedWork) ? '<p class="atb-subcontracted-note">* Some TB contains subcontracted work (P&G, Merck)</p>' : '';
     return `
         <div class="atb-expanded-content">
             <h4 style="margin-bottom: 12px;">ATB by Month (Aggregate)</h4>
@@ -1160,7 +1160,8 @@ function renderATBExpandedSection(ad) {
                 <canvas id="${chartId}"></canvas>
             </div>
             <h4 style="margin-bottom: 12px;">Per-Account Breakdown</h4>
-            <table class="atb-account-table" style="width: 100%; border-collapse: collapse;">
+            <div class="atb-table-scroll">
+            <table class="atb-account-table" style="width: 100%; border-collapse: collapse; min-width: 400px;">
                 <thead>
                     <tr style="border-bottom: 2px solid var(--border-color);">
                         <th style="text-align: left; padding: 8px;">Account</th>
@@ -1172,6 +1173,7 @@ function renderATBExpandedSection(ad) {
                 </thead>
                 <tbody>${tableRows}</tbody>
             </table>
+            </div>
             ${subNote}
         </div>
     `;
