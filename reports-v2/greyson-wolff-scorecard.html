@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025 Year-End Scorecard - Greyson Wolff</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            background: #ffffff;
+            padding: 2rem;
+            max-width: 8.5in;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: #1a365d;
+            margin-bottom: 0.5rem;
+        }
+
+        h2 {
+            font-size: 1.35rem;
+            font-weight: 600;
+            color: #2c5282;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 0.5rem;
+        }
+
+        h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #2d3748;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        h4 {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #4a5568;
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .header-section {
+            background: linear-gradient(135deg, #1a365d 0%, #2c5282 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+        }
+
+        .header-section h1 {
+            color: white;
+            margin-bottom: 1.5rem;
+            font-size: 1.85rem;
+        }
+
+        .header-metadata {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.8rem;
+            margin-top: 1.2rem;
+        }
+
+        .metadata-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.6rem;
+            border-radius: 4px;
+        }
+
+        .metadata-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.8;
+            margin-bottom: 0.25rem;
+        }
+
+        .metadata-value {
+            font-size: 1.1rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+        }
+
+        .score-summary-first-page {
+            background: #f7fafc;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+        }
+
+        .score-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            background: white;
+        }
+
+        .score-table th {
+            background: #2c5282;
+            color: white;
+            padding: 0.75rem;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .score-table td {
+            padding: 0.75rem;
+            border: 1px solid #e2e8f0;
+        }
+
+        .score-table tr:nth-child(even) {
+            background: #f7fafc;
+        }
+
+
+        /* Follow-Up Questions Section */
+        .follow-up-section {
+            background: #fff8e1;
+            border-left: 4px solid #ff9800;
+            padding: 24px;
+            margin: 32px 0;
+            border-radius: 8px;
+            page-break-inside: avoid;
+        }
+
+        .follow-up-intro {
+            color: #e65100;
+            margin-bottom: 1rem;
+        }
+
+        .follow-up-item {
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 16px 0;
+        }
+
+        .follow-up-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .follow-up-category {
+            background: #2196f3;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .follow-up-source {
+            color: #666;
+            font-size: 14px;
+            font-style: italic;
+        }
+
+        .follow-up-quote {
+            background: #f5f5f5;
+            border-left: 3px solid #ff9800;
+            padding: 12px 16px;
+            margin: 12px 0;
+            font-style: italic;
+            color: #333;
+        }
+
+        .follow-up-action {
+            margin-top: 12px;
+            color: #333;
+        }
+
+        /* Scored Section - One section per page */
+        .scored-section {
+            page-break-after: always;
+            page-break-inside: avoid;
+            margin: 1.5rem 0;
+            padding: 1.5rem;
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            min-height: 400px;
+        }
+
+        .score-display {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin: 1rem 0;
+            padding: 1rem;
+            background: #f7fafc;
+            border-radius: 4px;
+        }
+
+        .score-label {
+            font-weight: 600;
+            color: #4a5568;
+        }
+
+        .score-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #2c5282;
+        }
+
+        .combined-feedback {
+            background: #f8f9fa;
+            border-left: 4px solid #2c5282;
+            padding: 1.25rem;
+            margin: 1rem 0;
+            border-radius: 4px;
+        }
+
+        .combined-feedback h4 {
+            color: #2c5282;
+            margin-bottom: 0.75rem;
+            font-size: 1rem;
+        }
+
+        .feedback-synthesis {
+            margin-top: 0.75rem;
+        }
+
+        .feedback-point {
+            padding: 0.75rem;
+            margin: 0.5rem 0;
+            background: white;
+            border-radius: 4px;
+            border-left: 3px solid #2c5282;
+            line-height: 1.6;
+        }
+
+        .feedback-point strong {
+            color: #2c5282;
+            font-size: 0.9rem;
+        }
+
+        .synthesis-list {
+            margin: 0.75rem 0 1rem 1.5rem;
+            padding-left: 1rem;
+        }
+
+        .synthesis-list li {
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+            color: #2d3748;
+        }
+
+        .feedback-synthesis p {
+            margin: 0.75rem 0;
+            line-height: 1.6;
+        }
+
+        .feedback-synthesis strong {
+            color: #2c5282;
+            font-weight: 600;
+        }
+
+        @media print {
+            * {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            
+            body {
+                padding: 0.25in;
+                font-size: 9pt;
+                line-height: 1.3;
+            }
+            
+            h1 {
+                font-size: 16pt;
+                margin-bottom: 0.3rem;
+            }
+            
+            h2 {
+                font-size: 12pt;
+                margin-top: 0.5rem;
+                margin-bottom: 0.4rem;
+                page-break-after: avoid;
+            }
+            
+            h3 {
+                font-size: 10pt;
+                margin-top: 0.4rem;
+                margin-bottom: 0.3rem;
+            }
+            
+            .header-section {
+                padding: 1rem;
+                margin-bottom: 1rem;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            
+            .header-metadata {
+                gap: 0.5rem;
+            }
+            
+            .metadata-item {
+                padding: 0.4rem;
+            }
+            
+            .metadata-label {
+                font-size: 7pt;
+            }
+            
+            .metadata-value {
+                font-size: 9pt;
+            }
+            
+            .score-summary-first-page {
+                page-break-after: always;
+                padding: 0.75rem;
+                margin-bottom: 1rem;
+            }
+            
+            .score-table {
+                margin: 0.75rem 0;
+                font-size: 9pt;
+            }
+            
+            .score-table th,
+            .score-table td {
+                padding: 0.35rem;
+            }
+            
+            .scored-section {
+                page-break-after: always;
+                page-break-inside: avoid;
+                margin: 0.5rem 0;
+                padding: 0.75rem;
+                border: 1px solid #e2e8f0;
+                min-height: unset;
+            }
+            
+            .score-display {
+                margin: 0.5rem 0;
+                padding: 0.5rem;
+            }
+            
+            .score-label {
+                font-size: 9pt;
+            }
+            
+            .score-value {
+                font-size: 14pt;
+            }
+            
+            .combined-feedback {
+                padding: 0.75rem;
+                margin: 0.5rem 0;
+            }
+            
+            .combined-feedback h4 {
+                font-size: 9pt;
+                margin-bottom: 0.4rem;
+            }
+            
+            .feedback-synthesis p {
+                margin: 0.4rem 0;
+                line-height: 1.4;
+                font-size: 9pt;
+            }
+            
+            .feedback-synthesis strong {
+                font-size: 9pt;
+            }
+            
+            .synthesis-list {
+                margin: 0.4rem 0 0.5rem 1rem;
+                padding-left: 0.5rem;
+            }
+            
+            .synthesis-list li {
+                margin-bottom: 0.25rem;
+                line-height: 1.4;
+                font-size: 8.5pt;
+            }
+            
+            .follow-up-section {
+                page-break-before: always;
+                page-break-inside: avoid;
+                padding: 1rem;
+                margin: 1rem 0;
+            }
+            
+            .follow-up-item {
+                padding: 0.75rem;
+                margin: 0.75rem 0;
+            }
+            
+            .follow-up-quote {
+                padding: 0.5rem;
+                margin: 0.5rem 0;
+                font-size: 8.5pt;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header-section">
+        <h1>2025 Year-End Account Review & 2026 QBR Readiness Scorecard</h1>
+        <div class="header-metadata">
+            <div class="metadata-item">
+                <div class="metadata-label">Account Director</div>
+                <div class="metadata-value">Greyson Wolff</div>
+            </div>
+            <div class="metadata-item">
+                <div class="metadata-label">Account</div>
+                <div class="metadata-value">Honda </div>
+            </div>
+            <div class="metadata-item">
+                <div class="metadata-label">Tier</div>
+                <div class="metadata-value"><span style="background: #6366f1; color: white; padding: 0.3rem 0.8rem; border-radius: 12px; font-weight: 600; font-size: 0.9rem;">Tier 5</span></div>
+            </div>
+            <div class="metadata-item">
+                <div class="metadata-label">Review Date</div>
+                <div class="metadata-value">January 2026</div>
+            </div>
+            <div class="metadata-item">
+                <div class="metadata-label">Total Reviews</div>
+                <div class="metadata-value">1</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="score-summary-first-page">
+        <h2>Executive Summary</h2>
+
+        <table class="score-table">
+            <thead>
+                <tr>
+                    <th>Evaluation Category</th>
+                    <th style="text-align: center;">Average Score</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+        <tr>
+            <td>Key Projects & Initiatives</td>
+            <td style="text-align: center; font-weight: 600;">4.0</td>
+        </tr>
+        
+        <tr>
+            <td>Value Adds & Cost Avoidance</td>
+            <td style="text-align: center; font-weight: 600;">4.0</td>
+        </tr>
+        
+        <tr>
+            <td>Cost Savings Delivered</td>
+            <td style="text-align: center; font-weight: 600;">4.0</td>
+        </tr>
+        
+        <tr>
+            <td>Innovation & Continuous Improvement</td>
+            <td style="text-align: center; font-weight: 600;">4.0</td>
+        </tr>
+        
+        <tr>
+            <td>Issues, Challenges & Accountability</td>
+            <td style="text-align: center; font-weight: 600;">4.0</td>
+        </tr>
+        
+        <tr>
+            <td>2026 Forward Strategy & Vision</td>
+            <td style="text-align: center; font-weight: 600;">4.0</td>
+        </tr>
+        
+        <tr>
+            <td>Personal Goals & Role Maturity</td>
+            <td style="text-align: center; font-weight: 600;">4.0</td>
+        </tr>
+        
+        <tr>
+            <td>Executive Presence & Presentation Skills</td>
+            <td style="text-align: center; font-weight: 600;">4.0</td>
+        </tr>
+        
+        <tr style="background: #e8f5e9; border-top: 3px solid #2c5282;">
+            <td style="font-weight: 700; text-transform: uppercase;">Overall Score</td>
+            <td style="text-align: center; font-weight: 700; font-size: 1.2rem; color: #2c5282;">32.0/40</td>
+        </tr>
+        
+            </tbody>
+        </table>
+    </div>
+
+    
+        <div class="scored-section">
+            <h2>Key Projects & Initiatives</h2>
+            <div class="score-display">
+                <span class="score-label">Average Score:</span>
+                <span class="score-value">4.0/5</span>
+            </div>
+            
+            <p><em>No specific feedback provided.</em></p>
+        </div>
+        
+        <div class="scored-section">
+            <h2>Value Adds & Cost Avoidance</h2>
+            <div class="score-display">
+                <span class="score-label">Average Score:</span>
+                <span class="score-value">4.0/5</span>
+            </div>
+            
+            <p><em>No specific feedback provided.</em></p>
+        </div>
+        
+        <div class="scored-section">
+            <h2>Cost Savings Delivered</h2>
+            <div class="score-display">
+                <span class="score-label">Average Score:</span>
+                <span class="score-value">4.0/5</span>
+            </div>
+            
+            <p><em>No specific feedback provided.</em></p>
+        </div>
+        
+        <div class="scored-section">
+            <h2>Innovation & Continuous Improvement</h2>
+            <div class="score-display">
+                <span class="score-label">Average Score:</span>
+                <span class="score-value">4.0/5</span>
+            </div>
+            
+            
+    <div class="combined-feedback">
+        <h4>Combined Feedback from Leadership Reviews</h4>
+        <div class="feedback-synthesis">
+    
+            <p><strong>Overall Assessment:</strong> Introduced improvements or adaptations that positively impacted the account...</p>
+        
+            <p><strong>Areas for Development:</strong></p>
+            <ul class="synthesis-list">
+        <li>Introduced improvements or adaptations that positively impacted the account</li></ul>
+        </div>
+    </div>
+    
+        </div>
+        
+        <div class="scored-section">
+            <h2>Issues, Challenges & Accountability</h2>
+            <div class="score-display">
+                <span class="score-label">Average Score:</span>
+                <span class="score-value">4.0/5</span>
+            </div>
+            
+            
+    <div class="combined-feedback">
+        <h4>Combined Feedback from Leadership Reviews</h4>
+        <div class="feedback-synthesis">
+    
+            <p><strong>Overall Assessment:</strong> Identifies challenges and discusses improvement actions with reasonable clarity...</p>
+        
+            <p><strong>Areas for Development:</strong></p>
+            <ul class="synthesis-list">
+        <li>Identifies challenges and discusses improvement actions with reasonable clarity</li></ul>
+        </div>
+    </div>
+    
+        </div>
+        
+        <div class="scored-section">
+            <h2>2026 Forward Strategy & Vision</h2>
+            <div class="score-display">
+                <span class="score-label">Average Score:</span>
+                <span class="score-value">4.0/5</span>
+            </div>
+            
+            
+    <div class="combined-feedback">
+        <h4>Combined Feedback from Leadership Reviews</h4>
+        <div class="feedback-synthesis">
+    
+            <p><strong>Overall Assessment:</strong> Presents a strong forward-looking plan with reasonable clarity and timelines...</p>
+        
+            <p><strong>Strengths:</strong></p>
+            <ul class="synthesis-list">
+        <li>Presents a strong forward-looking plan with reasonable clarity and timelines</li></ul>
+        </div>
+    </div>
+    
+        </div>
+        
+        <div class="scored-section">
+            <h2>Personal Goals & Role Maturity</h2>
+            <div class="score-display">
+                <span class="score-label">Average Score:</span>
+                <span class="score-value">4.0/5</span>
+            </div>
+            
+            
+    <div class="combined-feedback">
+        <h4>Combined Feedback from Leadership Reviews</h4>
+        <div class="feedback-synthesis">
+    
+            <p><strong>Overall Assessment:</strong> Establishes thoughtful goals with progress and clearly articulated next steps...</p>
+        
+            <p><strong>Strengths:</strong></p>
+            <ul class="synthesis-list">
+        <li>Establishes thoughtful goals with progress and clearly articulated next steps</li></ul>
+        </div>
+    </div>
+    
+        </div>
+        
+        <div class="scored-section">
+            <h2>Executive Presence & Presentation Skills</h2>
+            <div class="score-display">
+                <span class="score-label">Average Score:</span>
+                <span class="score-value">4.0/5</span>
+            </div>
+            
+            
+    <div class="combined-feedback">
+        <h4>Combined Feedback from Leadership Reviews</h4>
+        <div class="feedback-synthesis">
+    
+            <p><strong>Overall Assessment:</strong> Communicates clearly with logical flow; delivers a cohesive account story with minor gaps in executive presence or impact.</p>
+        
+            <p><strong>Strengths:</strong></p>
+            <ul class="synthesis-list">
+        <li>Communicates clearly with logical flow; delivers a cohesive account story with minor gaps in executive presence or impact.</li></ul>
+        </div>
+    </div>
+    
+        </div>
+        
+
+    
+    <div class="follow-up-section">
+        <h2>🎯 2026 Development Focus & Follow-Up Items</h2>
+        <p class="follow-up-intro">
+            Based on your year-end presentation and executive feedback, the following areas have been identified 
+            for focused development and follow-through in 2026.
+        </p>
+    
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">2026 Goals - SMART Goals Framework</span>
+                <span class="follow-up-source">— Valarie Barnett</span>
+            </div>
+            <h3>Add Specific, Measurable, Achievable, Relevant, Time-Bound Details to All Goals</h3>
+            <p class="follow-up-quote">"Valarie: 'Your goals. Do you have any other goals outside of these? I want you to look up SMART goals. They got to be specific. They got to be measurable. They have to be achievable, time bound, reasonable, I think is one of the words. So all of those things right in your SMART goals though, I need a little strategy behind how you plan to achieve the goals. Being on budget 12 out of 12 months is great, but like you mentioned hiring people, training them up, mentoring them. OK, what does that mean for you? Does that mean that you guys are going to bring in an additional MIT and that you're going to have them started by February 23rd, March 7th like what are you going to do in order to actually achieve the goal? So that's what's missing. That's gonna ding you on the overall points.' Valarie (later): 'Your path forward is closer to your goals than your goals and your path forward has a little bit more strategy in it. So you're scored on both. I don't know if you just want to take 10 minutes and put the teeth to your goals so that I can give you the highest point. I want to give you the highest points possible. I don't want to ding you like drop you by 2-3 instead of a 5 because of those things, go back to your goals real quick.'"</p>
+            <p class="follow-up-action"><strong>Action:</strong> URGENT - Flesh out all 2026 goals with SMART framework: (1) Close HDMA Ohio goal needs strategy: How will you win? Key differentiators? Getting ahead of RFP? What are you doing in advance?, (2) Talent development (Blake/William promotions) needs context: This is about freeing up Greyson to take on 7.5M sq ft growth - explain how they'll run half the business on their own by 4/1, (3) 12/12 green months needs execution plan: hiring, training, mentoring specifics with dates, (4) Add stretch goal: Can you drive 1-2% above green performance while maintaining quality?, (5) New work profitability: Can you get new Ohio work on budget? What will it take?, (6) Valarie: 'I'll hold your scoring open until tomorrow morning' - reply via email with flushed out goals</p>
+        </div>
+        
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">Ohio Management Structure - Growth Preparation</span>
+                <span class="follow-up-source">— Greyson Wolff & Valarie Barnett</span>
+            </div>
+            <h3>Add Ohio Position by March & Develop Jennifer Swafford for Bundle Leadership</h3>
+            <p class="follow-up-quote">"Greyson: 'When we're talking about growth of four sites across 7.5 million square feet and what would likely be a transition of two sites stacked on two sites in back-to-back months, that's going to require additional support from an operational team located within Ohio that understands our operation, that understands Honda and is poised to take support roles within that growth. So that's really priority number one for me. Early to middle of March is when I'm hoping to have that next position.' Valarie: 'Who will be your main operator in the Ohio market? Do you have a strong person? I saw on your org chart there was Blake and there was somebody beside Blake. Who do you have in Ohio that would be your person?' Greyson: 'Right now we have Jennifer Swafford. She's a transfer over from Stellantis. She's done well with ADC, the site that we have had for five coming up on six years now. I'm really curious to see. I've seen her operate at the site level as far as operating over a bundle in the way that Blake is down South that is still what remains to be seen. I have some confidence there, but I'm not going to put my entire stack of chips on it.' Valarie: 'Don't wait until you have the bundle to challenge her. Challenge her now, OK? Even if you don't promote her, challenge her, OK?'"</p>
+            <p class="follow-up-action"><strong>Action:</strong> Q1 2026 Actions: (1) MARCH: Add new Ohio position to support growth preparation (8-9 month runway before RFP), (2) NOW: Challenge Jennifer Swafford to operate at bundle level before Ohio award, (3) Test her with cross-site responsibilities similar to Blake's Southern region role, (4) Develop succession: If Jennifer doesn't step up, market assessment for external hire, (5) Goal: Have 'people in place' and 'trained up to SBM standards and expectations' 8-9 months before potential transition, (6) Blake preparation: Continue exposing him to Ohio sites so he's #1 support for growth transition, (7) Structure must support: Two sites stacked on two sites in back-to-back months (4 sites, 7.5M sq ft)</p>
+        </div>
+        
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">Ohio Close Strategy - RFP Preparation</span>
+                <span class="follow-up-source">— Valarie Barnett</span>
+            </div>
+            <h3>Define Differentiators and Pre-RFP Stakeholder Strategy</h3>
+            <p class="follow-up-quote">"Valarie: 'Close Honda, the Ohio stuff, how will you close it? There might be a strategy attached in the forward path forward actually, but is it by, are we compromising on anything? Are we hitting all of our KPIs consistently? It sounds like we are, but then what will it take to actually win that bid? What are our key differentiators from who they have today? That's going to be the reason that they would even select us because originally they didn't want to give us so much work. Remember, they didn't think that we could handle all of their work and they didn't want to be kind of tied to a single vendor or whatever the reasons were. How are we overcoming those objections with our differentiators today and by when? There's an RFP coming out. Are we waiting for the RFP? How are we putting ourselves in front of the decision makers that may not necessarily, they may be on the RFP, but how are we getting it ahead of them in advance of the RFP?'"</p>
+            <p class="follow-up-action"><strong>Action:</strong> RFP Strategy Development (Q4 2026): (1) Document differentiators: What makes SBM better than current vendor? Address Honda's original concern about single vendor risk, (2) Prove capacity: 4.94/5 scorecard, zero failed joint inspections, Q1 struggles → Q2-Q4 excellence demonstrates improvement capability, (3) Pre-RFP positioning: Craig Lloyd relationship (priority #1 2026), continue business review inclusion of Briggs/Feifel/Strelo, (4) Quality consistency: 90% joint inspection scores for all HDMA sites (non-negotiable), (5) Communication tools: Periodic tracker + QR codes for restrooms (scope visibility), (6) Management depth: Show Blake, William, Jennifer, Christopher team vs flat structure from 2024, (7) Timeline: Don't wait for RFP - get ahead with stakeholders Q1-Q3, (8) Overcome objections: Demonstrate we CAN handle all their work through current performance + management investment</p>
+        </div>
+        
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">Management Accountability - Lesson Learned</span>
+                <span class="follow-up-source">— Greyson Wolff (Self-Identified)</span>
+            </div>
+            <h3>Earlier Action on Underperforming Managers (Ohio Turnover)</h3>
+            <p class="follow-up-quote">"Greyson: 'Throughout the course of 2025, we actually turned over our entire management team in Ohio. Two of them were decisions that we made internally. One was a site manager that needed to find another industry for himself. However, as far as where the reflections really exist from an internal perspective, two of the folks that ended up moving on from us in 2025 shouldn't have made it into the year in 2025. So that's when I'm looking at this and where we could have managed this better... There's two people that needed to move on sooner and I think that's where it was my responsibility to identify and make that move prior to this taking place.'"</p>
+            <p class="follow-up-action"><strong>Action:</strong> Lesson learned for future: (1) Act faster on underperforming managers - don't let them into new year if concerns exist, (2) Two Ohio managers 'shouldn't have made it into 2025' - resulted in complete team turnover mid-year, (3) Greyson owns accountability: 'My responsibility to identify and make that move prior,' (4) Result: Stronger foundation now, but could have avoided roller coaster of 'that many fresh faces and new managers,' (5) Apply lesson: Jennifer Swafford assessment can't wait for Ohio bundle - challenge her NOW (Valarie's advice), (6) Forward practice: Quarterly management evaluations with Spencer; document performance concerns early; act decisively vs hoping for improvement</p>
+        </div>
+        
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">Safety Incident Response</span>
+                <span class="follow-up-source">— Greyson Wolff (Self-Identified) & Valarie Barnett</span>
+            </div>
+            <h3>Escalate to Plant Manager After False Accusations (TMPG Incidents)</h3>
+            <p class="follow-up-quote">"Greyson: 'TMPG from a safety perspective. There were three incidents in total and the reason that I'm including all three here is the first two were alleged to have been at fault of SBM. After some investigation, after being able to provide some evidence, it was made abundantly clear that SBM was nowhere in the vicinity nor at fault of these issues. However, sometimes when that connotation gets out in the air, it's a little bit more difficult to kick the last one.' Learning: 'Where the opportunity existed is after that first incident took place that was found to not be at SBM's fault. That's when we should have had the opportunity to sit down with that plant management team and be able to make it abundantly clear that that's how the situation unfolded... I think it just really comes back to communication with the folks that are in charge and really making the decisions at those plant levels.' Valarie: 'What would you have done differently?' Greyson: 'We had made the request with our site level POC to have that audience. It kind of fell against deaf ears and I think for me that's where I have the opportunity to meet with my regional POC and I'm pretty confident we would have had the chance to do that. And so I think that's where I let it slide when I shouldn't have.' Valarie: 'So you would have advocated harder to get the meeting.'"</p>
+            <p class="follow-up-action"><strong>Action:</strong> Future protocol: (1) After false safety accusation is proven wrong, escalate immediately to plant manager level, (2) Don't accept 'fell against deaf ears' from site POC - go to regional POC, (3) Clear air proactively vs waiting for perception to linger, (4) Third incident: SBM employee was at fault, terminated appropriately, (5) WIN: Got closed-door meeting with plant manager and department leads post-incident - showcased ForSight, quality processes, safety standards, (6) Lesson: Should have had that meeting after FIRST false accusation, not after third incident, (7) Communication with decision-makers is key - don't let site-level communication gaps fester</p>
+        </div>
+        
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">Talent Development - Blake & William</span>
+                <span class="follow-up-source">— Greyson Wolff & Valarie Barnett</span>
+            </div>
+            <h3>Promote Blake & William by Q1 to Support 7.5M Sq Ft Growth</h3>
+            <p class="follow-up-quote">"Greyson (2026 goal): 'How I evaluate myself, one of the ways and how I'm doing my role and how I'm performing as an account director with the Honda portfolio is how we're building up the people that we have within our management team. The first two people there, Blake, who's now in his third, fourth position within the Honda portfolio is again next up on the list. He's somebody that I want to get across the entirety of the portfolio and William Smith is right there behind him and stepping into the role that Blake's currently performing.' Context: 'When we expand to the growth in Ohio, I need to have a team in place that can support my current responsibilities in order to be able to take on 7.5 million square feet.' Valarie: 'I would think maybe a goal for you at your level talent development would probably be the overarching strategy... it's talent development for growth... How will you achieve that? How can they run the other half of the business on their own, what does that look like?'"</p>
+            <p class="follow-up-action"><strong>Action:</strong> Q1 2026 Talent Development: (1) Blake promotion by 4/1: Needs to run Southern region independently while Greyson focuses on Ohio growth, (2) Financial raise complete, title clarification needed (Valarie's call last week provided clarity), (3) William Smith development: Step into Blake's current role, (4) Blake's Ohio exposure: 'Last couple of months, he's had opportunities to see and really get his feet down and put his hands down on some of the Ohio sites. That's where some of that growth continues to exist. Because if we do get these other sites coming into our portfolio, Blake's going to be the number one guy to help kind of support that transition,' (5) Success metrics: Can Blake/William run half the business independently? Can Greyson step away to focus on Ohio transition?, (6) This isn't just promotion - it's preparing to absorb 4 sites, 7.5M sq ft, back-to-back month transitions</p>
+        </div>
+        
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">Financial Performance - Stretch Goals</span>
+                <span class="follow-up-source">— Valarie Barnett</span>
+            </div>
+            <h3>12/12 Green Months + Drive 1-2% Above Green Performance</h3>
+            <p class="follow-up-quote">"Valarie: 'Your 2026 goals, I'm going to tell you this same thing that I've told everybody. First of all, congratulations on being on budget most of the months, 12 out of 12. I thought you said 11 out of 12.' Greyson: '2025 was 11 out of 12, and that's why 2026 is 12 out of 12.' Valarie: 'Give me a stretch, give me a stretch goal. You know, can you hit, if you're hitting green financial performance, if you can drive it from cost plus what it is today, if you can drive another percent or two, that's your stretch goal. Then can I be above that by this amount and still deliver the happiness and the quality that my contract so desires? And I think you can. And then can you win the new work and get that on budget? That's really going to be the challenge. Can you take the new work if it's not modeled exactly the same and can you get that on budget and what will it take in order to do that? You'll be able to apply all the strategies you have from this particular learning right into the next one.'"</p>
+            <p class="follow-up-action"><strong>Action:</strong> Financial goals refinement: (1) BASE GOAL: 12/12 green months (2025 was 11/12 - July shutdown red, December fixed), (2) STRETCH GOAL: Drive 1-2% above green performance while maintaining quality/client happiness, (3) NEW WORK PROFITABILITY: Get Ohio bundle on budget from day 1 - apply learnings from current portfolio (VCT optimization, Sidewinder efficiency, concrete polishing, route maturity), (4) Challenge: New work may not be modeled same as current - how to achieve profitability?, (5) Strategies to apply: $31K investment model (wages + management), outside labor elimination approach, equipment innovation (Sidewinder), management labor profit opportunities (concrete polishing), (6) Document: What made current portfolio profitable? Replicate in Ohio</p>
+        </div>
+        
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">Craig Lloyd Relationship - Priority #1</span>
+                <span class="follow-up-source">— Greyson Wolff (Self-Identified)</span>
+            </div>
+            <h3>Establish Relationship with Top HDMA Decision-Maker</h3>
+            <p class="follow-up-quote">"Greyson (2026 forward strategy): 'The stakeholders. I've had the opportunity to get pretty deep within HDMA throughout the course of 2025. The next number one on my hit list here is Craig Lloyd, who sits at the top of all of it. So he is priority number one in 2026 as far as establishing a relationship and communication with on the HDMA side of things that would really help support with the growth.'"</p>
+            <p class="follow-up-action"><strong>Action:</strong> 2026 Priority: (1) Craig Lloyd sits at top of HDMA (above Dave Strelo, who's above Jeremy Briggs/Mark Feifel), (2) Current relationships: Christie Benzman (direct POC, monthly scorecards), Jeremy Briggs (Powertrain), Mark Feifel (Assembly), Dave Strelo (top layer), (3) Craig Lloyd gap: Not yet established - this is the final relationship needed for RFP decision influence, (4) Strategy: Leverage existing business review attendance by Briggs/Feifel/Strelo to get introduction to Craig Lloyd, (5) Timing: Q1-Q2 2026 establishment before Q4 RFP, (6) Approach: Similar to what worked in 2025 - include in business reviews, offer open scorecard invites, possibly standalone meeting on Ohio strategy/capabilities</p>
+        </div>
+        
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">Executive Presence & Presentation</span>
+                <span class="follow-up-source">— Valarie Barnett</span>
+            </div>
+            <h3>Continue Excellence - Best ForSight Presentation of 34 Reviews</h3>
+            <p class="follow-up-quote">"Valarie: 'I thought overall you did an excellent job. You probably did the best of anyone presenting... I am at 34 I think of these out of 42. You did the best of anyone presenting out of ForSight with your flow, your logic. I trust your QBRs and I probably should have started. I should have emailed you in advance and said you don't have to do a dry run on your QBR because I know that you know those things... Overall, you just told a really cohesive story. I think that you had a presence about you, a confidence. You know your material, you know your account. I could tell that you weren't reading me your story, which is a huge plus in my book. You are positioning us well for growth and you're doing an excellent, excellent job... I feel like you found your home. You know what I mean? Like you're in a really good place.'"</p>
+            <p class="follow-up-action"><strong>Action:</strong> Strengths to maintain: (1) Flow and logic in presentations - best of 34 reviews, (2) Not reading material - knows account backwards/forwards, (3) Cohesive storytelling with confidence and presence, (4) Positioning for growth effectively, (5) Valarie trusts Greyson's QBRs - could have skipped dry run, (6) Context: Automotive's first review cycle ('Life sciences first one was a bomb... next three got better... next five were where they needed to be. Spencer didn't really have heads up on template. This was kind of a test of skill'), (7) Technology vertical cheated by creating shared deck, (8) Greyson passed the test: 'You found your home... you're in a really good place,' (9) Continue this level of preparation and presentation for client-facing QBRs and Ohio RFP presentations</p>
+        </div>
+        
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">Alabama Manager Incentives</span>
+                <span class="follow-up-source">— Valarie Barnett</span>
+            </div>
+            <h3>Kick Back Managers for Cash-Positive Concrete Polishing Work</h3>
+            <p class="follow-up-quote">"Valarie: 'Can you guys get super cash positive on that? When you get cash positive on that service and the managers are actually doing the work, if you're not adding in a management fee and you're just making pure profit on it. If you're over and above your green budget model, start to kick back the managers for the work that they're doing.' Greyson: 'We're fringe in Alabama right now. This helps get us across the line. But that is, there's a couple other things that we're working on and I would love to be able to do exactly that.' Valarie: 'You gotta. I mean, if you're on budget and you're just making money, it's really important.'"</p>
+            <p class="follow-up-action"><strong>Action:</strong> Alabama incentive plan: (1) Concrete polishing generating ~$5K pure profit per project with management labor, (2) Blake and Aaron Licciardi leading innovation, (3) Once Alabama is solidly above green budget (currently 'fringe'), implement manager kickbacks, (4) Recognition for cash-positive work above budget model, (5) Incentive structure: TBD, but reward managers doing work that generates pure profit, (6) Expansion: Cascading concrete polishing across manufacturing bundle - set up incentive model for other sites that adopt, (7) Valarie's emphasis: 'You gotta... if you're on budget and you're just making money, it's really important'</p>
+        </div>
+        </div>
+
+</body>
+</html>

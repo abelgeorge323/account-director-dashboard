@@ -857,6 +857,91 @@
             line-height: 1.6;
         }
         
+        .reviews-tabs {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .reviews-tab {
+            padding: 12px 20px;
+            font-size: 0.95em;
+            font-weight: 600;
+            color: var(--text-secondary);
+            background: transparent;
+            border: none;
+            border-bottom: 3px solid transparent;
+            cursor: pointer;
+            transition: var(--transition-fast);
+        }
+        
+        .reviews-tab:hover {
+            color: var(--primary-blue);
+        }
+        
+        .reviews-tab.active {
+            color: var(--primary-blue);
+            border-bottom-color: var(--primary-blue);
+        }
+        
+        .reviews-tab-panel {
+            display: none;
+        }
+        
+        .reviews-tab-panel.active {
+            display: block;
+        }
+        
+        .followup-item {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            box-shadow: var(--shadow-sm);
+            margin-bottom: 16px;
+        }
+        
+        .followup-category {
+            font-size: 0.75em;
+            font-weight: 600;
+            color: var(--primary-blue);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 8px;
+        }
+        
+        .followup-title {
+            font-size: 1.1em;
+            font-weight: 600;
+            color: var(--primary-dark);
+            margin-bottom: 12px;
+        }
+        
+        .followup-quote {
+            font-style: italic;
+            color: var(--text-secondary);
+            padding: 12px;
+            background: var(--bg-main);
+            border-radius: 6px;
+            border-left: 3px solid var(--primary-blue);
+            margin-bottom: 12px;
+            font-size: 0.9em;
+            line-height: 1.6;
+        }
+        
+        .followup-action {
+            font-size: 0.95em;
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+        
+        .followup-reviewer {
+            font-size: 0.85em;
+            color: var(--text-muted);
+            margin-top: 8px;
+        }
+        
         /* ==================== BEST PRACTICES VIEW ==================== */
         .best-practices-header {
             margin-bottom: 2rem;
@@ -2144,9 +2229,6 @@
                 <div id="best-practices-view" class="hidden">
                     <div class="best-practices-header">
                         <div class="bp-filters">
-                            <select id="bp-ad-filter" class="filter-select">
-                                <option value="all">All Account Directors</option>
-                            </select>
                             <select id="bp-category-filter" class="filter-select">
                                 <option value="all">All Categories</option>
                             </select>
@@ -2158,9 +2240,6 @@
                             </select>
                             <select id="bp-vertical-filter" class="filter-select">
                                 <option value="all">All Verticals</option>
-                            </select>
-                            <select id="bp-account-filter" class="filter-select">
-                                <option value="all">All Accounts</option>
                             </select>
                             <label class="checkbox-filter">
                                 <input type="checkbox" id="bp-featured-only">

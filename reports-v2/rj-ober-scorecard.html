@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025 Year-End Scorecard - RJ Ober</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            background: #ffffff;
+            padding: 2rem;
+            max-width: 8.5in;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: #1a365d;
+            margin-bottom: 0.5rem;
+        }
+
+        h2 {
+            font-size: 1.35rem;
+            font-weight: 600;
+            color: #2c5282;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 0.5rem;
+        }
+
+        h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #2d3748;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        h4 {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #4a5568;
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .header-section {
+            background: linear-gradient(135deg, #1a365d 0%, #2c5282 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+        }
+
+        .header-section h1 {
+            color: white;
+            margin-bottom: 1.5rem;
+            font-size: 1.85rem;
+        }
+
+        .header-metadata {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.8rem;
+            margin-top: 1.2rem;
+        }
+
+        .metadata-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.6rem;
+            border-radius: 4px;
+        }
+
+        .metadata-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.8;
+            margin-bottom: 0.25rem;
+        }
+
+        .metadata-value {
+            font-size: 1.1rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+        }
+
+        .score-summary-first-page {
+            background: #f7fafc;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+        }
+
+        .score-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            background: white;
+        }
+
+        .score-table th {
+            background: #2c5282;
+            color: white;
+            padding: 0.75rem;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .score-table td {
+            padding: 0.75rem;
+            border: 1px solid #e2e8f0;
+        }
+
+        .score-table tr:nth-child(even) {
+            background: #f7fafc;
+        }
+
+
+        /* Follow-Up Questions Section */
+        .follow-up-section {
+            background: #fff8e1;
+            border-left: 4px solid #ff9800;
+            padding: 24px;
+            margin: 32px 0;
+            border-radius: 8px;
+            page-break-inside: avoid;
+        }
+
+        .follow-up-intro {
+            color: #e65100;
+            margin-bottom: 1rem;
+        }
+
+        .follow-up-item {
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 16px 0;
+        }
+
+        .follow-up-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .follow-up-category {
+            background: #2196f3;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .follow-up-source {
+            color: #666;
+            font-size: 14px;
+            font-style: italic;
+        }
+
+        .follow-up-quote {
+            background: #f5f5f5;
+            border-left: 3px solid #ff9800;
+            padding: 12px 16px;
+            margin: 12px 0;
+            font-style: italic;
+            color: #333;
+        }
+
+        .follow-up-action {
+            margin-top: 12px;
+            color: #333;
+        }
+
+        /* Scored Section - One section per page */
+        .scored-section {
+            page-break-after: always;
+            page-break-inside: avoid;
+            margin: 1.5rem 0;
+            padding: 1.5rem;
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            min-height: 400px;
+        }
+
+        .score-display {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin: 1rem 0;
+            padding: 1rem;
+            background: #f7fafc;
+            border-radius: 4px;
+        }
+
+        .score-label {
+            font-weight: 600;
+            color: #4a5568;
+        }
+
+        .score-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #2c5282;
+        }
+
+        .combined-feedback {
+            background: #f8f9fa;
+            border-left: 4px solid #2c5282;
+            padding: 1.25rem;
+            margin: 1rem 0;
+            border-radius: 4px;
+        }
+
+        .combined-feedback h4 {
+            color: #2c5282;
+            margin-bottom: 0.75rem;
+            font-size: 1rem;
+        }
+
+        .feedback-synthesis {
+            margin-top: 0.75rem;
+        }
+
+        .feedback-point {
+            padding: 0.75rem;
+            margin: 0.5rem 0;
+            background: white;
+            border-radius: 4px;
+            border-left: 3px solid #2c5282;
+            line-height: 1.6;
+        }
+
+        .feedback-point strong {
+            color: #2c5282;
+            font-size: 0.9rem;
+        }
+
+        .synthesis-list {
+            margin: 0.75rem 0 1rem 1.5rem;
+            padding-left: 1rem;
+        }
+
+        .synthesis-list li {
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+            color: #2d3748;
+        }
+
+        .feedback-synthesis p {
+            margin: 0.75rem 0;
+            line-height: 1.6;
+        }
+
+        .feedback-synthesis strong {
+            color: #2c5282;
+            font-weight: 600;
+        }
+
+        @media print {
+            * {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            
+            body {
+                padding: 0.25in;
+                font-size: 9pt;
+                line-height: 1.3;
+            }
+            
+            h1 {
+                font-size: 16pt;
+                margin-bottom: 0.3rem;
+            }
+            
+            h2 {
+                font-size: 12pt;
+                margin-top: 0.5rem;
+                margin-bottom: 0.4rem;
+                page-break-after: avoid;
+            }
+            
+            h3 {
+                font-size: 10pt;
+                margin-top: 0.4rem;
+                margin-bottom: 0.3rem;
+            }
+            
+            .header-section {
+                padding: 1rem;
+                margin-bottom: 1rem;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            
+            .header-metadata {
+                gap: 0.5rem;
+            }
+            
+            .metadata-item {
+                padding: 0.4rem;
+            }
+            
+            .metadata-label {
+                font-size: 7pt;
+            }
+            
+            .metadata-value {
+                font-size: 9pt;
+            }
+            
+            .score-summary-first-page {
+                page-break-after: always;
+                padding: 0.75rem;
+                margin-bottom: 1rem;
+            }
+            
+            .score-table {
+                margin: 0.75rem 0;
+                font-size: 9pt;
+            }
+            
+            .score-table th,
+            .score-table td {
+                padding: 0.35rem;
+            }
+            
+            .scored-section {
+                page-break-after: always;
+                page-break-inside: avoid;
+                margin: 0.5rem 0;
+                padding: 0.75rem;
+                border: 1px solid #e2e8f0;
+                min-height: unset;
+            }
+            
+            .score-display {
+                margin: 0.5rem 0;
+                padding: 0.5rem;
+            }
+            
+            .score-label {
+                font-size: 9pt;
+            }
+            
+            .score-value {
+                font-size: 14pt;
+            }
+            
+            .combined-feedback {
+                padding: 0.75rem;
+                margin: 0.5rem 0;
+            }
+            
+            .combined-feedback h4 {
+                font-size: 9pt;
+                margin-bottom: 0.4rem;
+            }
+            
+            .feedback-synthesis p {
+                margin: 0.4rem 0;
+                line-height: 1.4;
+                font-size: 9pt;
+            }
+            
+            .feedback-synthesis strong {
+                font-size: 9pt;
+            }
+            
+            .synthesis-list {
+                margin: 0.4rem 0 0.5rem 1rem;
+                padding-left: 0.5rem;
+            }
+            
+            .synthesis-list li {
+                margin-bottom: 0.25rem;
+                line-height: 1.4;
+                font-size: 8.5pt;
+            }
+            
+            .follow-up-section {
+                page-break-before: always;
+                page-break-inside: avoid;
+                padding: 1rem;
+                margin: 1rem 0;
+            }
+            
+            .follow-up-item {
+                padding: 0.75rem;
+                margin: 0.75rem 0;
+            }
+            
+            .follow-up-quote {
+                padding: 0.5rem;
+                margin: 0.5rem 0;
+                font-size: 8.5pt;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header-section">
+        <h1>2025 Year-End Account Review & 2026 QBR Readiness Scorecard</h1>
+        <div class="header-metadata">
+            <div class="metadata-item">
+                <div class="metadata-label">Account Director</div>
+                <div class="metadata-value">RJ Ober</div>
+            </div>
+            <div class="metadata-item">
+                <div class="metadata-label">Account</div>
+                <div class="metadata-value">IBM</div>
+            </div>
+            <div class="metadata-item">
+                <div class="metadata-label">Tier</div>
+                <div class="metadata-value"><span style="background: #6366f1; color: white; padding: 0.3rem 0.8rem; border-radius: 12px; font-weight: 600; font-size: 0.9rem;">Tier 5</span></div>
+            </div>
+            <div class="metadata-item">
+                <div class="metadata-label">Review Date</div>
+                <div class="metadata-value">January 2026</div>
+            </div>
+            <div class="metadata-item">
+                <div class="metadata-label">Total Reviews</div>
+                <div class="metadata-value">1</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="score-summary-first-page">
+        <h2>Executive Summary</h2>
+
+        <table class="score-table">
+            <thead>
+                <tr>
+                    <th>Evaluation Category</th>
+                    <th style="text-align: center;">Average Score</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+        <tr>
+            <td>Key Projects & Initiatives</td>
+            <td style="text-align: center; font-weight: 600;">4.0</td>
+        </tr>
+        
+        <tr>
+            <td>Value Adds & Cost Avoidance</td>
+            <td style="text-align: center; font-weight: 600;">4.0</td>
+        </tr>
+        
+        <tr>
+            <td>Cost Savings Delivered</td>
+            <td style="text-align: center; font-weight: 600;">3.0</td>
+        </tr>
+        
+        <tr>
+            <td>Innovation & Continuous Improvement</td>
+            <td style="text-align: center; font-weight: 600;">3.0</td>
+        </tr>
+        
+        <tr>
+            <td>Issues, Challenges & Accountability</td>
+            <td style="text-align: center; font-weight: 600;">4.0</td>
+        </tr>
+        
+        <tr>
+            <td>2026 Forward Strategy & Vision</td>
+            <td style="text-align: center; font-weight: 600;">4.0</td>
+        </tr>
+        
+        <tr>
+            <td>Personal Goals & Role Maturity</td>
+            <td style="text-align: center; font-weight: 600;">4.0</td>
+        </tr>
+        
+        <tr>
+            <td>Executive Presence & Presentation Skills</td>
+            <td style="text-align: center; font-weight: 600;">4.0</td>
+        </tr>
+        
+        <tr style="background: #e8f5e9; border-top: 3px solid #2c5282;">
+            <td style="font-weight: 700; text-transform: uppercase;">Overall Score</td>
+            <td style="text-align: center; font-weight: 700; font-size: 1.2rem; color: #2c5282;">30.0/40</td>
+        </tr>
+        
+            </tbody>
+        </table>
+    </div>
+
+    
+        <div class="scored-section">
+            <h2>Key Projects & Initiatives</h2>
+            <div class="score-display">
+                <span class="score-label">Average Score:</span>
+                <span class="score-value">4.0/5</span>
+            </div>
+            
+            
+    <div class="combined-feedback">
+        <h4>Combined Feedback from Leadership Reviews</h4>
+        <div class="feedback-synthesis">
+    
+            <p><strong>Overall Assessment:</strong> Strong overview of the reviewed projects, with clear articulation of both client impact and the SBM solutions delivered.</p>
+        
+            <p><strong>Strengths:</strong></p>
+            <ul class="synthesis-list">
+        <li>Strong overview of the reviewed projects, with clear articulation of both client impact and the SBM solutions delivered. Regarding scope alignment, I would have appreciated additional detail on how the misalignment originated and whether any corrective steps were taken before end user concerns surfaced and the final resolution was reached. It would also be helpful to understand how our partnership and working relationship with JLL influenced the process and outcome.
+
+Overall, you demonstrated a solid partnership mindset and the ability to pivot effectively to support initiatives that matter to both our client and the end users.</li></ul>
+        </div>
+    </div>
+    
+        </div>
+        
+        <div class="scored-section">
+            <h2>Value Adds & Cost Avoidance</h2>
+            <div class="score-display">
+                <span class="score-label">Average Score:</span>
+                <span class="score-value">4.0/5</span>
+            </div>
+            
+            
+    <div class="combined-feedback">
+        <h4>Combined Feedback from Leadership Reviews</h4>
+        <div class="feedback-synthesis">
+    
+            <p><strong>Overall Assessment:</strong> Regarding the value add, I believe there was a missed opportunity to highlight the leadership impact created by having two dedicated leaders supporting IBM.</p>
+        
+            <p><strong>Areas for Development:</strong></p>
+            <ul class="synthesis-list">
+        <li>Regarding the value add, I believe there was a missed opportunity to highlight the leadership impact created by having two dedicated leaders supporting IBM. With SBM investing in the partnership through both you and Lou, it would have been helpful to understand how this has strengthened relationships with both onsite and offsite leadership teams. We know this investment has created tangible benefits, and further elaboration would have reinforced that point.
+
+On cost avoidance and savings, you delivered a clear and effective communication of the financial impacts, successfully demonstrating our value as a strategic partner.</li></ul>
+        </div>
+    </div>
+    
+        </div>
+        
+        <div class="scored-section">
+            <h2>Cost Savings Delivered</h2>
+            <div class="score-display">
+                <span class="score-label">Average Score:</span>
+                <span class="score-value">3.0/5</span>
+            </div>
+            
+            
+    <div class="combined-feedback">
+        <h4>Combined Feedback from Leadership Reviews</h4>
+        <div class="feedback-synthesis">
+    
+            <p><strong>Overall Assessment:</strong> The cost‑savings presented were impactful, though largely one‑time initiatives.</p>
+        
+            <p><strong>Areas for Development:</strong></p>
+            <ul class="synthesis-list">
+        <li>The cost‑savings presented were impactful, though largely one‑time initiatives. Identifying more sustainable, long‑term savings may be challenging due to current contractual limitations and wage related constraints. It would have been helpful to see additional perspective on the ongoing challenges of sustaining cost savings efforts; however, the one‑time savings delivered still provide meaningful value to our partner.</li></ul>
+        </div>
+    </div>
+    
+        </div>
+        
+        <div class="scored-section">
+            <h2>Innovation & Continuous Improvement</h2>
+            <div class="score-display">
+                <span class="score-label">Average Score:</span>
+                <span class="score-value">3.0/5</span>
+            </div>
+            
+            
+    <div class="combined-feedback">
+        <h4>Combined Feedback from Leadership Reviews</h4>
+        <div class="feedback-synthesis">
+    
+            <p><strong>Overall Assessment:</strong> Even while our IFM partners were undergoing their RFP process, you continued to present technology proposals and solutions that demonstrated SBM’s commitment to a long‑term partnership.</p>
+        
+            <p><strong>Strengths:</strong></p>
+            <ul class="synthesis-list">
+        <li>Even while our IFM partners were undergoing their RFP process, you continued to present technology proposals and solutions that demonstrated SBM’s commitment to a long‑term partnership. You noted your engagement with the HSSE partner at JLL and the review of our Good Catch program as an added benefit. Additional clarity on the specific advantages this provided JLL and the resulting impact on our relationship, would have strengthened the narrative.
+
+The internal ATB tracker is a solid enhancement and represents a valuable new tool for internal operations.</li></ul>
+        </div>
+    </div>
+    
+        </div>
+        
+        <div class="scored-section">
+            <h2>Issues, Challenges & Accountability</h2>
+            <div class="score-display">
+                <span class="score-label">Average Score:</span>
+                <span class="score-value">4.0/5</span>
+            </div>
+            
+            
+    <div class="combined-feedback">
+        <h4>Combined Feedback from Leadership Reviews</h4>
+        <div class="feedback-synthesis">
+    
+            <p><strong>Overall Assessment:</strong> Your dialogue with Nick V.</p>
+        
+            <p><strong>Areas for Development:</strong></p>
+            <ul class="synthesis-list">
+        <li>Your dialogue with Nick V. provided a strong opportunity to further demonstrate your depth of knowledge and experience on the account. I also appreciate your openness to learning and your willingness to incorporate additional perspectives, such as bringing Melissa into the conversation to help strengthen opportunities and solutions.</li></ul>
+        </div>
+    </div>
+    
+        </div>
+        
+        <div class="scored-section">
+            <h2>2026 Forward Strategy & Vision</h2>
+            <div class="score-display">
+                <span class="score-label">Average Score:</span>
+                <span class="score-value">4.0/5</span>
+            </div>
+            
+            
+    <div class="combined-feedback">
+        <h4>Combined Feedback from Leadership Reviews</h4>
+        <div class="feedback-synthesis">
+    
+            <p><strong>Overall Assessment:</strong> Focusing on a successful RFP and the upcoming Austin transition represents the most clearly defined and impactful priorities we can have at this stage.</p>
+        
+            <p><strong>Strengths:</strong></p>
+            <ul class="synthesis-list">
+        <li>Focusing on a successful RFP and the upcoming Austin transition represents the most clearly defined and impactful priorities we can have at this stage. It’s encouraging to hear the proactive steps being taken to ensure success, as well as your clear understanding of the timelines involved. Incorporating potential innovations into the Austin site for future consideration also demonstrates forward thinking beyond the transition itself and highlights opportunities for added value.</li></ul>
+        </div>
+    </div>
+    
+        </div>
+        
+        <div class="scored-section">
+            <h2>Personal Goals & Role Maturity</h2>
+            <div class="score-display">
+                <span class="score-label">Average Score:</span>
+                <span class="score-value">4.0/5</span>
+            </div>
+            
+            
+    <div class="combined-feedback">
+        <h4>Combined Feedback from Leadership Reviews</h4>
+        <div class="feedback-synthesis">
+    
+            <p><strong>Overall Assessment:</strong> I appreciate the personal accountability you demonstrate in recognizing what you don’t yet know whether due to tenure or coming from outside the industry.</p>
+        
+            <p><strong>Strengths:</strong></p>
+            <ul class="synthesis-list">
+        <li>I appreciate the personal accountability you demonstrate in recognizing what you don’t yet know whether due to tenure or coming from outside the industry. Strong self‑awareness is essential for growth and development. You clearly outlined your goals with timelines and desired outcomes, all of which will positively impact you, our customers, and the advancement of your team.</li></ul>
+        </div>
+    </div>
+    
+        </div>
+        
+        <div class="scored-section">
+            <h2>Executive Presence & Presentation Skills</h2>
+            <div class="score-display">
+                <span class="score-label">Average Score:</span>
+                <span class="score-value">4.0/5</span>
+            </div>
+            
+            
+    <div class="combined-feedback">
+        <h4>Combined Feedback from Leadership Reviews</h4>
+        <div class="feedback-synthesis">
+    
+            <p><strong>Overall Assessment:</strong> I’ll tie this back to both your dialogue with Nick V.</p>
+        
+            <p><strong>Strengths:</strong></p>
+            <ul class="synthesis-list">
+        <li>I’ll tie this back to both your dialogue with Nick V. and your exchange with Valarie. Your ability to respond confidently and clearly to unrehearsed, unscripted questions demonstrates strong executive presence. With Valarie’s line of questioning, I would have liked to hear a more “bottom line up front” approach, especially since you have the knowledge and insight to address her budget questions with even greater clarity.You did an excellent job presenting a cohesive, well‑structured story each slide building logically on the last and tying the full narrative together. Well done.</li></ul>
+        </div>
+    </div>
+    
+        </div>
+        
+
+    
+    <div class="follow-up-section">
+        <h2>🎯 2026 Development Focus & Follow-Up Items</h2>
+        <p class="follow-up-intro">
+            Based on your year-end presentation and executive feedback, the following areas have been identified 
+            for focused development and follow-through in 2026.
+        </p>
+    
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">Financial Strategy</span>
+                <span class="follow-up-source">— Valarie Barnett</span>
+            </div>
+            <h3>Get Specific Date for Budget Correction / Cost Increase</h3>
+            <p class="follow-up-quote">"Valarie: 'Do you have how you're gonna get it on budget? When will we have a date? When will we know about increasing our costs to offset how bad we are upside down?' Valarie: 'Our contract is technically over and we're going to wait until after the RFP process. What's the timeline on the RFP?' Valarie: 'That's the most pressing question I have about IBM, just the budget.'"</p>
+            <p class="follow-up-action"><strong>Action:</strong> Establish specific timeline: When does RFP process start? When will pricing/cost increase decisions be made? Communicate date to leadership for when budget correction is expected</p>
+        </div>
+        
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">Relationship & Governance</span>
+                <span class="follow-up-source">— Nick Viskovich</span>
+            </div>
+            <h3>Loop in Melissa Hampton - JLL Executive Sponsor</h3>
+            <p class="follow-up-quote">"Nick: 'We shouldn't be - if you haven't already - looped in Melissa Hampton who's overseeing our executive sponsor over the JLL portfolio to get involved in those conversations early and often, especially with your end scorecards coming up. That opportunity to connect her and let her be some connective tissue in the background that continues to drive the relationship and speak to some of the innovation opportunities.'"</p>
+            <p class="follow-up-action"><strong>Action:</strong> Connect Melissa Hampton (JLL executive sponsor) early and often; leverage for end scorecard reviews; use as connective tissue for innovation conversations (e.g. mobile conversion, AI audits)</p>
+        </div>
+        
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">Innovation & Technology</span>
+                <span class="follow-up-source">— Nick Viskovich</span>
+            </div>
+            <h3>Implement AI/Real-Time Audits - Get Sticky Before June</h3>
+            <p class="follow-up-quote">"Nick: 'Have you showed them or would they have any interest in what we're doing with real time validations and AI assessments? We've gone from 400 audits a month to 2000 a day at La Guardia. We have a short window to get really sticky... these next couple of QBRs are going to be so important. Leverage Melissa on the solution side to have those conversations and try to get something implemented now.'"</p>
+            <p class="follow-up-action"><strong>Action:</strong> Show IBM/JLL real-time audits and AI validations (La Guardia example); set up walkthrough with Nick; aim to implement before June renewal; leverage Melissa Hampton for solution-side conversations</p>
+        </div>
+        
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">Transition Management</span>
+                <span class="follow-up-source">— Valarie Barnett</span>
+            </div>
+            <h3>Austin Transition - Partner with Transitions Team & Good Trainer</h3>
+            <p class="follow-up-quote">"Valarie: 'Who from the transitions team will be supporting? I just want to make sure you partner with a good trainer.' Valarie: 'It's a 90 day transition which is really long for us - we typically transition in 30 days. I'd like to understand that a little bit more - who you're partnered with, who's going to own it. You'll be owning it from customer facing perspective, but from an operations perspective they can't leave that on you - you don't know what you're doing yet.'"</p>
+            <p class="follow-up-action"><strong>Action:</strong> Identify transitions team support; partner with experienced trainer; clarify operational ownership (R.J = customer facing; operations team = operational execution); understand 90-day timeline rationale</p>
+        </div>
+        
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">Professional Development</span>
+                <span class="follow-up-source">— Valarie Barnett</span>
+            </div>
+            <h3>Deepen Operational Understanding - Stay Through Transition</h3>
+            <p class="follow-up-quote">"Valarie: 'It's gonna be important that you start digging into to the best of your ability to understand the overall operation. Getting on the transition staying from start to finish - not meaning you have to stay there for four weeks or 90 days, but you do need to be in a position where you can get those set up and running and be paying close attention to operations because you learn the most through the transition process.'"</p>
+            <p class="follow-up-action"><strong>Action:</strong> Be present through Austin transition start to finish; dig into overall operation; pay close attention to operations; use transition as learning opportunity</p>
+        </div>
+        
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">Key Projects & Initiatives</span>
+                <span class="follow-up-source">— Yousef Abbasi</span>
+            </div>
+            <h3>Document Scope Misalignment Origin & Corrective Steps</h3>
+            <p class="follow-up-quote">"Yousef: 'Regarding scope alignment, I would have appreciated additional detail on how the misalignment originated and whether any corrective steps were taken before end user concerns surfaced and the final resolution was reached. It would also be helpful to understand how our partnership and working relationship with JLL influenced the process and outcome.'"</p>
+            <p class="follow-up-action"><strong>Action:</strong> Document: (1) How scope misalignment originated, (2) Corrective steps taken before vs after end user concerns, (3) How JLL partnership influenced process and outcome</p>
+        </div>
+        </div>
+
+</body>
+</html>

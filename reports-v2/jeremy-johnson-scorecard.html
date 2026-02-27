@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025 Year-End Scorecard - Jeremy Johnson</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            background: #ffffff;
+            padding: 2rem;
+            max-width: 8.5in;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: #1a365d;
+            margin-bottom: 0.5rem;
+        }
+
+        h2 {
+            font-size: 1.35rem;
+            font-weight: 600;
+            color: #2c5282;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 0.5rem;
+        }
+
+        h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #2d3748;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        h4 {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #4a5568;
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .header-section {
+            background: linear-gradient(135deg, #1a365d 0%, #2c5282 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+        }
+
+        .header-section h1 {
+            color: white;
+            margin-bottom: 1.5rem;
+            font-size: 1.85rem;
+        }
+
+        .header-metadata {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.8rem;
+            margin-top: 1.2rem;
+        }
+
+        .metadata-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.6rem;
+            border-radius: 4px;
+        }
+
+        .metadata-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.8;
+            margin-bottom: 0.25rem;
+        }
+
+        .metadata-value {
+            font-size: 1.1rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+        }
+
+        .score-summary-first-page {
+            background: #f7fafc;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+        }
+
+        .score-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            background: white;
+        }
+
+        .score-table th {
+            background: #2c5282;
+            color: white;
+            padding: 0.75rem;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .score-table td {
+            padding: 0.75rem;
+            border: 1px solid #e2e8f0;
+        }
+
+        .score-table tr:nth-child(even) {
+            background: #f7fafc;
+        }
+
+
+        /* Follow-Up Questions Section */
+        .follow-up-section {
+            background: #fff8e1;
+            border-left: 4px solid #ff9800;
+            padding: 24px;
+            margin: 32px 0;
+            border-radius: 8px;
+            page-break-inside: avoid;
+        }
+
+        .follow-up-intro {
+            color: #e65100;
+            margin-bottom: 1rem;
+        }
+
+        .follow-up-item {
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 16px 0;
+        }
+
+        .follow-up-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .follow-up-category {
+            background: #2196f3;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .follow-up-source {
+            color: #666;
+            font-size: 14px;
+            font-style: italic;
+        }
+
+        .follow-up-quote {
+            background: #f5f5f5;
+            border-left: 3px solid #ff9800;
+            padding: 12px 16px;
+            margin: 12px 0;
+            font-style: italic;
+            color: #333;
+        }
+
+        .follow-up-action {
+            margin-top: 12px;
+            color: #333;
+        }
+
+        /* Scored Section - One section per page */
+        .scored-section {
+            page-break-after: always;
+            page-break-inside: avoid;
+            margin: 1.5rem 0;
+            padding: 1.5rem;
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            min-height: 400px;
+        }
+
+        .score-display {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin: 1rem 0;
+            padding: 1rem;
+            background: #f7fafc;
+            border-radius: 4px;
+        }
+
+        .score-label {
+            font-weight: 600;
+            color: #4a5568;
+        }
+
+        .score-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #2c5282;
+        }
+
+        .combined-feedback {
+            background: #f8f9fa;
+            border-left: 4px solid #2c5282;
+            padding: 1.25rem;
+            margin: 1rem 0;
+            border-radius: 4px;
+        }
+
+        .combined-feedback h4 {
+            color: #2c5282;
+            margin-bottom: 0.75rem;
+            font-size: 1rem;
+        }
+
+        .feedback-synthesis {
+            margin-top: 0.75rem;
+        }
+
+        .feedback-point {
+            padding: 0.75rem;
+            margin: 0.5rem 0;
+            background: white;
+            border-radius: 4px;
+            border-left: 3px solid #2c5282;
+            line-height: 1.6;
+        }
+
+        .feedback-point strong {
+            color: #2c5282;
+            font-size: 0.9rem;
+        }
+
+        .synthesis-list {
+            margin: 0.75rem 0 1rem 1.5rem;
+            padding-left: 1rem;
+        }
+
+        .synthesis-list li {
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+            color: #2d3748;
+        }
+
+        .feedback-synthesis p {
+            margin: 0.75rem 0;
+            line-height: 1.6;
+        }
+
+        .feedback-synthesis strong {
+            color: #2c5282;
+            font-weight: 600;
+        }
+
+        @media print {
+            * {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            
+            body {
+                padding: 0.25in;
+                font-size: 9pt;
+                line-height: 1.3;
+            }
+            
+            h1 {
+                font-size: 16pt;
+                margin-bottom: 0.3rem;
+            }
+            
+            h2 {
+                font-size: 12pt;
+                margin-top: 0.5rem;
+                margin-bottom: 0.4rem;
+                page-break-after: avoid;
+            }
+            
+            h3 {
+                font-size: 10pt;
+                margin-top: 0.4rem;
+                margin-bottom: 0.3rem;
+            }
+            
+            .header-section {
+                padding: 1rem;
+                margin-bottom: 1rem;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            
+            .header-metadata {
+                gap: 0.5rem;
+            }
+            
+            .metadata-item {
+                padding: 0.4rem;
+            }
+            
+            .metadata-label {
+                font-size: 7pt;
+            }
+            
+            .metadata-value {
+                font-size: 9pt;
+            }
+            
+            .score-summary-first-page {
+                page-break-after: always;
+                padding: 0.75rem;
+                margin-bottom: 1rem;
+            }
+            
+            .score-table {
+                margin: 0.75rem 0;
+                font-size: 9pt;
+            }
+            
+            .score-table th,
+            .score-table td {
+                padding: 0.35rem;
+            }
+            
+            .scored-section {
+                page-break-after: always;
+                page-break-inside: avoid;
+                margin: 0.5rem 0;
+                padding: 0.75rem;
+                border: 1px solid #e2e8f0;
+                min-height: unset;
+            }
+            
+            .score-display {
+                margin: 0.5rem 0;
+                padding: 0.5rem;
+            }
+            
+            .score-label {
+                font-size: 9pt;
+            }
+            
+            .score-value {
+                font-size: 14pt;
+            }
+            
+            .combined-feedback {
+                padding: 0.75rem;
+                margin: 0.5rem 0;
+            }
+            
+            .combined-feedback h4 {
+                font-size: 9pt;
+                margin-bottom: 0.4rem;
+            }
+            
+            .feedback-synthesis p {
+                margin: 0.4rem 0;
+                line-height: 1.4;
+                font-size: 9pt;
+            }
+            
+            .feedback-synthesis strong {
+                font-size: 9pt;
+            }
+            
+            .synthesis-list {
+                margin: 0.4rem 0 0.5rem 1rem;
+                padding-left: 0.5rem;
+            }
+            
+            .synthesis-list li {
+                margin-bottom: 0.25rem;
+                line-height: 1.4;
+                font-size: 8.5pt;
+            }
+            
+            .follow-up-section {
+                page-break-before: always;
+                page-break-inside: avoid;
+                padding: 1rem;
+                margin: 1rem 0;
+            }
+            
+            .follow-up-item {
+                padding: 0.75rem;
+                margin: 0.75rem 0;
+            }
+            
+            .follow-up-quote {
+                padding: 0.5rem;
+                margin: 0.5rem 0;
+                font-size: 8.5pt;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header-section">
+        <h1>2025 Year-End Account Review & 2026 QBR Readiness Scorecard</h1>
+        <div class="header-metadata">
+            <div class="metadata-item">
+                <div class="metadata-label">Account Director</div>
+                <div class="metadata-value">Jeremy Johnson</div>
+            </div>
+            <div class="metadata-item">
+                <div class="metadata-label">Account</div>
+                <div class="metadata-value">Intel</div>
+            </div>
+            <div class="metadata-item">
+                <div class="metadata-label">Tier</div>
+                <div class="metadata-value"><span style="background: #10b981; color: white; padding: 0.3rem 0.8rem; border-radius: 12px; font-weight: 600; font-size: 0.9rem;">Tier 6</span></div>
+            </div>
+            <div class="metadata-item">
+                <div class="metadata-label">Review Date</div>
+                <div class="metadata-value">January 2026</div>
+            </div>
+            <div class="metadata-item">
+                <div class="metadata-label">Total Reviews</div>
+                <div class="metadata-value">1</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="score-summary-first-page">
+        <h2>Executive Summary</h2>
+
+        <table class="score-table">
+            <thead>
+                <tr>
+                    <th>Evaluation Category</th>
+                    <th style="text-align: center;">Average Score</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+        <tr>
+            <td>Key Projects & Initiatives</td>
+            <td style="text-align: center; font-weight: 600;">5.0</td>
+        </tr>
+        
+        <tr>
+            <td>Value Adds & Cost Avoidance</td>
+            <td style="text-align: center; font-weight: 600;">5.0</td>
+        </tr>
+        
+        <tr>
+            <td>Cost Savings Delivered</td>
+            <td style="text-align: center; font-weight: 600;">5.0</td>
+        </tr>
+        
+        <tr>
+            <td>Innovation & Continuous Improvement</td>
+            <td style="text-align: center; font-weight: 600;">5.0</td>
+        </tr>
+        
+        <tr>
+            <td>Issues, Challenges & Accountability</td>
+            <td style="text-align: center; font-weight: 600;">5.0</td>
+        </tr>
+        
+        <tr>
+            <td>2026 Forward Strategy & Vision</td>
+            <td style="text-align: center; font-weight: 600;">5.0</td>
+        </tr>
+        
+        <tr>
+            <td>Personal Goals & Role Maturity</td>
+            <td style="text-align: center; font-weight: 600;">3.0</td>
+        </tr>
+        
+        <tr>
+            <td>Executive Presence & Presentation Skills</td>
+            <td style="text-align: center; font-weight: 600;">5.0</td>
+        </tr>
+        
+        <tr style="background: #e8f5e9; border-top: 3px solid #2c5282;">
+            <td style="font-weight: 700; text-transform: uppercase;">Overall Score</td>
+            <td style="text-align: center; font-weight: 700; font-size: 1.2rem; color: #2c5282;">38.0/40</td>
+        </tr>
+        
+            </tbody>
+        </table>
+    </div>
+
+    
+        <div class="scored-section">
+            <h2>Key Projects & Initiatives</h2>
+            <div class="score-display">
+                <span class="score-label">Average Score:</span>
+                <span class="score-value">5.0/5</span>
+            </div>
+            
+            
+    <div class="combined-feedback">
+        <h4>Combined Feedback from Leadership Reviews</h4>
+        <div class="feedback-synthesis">
+    
+            <p><strong>Overall Assessment:</strong> Clearly framed the most important 2025 initiatives, why they mattered, and what changed for the client as a result; demonstrates strong judgment, prioritization, and impact awareness.</p>
+        
+            <p><strong>Strengths:</strong></p>
+            <ul class="synthesis-list">
+        <li>Clearly framed the most important 2025 initiatives, why they mattered, and what changed for the client as a result; demonstrates strong judgment, prioritization, and impact awareness.</li></ul>
+        </div>
+    </div>
+    
+        </div>
+        
+        <div class="scored-section">
+            <h2>Value Adds & Cost Avoidance</h2>
+            <div class="score-display">
+                <span class="score-label">Average Score:</span>
+                <span class="score-value">5.0/5</span>
+            </div>
+            
+            <p><em>No specific feedback provided.</em></p>
+        </div>
+        
+        <div class="scored-section">
+            <h2>Cost Savings Delivered</h2>
+            <div class="score-display">
+                <span class="score-label">Average Score:</span>
+                <span class="score-value">5.0/5</span>
+            </div>
+            
+            
+    <div class="combined-feedback">
+        <h4>Combined Feedback from Leadership Reviews</h4>
+        <div class="feedback-synthesis">
+    
+            <p><strong>Overall Assessment:</strong> Clearly explains how cost savings were created, quantified, and sustained; demonstrates strong financial stewardship.</p>
+        
+            <p><strong>Strengths:</strong></p>
+            <ul class="synthesis-list">
+        <li>Clearly explains how cost savings were created, quantified, and sustained; demonstrates strong financial stewardship.</li></ul>
+        </div>
+    </div>
+    
+        </div>
+        
+        <div class="scored-section">
+            <h2>Innovation & Continuous Improvement</h2>
+            <div class="score-display">
+                <span class="score-label">Average Score:</span>
+                <span class="score-value">5.0/5</span>
+            </div>
+            
+            
+    <div class="combined-feedback">
+        <h4>Combined Feedback from Leadership Reviews</h4>
+        <div class="feedback-synthesis">
+    
+            <p><strong>Overall Assessment:</strong> The excitement in pilots and willingness to trial items and processes is bold and I believe will support our larger win! Clearly and specifically demonstrated an intentional innovation or meaningful pivots to support Intel.</p>
+        
+            <p><strong>Strengths:</strong></p>
+            <ul class="synthesis-list">
+        <li>The excitement in pilots and willingness to trial items and processes is bold and I believe will support our larger win! Clearly and specifically demonstrated an intentional innovation or meaningful pivots to support Intel. Explained clear outcomes and lessons learned.</li></ul>
+        </div>
+    </div>
+    
+        </div>
+        
+        <div class="scored-section">
+            <h2>Issues, Challenges & Accountability</h2>
+            <div class="score-display">
+                <span class="score-label">Average Score:</span>
+                <span class="score-value">5.0/5</span>
+            </div>
+            
+            
+    <div class="combined-feedback">
+        <h4>Combined Feedback from Leadership Reviews</h4>
+        <div class="feedback-synthesis">
+    
+            <p><strong>Overall Assessment:</strong> Most successful year - financially, quality, and safety.</p>
+        
+            <p><strong>Areas for Development:</strong></p>
+            <ul class="synthesis-list">
+        <li>Most successful year - financially, quality, and safety. Where you feel you fell short was on growth at $210k captured but went backwards with Intel closures and changes. Although you couldn’t change the reductions I like that you see how you could’ve been more strategically positioned.</li></ul>
+        </div>
+    </div>
+    
+        </div>
+        
+        <div class="scored-section">
+            <h2>2026 Forward Strategy & Vision</h2>
+            <div class="score-display">
+                <span class="score-label">Average Score:</span>
+                <span class="score-value">5.0/5</span>
+            </div>
+            
+            <p><em>No specific feedback provided.</em></p>
+        </div>
+        
+        <div class="scored-section">
+            <h2>Personal Goals & Role Maturity</h2>
+            <div class="score-display">
+                <span class="score-label">Average Score:</span>
+                <span class="score-value">3.0/5</span>
+            </div>
+            
+            
+    <div class="combined-feedback">
+        <h4>Combined Feedback from Leadership Reviews</h4>
+        <div class="feedback-synthesis">
+    
+            <p><strong>Overall Assessment:</strong> Personal professional goal: force yourself out of your comfort zone learn something new, do something new this year.</p>
+        
+            <p><strong>Areas for Development:</strong></p>
+            <ul class="synthesis-list">
+        <li>Personal professional goal: force yourself out of your comfort zone learn something new, do something new this year. Want to ensure you have the right vision. By Q3 (decide what “it” is) Critical space differentiation - white paper a technology solution away from mop and bucket for lack of a better description… to be determined to really separate ourselves. Alex, Mark and Jeremy to formalize text Q1. I challenge you to bring someone under your wing as a number 2. If Amani is who you are pouring into what measurements of her success?</li></ul>
+        </div>
+    </div>
+    
+        </div>
+        
+        <div class="scored-section">
+            <h2>Executive Presence & Presentation Skills</h2>
+            <div class="score-display">
+                <span class="score-label">Average Score:</span>
+                <span class="score-value">5.0/5</span>
+            </div>
+            
+            
+    <div class="combined-feedback">
+        <h4>Combined Feedback from Leadership Reviews</h4>
+        <div class="feedback-synthesis">
+    
+            <p><strong>Overall Assessment:</strong> Exceptional presentation from structure to details to growth mindset.</p>
+        
+            <p><strong>Areas for Development:</strong></p>
+            <ul class="synthesis-list">
+        <li>Exceptional presentation from structure to details to growth mindset. I appreciate your passion, and cadence. Your delivery and organization is a best practice!</li></ul>
+        </div>
+    </div>
+    
+        </div>
+        
+
+    
+    <div class="follow-up-section">
+        <h2>🎯 2026 Development Focus & Follow-Up Items</h2>
+        <p class="follow-up-intro">
+            Based on your year-end presentation and executive feedback, the following areas have been identified 
+            for focused development and follow-through in 2026.
+        </p>
+    
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">Personal Goals & Development</span>
+                <span class="follow-up-source">— Valarie Barnett</span>
+            </div>
+            <h3>Make Personal Goals SMART - Specific, Dated, Actionable</h3>
+            <p class="follow-up-quote">"Valarie: 'Your lowest score was your personal professional goals... I would love to hear your personal goal. I want to be able to give you all the credit in the world... What are your personal goals in a SMART format?' Jeremy: 'I want to force myself out of my comfort zone to learn something new.' Valarie: 'That's not very specific. Do you want to learn Lam Research? Life sciences? Technology and AI innovation at ForoInsight? What is your specific thing? When do you want it done by?' Jeremy: 'By Q3... broaden my horizon beyond Intel.' Valarie: 'I would agree. I definitely think you could take on more once you get through this RFP situation. Your brain has the capacity to learn a specialty different than something you know today.'"</p>
+            <p class="follow-up-action"><strong>Action:</strong> Define personal goal in SMART format: (1) Specific: What domain? (Lam Research, life sciences, tech/AI at ForoInsight, etc.), (2) Measurable: How will success be defined?, (3) Dated: By Q3 2026 (per Jeremy's commitment), (4) Actionable: Concrete steps to broaden beyond Intel</p>
+        </div>
+        
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">Leadership & Succession</span>
+                <span class="follow-up-source">— Valarie Barnett</span>
+            </div>
+            <h3>Bring Someone Under Your Wing - Develop 'Jeremy Part 2'</h3>
+            <p class="follow-up-quote">"Valarie: 'I challenge you to bring someone specifically under your wing. SBM is at a major disadvantage that someone is not with you at all times, observing, listening, learning. You should have a recent college graduate at 2-6, maybe 2-8 years max that all they do is follow you around. They go to meetings with you, they help you organize, you correct them non-stop, train with you for ~6 months. Then you say to me, Valarie, I've had this person, they really could take on that next monster account. I want a Jeremy Part 2. The only thing you can do for me is give me someone else who can operate at the level that you do.'"</p>
+            <p class="follow-up-action"><strong>Action:</strong> Identify shadow/mentee: Recent college grad (2-8 years max); have them follow Jeremy to meetings, whiteboarding sessions (e.g. with Mark Schlerf, Alex Kennedy); 6-month training commitment; define success metrics for mentorship; goal: person ready to take on next monster account</p>
+        </div>
+        
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">Leadership & Succession</span>
+                <span class="follow-up-source">— Valarie Barnett</span>
+            </div>
+            <h3>Include Amani (and Future Mentees) in Key Meetings</h3>
+            <p class="follow-up-quote">"Valarie: 'Do you take her to meetings like this one? Is she in the room with you and Mark Schlerf when you whiteboard? Is she in the room?' Jeremy: 'No, not as much as she could be. We'll give ourselves grace in first 60 days.' Valarie: 'If you're pouring into Amani, what are your measurements of success whether you've mentored her well or not?'"</p>
+            <p class="follow-up-action"><strong>Action:</strong> Include Amani in: Strategic calls (like this review), Whiteboarding sessions with Mark Schlerf/Alex Kennedy, Key client and leadership meetings; Define mentorship success metrics</p>
+        </div>
+        
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">Documentation & Sharing</span>
+                <span class="follow-up-source">— Valarie Barnett</span>
+            </div>
+            <h3>Prep Air Freshener Pilot for Broader Ops Call</h3>
+            <p class="follow-up-quote">"Valarie: 'We need to share that on the bigger, broader monthly call. So please prep for that or have Alyssa actually prep to speak to everyone on the bigger, broader monthly call for all of operations and in that maybe have some costs and things.'"</p>
+            <p class="follow-up-action"><strong>Action:</strong> Prepare air freshener pilot presentation for broader ops monthly call; Include Alyssa (Amazon) to present; Include cost data (20% savings) and end user feedback (90% favorable)</p>
+        </div>
+        
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">2026 Strategy & Vision</span>
+                <span class="follow-up-source">— Valarie Barnett</span>
+            </div>
+            <h3>Flush Out Clean Room Technology Differentiation & Timeline</h3>
+            <p class="follow-up-quote">"Valarie: 'When do you think you'll have a solution for a clean room? What's your plan? Flush that out just a little bit more as far as what the differentiation will be. We don't currently know what that is, but the goal will be to discover the differentiators for clean room space.' Jeremy: 'Every floor task in clean room is completely manual. If we introduce technology that takes away mop and bucket - significant safety, ergonomic, cost savings. Hurdle is making change to controlled environment. LAM has Safety iMop on site - goal to put hands on in Q1, proposal out Q2. Intel moves slower - implementation by end of year.'"</p>
+            <p class="follow-up-action"><strong>Action:</strong> Document clean room differentiation: Manual-to-automated value prop; safety/ergonomic/cost savings; Q1: hands on LAM Safety iMop; Q2: proposal to Intel; End of year: Implementation target</p>
+        </div>
+        </div>
+
+</body>
+</html>

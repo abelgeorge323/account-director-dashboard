@@ -163,7 +163,7 @@ def main():
     with open("data/follow-up-questions.json", "w", encoding="utf-8") as f:
         json.dump(merged, f, indent=2, ensure_ascii=False)
     
-    print("✅ Done! Updated follow-up-questions.json")
+    print("Done! Updated follow-up-questions.json")
 
 if __name__ == "__main__":
     main()

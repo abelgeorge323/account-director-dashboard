@@ -15,12 +15,10 @@ const AppState = {
         role: 'all'
     },
     bestPracticesFilters: {
-        adName: 'all',
         category: 'all',
         replicability: 'all',
         status: 'all',
         vertical: 'all',
-        account: 'all',
         featuredOnly: false
     },
     sort: {
@@ -34,7 +32,8 @@ const AppState = {
     expandedRows: new Set(),
     expandedPractices: new Set(),
     expandedATBRows: new Set(),
-    selectedAD: null
+    selectedAD: null,
+    reviewsOpenTab: 'reviews'  // 'reviews' or 'followup' - which tab to show in Individual Reviews
 };
 
 // ==================== GLOBAL MOBILE-FRIENDLY HANDLERS ====================
@@ -112,7 +111,9 @@ async function loadBestPractices() {
             AppState.data.accountDirectors.forEach(ad => {
                 adAccountMap[ad.accountDirector] = ad.account || '';
                 adVerticalMap[ad.accountDirector] = ad.vertical || 'N/A';
-                if (ad.vertical && ad.vertical !== 'N/A') verticals.add(ad.vertical);
+                if (ad.vertical && ad.vertical !== 'N/A') {
+                    ad.vertical.split(',').map(v => v.trim()).filter(v => v).forEach(v => verticals.add(v));
+                }
                 // Extract unique accounts from comma-separated account string
                 if (ad.account) {
                     ad.account.split(',').map(a => a.trim()).filter(a => a && a !== 'undefined').forEach(acc => accounts.add(acc));
@@ -265,7 +266,10 @@ function populateFilters() {
     const roles = new Set();
     
     AppState.data.accountDirectors.forEach(ad => {
-        if (ad.vertical && ad.vertical !== 'N/A') verticals.add(ad.vertical);
+        // Support multi-vertical (e.g. "Life Science, Finance") - add each to set
+        if (ad.vertical && ad.vertical !== 'N/A') {
+            ad.vertical.split(',').map(v => v.trim()).filter(v => v).forEach(v => verticals.add(v));
+        }
         if (ad.account) accounts.add(ad.account);
         if (ad.tier) {
             tiers.add(ad.tier);
@@ -347,8 +351,9 @@ function populateFilters() {
 
 function getFilteredData() {
     let filtered = AppState.data.accountDirectors.filter(ad => {
-        if (AppState.filters.vertical !== 'all' && ad.vertical !== AppState.filters.vertical) {
-            return false;
+        if (AppState.filters.vertical !== 'all') {
+            const adVerticals = (ad.vertical || '').split(',').map(v => v.trim()).filter(v => v);
+            if (!adVerticals.includes(AppState.filters.vertical)) return false;
         }
         if (AppState.filters.account !== 'all' && ad.account !== AppState.filters.account) {
             return false;
@@ -559,7 +564,7 @@ function renderExpandedSection(ad) {
                 <div>${leftSections}</div>
                 <div>${rightSections}</div>
             </div>
-            <button class="view-details-btn" onclick="event.stopPropagation(); window.viewDetails('${ad.accountDirector.replace(/'/g, "\\'")}');">
+            <button class="view-details-btn" onclick="event.stopPropagation(); window.viewDetails('${ad.accountDirector.replace(/'/g, "\\'")}', 'followup');">
                 View Full Reviews
             </button>
         </div>
@@ -679,6 +684,9 @@ function renderReviewsForAD(adName) {
         return;
     }
     
+    const activeTab = AppState.reviewsOpenTab || 'reviews';
+    const followUpItems = (AppState.data.followUpQuestions || {})[adName] || [];
+    
     const headerHTML = `
         <div class="review-header fade-in">
             <div class="review-ad-name">${ad.accountDirector}</div>
@@ -697,6 +705,10 @@ function renderReviewsForAD(adName) {
                     <div class="review-meta-value">${ad.reviewCount}</div>
                 </div>
             </div>
+        </div>
+        <div class="reviews-tabs">
+            <button class="reviews-tab ${activeTab === 'reviews' ? 'active' : ''}" data-tab="reviews">Review Feedback</button>
+            <button class="reviews-tab ${activeTab === 'followup' ? 'active' : ''}" data-tab="followup">2026 Development Focus & Follow-Up Items</button>
         </div>
     `;
     
@@ -734,7 +746,42 @@ function renderReviewsForAD(adName) {
         `;
     }).join('');
     
-    container.innerHTML = headerHTML + reviewsHTML;
+    const followUpHTML = followUpItems.length > 0 ? followUpItems.map((item, idx) => `
+        <div class="followup-item fade-in">
+            <div class="followup-category">${item.category || 'General'}</div>
+            <div class="followup-title">${item.title || ''}</div>
+            ${item.quote ? `<div class="followup-quote">"${item.quote}"</div>` : ''}
+            ${item.action ? `<div class="followup-action"><strong>Action:</strong> ${item.action}</div>` : ''}
+            ${item.reviewer ? `<div class="followup-reviewer">— ${item.reviewer}</div>` : ''}
+        </div>
+    `).join('') : '<p style="color: var(--text-secondary); padding: 24px;">No follow-up items on file for this Account Director.</p>';
+    
+    const tabContentHTML = `
+        <div class="reviews-tab-panel ${activeTab === 'reviews' ? 'active' : ''}" data-panel="reviews">
+            ${reviewsHTML}
+        </div>
+        <div class="reviews-tab-panel ${activeTab === 'followup' ? 'active' : ''}" data-panel="followup">
+            <div class="followup-section">
+                <h3 style="margin-bottom: 16px; font-size: 1.1em;">2026 Development Focus & Follow-Up Items</h3>
+                ${followUpHTML}
+            </div>
+        </div>
+    `;
+    
+    container.innerHTML = headerHTML + tabContentHTML;
+    
+    // Tab click handlers
+    container.querySelectorAll('.reviews-tab').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const tab = btn.dataset.tab;
+            AppState.reviewsOpenTab = tab;
+            container.querySelectorAll('.reviews-tab').forEach(b => b.classList.remove('active'));
+            container.querySelectorAll('.reviews-tab-panel').forEach(p => p.classList.remove('active'));
+            btn.classList.add('active');
+            const panel = container.querySelector(`.reviews-tab-panel[data-panel="${tab}"]`);
+            if (panel) panel.classList.add('active');
+        });
+    });
 }
 
 // ==================== RUBRIC VIEW ====================
@@ -820,16 +867,6 @@ function populateBestPracticesFilters() {
     if (!AppState.bestPractices) return;
     
     const meta = AppState.bestPractices.metadata;
-    
-    // Populate AD filter
-    const adFilter = document.getElementById('bp-ad-filter');
-    const uniqueADs = [...new Set(AppState.bestPractices.practices.map(p => p.adName))].sort();
-    uniqueADs.forEach(ad => {
-        const option = document.createElement('option');
-        option.value = ad;
-        option.textContent = ad;
-        adFilter.appendChild(option);
-    });
     
     // Populate category filter with umbrella categories (dropdown)
     const categoryFilterSelect = document.getElementById('bp-category-filter');
@@ -917,14 +954,12 @@ function getFilteredPractices() {
     const f = AppState.bestPracticesFilters;
     
     return AppState.bestPractices.practices.filter(practice => {
-        if (f.adName !== 'all' && practice.adName !== f.adName) return false;
         if (f.category !== 'all' && practice.umbrellaCategory !== f.category) return false;
         if (f.replicability !== 'all' && (practice.replicable || practice.replicability) !== f.replicability) return false;
         if (f.status !== 'all' && practice.umbrellaStatus !== f.status) return false;
-        if (f.vertical !== 'all' && practice.vertical !== f.vertical) return false;
-        if (f.account !== 'all') {
-            const practiceAccounts = (practice.account || '').split(',').map(a => a.trim());
-            if (!practiceAccounts.includes(f.account)) return false;
+        if (f.vertical !== 'all') {
+            const practiceVerticals = (practice.vertical || '').split(',').map(v => v.trim()).filter(v => v);
+            if (!practiceVerticals.includes(f.vertical)) return false;
         }
         if (f.featuredOnly && !practice.featured) return false;
         return true;
@@ -1210,7 +1245,10 @@ function initATBChart(canvasId, oct, nov, dec, jan) {
 
 function getFilteredATBData() {
     let filtered = AppState.data.accountDirectors.filter(ad => {
-        if (AppState.filters.vertical !== 'all' && ad.vertical !== AppState.filters.vertical) return false;
+        if (AppState.filters.vertical !== 'all') {
+            const adVerticals = (ad.vertical || '').split(',').map(v => v.trim()).filter(v => v);
+            if (!adVerticals.includes(AppState.filters.vertical)) return false;
+        }
         if (AppState.filters.tier !== 'all') {
             const adTier = ad.tier || 'Unassigned';
             if (adTier !== AppState.filters.tier) return false;
@@ -1441,6 +1479,7 @@ function setupEventListeners() {
     document.getElementById('ad-select').addEventListener('change', (e) => {
         if (e.target.value) {
             AppState.selectedAD = e.target.value;
+            AppState.reviewsOpenTab = 'reviews';  // Default to Review Feedback when selecting from dropdown
             renderReviewsForAD(e.target.value);
         }
     });
@@ -1476,13 +1515,11 @@ function setupEventListeners() {
     const bpClearFilters = document.getElementById('bp-clear-filters');
     if (bpClearFilters) {
         bpClearFilters.addEventListener('click', () => {
-            AppState.bestPracticesFilters = { adName: 'all', category: 'all', replicability: 'all', status: 'all', vertical: 'all', account: 'all', featuredOnly: false };
-            if (bpAdFilter) bpAdFilter.value = 'all';
+            AppState.bestPracticesFilters = { category: 'all', replicability: 'all', status: 'all', vertical: 'all', featuredOnly: false };
             if (bpCategoryFilter) bpCategoryFilter.value = 'all';
             if (bpReplicabilityFilter) bpReplicabilityFilter.value = 'all';
             if (bpStatusFilter) bpStatusFilter.value = 'all';
             if (bpVerticalFilter) bpVerticalFilter.value = 'all';
-            if (bpAccountFilter) bpAccountFilter.value = 'all';
             if (bpFeaturedOnly) bpFeaturedOnly.checked = false;
             if (AppState.currentView === 'best-practices') renderBestPractices();
         });

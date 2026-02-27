@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EOY Quick Read – Financial Report (Colleen Doles & Joshua Grady)</title>
+    <style>
+        @page {
+            size: landscape;
+            margin: 0.6in;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.4;
+            color: #333;
+            max-width: 100%;
+            margin: 0;
+            padding: 24px;
+            background: #F8F8F8;
+            font-size: 10pt;
+        }
+
+        .header {
+            background: #2A4B8F;
+            color: white;
+            padding: 28px 32px;
+            margin: -24px -24px 32px -24px;
+            page-break-after: avoid;
+        }
+
+        .header h1 {
+            margin: 0 0 8px 0;
+            font-size: 24pt;
+            font-weight: 700;
+        }
+
+        .header .subtitle {
+            font-size: 11pt;
+            opacity: 0.95;
+            margin: 0;
+        }
+
+        .header .subtitle span {
+            margin-right: 24px;
+        }
+
+        .person-section {
+            page-break-after: always;
+        }
+
+        .person-section:last-child {
+            page-break-after: auto;
+        }
+
+        .person-header {
+            background: #2A4B8F;
+            color: white;
+            padding: 16px 24px;
+            margin: 0 0 20px 0;
+            border-radius: 6px;
+            page-break-after: avoid;
+        }
+
+        .person-header h2 {
+            margin: 0;
+            font-size: 18pt;
+            font-weight: 600;
+        }
+
+        .person-header .meta {
+            font-size: 11pt;
+            opacity: 0.95;
+            margin-top: 4px;
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-bottom: 24px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 8px;
+            padding: 20px 24px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+            border: 1px solid #DCDCDC;
+            page-break-inside: avoid;
+        }
+
+        .card-label {
+            font-size: 9pt;
+            font-weight: 600;
+            font-variant: small-caps;
+            letter-spacing: 0.5px;
+            color: #646464;
+            margin-bottom: 8px;
+        }
+
+        .card-value {
+            font-size: 22pt;
+            font-weight: 700;
+            color: #2A4B8F;
+            line-height: 1.2;
+        }
+
+        .account-breakdown {
+            margin-top: 24px;
+            background: white;
+            border-radius: 8px;
+            padding: 20px 24px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+            border: 1px solid #DCDCDC;
+            page-break-inside: avoid;
+        }
+
+        .account-breakdown h3 {
+            margin: 0 0 16px 0;
+            font-size: 12pt;
+            color: #2A4B8F;
+            font-weight: 600;
+        }
+
+        .account-breakdown table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 9pt;
+        }
+
+        .account-breakdown th {
+            text-align: left;
+            padding: 8px 12px;
+            color: #646464;
+            font-weight: 600;
+            font-variant: small-caps;
+            letter-spacing: 0.5px;
+            border-bottom: 1px solid #DCDCDC;
+        }
+
+        .account-breakdown td {
+            padding: 10px 12px;
+            border-bottom: 1px solid #e8e8e8;
+        }
+
+        .account-breakdown tr:last-child td {
+            border-bottom: none;
+        }
+
+        .insights-box {
+            background: white;
+            border-radius: 8px;
+            padding: 20px 24px;
+            margin-bottom: 20px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+            border: 1px solid #DCDCDC;
+            border-left: 4px solid #2A4B8F;
+            page-break-inside: avoid;
+        }
+
+        .insights-box h3 {
+            margin: 0 0 12px 0;
+            font-size: 11pt;
+            color: #2A4B8F;
+            font-weight: 600;
+        }
+
+        .insights-box ul {
+            margin: 0;
+            padding-left: 20px;
+            font-size: 10pt;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .insights-box li { margin-bottom: 6px; }
+
+        .trends-section {
+            background: white;
+            border-radius: 8px;
+            padding: 20px 24px;
+            margin-bottom: 20px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+            border: 1px solid #DCDCDC;
+            page-break-inside: avoid;
+        }
+
+        .trends-section h3 {
+            margin: 0 0 16px 0;
+            font-size: 12pt;
+            color: #2A4B8F;
+            font-weight: 600;
+        }
+
+        .trends-section table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 9pt;
+        }
+
+        .trends-section th {
+            text-align: left;
+            padding: 8px 12px;
+            color: #646464;
+            font-weight: 600;
+            font-variant: small-caps;
+            letter-spacing: 0.5px;
+            border-bottom: 1px solid #DCDCDC;
+        }
+
+        .trends-section td {
+            padding: 10px 12px;
+            border-bottom: 1px solid #e8e8e8;
+        }
+
+        .trend-up { color: #2d7d46; font-weight: 600; }
+        .trend-down { color: #c62828; font-weight: 600; }
+
+        .report-date {
+            font-size: 9pt;
+            color: rgba(255,255,255,0.85);
+            margin-top: 8px;
+        }
+
+        @media print {
+            body {
+                padding: 0;
+                background: white;
+            }
+
+            .header {
+                margin: 0 0 24px 0;
+            }
+
+            .person-section:not(:first-child) {
+                page-break-before: always;
+            }
+
+            .card, .account-breakdown, .insights-box, .trends-section {
+                box-shadow: none;
+                border: 1px solid #DCDCDC;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>EOY Quick Read – Financial Report</h1>
+        <p class="subtitle">
+            <span>Prepared for: Colleen Doles & Joshua Grady</span>
+            <span>EOY Review: January 30, 2026</span>
+        </p>
+        <p class="report-date">Report Generated: January 29, 2026</p>
+    </div>
+
+    <!-- Colleen Doles - Finance -->
+    <div class="person-section">
+        <div class="person-header">
+            <h2>Colleen Doles</h2>
+            <p class="meta">Account Director · Finance · Wells Fargo</p>
+        </div>
+
+        <div class="insights-box">
+            <h3>Executive Summary</h3>
+            <ul>
+                <li><strong>Revenue recovered</strong> from Q2 low ($1.99M avg) to Q4 ($2.15M avg); Oct peak $2.26M before Dec pullback.</li>
+                <li><strong>Headcount up 25</strong> from Q2 trough; now at 369—strong recruitment in H2.</li>
+                <li><strong>Turnover improved</strong> to 1.1% in Dec (lowest of year); retention trending positively.</li>
+                <li><strong>Red Sites elevated</strong> in Nov/Dec ($153K, 19 sites)—watch item for Q1.</li>
+                <li><strong>Gap ($123K)</strong> Dec variance—below budget; address in planning.</li>
+            </ul>
+        </div>
+
+        <div class="cards-grid">
+            <div class="card">
+                <div class="card-label">Revenue (Dec 2025)</div>
+                <div class="card-value">$2.06M</div>
+            </div>
+            <div class="card">
+                <div class="card-label">Total Headcount</div>
+                <div class="card-value">369</div>
+            </div>
+            <div class="card">
+                <div class="card-label">YoY Growth (Dec)</div>
+                <div class="card-value">-2.2%</div>
+            </div>
+            <div class="card">
+                <div class="card-label">CSAT</div>
+                <div class="card-value">4.48</div>
+            </div>
+            <div class="card">
+                <div class="card-label">Turnover</div>
+                <div class="card-value">1.1%</div>
+            </div>
+            <div class="card">
+                <div class="card-label">Red Sites ($)</div>
+                <div class="card-value">$153K</div>
+            </div>
+        </div>
+
+        <div class="trends-section">
+            <h3>Quarterly Trends (2025)</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Quarter</th>
+                        <th>Avg Revenue</th>
+                        <th>Avg Headcount</th>
+                        <th>Avg CSAT</th>
+                        <th>Avg Turnover</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Q1 (Jan–Mar)</td>
+                        <td>$2,036K</td>
+                        <td>348</td>
+                        <td>4.37</td>
+                        <td>2.2%</td>
+                    </tr>
+                    <tr>
+                        <td>Q2 (Apr–Jun)</td>
+                        <td>$1,989K <span class="trend-down">↓</span></td>
+                        <td>340 <span class="trend-down">↓</span></td>
+                        <td>4.42</td>
+                        <td>2.3%</td>
+                    </tr>
+                    <tr>
+                        <td>Q3 (Jul–Sep)</td>
+                        <td>$2,151K <span class="trend-up">↑</span></td>
+                        <td>364 <span class="trend-up">↑</span></td>
+                        <td>4.45</td>
+                        <td>2.2%</td>
+                    </tr>
+                    <tr>
+                        <td>Q4 (Oct–Dec)</td>
+                        <td>$2,146K</td>
+                        <td>365 <span class="trend-up">↑</span></td>
+                        <td>4.45 <span class="trend-up">↑</span></td>
+                        <td>1.8% <span class="trend-up">↑</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="account-breakdown">
+            <h3>Account Summary</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Account</th>
+                        <th>Revenue</th>
+                        <th>Headcount</th>
+                        <th>CSAT</th>
+                        <th>Turnover</th>
+                        <th>Gap (Dec)</th>
+                        <th>Red Sites</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Wells Fargo</td>
+                        <td>$2,058K</td>
+                        <td>369</td>
+                        <td>4.48</td>
+                        <td>1.1%</td>
+                        <td>($123K)</td>
+                        <td>$153K / 19</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Joshua Grady - Life Science -->
+    <div class="person-section">
+        <div class="person-header">
+            <h2>Joshua Grady</h2>
+            <p class="meta">Sr. Account Director · Life Science · Avid Biodevices & Gilead Sciences</p>
+        </div>
+
+        <div class="insights-box">
+            <h3>Executive Summary</h3>
+            <ul>
+                <li><strong>Portfolio mix:</strong> Gilead (94% of revenue) + Avid (6%). Gilead revenue stabilized in Q4 ($1.18M avg) after Q2–Q3 decline.</li>
+                <li><strong>Turnover improved sharply</strong> at Gilead—2.6% Q2 → 1.1% Q4; zero separations in Dec.</li>
+                <li><strong>Headcount recovered</strong> to 159 in Q4 (up from 148 Q3); Gilead +10 from Q3 low.</li>
+                <li><strong>Avid volatile</strong>—small account ($71K Dec), CSAT 5.00 when reported; Gap ($1K) Dec.</li>
+            </ul>
+        </div>
+
+        <div class="cards-grid">
+            <div class="card">
+                <div class="card-label">Total Revenue (Dec 2025)</div>
+                <div class="card-value">$1.29M</div>
+            </div>
+            <div class="card">
+                <div class="card-label">Total Headcount</div>
+                <div class="card-value">159</div>
+            </div>
+            <div class="card">
+                <div class="card-label">Avg CSAT</div>
+                <div class="card-value">4.72</div>
+            </div>
+            <div class="card">
+                <div class="card-label">Combined Accounts</div>
+                <div class="card-value">2</div>
+            </div>
+            <div class="card">
+                <div class="card-label">Gilead Revenue</div>
+                <div class="card-value">$1.22M</div>
+            </div>
+            <div class="card">
+                <div class="card-label">Avid Revenue</div>
+                <div class="card-value">$71K</div>
+            </div>
+        </div>
+
+        <div class="trends-section">
+            <h3>Quarterly Trends (2025) — Combined Portfolio</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Quarter</th>
+                        <th>Avg Revenue</th>
+                        <th>Avg Headcount</th>
+                        <th>Gilead Rev</th>
+                        <th>Avid Rev</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Q1 (Jan–Mar)</td>
+                        <td>$1,291K</td>
+                        <td>164</td>
+                        <td>$1,209K</td>
+                        <td>$82K</td>
+                    </tr>
+                    <tr>
+                        <td>Q2 (Apr–Jun)</td>
+                        <td>$1,228K <span class="trend-down">↓</span></td>
+                        <td>155 <span class="trend-down">↓</span></td>
+                        <td>$1,144K</td>
+                        <td>$83K</td>
+                    </tr>
+                    <tr>
+                        <td>Q3 (Jul–Sep)</td>
+                        <td>$1,213K</td>
+                        <td>148 <span class="trend-down">↓</span></td>
+                        <td>$1,139K</td>
+                        <td>$73K</td>
+                    </tr>
+                    <tr>
+                        <td>Q4 (Oct–Dec)</td>
+                        <td>$1,262K <span class="trend-up">↑</span></td>
+                        <td>160 <span class="trend-up">↑</span></td>
+                        <td>$1,181K</td>
+                        <td>$81K</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="account-breakdown">
+            <h3>Account Breakdown</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Account</th>
+                        <th>Revenue (Dec 25)</th>
+                        <th>YoY Growth</th>
+                        <th>Headcount</th>
+                        <th>CSAT</th>
+                        <th>Turnover</th>
+                        <th>Gap (Dec)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Gilead Sciences</td>
+                        <td>$1,215K</td>
+                        <td>-10.6%</td>
+                        <td>146</td>
+                        <td>4.72</td>
+                        <td>0.0%</td>
+                        <td>—</td>
+                    </tr>
+                    <tr>
+                        <td>Avid Biodevices</td>
+                        <td>$71K</td>
+                        <td>-25.6%</td>
+                        <td>13</td>
+                        <td>5.00</td>
+                        <td>0.0%</td>
+                        <td>($1K)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Total</strong></td>
+                        <td><strong>$1,286K</strong></td>
+                        <td>—</td>
+                        <td><strong>159</strong></td>
+                        <td>—</td>
+                        <td>—</td>
+                        <td>—</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -89,6 +89,18 @@ def load_best_practices(bp_path="../data/best-practices.json"):
         print(f"⚠️  Invalid JSON in best practices file: {bp_path}")
         return {}
 
+def load_follow_up_questions(fup_path="../data/follow-up-questions.json"):
+    """Load follow-up questions (2026 Development Focus) from JSON."""
+    try:
+        with open(fup_path, "r", encoding="utf-8") as f:
+            return json.load(f)
+    except FileNotFoundError:
+        print(f"⚠️  Follow-up questions file not found: {fup_path}")
+        return {}
+    except json.JSONDecodeError:
+        print(f"⚠️  Invalid JSON in follow-up questions file: {fup_path}")
+        return {}
+
 def normalize_ad_name_for_financial(ad_name):
     """Normalize AD names to match review CSV format"""
     # Specific mappings for known mismatches
@@ -356,7 +368,8 @@ def extract_scores_and_feedback(df):
         "Greg DeMedio": "Gregory DeMedio",
         "Greg Demedio": "Gregory DeMedio",
         "Nick Trenkamp": "Nicholas Trenkamp",
-        "Nike Trenkamp": "Nicholas Trenkamp"
+        "Nike Trenkamp": "Nicholas Trenkamp",
+        "Jen Segovia": "Jennifer Segovia"
     }
     
     # New structure: columns 0-7 are metadata, 8+ are feedback/score pairs
@@ -688,6 +701,17 @@ def main():
     print("Loading best practices...")
     best_practices = load_best_practices()
     print(f"   - Loaded best practices for {len(best_practices)} Account Directors")
+
+    # Load follow-up questions (2026 Development Focus)
+    print("Loading follow-up questions...")
+    follow_up_raw = load_follow_up_questions()
+    # Normalize keys to match aggregated AD names (e.g. Dave Pergola -> David Pergola)
+    FOLLOW_UP_NAME_MAP = {"Dave Pergola": "David Pergola", "Mike Barry": "Michael Barry", "Josh Grady": "Joshua Grady", "Jen Segovia": "Jennifer Segovia"}
+    follow_up_questions = {}
+    for k, v in follow_up_raw.items():
+        canonical = FOLLOW_UP_NAME_MAP.get(k, k)
+        follow_up_questions[canonical] = v
+    print(f"   - Loaded follow-up questions for {len(follow_up_questions)} Account Directors")
     
     # Build final data structure
     data = {
@@ -699,7 +723,8 @@ def main():
         },
         "accountDirectors": aggregated,
         "rubrics": rubrics,
-        "bestPractices": best_practices
+        "bestPractices": best_practices,
+        "followUpQuestions": follow_up_questions
     }
     
     # Write to JSON

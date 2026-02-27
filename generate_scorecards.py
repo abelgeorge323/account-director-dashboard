@@ -35,13 +35,16 @@ NAME_NORMALIZATION = {
     "Michael Barry": "Mike Barry",
     "Logan Newman's": "Logan Newman",
     "Ayesha Nasi": "Ayesha Nasir",
+    "Josh Grady": "Joshua Grady",
     # Trailing spaces and ellipses - these need to be handled dynamically
 }
 
-# JSON normalization (for follow-up-questions.json which uses different names)
+# JSON normalization (for follow-up-questions.json and best-practices.json which use different names)
 JSON_NAME_NORMALIZATION = {
     "David Pergola": "Dave Pergola",
     "Mike Barry": "Michael Barry",
+    "Joshua Grady": "Josh Grady",
+    "Jennifer Segovia": "Jen Segovia",
 }
 
 def normalize_name_to_canonical(name):

@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025 Year-End Scorecard - Jen Segovia</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            background: #ffffff;
+            padding: 2rem;
+            max-width: 8.5in;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: #1a365d;
+            margin-bottom: 0.5rem;
+        }
+
+        h2 {
+            font-size: 1.35rem;
+            font-weight: 600;
+            color: #2c5282;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 0.5rem;
+        }
+
+        h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #2d3748;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        h4 {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #4a5568;
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .header-section {
+            background: linear-gradient(135deg, #1a365d 0%, #2c5282 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+        }
+
+        .header-section h1 {
+            color: white;
+            margin-bottom: 1.5rem;
+            font-size: 1.85rem;
+        }
+
+        .header-metadata {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.8rem;
+            margin-top: 1.2rem;
+        }
+
+        .metadata-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.6rem;
+            border-radius: 4px;
+        }
+
+        .metadata-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.8;
+            margin-bottom: 0.25rem;
+        }
+
+        .metadata-value {
+            font-size: 1.1rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+        }
+
+        .score-summary-first-page {
+            background: #f7fafc;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+        }
+
+        .score-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            background: white;
+        }
+
+        .score-table th {
+            background: #2c5282;
+            color: white;
+            padding: 0.75rem;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .score-table td {
+            padding: 0.75rem;
+            border: 1px solid #e2e8f0;
+        }
+
+        .score-table tr:nth-child(even) {
+            background: #f7fafc;
+        }
+
+
+        /* Follow-Up Questions Section */
+        .follow-up-section {
+            background: #fff8e1;
+            border-left: 4px solid #ff9800;
+            padding: 24px;
+            margin: 32px 0;
+            border-radius: 8px;
+            page-break-inside: avoid;
+        }
+
+        .follow-up-intro {
+            color: #e65100;
+            margin-bottom: 1rem;
+        }
+
+        .follow-up-item {
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 16px 0;
+        }
+
+        .follow-up-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .follow-up-category {
+            background: #2196f3;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .follow-up-source {
+            color: #666;
+            font-size: 14px;
+            font-style: italic;
+        }
+
+        .follow-up-quote {
+            background: #f5f5f5;
+            border-left: 3px solid #ff9800;
+            padding: 12px 16px;
+            margin: 12px 0;
+            font-style: italic;
+            color: #333;
+        }
+
+        .follow-up-action {
+            margin-top: 12px;
+            color: #333;
+        }
+
+        /* Scored Section - One section per page */
+        .scored-section {
+            page-break-after: always;
+            page-break-inside: avoid;
+            margin: 1.5rem 0;
+            padding: 1.5rem;
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            min-height: 400px;
+        }
+
+        .score-display {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin: 1rem 0;
+            padding: 1rem;
+            background: #f7fafc;
+            border-radius: 4px;
+        }
+
+        .score-label {
+            font-weight: 600;
+            color: #4a5568;
+        }
+
+        .score-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #2c5282;
+        }
+
+        .combined-feedback {
+            background: #f8f9fa;
+            border-left: 4px solid #2c5282;
+            padding: 1.25rem;
+            margin: 1rem 0;
+            border-radius: 4px;
+        }
+
+        .combined-feedback h4 {
+            color: #2c5282;
+            margin-bottom: 0.75rem;
+            font-size: 1rem;
+        }
+
+        .feedback-synthesis {
+            margin-top: 0.75rem;
+        }
+
+        .feedback-point {
+            padding: 0.75rem;
+            margin: 0.5rem 0;
+            background: white;
+            border-radius: 4px;
+            border-left: 3px solid #2c5282;
+            line-height: 1.6;
+        }
+
+        .feedback-point strong {
+            color: #2c5282;
+            font-size: 0.9rem;
+        }
+
+        .synthesis-list {
+            margin: 0.75rem 0 1rem 1.5rem;
+            padding-left: 1rem;
+        }
+
+        .synthesis-list li {
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+            color: #2d3748;
+        }
+
+        .feedback-synthesis p {
+            margin: 0.75rem 0;
+            line-height: 1.6;
+        }
+
+        .feedback-synthesis strong {
+            color: #2c5282;
+            font-weight: 600;
+        }
+
+        @media print {
+            * {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            
+            body {
+                padding: 0.25in;
+                font-size: 9pt;
+                line-height: 1.3;
+            }
+            
+            h1 {
+                font-size: 16pt;
+                margin-bottom: 0.3rem;
+            }
+            
+            h2 {
+                font-size: 12pt;
+                margin-top: 0.5rem;
+                margin-bottom: 0.4rem;
+                page-break-after: avoid;
+            }
+            
+            h3 {
+                font-size: 10pt;
+                margin-top: 0.4rem;
+                margin-bottom: 0.3rem;
+            }
+            
+            .header-section {
+                padding: 1rem;
+                margin-bottom: 1rem;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            
+            .header-metadata {
+                gap: 0.5rem;
+            }
+            
+            .metadata-item {
+                padding: 0.4rem;
+            }
+            
+            .metadata-label {
+                font-size: 7pt;
+            }
+            
+            .metadata-value {
+                font-size: 9pt;
+            }
+            
+            .score-summary-first-page {
+                page-break-after: always;
+                padding: 0.75rem;
+                margin-bottom: 1rem;
+            }
+            
+            .score-table {
+                margin: 0.75rem 0;
+                font-size: 9pt;
+            }
+            
+            .score-table th,
+            .score-table td {
+                padding: 0.35rem;
+            }
+            
+            .scored-section {
+                page-break-after: always;
+                page-break-inside: avoid;
+                margin: 0.5rem 0;
+                padding: 0.75rem;
+                border: 1px solid #e2e8f0;
+                min-height: unset;
+            }
+            
+            .score-display {
+                margin: 0.5rem 0;
+                padding: 0.5rem;
+            }
+            
+            .score-label {
+                font-size: 9pt;
+            }
+            
+            .score-value {
+                font-size: 14pt;
+            }
+            
+            .combined-feedback {
+                padding: 0.75rem;
+                margin: 0.5rem 0;
+            }
+            
+            .combined-feedback h4 {
+                font-size: 9pt;
+                margin-bottom: 0.4rem;
+            }
+            
+            .feedback-synthesis p {
+                margin: 0.4rem 0;
+                line-height: 1.4;
+                font-size: 9pt;
+            }
+            
+            .feedback-synthesis strong {
+                font-size: 9pt;
+            }
+            
+            .synthesis-list {
+                margin: 0.4rem 0 0.5rem 1rem;
+                padding-left: 0.5rem;
+            }
+            
+            .synthesis-list li {
+                margin-bottom: 0.25rem;
+                line-height: 1.4;
+                font-size: 8.5pt;
+            }
+            
+            .follow-up-section {
+                page-break-before: always;
+                page-break-inside: avoid;
+                padding: 1rem;
+                margin: 1rem 0;
+            }
+            
+            .follow-up-item {
+                padding: 0.75rem;
+                margin: 0.75rem 0;
+            }
+            
+            .follow-up-quote {
+                padding: 0.5rem;
+                margin: 0.5rem 0;
+                font-size: 8.5pt;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header-section">
+        <h1>2025 Year-End Account Review & 2026 QBR Readiness Scorecard</h1>
+        <div class="header-metadata">
+            <div class="metadata-item">
+                <div class="metadata-label">Account Director</div>
+                <div class="metadata-value">Jen Segovia</div>
+            </div>
+            <div class="metadata-item">
+                <div class="metadata-label">Account</div>
+                <div class="metadata-value">Northrup and GD</div>
+            </div>
+            <div class="metadata-item">
+                <div class="metadata-label">Tier</div>
+                <div class="metadata-value"><span style="background: #94a3b8; color: white; padding: 0.3rem 0.8rem; border-radius: 12px; font-weight: 600; font-size: 0.9rem;">Unassigned</span></div>
+            </div>
+            <div class="metadata-item">
+                <div class="metadata-label">Review Date</div>
+                <div class="metadata-value">January 2026</div>
+            </div>
+            <div class="metadata-item">
+                <div class="metadata-label">Total Reviews</div>
+                <div class="metadata-value">1</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="score-summary-first-page">
+        <h2>Executive Summary</h2>
+
+        <table class="score-table">
+            <thead>
+                <tr>
+                    <th>Evaluation Category</th>
+                    <th style="text-align: center;">Average Score</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+        <tr>
+            <td>Key Projects & Initiatives</td>
+            <td style="text-align: center; font-weight: 600;">4.0</td>
+        </tr>
+        
+        <tr>
+            <td>Value Adds & Cost Avoidance</td>
+            <td style="text-align: center; font-weight: 600;">3.0</td>
+        </tr>
+        
+        <tr>
+            <td>Cost Savings Delivered</td>
+            <td style="text-align: center; font-weight: 600;">4.0</td>
+        </tr>
+        
+        <tr>
+            <td>Innovation & Continuous Improvement</td>
+            <td style="text-align: center; font-weight: 600;">4.0</td>
+        </tr>
+        
+        <tr>
+            <td>Issues, Challenges & Accountability</td>
+            <td style="text-align: center; font-weight: 600;">4.0</td>
+        </tr>
+        
+        <tr>
+            <td>2026 Forward Strategy & Vision</td>
+            <td style="text-align: center; font-weight: 600;">3.0</td>
+        </tr>
+        
+        <tr>
+            <td>Personal Goals & Role Maturity</td>
+            <td style="text-align: center; font-weight: 600;">5.0</td>
+        </tr>
+        
+        <tr>
+            <td>Executive Presence & Presentation Skills</td>
+            <td style="text-align: center; font-weight: 600;">4.0</td>
+        </tr>
+        
+        <tr style="background: #e8f5e9; border-top: 3px solid #2c5282;">
+            <td style="font-weight: 700; text-transform: uppercase;">Overall Score</td>
+            <td style="text-align: center; font-weight: 700; font-size: 1.2rem; color: #2c5282;">31.0/40</td>
+        </tr>
+        
+            </tbody>
+        </table>
+    </div>
+
+    
+        <div class="scored-section">
+            <h2>Key Projects & Initiatives</h2>
+            <div class="score-display">
+                <span class="score-label">Average Score:</span>
+                <span class="score-value">4.0/5</span>
+            </div>
+            
+            
+    <div class="combined-feedback">
+        <h4>Combined Feedback from Leadership Reviews</h4>
+        <div class="feedback-synthesis">
+    
+            <p><strong>Overall Assessment:</strong> NG - Presents a clear narrative of key initiatives and outcomes, with minor gaps in impact clarity or measurement.</p>
+        
+            <p><strong>Strengths:</strong></p>
+            <ul class="synthesis-list">
+        <li>NG - Presents a clear narrative of key initiatives and outcomes, with minor gaps in impact clarity or measurement. GD - 17 years is a huge win! Delivering at a high level over an extended   period of time.</li></ul>
+        </div>
+    </div>
+    
+        </div>
+        
+        <div class="scored-section">
+            <h2>Value Adds & Cost Avoidance</h2>
+            <div class="score-display">
+                <span class="score-label">Average Score:</span>
+                <span class="score-value">3.0/5</span>
+            </div>
+            
+            
+    <div class="combined-feedback">
+        <h4>Combined Feedback from Leadership Reviews</h4>
+        <div class="feedback-synthesis">
+    
+            <p><strong>Overall Assessment:</strong> NG Describes value adds but does not translate them into financial or business impact - track the financial impact.</p>
+        
+            <p><strong>Areas for Development:</strong></p>
+            <ul class="synthesis-list">
+        <li>NG Describes value adds but does not translate them into financial or business impact - track the financial impact.</li></ul>
+        </div>
+    </div>
+    
+        </div>
+        
+        <div class="scored-section">
+            <h2>Cost Savings Delivered</h2>
+            <div class="score-display">
+                <span class="score-label">Average Score:</span>
+                <span class="score-value">4.0/5</span>
+            </div>
+            
+            <p><em>No specific feedback provided.</em></p>
+        </div>
+        
+        <div class="scored-section">
+            <h2>Innovation & Continuous Improvement</h2>
+            <div class="score-display">
+                <span class="score-label">Average Score:</span>
+                <span class="score-value">4.0/5</span>
+            </div>
+            
+            <p><em>No specific feedback provided.</em></p>
+        </div>
+        
+        <div class="scored-section">
+            <h2>Issues, Challenges & Accountability</h2>
+            <div class="score-display">
+                <span class="score-label">Average Score:</span>
+                <span class="score-value">4.0/5</span>
+            </div>
+            
+            <p><em>No specific feedback provided.</em></p>
+        </div>
+        
+        <div class="scored-section">
+            <h2>2026 Forward Strategy & Vision</h2>
+            <div class="score-display">
+                <span class="score-label">Average Score:</span>
+                <span class="score-value">3.0/5</span>
+            </div>
+            
+            
+    <div class="combined-feedback">
+        <h4>Combined Feedback from Leadership Reviews</h4>
+        <div class="feedback-synthesis">
+    
+            <p><strong>Overall Assessment:</strong> NG Presents a strong forward-looking plan with reasonable clarity.</p>
+        
+            <p><strong>Strengths:</strong></p>
+            <ul class="synthesis-list">
+        <li>NG Presents a strong forward-looking plan with reasonable clarity. We really want you to flush out your goals. What actions are you taking with Melissa for growth. From general goals or aspirations without clear execution detail to more detail. Love that you will work with Ben to overcome tech challenges</li></ul>
+        </div>
+    </div>
+    
+        </div>
+        
+        <div class="scored-section">
+            <h2>Personal Goals & Role Maturity</h2>
+            <div class="score-display">
+                <span class="score-label">Average Score:</span>
+                <span class="score-value">5.0/5</span>
+            </div>
+            
+            
+    <div class="combined-feedback">
+        <h4>Combined Feedback from Leadership Reviews</h4>
+        <div class="feedback-synthesis">
+    
+            <p><strong>Overall Assessment:</strong> Clearly defines measurable leadership goals that demonstrate role maturity, accountability, and impact on account performance.</p>
+        
+            <p><strong>Strengths:</strong></p>
+            <ul class="synthesis-list">
+        <li>Clearly defines measurable leadership goals that demonstrate role maturity, accountability, and impact on account performance.</li></ul>
+        </div>
+    </div>
+    
+        </div>
+        
+        <div class="scored-section">
+            <h2>Executive Presence & Presentation Skills</h2>
+            <div class="score-display">
+                <span class="score-label">Average Score:</span>
+                <span class="score-value">4.0/5</span>
+            </div>
+            
+            
+    <div class="combined-feedback">
+        <h4>Combined Feedback from Leadership Reviews</h4>
+        <div class="feedback-synthesis">
+    
+            <p><strong>Overall Assessment:</strong> Communicates clearly with logical flow; delivers a cohesive account story with minor gaps in executive presence or impact.</p>
+        
+            <p><strong>Strengths:</strong></p>
+            <ul class="synthesis-list">
+        <li>Communicates clearly with logical flow; delivers a cohesive account story with minor gaps in executive presence or impact.</li></ul>
+        </div>
+    </div>
+    
+        </div>
+        
+
+    
+    <div class="follow-up-section">
+        <h2>🎯 2026 Development Focus & Follow-Up Items</h2>
+        <p class="follow-up-intro">
+            Based on your year-end presentation and executive feedback, the following areas have been identified 
+            for focused development and follow-through in 2026.
+        </p>
+    
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">Value Demonstration & Financial Impact</span>
+                <span class="follow-up-source">— Valarie Barnett</span>
+            </div>
+            <h3>Track Financial Impact of Value Adds and Cost Avoidance</h3>
+            <p class="follow-up-quote">"Valarie: 'If you're going to communicate to your customer and tell them, hey, these are all the things we did for you, they're going to say, OK, thank you. So really the only way to really make a huge impact to them is to show them... Track the financial impact. What are they avoiding? We didn't charge you for XYZ and we could have, but we didn't. That's a value add or a cost avoidance... Had you charged them, what would it be? They should have a running tally of things that they do on a monthly basis had we charged you. All of the things that you asked us to do would have cost this, but as a partner we didn't charge you for those things. You want to be able to deliver that on a monthly, quarterly basis to your customers.'"</p>
+            <p class="follow-up-action"><strong>Action:</strong> 2026 goal: (1) Track value adds and cost avoidance with dollar figures, (2) Site teams: running tally of 'had we charged you' items monthly, (3) Deliver quarterly to customers showing financial impact, (4) Day porter ~$7K/mo - quantify similar items; turnover cost avoidance</p>
+        </div>
+        
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">Issues & Challenges - Current State</span>
+                <span class="follow-up-source">— Valarie Barnett</span>
+            </div>
+            <h3>Document Current Outstanding Challenges and Mitigation</h3>
+            <p class="follow-up-quote">"Valarie: 'I see that we did some transitions and we had some challenges, but is there anything that's currently outstanding that's a challenge today? And then what are we doing about it?'"</p>
+            <p class="follow-up-action"><strong>Action:</strong> Add to presentation: (1) Boulder failed survey - Tracy Thompson badging 9am, new hire Monday; change perception on burnout (Jen: 'I don't think we need that third person'), (2) Document any other current challenges with mitigation plans</p>
+        </div>
+        
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">Strategic Planning - Capacity & Over-Capacity</span>
+                <span class="follow-up-source">— Valarie Barnett</span>
+            </div>
+            <h3>Strategic Plan for Over-Capacity (Minivan Analogy)</h3>
+            <p class="follow-up-quote">"Valarie: 'If we all get in the minivan and drive to LA, there's going to be more trash, more waste... As you get to capacities in excess of 100% of capacity, our work schedules, routes and all of that are not built to sustain. Complaints will go up, carpet spills will increase, trash will double. You have to be cognizant of that and I'd like you to come up with a strategic plan for over-capacity... Reach out to John, ask him who you can work with on his team [Microsoft] that's really good at that.'"</p>
+            <p class="follow-up-action"><strong>Action:</strong> 2026: (1) Chandler 500 people crammed into 3rd floor - strategic plan for capacity load, (2) Scottsdale Roosevelt - same dynamic; (3) Contact Microsoft team (John) for capacity load best practices, (4) Propose something back to customer in accordance to capacity</p>
+        </div>
+        
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">Safety Culture - Milestones & Timeline</span>
+                <span class="follow-up-source">— Valarie Barnett</span>
+            </div>
+            <h3>Flush Out Safety Culture Strategy with Milestones and Actions</h3>
+            <p class="follow-up-quote">"Valarie: 'Maintaining safety culture. I understand those as a general KPI and requirement. What I don't understand is your strategic plan or timeline for that. So like yes, you want to strengthen operational safety excellence, but how will you do it? And what are your milestones? What's driving that safety culture? What can we do differently? Are we also celebrating that with a client? Joint safety trainings in person if applicable or via phone - when and where? How often are those trainings? How many are you committed to a year?'"</p>
+            <p class="follow-up-action"><strong>Action:</strong> Document: (1) Safety culture milestones and timeline, (2) Joint Northrop/GD safety trainings - when, where, how many/year, (3) What drives safety culture (awards, parties, etc.), (4) Steps to get to 0 recordables</p>
+        </div>
+        
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">Northrop Grumman RFP - Influencers & Decision Makers</span>
+                <span class="follow-up-source">— Nick Viskovich</span>
+            </div>
+            <h3>Map Key Influencers, Decision Makers, and RFP Timeline</h3>
+            <p class="follow-up-quote">"Nick: 'This is one of our biggest opportunities of the year. Ton of eyeballs on it... Who are the key influencers? Who are the decision makers? What meetings are we having? What exposure are we getting to those folks early and often in preparation to a June RFP? The monthly, quarterly business reviews all mean way more than they ever have before. Enterprise selling is a team sport. How do we parlay the excellent work you and your teams are doing into telling that story to the right influencers and decision makers? Getting those meetings locked in, timelines aligned... We can work back and help you build out the content, the decks, present, setting up Melissa for dinners and meetings with the right stakeholders.'"</p>
+            <p class="follow-up-action"><strong>Action:</strong> With Melissa: (1) Map key influencers and decision makers (California/Servicon accounts drive RFP; Gilbert reports to CA), (2) Chris (Northrop Gilbert) - meeting next week for CA facilities head name, (3) Smart objectives: influencers, key moments, content, (4) Jeff: 50% Northrop buy-in - target non-bought-in, (5) Jen: 'Do whatever it takes' - cost flexibility to get foot in door</p>
+        </div>
+        
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">People Development - Jose Gonzales</span>
+                <span class="follow-up-source">— Valarie Barnett</span>
+            </div>
+            <h3>Develop Jose (#2) with Specific Steps - Three Main + Stretch</h3>
+            <p class="follow-up-quote">"Valarie: 'What are some of the steps that you could take in order to develop them? Flush things out a little more. Maybe give yourself three main ones and a stretch one... Where has Jose gone to help out on a transition? Have you sent him somewhere where he can go out and develop and learn? Have you developed relationships with the sourcing manager at General Dynamics - when is your next meeting with that person? When are you taking them to dinner, lunch, coffee, breakfast? Just to get to know that person, not to talk about work.'"</p>
+            <p class="follow-up-action"><strong>Action:</strong> Jose development: (1) Send to transition/site for hands-on development, (2) Time management coaching - 'when too many things, I see things drop', (3) Three main goals + stretch; (4) GD sourcing: next meeting, dinner/lunch/coffee with Ethan contacts</p>
+        </div>
+        
+        <div class="follow-up-item">
+            <div class="follow-up-header">
+                <span class="follow-up-category">Delegation & Self-Care</span>
+                <span class="follow-up-source">— Valarie Barnett</span>
+            </div>
+            <h3>Hold to Delegation Goal - Don't Own Everything</h3>
+            <p class="follow-up-quote">"Valarie: 'You don't have to be the strongest one in the room. You don't have to put the whole company on your back. You do have to be able to delegate... When you're in a one parent home, there's a level of guilt. You feel like you have to be everything to everybody, but ultimately you have to be the best to yourself so that you have something to give to them. Don't ever forget to put yourself first.'"</p>
+            <p class="follow-up-action"><strong>Action:</strong> Valarie will hold to delegation goal; 'Let Them' book - balance with kids (father passed); put self first; delegate vs owning everything</p>
+        </div>
+        </div>
+
+</body>
+</html>
